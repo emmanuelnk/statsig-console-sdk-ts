@@ -245,7 +245,7 @@ if (manualBetaRelease) {
         name: 'Setup Node.js',
         uses: 'actions/setup-node@v4',
         with: {
-          'node-version': '18.x',
+          'node-version': '20.x',
           'registry-url': 'https://registry.npmjs.org',
         },
       },
@@ -321,7 +321,7 @@ if (stableRelease) {
         name: 'Setup Node.js',
         uses: 'actions/setup-node@v4',
         with: {
-          'node-version': '18.x',
+          'node-version': '20.x',
           'registry-url': 'https://registry.npmjs.org',
         },
       },
