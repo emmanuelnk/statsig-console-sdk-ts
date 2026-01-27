@@ -101,15 +101,25 @@ export const CompanyApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Get Company Info
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {CompanyApiConsoleV1CompanyGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1CompanyGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1CompanyGet200Response> {
-            return localVarFp.consoleV1CompanyGet(xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1CompanyGet(requestParameters: CompanyApiConsoleV1CompanyGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1CompanyGet200Response> {
+            return localVarFp.consoleV1CompanyGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1CompanyGet operation in CompanyApi.
+ */
+export interface CompanyApiConsoleV1CompanyGetRequest {
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * CompanyApi - object-oriented interface
@@ -118,12 +128,12 @@ export class CompanyApi extends BaseAPI {
     /**
      * 
      * @summary Get Company Info
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {CompanyApiConsoleV1CompanyGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1CompanyGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return CompanyApiFp(this.configuration).consoleV1CompanyGet(xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1CompanyGet(requestParameters: CompanyApiConsoleV1CompanyGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return CompanyApiFp(this.configuration).consoleV1CompanyGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

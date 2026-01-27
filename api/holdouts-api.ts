@@ -752,136 +752,315 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary List Holdouts
-         * @param {string | null} [creatorName] Name of the creator.
-         * @param {string | null} [creatorID] ID of the user who created the entity.
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsGet(creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsGet200Response> {
-            return localVarFp.consoleV1HoldoutsGet(creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsGet(requestParameters: HoldoutsApiConsoleV1HoldoutsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsGet200Response> {
+            return localVarFp.consoleV1HoldoutsGet(requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete holdout by id
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdDelete200Response> {
-            return localVarFp.consoleV1HoldoutsIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdDelete(requestParameters: HoldoutsApiConsoleV1HoldoutsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdDelete200Response> {
+            return localVarFp.consoleV1HoldoutsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get holdout by id
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdGet200Response> {
-            return localVarFp.consoleV1HoldoutsIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdGet200Response> {
+            return localVarFp.consoleV1HoldoutsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * Remove selected ids from an id list
          * @summary Remove Holdout Overrides
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdOverridesDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesDelete200Response> {
-            return localVarFp.consoleV1HoldoutsIdOverridesDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdOverridesDelete(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesDelete200Response> {
+            return localVarFp.consoleV1HoldoutsIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Holdout Overrides
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdOverridesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesGet200Response> {
-            return localVarFp.consoleV1HoldoutsIdOverridesGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdOverridesGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesGet200Response> {
+            return localVarFp.consoleV1HoldoutsIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Add Holdout Overrides
-         * @param {string} id id
-         * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdOverridesPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdOverridesPatch(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response> {
-            return localVarFp.consoleV1HoldoutsIdOverridesPatch(id, updateOverridesContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdOverridesPatch(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response> {
+            return localVarFp.consoleV1HoldoutsIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Holdout Overrides
-         * @param {string} id id
-         * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdOverridesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdOverridesPost(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response> {
-            return localVarFp.consoleV1HoldoutsIdOverridesPost(id, updateOverridesContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdOverridesPost(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response> {
+            return localVarFp.consoleV1HoldoutsIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Patch holdout by id. You can pass in only the data you want to update.
-         * @param {string} id id
-         * @param {HoldoutPartialUpdateContractDto} holdoutPartialUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdPatch(id: string, holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPatch200Response> {
-            return localVarFp.consoleV1HoldoutsIdPatch(id, holdoutPartialUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdPatch(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPatch200Response> {
+            return localVarFp.consoleV1HoldoutsIdPatch(requestParameters.id, requestParameters.holdoutPartialUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update holdout by id
-         * @param {string} id id
-         * @param {HoldoutFullUpdateContractDto} holdoutFullUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdPost(id: string, holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPost200Response> {
-            return localVarFp.consoleV1HoldoutsIdPost(id, holdoutFullUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdPost(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPost200Response> {
+            return localVarFp.consoleV1HoldoutsIdPost(requestParameters.id, requestParameters.holdoutFullUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Retrieve Pulse Results
-         * @param {string} id id
-         * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
-         * @param {string} [confidence] Confidence interval (0-100)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdPulseResultsGet(id: string, cuped?: string, confidence?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPulseResultsGet200Response> {
-            return localVarFp.consoleV1HoldoutsIdPulseResultsGet(id, cuped, confidence, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsIdPulseResultsGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPulseResultsGet200Response> {
+            return localVarFp.consoleV1HoldoutsIdPulseResultsGet(requestParameters.id, requestParameters.cuped, requestParameters.confidence, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create holdout
-         * @param {HoldoutCreateContractDto} holdoutCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {HoldoutsApiConsoleV1HoldoutsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsPost(holdoutCreateContractDto: HoldoutCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsPost200Response> {
-            return localVarFp.consoleV1HoldoutsPost(holdoutCreateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1HoldoutsPost(requestParameters: HoldoutsApiConsoleV1HoldoutsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsPost200Response> {
+            return localVarFp.consoleV1HoldoutsPost(requestParameters.holdoutCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1HoldoutsGet operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsGetRequest {
+    /**
+     * Name of the creator.
+     */
+    readonly creatorName?: string | null
+
+    /**
+     * ID of the user who created the entity.
+     */
+    readonly creatorID?: string | null
+
+    /**
+     * Filter by tags
+     */
+    readonly tags?: ConsoleV1AuditLogsGetTagsParameter
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdDelete operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdGet operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdOverridesDelete operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdOverridesDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdOverridesGet operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdOverridesGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdOverridesPatch operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdOverridesPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly updateOverridesContractDto: UpdateOverridesContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdOverridesPost operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdOverridesPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly updateOverridesContractDto: UpdateOverridesContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdPatch operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdPost operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsIdPulseResultsGet operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly cuped?: string
+
+    /**
+     * Confidence interval (0-100)
+     */
+    readonly confidence?: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1HoldoutsPost operation in HoldoutsApi.
+ */
+export interface HoldoutsApiConsoleV1HoldoutsPostRequest {
+    readonly holdoutCreateContractDto: HoldoutCreateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * HoldoutsApi - object-oriented interface
@@ -890,143 +1069,122 @@ export class HoldoutsApi extends BaseAPI {
     /**
      * 
      * @summary List Holdouts
-     * @param {string | null} [creatorName] Name of the creator.
-     * @param {string | null} [creatorID] ID of the user who created the entity.
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsGet(creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsGet(creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsGet(requestParameters: HoldoutsApiConsoleV1HoldoutsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsGet(requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete holdout by id
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdDelete(requestParameters: HoldoutsApiConsoleV1HoldoutsIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get holdout by id
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdGetRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Remove selected ids from an id list
      * @summary Remove Holdout Overrides
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdOverridesDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdOverridesDelete(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesDeleteRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Holdout Overrides
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdOverridesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdOverridesGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesGetRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Add Holdout Overrides
-     * @param {string} id id
-     * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdOverridesPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdOverridesPatch(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesPatch(id, updateOverridesContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdOverridesPatch(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesPatchRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Holdout Overrides
-     * @param {string} id id
-     * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdOverridesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdOverridesPost(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesPost(id, updateOverridesContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdOverridesPost(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesPostRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Patch holdout by id. You can pass in only the data you want to update.
-     * @param {string} id id
-     * @param {HoldoutPartialUpdateContractDto} holdoutPartialUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdPatch(id: string, holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPatch(id, holdoutPartialUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdPatch(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPatch(requestParameters.id, requestParameters.holdoutPartialUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update holdout by id
-     * @param {string} id id
-     * @param {HoldoutFullUpdateContractDto} holdoutFullUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdPost(id: string, holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPost(id, holdoutFullUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdPost(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPostRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPost(requestParameters.id, requestParameters.holdoutFullUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Retrieve Pulse Results
-     * @param {string} id id
-     * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
-     * @param {string} [confidence] Confidence interval (0-100)
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsIdPulseResultsGet(id: string, cuped?: string, confidence?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPulseResultsGet(id, cuped, confidence, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsIdPulseResultsGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPulseResultsGet(requestParameters.id, requestParameters.cuped, requestParameters.confidence, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create holdout
-     * @param {HoldoutCreateContractDto} holdoutCreateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {HoldoutsApiConsoleV1HoldoutsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1HoldoutsPost(holdoutCreateContractDto: HoldoutCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsPost(holdoutCreateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1HoldoutsPost(requestParameters: HoldoutsApiConsoleV1HoldoutsPostRequest, options?: RawAxiosRequestConfig) {
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsPost(requestParameters.holdoutCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -1087,200 +1087,476 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
         /**
          * 
          * @summary List Dynamic Configs
-         * @param {string | null} [releasePipelineID] The release pipeline ID associated with the dynamic config
-         * @param {string | null} [creatorName] Name of the creator.
-         * @param {string | null} [creatorID] ID of the user who created the entity.
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsGet(releasePipelineID?: string | null, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsGet200Response> {
-            return localVarFp.consoleV1DynamicConfigsGet(releasePipelineID, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsGet200Response> {
+            return localVarFp.consoleV1DynamicConfigsGet(requestParameters.releasePipelineID, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Archive Dynamic Config
-         * @param {string} id id
-         * @param {ArchiveSchemaDto} archiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdArchivePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdArchivePut(id: string, archiveSchemaDto: ArchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdArchivePut(id, archiveSchemaDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdArchivePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Dynamic Config
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdDelete200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdDelete(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdDelete200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Disable Dynamic Config
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdDisablePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdDisablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdDisablePut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdDisablePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdDisablePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdDisablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Enable Dynamic Config
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdEnablePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdEnablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdEnablePut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdEnablePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdEnablePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdEnablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Dynamic Config
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdGet200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdGet200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Partially Update Dynamic Config
-         * @param {string} id id
-         * @param {DynamicConfigPartialUpdateDto} dynamicConfigPartialUpdateDto 
-         * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdPatch(id: string, dynamicConfigPartialUpdateDto: DynamicConfigPartialUpdateDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdPatch(id, dynamicConfigPartialUpdateDto, dryRun, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdPatch(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdPatch(requestParameters.id, requestParameters.dynamicConfigPartialUpdateDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Fully Update Dynamic Config
-         * @param {string} id id
-         * @param {DynamicConfigFullUpdateDto} dynamicConfigFullUpdateDto 
-         * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdPost(id: string, dynamicConfigFullUpdateDto: DynamicConfigFullUpdateDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdPost(id, dynamicConfigFullUpdateDto, dryRun, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdPost(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdPost(requestParameters.id, requestParameters.dynamicConfigFullUpdateDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Commit Dynamic Config Review
-         * @param {string} id 
-         * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdReviewsReviewIDCommitPutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdReviewsReviewIDCommitPut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdReviewsReviewIDCommitPut200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Dynamic Config Rule
-         * @param {string} id Dynamic Config ID
-         * @param {string} ruleId Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRuleRuleIdDelete(id: string, ruleId: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdDelete200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdDelete(id, ruleId, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdDelete200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters.id, requestParameters.ruleId, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Specific Dynamic Config Rule
-         * @param {string} id Dynamic Config ID
-         * @param {string} ruleId Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRuleRuleIdGet(id: string, ruleId: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdGet200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdGet(id, ruleId, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdGet200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters.id, requestParameters.ruleId, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Dynamic Config Rule By Id
-         * @param {string} id Dynamic Config ID
-         * @param {string} ruleId Rule ID
-         * @param {DynamicConfigRulePartialDto} dynamicConfigRulePartialDto 
-         * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRuleRuleIdPatch(id: string, ruleId: string, dynamicConfigRulePartialDto: DynamicConfigRulePartialDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdPatch200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdPatch(id, ruleId, dynamicConfigRulePartialDto, dryRun, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdPatch200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters.id, requestParameters.ruleId, requestParameters.dynamicConfigRulePartialDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Dynamic Config Rules
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRulesGet200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdRulesGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdRulesGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRulesGet200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Unarchive Dynamic Config
-         * @param {string} id id
-         * @param {UnarchiveSchemaDto} unarchiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdUnarchivePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdUnarchivePut(id: string, unarchiveSchemaDto: UnarchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdUnarchivePut(id, unarchiveSchemaDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdUnarchivePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdUnarchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Dynamic Config Versions
-         * @param {string} id id
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdVersionsGet200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdVersionsGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsIdVersionsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdVersionsGet200Response> {
+            return localVarFp.consoleV1DynamicConfigsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Dynamic Config
-         * @param {DynamicConfigCreateDto} dynamicConfigCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {DynamicConfigsApiConsoleV1DynamicConfigsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsPost(dynamicConfigCreateDto: DynamicConfigCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsPost201Response> {
-            return localVarFp.consoleV1DynamicConfigsPost(dynamicConfigCreateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1DynamicConfigsPost(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsPost201Response> {
+            return localVarFp.consoleV1DynamicConfigsPost(requestParameters.dynamicConfigCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1DynamicConfigsGet operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsGetRequest {
+    /**
+     * The release pipeline ID associated with the dynamic config
+     */
+    readonly releasePipelineID?: string | null
+
+    /**
+     * Name of the creator.
+     */
+    readonly creatorName?: string | null
+
+    /**
+     * ID of the user who created the entity.
+     */
+    readonly creatorID?: string | null
+
+    /**
+     * Filter by tags
+     */
+    readonly tags?: ConsoleV1AuditLogsGetTagsParameter
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdArchivePut operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdArchivePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly archiveSchemaDto: ArchiveSchemaDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdDelete operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdDisablePut operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdDisablePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdEnablePut operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdEnablePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdGet operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdPatch operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly dynamicConfigPartialUpdateDto: DynamicConfigPartialUpdateDto
+
+    /**
+     * Skips persisting updates to the entity (used to validate that inputs are correct)
+     */
+    readonly dryRun?: boolean
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdPost operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly dynamicConfigFullUpdateDto: DynamicConfigFullUpdateDto
+
+    /**
+     * Skips persisting updates to the entity (used to validate that inputs are correct)
+     */
+    readonly dryRun?: boolean
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdReviewsReviewIDCommitPut operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdReviewsReviewIDCommitPutRequest {
+    readonly id: string
+
+    readonly reviewID: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdRuleRuleIdDelete operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdDeleteRequest {
+    /**
+     * Dynamic Config ID
+     */
+    readonly id: string
+
+    /**
+     * Rule ID
+     */
+    readonly ruleId: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdRuleRuleIdGet operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdGetRequest {
+    /**
+     * Dynamic Config ID
+     */
+    readonly id: string
+
+    /**
+     * Rule ID
+     */
+    readonly ruleId: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdRuleRuleIdPatch operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdPatchRequest {
+    /**
+     * Dynamic Config ID
+     */
+    readonly id: string
+
+    /**
+     * Rule ID
+     */
+    readonly ruleId: string
+
+    readonly dynamicConfigRulePartialDto: DynamicConfigRulePartialDto
+
+    /**
+     * Skips persisting updates to the entity (used to validate that inputs are correct)
+     */
+    readonly dryRun?: boolean
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdRulesGet operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdUnarchivePut operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdUnarchivePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly unarchiveSchemaDto: UnarchiveSchemaDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsIdVersionsGet operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1DynamicConfigsPost operation in DynamicConfigsApi.
+ */
+export interface DynamicConfigsApiConsoleV1DynamicConfigsPostRequest {
+    readonly dynamicConfigCreateDto: DynamicConfigCreateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * DynamicConfigsApi - object-oriented interface
@@ -1289,212 +1565,177 @@ export class DynamicConfigsApi extends BaseAPI {
     /**
      * 
      * @summary List Dynamic Configs
-     * @param {string | null} [releasePipelineID] The release pipeline ID associated with the dynamic config
-     * @param {string | null} [creatorName] Name of the creator.
-     * @param {string | null} [creatorID] ID of the user who created the entity.
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsGet(releasePipelineID?: string | null, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsGet(releasePipelineID, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsGet(requestParameters.releasePipelineID, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Archive Dynamic Config
-     * @param {string} id id
-     * @param {ArchiveSchemaDto} archiveSchemaDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdArchivePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdArchivePut(id: string, archiveSchemaDto: ArchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdArchivePut(id, archiveSchemaDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdArchivePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdArchivePutRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Dynamic Config
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdDelete(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Disable Dynamic Config
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdDisablePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdDisablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdDisablePut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdDisablePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdDisablePutRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdDisablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Enable Dynamic Config
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdEnablePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdEnablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdEnablePut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdEnablePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdEnablePutRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdEnablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Dynamic Config
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdGetRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Partially Update Dynamic Config
-     * @param {string} id id
-     * @param {DynamicConfigPartialUpdateDto} dynamicConfigPartialUpdateDto 
-     * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdPatch(id: string, dynamicConfigPartialUpdateDto: DynamicConfigPartialUpdateDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdPatch(id, dynamicConfigPartialUpdateDto, dryRun, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdPatch(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdPatch(requestParameters.id, requestParameters.dynamicConfigPartialUpdateDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Fully Update Dynamic Config
-     * @param {string} id id
-     * @param {DynamicConfigFullUpdateDto} dynamicConfigFullUpdateDto 
-     * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdPost(id: string, dynamicConfigFullUpdateDto: DynamicConfigFullUpdateDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdPost(id, dynamicConfigFullUpdateDto, dryRun, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdPost(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdPostRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdPost(requestParameters.id, requestParameters.dynamicConfigFullUpdateDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Commit Dynamic Config Review
-     * @param {string} id 
-     * @param {string} reviewID 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdReviewsReviewIDCommitPutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Dynamic Config Rule
-     * @param {string} id Dynamic Config ID
-     * @param {string} ruleId Rule ID
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdRuleRuleIdDelete(id: string, ruleId: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdDelete(id, ruleId, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters.id, requestParameters.ruleId, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Specific Dynamic Config Rule
-     * @param {string} id Dynamic Config ID
-     * @param {string} ruleId Rule ID
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdRuleRuleIdGet(id: string, ruleId: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdGet(id, ruleId, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdGetRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters.id, requestParameters.ruleId, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Dynamic Config Rule By Id
-     * @param {string} id Dynamic Config ID
-     * @param {string} ruleId Rule ID
-     * @param {DynamicConfigRulePartialDto} dynamicConfigRulePartialDto 
-     * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdRuleRuleIdPatch(id: string, ruleId: string, dynamicConfigRulePartialDto: DynamicConfigRulePartialDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdPatch(id, ruleId, dynamicConfigRulePartialDto, dryRun, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters.id, requestParameters.ruleId, requestParameters.dynamicConfigRulePartialDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Dynamic Config Rules
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRulesGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdRulesGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Unarchive Dynamic Config
-     * @param {string} id id
-     * @param {UnarchiveSchemaDto} unarchiveSchemaDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdUnarchivePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdUnarchivePut(id: string, unarchiveSchemaDto: UnarchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdUnarchivePut(id, unarchiveSchemaDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdUnarchivePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdUnarchivePutRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Dynamic Config Versions
-     * @param {string} id id
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdVersionsGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsIdVersionsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Dynamic Config
-     * @param {DynamicConfigCreateDto} dynamicConfigCreateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {DynamicConfigsApiConsoleV1DynamicConfigsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1DynamicConfigsPost(dynamicConfigCreateDto: DynamicConfigCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsPost(dynamicConfigCreateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1DynamicConfigsPost(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsPostRequest, options?: RawAxiosRequestConfig) {
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsPost(requestParameters.dynamicConfigCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

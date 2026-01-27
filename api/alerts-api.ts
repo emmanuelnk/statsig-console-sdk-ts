@@ -113,17 +113,35 @@ export const AlertsApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary List Topline Alerts
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AlertsApiConsoleV1AlertsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AlertsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AlertsGet200Response> {
-            return localVarFp.consoleV1AlertsGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AlertsGet(requestParameters: AlertsApiConsoleV1AlertsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AlertsGet200Response> {
+            return localVarFp.consoleV1AlertsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1AlertsGet operation in AlertsApi.
+ */
+export interface AlertsApiConsoleV1AlertsGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * AlertsApi - object-oriented interface
@@ -132,14 +150,12 @@ export class AlertsApi extends BaseAPI {
     /**
      * 
      * @summary List Topline Alerts
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AlertsApiConsoleV1AlertsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AlertsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AlertsApiFp(this.configuration).consoleV1AlertsGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AlertsGet(requestParameters: AlertsApiConsoleV1AlertsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return AlertsApiFp(this.configuration).consoleV1AlertsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

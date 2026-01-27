@@ -480,86 +480,173 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
         /**
          * 
          * @summary List Keys
-         * @param {string} [primaryTargetApp] 
-         * @param {string} [environment] 
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {KeysApiConsoleV1KeysGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysGet(primaryTargetApp?: string, environment?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysGet200Response> {
-            return localVarFp.consoleV1KeysGet(primaryTargetApp, environment, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1KeysGet(requestParameters: KeysApiConsoleV1KeysGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysGet200Response> {
+            return localVarFp.consoleV1KeysGet(requestParameters.primaryTargetApp, requestParameters.environment, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Deactivate Key
-         * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {KeysApiConsoleV1KeysIdDeactivatePatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdDeactivatePatch(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdDeactivatePatch200Response> {
-            return localVarFp.consoleV1KeysIdDeactivatePatch(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1KeysIdDeactivatePatch(requestParameters: KeysApiConsoleV1KeysIdDeactivatePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdDeactivatePatch200Response> {
+            return localVarFp.consoleV1KeysIdDeactivatePatch(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Key
-         * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {KeysApiConsoleV1KeysIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdDelete200Response> {
-            return localVarFp.consoleV1KeysIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1KeysIdDelete(requestParameters: KeysApiConsoleV1KeysIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdDelete200Response> {
+            return localVarFp.consoleV1KeysIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Key
-         * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {KeysApiConsoleV1KeysIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdGet200Response> {
-            return localVarFp.consoleV1KeysIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1KeysIdGet(requestParameters: KeysApiConsoleV1KeysIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdGet200Response> {
+            return localVarFp.consoleV1KeysIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Key
-         * @param {string} id 
-         * @param {KeyUpdateContractDto} keyUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {KeysApiConsoleV1KeysIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdPatch(id: string, keyUpdateContractDto: KeyUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdPatch200Response> {
-            return localVarFp.consoleV1KeysIdPatch(id, keyUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1KeysIdPatch(requestParameters: KeysApiConsoleV1KeysIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdPatch200Response> {
+            return localVarFp.consoleV1KeysIdPatch(requestParameters.id, requestParameters.keyUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Rotate Key
-         * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {KeysApiConsoleV1KeysIdRotatePatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdRotatePatch(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdRotatePatch200Response> {
-            return localVarFp.consoleV1KeysIdRotatePatch(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1KeysIdRotatePatch(requestParameters: KeysApiConsoleV1KeysIdRotatePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdRotatePatch200Response> {
+            return localVarFp.consoleV1KeysIdRotatePatch(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Key
-         * @param {KeyCreateContractDto} keyCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {KeysApiConsoleV1KeysPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysPost(keyCreateContractDto: KeyCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysPost200Response> {
-            return localVarFp.consoleV1KeysPost(keyCreateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1KeysPost(requestParameters: KeysApiConsoleV1KeysPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysPost200Response> {
+            return localVarFp.consoleV1KeysPost(requestParameters.keyCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1KeysGet operation in KeysApi.
+ */
+export interface KeysApiConsoleV1KeysGetRequest {
+    readonly primaryTargetApp?: string
+
+    readonly environment?: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1KeysIdDeactivatePatch operation in KeysApi.
+ */
+export interface KeysApiConsoleV1KeysIdDeactivatePatchRequest {
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1KeysIdDelete operation in KeysApi.
+ */
+export interface KeysApiConsoleV1KeysIdDeleteRequest {
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1KeysIdGet operation in KeysApi.
+ */
+export interface KeysApiConsoleV1KeysIdGetRequest {
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1KeysIdPatch operation in KeysApi.
+ */
+export interface KeysApiConsoleV1KeysIdPatchRequest {
+    readonly id: string
+
+    readonly keyUpdateContractDto: KeyUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1KeysIdRotatePatch operation in KeysApi.
+ */
+export interface KeysApiConsoleV1KeysIdRotatePatchRequest {
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1KeysPost operation in KeysApi.
+ */
+export interface KeysApiConsoleV1KeysPostRequest {
+    readonly keyCreateContractDto: KeyCreateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * KeysApi - object-oriented interface
@@ -568,89 +655,78 @@ export class KeysApi extends BaseAPI {
     /**
      * 
      * @summary List Keys
-     * @param {string} [primaryTargetApp] 
-     * @param {string} [environment] 
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {KeysApiConsoleV1KeysGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1KeysGet(primaryTargetApp?: string, environment?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysGet(primaryTargetApp, environment, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1KeysGet(requestParameters: KeysApiConsoleV1KeysGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return KeysApiFp(this.configuration).consoleV1KeysGet(requestParameters.primaryTargetApp, requestParameters.environment, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Deactivate Key
-     * @param {string} id 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {KeysApiConsoleV1KeysIdDeactivatePatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1KeysIdDeactivatePatch(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdDeactivatePatch(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1KeysIdDeactivatePatch(requestParameters: KeysApiConsoleV1KeysIdDeactivatePatchRequest, options?: RawAxiosRequestConfig) {
+        return KeysApiFp(this.configuration).consoleV1KeysIdDeactivatePatch(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Key
-     * @param {string} id 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {KeysApiConsoleV1KeysIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1KeysIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1KeysIdDelete(requestParameters: KeysApiConsoleV1KeysIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return KeysApiFp(this.configuration).consoleV1KeysIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Key
-     * @param {string} id 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {KeysApiConsoleV1KeysIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1KeysIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1KeysIdGet(requestParameters: KeysApiConsoleV1KeysIdGetRequest, options?: RawAxiosRequestConfig) {
+        return KeysApiFp(this.configuration).consoleV1KeysIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Key
-     * @param {string} id 
-     * @param {KeyUpdateContractDto} keyUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {KeysApiConsoleV1KeysIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1KeysIdPatch(id: string, keyUpdateContractDto: KeyUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdPatch(id, keyUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1KeysIdPatch(requestParameters: KeysApiConsoleV1KeysIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return KeysApiFp(this.configuration).consoleV1KeysIdPatch(requestParameters.id, requestParameters.keyUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Rotate Key
-     * @param {string} id 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {KeysApiConsoleV1KeysIdRotatePatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1KeysIdRotatePatch(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdRotatePatch(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1KeysIdRotatePatch(requestParameters: KeysApiConsoleV1KeysIdRotatePatchRequest, options?: RawAxiosRequestConfig) {
+        return KeysApiFp(this.configuration).consoleV1KeysIdRotatePatch(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Key
-     * @param {KeyCreateContractDto} keyCreateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {KeysApiConsoleV1KeysPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1KeysPost(keyCreateContractDto: KeyCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysPost(keyCreateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1KeysPost(requestParameters: KeysApiConsoleV1KeysPostRequest, options?: RawAxiosRequestConfig) {
+        return KeysApiFp(this.configuration).consoleV1KeysPost(requestParameters.keyCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -488,87 +488,199 @@ export const MetricsWarehouseNativeApiFactory = function (configuration?: Config
         /**
          * 
          * @summary Reload metric data
-         * @param {string} id id
-         * @param {ConsoleV1MetricsIdReloadPostIncrementalEnum} [incremental] Incremental reload of the metric
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsWarehouseNativeApiConsoleV1MetricsIdReloadPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdReloadPost(id: string, incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdReloadPost200Response> {
-            return localVarFp.consoleV1MetricsIdReloadPost(id, incremental, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdReloadPost(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsIdReloadPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdReloadPost200Response> {
+            return localVarFp.consoleV1MetricsIdReloadPost(requestParameters.id, requestParameters.incremental, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List metric source
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceListGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceListGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceListGet200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceListGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceListGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceListGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceListGet200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Metric Source
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameDelete200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNameDelete(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceNameDelete(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameDelete200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Metric Source
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameGet200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNameGet(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceNameGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameGet200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Metric Source Metrics
-         * @param {string} name name
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameMetricsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameMetricsGet(name: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameMetricsGet200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNameMetricsGet(name, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceNameMetricsGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameMetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameMetricsGet200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Metric Source
-         * @param {string} name name
-         * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNamePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNamePost(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNamePost200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNamePost(name, metricSourceUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceNamePost(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNamePost200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Metric Source
-         * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourcePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourcePost201Response> {
-            return localVarFp.consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourcePost(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourcePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourcePost201Response> {
+            return localVarFp.consoleV1MetricsMetricSourcePost(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1MetricsIdReloadPost operation in MetricsWarehouseNativeApi.
+ */
+export interface MetricsWarehouseNativeApiConsoleV1MetricsIdReloadPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Incremental reload of the metric
+     */
+    readonly incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceListGet operation in MetricsWarehouseNativeApi.
+ */
+export interface MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceListGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceNameDelete operation in MetricsWarehouseNativeApi.
+ */
+export interface MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameDeleteRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceNameGet operation in MetricsWarehouseNativeApi.
+ */
+export interface MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameGetRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceNameMetricsGet operation in MetricsWarehouseNativeApi.
+ */
+export interface MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameMetricsGetRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceNamePost operation in MetricsWarehouseNativeApi.
+ */
+export interface MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNamePostRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    readonly metricSourceUpdateContractDto: MetricSourceUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourcePost operation in MetricsWarehouseNativeApi.
+ */
+export interface MetricsWarehouseNativeApiConsoleV1MetricsMetricSourcePostRequest {
+    readonly metricSourceCreationContractDto: MetricSourceCreationContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * MetricsWarehouseNativeApi - object-oriented interface
@@ -577,90 +689,78 @@ export class MetricsWarehouseNativeApi extends BaseAPI {
     /**
      * 
      * @summary Reload metric data
-     * @param {string} id id
-     * @param {ConsoleV1MetricsIdReloadPostIncrementalEnum} [incremental] Incremental reload of the metric
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsWarehouseNativeApiConsoleV1MetricsIdReloadPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdReloadPost(id: string, incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsIdReloadPost(id, incremental, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdReloadPost(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsIdReloadPostRequest, options?: RawAxiosRequestConfig) {
+        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsIdReloadPost(requestParameters.id, requestParameters.incremental, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List metric source
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceListGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceListGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceListGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceListGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceListGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Metric Source
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceNameDelete(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceNameDelete(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameDeleteRequest, options?: RawAxiosRequestConfig) {
+        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Metric Source
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceNameGet(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceNameGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Metric Source Metrics
-     * @param {string} name name
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameMetricsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceNameMetricsGet(name: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceNameMetricsGet(name, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceNameMetricsGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameMetricsGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Metric Source
-     * @param {string} name name
-     * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNamePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceNamePost(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceNamePost(name, metricSourceUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceNamePost(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNamePostRequest, options?: RawAxiosRequestConfig) {
+        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourceNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Metric Source
-     * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsWarehouseNativeApiConsoleV1MetricsMetricSourcePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourcePost(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourcePostRequest, options?: RawAxiosRequestConfig) {
+        return MetricsWarehouseNativeApiFp(this.configuration).consoleV1MetricsMetricSourcePost(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

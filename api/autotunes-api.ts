@@ -600,108 +600,238 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary List Autotune
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesGet200Response> {
-            return localVarFp.consoleV1AutotunesGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesGet(requestParameters: AutotunesApiConsoleV1AutotunesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesGet200Response> {
+            return localVarFp.consoleV1AutotunesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Autotune
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdDelete200Response> {
-            return localVarFp.consoleV1AutotunesIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesIdDelete(requestParameters: AutotunesApiConsoleV1AutotunesIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdDelete200Response> {
+            return localVarFp.consoleV1AutotunesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Autotune
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdGet200Response> {
-            return localVarFp.consoleV1AutotunesIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesIdGet(requestParameters: AutotunesApiConsoleV1AutotunesIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdGet200Response> {
+            return localVarFp.consoleV1AutotunesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Finish Experiment Early
-         * @param {string} id id
-         * @param {ExperimentStatusUpdateDto} experimentStatusUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesIdMakeDecisionPutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdMakeDecisionPut(id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdMakeDecisionPut200Response> {
-            return localVarFp.consoleV1AutotunesIdMakeDecisionPut(id, experimentStatusUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesIdMakeDecisionPut(requestParameters: AutotunesApiConsoleV1AutotunesIdMakeDecisionPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdMakeDecisionPut200Response> {
+            return localVarFp.consoleV1AutotunesIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * Update selected properties of the experiment
          * @summary Partially Update Autotune
-         * @param {string} id id
-         * @param {AutotunePartialUpdateDto} autotunePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdPatch(id: string, autotunePartialUpdateDto: AutotunePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdPatch200Response> {
-            return localVarFp.consoleV1AutotunesIdPatch(id, autotunePartialUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesIdPatch(requestParameters: AutotunesApiConsoleV1AutotunesIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdPatch200Response> {
+            return localVarFp.consoleV1AutotunesIdPatch(requestParameters.id, requestParameters.autotunePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * Update all properties of the experiment
          * @summary Fully Update Autotune
-         * @param {string} id id
-         * @param {AutotuneFullUpdateDto} autotuneFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesIdPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdPost(id: string, autotuneFullUpdateDto: AutotuneFullUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdPost200Response> {
-            return localVarFp.consoleV1AutotunesIdPost(id, autotuneFullUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesIdPost(requestParameters: AutotunesApiConsoleV1AutotunesIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdPost200Response> {
+            return localVarFp.consoleV1AutotunesIdPost(requestParameters.id, requestParameters.autotuneFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Reset Experiment
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesIdResetPutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdResetPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdResetPut200Response> {
-            return localVarFp.consoleV1AutotunesIdResetPut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesIdResetPut(requestParameters: AutotunesApiConsoleV1AutotunesIdResetPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdResetPut200Response> {
+            return localVarFp.consoleV1AutotunesIdResetPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Start Autotune Experiment
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesIdStartPutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdStartPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdStartPut200Response> {
-            return localVarFp.consoleV1AutotunesIdStartPut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesIdStartPut(requestParameters: AutotunesApiConsoleV1AutotunesIdStartPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdStartPut200Response> {
+            return localVarFp.consoleV1AutotunesIdStartPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Autotune
-         * @param {AutotuneCreateDto} autotuneCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AutotunesApiConsoleV1AutotunesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesPost(autotuneCreateDto: AutotuneCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesPost201Response> {
-            return localVarFp.consoleV1AutotunesPost(autotuneCreateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AutotunesPost(requestParameters: AutotunesApiConsoleV1AutotunesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesPost201Response> {
+            return localVarFp.consoleV1AutotunesPost(requestParameters.autotuneCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1AutotunesGet operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1AutotunesIdDelete operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1AutotunesIdGet operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1AutotunesIdMakeDecisionPut operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesIdMakeDecisionPutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly experimentStatusUpdateDto: ExperimentStatusUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1AutotunesIdPatch operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly autotunePartialUpdateDto: AutotunePartialUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1AutotunesIdPost operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesIdPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly autotuneFullUpdateDto: AutotuneFullUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1AutotunesIdResetPut operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesIdResetPutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1AutotunesIdStartPut operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesIdStartPutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1AutotunesPost operation in AutotunesApi.
+ */
+export interface AutotunesApiConsoleV1AutotunesPostRequest {
+    readonly autotuneCreateDto: AutotuneCreateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * AutotunesApi - object-oriented interface
@@ -710,113 +840,100 @@ export class AutotunesApi extends BaseAPI {
     /**
      * 
      * @summary List Autotune
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesGet(requestParameters: AutotunesApiConsoleV1AutotunesGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Autotune
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesIdDelete(requestParameters: AutotunesApiConsoleV1AutotunesIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Autotune
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesIdGet(requestParameters: AutotunesApiConsoleV1AutotunesIdGetRequest, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Finish Experiment Early
-     * @param {string} id id
-     * @param {ExperimentStatusUpdateDto} experimentStatusUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesIdMakeDecisionPutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesIdMakeDecisionPut(id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdMakeDecisionPut(id, experimentStatusUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesIdMakeDecisionPut(requestParameters: AutotunesApiConsoleV1AutotunesIdMakeDecisionPutRequest, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Update selected properties of the experiment
      * @summary Partially Update Autotune
-     * @param {string} id id
-     * @param {AutotunePartialUpdateDto} autotunePartialUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesIdPatch(id: string, autotunePartialUpdateDto: AutotunePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdPatch(id, autotunePartialUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesIdPatch(requestParameters: AutotunesApiConsoleV1AutotunesIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdPatch(requestParameters.id, requestParameters.autotunePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Update all properties of the experiment
      * @summary Fully Update Autotune
-     * @param {string} id id
-     * @param {AutotuneFullUpdateDto} autotuneFullUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesIdPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesIdPost(id: string, autotuneFullUpdateDto: AutotuneFullUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdPost(id, autotuneFullUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesIdPost(requestParameters: AutotunesApiConsoleV1AutotunesIdPostRequest, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdPost(requestParameters.id, requestParameters.autotuneFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Reset Experiment
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesIdResetPutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesIdResetPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdResetPut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesIdResetPut(requestParameters: AutotunesApiConsoleV1AutotunesIdResetPutRequest, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdResetPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Start Autotune Experiment
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesIdStartPutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesIdStartPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdStartPut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesIdStartPut(requestParameters: AutotunesApiConsoleV1AutotunesIdStartPutRequest, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdStartPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Autotune
-     * @param {AutotuneCreateDto} autotuneCreateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AutotunesApiConsoleV1AutotunesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AutotunesPost(autotuneCreateDto: AutotuneCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesPost(autotuneCreateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AutotunesPost(requestParameters: AutotunesApiConsoleV1AutotunesPostRequest, options?: RawAxiosRequestConfig) {
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesPost(requestParameters.autotuneCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

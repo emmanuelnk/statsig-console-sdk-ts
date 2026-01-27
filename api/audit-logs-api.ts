@@ -169,26 +169,59 @@ export const AuditLogsApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary List Audit Logs
-         * @param {string} [id] 
-         * @param {ConsoleV1AuditLogsGetSortKeyEnum} [sortKey] 
-         * @param {ConsoleV1AuditLogsGetSortOrderEnum} [sortOrder] 
-         * @param {string} [latestID] 
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] 
-         * @param {ConsoleV1AuditLogsGetActionTypeEnum} [actionType] 
-         * @param {Array<ConsoleV1AuditLogsGetActionTypesEnum>} [actionTypes] 
-         * @param {string} [startDate] Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [endDate] Expected valid date in the form of YYYY-MM-DD
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {AuditLogsApiConsoleV1AuditLogsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AuditLogsGet(id?: string, sortKey?: ConsoleV1AuditLogsGetSortKeyEnum, sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum, latestID?: string, tags?: ConsoleV1AuditLogsGetTagsParameter, actionType?: ConsoleV1AuditLogsGetActionTypeEnum, actionTypes?: Array<ConsoleV1AuditLogsGetActionTypesEnum>, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AuditLogsGet200Response> {
-            return localVarFp.consoleV1AuditLogsGet(id, sortKey, sortOrder, latestID, tags, actionType, actionTypes, startDate, endDate, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1AuditLogsGet(requestParameters: AuditLogsApiConsoleV1AuditLogsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AuditLogsGet200Response> {
+            return localVarFp.consoleV1AuditLogsGet(requestParameters.id, requestParameters.sortKey, requestParameters.sortOrder, requestParameters.latestID, requestParameters.tags, requestParameters.actionType, requestParameters.actionTypes, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1AuditLogsGet operation in AuditLogsApi.
+ */
+export interface AuditLogsApiConsoleV1AuditLogsGetRequest {
+    readonly id?: string
+
+    readonly sortKey?: ConsoleV1AuditLogsGetSortKeyEnum
+
+    readonly sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum
+
+    readonly latestID?: string
+
+    readonly tags?: ConsoleV1AuditLogsGetTagsParameter
+
+    readonly actionType?: ConsoleV1AuditLogsGetActionTypeEnum
+
+    readonly actionTypes?: Array<ConsoleV1AuditLogsGetActionTypesEnum>
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly startDate?: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly endDate?: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * AuditLogsApi - object-oriented interface
@@ -197,23 +230,12 @@ export class AuditLogsApi extends BaseAPI {
     /**
      * 
      * @summary List Audit Logs
-     * @param {string} [id] 
-     * @param {ConsoleV1AuditLogsGetSortKeyEnum} [sortKey] 
-     * @param {ConsoleV1AuditLogsGetSortOrderEnum} [sortOrder] 
-     * @param {string} [latestID] 
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] 
-     * @param {ConsoleV1AuditLogsGetActionTypeEnum} [actionType] 
-     * @param {Array<ConsoleV1AuditLogsGetActionTypesEnum>} [actionTypes] 
-     * @param {string} [startDate] Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [endDate] Expected valid date in the form of YYYY-MM-DD
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {AuditLogsApiConsoleV1AuditLogsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1AuditLogsGet(id?: string, sortKey?: ConsoleV1AuditLogsGetSortKeyEnum, sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum, latestID?: string, tags?: ConsoleV1AuditLogsGetTagsParameter, actionType?: ConsoleV1AuditLogsGetActionTypeEnum, actionTypes?: Array<ConsoleV1AuditLogsGetActionTypesEnum>, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return AuditLogsApiFp(this.configuration).consoleV1AuditLogsGet(id, sortKey, sortOrder, latestID, tags, actionType, actionTypes, startDate, endDate, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1AuditLogsGet(requestParameters: AuditLogsApiConsoleV1AuditLogsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return AuditLogsApiFp(this.configuration).consoleV1AuditLogsGet(requestParameters.id, requestParameters.sortKey, requestParameters.sortOrder, requestParameters.latestID, requestParameters.tags, requestParameters.actionType, requestParameters.actionTypes, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

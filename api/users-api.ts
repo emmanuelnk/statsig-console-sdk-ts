@@ -659,119 +659,263 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Get user by email
-         * @param {string} email email
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersEmailGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersEmailGet(email: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersEmailGet200Response> {
-            return localVarFp.consoleV1UsersEmailGet(email, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersEmailGet(requestParameters: UsersApiConsoleV1UsersEmailGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersEmailGet200Response> {
+            return localVarFp.consoleV1UsersEmailGet(requestParameters.email, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update user
-         * @param {string} email email
-         * @param {UserUpdateDto} userUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersEmailPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersEmailPost(email: string, userUpdateDto: UserUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersEmailPost200Response> {
-            return localVarFp.consoleV1UsersEmailPost(email, userUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersEmailPost(requestParameters: UsersApiConsoleV1UsersEmailPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersEmailPost200Response> {
+            return localVarFp.consoleV1UsersEmailPost(requestParameters.email, requestParameters.userUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Users
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersGet200Response> {
-            return localVarFp.consoleV1UsersGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersGet(requestParameters: UsersApiConsoleV1UsersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersGet200Response> {
+            return localVarFp.consoleV1UsersGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get user by ID
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersIdIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersIdIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersEmailGet200Response> {
-            return localVarFp.consoleV1UsersIdIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersIdIdGet(requestParameters: UsersApiConsoleV1UsersIdIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersEmailGet200Response> {
+            return localVarFp.consoleV1UsersIdIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Invite user. To avoid spamming, invitation emails are not sent. Invitee will see invitation notification in-app after logging in.
-         * @param {UserInvitesDto} userInvitesDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersInvitePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersInvitePost(userInvitesDto: UserInvitesDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersInvitePost200Response> {
-            return localVarFp.consoleV1UsersInvitePost(userInvitesDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersInvitePost(requestParameters: UsersApiConsoleV1UsersInvitePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersInvitePost200Response> {
+            return localVarFp.consoleV1UsersInvitePost(requestParameters.userInvitesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Teams
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersTeamsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersTeamsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsGet200Response> {
-            return localVarFp.consoleV1UsersTeamsGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersTeamsGet(requestParameters: UsersApiConsoleV1UsersTeamsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsGet200Response> {
+            return localVarFp.consoleV1UsersTeamsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Team
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersTeamsIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersTeamsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsIdDelete200Response> {
-            return localVarFp.consoleV1UsersTeamsIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersTeamsIdDelete(requestParameters: UsersApiConsoleV1UsersTeamsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsIdDelete200Response> {
+            return localVarFp.consoleV1UsersTeamsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Team
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersTeamsIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersTeamsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsIdGet200Response> {
-            return localVarFp.consoleV1UsersTeamsIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersTeamsIdGet(requestParameters: UsersApiConsoleV1UsersTeamsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsIdGet200Response> {
+            return localVarFp.consoleV1UsersTeamsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Team. Ops: Replace. Use GET for current data if you intent to Add.
-         * @param {string} id id
-         * @param {TeamPartialUpdateDto} teamPartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersTeamsIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersTeamsIdPatch(id: string, teamPartialUpdateDto: TeamPartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsIdPatch200Response> {
-            return localVarFp.consoleV1UsersTeamsIdPatch(id, teamPartialUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersTeamsIdPatch(requestParameters: UsersApiConsoleV1UsersTeamsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsIdPatch200Response> {
+            return localVarFp.consoleV1UsersTeamsIdPatch(requestParameters.id, requestParameters.teamPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Team
-         * @param {TeamCreationDto} teamCreationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsersApiConsoleV1UsersTeamsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersTeamsPost(teamCreationDto: TeamCreationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsPost200Response> {
-            return localVarFp.consoleV1UsersTeamsPost(teamCreationDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UsersTeamsPost(requestParameters: UsersApiConsoleV1UsersTeamsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsPost200Response> {
+            return localVarFp.consoleV1UsersTeamsPost(requestParameters.teamCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1UsersEmailGet operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersEmailGetRequest {
+    /**
+     * email
+     */
+    readonly email: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersEmailPost operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersEmailPostRequest {
+    /**
+     * email
+     */
+    readonly email: string
+
+    readonly userUpdateDto: UserUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersGet operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersIdIdGet operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersIdIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersInvitePost operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersInvitePostRequest {
+    readonly userInvitesDto: UserInvitesDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersTeamsGet operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersTeamsGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersTeamsIdDelete operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersTeamsIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersTeamsIdGet operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersTeamsIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersTeamsIdPatch operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersTeamsIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly teamPartialUpdateDto: TeamPartialUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UsersTeamsPost operation in UsersApi.
+ */
+export interface UsersApiConsoleV1UsersTeamsPostRequest {
+    readonly teamCreationDto: TeamCreationDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * UsersApi - object-oriented interface
@@ -780,125 +924,111 @@ export class UsersApi extends BaseAPI {
     /**
      * 
      * @summary Get user by email
-     * @param {string} email email
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersEmailGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersEmailGet(email: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersEmailGet(email, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersEmailGet(requestParameters: UsersApiConsoleV1UsersEmailGetRequest, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersEmailGet(requestParameters.email, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update user
-     * @param {string} email email
-     * @param {UserUpdateDto} userUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersEmailPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersEmailPost(email: string, userUpdateDto: UserUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersEmailPost(email, userUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersEmailPost(requestParameters: UsersApiConsoleV1UsersEmailPostRequest, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersEmailPost(requestParameters.email, requestParameters.userUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Users
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersGet(requestParameters: UsersApiConsoleV1UsersGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get user by ID
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersIdIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersIdIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersIdIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersIdIdGet(requestParameters: UsersApiConsoleV1UsersIdIdGetRequest, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersIdIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Invite user. To avoid spamming, invitation emails are not sent. Invitee will see invitation notification in-app after logging in.
-     * @param {UserInvitesDto} userInvitesDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersInvitePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersInvitePost(userInvitesDto: UserInvitesDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersInvitePost(userInvitesDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersInvitePost(requestParameters: UsersApiConsoleV1UsersInvitePostRequest, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersInvitePost(requestParameters.userInvitesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Teams
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersTeamsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersTeamsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersTeamsGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersTeamsGet(requestParameters: UsersApiConsoleV1UsersTeamsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersTeamsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Team
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersTeamsIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersTeamsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersTeamsIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersTeamsIdDelete(requestParameters: UsersApiConsoleV1UsersTeamsIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersTeamsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Team
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersTeamsIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersTeamsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersTeamsIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersTeamsIdGet(requestParameters: UsersApiConsoleV1UsersTeamsIdGetRequest, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersTeamsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Team. Ops: Replace. Use GET for current data if you intent to Add.
-     * @param {string} id id
-     * @param {TeamPartialUpdateDto} teamPartialUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersTeamsIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersTeamsIdPatch(id: string, teamPartialUpdateDto: TeamPartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersTeamsIdPatch(id, teamPartialUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersTeamsIdPatch(requestParameters: UsersApiConsoleV1UsersTeamsIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersTeamsIdPatch(requestParameters.id, requestParameters.teamPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Team
-     * @param {TeamCreationDto} teamCreationDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsersApiConsoleV1UsersTeamsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UsersTeamsPost(teamCreationDto: TeamCreationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsersApiFp(this.configuration).consoleV1UsersTeamsPost(teamCreationDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UsersTeamsPost(requestParameters: UsersApiConsoleV1UsersTeamsPostRequest, options?: RawAxiosRequestConfig) {
+        return UsersApiFp(this.configuration).consoleV1UsersTeamsPost(requestParameters.teamCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

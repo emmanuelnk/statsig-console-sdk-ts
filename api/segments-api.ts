@@ -912,168 +912,370 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary List Segments
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsGet200Response> {
-            return localVarFp.consoleV1SegmentsGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsGet(requestParameters: SegmentsApiConsoleV1SegmentsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsGet200Response> {
+            return localVarFp.consoleV1SegmentsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint has a limit of 1000 ids per request
          * @summary Add IDs to User Store ID List
-         * @param {string} id id
-         * @param {SegmentIDListUserStoreContractDto} segmentIDListUserStoreContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdAddIdsPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdAddIdsPatch(id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response> {
-            return localVarFp.consoleV1SegmentsIdAddIdsPatch(id, segmentIDListUserStoreContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdAddIdsPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdAddIdsPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response> {
+            return localVarFp.consoleV1SegmentsIdAddIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Archive Segment
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdArchivePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdArchivePut200Response> {
-            return localVarFp.consoleV1SegmentsIdArchivePut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdArchivePut(requestParameters: SegmentsApiConsoleV1SegmentsIdArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdArchivePut200Response> {
+            return localVarFp.consoleV1SegmentsIdArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Segment Rules
-         * @param {string} id id
-         * @param {Array<SegmentCreateContractDtoRulesInner>} segmentCreateContractDtoRulesInner 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdConditionalPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdConditionalPost(id: string, segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdConditionalPost200Response> {
-            return localVarFp.consoleV1SegmentsIdConditionalPost(id, segmentCreateContractDtoRulesInner, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdConditionalPost(requestParameters: SegmentsApiConsoleV1SegmentsIdConditionalPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdConditionalPost200Response> {
+            return localVarFp.consoleV1SegmentsIdConditionalPost(requestParameters.id, requestParameters.segmentCreateContractDtoRulesInner, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Segment
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdDelete200Response> {
-            return localVarFp.consoleV1SegmentsIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdDelete(requestParameters: SegmentsApiConsoleV1SegmentsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdDelete200Response> {
+            return localVarFp.consoleV1SegmentsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Segment
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdGet200Response> {
-            return localVarFp.consoleV1SegmentsIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdGet(requestParameters: SegmentsApiConsoleV1SegmentsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdGet200Response> {
+            return localVarFp.consoleV1SegmentsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
          * @summary Remove IDs from Segment
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdIdListDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdListDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response> {
-            return localVarFp.consoleV1SegmentsIdIdListDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdIdListDelete(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response> {
+            return localVarFp.consoleV1SegmentsIdIdListDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint is rate limited to 100
          * @summary Get IDs in a Segment
-         * @param {string} id 
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdIdListGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdListGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListGet200Response> {
-            return localVarFp.consoleV1SegmentsIdIdListGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdIdListGet(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListGet200Response> {
+            return localVarFp.consoleV1SegmentsIdIdListGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
          * @summary Add IDs to Segment
-         * @param {string} id id
-         * @param {SegmentIDListContractDto} segmentIDListContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdIdListPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdListPatch(id: string, segmentIDListContractDto: SegmentIDListContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response> {
-            return localVarFp.consoleV1SegmentsIdIdListPatch(id, segmentIDListContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdIdListPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response> {
+            return localVarFp.consoleV1SegmentsIdIdListPatch(requestParameters.id, requestParameters.segmentIDListContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * Warning: Not atomic for big ID lists (> 1000)
          * @summary Reset ID List Segment
-         * @param {string} id id
-         * @param {SegmentIDListResetContractDto} segmentIDListResetContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdListResetPost(id: string, segmentIDListResetContractDto: SegmentIDListResetContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListResetPost200Response> {
-            return localVarFp.consoleV1SegmentsIdIdListResetPost(id, segmentIDListResetContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdIdListResetPost(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListResetPost200Response> {
+            return localVarFp.consoleV1SegmentsIdIdListResetPost(requestParameters.id, requestParameters.segmentIDListResetContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint gets the metadata of the ID List.
          * @summary Get ID List Metadata
-         * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdIdlistMetadataGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdlistMetadataGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdlistMetadataGet200Response> {
-            return localVarFp.consoleV1SegmentsIdIdlistMetadataGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdIdlistMetadataGet(requestParameters: SegmentsApiConsoleV1SegmentsIdIdlistMetadataGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdlistMetadataGet200Response> {
+            return localVarFp.consoleV1SegmentsIdIdlistMetadataGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint has a limit of 1000 ids per request
          * @summary Remove IDs from User Store ID List
-         * @param {string} id id
-         * @param {SegmentIDListUserStoreContractDto} segmentIDListUserStoreContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdRemoveIdsPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdRemoveIdsPatch(id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response> {
-            return localVarFp.consoleV1SegmentsIdRemoveIdsPatch(id, segmentIDListUserStoreContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdRemoveIdsPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdRemoveIdsPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response> {
+            return localVarFp.consoleV1SegmentsIdRemoveIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Commit Segment Review
-         * @param {string} id 
-         * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdReviewsReviewIDCommitPut200Response> {
-            return localVarFp.consoleV1SegmentsIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters: SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdReviewsReviewIDCommitPut200Response> {
+            return localVarFp.consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Segment
-         * @param {SegmentCreateContractDto} segmentCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentsApiConsoleV1SegmentsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsPost(segmentCreateContractDto: SegmentCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsPost201Response> {
-            return localVarFp.consoleV1SegmentsPost(segmentCreateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SegmentsPost(requestParameters: SegmentsApiConsoleV1SegmentsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsPost201Response> {
+            return localVarFp.consoleV1SegmentsPost(requestParameters.segmentCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1SegmentsGet operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdAddIdsPatch operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdAddIdsPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdArchivePut operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdArchivePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdConditionalPost operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdConditionalPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdDelete operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdGet operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdIdListDelete operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdIdListDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdIdListGet operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdIdListGetRequest {
+    readonly id: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdIdListPatch operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdIdListPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly segmentIDListContractDto: SegmentIDListContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdIdListResetPost operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly segmentIDListResetContractDto: SegmentIDListResetContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdIdlistMetadataGet operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdIdlistMetadataGetRequest {
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdRemoveIdsPatch operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdRemoveIdsPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsIdReviewsReviewIDCommitPut operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest {
+    readonly id: string
+
+    readonly reviewID: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1SegmentsPost operation in SegmentsApi.
+ */
+export interface SegmentsApiConsoleV1SegmentsPostRequest {
+    readonly segmentCreateContractDto: SegmentCreateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * SegmentsApi - object-oriented interface
@@ -1082,178 +1284,155 @@ export class SegmentsApi extends BaseAPI {
     /**
      * 
      * @summary List Segments
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsGet(requestParameters: SegmentsApiConsoleV1SegmentsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * This endpoint has a limit of 1000 ids per request
      * @summary Add IDs to User Store ID List
-     * @param {string} id id
-     * @param {SegmentIDListUserStoreContractDto} segmentIDListUserStoreContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdAddIdsPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdAddIdsPatch(id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdAddIdsPatch(id, segmentIDListUserStoreContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdAddIdsPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdAddIdsPatchRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdAddIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Archive Segment
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdArchivePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdArchivePut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdArchivePut(requestParameters: SegmentsApiConsoleV1SegmentsIdArchivePutRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Segment Rules
-     * @param {string} id id
-     * @param {Array<SegmentCreateContractDtoRulesInner>} segmentCreateContractDtoRulesInner 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdConditionalPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdConditionalPost(id: string, segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdConditionalPost(id, segmentCreateContractDtoRulesInner, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdConditionalPost(requestParameters: SegmentsApiConsoleV1SegmentsIdConditionalPostRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdConditionalPost(requestParameters.id, requestParameters.segmentCreateContractDtoRulesInner, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Segment
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdDelete(requestParameters: SegmentsApiConsoleV1SegmentsIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Segment
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdGet(requestParameters: SegmentsApiConsoleV1SegmentsIdGetRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
      * @summary Remove IDs from Segment
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdIdListDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdIdListDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdIdListDelete(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListDeleteRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * This endpoint is rate limited to 100
      * @summary Get IDs in a Segment
-     * @param {string} id 
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdIdListGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdIdListGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdIdListGet(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListGetRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
      * @summary Add IDs to Segment
-     * @param {string} id id
-     * @param {SegmentIDListContractDto} segmentIDListContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdIdListPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdIdListPatch(id: string, segmentIDListContractDto: SegmentIDListContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListPatch(id, segmentIDListContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdIdListPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListPatchRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListPatch(requestParameters.id, requestParameters.segmentIDListContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Warning: Not atomic for big ID lists (> 1000)
      * @summary Reset ID List Segment
-     * @param {string} id id
-     * @param {SegmentIDListResetContractDto} segmentIDListResetContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdIdListResetPost(id: string, segmentIDListResetContractDto: SegmentIDListResetContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListResetPost(id, segmentIDListResetContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdIdListResetPost(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListResetPost(requestParameters.id, requestParameters.segmentIDListResetContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * This endpoint gets the metadata of the ID List.
      * @summary Get ID List Metadata
-     * @param {string} id 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdIdlistMetadataGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdIdlistMetadataGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdlistMetadataGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdIdlistMetadataGet(requestParameters: SegmentsApiConsoleV1SegmentsIdIdlistMetadataGetRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdlistMetadataGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * This endpoint has a limit of 1000 ids per request
      * @summary Remove IDs from User Store ID List
-     * @param {string} id id
-     * @param {SegmentIDListUserStoreContractDto} segmentIDListUserStoreContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdRemoveIdsPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdRemoveIdsPatch(id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdRemoveIdsPatch(id, segmentIDListUserStoreContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdRemoveIdsPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdRemoveIdsPatchRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdRemoveIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Commit Segment Review
-     * @param {string} id 
-     * @param {string} reviewID 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters: SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Segment
-     * @param {SegmentCreateContractDto} segmentCreateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {SegmentsApiConsoleV1SegmentsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SegmentsPost(segmentCreateContractDto: SegmentCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsPost(segmentCreateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SegmentsPost(requestParameters: SegmentsApiConsoleV1SegmentsPostRequest, options?: RawAxiosRequestConfig) {
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsPost(requestParameters.segmentCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

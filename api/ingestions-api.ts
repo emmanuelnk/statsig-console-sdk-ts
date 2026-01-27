@@ -932,163 +932,342 @@ export const IngestionsApiFactory = function (configuration?: Configuration, bas
         /**
          * 
          * @summary Backfill Ingestion
-         * @param {IngestionBackfillContractDto} ingestionBackfillContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionBackfillPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionBackfillPost(ingestionBackfillContractDto: IngestionBackfillContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionBackfillPost200Response> {
-            return localVarFp.consoleV1IngestionBackfillPost(ingestionBackfillContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionBackfillPost(requestParameters: IngestionsApiConsoleV1IngestionBackfillPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionBackfillPost200Response> {
+            return localVarFp.consoleV1IngestionBackfillPost(requestParameters.ingestionBackfillContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Ingestion Databricks
-         * @param {IngestionCreateDatabricksConnectionContractDto} ingestionCreateDatabricksConnectionContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionConnectionDatabricksPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionConnectionDatabricksPost(ingestionCreateDatabricksConnectionContractDto: IngestionCreateDatabricksConnectionContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionConnectionDatabricksPost200Response> {
-            return localVarFp.consoleV1IngestionConnectionDatabricksPost(ingestionCreateDatabricksConnectionContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionConnectionDatabricksPost(requestParameters: IngestionsApiConsoleV1IngestionConnectionDatabricksPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionConnectionDatabricksPost200Response> {
+            return localVarFp.consoleV1IngestionConnectionDatabricksPost(requestParameters.ingestionCreateDatabricksConnectionContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Ingestion Source
-         * @param {ConsoleV1IngestionDeleteTypeEnum} type 
-         * @param {ConsoleV1IngestionDeleteDatasetEnum} dataset 
-         * @param {string} [sourceName] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionDelete(type: ConsoleV1IngestionDeleteTypeEnum, dataset: ConsoleV1IngestionDeleteDatasetEnum, sourceName?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionDelete200Response> {
-            return localVarFp.consoleV1IngestionDelete(type, dataset, sourceName, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionDelete(requestParameters: IngestionsApiConsoleV1IngestionDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionDelete200Response> {
+            return localVarFp.consoleV1IngestionDelete(requestParameters.type, requestParameters.dataset, requestParameters.sourceName, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Ingestion Event Count
-         * @param {string} startDate Expected valid date in the form of YYYY-MM-DD
-         * @param {string} endDate Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [sourceName] 
-         * @param {string} [eventName] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionEventsCountGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionEventsCountGet(startDate: string, endDate: string, sourceName?: string, eventName?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionEventsCountGet200Response> {
-            return localVarFp.consoleV1IngestionEventsCountGet(startDate, endDate, sourceName, eventName, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionEventsCountGet(requestParameters: IngestionsApiConsoleV1IngestionEventsCountGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionEventsCountGet200Response> {
+            return localVarFp.consoleV1IngestionEventsCountGet(requestParameters.startDate, requestParameters.endDate, requestParameters.sourceName, requestParameters.eventName, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Ingestion Event Delta Ledger
-         * @param {string} startDate Expected valid date in the form of YYYY-MM-DD
-         * @param {string} endDate Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [sourceName] 
-         * @param {string} [eventName] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionEventsDeltaGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionEventsDeltaGet(startDate: string, endDate: string, sourceName?: string, eventName?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionEventsDeltaGet200Response> {
-            return localVarFp.consoleV1IngestionEventsDeltaGet(startDate, endDate, sourceName, eventName, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionEventsDeltaGet(requestParameters: IngestionsApiConsoleV1IngestionEventsDeltaGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionEventsDeltaGet200Response> {
+            return localVarFp.consoleV1IngestionEventsDeltaGet(requestParameters.startDate, requestParameters.endDate, requestParameters.sourceName, requestParameters.eventName, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Ingestion
-         * @param {ConsoleV1IngestionGetTypeEnum} type 
-         * @param {ConsoleV1IngestionGetDatasetEnum} dataset 
-         * @param {string} [sourceName] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionGet(type: ConsoleV1IngestionGetTypeEnum, dataset: ConsoleV1IngestionGetDatasetEnum, sourceName?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionGet200Response> {
-            return localVarFp.consoleV1IngestionGet(type, dataset, sourceName, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionGet(requestParameters: IngestionsApiConsoleV1IngestionGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionGet200Response> {
+            return localVarFp.consoleV1IngestionGet(requestParameters.type, requestParameters.dataset, requestParameters.sourceName, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Ingestion Source
-         * @param {IngestionUpdateContractDto} ingestionUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionPatch(ingestionUpdateContractDto: IngestionUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionPatch200Response> {
-            return localVarFp.consoleV1IngestionPatch(ingestionUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionPatch(requestParameters: IngestionsApiConsoleV1IngestionPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionPatch200Response> {
+            return localVarFp.consoleV1IngestionPatch(requestParameters.ingestionUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Ingestion Source
-         * @param {IngestionSourceCreateContractDto} ingestionSourceCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionPost(ingestionSourceCreateContractDto: IngestionSourceCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionPost200Response> {
-            return localVarFp.consoleV1IngestionPost(ingestionSourceCreateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionPost(requestParameters: IngestionsApiConsoleV1IngestionPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionPost200Response> {
+            return localVarFp.consoleV1IngestionPost(requestParameters.ingestionSourceCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Ingestion Runs
-         * @param {ConsoleV1IngestionRunsGetPageParameter} [page] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionRunsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionRunsGet(page?: ConsoleV1IngestionRunsGetPageParameter, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionRunsGet200Response> {
-            return localVarFp.consoleV1IngestionRunsGet(page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionRunsGet(requestParameters: IngestionsApiConsoleV1IngestionRunsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionRunsGet200Response> {
+            return localVarFp.consoleV1IngestionRunsGet(requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Ingestion Run
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionRunsIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionRunsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionRunsIdGet200Response> {
-            return localVarFp.consoleV1IngestionRunsIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionRunsIdGet(requestParameters: IngestionsApiConsoleV1IngestionRunsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionRunsIdGet200Response> {
+            return localVarFp.consoleV1IngestionRunsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Ingestion Schedule
-         * @param {ConsoleV1IngestionScheduleGetDatasetEnum} dataset 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionScheduleGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionScheduleGet(dataset: ConsoleV1IngestionScheduleGetDatasetEnum, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionScheduleGet200Response> {
-            return localVarFp.consoleV1IngestionScheduleGet(dataset, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionScheduleGet(requestParameters: IngestionsApiConsoleV1IngestionScheduleGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionScheduleGet200Response> {
+            return localVarFp.consoleV1IngestionScheduleGet(requestParameters.dataset, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Ingestion Schedule
-         * @param {IngestionScheduleUpdateContractDto} ingestionScheduleUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionSchedulePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionSchedulePost(ingestionScheduleUpdateContractDto: IngestionScheduleUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionSchedulePost200Response> {
-            return localVarFp.consoleV1IngestionSchedulePost(ingestionScheduleUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionSchedulePost(requestParameters: IngestionsApiConsoleV1IngestionSchedulePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionSchedulePost200Response> {
+            return localVarFp.consoleV1IngestionSchedulePost(requestParameters.ingestionScheduleUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Ingestions Status
-         * @param {string} startDate Expected valid date in the form of YYYY-MM-DD
-         * @param {string} endDate Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [source] 
-         * @param {ConsoleV1IngestionStatusGetDatasetEnum} [dataset] 
-         * @param {ConsoleV1IngestionStatusGetStatusEnum} [status] 
-         * @param {Array<ConsoleV1IngestionStatusGetStatusesEnum>} [statuses] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {IngestionsApiConsoleV1IngestionStatusGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionStatusGet(startDate: string, endDate: string, source?: string, dataset?: ConsoleV1IngestionStatusGetDatasetEnum, status?: ConsoleV1IngestionStatusGetStatusEnum, statuses?: Array<ConsoleV1IngestionStatusGetStatusesEnum>, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionStatusGet200Response> {
-            return localVarFp.consoleV1IngestionStatusGet(startDate, endDate, source, dataset, status, statuses, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1IngestionStatusGet(requestParameters: IngestionsApiConsoleV1IngestionStatusGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionStatusGet200Response> {
+            return localVarFp.consoleV1IngestionStatusGet(requestParameters.startDate, requestParameters.endDate, requestParameters.source, requestParameters.dataset, requestParameters.status, requestParameters.statuses, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1IngestionBackfillPost operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionBackfillPostRequest {
+    readonly ingestionBackfillContractDto: IngestionBackfillContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionConnectionDatabricksPost operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionConnectionDatabricksPostRequest {
+    readonly ingestionCreateDatabricksConnectionContractDto: IngestionCreateDatabricksConnectionContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionDelete operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionDeleteRequest {
+    readonly type: ConsoleV1IngestionDeleteTypeEnum
+
+    readonly dataset: ConsoleV1IngestionDeleteDatasetEnum
+
+    readonly sourceName?: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionEventsCountGet operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionEventsCountGetRequest {
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly startDate: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly endDate: string
+
+    readonly sourceName?: string
+
+    readonly eventName?: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionEventsDeltaGet operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionEventsDeltaGetRequest {
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly startDate: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly endDate: string
+
+    readonly sourceName?: string
+
+    readonly eventName?: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionGet operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionGetRequest {
+    readonly type: ConsoleV1IngestionGetTypeEnum
+
+    readonly dataset: ConsoleV1IngestionGetDatasetEnum
+
+    readonly sourceName?: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionPatch operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionPatchRequest {
+    readonly ingestionUpdateContractDto: IngestionUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionPost operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionPostRequest {
+    readonly ingestionSourceCreateContractDto: IngestionSourceCreateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionRunsGet operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionRunsGetRequest {
+    readonly page?: ConsoleV1IngestionRunsGetPageParameter
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionRunsIdGet operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionRunsIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionScheduleGet operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionScheduleGetRequest {
+    readonly dataset: ConsoleV1IngestionScheduleGetDatasetEnum
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionSchedulePost operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionSchedulePostRequest {
+    readonly ingestionScheduleUpdateContractDto: IngestionScheduleUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1IngestionStatusGet operation in IngestionsApi.
+ */
+export interface IngestionsApiConsoleV1IngestionStatusGetRequest {
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly startDate: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly endDate: string
+
+    readonly source?: string
+
+    readonly dataset?: ConsoleV1IngestionStatusGetDatasetEnum
+
+    readonly status?: ConsoleV1IngestionStatusGetStatusEnum
+
+    readonly statuses?: Array<ConsoleV1IngestionStatusGetStatusesEnum>
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * IngestionsApi - object-oriented interface
@@ -1097,172 +1276,144 @@ export class IngestionsApi extends BaseAPI {
     /**
      * 
      * @summary Backfill Ingestion
-     * @param {IngestionBackfillContractDto} ingestionBackfillContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionBackfillPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionBackfillPost(ingestionBackfillContractDto: IngestionBackfillContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionBackfillPost(ingestionBackfillContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionBackfillPost(requestParameters: IngestionsApiConsoleV1IngestionBackfillPostRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionBackfillPost(requestParameters.ingestionBackfillContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Ingestion Databricks
-     * @param {IngestionCreateDatabricksConnectionContractDto} ingestionCreateDatabricksConnectionContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionConnectionDatabricksPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionConnectionDatabricksPost(ingestionCreateDatabricksConnectionContractDto: IngestionCreateDatabricksConnectionContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionConnectionDatabricksPost(ingestionCreateDatabricksConnectionContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionConnectionDatabricksPost(requestParameters: IngestionsApiConsoleV1IngestionConnectionDatabricksPostRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionConnectionDatabricksPost(requestParameters.ingestionCreateDatabricksConnectionContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Ingestion Source
-     * @param {ConsoleV1IngestionDeleteTypeEnum} type 
-     * @param {ConsoleV1IngestionDeleteDatasetEnum} dataset 
-     * @param {string} [sourceName] 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionDelete(type: ConsoleV1IngestionDeleteTypeEnum, dataset: ConsoleV1IngestionDeleteDatasetEnum, sourceName?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionDelete(type, dataset, sourceName, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionDelete(requestParameters: IngestionsApiConsoleV1IngestionDeleteRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionDelete(requestParameters.type, requestParameters.dataset, requestParameters.sourceName, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Ingestion Event Count
-     * @param {string} startDate Expected valid date in the form of YYYY-MM-DD
-     * @param {string} endDate Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [sourceName] 
-     * @param {string} [eventName] 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionEventsCountGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionEventsCountGet(startDate: string, endDate: string, sourceName?: string, eventName?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionEventsCountGet(startDate, endDate, sourceName, eventName, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionEventsCountGet(requestParameters: IngestionsApiConsoleV1IngestionEventsCountGetRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionEventsCountGet(requestParameters.startDate, requestParameters.endDate, requestParameters.sourceName, requestParameters.eventName, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Ingestion Event Delta Ledger
-     * @param {string} startDate Expected valid date in the form of YYYY-MM-DD
-     * @param {string} endDate Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [sourceName] 
-     * @param {string} [eventName] 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionEventsDeltaGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionEventsDeltaGet(startDate: string, endDate: string, sourceName?: string, eventName?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionEventsDeltaGet(startDate, endDate, sourceName, eventName, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionEventsDeltaGet(requestParameters: IngestionsApiConsoleV1IngestionEventsDeltaGetRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionEventsDeltaGet(requestParameters.startDate, requestParameters.endDate, requestParameters.sourceName, requestParameters.eventName, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Ingestion
-     * @param {ConsoleV1IngestionGetTypeEnum} type 
-     * @param {ConsoleV1IngestionGetDatasetEnum} dataset 
-     * @param {string} [sourceName] 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionGet(type: ConsoleV1IngestionGetTypeEnum, dataset: ConsoleV1IngestionGetDatasetEnum, sourceName?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionGet(type, dataset, sourceName, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionGet(requestParameters: IngestionsApiConsoleV1IngestionGetRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionGet(requestParameters.type, requestParameters.dataset, requestParameters.sourceName, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Ingestion Source
-     * @param {IngestionUpdateContractDto} ingestionUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionPatch(ingestionUpdateContractDto: IngestionUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionPatch(ingestionUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionPatch(requestParameters: IngestionsApiConsoleV1IngestionPatchRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionPatch(requestParameters.ingestionUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Ingestion Source
-     * @param {IngestionSourceCreateContractDto} ingestionSourceCreateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionPost(ingestionSourceCreateContractDto: IngestionSourceCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionPost(ingestionSourceCreateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionPost(requestParameters: IngestionsApiConsoleV1IngestionPostRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionPost(requestParameters.ingestionSourceCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Ingestion Runs
-     * @param {ConsoleV1IngestionRunsGetPageParameter} [page] 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionRunsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionRunsGet(page?: ConsoleV1IngestionRunsGetPageParameter, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionRunsGet(page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionRunsGet(requestParameters: IngestionsApiConsoleV1IngestionRunsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionRunsGet(requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Ingestion Run
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionRunsIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionRunsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionRunsIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionRunsIdGet(requestParameters: IngestionsApiConsoleV1IngestionRunsIdGetRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionRunsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Ingestion Schedule
-     * @param {ConsoleV1IngestionScheduleGetDatasetEnum} dataset 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionScheduleGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionScheduleGet(dataset: ConsoleV1IngestionScheduleGetDatasetEnum, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionScheduleGet(dataset, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionScheduleGet(requestParameters: IngestionsApiConsoleV1IngestionScheduleGetRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionScheduleGet(requestParameters.dataset, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Ingestion Schedule
-     * @param {IngestionScheduleUpdateContractDto} ingestionScheduleUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionSchedulePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionSchedulePost(ingestionScheduleUpdateContractDto: IngestionScheduleUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionSchedulePost(ingestionScheduleUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionSchedulePost(requestParameters: IngestionsApiConsoleV1IngestionSchedulePostRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionSchedulePost(requestParameters.ingestionScheduleUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Ingestions Status
-     * @param {string} startDate Expected valid date in the form of YYYY-MM-DD
-     * @param {string} endDate Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [source] 
-     * @param {ConsoleV1IngestionStatusGetDatasetEnum} [dataset] 
-     * @param {ConsoleV1IngestionStatusGetStatusEnum} [status] 
-     * @param {Array<ConsoleV1IngestionStatusGetStatusesEnum>} [statuses] 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {IngestionsApiConsoleV1IngestionStatusGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1IngestionStatusGet(startDate: string, endDate: string, source?: string, dataset?: ConsoleV1IngestionStatusGetDatasetEnum, status?: ConsoleV1IngestionStatusGetStatusEnum, statuses?: Array<ConsoleV1IngestionStatusGetStatusesEnum>, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return IngestionsApiFp(this.configuration).consoleV1IngestionStatusGet(startDate, endDate, source, dataset, status, statuses, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1IngestionStatusGet(requestParameters: IngestionsApiConsoleV1IngestionStatusGetRequest, options?: RawAxiosRequestConfig) {
+        return IngestionsApiFp(this.configuration).consoleV1IngestionStatusGet(requestParameters.startDate, requestParameters.endDate, requestParameters.source, requestParameters.dataset, requestParameters.status, requestParameters.statuses, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

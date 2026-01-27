@@ -412,73 +412,156 @@ export const TargetAppApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary List Target Apps
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {TargetAppApiConsoleV1TargetAppGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TargetAppGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppGet200Response> {
-            return localVarFp.consoleV1TargetAppGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1TargetAppGet(requestParameters: TargetAppApiConsoleV1TargetAppGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppGet200Response> {
+            return localVarFp.consoleV1TargetAppGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Target App
-         * @param {string} id id of target app
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {TargetAppApiConsoleV1TargetAppIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TargetAppIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppIdDelete200Response> {
-            return localVarFp.consoleV1TargetAppIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1TargetAppIdDelete(requestParameters: TargetAppApiConsoleV1TargetAppIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppIdDelete200Response> {
+            return localVarFp.consoleV1TargetAppIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Target App
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {TargetAppApiConsoleV1TargetAppIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TargetAppIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppIdGet200Response> {
-            return localVarFp.consoleV1TargetAppIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1TargetAppIdGet(requestParameters: TargetAppApiConsoleV1TargetAppIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppIdGet200Response> {
+            return localVarFp.consoleV1TargetAppIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Target App
-         * @param {string} id id
-         * @param {UpdateTargetAppDto} updateTargetAppDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {TargetAppApiConsoleV1TargetAppIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TargetAppIdPatch(id: string, updateTargetAppDto: UpdateTargetAppDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppPatch200Response> {
-            return localVarFp.consoleV1TargetAppIdPatch(id, updateTargetAppDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1TargetAppIdPatch(requestParameters: TargetAppApiConsoleV1TargetAppIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppPatch200Response> {
+            return localVarFp.consoleV1TargetAppIdPatch(requestParameters.id, requestParameters.updateTargetAppDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Bulk Assign Target Apps
-         * @param {BulkAssignConfigTargetAppDto} bulkAssignConfigTargetAppDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {TargetAppApiConsoleV1TargetAppPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TargetAppPatch(bulkAssignConfigTargetAppDto: BulkAssignConfigTargetAppDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppPatch200Response> {
-            return localVarFp.consoleV1TargetAppPatch(bulkAssignConfigTargetAppDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1TargetAppPatch(requestParameters: TargetAppApiConsoleV1TargetAppPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppPatch200Response> {
+            return localVarFp.consoleV1TargetAppPatch(requestParameters.bulkAssignConfigTargetAppDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Target App
-         * @param {TargetAppCreateDto} targetAppCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {TargetAppApiConsoleV1TargetAppPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TargetAppPost(targetAppCreateDto: TargetAppCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppPost200Response> {
-            return localVarFp.consoleV1TargetAppPost(targetAppCreateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1TargetAppPost(requestParameters: TargetAppApiConsoleV1TargetAppPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TargetAppPost200Response> {
+            return localVarFp.consoleV1TargetAppPost(requestParameters.targetAppCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1TargetAppGet operation in TargetAppApi.
+ */
+export interface TargetAppApiConsoleV1TargetAppGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1TargetAppIdDelete operation in TargetAppApi.
+ */
+export interface TargetAppApiConsoleV1TargetAppIdDeleteRequest {
+    /**
+     * id of target app
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1TargetAppIdGet operation in TargetAppApi.
+ */
+export interface TargetAppApiConsoleV1TargetAppIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1TargetAppIdPatch operation in TargetAppApi.
+ */
+export interface TargetAppApiConsoleV1TargetAppIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly updateTargetAppDto: UpdateTargetAppDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1TargetAppPatch operation in TargetAppApi.
+ */
+export interface TargetAppApiConsoleV1TargetAppPatchRequest {
+    readonly bulkAssignConfigTargetAppDto: BulkAssignConfigTargetAppDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1TargetAppPost operation in TargetAppApi.
+ */
+export interface TargetAppApiConsoleV1TargetAppPostRequest {
+    readonly targetAppCreateDto: TargetAppCreateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * TargetAppApi - object-oriented interface
@@ -487,75 +570,67 @@ export class TargetAppApi extends BaseAPI {
     /**
      * 
      * @summary List Target Apps
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {TargetAppApiConsoleV1TargetAppGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1TargetAppGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return TargetAppApiFp(this.configuration).consoleV1TargetAppGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1TargetAppGet(requestParameters: TargetAppApiConsoleV1TargetAppGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return TargetAppApiFp(this.configuration).consoleV1TargetAppGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Target App
-     * @param {string} id id of target app
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {TargetAppApiConsoleV1TargetAppIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1TargetAppIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return TargetAppApiFp(this.configuration).consoleV1TargetAppIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1TargetAppIdDelete(requestParameters: TargetAppApiConsoleV1TargetAppIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return TargetAppApiFp(this.configuration).consoleV1TargetAppIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Target App
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {TargetAppApiConsoleV1TargetAppIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1TargetAppIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return TargetAppApiFp(this.configuration).consoleV1TargetAppIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1TargetAppIdGet(requestParameters: TargetAppApiConsoleV1TargetAppIdGetRequest, options?: RawAxiosRequestConfig) {
+        return TargetAppApiFp(this.configuration).consoleV1TargetAppIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Target App
-     * @param {string} id id
-     * @param {UpdateTargetAppDto} updateTargetAppDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {TargetAppApiConsoleV1TargetAppIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1TargetAppIdPatch(id: string, updateTargetAppDto: UpdateTargetAppDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return TargetAppApiFp(this.configuration).consoleV1TargetAppIdPatch(id, updateTargetAppDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1TargetAppIdPatch(requestParameters: TargetAppApiConsoleV1TargetAppIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return TargetAppApiFp(this.configuration).consoleV1TargetAppIdPatch(requestParameters.id, requestParameters.updateTargetAppDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Bulk Assign Target Apps
-     * @param {BulkAssignConfigTargetAppDto} bulkAssignConfigTargetAppDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {TargetAppApiConsoleV1TargetAppPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1TargetAppPatch(bulkAssignConfigTargetAppDto: BulkAssignConfigTargetAppDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return TargetAppApiFp(this.configuration).consoleV1TargetAppPatch(bulkAssignConfigTargetAppDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1TargetAppPatch(requestParameters: TargetAppApiConsoleV1TargetAppPatchRequest, options?: RawAxiosRequestConfig) {
+        return TargetAppApiFp(this.configuration).consoleV1TargetAppPatch(requestParameters.bulkAssignConfigTargetAppDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Target App
-     * @param {TargetAppCreateDto} targetAppCreateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {TargetAppApiConsoleV1TargetAppPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1TargetAppPost(targetAppCreateDto: TargetAppCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return TargetAppApiFp(this.configuration).consoleV1TargetAppPost(targetAppCreateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1TargetAppPost(requestParameters: TargetAppApiConsoleV1TargetAppPostRequest, options?: RawAxiosRequestConfig) {
+        return TargetAppApiFp(this.configuration).consoleV1TargetAppPost(requestParameters.targetAppCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

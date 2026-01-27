@@ -2024,376 +2024,909 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary List Gates
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [idType] Filter by idType
-         * @param {ConsoleV1GatesGetTypeEnum} [type] Filter by type
-         * @param {ConsoleV1GatesGetTypeReasonEnum} [typeReason] Filter by typeReason
-         * @param {ConsoleV1GatesGetPassRateParameter} [passRate] Filter by pass rate of the gates, as determined by a sampling of overall true/false values returned: 0, 100, or INBETWEEN (pass rate greater than zero but less than 100)
-         * @param {ConsoleV1GatesGetPassRateParameter} [rolloutRate] Filter by rollout rate of the gates: 0 (all rules are set to pass 0%), 100 (all rules pass 100% including an \&quot;everyone\&quot; catch all rule), or INBETWEEN (at least one rule has a pass rate greater than 0 but less than 100)
-         * @param {string | null} [releasePipelineID] Filter by release pipeline ID
-         * @param {ConsoleV1GatesGetIncludeArchivedEnum} [includeArchived] Include archived gates in the response
-         * @param {string | null} [creatorName] Name of the creator.
-         * @param {string | null} [creatorID] ID of the user who created the entity.
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesGet(idType?: ConsoleV1AuditLogsGetTagsParameter, type?: ConsoleV1GatesGetTypeEnum, typeReason?: ConsoleV1GatesGetTypeReasonEnum, passRate?: ConsoleV1GatesGetPassRateParameter, rolloutRate?: ConsoleV1GatesGetPassRateParameter, releasePipelineID?: string | null, includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesGet200Response> {
-            return localVarFp.consoleV1GatesGet(idType, type, typeReason, passRate, rolloutRate, releasePipelineID, includeArchived, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesGet(requestParameters: GatesApiConsoleV1GatesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesGet200Response> {
+            return localVarFp.consoleV1GatesGet(requestParameters.idType, requestParameters.type, requestParameters.typeReason, requestParameters.passRate, requestParameters.rolloutRate, requestParameters.releasePipelineID, requestParameters.includeArchived, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Resolve Metric Rollout Alert
-         * @param {string} id id
-         * @param {string} metricId metric id
-         * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdAlertsMetricIdResolvePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdAlertsMetricIdResolvePost(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
-            return localVarFp.consoleV1GatesIdAlertsMetricIdResolvePost(id, metricId, resolveGuardrailAlertRequestDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters: GatesApiConsoleV1GatesIdAlertsMetricIdResolvePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
+            return localVarFp.consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Resolve Metric Rollout Alert
-         * @param {string} id id
-         * @param {string} metricId metric id
-         * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdAlertsMetricIdResolvePost0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdAlertsMetricIdResolvePost_1(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
-            return localVarFp.consoleV1GatesIdAlertsMetricIdResolvePost_1(id, metricId, resolveGuardrailAlertRequestDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters: GatesApiConsoleV1GatesIdAlertsMetricIdResolvePost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
+            return localVarFp.consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Archive Gate
-         * @param {string} id id
-         * @param {ArchiveSchemaDto} archiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdArchivePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdArchivePut(id: string, archiveSchemaDto: ArchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdArchivePut200Response> {
-            return localVarFp.consoleV1GatesIdArchivePut(id, archiveSchemaDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdArchivePut(requestParameters: GatesApiConsoleV1GatesIdArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdArchivePut200Response> {
+            return localVarFp.consoleV1GatesIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Gate Checks
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdChecksGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdChecksGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdChecksGet200Response> {
-            return localVarFp.consoleV1GatesIdChecksGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdChecksGet(requestParameters: GatesApiConsoleV1GatesIdChecksGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdChecksGet200Response> {
+            return localVarFp.consoleV1GatesIdChecksGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Gates
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDelete200Response> {
-            return localVarFp.consoleV1GatesIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdDelete(requestParameters: GatesApiConsoleV1GatesIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDelete200Response> {
+            return localVarFp.consoleV1GatesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Disable Gate
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdDisablePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdDisablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
-            return localVarFp.consoleV1GatesIdDisablePut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdDisablePut(requestParameters: GatesApiConsoleV1GatesIdDisablePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
+            return localVarFp.consoleV1GatesIdDisablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Dynamic Config References
-         * @param {string} id id
-         * @param {number} [limit] 
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdDynamicConfigReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsGet200Response> {
-            return localVarFp.consoleV1GatesIdDynamicConfigReferencesGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdDynamicConfigReferencesGet(requestParameters: GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsGet200Response> {
+            return localVarFp.consoleV1GatesIdDynamicConfigReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Enable Gate
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdEnablePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdEnablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
-            return localVarFp.consoleV1GatesIdEnablePut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdEnablePut(requestParameters: GatesApiConsoleV1GatesIdEnablePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
+            return localVarFp.consoleV1GatesIdEnablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Experiment References
-         * @param {string} id id
-         * @param {number} [limit] 
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdExperimentReferencesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdExperimentReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsGet200Response> {
-            return localVarFp.consoleV1GatesIdExperimentReferencesGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdExperimentReferencesGet(requestParameters: GatesApiConsoleV1GatesIdExperimentReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsGet200Response> {
+            return localVarFp.consoleV1GatesIdExperimentReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Gate References
-         * @param {string} id id
-         * @param {number} [limit] 
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdGateReferencesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdGateReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesGet200Response> {
-            return localVarFp.consoleV1GatesIdGateReferencesGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdGateReferencesGet(requestParameters: GatesApiConsoleV1GatesIdGateReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesGet200Response> {
+            return localVarFp.consoleV1GatesIdGateReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Gate
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdGet200Response> {
-            return localVarFp.consoleV1GatesIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdGet(requestParameters: GatesApiConsoleV1GatesIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdGet200Response> {
+            return localVarFp.consoleV1GatesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Launch Gate
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdLaunchPutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdLaunchPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
-            return localVarFp.consoleV1GatesIdLaunchPut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdLaunchPut(requestParameters: GatesApiConsoleV1GatesIdLaunchPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
+            return localVarFp.consoleV1GatesIdLaunchPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Load Pulse Gate
-         * @param {string} id id
-         * @param {EchidnaGateLoadPulseQueryDto} echidnaGateLoadPulseQueryDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdLoadPulsePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdLoadPulsePost(id: string, echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdLoadPulsePost200Response> {
-            return localVarFp.consoleV1GatesIdLoadPulsePost(id, echidnaGateLoadPulseQueryDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdLoadPulsePost(requestParameters: GatesApiConsoleV1GatesIdLoadPulsePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdLoadPulsePost200Response> {
+            return localVarFp.consoleV1GatesIdLoadPulsePost(requestParameters.id, requestParameters.echidnaGateLoadPulseQueryDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Gate Overrides
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdOverridesDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
-            return localVarFp.consoleV1GatesIdOverridesDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdOverridesDelete(requestParameters: GatesApiConsoleV1GatesIdOverridesDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
+            return localVarFp.consoleV1GatesIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Gate Override
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdOverridesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesGet201Response> {
-            return localVarFp.consoleV1GatesIdOverridesGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdOverridesGet(requestParameters: GatesApiConsoleV1GatesIdOverridesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesGet201Response> {
+            return localVarFp.consoleV1GatesIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Add Gate Overrides
-         * @param {string} id id
-         * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdOverridesPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdOverridesPatch(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
-            return localVarFp.consoleV1GatesIdOverridesPatch(id, updateOverridesContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdOverridesPatch(requestParameters: GatesApiConsoleV1GatesIdOverridesPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
+            return localVarFp.consoleV1GatesIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Gate Overrides
-         * @param {string} id id
-         * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdOverridesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdOverridesPost(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
-            return localVarFp.consoleV1GatesIdOverridesPost(id, updateOverridesContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdOverridesPost(requestParameters: GatesApiConsoleV1GatesIdOverridesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
+            return localVarFp.consoleV1GatesIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Partially Update Gates
-         * @param {string} id id
-         * @param {GatePartialUpdateDto} gatePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdPatch(id: string, gatePartialUpdateDto: GatePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPatch200Response> {
-            return localVarFp.consoleV1GatesIdPatch(id, gatePartialUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdPatch(requestParameters: GatesApiConsoleV1GatesIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPatch200Response> {
+            return localVarFp.consoleV1GatesIdPatch(requestParameters.id, requestParameters.gatePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Fully Update Gates
-         * @param {string} id id
-         * @param {GateFullUpdateDto} gateFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdPost(id: string, gateFullUpdateDto: GateFullUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPost200Response> {
-            return localVarFp.consoleV1GatesIdPost(id, gateFullUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdPost(requestParameters: GatesApiConsoleV1GatesIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPost200Response> {
+            return localVarFp.consoleV1GatesIdPost(requestParameters.id, requestParameters.gateFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Commit Gate Review
-         * @param {string} id 
-         * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdReviewsReviewIDCommitPutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdReviewsReviewIDCommitPut200Response> {
-            return localVarFp.consoleV1GatesIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters: GatesApiConsoleV1GatesIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdReviewsReviewIDCommitPut200Response> {
+            return localVarFp.consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Add Gate Rule
-         * @param {string} id id
-         * @param {RuleDto} ruleDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdRulePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulePost(id: string, ruleDto: RuleDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulePost200Response> {
-            return localVarFp.consoleV1GatesIdRulePost(id, ruleDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdRulePost(requestParameters: GatesApiConsoleV1GatesIdRulePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulePost200Response> {
+            return localVarFp.consoleV1GatesIdRulePost(requestParameters.id, requestParameters.ruleDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Gate Rules
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdRulesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesGet200Response> {
-            return localVarFp.consoleV1GatesIdRulesGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdRulesGet(requestParameters: GatesApiConsoleV1GatesIdRulesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesGet200Response> {
+            return localVarFp.consoleV1GatesIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Gate Rule
-         * @param {string} id Gate ID
-         * @param {string} ruleID Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdRulesRuleIDDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDDelete(id: string, ruleID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPatch200Response> {
-            return localVarFp.consoleV1GatesIdRulesRuleIDDelete(id, ruleID, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdRulesRuleIDDelete(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPatch200Response> {
+            return localVarFp.consoleV1GatesIdRulesRuleIDDelete(requestParameters.id, requestParameters.ruleID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * Update all given rules. It does NOT create or delete if you add more rules and remove rules in the rules object.
          * @summary Update Gate Rules
-         * @param {string} id Gate ID
-         * @param {string} ruleID Rule ID
-         * @param {RuleUpdateDto} ruleUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdRulesRuleIDPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDPatch(id: string, ruleID: string, ruleUpdateDto: RuleUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesRuleIDPatch200Response> {
-            return localVarFp.consoleV1GatesIdRulesRuleIDPatch(id, ruleID, ruleUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdRulesRuleIDPatch(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesRuleIDPatch200Response> {
+            return localVarFp.consoleV1GatesIdRulesRuleIDPatch(requestParameters.id, requestParameters.ruleID, requestParameters.ruleUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Pulse Load History (Warehouse Native)
-         * @param {string} id Gate ID
-         * @param {string} ruleID Rule ID
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id: string, ruleID: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response> {
-            return localVarFp.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id, ruleID, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response> {
+            return localVarFp.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters.id, requestParameters.ruleID, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Retrieve Pulse Results
-         * @param {string} id Gate ID
-         * @param {string} ruleID Rule ID
-         * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
-         * @param {string} [confidence] Confidence interval (0-100)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdRulesRuleIDPulseResultsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDPulseResultsGet(id: string, ruleID: string, cuped?: string, confidence?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesRuleIDPulseResultsGet200Response> {
-            return localVarFp.consoleV1GatesIdRulesRuleIDPulseResultsGet(id, ruleID, cuped, confidence, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseResultsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesRuleIDPulseResultsGet200Response> {
+            return localVarFp.consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters.id, requestParameters.ruleID, requestParameters.cuped, requestParameters.confidence, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Unarchive Gate
-         * @param {string} id id
-         * @param {UnarchiveSchemaDto} unarchiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdUnarchivePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdUnarchivePut(id: string, unarchiveSchemaDto: UnarchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdUnarchivePut200Response> {
-            return localVarFp.consoleV1GatesIdUnarchivePut(id, unarchiveSchemaDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdUnarchivePut(requestParameters: GatesApiConsoleV1GatesIdUnarchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdUnarchivePut200Response> {
+            return localVarFp.consoleV1GatesIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Gate Versions
-         * @param {string} id id
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesIdVersionsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdVersionsGet200Response> {
-            return localVarFp.consoleV1GatesIdVersionsGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesIdVersionsGet(requestParameters: GatesApiConsoleV1GatesIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdVersionsGet200Response> {
+            return localVarFp.consoleV1GatesIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Gate
-         * @param {GateCreateDto} gateCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {GatesApiConsoleV1GatesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesPost(gateCreateDto: GateCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesPost201Response> {
-            return localVarFp.consoleV1GatesPost(gateCreateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1GatesPost(requestParameters: GatesApiConsoleV1GatesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesPost201Response> {
+            return localVarFp.consoleV1GatesPost(requestParameters.gateCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1GatesGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesGetRequest {
+    /**
+     * Filter by idType
+     */
+    readonly idType?: ConsoleV1AuditLogsGetTagsParameter
+
+    /**
+     * Filter by type
+     */
+    readonly type?: ConsoleV1GatesGetTypeEnum
+
+    /**
+     * Filter by typeReason
+     */
+    readonly typeReason?: ConsoleV1GatesGetTypeReasonEnum
+
+    /**
+     * Filter by pass rate of the gates, as determined by a sampling of overall true/false values returned: 0, 100, or INBETWEEN (pass rate greater than zero but less than 100)
+     */
+    readonly passRate?: ConsoleV1GatesGetPassRateParameter
+
+    /**
+     * Filter by rollout rate of the gates: 0 (all rules are set to pass 0%), 100 (all rules pass 100% including an \&quot;everyone\&quot; catch all rule), or INBETWEEN (at least one rule has a pass rate greater than 0 but less than 100)
+     */
+    readonly rolloutRate?: ConsoleV1GatesGetPassRateParameter
+
+    /**
+     * Filter by release pipeline ID
+     */
+    readonly releasePipelineID?: string | null
+
+    /**
+     * Include archived gates in the response
+     */
+    readonly includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum
+
+    /**
+     * Name of the creator.
+     */
+    readonly creatorName?: string | null
+
+    /**
+     * ID of the user who created the entity.
+     */
+    readonly creatorID?: string | null
+
+    /**
+     * Filter by tags
+     */
+    readonly tags?: ConsoleV1AuditLogsGetTagsParameter
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdAlertsMetricIdResolvePost operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdAlertsMetricIdResolvePostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * metric id
+     */
+    readonly metricId: string
+
+    readonly resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdAlertsMetricIdResolvePost_1 operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdAlertsMetricIdResolvePost0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * metric id
+     */
+    readonly metricId: string
+
+    readonly resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdArchivePut operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdArchivePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly archiveSchemaDto: ArchiveSchemaDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdChecksGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdChecksGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdDelete operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdDisablePut operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdDisablePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdDynamicConfigReferencesGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdEnablePut operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdEnablePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdExperimentReferencesGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdExperimentReferencesGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdGateReferencesGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdGateReferencesGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdLaunchPut operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdLaunchPutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdLoadPulsePost operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdLoadPulsePostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdOverridesDelete operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdOverridesDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdOverridesGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdOverridesGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdOverridesPatch operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdOverridesPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly updateOverridesContractDto: UpdateOverridesContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdOverridesPost operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdOverridesPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly updateOverridesContractDto: UpdateOverridesContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdPatch operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly gatePartialUpdateDto: GatePartialUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdPost operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly gateFullUpdateDto: GateFullUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdReviewsReviewIDCommitPut operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdReviewsReviewIDCommitPutRequest {
+    readonly id: string
+
+    readonly reviewID: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdRulePost operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdRulePostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly ruleDto: RuleDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdRulesGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdRulesGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdRulesRuleIDDelete operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdRulesRuleIDDeleteRequest {
+    /**
+     * Gate ID
+     */
+    readonly id: string
+
+    /**
+     * Rule ID
+     */
+    readonly ruleID: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdRulesRuleIDPatch operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdRulesRuleIDPatchRequest {
+    /**
+     * Gate ID
+     */
+    readonly id: string
+
+    /**
+     * Rule ID
+     */
+    readonly ruleID: string
+
+    readonly ruleUpdateDto: RuleUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest {
+    /**
+     * Gate ID
+     */
+    readonly id: string
+
+    /**
+     * Rule ID
+     */
+    readonly ruleID: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdRulesRuleIDPulseResultsGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdRulesRuleIDPulseResultsGetRequest {
+    /**
+     * Gate ID
+     */
+    readonly id: string
+
+    /**
+     * Rule ID
+     */
+    readonly ruleID: string
+
+    /**
+     * Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly cuped?: string
+
+    /**
+     * Confidence interval (0-100)
+     */
+    readonly confidence?: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdUnarchivePut operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdUnarchivePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly unarchiveSchemaDto: UnarchiveSchemaDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesIdVersionsGet operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdVersionsGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1GatesPost operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesPostRequest {
+    readonly gateCreateDto: GateCreateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * GatesApi - object-oriented interface
@@ -2402,402 +2935,331 @@ export class GatesApi extends BaseAPI {
     /**
      * 
      * @summary List Gates
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [idType] Filter by idType
-     * @param {ConsoleV1GatesGetTypeEnum} [type] Filter by type
-     * @param {ConsoleV1GatesGetTypeReasonEnum} [typeReason] Filter by typeReason
-     * @param {ConsoleV1GatesGetPassRateParameter} [passRate] Filter by pass rate of the gates, as determined by a sampling of overall true/false values returned: 0, 100, or INBETWEEN (pass rate greater than zero but less than 100)
-     * @param {ConsoleV1GatesGetPassRateParameter} [rolloutRate] Filter by rollout rate of the gates: 0 (all rules are set to pass 0%), 100 (all rules pass 100% including an \&quot;everyone\&quot; catch all rule), or INBETWEEN (at least one rule has a pass rate greater than 0 but less than 100)
-     * @param {string | null} [releasePipelineID] Filter by release pipeline ID
-     * @param {ConsoleV1GatesGetIncludeArchivedEnum} [includeArchived] Include archived gates in the response
-     * @param {string | null} [creatorName] Name of the creator.
-     * @param {string | null} [creatorID] ID of the user who created the entity.
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesGet(idType?: ConsoleV1AuditLogsGetTagsParameter, type?: ConsoleV1GatesGetTypeEnum, typeReason?: ConsoleV1GatesGetTypeReasonEnum, passRate?: ConsoleV1GatesGetPassRateParameter, rolloutRate?: ConsoleV1GatesGetPassRateParameter, releasePipelineID?: string | null, includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesGet(idType, type, typeReason, passRate, rolloutRate, releasePipelineID, includeArchived, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesGet(requestParameters: GatesApiConsoleV1GatesGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesGet(requestParameters.idType, requestParameters.type, requestParameters.typeReason, requestParameters.passRate, requestParameters.rolloutRate, requestParameters.releasePipelineID, requestParameters.includeArchived, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Resolve Metric Rollout Alert
-     * @param {string} id id
-     * @param {string} metricId metric id
-     * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdAlertsMetricIdResolvePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdAlertsMetricIdResolvePost(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdAlertsMetricIdResolvePost(id, metricId, resolveGuardrailAlertRequestDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters: GatesApiConsoleV1GatesIdAlertsMetricIdResolvePostRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Resolve Metric Rollout Alert
-     * @param {string} id id
-     * @param {string} metricId metric id
-     * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdAlertsMetricIdResolvePost0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdAlertsMetricIdResolvePost_1(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdAlertsMetricIdResolvePost_1(id, metricId, resolveGuardrailAlertRequestDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters: GatesApiConsoleV1GatesIdAlertsMetricIdResolvePost0Request, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Archive Gate
-     * @param {string} id id
-     * @param {ArchiveSchemaDto} archiveSchemaDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdArchivePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdArchivePut(id: string, archiveSchemaDto: ArchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdArchivePut(id, archiveSchemaDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdArchivePut(requestParameters: GatesApiConsoleV1GatesIdArchivePutRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Gate Checks
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdChecksGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdChecksGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdChecksGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdChecksGet(requestParameters: GatesApiConsoleV1GatesIdChecksGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdChecksGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Gates
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdDelete(requestParameters: GatesApiConsoleV1GatesIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Disable Gate
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdDisablePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdDisablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdDisablePut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdDisablePut(requestParameters: GatesApiConsoleV1GatesIdDisablePutRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdDisablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Dynamic Config References
-     * @param {string} id id
-     * @param {number} [limit] 
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdDynamicConfigReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdDynamicConfigReferencesGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdDynamicConfigReferencesGet(requestParameters: GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdDynamicConfigReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Enable Gate
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdEnablePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdEnablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdEnablePut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdEnablePut(requestParameters: GatesApiConsoleV1GatesIdEnablePutRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdEnablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Experiment References
-     * @param {string} id id
-     * @param {number} [limit] 
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdExperimentReferencesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdExperimentReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdExperimentReferencesGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdExperimentReferencesGet(requestParameters: GatesApiConsoleV1GatesIdExperimentReferencesGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdExperimentReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Gate References
-     * @param {string} id id
-     * @param {number} [limit] 
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdGateReferencesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdGateReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdGateReferencesGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdGateReferencesGet(requestParameters: GatesApiConsoleV1GatesIdGateReferencesGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdGateReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Gate
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdGet(requestParameters: GatesApiConsoleV1GatesIdGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Launch Gate
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdLaunchPutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdLaunchPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdLaunchPut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdLaunchPut(requestParameters: GatesApiConsoleV1GatesIdLaunchPutRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdLaunchPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Load Pulse Gate
-     * @param {string} id id
-     * @param {EchidnaGateLoadPulseQueryDto} echidnaGateLoadPulseQueryDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdLoadPulsePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdLoadPulsePost(id: string, echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdLoadPulsePost(id, echidnaGateLoadPulseQueryDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdLoadPulsePost(requestParameters: GatesApiConsoleV1GatesIdLoadPulsePostRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdLoadPulsePost(requestParameters.id, requestParameters.echidnaGateLoadPulseQueryDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Gate Overrides
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdOverridesDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdOverridesDelete(requestParameters: GatesApiConsoleV1GatesIdOverridesDeleteRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Gate Override
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdOverridesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdOverridesGet(requestParameters: GatesApiConsoleV1GatesIdOverridesGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Add Gate Overrides
-     * @param {string} id id
-     * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdOverridesPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdOverridesPatch(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesPatch(id, updateOverridesContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdOverridesPatch(requestParameters: GatesApiConsoleV1GatesIdOverridesPatchRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Gate Overrides
-     * @param {string} id id
-     * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdOverridesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdOverridesPost(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesPost(id, updateOverridesContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdOverridesPost(requestParameters: GatesApiConsoleV1GatesIdOverridesPostRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Partially Update Gates
-     * @param {string} id id
-     * @param {GatePartialUpdateDto} gatePartialUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdPatch(id: string, gatePartialUpdateDto: GatePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdPatch(id, gatePartialUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdPatch(requestParameters: GatesApiConsoleV1GatesIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdPatch(requestParameters.id, requestParameters.gatePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Fully Update Gates
-     * @param {string} id id
-     * @param {GateFullUpdateDto} gateFullUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdPost(id: string, gateFullUpdateDto: GateFullUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdPost(id, gateFullUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdPost(requestParameters: GatesApiConsoleV1GatesIdPostRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdPost(requestParameters.id, requestParameters.gateFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Commit Gate Review
-     * @param {string} id 
-     * @param {string} reviewID 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdReviewsReviewIDCommitPutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters: GatesApiConsoleV1GatesIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Add Gate Rule
-     * @param {string} id id
-     * @param {RuleDto} ruleDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdRulePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdRulePost(id: string, ruleDto: RuleDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulePost(id, ruleDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdRulePost(requestParameters: GatesApiConsoleV1GatesIdRulePostRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulePost(requestParameters.id, requestParameters.ruleDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Gate Rules
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdRulesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdRulesGet(requestParameters: GatesApiConsoleV1GatesIdRulesGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Gate Rule
-     * @param {string} id Gate ID
-     * @param {string} ruleID Rule ID
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdRulesRuleIDDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdRulesRuleIDDelete(id: string, ruleID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDDelete(id, ruleID, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdRulesRuleIDDelete(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDDeleteRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDDelete(requestParameters.id, requestParameters.ruleID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Update all given rules. It does NOT create or delete if you add more rules and remove rules in the rules object.
      * @summary Update Gate Rules
-     * @param {string} id Gate ID
-     * @param {string} ruleID Rule ID
-     * @param {RuleUpdateDto} ruleUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdRulesRuleIDPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdRulesRuleIDPatch(id: string, ruleID: string, ruleUpdateDto: RuleUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPatch(id, ruleID, ruleUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdRulesRuleIDPatch(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPatchRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPatch(requestParameters.id, requestParameters.ruleID, requestParameters.ruleUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Pulse Load History (Warehouse Native)
-     * @param {string} id Gate ID
-     * @param {string} ruleID Rule ID
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id: string, ruleID: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id, ruleID, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters.id, requestParameters.ruleID, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Retrieve Pulse Results
-     * @param {string} id Gate ID
-     * @param {string} ruleID Rule ID
-     * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
-     * @param {string} [confidence] Confidence interval (0-100)
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdRulesRuleIDPulseResultsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdRulesRuleIDPulseResultsGet(id: string, ruleID: string, cuped?: string, confidence?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPulseResultsGet(id, ruleID, cuped, confidence, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseResultsGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters.id, requestParameters.ruleID, requestParameters.cuped, requestParameters.confidence, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Unarchive Gate
-     * @param {string} id id
-     * @param {UnarchiveSchemaDto} unarchiveSchemaDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdUnarchivePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdUnarchivePut(id: string, unarchiveSchemaDto: UnarchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdUnarchivePut(id, unarchiveSchemaDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdUnarchivePut(requestParameters: GatesApiConsoleV1GatesIdUnarchivePutRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Gate Versions
-     * @param {string} id id
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesIdVersionsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdVersionsGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesIdVersionsGet(requestParameters: GatesApiConsoleV1GatesIdVersionsGetRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Gate
-     * @param {GateCreateDto} gateCreateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {GatesApiConsoleV1GatesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1GatesPost(gateCreateDto: GateCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesPost(gateCreateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1GatesPost(requestParameters: GatesApiConsoleV1GatesPostRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesPost(requestParameters.gateCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

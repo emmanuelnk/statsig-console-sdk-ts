@@ -129,18 +129,31 @@ export const ConfigsApiFactory = function (configuration?: Configuration, basePa
         /**
          * Get the count of exposure events recently received by Statsig.
          * @summary Read Exposure Event Count
-         * @param {ConsoleV1ExposureCountGetExperimentsParameter} [experiments] 
-         * @param {ConsoleV1ExposureCountGetExperimentsParameter} [gates] 
-         * @param {ConsoleV1ExposureCountGetExperimentsParameter} [dynamicConfigs] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ConfigsApiConsoleV1ExposureCountGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExposureCountGet(experiments?: ConsoleV1ExposureCountGetExperimentsParameter, gates?: ConsoleV1ExposureCountGetExperimentsParameter, dynamicConfigs?: ConsoleV1ExposureCountGetExperimentsParameter, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExposureCountGet200Response> {
-            return localVarFp.consoleV1ExposureCountGet(experiments, gates, dynamicConfigs, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExposureCountGet(requestParameters: ConfigsApiConsoleV1ExposureCountGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExposureCountGet200Response> {
+            return localVarFp.consoleV1ExposureCountGet(requestParameters.experiments, requestParameters.gates, requestParameters.dynamicConfigs, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1ExposureCountGet operation in ConfigsApi.
+ */
+export interface ConfigsApiConsoleV1ExposureCountGetRequest {
+    readonly experiments?: ConsoleV1ExposureCountGetExperimentsParameter
+
+    readonly gates?: ConsoleV1ExposureCountGetExperimentsParameter
+
+    readonly dynamicConfigs?: ConsoleV1ExposureCountGetExperimentsParameter
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * ConfigsApi - object-oriented interface
@@ -149,15 +162,12 @@ export class ConfigsApi extends BaseAPI {
     /**
      * Get the count of exposure events recently received by Statsig.
      * @summary Read Exposure Event Count
-     * @param {ConsoleV1ExposureCountGetExperimentsParameter} [experiments] 
-     * @param {ConsoleV1ExposureCountGetExperimentsParameter} [gates] 
-     * @param {ConsoleV1ExposureCountGetExperimentsParameter} [dynamicConfigs] 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ConfigsApiConsoleV1ExposureCountGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExposureCountGet(experiments?: ConsoleV1ExposureCountGetExperimentsParameter, gates?: ConsoleV1ExposureCountGetExperimentsParameter, dynamicConfigs?: ConsoleV1ExposureCountGetExperimentsParameter, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ConfigsApiFp(this.configuration).consoleV1ExposureCountGet(experiments, gates, dynamicConfigs, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExposureCountGet(requestParameters: ConfigsApiConsoleV1ExposureCountGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return ConfigsApiFp(this.configuration).consoleV1ExposureCountGet(requestParameters.experiments, requestParameters.gates, requestParameters.dynamicConfigs, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

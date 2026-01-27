@@ -354,62 +354,134 @@ export const RolesApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary List Roles
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {RolesApiConsoleV1RolesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1RolesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesGet200Response> {
-            return localVarFp.consoleV1RolesGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1RolesGet(requestParameters: RolesApiConsoleV1RolesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesGet200Response> {
+            return localVarFp.consoleV1RolesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Role
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {RolesApiConsoleV1RolesIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1RolesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesIdDelete200Response> {
-            return localVarFp.consoleV1RolesIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1RolesIdDelete(requestParameters: RolesApiConsoleV1RolesIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesIdDelete200Response> {
+            return localVarFp.consoleV1RolesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Role
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {RolesApiConsoleV1RolesIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1RolesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesIdGet200Response> {
-            return localVarFp.consoleV1RolesIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1RolesIdGet(requestParameters: RolesApiConsoleV1RolesIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesIdGet200Response> {
+            return localVarFp.consoleV1RolesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Role
-         * @param {string} id id
-         * @param {RoleUpdateContractDto} roleUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {RolesApiConsoleV1RolesIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1RolesIdPatch(id: string, roleUpdateContractDto: RoleUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesIdPatch200Response> {
-            return localVarFp.consoleV1RolesIdPatch(id, roleUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1RolesIdPatch(requestParameters: RolesApiConsoleV1RolesIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesIdPatch200Response> {
+            return localVarFp.consoleV1RolesIdPatch(requestParameters.id, requestParameters.roleUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Role
-         * @param {RoleContractDto} roleContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {RolesApiConsoleV1RolesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1RolesPost(roleContractDto: RoleContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesPost201Response> {
-            return localVarFp.consoleV1RolesPost(roleContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1RolesPost(requestParameters: RolesApiConsoleV1RolesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesPost201Response> {
+            return localVarFp.consoleV1RolesPost(requestParameters.roleContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1RolesGet operation in RolesApi.
+ */
+export interface RolesApiConsoleV1RolesGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1RolesIdDelete operation in RolesApi.
+ */
+export interface RolesApiConsoleV1RolesIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1RolesIdGet operation in RolesApi.
+ */
+export interface RolesApiConsoleV1RolesIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1RolesIdPatch operation in RolesApi.
+ */
+export interface RolesApiConsoleV1RolesIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly roleUpdateContractDto: RoleUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1RolesPost operation in RolesApi.
+ */
+export interface RolesApiConsoleV1RolesPostRequest {
+    readonly roleContractDto: RoleContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * RolesApi - object-oriented interface
@@ -418,63 +490,56 @@ export class RolesApi extends BaseAPI {
     /**
      * 
      * @summary List Roles
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {RolesApiConsoleV1RolesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1RolesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return RolesApiFp(this.configuration).consoleV1RolesGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1RolesGet(requestParameters: RolesApiConsoleV1RolesGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return RolesApiFp(this.configuration).consoleV1RolesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Role
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {RolesApiConsoleV1RolesIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1RolesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return RolesApiFp(this.configuration).consoleV1RolesIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1RolesIdDelete(requestParameters: RolesApiConsoleV1RolesIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return RolesApiFp(this.configuration).consoleV1RolesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Role
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {RolesApiConsoleV1RolesIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1RolesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return RolesApiFp(this.configuration).consoleV1RolesIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1RolesIdGet(requestParameters: RolesApiConsoleV1RolesIdGetRequest, options?: RawAxiosRequestConfig) {
+        return RolesApiFp(this.configuration).consoleV1RolesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Role
-     * @param {string} id id
-     * @param {RoleUpdateContractDto} roleUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {RolesApiConsoleV1RolesIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1RolesIdPatch(id: string, roleUpdateContractDto: RoleUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return RolesApiFp(this.configuration).consoleV1RolesIdPatch(id, roleUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1RolesIdPatch(requestParameters: RolesApiConsoleV1RolesIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return RolesApiFp(this.configuration).consoleV1RolesIdPatch(requestParameters.id, requestParameters.roleUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Role
-     * @param {RoleContractDto} roleContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {RolesApiConsoleV1RolesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1RolesPost(roleContractDto: RoleContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return RolesApiFp(this.configuration).consoleV1RolesPost(roleContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1RolesPost(requestParameters: RolesApiConsoleV1RolesPostRequest, options?: RawAxiosRequestConfig) {
+        return RolesApiFp(this.configuration).consoleV1RolesPost(requestParameters.roleContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

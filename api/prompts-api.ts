@@ -424,75 +424,163 @@ export const PromptsApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary List Prompts
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {PromptsApiConsoleV1PromptsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsGet200Response> {
-            return localVarFp.consoleV1PromptsGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1PromptsGet(requestParameters: PromptsApiConsoleV1PromptsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsGet200Response> {
+            return localVarFp.consoleV1PromptsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Prompt
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {PromptsApiConsoleV1PromptsIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
-            return localVarFp.consoleV1PromptsIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1PromptsIdGet(requestParameters: PromptsApiConsoleV1PromptsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
+            return localVarFp.consoleV1PromptsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Prompt (partial)
-         * @param {string} id id
-         * @param {AIConfigPartialUpdateDto} aIConfigPartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {PromptsApiConsoleV1PromptsIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsIdPatch(id: string, aIConfigPartialUpdateDto: AIConfigPartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
-            return localVarFp.consoleV1PromptsIdPatch(id, aIConfigPartialUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1PromptsIdPatch(requestParameters: PromptsApiConsoleV1PromptsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
+            return localVarFp.consoleV1PromptsIdPatch(requestParameters.id, requestParameters.aIConfigPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Prompt Version
-         * @param {string} id id
-         * @param {AIConfigVersionCreateDto} aIConfigVersionCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {PromptsApiConsoleV1PromptsIdVersionsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsIdVersionsPost(id: string, aIConfigVersionCreateDto: AIConfigVersionCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsIdVersionsPost201Response> {
-            return localVarFp.consoleV1PromptsIdVersionsPost(id, aIConfigVersionCreateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1PromptsIdVersionsPost(requestParameters: PromptsApiConsoleV1PromptsIdVersionsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsIdVersionsPost201Response> {
+            return localVarFp.consoleV1PromptsIdVersionsPost(requestParameters.id, requestParameters.aIConfigVersionCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Start Prompt Version Evaluation Job
-         * @param {string} versionId 
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsIdVersionsVersionIdStartEvalsPost(versionId: string, id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsIdVersionsVersionIdStartEvalsPost200Response> {
-            return localVarFp.consoleV1PromptsIdVersionsVersionIdStartEvalsPost(versionId, id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters: PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsIdVersionsVersionIdStartEvalsPost200Response> {
+            return localVarFp.consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters.versionId, requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Prompt
-         * @param {AIConfigCreateDto} aIConfigCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {PromptsApiConsoleV1PromptsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsPost(aIConfigCreateDto: AIConfigCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
-            return localVarFp.consoleV1PromptsPost(aIConfigCreateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1PromptsPost(requestParameters: PromptsApiConsoleV1PromptsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
+            return localVarFp.consoleV1PromptsPost(requestParameters.aIConfigCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1PromptsGet operation in PromptsApi.
+ */
+export interface PromptsApiConsoleV1PromptsGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1PromptsIdGet operation in PromptsApi.
+ */
+export interface PromptsApiConsoleV1PromptsIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1PromptsIdPatch operation in PromptsApi.
+ */
+export interface PromptsApiConsoleV1PromptsIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly aIConfigPartialUpdateDto: AIConfigPartialUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1PromptsIdVersionsPost operation in PromptsApi.
+ */
+export interface PromptsApiConsoleV1PromptsIdVersionsPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly aIConfigVersionCreateDto: AIConfigVersionCreateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1PromptsIdVersionsVersionIdStartEvalsPost operation in PromptsApi.
+ */
+export interface PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequest {
+    readonly versionId: string
+
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1PromptsPost operation in PromptsApi.
+ */
+export interface PromptsApiConsoleV1PromptsPostRequest {
+    readonly aIConfigCreateDto: AIConfigCreateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * PromptsApi - object-oriented interface
@@ -501,77 +589,67 @@ export class PromptsApi extends BaseAPI {
     /**
      * 
      * @summary List Prompts
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {PromptsApiConsoleV1PromptsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1PromptsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1PromptsGet(requestParameters: PromptsApiConsoleV1PromptsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return PromptsApiFp(this.configuration).consoleV1PromptsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Prompt
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {PromptsApiConsoleV1PromptsIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1PromptsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1PromptsIdGet(requestParameters: PromptsApiConsoleV1PromptsIdGetRequest, options?: RawAxiosRequestConfig) {
+        return PromptsApiFp(this.configuration).consoleV1PromptsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Prompt (partial)
-     * @param {string} id id
-     * @param {AIConfigPartialUpdateDto} aIConfigPartialUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {PromptsApiConsoleV1PromptsIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1PromptsIdPatch(id: string, aIConfigPartialUpdateDto: AIConfigPartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsIdPatch(id, aIConfigPartialUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1PromptsIdPatch(requestParameters: PromptsApiConsoleV1PromptsIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return PromptsApiFp(this.configuration).consoleV1PromptsIdPatch(requestParameters.id, requestParameters.aIConfigPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Prompt Version
-     * @param {string} id id
-     * @param {AIConfigVersionCreateDto} aIConfigVersionCreateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {PromptsApiConsoleV1PromptsIdVersionsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1PromptsIdVersionsPost(id: string, aIConfigVersionCreateDto: AIConfigVersionCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsIdVersionsPost(id, aIConfigVersionCreateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1PromptsIdVersionsPost(requestParameters: PromptsApiConsoleV1PromptsIdVersionsPostRequest, options?: RawAxiosRequestConfig) {
+        return PromptsApiFp(this.configuration).consoleV1PromptsIdVersionsPost(requestParameters.id, requestParameters.aIConfigVersionCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Start Prompt Version Evaluation Job
-     * @param {string} versionId 
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1PromptsIdVersionsVersionIdStartEvalsPost(versionId: string, id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsIdVersionsVersionIdStartEvalsPost(versionId, id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters: PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequest, options?: RawAxiosRequestConfig) {
+        return PromptsApiFp(this.configuration).consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters.versionId, requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Prompt
-     * @param {AIConfigCreateDto} aIConfigCreateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {PromptsApiConsoleV1PromptsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1PromptsPost(aIConfigCreateDto: AIConfigCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsPost(aIConfigCreateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1PromptsPost(requestParameters: PromptsApiConsoleV1PromptsPostRequest, options?: RawAxiosRequestConfig) {
+        return PromptsApiFp(this.configuration).consoleV1PromptsPost(requestParameters.aIConfigCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

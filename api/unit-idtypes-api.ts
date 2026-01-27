@@ -354,62 +354,134 @@ export const UnitIDTypesApiFactory = function (configuration?: Configuration, ba
         /**
          * 
          * @summary List Unit ID Types
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UnitIDTypesApiConsoleV1UnitIdTypesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesGet200Response> {
-            return localVarFp.consoleV1UnitIdTypesGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UnitIdTypesGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesGet200Response> {
+            return localVarFp.consoleV1UnitIdTypesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Unit ID Type
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UnitIDTypesApiConsoleV1UnitIdTypesIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdDelete200Response> {
-            return localVarFp.consoleV1UnitIdTypesIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UnitIdTypesIdDelete(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdDelete200Response> {
+            return localVarFp.consoleV1UnitIdTypesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Unit ID Type
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UnitIDTypesApiConsoleV1UnitIdTypesIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdGet200Response> {
-            return localVarFp.consoleV1UnitIdTypesIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UnitIdTypesIdGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdGet200Response> {
+            return localVarFp.consoleV1UnitIdTypesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Unit ID Type
-         * @param {string} id id
-         * @param {UnitIdTypeUpdateContractDto} unitIdTypeUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesIdPatch(id: string, unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdPatch200Response> {
-            return localVarFp.consoleV1UnitIdTypesIdPatch(id, unitIdTypeUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UnitIdTypesIdPatch(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdPatch200Response> {
+            return localVarFp.consoleV1UnitIdTypesIdPatch(requestParameters.id, requestParameters.unitIdTypeUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Unit ID Type
-         * @param {UnitIdTypeContractDto} unitIdTypeContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UnitIDTypesApiConsoleV1UnitIdTypesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesPost(unitIdTypeContractDto: UnitIdTypeContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesPost201Response> {
-            return localVarFp.consoleV1UnitIdTypesPost(unitIdTypeContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1UnitIdTypesPost(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesPost201Response> {
+            return localVarFp.consoleV1UnitIdTypesPost(requestParameters.unitIdTypeContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1UnitIdTypesGet operation in UnitIDTypesApi.
+ */
+export interface UnitIDTypesApiConsoleV1UnitIdTypesGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UnitIdTypesIdDelete operation in UnitIDTypesApi.
+ */
+export interface UnitIDTypesApiConsoleV1UnitIdTypesIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UnitIdTypesIdGet operation in UnitIDTypesApi.
+ */
+export interface UnitIDTypesApiConsoleV1UnitIdTypesIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UnitIdTypesIdPatch operation in UnitIDTypesApi.
+ */
+export interface UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1UnitIdTypesPost operation in UnitIDTypesApi.
+ */
+export interface UnitIDTypesApiConsoleV1UnitIdTypesPostRequest {
+    readonly unitIdTypeContractDto: UnitIdTypeContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * UnitIDTypesApi - object-oriented interface
@@ -418,63 +490,56 @@ export class UnitIDTypesApi extends BaseAPI {
     /**
      * 
      * @summary List Unit ID Types
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UnitIDTypesApiConsoleV1UnitIdTypesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UnitIdTypesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UnitIdTypesGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Unit ID Type
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UnitIDTypesApiConsoleV1UnitIdTypesIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UnitIdTypesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UnitIdTypesIdDelete(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Unit ID Type
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UnitIDTypesApiConsoleV1UnitIdTypesIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UnitIdTypesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UnitIdTypesIdGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdGetRequest, options?: RawAxiosRequestConfig) {
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Unit ID Type
-     * @param {string} id id
-     * @param {UnitIdTypeUpdateContractDto} unitIdTypeUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UnitIdTypesIdPatch(id: string, unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdPatch(id, unitIdTypeUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UnitIdTypesIdPatch(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdPatch(requestParameters.id, requestParameters.unitIdTypeUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Unit ID Type
-     * @param {UnitIdTypeContractDto} unitIdTypeContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UnitIDTypesApiConsoleV1UnitIdTypesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1UnitIdTypesPost(unitIdTypeContractDto: UnitIdTypeContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesPost(unitIdTypeContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1UnitIdTypesPost(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesPostRequest, options?: RawAxiosRequestConfig) {
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesPost(requestParameters.unitIdTypeContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -253,43 +253,99 @@ export const EventsApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Get specific events
-         * @param {string} eventName 
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {EventsApiConsoleV1EventsEventNameGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EventsEventNameGet(eventName: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EventsEventNameGet200Response> {
-            return localVarFp.consoleV1EventsEventNameGet(eventName, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1EventsEventNameGet(requestParameters: EventsApiConsoleV1EventsEventNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EventsEventNameGet200Response> {
+            return localVarFp.consoleV1EventsEventNameGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get metrics using event name
-         * @param {string} eventName 
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {EventsApiConsoleV1EventsEventNameMetricsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EventsEventNameMetricsGet(eventName: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EventsEventNameMetricsGet200Response> {
-            return localVarFp.consoleV1EventsEventNameMetricsGet(eventName, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1EventsEventNameMetricsGet(requestParameters: EventsApiConsoleV1EventsEventNameMetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EventsEventNameMetricsGet200Response> {
+            return localVarFp.consoleV1EventsEventNameMetricsGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Events
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {EventsApiConsoleV1EventsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EventsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EventsGet200Response> {
-            return localVarFp.consoleV1EventsGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1EventsGet(requestParameters: EventsApiConsoleV1EventsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EventsGet200Response> {
+            return localVarFp.consoleV1EventsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1EventsEventNameGet operation in EventsApi.
+ */
+export interface EventsApiConsoleV1EventsEventNameGetRequest {
+    readonly eventName: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1EventsEventNameMetricsGet operation in EventsApi.
+ */
+export interface EventsApiConsoleV1EventsEventNameMetricsGetRequest {
+    readonly eventName: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1EventsGet operation in EventsApi.
+ */
+export interface EventsApiConsoleV1EventsGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * EventsApi - object-oriented interface
@@ -298,42 +354,34 @@ export class EventsApi extends BaseAPI {
     /**
      * 
      * @summary Get specific events
-     * @param {string} eventName 
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {EventsApiConsoleV1EventsEventNameGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1EventsEventNameGet(eventName: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return EventsApiFp(this.configuration).consoleV1EventsEventNameGet(eventName, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1EventsEventNameGet(requestParameters: EventsApiConsoleV1EventsEventNameGetRequest, options?: RawAxiosRequestConfig) {
+        return EventsApiFp(this.configuration).consoleV1EventsEventNameGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get metrics using event name
-     * @param {string} eventName 
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {EventsApiConsoleV1EventsEventNameMetricsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1EventsEventNameMetricsGet(eventName: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return EventsApiFp(this.configuration).consoleV1EventsEventNameMetricsGet(eventName, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1EventsEventNameMetricsGet(requestParameters: EventsApiConsoleV1EventsEventNameMetricsGetRequest, options?: RawAxiosRequestConfig) {
+        return EventsApiFp(this.configuration).consoleV1EventsEventNameMetricsGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Events
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {EventsApiConsoleV1EventsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1EventsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return EventsApiFp(this.configuration).consoleV1EventsGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1EventsGet(requestParameters: EventsApiConsoleV1EventsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return EventsApiFp(this.configuration).consoleV1EventsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

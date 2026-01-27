@@ -109,16 +109,27 @@ export const WarehouseConnectionsApiFactory = function (configuration?: Configur
         /**
          * 
          * @summary Update Warehouse Connection Parameters
-         * @param {WhConnectionUpdateDto} whConnectionUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {WarehouseConnectionsApiConsoleV1WhConnectionsPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1WhConnectionsPatch(whConnectionUpdateDto: WhConnectionUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1WhConnectionsPatch200Response> {
-            return localVarFp.consoleV1WhConnectionsPatch(whConnectionUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1WhConnectionsPatch(requestParameters: WarehouseConnectionsApiConsoleV1WhConnectionsPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1WhConnectionsPatch200Response> {
+            return localVarFp.consoleV1WhConnectionsPatch(requestParameters.whConnectionUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1WhConnectionsPatch operation in WarehouseConnectionsApi.
+ */
+export interface WarehouseConnectionsApiConsoleV1WhConnectionsPatchRequest {
+    readonly whConnectionUpdateDto: WhConnectionUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * WarehouseConnectionsApi - object-oriented interface
@@ -127,13 +138,12 @@ export class WarehouseConnectionsApi extends BaseAPI {
     /**
      * 
      * @summary Update Warehouse Connection Parameters
-     * @param {WhConnectionUpdateDto} whConnectionUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {WarehouseConnectionsApiConsoleV1WhConnectionsPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1WhConnectionsPatch(whConnectionUpdateDto: WhConnectionUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return WarehouseConnectionsApiFp(this.configuration).consoleV1WhConnectionsPatch(whConnectionUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1WhConnectionsPatch(requestParameters: WarehouseConnectionsApiConsoleV1WhConnectionsPatchRequest, options?: RawAxiosRequestConfig) {
+        return WarehouseConnectionsApiFp(this.configuration).consoleV1WhConnectionsPatch(requestParameters.whConnectionUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

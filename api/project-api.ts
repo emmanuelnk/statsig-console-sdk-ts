@@ -99,15 +99,25 @@ export const ProjectApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Get Project Info
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ProjectApiConsoleV1ProjectGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ProjectGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ProjectGet200Response> {
-            return localVarFp.consoleV1ProjectGet(xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ProjectGet(requestParameters: ProjectApiConsoleV1ProjectGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ProjectGet200Response> {
+            return localVarFp.consoleV1ProjectGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1ProjectGet operation in ProjectApi.
+ */
+export interface ProjectApiConsoleV1ProjectGetRequest {
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * ProjectApi - object-oriented interface
@@ -116,12 +126,12 @@ export class ProjectApi extends BaseAPI {
     /**
      * 
      * @summary Get Project Info
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ProjectApiConsoleV1ProjectGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ProjectGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ProjectApiFp(this.configuration).consoleV1ProjectGet(xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ProjectGet(requestParameters: ProjectApiConsoleV1ProjectGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return ProjectApiFp(this.configuration).consoleV1ProjectGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

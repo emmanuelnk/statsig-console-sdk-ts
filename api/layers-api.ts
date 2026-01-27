@@ -728,133 +728,300 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Get Layers
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersGet200Response> {
-            return localVarFp.consoleV1LayersGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersGet(requestParameters: LayersApiConsoleV1LayersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersGet200Response> {
+            return localVarFp.consoleV1LayersGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete a layer
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdDelete200Response> {
-            return localVarFp.consoleV1LayersIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdDelete(requestParameters: LayersApiConsoleV1LayersIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdDelete200Response> {
+            return localVarFp.consoleV1LayersIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Lineage: List Experiment related to Layer
-         * @param {string} id id
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdExperimentsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdExperimentsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdVersionsGet200Response> {
-            return localVarFp.consoleV1LayersIdExperimentsGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdExperimentsGet(requestParameters: LayersApiConsoleV1LayersIdExperimentsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdVersionsGet200Response> {
+            return localVarFp.consoleV1LayersIdExperimentsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get one layer
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdGet200Response> {
-            return localVarFp.consoleV1LayersIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdGet(requestParameters: LayersApiConsoleV1LayersIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdGet200Response> {
+            return localVarFp.consoleV1LayersIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Layer Overrides
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdOverridesDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
-            return localVarFp.consoleV1LayersIdOverridesDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdOverridesDelete(requestParameters: LayersApiConsoleV1LayersIdOverridesDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
+            return localVarFp.consoleV1LayersIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Layer Overrides
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdOverridesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
-            return localVarFp.consoleV1LayersIdOverridesGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdOverridesGet(requestParameters: LayersApiConsoleV1LayersIdOverridesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
+            return localVarFp.consoleV1LayersIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Add Layer Overrides
-         * @param {string} id id
-         * @param {LayerOverridesPatchDto} layerOverridesPatchDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdOverridesPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdOverridesPatch(id: string, layerOverridesPatchDto: LayerOverridesPatchDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
-            return localVarFp.consoleV1LayersIdOverridesPatch(id, layerOverridesPatchDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdOverridesPatch(requestParameters: LayersApiConsoleV1LayersIdOverridesPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
+            return localVarFp.consoleV1LayersIdOverridesPatch(requestParameters.id, requestParameters.layerOverridesPatchDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Layer Overrides
-         * @param {string} id id
-         * @param {LayerOverridesDto} layerOverridesDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdOverridesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdOverridesPost(id: string, layerOverridesDto: LayerOverridesDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
-            return localVarFp.consoleV1LayersIdOverridesPost(id, layerOverridesDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdOverridesPost(requestParameters: LayersApiConsoleV1LayersIdOverridesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
+            return localVarFp.consoleV1LayersIdOverridesPost(requestParameters.id, requestParameters.layerOverridesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Partially update a layer
-         * @param {string} id id
-         * @param {LayerPartialUpdateContractDto} layerPartialUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdPatch(id: string, layerPartialUpdateContractDto: LayerPartialUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdPatch200Response> {
-            return localVarFp.consoleV1LayersIdPatch(id, layerPartialUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdPatch(requestParameters: LayersApiConsoleV1LayersIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdPatch200Response> {
+            return localVarFp.consoleV1LayersIdPatch(requestParameters.id, requestParameters.layerPartialUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update a layer
-         * @param {string} id id
-         * @param {LayerFullUpdateContractDto} layerFullUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersIdPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdPost(id: string, layerFullUpdateContractDto: LayerFullUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdPost200Response> {
-            return localVarFp.consoleV1LayersIdPost(id, layerFullUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersIdPost(requestParameters: LayersApiConsoleV1LayersIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdPost200Response> {
+            return localVarFp.consoleV1LayersIdPost(requestParameters.id, requestParameters.layerFullUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create a Layer
-         * @param {LayerCreateContractDto} layerCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {LayersApiConsoleV1LayersPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersPost(layerCreateContractDto: LayerCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersPost201Response> {
-            return localVarFp.consoleV1LayersPost(layerCreateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1LayersPost(requestParameters: LayersApiConsoleV1LayersPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersPost201Response> {
+            return localVarFp.consoleV1LayersPost(requestParameters.layerCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1LayersGet operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdDelete operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdExperimentsGet operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdExperimentsGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdGet operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdOverridesDelete operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdOverridesDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdOverridesGet operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdOverridesGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdOverridesPatch operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdOverridesPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly layerOverridesPatchDto: LayerOverridesPatchDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdOverridesPost operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdOverridesPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly layerOverridesDto: LayerOverridesDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdPatch operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdPatchRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly layerPartialUpdateContractDto: LayerPartialUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersIdPost operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersIdPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly layerFullUpdateContractDto: LayerFullUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1LayersPost operation in LayersApi.
+ */
+export interface LayersApiConsoleV1LayersPostRequest {
+    readonly layerCreateContractDto: LayerCreateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * LayersApi - object-oriented interface
@@ -863,140 +1030,122 @@ export class LayersApi extends BaseAPI {
     /**
      * 
      * @summary Get Layers
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersGet(requestParameters: LayersApiConsoleV1LayersGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete a layer
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdDelete(requestParameters: LayersApiConsoleV1LayersIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Lineage: List Experiment related to Layer
-     * @param {string} id id
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdExperimentsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdExperimentsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdExperimentsGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdExperimentsGet(requestParameters: LayersApiConsoleV1LayersIdExperimentsGetRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdExperimentsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get one layer
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdGet(requestParameters: LayersApiConsoleV1LayersIdGetRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Layer Overrides
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdOverridesDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdOverridesDelete(requestParameters: LayersApiConsoleV1LayersIdOverridesDeleteRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Layer Overrides
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdOverridesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdOverridesGet(requestParameters: LayersApiConsoleV1LayersIdOverridesGetRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Add Layer Overrides
-     * @param {string} id id
-     * @param {LayerOverridesPatchDto} layerOverridesPatchDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdOverridesPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdOverridesPatch(id: string, layerOverridesPatchDto: LayerOverridesPatchDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesPatch(id, layerOverridesPatchDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdOverridesPatch(requestParameters: LayersApiConsoleV1LayersIdOverridesPatchRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesPatch(requestParameters.id, requestParameters.layerOverridesPatchDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Layer Overrides
-     * @param {string} id id
-     * @param {LayerOverridesDto} layerOverridesDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdOverridesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdOverridesPost(id: string, layerOverridesDto: LayerOverridesDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesPost(id, layerOverridesDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdOverridesPost(requestParameters: LayersApiConsoleV1LayersIdOverridesPostRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesPost(requestParameters.id, requestParameters.layerOverridesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Partially update a layer
-     * @param {string} id id
-     * @param {LayerPartialUpdateContractDto} layerPartialUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdPatch(id: string, layerPartialUpdateContractDto: LayerPartialUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdPatch(id, layerPartialUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdPatch(requestParameters: LayersApiConsoleV1LayersIdPatchRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdPatch(requestParameters.id, requestParameters.layerPartialUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update a layer
-     * @param {string} id id
-     * @param {LayerFullUpdateContractDto} layerFullUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersIdPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersIdPost(id: string, layerFullUpdateContractDto: LayerFullUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdPost(id, layerFullUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersIdPost(requestParameters: LayersApiConsoleV1LayersIdPostRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersIdPost(requestParameters.id, requestParameters.layerFullUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create a Layer
-     * @param {LayerCreateContractDto} layerCreateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {LayersApiConsoleV1LayersPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1LayersPost(layerCreateContractDto: LayerCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersPost(layerCreateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1LayersPost(requestParameters: LayersApiConsoleV1LayersPostRequest, options?: RawAxiosRequestConfig) {
+        return LayersApiFp(this.configuration).consoleV1LayersPost(requestParameters.layerCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

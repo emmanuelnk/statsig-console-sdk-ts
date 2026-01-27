@@ -2192,406 +2192,1020 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Read Single Metric Value
-         * @param {string} id The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
-         * @param {string} date Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsGet(id: string, date: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsGet200Response> {
-            return localVarFp.consoleV1MetricsGet(id, date, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsGet(requestParameters: MetricsApiConsoleV1MetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsGet200Response> {
+            return localVarFp.consoleV1MetricsGet(requestParameters.id, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Single Metric Value
-         * @param {string} id The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
-         * @param {string} date Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsGet0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsGet_1(id: string, date: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsGet200Response> {
-            return localVarFp.consoleV1MetricsGet_1(id, date, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsGet_1(requestParameters: MetricsApiConsoleV1MetricsGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsGet200Response> {
+            return localVarFp.consoleV1MetricsGet_1(requestParameters.id, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Cancel archive a metric
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdCancelArchivePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdCancelArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdCancelArchivePut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdCancelArchivePut(requestParameters: MetricsApiConsoleV1MetricsIdCancelArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response> {
+            return localVarFp.consoleV1MetricsIdCancelArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Cancel archive a metric
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdCancelArchivePut0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdCancelArchivePut_2(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdCancelArchivePut_2(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdCancelArchivePut_2(requestParameters: MetricsApiConsoleV1MetricsIdCancelArchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response> {
+            return localVarFp.consoleV1MetricsIdCancelArchivePut_2(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete a metric
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdDelete200Response> {
-            return localVarFp.consoleV1MetricsIdDelete(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdDelete(requestParameters: MetricsApiConsoleV1MetricsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdDelete200Response> {
+            return localVarFp.consoleV1MetricsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete a metric
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdDelete0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdDelete_3(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdDelete200Response> {
-            return localVarFp.consoleV1MetricsIdDelete_3(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdDelete_3(requestParameters: MetricsApiConsoleV1MetricsIdDelete0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdDelete200Response> {
+            return localVarFp.consoleV1MetricsIdDelete_3(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Lineage: List experiments related to Metric
-         * @param {string} id id
-         * @param {string} [layerID] Which layer to place the experiment into.
-         * @param {string} [idType] The idType the experiment will be performed on
-         * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
-         * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
-         * @param {string} [targetAppID] 
-         * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
-         * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
-         * @param {string | null} [creatorName] Name of the creator.
-         * @param {string | null} [creatorID] ID of the user who created the entity.
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdExperimentsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdExperimentsGet(id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdExperimentsGet200Response> {
-            return localVarFp.consoleV1MetricsIdExperimentsGet(id, layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdExperimentsGet(requestParameters: MetricsApiConsoleV1MetricsIdExperimentsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdExperimentsGet200Response> {
+            return localVarFp.consoleV1MetricsIdExperimentsGet(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Lineage: List experiments related to Metric
-         * @param {string} id id
-         * @param {string} [layerID] Which layer to place the experiment into.
-         * @param {string} [idType] The idType the experiment will be performed on
-         * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
-         * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
-         * @param {string} [targetAppID] 
-         * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
-         * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
-         * @param {string | null} [creatorName] Name of the creator.
-         * @param {string | null} [creatorID] ID of the user who created the entity.
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdExperimentsGet0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdExperimentsGet_4(id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdExperimentsGet200Response> {
-            return localVarFp.consoleV1MetricsIdExperimentsGet_4(id, layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdExperimentsGet_4(requestParameters: MetricsApiConsoleV1MetricsIdExperimentsGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdExperimentsGet200Response> {
+            return localVarFp.consoleV1MetricsIdExperimentsGet_4(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Metric Definition
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
-            return localVarFp.consoleV1MetricsIdGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdGet(requestParameters: MetricsApiConsoleV1MetricsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
+            return localVarFp.consoleV1MetricsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Metric Definition
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdGet0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdGet_5(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
-            return localVarFp.consoleV1MetricsIdGet_5(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdGet_5(requestParameters: MetricsApiConsoleV1MetricsIdGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
+            return localVarFp.consoleV1MetricsIdGet_5(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update a metric
-         * @param {string} id id
-         * @param {MetricsUpdateContractDto} metricsUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdPost(id: string, metricsUpdateContractDto: MetricsUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdPost200Response> {
-            return localVarFp.consoleV1MetricsIdPost(id, metricsUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdPost(requestParameters: MetricsApiConsoleV1MetricsIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdPost200Response> {
+            return localVarFp.consoleV1MetricsIdPost(requestParameters.id, requestParameters.metricsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update a metric
-         * @param {string} id id
-         * @param {MetricsUpdateContractDto} metricsUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdPost0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdPost_6(id: string, metricsUpdateContractDto: MetricsUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdPost200Response> {
-            return localVarFp.consoleV1MetricsIdPost_6(id, metricsUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdPost_6(requestParameters: MetricsApiConsoleV1MetricsIdPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdPost200Response> {
+            return localVarFp.consoleV1MetricsIdPost_6(requestParameters.id, requestParameters.metricsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Reload metric data
-         * @param {string} id id
-         * @param {ConsoleV1MetricsIdReloadPostIncrementalEnum} [incremental] Incremental reload of the metric
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdReloadPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdReloadPost(id: string, incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdReloadPost200Response> {
-            return localVarFp.consoleV1MetricsIdReloadPost(id, incremental, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdReloadPost(requestParameters: MetricsApiConsoleV1MetricsIdReloadPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdReloadPost200Response> {
+            return localVarFp.consoleV1MetricsIdReloadPost(requestParameters.id, requestParameters.incremental, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Schedule a metric archive
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdScheduleArchivePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdScheduleArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdScheduleArchivePut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdScheduleArchivePut(requestParameters: MetricsApiConsoleV1MetricsIdScheduleArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response> {
+            return localVarFp.consoleV1MetricsIdScheduleArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Schedule a metric archive
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdScheduleArchivePut0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdScheduleArchivePut_7(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdScheduleArchivePut_7(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdScheduleArchivePut_7(requestParameters: MetricsApiConsoleV1MetricsIdScheduleArchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response> {
+            return localVarFp.consoleV1MetricsIdScheduleArchivePut_7(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get SQL for a metric
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdSqlGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdSqlGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdSqlGet200Response> {
-            return localVarFp.consoleV1MetricsIdSqlGet(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdSqlGet(requestParameters: MetricsApiConsoleV1MetricsIdSqlGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdSqlGet200Response> {
+            return localVarFp.consoleV1MetricsIdSqlGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get SQL for a metric
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdSqlGet0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdSqlGet_8(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdSqlGet200Response> {
-            return localVarFp.consoleV1MetricsIdSqlGet_8(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdSqlGet_8(requestParameters: MetricsApiConsoleV1MetricsIdSqlGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdSqlGet200Response> {
+            return localVarFp.consoleV1MetricsIdSqlGet_8(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Unarchive a metric
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdUnarchivePutRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdUnarchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdUnarchivePut(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdUnarchivePut(requestParameters: MetricsApiConsoleV1MetricsIdUnarchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response> {
+            return localVarFp.consoleV1MetricsIdUnarchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Unarchive a metric
-         * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsIdUnarchivePut0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdUnarchivePut_9(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdUnarchivePut_9(id, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsIdUnarchivePut_9(requestParameters: MetricsApiConsoleV1MetricsIdUnarchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response> {
+            return localVarFp.consoleV1MetricsIdUnarchivePut_9(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List all Metrics
-         * @param {ConsoleV1MetricsListGetShowHiddenMetricsEnum} [showHiddenMetrics] Should hidden metrics be returned: Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter metrics based on a given tagID, found on /tags endpoint. Can be a single string or an array of strings.
-         * @param {string} [filters] Additional filters for metrics. Can be a string or an object with tags filter.
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsListGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsListGet(showHiddenMetrics?: ConsoleV1MetricsListGetShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsListGet200Response> {
-            return localVarFp.consoleV1MetricsListGet(showHiddenMetrics, tags, filters, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsListGet(requestParameters: MetricsApiConsoleV1MetricsListGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsListGet200Response> {
+            return localVarFp.consoleV1MetricsListGet(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List all Metrics
-         * @param {ConsoleV1MetricsListGet0ShowHiddenMetricsEnum} [showHiddenMetrics] Should hidden metrics be returned: Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
-         * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter metrics based on a given tagID, found on /tags endpoint. Can be a single string or an array of strings.
-         * @param {string} [filters] Additional filters for metrics. Can be a string or an object with tags filter.
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsListGet0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsListGet_10(showHiddenMetrics?: ConsoleV1MetricsListGet0ShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsListGet200Response> {
-            return localVarFp.consoleV1MetricsListGet_10(showHiddenMetrics, tags, filters, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsListGet_10(requestParameters: MetricsApiConsoleV1MetricsListGet0Request = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsListGet200Response> {
+            return localVarFp.consoleV1MetricsListGet_10(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List metric source
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsMetricSourceListGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceListGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceListGet200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceListGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceListGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceListGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceListGet200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Metric Source
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsMetricSourceNameDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameDelete200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNameDelete(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceNameDelete(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameDelete200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Metric Source
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsMetricSourceNameGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameGet200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNameGet(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceNameGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameGet200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Metric Source Metrics
-         * @param {string} name name
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsMetricSourceNameMetricsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameMetricsGet(name: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameMetricsGet200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNameMetricsGet(name, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceNameMetricsGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameMetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameMetricsGet200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Metric Source
-         * @param {string} name name
-         * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsMetricSourceNamePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNamePost(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNamePost200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNamePost(name, metricSourceUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourceNamePost(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNamePost200Response> {
+            return localVarFp.consoleV1MetricsMetricSourceNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Metric Source
-         * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsMetricSourcePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourcePost201Response> {
-            return localVarFp.consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsMetricSourcePost(requestParameters: MetricsApiConsoleV1MetricsMetricSourcePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourcePost201Response> {
+            return localVarFp.consoleV1MetricsMetricSourcePost(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Metric Definition by Name
-         * @param {string} name name
-         * @param {string} type type
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsNameTypeGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsNameTypeGet(name: string, type: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
-            return localVarFp.consoleV1MetricsNameTypeGet(name, type, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsNameTypeGet(requestParameters: MetricsApiConsoleV1MetricsNameTypeGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
+            return localVarFp.consoleV1MetricsNameTypeGet(requestParameters.name, requestParameters.type, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Metric Definition by Name
-         * @param {string} name name
-         * @param {string} type type
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsNameTypeGet0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsNameTypeGet_11(name: string, type: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
-            return localVarFp.consoleV1MetricsNameTypeGet_11(name, type, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsNameTypeGet_11(requestParameters: MetricsApiConsoleV1MetricsNameTypeGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
+            return localVarFp.consoleV1MetricsNameTypeGet_11(requestParameters.name, requestParameters.type, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Metric
-         * @param {MetricCreationContractDto} metricCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsPost(metricCreationContractDto: MetricCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsPost201Response> {
-            return localVarFp.consoleV1MetricsPost(metricCreationContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsPost(requestParameters: MetricsApiConsoleV1MetricsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsPost201Response> {
+            return localVarFp.consoleV1MetricsPost(requestParameters.metricCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Metric
-         * @param {MetricCreationContractDto} metricCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsPost0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsPost_12(metricCreationContractDto: MetricCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsPost201Response> {
-            return localVarFp.consoleV1MetricsPost_12(metricCreationContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsPost_12(requestParameters: MetricsApiConsoleV1MetricsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsPost201Response> {
+            return localVarFp.consoleV1MetricsPost_12(requestParameters.metricCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * List all metric values
          * @summary List All Metric Values
-         * @param {string} date Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [metricName] 
-         * @param {string} [metricType] 
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {MetricsApiConsoleV1MetricsValuesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsValuesGet(date: string, metricName?: string, metricType?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsValuesGet200Response> {
-            return localVarFp.consoleV1MetricsValuesGet(date, metricName, metricType, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1MetricsValuesGet(requestParameters: MetricsApiConsoleV1MetricsValuesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsValuesGet200Response> {
+            return localVarFp.consoleV1MetricsValuesGet(requestParameters.date, requestParameters.metricName, requestParameters.metricType, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1MetricsGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsGetRequest {
+    /**
+     * The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
+     */
+    readonly id: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly date: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsGet_1 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsGet0Request {
+    /**
+     * The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
+     */
+    readonly id: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly date: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdCancelArchivePut operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdCancelArchivePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdCancelArchivePut_2 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdCancelArchivePut0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdDelete operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdDeleteRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdDelete_3 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdDelete0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdExperimentsGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdExperimentsGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Which layer to place the experiment into.
+     */
+    readonly layerID?: string
+
+    /**
+     * The idType the experiment will be performed on
+     */
+    readonly idType?: string
+
+    /**
+     * The team ID associated with the experiment, Enterprise only.
+     */
+    readonly teamID?: string | null
+
+    /**
+     * The current status of the experiment
+     */
+    readonly status?: ConsoleV1ExperimentsGetStatusParameter
+
+    readonly targetAppID?: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly createdStartDate?: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly createdEndDate?: string
+
+    /**
+     * Filter by experiment type
+     */
+    readonly experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter
+
+    /**
+     * Name of the creator.
+     */
+    readonly creatorName?: string | null
+
+    /**
+     * ID of the user who created the entity.
+     */
+    readonly creatorID?: string | null
+
+    /**
+     * Filter by tags
+     */
+    readonly tags?: ConsoleV1AuditLogsGetTagsParameter
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdExperimentsGet_4 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdExperimentsGet0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Which layer to place the experiment into.
+     */
+    readonly layerID?: string
+
+    /**
+     * The idType the experiment will be performed on
+     */
+    readonly idType?: string
+
+    /**
+     * The team ID associated with the experiment, Enterprise only.
+     */
+    readonly teamID?: string | null
+
+    /**
+     * The current status of the experiment
+     */
+    readonly status?: ConsoleV1ExperimentsGetStatusParameter
+
+    readonly targetAppID?: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly createdStartDate?: string
+
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly createdEndDate?: string
+
+    /**
+     * Filter by experiment type
+     */
+    readonly experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter
+
+    /**
+     * Name of the creator.
+     */
+    readonly creatorName?: string | null
+
+    /**
+     * ID of the user who created the entity.
+     */
+    readonly creatorID?: string | null
+
+    /**
+     * Filter by tags
+     */
+    readonly tags?: ConsoleV1AuditLogsGetTagsParameter
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdGet_5 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdGet0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdPost operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly metricsUpdateContractDto: MetricsUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdPost_6 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdPost0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly metricsUpdateContractDto: MetricsUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdReloadPost operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdReloadPostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Incremental reload of the metric
+     */
+    readonly incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdScheduleArchivePut operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdScheduleArchivePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdScheduleArchivePut_7 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdScheduleArchivePut0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdSqlGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdSqlGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdSqlGet_8 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdSqlGet0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdUnarchivePut operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdUnarchivePutRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsIdUnarchivePut_9 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsIdUnarchivePut0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsListGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsListGetRequest {
+    /**
+     * Should hidden metrics be returned: Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly showHiddenMetrics?: ConsoleV1MetricsListGetShowHiddenMetricsEnum
+
+    /**
+     * Filter metrics based on a given tagID, found on /tags endpoint. Can be a single string or an array of strings.
+     */
+    readonly tags?: ConsoleV1AuditLogsGetTagsParameter
+
+    /**
+     * Additional filters for metrics. Can be a string or an object with tags filter.
+     */
+    readonly filters?: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsListGet_10 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsListGet0Request {
+    /**
+     * Should hidden metrics be returned: Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly showHiddenMetrics?: ConsoleV1MetricsListGet0ShowHiddenMetricsEnum
+
+    /**
+     * Filter metrics based on a given tagID, found on /tags endpoint. Can be a single string or an array of strings.
+     */
+    readonly tags?: ConsoleV1AuditLogsGetTagsParameter
+
+    /**
+     * Additional filters for metrics. Can be a string or an object with tags filter.
+     */
+    readonly filters?: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceListGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsMetricSourceListGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceNameDelete operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsMetricSourceNameDeleteRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceNameGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsMetricSourceNameGetRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceNameMetricsGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsMetricSourceNameMetricsGetRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourceNamePost operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsMetricSourceNamePostRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    readonly metricSourceUpdateContractDto: MetricSourceUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsMetricSourcePost operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsMetricSourcePostRequest {
+    readonly metricSourceCreationContractDto: MetricSourceCreationContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsNameTypeGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsNameTypeGetRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * type
+     */
+    readonly type: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsNameTypeGet_11 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsNameTypeGet0Request {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * type
+     */
+    readonly type: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsPost operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsPostRequest {
+    readonly metricCreationContractDto: MetricCreationContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsPost_12 operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsPost0Request {
+    readonly metricCreationContractDto: MetricCreationContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1MetricsValuesGet operation in MetricsApi.
+ */
+export interface MetricsApiConsoleV1MetricsValuesGetRequest {
+    /**
+     * Expected valid date in the form of YYYY-MM-DD
+     */
+    readonly date: string
+
+    readonly metricName?: string
+
+    readonly metricType?: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * MetricsApi - object-oriented interface
@@ -2600,434 +3214,353 @@ export class MetricsApi extends BaseAPI {
     /**
      * 
      * @summary Read Single Metric Value
-     * @param {string} id The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
-     * @param {string} date Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsGet(id: string, date: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsGet(id, date, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsGet(requestParameters: MetricsApiConsoleV1MetricsGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsGet(requestParameters.id, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Single Metric Value
-     * @param {string} id The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
-     * @param {string} date Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsGet0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsGet_1(id: string, date: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsGet_1(id, date, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsGet_1(requestParameters: MetricsApiConsoleV1MetricsGet0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsGet_1(requestParameters.id, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Cancel archive a metric
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdCancelArchivePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdCancelArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdCancelArchivePut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdCancelArchivePut(requestParameters: MetricsApiConsoleV1MetricsIdCancelArchivePutRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdCancelArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Cancel archive a metric
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdCancelArchivePut0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdCancelArchivePut_2(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdCancelArchivePut_2(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdCancelArchivePut_2(requestParameters: MetricsApiConsoleV1MetricsIdCancelArchivePut0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdCancelArchivePut_2(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete a metric
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdDelete(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdDelete(requestParameters: MetricsApiConsoleV1MetricsIdDeleteRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete a metric
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdDelete0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdDelete_3(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdDelete_3(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdDelete_3(requestParameters: MetricsApiConsoleV1MetricsIdDelete0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdDelete_3(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Lineage: List experiments related to Metric
-     * @param {string} id id
-     * @param {string} [layerID] Which layer to place the experiment into.
-     * @param {string} [idType] The idType the experiment will be performed on
-     * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
-     * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
-     * @param {string} [targetAppID] 
-     * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
-     * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
-     * @param {string | null} [creatorName] Name of the creator.
-     * @param {string | null} [creatorID] ID of the user who created the entity.
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdExperimentsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdExperimentsGet(id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdExperimentsGet(id, layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdExperimentsGet(requestParameters: MetricsApiConsoleV1MetricsIdExperimentsGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdExperimentsGet(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Lineage: List experiments related to Metric
-     * @param {string} id id
-     * @param {string} [layerID] Which layer to place the experiment into.
-     * @param {string} [idType] The idType the experiment will be performed on
-     * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
-     * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
-     * @param {string} [targetAppID] 
-     * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
-     * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
-     * @param {string | null} [creatorName] Name of the creator.
-     * @param {string | null} [creatorID] ID of the user who created the entity.
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdExperimentsGet0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdExperimentsGet_4(id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdExperimentsGet_4(id, layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdExperimentsGet_4(requestParameters: MetricsApiConsoleV1MetricsIdExperimentsGet0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdExperimentsGet_4(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Metric Definition
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdGet(requestParameters: MetricsApiConsoleV1MetricsIdGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Metric Definition
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdGet0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdGet_5(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdGet_5(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdGet_5(requestParameters: MetricsApiConsoleV1MetricsIdGet0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdGet_5(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update a metric
-     * @param {string} id id
-     * @param {MetricsUpdateContractDto} metricsUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdPost(id: string, metricsUpdateContractDto: MetricsUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdPost(id, metricsUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdPost(requestParameters: MetricsApiConsoleV1MetricsIdPostRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdPost(requestParameters.id, requestParameters.metricsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update a metric
-     * @param {string} id id
-     * @param {MetricsUpdateContractDto} metricsUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdPost0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdPost_6(id: string, metricsUpdateContractDto: MetricsUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdPost_6(id, metricsUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdPost_6(requestParameters: MetricsApiConsoleV1MetricsIdPost0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdPost_6(requestParameters.id, requestParameters.metricsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Reload metric data
-     * @param {string} id id
-     * @param {ConsoleV1MetricsIdReloadPostIncrementalEnum} [incremental] Incremental reload of the metric
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdReloadPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdReloadPost(id: string, incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdReloadPost(id, incremental, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdReloadPost(requestParameters: MetricsApiConsoleV1MetricsIdReloadPostRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdReloadPost(requestParameters.id, requestParameters.incremental, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Schedule a metric archive
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdScheduleArchivePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdScheduleArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdScheduleArchivePut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdScheduleArchivePut(requestParameters: MetricsApiConsoleV1MetricsIdScheduleArchivePutRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdScheduleArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Schedule a metric archive
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdScheduleArchivePut0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdScheduleArchivePut_7(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdScheduleArchivePut_7(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdScheduleArchivePut_7(requestParameters: MetricsApiConsoleV1MetricsIdScheduleArchivePut0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdScheduleArchivePut_7(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get SQL for a metric
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdSqlGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdSqlGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdSqlGet(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdSqlGet(requestParameters: MetricsApiConsoleV1MetricsIdSqlGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdSqlGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get SQL for a metric
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdSqlGet0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdSqlGet_8(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdSqlGet_8(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdSqlGet_8(requestParameters: MetricsApiConsoleV1MetricsIdSqlGet0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdSqlGet_8(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Unarchive a metric
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdUnarchivePutRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdUnarchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdUnarchivePut(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdUnarchivePut(requestParameters: MetricsApiConsoleV1MetricsIdUnarchivePutRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdUnarchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Unarchive a metric
-     * @param {string} id id
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsIdUnarchivePut0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsIdUnarchivePut_9(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdUnarchivePut_9(id, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsIdUnarchivePut_9(requestParameters: MetricsApiConsoleV1MetricsIdUnarchivePut0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdUnarchivePut_9(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List all Metrics
-     * @param {ConsoleV1MetricsListGetShowHiddenMetricsEnum} [showHiddenMetrics] Should hidden metrics be returned: Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter metrics based on a given tagID, found on /tags endpoint. Can be a single string or an array of strings.
-     * @param {string} [filters] Additional filters for metrics. Can be a string or an object with tags filter.
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsListGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsListGet(showHiddenMetrics?: ConsoleV1MetricsListGetShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsListGet(showHiddenMetrics, tags, filters, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsListGet(requestParameters: MetricsApiConsoleV1MetricsListGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsListGet(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List all Metrics
-     * @param {ConsoleV1MetricsListGet0ShowHiddenMetricsEnum} [showHiddenMetrics] Should hidden metrics be returned: Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
-     * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter metrics based on a given tagID, found on /tags endpoint. Can be a single string or an array of strings.
-     * @param {string} [filters] Additional filters for metrics. Can be a string or an object with tags filter.
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsListGet0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsListGet_10(showHiddenMetrics?: ConsoleV1MetricsListGet0ShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsListGet_10(showHiddenMetrics, tags, filters, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsListGet_10(requestParameters: MetricsApiConsoleV1MetricsListGet0Request = {}, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsListGet_10(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List metric source
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsMetricSourceListGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceListGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceListGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceListGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceListGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Metric Source
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsMetricSourceNameDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameDelete(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceNameDelete(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameDeleteRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Metric Source
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsMetricSourceNameGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameGet(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceNameGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Metric Source Metrics
-     * @param {string} name name
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsMetricSourceNameMetricsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceNameMetricsGet(name: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameMetricsGet(name, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceNameMetricsGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameMetricsGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Metric Source
-     * @param {string} name name
-     * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsMetricSourceNamePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourceNamePost(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNamePost(name, metricSourceUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourceNamePost(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNamePostRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Metric Source
-     * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsMetricSourcePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsMetricSourcePost(requestParameters: MetricsApiConsoleV1MetricsMetricSourcePostRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourcePost(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Metric Definition by Name
-     * @param {string} name name
-     * @param {string} type type
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsNameTypeGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsNameTypeGet(name: string, type: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsNameTypeGet(name, type, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsNameTypeGet(requestParameters: MetricsApiConsoleV1MetricsNameTypeGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsNameTypeGet(requestParameters.name, requestParameters.type, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Metric Definition by Name
-     * @param {string} name name
-     * @param {string} type type
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsNameTypeGet0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsNameTypeGet_11(name: string, type: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsNameTypeGet_11(name, type, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsNameTypeGet_11(requestParameters: MetricsApiConsoleV1MetricsNameTypeGet0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsNameTypeGet_11(requestParameters.name, requestParameters.type, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Metric
-     * @param {MetricCreationContractDto} metricCreationContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsPost(metricCreationContractDto: MetricCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsPost(metricCreationContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsPost(requestParameters: MetricsApiConsoleV1MetricsPostRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsPost(requestParameters.metricCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Metric
-     * @param {MetricCreationContractDto} metricCreationContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsPost0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsPost_12(metricCreationContractDto: MetricCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsPost_12(metricCreationContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsPost_12(requestParameters: MetricsApiConsoleV1MetricsPost0Request, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsPost_12(requestParameters.metricCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * List all metric values
      * @summary List All Metric Values
-     * @param {string} date Expected valid date in the form of YYYY-MM-DD
-     * @param {string} [metricName] 
-     * @param {string} [metricType] 
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {MetricsApiConsoleV1MetricsValuesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1MetricsValuesGet(date: string, metricName?: string, metricType?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsValuesGet(date, metricName, metricType, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1MetricsValuesGet(requestParameters: MetricsApiConsoleV1MetricsValuesGetRequest, options?: RawAxiosRequestConfig) {
+        return MetricsApiFp(this.configuration).consoleV1MetricsValuesGet(requestParameters.date, requestParameters.metricName, requestParameters.metricType, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

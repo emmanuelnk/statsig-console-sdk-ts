@@ -115,17 +115,35 @@ export const UsageApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Get Report in CSV format
-         * @param {number} end Unix timestamp in ms
-         * @param {number} [start] Unix timestamp in ms
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {UsageApiConsoleV1ProjectUsageBillingReportGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ProjectUsageBillingReportGet(end: number, start?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<File> {
-            return localVarFp.consoleV1ProjectUsageBillingReportGet(end, start, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ProjectUsageBillingReportGet(requestParameters: UsageApiConsoleV1ProjectUsageBillingReportGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.consoleV1ProjectUsageBillingReportGet(requestParameters.end, requestParameters.start, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1ProjectUsageBillingReportGet operation in UsageApi.
+ */
+export interface UsageApiConsoleV1ProjectUsageBillingReportGetRequest {
+    /**
+     * Unix timestamp in ms
+     */
+    readonly end: number
+
+    /**
+     * Unix timestamp in ms
+     */
+    readonly start?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * UsageApi - object-oriented interface
@@ -134,14 +152,12 @@ export class UsageApi extends BaseAPI {
     /**
      * 
      * @summary Get Report in CSV format
-     * @param {number} end Unix timestamp in ms
-     * @param {number} [start] Unix timestamp in ms
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {UsageApiConsoleV1ProjectUsageBillingReportGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ProjectUsageBillingReportGet(end: number, start?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return UsageApiFp(this.configuration).consoleV1ProjectUsageBillingReportGet(end, start, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ProjectUsageBillingReportGet(requestParameters: UsageApiConsoleV1ProjectUsageBillingReportGetRequest, options?: RawAxiosRequestConfig) {
+        return UsageApiFp(this.configuration).consoleV1ProjectUsageBillingReportGet(requestParameters.end, requestParameters.start, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

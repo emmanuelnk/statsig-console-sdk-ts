@@ -289,51 +289,103 @@ export const ParamStoreApiFactory = function (configuration?: Configuration, bas
         /**
          * 
          * @summary List Param Stores
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ParamStoreApiConsoleV1ParamStoresGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ParamStoresGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresGet200Response> {
-            return localVarFp.consoleV1ParamStoresGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ParamStoresGet(requestParameters: ParamStoreApiConsoleV1ParamStoresGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresGet200Response> {
+            return localVarFp.consoleV1ParamStoresGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Param Store
-         * @param {string} name 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ParamStoreApiConsoleV1ParamStoresNameGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ParamStoresNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresPost200Response> {
-            return localVarFp.consoleV1ParamStoresNameGet(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ParamStoresNameGet(requestParameters: ParamStoreApiConsoleV1ParamStoresNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresPost200Response> {
+            return localVarFp.consoleV1ParamStoresNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Param Store
-         * @param {string} name 
-         * @param {ParamStoreUpdateDto} paramStoreUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ParamStoreApiConsoleV1ParamStoresNamePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ParamStoresNamePost(name: string, paramStoreUpdateDto: ParamStoreUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresPost200Response> {
-            return localVarFp.consoleV1ParamStoresNamePost(name, paramStoreUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ParamStoresNamePost(requestParameters: ParamStoreApiConsoleV1ParamStoresNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresPost200Response> {
+            return localVarFp.consoleV1ParamStoresNamePost(requestParameters.name, requestParameters.paramStoreUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Param Store
-         * @param {ParamStoreCreateDto} paramStoreCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ParamStoreApiConsoleV1ParamStoresPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ParamStoresPost(paramStoreCreateDto: ParamStoreCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresPost200Response> {
-            return localVarFp.consoleV1ParamStoresPost(paramStoreCreateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ParamStoresPost(requestParameters: ParamStoreApiConsoleV1ParamStoresPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresPost200Response> {
+            return localVarFp.consoleV1ParamStoresPost(requestParameters.paramStoreCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1ParamStoresGet operation in ParamStoreApi.
+ */
+export interface ParamStoreApiConsoleV1ParamStoresGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ParamStoresNameGet operation in ParamStoreApi.
+ */
+export interface ParamStoreApiConsoleV1ParamStoresNameGetRequest {
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ParamStoresNamePost operation in ParamStoreApi.
+ */
+export interface ParamStoreApiConsoleV1ParamStoresNamePostRequest {
+    readonly name: string
+
+    readonly paramStoreUpdateDto: ParamStoreUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ParamStoresPost operation in ParamStoreApi.
+ */
+export interface ParamStoreApiConsoleV1ParamStoresPostRequest {
+    readonly paramStoreCreateDto: ParamStoreCreateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * ParamStoreApi - object-oriented interface
@@ -342,51 +394,45 @@ export class ParamStoreApi extends BaseAPI {
     /**
      * 
      * @summary List Param Stores
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ParamStoreApiConsoleV1ParamStoresGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ParamStoresGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ParamStoreApiFp(this.configuration).consoleV1ParamStoresGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ParamStoresGet(requestParameters: ParamStoreApiConsoleV1ParamStoresGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return ParamStoreApiFp(this.configuration).consoleV1ParamStoresGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Param Store
-     * @param {string} name 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ParamStoreApiConsoleV1ParamStoresNameGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ParamStoresNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ParamStoreApiFp(this.configuration).consoleV1ParamStoresNameGet(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ParamStoresNameGet(requestParameters: ParamStoreApiConsoleV1ParamStoresNameGetRequest, options?: RawAxiosRequestConfig) {
+        return ParamStoreApiFp(this.configuration).consoleV1ParamStoresNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Param Store
-     * @param {string} name 
-     * @param {ParamStoreUpdateDto} paramStoreUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ParamStoreApiConsoleV1ParamStoresNamePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ParamStoresNamePost(name: string, paramStoreUpdateDto: ParamStoreUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ParamStoreApiFp(this.configuration).consoleV1ParamStoresNamePost(name, paramStoreUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ParamStoresNamePost(requestParameters: ParamStoreApiConsoleV1ParamStoresNamePostRequest, options?: RawAxiosRequestConfig) {
+        return ParamStoreApiFp(this.configuration).consoleV1ParamStoresNamePost(requestParameters.name, requestParameters.paramStoreUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Param Store
-     * @param {ParamStoreCreateDto} paramStoreCreateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ParamStoreApiConsoleV1ParamStoresPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ParamStoresPost(paramStoreCreateDto: ParamStoreCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ParamStoreApiFp(this.configuration).consoleV1ParamStoresPost(paramStoreCreateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ParamStoresPost(requestParameters: ParamStoreApiConsoleV1ParamStoresPostRequest, options?: RawAxiosRequestConfig) {
+        return ParamStoreApiFp(this.configuration).consoleV1ParamStoresPost(requestParameters.paramStoreCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

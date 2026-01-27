@@ -1480,275 +1480,620 @@ export const ExperimentsWarehouseNativeApiFactory = function (configuration?: Co
         /**
          * 
          * @summary Delete Assignment Source
-         * @param {string} name Name of the assignment source
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNameDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourceNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNameDelete200Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourceNameDelete(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNameDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNameDelete200Response> {
+            return localVarFp.consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Patch Assignment Source
-         * @param {string} name Name of the assignment source
-         * @param {AssignmentSourcePartialUpdateDto} assignmentSourcePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourceNamePatch(name: string, assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourceNamePatch(name, assignmentSourcePartialUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response> {
+            return localVarFp.consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters.name, requestParameters.assignmentSourcePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Post Assignment Source
-         * @param {string} name Name of the assignment source
-         * @param {AssignmentSourceQueryUpdateDto} assignmentSourceQueryUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourceNamePost(name: string, assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourceNamePost(name, assignmentSourceQueryUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsAssignmentSourceNamePost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response> {
+            return localVarFp.consoleV1ExperimentsAssignmentSourceNamePost(requestParameters.name, requestParameters.assignmentSourceQueryUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Assignment Sources
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourcesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesGet200Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourcesGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsAssignmentSourcesGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesGet200Response> {
+            return localVarFp.consoleV1ExperimentsAssignmentSourcesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Assignment Source
-         * @param {AssignmentSourceCreationDto} assignmentSourceCreationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourcesPost(assignmentSourceCreationDto: AssignmentSourceCreationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesPost201Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourcesPost(assignmentSourceCreationDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsAssignmentSourcesPost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesPost201Response> {
+            return localVarFp.consoleV1ExperimentsAssignmentSourcesPost(requestParameters.assignmentSourceCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List Entity Property Sources
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertiesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertiesGet200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertiesGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsEntityPropertiesGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertiesGet200Response> {
+            return localVarFp.consoleV1ExperimentsEntityPropertiesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Entity Property Source
-         * @param {EntityPropertySourceCreationDto} entityPropertySourceCreationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertiesPost(entityPropertySourceCreationDto: EntityPropertySourceCreationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertiesPost201Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertiesPost(entityPropertySourceCreationDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsEntityPropertiesPost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertiesPost201Response> {
+            return localVarFp.consoleV1ExperimentsEntityPropertiesPost(requestParameters.entityPropertySourceCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Entity Property Source
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertyNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameDelete200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertyNameDelete(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsEntityPropertyNameDelete(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameDelete200Response> {
+            return localVarFp.consoleV1ExperimentsEntityPropertyNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Entity Property Source
-         * @param {string} name Name of entity property source
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertyNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameGet200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertyNameGet(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsEntityPropertyNameGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameGet200Response> {
+            return localVarFp.consoleV1ExperimentsEntityPropertyNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Patch Entity Property Source
-         * @param {string} name Name of entity property source
-         * @param {EntityPropertySourcePartialUpdateDto} entityPropertySourcePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertyNamePatch(name: string, entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePatch200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertyNamePatch(name, entityPropertySourcePartialUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsEntityPropertyNamePatch(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePatch200Response> {
+            return localVarFp.consoleV1ExperimentsEntityPropertyNamePatch(requestParameters.name, requestParameters.entityPropertySourcePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Post Entity Property Source
-         * @param {string} name name
-         * @param {EntityPropertySourceQueryUpdateDto} entityPropertySourceQueryUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertyNamePost(name: string, entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePost200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertyNamePost(name, entityPropertySourceQueryUpdateDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsEntityPropertyNamePost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePost200Response> {
+            return localVarFp.consoleV1ExperimentsEntityPropertyNamePost(requestParameters.name, requestParameters.entityPropertySourceQueryUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Load Pulse (Warehouse Native)
-         * @param {string} id id
-         * @param {EchidnaLoadPulseQueryDto} echidnaLoadPulseQueryDto 
-         * @param {ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum} [refresh] 
-         * @param {Array<string>} [metricIDs] 
-         * @param {string} [ruleId] 
-         * @param {boolean} [turboMode] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdLoadPulsePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdLoadPulsePost(id: string, echidnaLoadPulseQueryDto: EchidnaLoadPulseQueryDto, refresh?: ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum, metricIDs?: Array<string>, ruleId?: string, turboMode?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdLoadPulsePost200Response> {
-            return localVarFp.consoleV1ExperimentsIdLoadPulsePost(id, echidnaLoadPulseQueryDto, refresh, metricIDs, ruleId, turboMode, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdLoadPulsePost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdLoadPulsePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdLoadPulsePost200Response> {
+            return localVarFp.consoleV1ExperimentsIdLoadPulsePost(requestParameters.id, requestParameters.echidnaLoadPulseQueryDto, requestParameters.refresh, requestParameters.metricIDs, requestParameters.ruleId, requestParameters.turboMode, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Pulse Load History (Warehouse Native)
-         * @param {string} id id
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPulseLoadHistoryGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdPulseLoadHistoryGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List qualifying event
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsGet200Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsGet(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsGet200Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary List qualifying event
-         * @param {number} [limit] Results per page
-         * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGet0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsGet_1(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsGet200Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsGet_1(limit, page, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsGet_1(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGet0Request = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsGet200Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsGet_1(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Qualifying Event
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDeleteRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNameDelete200Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsNameDelete(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsNameDelete(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNameDelete200Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete Qualifying Event
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDelete0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsNameDelete_2(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNameDelete200Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsNameDelete_2(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsNameDelete_2(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDelete0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNameDelete200Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsNameDelete_2(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Qualifying Event
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNameGet200Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsNameGet(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsNameGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNameGet200Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Read Qualifying Event
-         * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGet0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsNameGet_3(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNameGet200Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsNameGet_3(name, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsNameGet_3(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNameGet200Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsNameGet_3(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Qualifying Event
-         * @param {string} name name
-         * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsNamePost(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNamePost200Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsNamePost(name, metricSourceUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsNamePost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNamePost200Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update Qualifying Event
-         * @param {string} name name
-         * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePost0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsNamePost_4(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNamePost200Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsNamePost_4(name, metricSourceUpdateContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsNamePost_4(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsNamePost200Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsNamePost_4(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Qualifying Event
-         * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPostRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsPost(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsPost201Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsPost(metricSourceCreationContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsPost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsPost201Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsPost(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create Qualifying Event
-         * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPost0Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsQualifyingEventsPost_5(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsPost201Response> {
-            return localVarFp.consoleV1ExperimentsQualifyingEventsPost_5(metricSourceCreationContractDto, xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsQualifyingEventsPost_5(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsQualifyingEventsPost201Response> {
+            return localVarFp.consoleV1ExperimentsQualifyingEventsPost_5(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
 };
+
+/**
+ * Request parameters for consoleV1ExperimentsAssignmentSourceNameDelete operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNameDeleteRequest {
+    /**
+     * Name of the assignment source
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsAssignmentSourceNamePatch operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePatchRequest {
+    /**
+     * Name of the assignment source
+     */
+    readonly name: string
+
+    readonly assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsAssignmentSourceNamePost operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePostRequest {
+    /**
+     * Name of the assignment source
+     */
+    readonly name: string
+
+    readonly assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsAssignmentSourcesGet operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsAssignmentSourcesPost operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesPostRequest {
+    readonly assignmentSourceCreationDto: AssignmentSourceCreationDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsEntityPropertiesGet operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsEntityPropertiesPost operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesPostRequest {
+    readonly entityPropertySourceCreationDto: EntityPropertySourceCreationDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsEntityPropertyNameDelete operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameDeleteRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsEntityPropertyNameGet operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameGetRequest {
+    /**
+     * Name of entity property source
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsEntityPropertyNamePatch operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePatchRequest {
+    /**
+     * Name of entity property source
+     */
+    readonly name: string
+
+    readonly entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsEntityPropertyNamePost operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePostRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    readonly entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdLoadPulsePost operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdLoadPulsePostRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    readonly echidnaLoadPulseQueryDto: EchidnaLoadPulseQueryDto
+
+    readonly refresh?: ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum
+
+    readonly metricIDs?: Array<string>
+
+    readonly ruleId?: string
+
+    readonly turboMode?: boolean
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdPulseLoadHistoryGet operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsGet operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGetRequest {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsGet_1 operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGet0Request {
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsNameDelete operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDeleteRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsNameDelete_2 operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDelete0Request {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsNameGet operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGetRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsNameGet_3 operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGet0Request {
+    /**
+     * name
+     */
+    readonly name: string
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsNamePost operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePostRequest {
+    /**
+     * name
+     */
+    readonly name: string
+
+    readonly metricSourceUpdateContractDto: MetricSourceUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsNamePost_4 operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePost0Request {
+    /**
+     * name
+     */
+    readonly name: string
+
+    readonly metricSourceUpdateContractDto: MetricSourceUpdateContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsPost operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPostRequest {
+    readonly metricSourceCreationContractDto: MetricSourceCreationContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsQualifyingEventsPost_5 operation in ExperimentsWarehouseNativeApi.
+ */
+export interface ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPost0Request {
+    readonly metricSourceCreationContractDto: MetricSourceCreationContractDto
+
+    /**
+     * Optional header to respect review settings for mutation endpoints.
+     */
+    readonly xRespectReviewSettings?: string
+}
 
 /**
  * ExperimentsWarehouseNativeApi - object-oriented interface
@@ -1757,294 +2102,254 @@ export class ExperimentsWarehouseNativeApi extends BaseAPI {
     /**
      * 
      * @summary Delete Assignment Source
-     * @param {string} name Name of the assignment source
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNameDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsAssignmentSourceNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNameDelete(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNameDeleteRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Patch Assignment Source
-     * @param {string} name Name of the assignment source
-     * @param {AssignmentSourcePartialUpdateDto} assignmentSourcePartialUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsAssignmentSourceNamePatch(name: string, assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNamePatch(name, assignmentSourcePartialUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePatchRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters.name, requestParameters.assignmentSourcePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Post Assignment Source
-     * @param {string} name Name of the assignment source
-     * @param {AssignmentSourceQueryUpdateDto} assignmentSourceQueryUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsAssignmentSourceNamePost(name: string, assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNamePost(name, assignmentSourceQueryUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsAssignmentSourceNamePost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourceNamePostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNamePost(requestParameters.name, requestParameters.assignmentSourceQueryUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Assignment Sources
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsAssignmentSourcesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourcesGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsAssignmentSourcesGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourcesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Assignment Source
-     * @param {AssignmentSourceCreationDto} assignmentSourceCreationDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsAssignmentSourcesPost(assignmentSourceCreationDto: AssignmentSourceCreationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourcesPost(assignmentSourceCreationDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsAssignmentSourcesPost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsAssignmentSourcesPostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsAssignmentSourcesPost(requestParameters.assignmentSourceCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List Entity Property Sources
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsEntityPropertiesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertiesGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsEntityPropertiesGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertiesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Entity Property Source
-     * @param {EntityPropertySourceCreationDto} entityPropertySourceCreationDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsEntityPropertiesPost(entityPropertySourceCreationDto: EntityPropertySourceCreationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertiesPost(entityPropertySourceCreationDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsEntityPropertiesPost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertiesPostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertiesPost(requestParameters.entityPropertySourceCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Entity Property Source
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsEntityPropertyNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNameDelete(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsEntityPropertyNameDelete(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameDeleteRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Entity Property Source
-     * @param {string} name Name of entity property source
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsEntityPropertyNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNameGet(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsEntityPropertyNameGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNameGetRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Patch Entity Property Source
-     * @param {string} name Name of entity property source
-     * @param {EntityPropertySourcePartialUpdateDto} entityPropertySourcePartialUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsEntityPropertyNamePatch(name: string, entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNamePatch(name, entityPropertySourcePartialUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsEntityPropertyNamePatch(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePatchRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNamePatch(requestParameters.name, requestParameters.entityPropertySourcePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Post Entity Property Source
-     * @param {string} name name
-     * @param {EntityPropertySourceQueryUpdateDto} entityPropertySourceQueryUpdateDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsEntityPropertyNamePost(name: string, entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNamePost(name, entityPropertySourceQueryUpdateDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsEntityPropertyNamePost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsEntityPropertyNamePostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNamePost(requestParameters.name, requestParameters.entityPropertySourceQueryUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Load Pulse (Warehouse Native)
-     * @param {string} id id
-     * @param {EchidnaLoadPulseQueryDto} echidnaLoadPulseQueryDto 
-     * @param {ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum} [refresh] 
-     * @param {Array<string>} [metricIDs] 
-     * @param {string} [ruleId] 
-     * @param {boolean} [turboMode] 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdLoadPulsePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdLoadPulsePost(id: string, echidnaLoadPulseQueryDto: EchidnaLoadPulseQueryDto, refresh?: ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum, metricIDs?: Array<string>, ruleId?: string, turboMode?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsIdLoadPulsePost(id, echidnaLoadPulseQueryDto, refresh, metricIDs, ruleId, turboMode, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdLoadPulsePost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdLoadPulsePostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsIdLoadPulsePost(requestParameters.id, requestParameters.echidnaLoadPulseQueryDto, requestParameters.refresh, requestParameters.metricIDs, requestParameters.ruleId, requestParameters.turboMode, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Pulse Load History (Warehouse Native)
-     * @param {string} id id
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdPulseLoadHistoryGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsIdPulseLoadHistoryGet(id, limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List qualifying event
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsGet(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGetRequest = {}, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary List qualifying event
-     * @param {number} [limit] Results per page
-     * @param {number} [page] Page number
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGet0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsGet_1(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsGet_1(limit, page, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsGet_1(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsGet0Request = {}, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsGet_1(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Qualifying Event
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDeleteRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNameDelete(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsNameDelete(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDeleteRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Delete Qualifying Event
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDelete0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsNameDelete_2(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNameDelete_2(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsNameDelete_2(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameDelete0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNameDelete_2(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Qualifying Event
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNameGet(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsNameGet(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGetRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Read Qualifying Event
-     * @param {string} name name
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGet0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsNameGet_3(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNameGet_3(name, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsNameGet_3(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNameGet0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNameGet_3(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Qualifying Event
-     * @param {string} name name
-     * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsNamePost(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNamePost(name, metricSourceUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsNamePost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Update Qualifying Event
-     * @param {string} name name
-     * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePost0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsNamePost_4(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNamePost_4(name, metricSourceUpdateContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsNamePost_4(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsNamePost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsNamePost_4(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Qualifying Event
-     * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPostRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsPost(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsPost(metricSourceCreationContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsPost(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsPost(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Create Qualifying Event
-     * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-     * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+     * @param {ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPost0Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsQualifyingEventsPost_5(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig) {
-        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsPost_5(metricSourceCreationContractDto, xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsQualifyingEventsPost_5(requestParameters: ExperimentsWarehouseNativeApiConsoleV1ExperimentsQualifyingEventsPost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsWarehouseNativeApiFp(this.configuration).consoleV1ExperimentsQualifyingEventsPost_5(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
