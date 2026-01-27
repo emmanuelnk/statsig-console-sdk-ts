@@ -5,7 +5,7 @@
   "author": "Emmanuel Nsubuga <emmanuelnk@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/emmanuelnk/statsig-console-sdk.git"
+    "url": "https://github.com/emmanuelnk/statsig-console-sdk-nodejs.git"
   },
   "keywords": [
     "statsig",
