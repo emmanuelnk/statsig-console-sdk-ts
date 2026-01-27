@@ -1,0 +1,22 @@
+# ConsoleV1IngestionSchedulePost200Response
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **string** | A simple string explaining the result of the operation. | [default to undefined]
+**data** | [**IngestionScheduleDto**](IngestionScheduleDto.md) |  | [default to undefined]
+
+## Example
+
+```typescript
+import { ConsoleV1IngestionSchedulePost200Response } from 'statsig-console-sdk-nodejs';
+
+const instance: ConsoleV1IngestionSchedulePost200Response = {
+    message,
+    data,
+};
+```
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
