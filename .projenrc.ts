@@ -37,7 +37,7 @@ const project = new typescript.TypeScriptProject({
   ],
 
   // Node and TypeScript versions
-  minNodeVersion: '18.0.0',
+  minNodeVersion: '20.0.0',
 
   // Source code is at root level (OpenAPI generated)
   srcdir: '.',
