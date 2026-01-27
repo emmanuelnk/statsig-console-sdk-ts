@@ -1,11 +1,11 @@
 {
-  "name": "statsig-console-sdk-nodejs",
+  "name": "@emmanuelnk/statsig-console-sdk",
   "version": "0.1.0",
   "description": "TypeScript/Node.js SDK for Statsig Console API - CRUD operations for console.statsig.com",
-  "author": "OpenAPI-Generator Contributors",
+  "author": "Emmanuel Nsubuga <emmanuelnk@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/futurefit/statsig-console-sdk-nodejs.git"
+    "url": "https://github.com/emmanuelnk/statsig-console-sdk.git"
   },
   "keywords": [
     "statsig",
