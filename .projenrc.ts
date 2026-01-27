@@ -180,24 +180,10 @@ project.package.addField('sideEffects', false);
 // This is more reliable than .npmignore for ensuring dist is included
 project.package.addField('files', ['dist', 'LICENSE', 'README.md']);
 
-// Add exports field for modern bundlers
-project.package.addField('exports', {
-  '.': {
-    types: './dist/index.d.ts',
-    import: './dist/esm/index.js',
-    require: './dist/index.js',
-  },
-  './api': {
-    types: './dist/api/index.d.ts',
-    import: './dist/esm/api/index.js',
-    require: './dist/api/index.js',
-  },
-  './models': {
-    types: './dist/models/index.d.ts',
-    import: './dist/esm/models/index.js',
-    require: './dist/models/index.js',
-  },
-});
+// Note: We intentionally do NOT use the "exports" field here.
+// Using "exports" with ESM/CJS dual builds requires .js extensions in imports,
+// which the OpenAPI generator doesn't produce. The "module" field works correctly
+// without requiring import path modifications.
 
 // Add custom release workflow for beta releases on any push to master
 const releaseWorkflow = project.github?.tryFindWorkflow('release');
