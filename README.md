@@ -1,4 +1,8 @@
-## statsig-console-sdk-nodejs@0.1.0
+## @emmanuelnk/statsig-console-sdk-ts
+
+TypeScript/Node.js SDK for Statsig Console API - auto-generated from [OpenAPI spec](https://api.statsig.com/openapi/20240601.json).
+
+[![npm version](https://badge.fury.io/js/@emmanuelnk%2Fstatsig-console-sdk-ts.svg)](https://www.npmjs.com/package/@emmanuelnk/statsig-console-sdk-ts)
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -36,7 +40,7 @@ navigate to the folder of your consuming project and run one of the following co
 _published:_
 
 ```
-npm install statsig-console-sdk-nodejs@0.1.0 --save
+npm install @emmanuelnk/statsig-console-sdk-ts@beta --save
 ```
 
 _unPublished (not recommended):_
