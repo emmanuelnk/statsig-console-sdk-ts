@@ -1,1 +1,34 @@
-# empty npmignore to ensure all required files (e.g., in the dist folder) are published by npm
+# Source files (we publish compiled dist/)
+/*.ts
+/api/
+/models/
+
+# OpenAPI generator artifacts
+.openapi-generator/
+.openapi-generator-ignore
+openapi.json
+openapitools.json
+git_push.sh
+
+# IDE and editor files
+.claude/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build and dev files
+tsconfig.json
+tsconfig.esm.json
+node_modules/
+
+# Docs (keep README.md)
+docs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore

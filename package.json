@@ -1,6 +1,6 @@
 {
   "name": "@emmanuelnk/statsig-console-sdk",
-  "version": "0.1.0",
+  "version": "0.1.0-beta.1",
   "description": "TypeScript/Node.js SDK for Statsig Console API - CRUD operations for console.statsig.com",
   "author": "Emmanuel Nsubuga <emmanuelnk@gmail.com>",
   "repository": {
