@@ -12,48 +12,69 @@ This SDK is auto-generated from the [Statsig Console API OpenAPI spec](https://a
 **Repository**: https://github.com/emmanuelnk/statsig-console-sdk-ts
 **npm**: https://www.npmjs.com/package/@emmanuelnk/statsig-console-sdk-ts
 
+## Project Management
+
+This project uses **[Projen](https://projen.io/)** for project configuration. All configuration is defined in `.projenrc.ts`.
+
+**IMPORTANT**: Do NOT manually edit these files - they are managed by Projen:
+- `package.json`
+- `tsconfig.json`
+- `tsconfig.esm.json`
+- `.gitignore`
+- `.npmignore`
+- `.github/workflows/*`
+
+To make changes, edit `.projenrc.ts` and run `pnpm exec tsx .projenrc.ts`.
+
 ## Prerequisites
 
-- **Java JDK 11+** - Required by OpenAPI Generator
+- **Node.js 18+**
+- **pnpm** - Package manager
+- **Java JDK 11+** - Required by OpenAPI Generator (for SDK regeneration only)
   - macOS: Download from https://jdk.java.net/ and extract to `~/java/`
   - Set `JAVA_HOME` before running generator commands
-- **Node.js 18+**
-- **OpenAPI Generator CLI**: `npm install -g @openapitools/openapi-generator-cli`
+- **OpenAPI Generator CLI**: `pnpm add -g @openapitools/openapi-generator-cli`
+
+## Quick Start
+
+```bash
+# Install dependencies
+pnpm install
+
+# Build the SDK
+pnpm run compile
+
+# Run all checks (build + package)
+pnpm run build
+```
 
 ## Regenerating the SDK
 
-### 1. Download the latest OpenAPI spec
+The SDK can be regenerated using projen tasks:
+
+### Option 1: Full regeneration (recommended)
 
 ```bash
-curl -sL "https://api.statsig.com/openapi/20240601.json" -o openapi.json
+# Download latest spec and regenerate
+pnpm run sdk:regenerate
 ```
 
-### 2. Set up Java (if not in PATH)
+### Option 2: Step by step
 
 ```bash
+# 1. Download the latest OpenAPI spec
+pnpm run sdk:download-spec
+
+# 2. Set up Java (if not in PATH)
 export JAVA_HOME=~/java/jdk-25.0.2.jdk/Contents/Home  # Adjust version as needed
 export PATH="$JAVA_HOME/bin:$PATH"
 java -version  # Verify it works
+
+# 3. Generate the SDK
+pnpm run sdk:generate
 ```
 
-### 3. Generate the SDK
-
-**IMPORTANT**: Do NOT delete existing files first. The generator will overwrite them.
-
-```bash
-openapi-generator-cli generate \
-  -i openapi.json \
-  -g typescript-axios \
-  -o . \
-  --additional-properties=npmName=@emmanuelnk/statsig-console-sdk-ts,npmVersion=0.1.0,supportsES6=true,withSeparateModelsAndApi=true,apiPackage=api,modelPackage=models,useSingleRequestParameter=true
-```
-
-**Key generator options:**
-- `useSingleRequestParameter=true` - Methods accept a single request object instead of many positional args (cleaner API)
-- `withSeparateModelsAndApi=true` - Separates API classes and models into different folders
-- `supportsES6=true` - Generates ES6 compatible code
-
-### 4. Fix duplicate enum exports (REQUIRED)
+### After regeneration: Fix duplicate enum exports (REQUIRED)
 
 After generation, there are duplicate enum exports that cause TypeScript compilation errors. You MUST fix these:
 
@@ -88,132 +109,111 @@ export type ConsoleV1MetricsIdReloadPostIncrementalEnum = typeof ConsoleV1Metric
 import { ConsoleV1MetricsIdReloadPostIncrementalEnum } from './metrics-api';
 ```
 
-### 5. Update package.json
+### After regeneration: Restore Projen files
 
-After regeneration, the generator resets `package.json`. Update these fields:
-
-```json
-{
-  "name": "@emmanuelnk/statsig-console-sdk-ts",
-  "version": "0.x.x-beta.x",  // Increment appropriately
-  "description": "TypeScript/Node.js SDK for Statsig Console API - CRUD operations for console.statsig.com",
-  "author": "Emmanuel Nsubuga <emmanuelnk@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/emmanuelnk/statsig-console-sdk-ts.git"
-  },
-  "license": "MIT"
-}
-```
-
-### 6. Update .npmignore
-
-The generator may reset `.npmignore`. Ensure it excludes source files and only publishes `dist/`:
-
-```
-# Source files (we publish compiled dist/)
-/*.ts
-/api/
-/models/
-
-# OpenAPI generator artifacts
-.openapi-generator/
-.openapi-generator-ignore
-openapi.json
-openapitools.json
-git_push.sh
-
-# IDE and editor files
-.claude/
-.idea/
-.vscode/
-
-# Build and dev files
-tsconfig.json
-tsconfig.esm.json
-node_modules/
-
-# Docs (keep README.md and CLAUDE.md)
-docs/
-```
-
-### 7. Update README.md
-
-The README is auto-generated. Update the header:
-
-```markdown
-## @emmanuelnk/statsig-console-sdk-ts
-
-TypeScript/Node.js SDK for Statsig Console API...
-```
-
-And the install command:
-```
-npm install @emmanuelnk/statsig-console-sdk-ts@beta --save
-```
-
-### 8. Build and test
+The OpenAPI generator may overwrite some files. Restore them:
 
 ```bash
-npm install
-npm run build
+# Restore projen-managed files
+pnpm exec tsx .projenrc.ts
+
+# Rebuild
+pnpm run compile
 ```
 
-### 9. Publish
+## Releasing
+
+This project uses automated releases via GitHub Actions.
+
+### Automatic Beta Releases (on push to master)
+
+Every push to `master` triggers an automatic release:
+1. Version is bumped automatically (with `-beta.X` suffix)
+2. Published to npm with `beta` tag
+3. GitHub release created
+
+### Manual Beta Release
+
+Trigger via GitHub Actions > "manual-beta-release" workflow:
+- Input: version (e.g., `0.2.0-beta.1`)
+- Publishes to npm with `beta` tag
+
+### Stable Release
+
+Trigger via GitHub Actions > "stable-release" workflow:
+- Input: version (e.g., `0.2.0`)
+- Publishes to npm with `latest` tag
+- Creates GitHub release with auto-generated notes
+
+### Required Secrets
+
+- `NPM_TOKEN` - npm automation token with publish access
+
+## Available Commands
 
 ```bash
-# Dry run first - ALWAYS do this
-npm publish --access public --tag beta --dry-run
+pnpm run build          # Full build (compile + package)
+pnpm run compile        # Compile TypeScript (CommonJS + ESM)
+pnpm run package        # Package for npm
+pnpm run release        # Create a release (used by CI)
+pnpm run upgrade        # Upgrade dependencies
 
-# Check that only dist/ files are included, not source .ts files
-
-# Publish (requires npm auth with 2FA bypass token)
-npm publish --access public --tag beta
+# SDK regeneration
+pnpm run sdk:download-spec  # Download OpenAPI spec
+pnpm run sdk:generate       # Generate SDK from spec
+pnpm run sdk:regenerate     # Full regeneration (download + generate)
 ```
 
 ## File Structure
 
 ```
-├── api/                    # Generated API client classes (32 files)
-├── models/                 # Generated TypeScript interfaces (507 files)
+├── .projenrc.ts            # Projen configuration (edit this!)
+├── .projen/                # Projen internal files
+├── .github/workflows/      # CI/CD workflows (generated by Projen)
+│   ├── build.yml           # PR build checks
+│   ├── release.yml         # Automatic release on push to master
+│   ├── manual-beta-release.yml  # Manual beta release
+│   ├── stable-release.yml  # Manual stable release
+│   └── upgrade-master.yml  # Dependency upgrades
+├── api/                    # Generated API client classes
+├── models/                 # Generated TypeScript interfaces
 ├── dist/                   # Compiled output (CommonJS + ESM) - NOT committed
-├── docs/                   # Generated API documentation (markdown)
+├── docs/                   # Generated API documentation
 ├── openapi.json            # OpenAPI spec - NOT committed
-├── package.json            # npm package config
-├── tsconfig.json           # TypeScript config (CommonJS)
-├── tsconfig.esm.json       # TypeScript config (ESM)
-├── .npmignore              # Files to exclude from npm package
-├── CLAUDE.md               # This file - instructions for AI agents
-└── README.md               # Auto-generated, update after regeneration
+├── package.json            # npm config (generated by Projen)
+├── tsconfig.json           # TypeScript config (generated by Projen)
+├── tsconfig.esm.json       # ESM TypeScript config (generated by Projen)
+├── .npmignore              # npm publish exclusions (generated by Projen)
+├── CLAUDE.md               # This file
+└── README.md               # Package documentation
 ```
 
 ## Common Mistakes to Avoid
 
-1. **DO NOT delete files before regenerating** - The generator overwrites existing files. If you delete first, you may lose custom changes.
+1. **DO NOT manually edit projen-managed files** - Edit `.projenrc.ts` instead and run `pnpm exec tsx .projenrc.ts`
 
-2. **DO NOT forget to fix duplicate enums** - The build will fail if you skip step 4.
+2. **DO NOT delete files before regenerating SDK** - The generator overwrites existing files
 
-3. **DO NOT commit `dist/`** - It's built automatically via the `prepare` script during `npm install`.
+3. **DO NOT forget to fix duplicate enums** - The build will fail after SDK regeneration
 
-4. **DO NOT commit `openapi.json`** - It's large (1MB+) and can be downloaded.
+4. **DO NOT commit `dist/`** - It's built automatically
 
-5. **DO NOT use positional args in the generator command** - Always use the exact command in step 3.
+5. **DO NOT commit `openapi.json`** - It's large (1MB+) and can be downloaded
 
-6. **ALWAYS dry-run before publishing** - Check that only compiled `dist/` files are included.
+6. **DO NOT push directly to master without testing** - It triggers an automatic release
 
 ## Publishing Checklist
 
-Before publishing a new version:
+Before pushing changes that will trigger a release:
 
-- [ ] Fix duplicate enum exports in `experiments-warehouse-native-api.ts` and `metrics-warehouse-native-api.ts`
-- [ ] Update version in `package.json` (use semver: `0.x.x-beta.x` for betas)
-- [ ] Update `package.json` name, repository, author, license
-- [ ] Update `.npmignore` if reset by generator
-- [ ] Update README.md header and install command
-- [ ] Run `npm run build` successfully (no TypeScript errors)
-- [ ] Run `npm publish --dry-run` and verify only `dist/` files are included
-- [ ] Commit and push all changes
-- [ ] Publish to npm with `--tag beta` for pre-release versions
+- [ ] Fix duplicate enum exports (if SDK was regenerated)
+- [ ] Run `pnpm run build` successfully
+- [ ] Verify changes are correct
+- [ ] Commit and push to master (triggers automatic beta release)
+
+For stable releases:
+- [ ] Go to GitHub Actions
+- [ ] Run "stable-release" workflow with the desired version
 
 ## Usage Example
 
