@@ -9,6 +9,10 @@ TypeScript/Node.js SDK for the [Statsig Console API](https://docs.statsig.com/co
 
 ```bash
 npm install @emmanuelnk/statsig-console-sdk-ts
+# or
+pnpm add @emmanuelnk/statsig-console-sdk-ts
+# or
+yarn add @emmanuelnk/statsig-console-sdk-ts
 ```
 
 ## Quick Start
