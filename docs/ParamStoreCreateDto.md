@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ParamStoreCreateDto } from 'statsig-console-sdk-nodejs';
+import { ParamStoreCreateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ParamStoreCreateDto = {
     name,

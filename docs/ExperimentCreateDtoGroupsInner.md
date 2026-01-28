@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoGroupsInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoGroupsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoGroupsInner = {
     name,

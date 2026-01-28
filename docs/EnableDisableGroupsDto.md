@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EnableDisableGroupsDto } from 'statsig-console-sdk-nodejs';
+import { EnableDisableGroupsDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: EnableDisableGroupsDto = {
     group_names,

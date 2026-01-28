@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { OverrideDto } from 'statsig-console-sdk-nodejs';
+import { OverrideDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: OverrideDto = {
     passingUserIDs,

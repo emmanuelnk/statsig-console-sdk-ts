@@ -17,7 +17,7 @@ import {
     WarehouseConnectionsApi,
     Configuration,
     WhConnectionUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new WarehouseConnectionsApi(configuration);

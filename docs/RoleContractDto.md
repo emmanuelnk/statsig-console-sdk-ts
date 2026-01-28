@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { RoleContractDto } from 'statsig-console-sdk-nodejs';
+import { RoleContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: RoleContractDto = {
     name,

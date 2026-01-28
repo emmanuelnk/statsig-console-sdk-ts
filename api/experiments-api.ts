@@ -40,11 +40,7 @@ import type { ConsoleV1ExperimentsAssignmentSourceNameDelete200Response } from '
 // @ts-ignore
 import type { ConsoleV1ExperimentsAssignmentSourceNamePost200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1ExperimentsAssignmentSourcesGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1ExperimentsAssignmentSourcesPost201Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1ExperimentsEntityPropertiesGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsEntityPropertiesPost201Response } from '../models';
 // @ts-ignore
@@ -55,8 +51,6 @@ import type { ConsoleV1ExperimentsEntityPropertyNameGet200Response } from '../mo
 import type { ConsoleV1ExperimentsEntityPropertyNamePatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsEntityPropertyNamePost200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1ExperimentsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsGetExperimentTypeParameter } from '../models';
 // @ts-ignore
@@ -92,8 +86,6 @@ import type { ConsoleV1ExperimentsIdOverridesPost200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdPost200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1ExperimentsIdPulseResultsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdResetPut200Response } from '../models';
@@ -107,8 +99,6 @@ import type { ConsoleV1ExperimentsIdScheduleStartPost200Response } from '../mode
 import type { ConsoleV1ExperimentsIdStartPut200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdUnarchivePut200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1ExperimentsIdVersionsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsPost201Response } from '../models';
 // @ts-ignore
@@ -139,6 +129,16 @@ import type { ExperimentPartialUpdateDto } from '../models';
 import type { ExperimentStartDto } from '../models';
 // @ts-ignore
 import type { ExperimentStatusUpdateDto } from '../models';
+// @ts-ignore
+import type { Getconsolev1experimentsResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1experimentsassignmentsourcesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1experimentsentitypropertiesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1experimentsidpulseloadhistoryResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1experimentsidversionsResponse } from '../models';
 // @ts-ignore
 import type { ResolveGuardrailAlertRequestDto } from '../models';
 // @ts-ignore
@@ -3084,7 +3084,7 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsAssignmentSourcesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesGet200Response>> {
+        async consoleV1ExperimentsAssignmentSourcesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsassignmentsourcesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourcesGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsAssignmentSourcesGet']?.[localVarOperationServerIndex]?.url;
@@ -3113,7 +3113,7 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsEntityPropertiesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertiesGet200Response>> {
+        async consoleV1ExperimentsEntityPropertiesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsentitypropertiesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertiesGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsEntityPropertiesGet']?.[localVarOperationServerIndex]?.url;
@@ -3211,7 +3211,7 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsGet(layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsGet200Response>> {
+        async consoleV1ExperimentsGet(layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsGet(layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsGet']?.[localVarOperationServerIndex]?.url;
@@ -3237,7 +3237,7 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsGet_1(layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsGet200Response>> {
+        async consoleV1ExperimentsGet_1(layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsGet_1(layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsGet_1']?.[localVarOperationServerIndex]?.url;
@@ -3684,7 +3684,7 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdPulseLoadHistoryGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response>> {
+        async consoleV1ExperimentsIdPulseLoadHistoryGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsidpulseloadhistoryResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseLoadHistoryGet(id, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseLoadHistoryGet']?.[localVarOperationServerIndex]?.url;
@@ -3909,7 +3909,7 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdVersionsGet200Response>> {
+        async consoleV1ExperimentsIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsidversionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdVersionsGet(id, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdVersionsGet']?.[localVarOperationServerIndex]?.url;
@@ -3989,7 +3989,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourcesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourcesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesGet200Response> {
+        consoleV1ExperimentsAssignmentSourcesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourcesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsassignmentsourcesResponse> {
             return localVarFp.consoleV1ExperimentsAssignmentSourcesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4009,7 +4009,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertiesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertiesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertiesGet200Response> {
+        consoleV1ExperimentsEntityPropertiesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertiesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsentitypropertiesResponse> {
             return localVarFp.consoleV1ExperimentsEntityPropertiesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4069,7 +4069,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsGet200Response> {
+        consoleV1ExperimentsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsResponse> {
             return localVarFp.consoleV1ExperimentsGet(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4079,7 +4079,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsGet_1(requestParameters: ExperimentsApiConsoleV1ExperimentsGet0Request = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsGet200Response> {
+        consoleV1ExperimentsGet_1(requestParameters: ExperimentsApiConsoleV1ExperimentsGet0Request = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsResponse> {
             return localVarFp.consoleV1ExperimentsGet_1(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4379,7 +4379,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response> {
+        consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsidpulseloadhistoryResponse> {
             return localVarFp.consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -4519,7 +4519,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdVersionsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdVersionsGet200Response> {
+        consoleV1ExperimentsIdVersionsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsidversionsResponse> {
             return localVarFp.consoleV1ExperimentsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

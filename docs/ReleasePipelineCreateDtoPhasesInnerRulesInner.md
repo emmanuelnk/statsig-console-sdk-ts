@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReleasePipelineCreateDtoPhasesInnerRulesInner } from 'statsig-console-sdk-nodejs';
+import { ReleasePipelineCreateDtoPhasesInnerRulesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ReleasePipelineCreateDtoPhasesInnerRulesInner = {
     id,

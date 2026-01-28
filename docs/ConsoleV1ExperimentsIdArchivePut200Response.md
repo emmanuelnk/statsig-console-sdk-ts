@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ConsoleV1ExperimentsIdArchivePut200Response } from 'statsig-console-sdk-nodejs';
+import { ConsoleV1ExperimentsIdArchivePut200Response } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ConsoleV1ExperimentsIdArchivePut200Response = {
     message,

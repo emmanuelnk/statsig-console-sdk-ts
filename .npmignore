@@ -24,6 +24,7 @@ Thumbs.db
 .projen/
 test/
 CLAUDE.md
+scripts/
 /.projen/
 permissions-backup.acl
 /test/

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { RoleUpdateContractDto } from 'statsig-console-sdk-nodejs';
+import { RoleUpdateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: RoleUpdateContractDto = {
     permissions,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AIConfigVersionCreateDtoWorkflowBody } from 'statsig-console-sdk-nodejs';
+import { AIConfigVersionCreateDtoWorkflowBody } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AIConfigVersionCreateDtoWorkflowBody = {
     type,

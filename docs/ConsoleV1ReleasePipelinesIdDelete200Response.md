@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ConsoleV1ReleasePipelinesIdDelete200Response } from 'statsig-console-sdk-nodejs';
+import { ConsoleV1ReleasePipelinesIdDelete200Response } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ConsoleV1ReleasePipelinesIdDelete200Response = {
     message,

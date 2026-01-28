@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalExperimentDtoActiveReview } from 'statsig-console-sdk-nodejs';
+import { ExternalExperimentDtoActiveReview } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalExperimentDtoActiveReview = {
     reviewID,

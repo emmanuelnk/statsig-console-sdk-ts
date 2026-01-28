@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DynamicConfigFullUpdateDto } from 'statsig-console-sdk-nodejs';
+import { DynamicConfigFullUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: DynamicConfigFullUpdateDto = {
     name,

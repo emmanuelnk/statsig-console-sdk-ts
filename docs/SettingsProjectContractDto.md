@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SettingsProjectContractDto } from 'statsig-console-sdk-nodejs';
+import { SettingsProjectContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SettingsProjectContractDto = {
     name,

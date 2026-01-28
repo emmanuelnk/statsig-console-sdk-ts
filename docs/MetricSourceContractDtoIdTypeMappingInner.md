@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricSourceContractDtoIdTypeMappingInner } from 'statsig-console-sdk-nodejs';
+import { MetricSourceContractDtoIdTypeMappingInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricSourceContractDtoIdTypeMappingInner = {
     statsigUnitID,

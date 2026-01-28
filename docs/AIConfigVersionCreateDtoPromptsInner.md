@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AIConfigVersionCreateDtoPromptsInner } from 'statsig-console-sdk-nodejs';
+import { AIConfigVersionCreateDtoPromptsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AIConfigVersionCreateDtoPromptsInner = {
     content,

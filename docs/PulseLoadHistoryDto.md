@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { PulseLoadHistoryDto } from 'statsig-console-sdk-nodejs';
+import { PulseLoadHistoryDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: PulseLoadHistoryDto = {
     creatorName,

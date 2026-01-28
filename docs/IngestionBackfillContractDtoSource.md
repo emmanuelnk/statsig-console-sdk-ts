@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionBackfillContractDtoSource } from 'statsig-console-sdk-nodejs';
+import { IngestionBackfillContractDtoSource } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionBackfillContractDtoSource = {
 };

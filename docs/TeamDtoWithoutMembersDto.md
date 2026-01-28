@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { TeamDtoWithoutMembersDto } from 'statsig-console-sdk-nodejs';
+import { TeamDtoWithoutMembersDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: TeamDtoWithoutMembersDto = {
     name,

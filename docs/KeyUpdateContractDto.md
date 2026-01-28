@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { KeyUpdateContractDto } from 'statsig-console-sdk-nodejs';
+import { KeyUpdateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: KeyUpdateContractDto = {
     description,

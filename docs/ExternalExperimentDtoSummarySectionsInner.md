@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalExperimentDtoSummarySectionsInner } from 'statsig-console-sdk-nodejs';
+import { ExternalExperimentDtoSummarySectionsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalExperimentDtoSummarySectionsInner = {
     name,

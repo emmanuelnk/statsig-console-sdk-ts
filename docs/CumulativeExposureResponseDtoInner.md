@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { CumulativeExposureResponseDtoInner } from 'statsig-console-sdk-nodejs';
+import { CumulativeExposureResponseDtoInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: CumulativeExposureResponseDtoInner = {
     groupID,

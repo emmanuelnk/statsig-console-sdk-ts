@@ -12,7 +12,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1TargetAppPost**](#consolev1targetapppost) | **POST** /console/v1/target_app | Create Target App|
 
 # **consoleV1TargetAppGet**
-> ConsoleV1TargetAppGet200Response consoleV1TargetAppGet()
+> Getconsolev1targetappResponse consoleV1TargetAppGet()
 
 
 ### Example
@@ -23,7 +23,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
@@ -50,7 +50,7 @@ const { status, data } = await apiInstance.consoleV1TargetAppGet(
 
 ### Return type
 
-**ConsoleV1TargetAppGet200Response**
+**Getconsolev1targetappResponse**
 
 ### Authorization
 
@@ -80,7 +80,7 @@ const { status, data } = await apiInstance.consoleV1TargetAppGet(
 import {
     TargetAppApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
@@ -133,7 +133,7 @@ const { status, data } = await apiInstance.consoleV1TargetAppIdDelete(
 import {
     TargetAppApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
@@ -188,7 +188,7 @@ import {
     TargetAppApi,
     Configuration,
     UpdateTargetAppDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
@@ -247,7 +247,7 @@ import {
     TargetAppApi,
     Configuration,
     BulkAssignConfigTargetAppDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
@@ -303,7 +303,7 @@ import {
     TargetAppApi,
     Configuration,
     TargetAppCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);

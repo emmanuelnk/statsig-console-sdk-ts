@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalPromptVersionDto } from 'statsig-console-sdk-nodejs';
+import { ExternalPromptVersionDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalPromptVersionDto = {
     id,

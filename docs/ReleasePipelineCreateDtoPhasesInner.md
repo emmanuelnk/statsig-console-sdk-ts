@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReleasePipelineCreateDtoPhasesInner } from 'statsig-console-sdk-nodejs';
+import { ReleasePipelineCreateDtoPhasesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ReleasePipelineCreateDtoPhasesInner = {
     id,

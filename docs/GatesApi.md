@@ -36,7 +36,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1GatesPost**](#consolev1gatespost) | **POST** /console/v1/gates | Create Gate|
 
 # **consoleV1GatesGet**
-> ConsoleV1GatesGet200Response consoleV1GatesGet()
+> Getconsolev1gatesResponse consoleV1GatesGet()
 
 
 ### Example
@@ -51,7 +51,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -108,7 +108,7 @@ const { status, data } = await apiInstance.consoleV1GatesGet(
 
 ### Return type
 
-**ConsoleV1GatesGet200Response**
+**Getconsolev1gatesResponse**
 
 ### Authorization
 
@@ -139,7 +139,7 @@ import {
     GatesApi,
     Configuration,
     ResolveGuardrailAlertRequestDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -202,7 +202,7 @@ import {
     GatesApi,
     Configuration,
     ResolveGuardrailAlertRequestDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -265,7 +265,7 @@ import {
     GatesApi,
     Configuration,
     ArchiveSchemaDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -321,7 +321,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdArchivePut(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -374,7 +374,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdChecksGet(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -427,7 +427,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdDelete(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -471,7 +471,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdDisablePut(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1GatesIdDynamicConfigReferencesGet**
-> ConsoleV1DynamicConfigsGet200Response consoleV1GatesIdDynamicConfigReferencesGet()
+> Getconsolev1gatesiddynamicconfigreferencesResponse consoleV1GatesIdDynamicConfigReferencesGet()
 
 
 ### Example
@@ -481,7 +481,7 @@ import {
     GatesApi,
     Configuration,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -511,7 +511,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdDynamicConfigReferenc
 
 ### Return type
 
-**ConsoleV1DynamicConfigsGet200Response**
+**Getconsolev1gatesiddynamicconfigreferencesResponse**
 
 ### Authorization
 
@@ -541,7 +541,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdDynamicConfigReferenc
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -585,7 +585,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdEnablePut(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1GatesIdExperimentReferencesGet**
-> ConsoleV1ExperimentsGet200Response consoleV1GatesIdExperimentReferencesGet()
+> Getconsolev1gatesidexperimentreferencesResponse consoleV1GatesIdExperimentReferencesGet()
 
 
 ### Example
@@ -595,7 +595,7 @@ import {
     GatesApi,
     Configuration,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -625,7 +625,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdExperimentReferencesG
 
 ### Return type
 
-**ConsoleV1ExperimentsGet200Response**
+**Getconsolev1gatesidexperimentreferencesResponse**
 
 ### Authorization
 
@@ -646,7 +646,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdExperimentReferencesG
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1GatesIdGateReferencesGet**
-> ConsoleV1GatesGet200Response consoleV1GatesIdGateReferencesGet()
+> Getconsolev1gatesidgatereferencesResponse consoleV1GatesIdGateReferencesGet()
 
 
 ### Example
@@ -656,7 +656,7 @@ import {
     GatesApi,
     Configuration,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -686,7 +686,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdGateReferencesGet(
 
 ### Return type
 
-**ConsoleV1GatesGet200Response**
+**Getconsolev1gatesidgatereferencesResponse**
 
 ### Authorization
 
@@ -716,7 +716,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdGateReferencesGet(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -769,7 +769,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdGet(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -823,7 +823,7 @@ import {
     GatesApi,
     Configuration,
     EchidnaGateLoadPulseQueryDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -879,7 +879,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdLoadPulsePost(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -932,7 +932,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdOverridesDelete(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -986,7 +986,7 @@ import {
     GatesApi,
     Configuration,
     UpdateOverridesContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1043,7 +1043,7 @@ import {
     GatesApi,
     Configuration,
     UpdateOverridesContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1100,7 +1100,7 @@ import {
     GatesApi,
     Configuration,
     GatePartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1157,7 +1157,7 @@ import {
     GatesApi,
     Configuration,
     GateFullUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1213,7 +1213,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdPost(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1270,7 +1270,7 @@ import {
     GatesApi,
     Configuration,
     RuleDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1317,7 +1317,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulePost(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1GatesIdRulesGet**
-> ConsoleV1GatesIdRulesGet200Response consoleV1GatesIdRulesGet()
+> Getconsolev1gatesidrulesResponse consoleV1GatesIdRulesGet()
 
 
 ### Example
@@ -1326,7 +1326,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulePost(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1350,7 +1350,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesGet(
 
 ### Return type
 
-**ConsoleV1GatesIdRulesGet200Response**
+**Getconsolev1gatesidrulesResponse**
 
 ### Authorization
 
@@ -1379,7 +1379,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesGet(
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1437,7 +1437,7 @@ import {
     GatesApi,
     Configuration,
     RuleUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1487,7 +1487,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPatch(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet**
-> ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet()
+> Getconsolev1gatesidrulesruleIDpulseloadhistoryResponse consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet()
 
 
 ### Example
@@ -1498,7 +1498,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1531,7 +1531,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPulseLoadH
 
 ### Return type
 
-**ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response**
+**Getconsolev1gatesidrulesruleIDpulseloadhistoryResponse**
 
 ### Authorization
 
@@ -1560,7 +1560,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPulseLoadH
 import {
     GatesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1623,7 +1623,7 @@ import {
     GatesApi,
     Configuration,
     UnarchiveSchemaDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1670,7 +1670,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdUnarchivePut(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1GatesIdVersionsGet**
-> ConsoleV1GatesIdVersionsGet200Response consoleV1GatesIdVersionsGet()
+> Getconsolev1gatesidversionsResponse consoleV1GatesIdVersionsGet()
 
 
 ### Example
@@ -1681,7 +1681,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
@@ -1711,7 +1711,7 @@ const { status, data } = await apiInstance.consoleV1GatesIdVersionsGet(
 
 ### Return type
 
-**ConsoleV1GatesIdVersionsGet200Response**
+**Getconsolev1gatesidversionsResponse**
 
 ### Authorization
 
@@ -1742,7 +1742,7 @@ import {
     GatesApi,
     Configuration,
     GateCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);

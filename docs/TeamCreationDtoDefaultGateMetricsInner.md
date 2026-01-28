@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { TeamCreationDtoDefaultGateMetricsInner } from 'statsig-console-sdk-nodejs';
+import { TeamCreationDtoDefaultGateMetricsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: TeamCreationDtoDefaultGateMetricsInner = {
     name,

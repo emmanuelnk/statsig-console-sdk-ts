@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalExperimentDtoReviewSettings } from 'statsig-console-sdk-nodejs';
+import { ExternalExperimentDtoReviewSettings } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalExperimentDtoReviewSettings = {
     requiredReview,

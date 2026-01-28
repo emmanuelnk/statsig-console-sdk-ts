@@ -163,7 +163,8 @@ export const ExternalMetricDefinitionContractDtoTypeEnum = {
     CompositeSum: 'composite_sum',
     ImportWindow: 'import_window',
     UserWarehouse: 'user_warehouse',
-    CountDistinct: 'count_distinct'
+    CountDistinct: 'count_distinct',
+    SegmentUserExposureDays: 'segment_user_exposure_days'
 } as const;
 
 export type ExternalMetricDefinitionContractDtoTypeEnum = typeof ExternalMetricDefinitionContractDtoTypeEnum[keyof typeof ExternalMetricDefinitionContractDtoTypeEnum];

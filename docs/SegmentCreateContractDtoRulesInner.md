@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SegmentCreateContractDtoRulesInner } from 'statsig-console-sdk-nodejs';
+import { SegmentCreateContractDtoRulesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SegmentCreateContractDtoRulesInner = {
     name,

@@ -12,7 +12,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1PromptsPost**](#consolev1promptspost) | **POST** /console/v1/prompts | Create Prompt|
 
 # **consoleV1PromptsGet**
-> ConsoleV1PromptsGet200Response consoleV1PromptsGet()
+> Getconsolev1promptsResponse consoleV1PromptsGet()
 
 
 ### Example
@@ -23,7 +23,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new PromptsApi(configuration);
@@ -50,7 +50,7 @@ const { status, data } = await apiInstance.consoleV1PromptsGet(
 
 ### Return type
 
-**ConsoleV1PromptsGet200Response**
+**Getconsolev1promptsResponse**
 
 ### Authorization
 
@@ -80,7 +80,7 @@ const { status, data } = await apiInstance.consoleV1PromptsGet(
 import {
     PromptsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new PromptsApi(configuration);
@@ -135,7 +135,7 @@ import {
     PromptsApi,
     Configuration,
     AIConfigPartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new PromptsApi(configuration);
@@ -192,7 +192,7 @@ import {
     PromptsApi,
     Configuration,
     AIConfigVersionCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new PromptsApi(configuration);
@@ -248,7 +248,7 @@ const { status, data } = await apiInstance.consoleV1PromptsIdVersionsPost(
 import {
     PromptsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new PromptsApi(configuration);
@@ -306,7 +306,7 @@ import {
     PromptsApi,
     Configuration,
     AIConfigCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new PromptsApi(configuration);

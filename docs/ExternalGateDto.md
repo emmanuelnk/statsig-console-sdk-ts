@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalGateDto } from 'statsig-console-sdk-nodejs';
+import { ExternalGateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalGateDto = {
     id,

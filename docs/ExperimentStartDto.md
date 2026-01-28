@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentStartDto } from 'statsig-console-sdk-nodejs';
+import { ExperimentStartDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentStartDto = {
     analysisStartTime,

@@ -22,19 +22,19 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1ReleasePipelineTriggersGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1ReleasePipelineTriggersGetStatusParameter } from '../models';
 // @ts-ignore
 import type { ConsoleV1ReleasePipelineTriggersIdAbortPut200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ReleasePipelineTriggersIdGet200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1ReleasePipelinesGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1ReleasePipelinesIdDelete200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ReleasePipelinesPost200Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1releasepipelinesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1releasepipelinetriggersResponse } from '../models';
 // @ts-ignore
 import type { ReleasePipelineCreateDto } from '../models';
 // @ts-ignore
@@ -673,7 +673,7 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersGet(releasePipelineID?: string, gateID?: string, dynamicConfigID?: string, status?: ConsoleV1ReleasePipelineTriggersGetStatusParameter, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersGet200Response>> {
+        async consoleV1ReleasePipelineTriggersGet(releasePipelineID?: string, gateID?: string, dynamicConfigID?: string, status?: ConsoleV1ReleasePipelineTriggersGetStatusParameter, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1releasepipelinetriggersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersGet(releasePipelineID, gateID, dynamicConfigID, status, startDate, endDate, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersGet']?.[localVarOperationServerIndex]?.url;
@@ -790,7 +790,7 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelinesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesGet200Response>> {
+        async consoleV1ReleasePipelinesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1releasepipelinesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelinesGet']?.[localVarOperationServerIndex]?.url;
@@ -869,7 +869,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelineTriggersGet200Response> {
+        consoleV1ReleasePipelineTriggersGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1releasepipelinetriggersResponse> {
             return localVarFp.consoleV1ReleasePipelineTriggersGet(requestParameters.releasePipelineID, requestParameters.gateID, requestParameters.dynamicConfigID, requestParameters.status, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -949,7 +949,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelinesGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelinesGet200Response> {
+        consoleV1ReleasePipelinesGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1releasepipelinesResponse> {
             return localVarFp.consoleV1ReleasePipelinesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

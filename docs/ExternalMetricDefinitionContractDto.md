@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalMetricDefinitionContractDto } from 'statsig-console-sdk-nodejs';
+import { ExternalMetricDefinitionContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalMetricDefinitionContractDto = {
     name,

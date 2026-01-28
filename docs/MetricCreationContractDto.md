@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricCreationContractDto } from 'statsig-console-sdk-nodejs';
+import { MetricCreationContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricCreationContractDto = {
     name,

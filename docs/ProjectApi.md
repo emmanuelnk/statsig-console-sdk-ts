@@ -16,7 +16,7 @@ All URIs are relative to *https://statsigapi.net*
 import {
     ProjectApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ProjectApi(configuration);

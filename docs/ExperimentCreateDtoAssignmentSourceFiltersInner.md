@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoAssignmentSourceFiltersInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoAssignmentSourceFiltersInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoAssignmentSourceFiltersInner = {
     column,

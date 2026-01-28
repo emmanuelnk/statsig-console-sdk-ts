@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricsUpdateContractDto } from 'statsig-console-sdk-nodejs';
+import { MetricsUpdateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricsUpdateContractDto = {
     name,

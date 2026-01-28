@@ -26,8 +26,6 @@ import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1RolesGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1RolesIdDelete200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1RolesIdGet200Response } from '../models';
@@ -35,6 +33,8 @@ import type { ConsoleV1RolesIdGet200Response } from '../models';
 import type { ConsoleV1RolesIdPatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1RolesPost201Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1rolesResponse } from '../models';
 // @ts-ignore
 import type { RoleContractDto } from '../models';
 // @ts-ignore
@@ -279,7 +279,7 @@ export const RolesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1RolesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1RolesGet200Response>> {
+        async consoleV1RolesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1rolesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1RolesGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['RolesApi.consoleV1RolesGet']?.[localVarOperationServerIndex]?.url;
@@ -358,7 +358,7 @@ export const RolesApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1RolesGet(requestParameters: RolesApiConsoleV1RolesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1RolesGet200Response> {
+        consoleV1RolesGet(requestParameters: RolesApiConsoleV1RolesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1rolesResponse> {
             return localVarFp.consoleV1RolesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

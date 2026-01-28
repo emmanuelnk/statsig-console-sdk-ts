@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricValueDto } from 'statsig-console-sdk-nodejs';
+import { MetricValueDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricValueDto = {
     value,

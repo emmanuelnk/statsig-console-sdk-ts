@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionRunDataContractDtoGranularHistoryInner } from 'statsig-console-sdk-nodejs';
+import { IngestionRunDataContractDtoGranularHistoryInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionRunDataContractDtoGranularHistoryInner = {
     source,

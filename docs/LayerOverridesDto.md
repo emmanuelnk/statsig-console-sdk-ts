@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerOverridesDto } from 'statsig-console-sdk-nodejs';
+import { LayerOverridesDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerOverridesDto = {
     conditionalOverrides,

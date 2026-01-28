@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionBackfillDataDto } from 'statsig-console-sdk-nodejs';
+import { IngestionBackfillDataDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionBackfillDataDto = {
     runID,

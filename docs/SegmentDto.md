@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SegmentDto } from 'statsig-console-sdk-nodejs';
+import { SegmentDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SegmentDto = {
     isEnabled,

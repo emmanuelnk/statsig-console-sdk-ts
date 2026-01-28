@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { UserContractDto } from 'statsig-console-sdk-nodejs';
+import { UserContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: UserContractDto = {
     email,

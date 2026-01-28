@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { PaginationResponseMetadataDto } from 'statsig-console-sdk-nodejs';
+import { PaginationResponseMetadataDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: PaginationResponseMetadataDto = {
     itemsPerPage,

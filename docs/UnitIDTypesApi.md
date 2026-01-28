@@ -11,7 +11,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1UnitIdTypesPost**](#consolev1unitidtypespost) | **POST** /console/v1/unit_id_types | Create Unit ID Type|
 
 # **consoleV1UnitIdTypesGet**
-> ConsoleV1UnitIdTypesGet200Response consoleV1UnitIdTypesGet()
+> Getconsolev1unitidtypesResponse consoleV1UnitIdTypesGet()
 
 
 ### Example
@@ -22,7 +22,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UnitIDTypesApi(configuration);
@@ -49,7 +49,7 @@ const { status, data } = await apiInstance.consoleV1UnitIdTypesGet(
 
 ### Return type
 
-**ConsoleV1UnitIdTypesGet200Response**
+**Getconsolev1unitidtypesResponse**
 
 ### Authorization
 
@@ -80,7 +80,7 @@ const { status, data } = await apiInstance.consoleV1UnitIdTypesGet(
 import {
     UnitIDTypesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UnitIDTypesApi(configuration);
@@ -134,7 +134,7 @@ const { status, data } = await apiInstance.consoleV1UnitIdTypesIdDelete(
 import {
     UnitIDTypesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UnitIDTypesApi(configuration);
@@ -190,7 +190,7 @@ import {
     UnitIDTypesApi,
     Configuration,
     UnitIdTypeUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UnitIDTypesApi(configuration);
@@ -248,7 +248,7 @@ import {
     UnitIDTypesApi,
     Configuration,
     UnitIdTypeContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UnitIDTypesApi(configuration);

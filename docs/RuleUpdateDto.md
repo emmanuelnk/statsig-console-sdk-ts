@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { RuleUpdateDto } from 'statsig-console-sdk-nodejs';
+import { RuleUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: RuleUpdateDto = {
     name,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoStratifiedSamplingEntityPropertySource } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoStratifiedSamplingEntityPropertySource } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoStratifiedSamplingEntityPropertySource = {
     propertySourceName,

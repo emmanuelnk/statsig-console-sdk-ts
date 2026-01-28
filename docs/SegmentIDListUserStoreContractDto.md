@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SegmentIDListUserStoreContractDto } from 'statsig-console-sdk-nodejs';
+import { SegmentIDListUserStoreContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SegmentIDListUserStoreContractDto = {
     ids,

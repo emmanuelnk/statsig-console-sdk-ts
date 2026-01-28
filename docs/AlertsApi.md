@@ -7,7 +7,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1AlertsGet**](#consolev1alertsget) | **GET** /console/v1/alerts | List Topline Alerts|
 
 # **consoleV1AlertsGet**
-> ConsoleV1AlertsGet200Response consoleV1AlertsGet()
+> Getconsolev1alertsResponse consoleV1AlertsGet()
 
 
 ### Example
@@ -18,7 +18,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AlertsApi(configuration);
@@ -45,7 +45,7 @@ const { status, data } = await apiInstance.consoleV1AlertsGet(
 
 ### Return type
 
-**ConsoleV1AlertsGet200Response**
+**Getconsolev1alertsResponse**
 
 ### Authorization
 

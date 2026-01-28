@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DynamicConfigRulePartialDto } from 'statsig-console-sdk-nodejs';
+import { DynamicConfigRulePartialDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: DynamicConfigRulePartialDto = {
     name,

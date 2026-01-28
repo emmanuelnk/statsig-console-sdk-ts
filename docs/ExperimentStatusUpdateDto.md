@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentStatusUpdateDto } from 'statsig-console-sdk-nodejs';
+import { ExperimentStatusUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentStatusUpdateDto = {
     id,

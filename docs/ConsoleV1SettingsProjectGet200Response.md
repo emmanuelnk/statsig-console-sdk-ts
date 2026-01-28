@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ConsoleV1SettingsProjectGet200Response } from 'statsig-console-sdk-nodejs';
+import { ConsoleV1SettingsProjectGet200Response } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ConsoleV1SettingsProjectGet200Response = {
     message,

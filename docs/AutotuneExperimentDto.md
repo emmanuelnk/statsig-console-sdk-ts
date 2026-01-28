@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AutotuneExperimentDto } from 'statsig-console-sdk-nodejs';
+import { AutotuneExperimentDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AutotuneExperimentDto = {
     description,

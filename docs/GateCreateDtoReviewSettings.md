@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { GateCreateDtoReviewSettings } from 'statsig-console-sdk-nodejs';
+import { GateCreateDtoReviewSettings } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: GateCreateDtoReviewSettings = {
     requiredReview,

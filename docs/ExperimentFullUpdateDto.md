@@ -65,7 +65,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentFullUpdateDto } from 'statsig-console-sdk-nodejs';
+import { ExperimentFullUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentFullUpdateDto = {
     name,

@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AutotunePartialUpdateDto } from 'statsig-console-sdk-nodejs';
+import { AutotunePartialUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AutotunePartialUpdateDto = {
     description,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ConsoleV1SegmentsIdIdlistMetadataGet200Response } from 'statsig-console-sdk-nodejs';
+import { ConsoleV1SegmentsIdIdlistMetadataGet200Response } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ConsoleV1SegmentsIdIdlistMetadataGet200Response = {
     message,

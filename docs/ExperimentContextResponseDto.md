@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentContextResponseDto } from 'statsig-console-sdk-nodejs';
+import { ExperimentContextResponseDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentContextResponseDto = {
     experimentID,

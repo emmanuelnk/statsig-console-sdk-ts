@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EntityPropertySourceQueryUpdateDto } from 'statsig-console-sdk-nodejs';
+import { EntityPropertySourceQueryUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: EntityPropertySourceQueryUpdateDto = {
     name,

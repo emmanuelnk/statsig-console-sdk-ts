@@ -9,7 +9,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1EventsGet**](#consolev1eventsget) | **GET** /console/v1/events | List Events|
 
 # **consoleV1EventsEventNameGet**
-> ConsoleV1EventsEventNameGet200Response consoleV1EventsEventNameGet()
+> Getconsolev1eventseventNameResponse consoleV1EventsEventNameGet()
 
 
 ### Example
@@ -20,7 +20,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new EventsApi(configuration);
@@ -50,7 +50,7 @@ const { status, data } = await apiInstance.consoleV1EventsEventNameGet(
 
 ### Return type
 
-**ConsoleV1EventsEventNameGet200Response**
+**Getconsolev1eventseventNameResponse**
 
 ### Authorization
 
@@ -72,7 +72,7 @@ const { status, data } = await apiInstance.consoleV1EventsEventNameGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1EventsEventNameMetricsGet**
-> ConsoleV1EventsEventNameMetricsGet200Response consoleV1EventsEventNameMetricsGet()
+> Getconsolev1eventseventNamemetricsResponse consoleV1EventsEventNameMetricsGet()
 
 
 ### Example
@@ -83,7 +83,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new EventsApi(configuration);
@@ -113,7 +113,7 @@ const { status, data } = await apiInstance.consoleV1EventsEventNameMetricsGet(
 
 ### Return type
 
-**ConsoleV1EventsEventNameMetricsGet200Response**
+**Getconsolev1eventseventNamemetricsResponse**
 
 ### Authorization
 
@@ -135,7 +135,7 @@ const { status, data } = await apiInstance.consoleV1EventsEventNameMetricsGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1EventsGet**
-> ConsoleV1EventsGet200Response consoleV1EventsGet()
+> Getconsolev1eventsResponse consoleV1EventsGet()
 
 
 ### Example
@@ -146,7 +146,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new EventsApi(configuration);
@@ -173,7 +173,7 @@ const { status, data } = await apiInstance.consoleV1EventsGet(
 
 ### Return type
 
-**ConsoleV1EventsGet200Response**
+**Getconsolev1eventsResponse**
 
 ### Authorization
 

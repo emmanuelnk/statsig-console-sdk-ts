@@ -19,7 +19,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1ReleasePipelinesPost**](#consolev1releasepipelinespost) | **POST** /console/v1/release_pipelines | Create Pipeline|
 
 # **consoleV1ReleasePipelineTriggersGet**
-> ConsoleV1ReleasePipelineTriggersGet200Response consoleV1ReleasePipelineTriggersGet()
+> Getconsolev1releasepipelinetriggersResponse consoleV1ReleasePipelineTriggersGet()
 
 
 ### Example
@@ -31,7 +31,7 @@ import {
     ConsoleV1ReleasePipelineTriggersGetStatusParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -76,7 +76,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersGet(
 
 ### Return type
 
-**ConsoleV1ReleasePipelineTriggersGet200Response**
+**Getconsolev1releasepipelinetriggersResponse**
 
 ### Authorization
 
@@ -105,7 +105,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersGet(
 import {
     ReleasePipelinesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -159,7 +159,7 @@ import {
     ReleasePipelinesApi,
     Configuration,
     ReleasePipelineTriggerActionBodyDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -215,7 +215,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdApp
 import {
     ReleasePipelinesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -269,7 +269,7 @@ import {
     ReleasePipelinesApi,
     Configuration,
     ReleasePipelineTriggerActionBodyDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -325,7 +325,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdPau
 import {
     ReleasePipelinesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -379,7 +379,7 @@ import {
     ReleasePipelinesApi,
     Configuration,
     ReleasePipelineTriggerActionBodyDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -436,7 +436,7 @@ import {
     ReleasePipelinesApi,
     Configuration,
     ReleasePipelineTriggerActionBodyDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -483,7 +483,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdUnp
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ReleasePipelinesGet**
-> ConsoleV1ReleasePipelinesGet200Response consoleV1ReleasePipelinesGet()
+> Getconsolev1releasepipelinesResponse consoleV1ReleasePipelinesGet()
 
 
 ### Example
@@ -494,7 +494,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -521,7 +521,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelinesGet(
 
 ### Return type
 
-**ConsoleV1ReleasePipelinesGet200Response**
+**Getconsolev1releasepipelinesResponse**
 
 ### Authorization
 
@@ -550,7 +550,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelinesGet(
 import {
     ReleasePipelinesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -603,7 +603,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelinesIdDelete(
 import {
     ReleasePipelinesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -657,7 +657,7 @@ import {
     ReleasePipelinesApi,
     Configuration,
     ReleasePipelineUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
@@ -714,7 +714,7 @@ import {
     ReleasePipelinesApi,
     Configuration,
     ReleasePipelineCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);

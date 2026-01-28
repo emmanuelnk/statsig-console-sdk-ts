@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { PaginationResponseWithMessage } from 'statsig-console-sdk-nodejs';
+import { PaginationResponseWithMessage } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: PaginationResponseWithMessage = {
     message,

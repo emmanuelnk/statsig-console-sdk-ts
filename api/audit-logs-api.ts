@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1AuditLogsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
+// @ts-ignore
+import type { Getconsolev1auditlogsResponse } from '../models';
 /**
  * AuditLogsApi - axios parameter creator
  */
@@ -151,7 +151,7 @@ export const AuditLogsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AuditLogsGet(id?: string, sortKey?: ConsoleV1AuditLogsGetSortKeyEnum, sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum, latestID?: string, tags?: ConsoleV1AuditLogsGetTagsParameter, actionType?: ConsoleV1AuditLogsGetActionTypeEnum, actionTypes?: Array<ConsoleV1AuditLogsGetActionTypesEnum>, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AuditLogsGet200Response>> {
+        async consoleV1AuditLogsGet(id?: string, sortKey?: ConsoleV1AuditLogsGetSortKeyEnum, sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum, latestID?: string, tags?: ConsoleV1AuditLogsGetTagsParameter, actionType?: ConsoleV1AuditLogsGetActionTypeEnum, actionTypes?: Array<ConsoleV1AuditLogsGetActionTypesEnum>, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1auditlogsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AuditLogsGet(id, sortKey, sortOrder, latestID, tags, actionType, actionTypes, startDate, endDate, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AuditLogsApi.consoleV1AuditLogsGet']?.[localVarOperationServerIndex]?.url;
@@ -173,7 +173,7 @@ export const AuditLogsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AuditLogsGet(requestParameters: AuditLogsApiConsoleV1AuditLogsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AuditLogsGet200Response> {
+        consoleV1AuditLogsGet(requestParameters: AuditLogsApiConsoleV1AuditLogsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1auditlogsResponse> {
             return localVarFp.consoleV1AuditLogsGet(requestParameters.id, requestParameters.sortKey, requestParameters.sortOrder, requestParameters.latestID, requestParameters.tags, requestParameters.actionType, requestParameters.actionTypes, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };
@@ -256,6 +256,7 @@ export const ConsoleV1AuditLogsGetSortOrderEnum = {
 } as const;
 export type ConsoleV1AuditLogsGetSortOrderEnum = typeof ConsoleV1AuditLogsGetSortOrderEnum[keyof typeof ConsoleV1AuditLogsGetSortOrderEnum];
 export const ConsoleV1AuditLogsGetActionTypeEnum = {
+    CreatePairedExperiment: 'create_paired_experiment',
     DeleteDashboardSubscription: 'delete_dashboard_subscription',
     UpdateDashboardSubscriptions: 'update_dashboard_subscriptions',
     AddDashboardPage: 'add_dashboard_page',
@@ -721,6 +722,7 @@ export const ConsoleV1AuditLogsGetActionTypeEnum = {
 } as const;
 export type ConsoleV1AuditLogsGetActionTypeEnum = typeof ConsoleV1AuditLogsGetActionTypeEnum[keyof typeof ConsoleV1AuditLogsGetActionTypeEnum];
 export const ConsoleV1AuditLogsGetActionTypesEnum = {
+    CreatePairedExperiment: 'create_paired_experiment',
     DeleteDashboardSubscription: 'delete_dashboard_subscription',
     UpdateDashboardSubscriptions: 'update_dashboard_subscriptions',
     AddDashboardPage: 'add_dashboard_page',

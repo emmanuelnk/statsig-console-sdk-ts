@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ConsoleV1HoldoutsIdOverridesDelete200Response } from 'statsig-console-sdk-nodejs';
+import { ConsoleV1HoldoutsIdOverridesDelete200Response } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ConsoleV1HoldoutsIdOverridesDelete200Response = {
     message,

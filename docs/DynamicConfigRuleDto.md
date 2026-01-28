@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DynamicConfigRuleDto } from 'statsig-console-sdk-nodejs';
+import { DynamicConfigRuleDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: DynamicConfigRuleDto = {
     name,

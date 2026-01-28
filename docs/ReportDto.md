@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReportDto } from 'statsig-console-sdk-nodejs';
+import { ReportDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ReportDto = {
     url,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricSQLDtoInner } from 'statsig-console-sdk-nodejs';
+import { MetricSQLDtoInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricSQLDtoInner = {
     idType,

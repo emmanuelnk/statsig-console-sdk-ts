@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ParamStoreUpdateDto } from 'statsig-console-sdk-nodejs';
+import { ParamStoreUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ParamStoreUpdateDto = {
     description,

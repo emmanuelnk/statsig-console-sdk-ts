@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReleasePipelineTriggerResponseDtoActionsInner } from 'statsig-console-sdk-nodejs';
+import { ReleasePipelineTriggerResponseDtoActionsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ReleasePipelineTriggerResponseDtoActionsInner = {
     type,

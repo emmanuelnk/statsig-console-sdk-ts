@@ -25,7 +25,7 @@ All URIs are relative to *https://statsigapi.net*
 import {
     UsersApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -82,7 +82,7 @@ import {
     UsersApi,
     Configuration,
     UserUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -133,7 +133,7 @@ const { status, data } = await apiInstance.consoleV1UsersEmailPost(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1UsersGet**
-> ConsoleV1UsersGet200Response consoleV1UsersGet()
+> Getconsolev1usersResponse consoleV1UsersGet()
 
 
 ### Example
@@ -144,7 +144,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -171,7 +171,7 @@ const { status, data } = await apiInstance.consoleV1UsersGet(
 
 ### Return type
 
-**ConsoleV1UsersGet200Response**
+**Getconsolev1usersResponse**
 
 ### Authorization
 
@@ -202,7 +202,7 @@ const { status, data } = await apiInstance.consoleV1UsersGet(
 import {
     UsersApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -259,7 +259,7 @@ import {
     UsersApi,
     Configuration,
     UserInvitesDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -305,7 +305,7 @@ const { status, data } = await apiInstance.consoleV1UsersInvitePost(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1UsersTeamsGet**
-> ConsoleV1UsersTeamsGet200Response consoleV1UsersTeamsGet()
+> Getconsolev1usersteamsResponse consoleV1UsersTeamsGet()
 
 
 ### Example
@@ -316,7 +316,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -343,7 +343,7 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsGet(
 
 ### Return type
 
-**ConsoleV1UsersTeamsGet200Response**
+**Getconsolev1usersteamsResponse**
 
 ### Authorization
 
@@ -374,7 +374,7 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsGet(
 import {
     UsersApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -427,7 +427,7 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsIdDelete(
 import {
     UsersApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -483,7 +483,7 @@ import {
     UsersApi,
     Configuration,
     TeamPartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
@@ -542,7 +542,7 @@ import {
     UsersApi,
     Configuration,
     TeamCreationDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AuditLogDto } from 'statsig-console-sdk-nodejs';
+import { AuditLogDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AuditLogDto = {
     id,

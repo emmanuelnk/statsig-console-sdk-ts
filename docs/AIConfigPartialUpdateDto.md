@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AIConfigPartialUpdateDto } from 'statsig-console-sdk-nodejs';
+import { AIConfigPartialUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AIConfigPartialUpdateDto = {
     description,

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalExperimentDtoReviewSettingsAllowedReviewersInner } from 'statsig-console-sdk-nodejs';
+import { ExternalExperimentDtoReviewSettingsAllowedReviewersInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalExperimentDtoReviewSettingsAllowedReviewersInner = {
     id,

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoManualQualityScoresInnerCriteriaName } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoManualQualityScoresInnerCriteriaName } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoManualQualityScoresInnerCriteriaName = {
 };

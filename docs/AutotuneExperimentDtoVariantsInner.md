@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AutotuneExperimentDtoVariantsInner } from 'statsig-console-sdk-nodejs';
+import { AutotuneExperimentDtoVariantsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AutotuneExperimentDtoVariantsInner = {
     name,

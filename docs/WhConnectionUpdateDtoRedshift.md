@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WhConnectionUpdateDtoRedshift } from 'statsig-console-sdk-nodejs';
+import { WhConnectionUpdateDtoRedshift } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: WhConnectionUpdateDtoRedshift = {
     host,

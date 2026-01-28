@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1AlertsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1AlertsGet403Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1alertsResponse } from '../models';
 /**
  * AlertsApi - axios parameter creator
  */
@@ -95,7 +95,7 @@ export const AlertsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AlertsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AlertsGet200Response>> {
+        async consoleV1AlertsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1alertsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AlertsGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AlertsApi.consoleV1AlertsGet']?.[localVarOperationServerIndex]?.url;
@@ -117,7 +117,7 @@ export const AlertsApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AlertsGet(requestParameters: AlertsApiConsoleV1AlertsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AlertsGet200Response> {
+        consoleV1AlertsGet(requestParameters: AlertsApiConsoleV1AlertsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1alertsResponse> {
             return localVarFp.consoleV1AlertsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };

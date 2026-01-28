@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DynamicConfigCreateDtoRulesInnerConditionsInner } from 'statsig-console-sdk-nodejs';
+import { DynamicConfigCreateDtoRulesInnerConditionsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: DynamicConfigCreateDtoRulesInnerConditionsInner = {
     targetValue,

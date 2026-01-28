@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EnvironmentsContractDtoEnvironmentsInner } from 'statsig-console-sdk-nodejs';
+import { EnvironmentsContractDtoEnvironmentsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: EnvironmentsContractDtoEnvironmentsInner = {
     name,

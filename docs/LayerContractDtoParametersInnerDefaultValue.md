@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerContractDtoParametersInnerDefaultValue } from 'statsig-console-sdk-nodejs';
+import { LayerContractDtoParametersInnerDefaultValue } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerContractDtoParametersInnerDefaultValue = {
 };

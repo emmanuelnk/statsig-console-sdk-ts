@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoPreComputedUserDimensionsInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoPreComputedUserDimensionsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoPreComputedUserDimensionsInner = {
     propertySource,

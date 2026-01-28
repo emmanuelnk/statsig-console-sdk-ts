@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalExperimentDtoHealthChecksInnerMetadataDeduplicationRatesInner } from 'statsig-console-sdk-nodejs';
+import { ExternalExperimentDtoHealthChecksInnerMetadataDeduplicationRatesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalExperimentDtoHealthChecksInnerMetadataDeduplicationRatesInner = {
     group_id,

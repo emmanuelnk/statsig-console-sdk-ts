@@ -28,10 +28,6 @@ import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1ExperimentsIdVersionsGet200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1LayersGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1LayersIdDelete200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1LayersIdGet200Response } from '../models';
@@ -43,6 +39,10 @@ import type { ConsoleV1LayersIdPatch200Response } from '../models';
 import type { ConsoleV1LayersIdPost200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1LayersPost201Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1layersResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1layersidexperimentsResponse } from '../models';
 // @ts-ignore
 import type { LayerCreateContractDto } from '../models';
 // @ts-ignore
@@ -564,7 +564,7 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersGet200Response>> {
+        async consoleV1LayersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1layersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersGet']?.[localVarOperationServerIndex]?.url;
@@ -594,7 +594,7 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdExperimentsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdVersionsGet200Response>> {
+        async consoleV1LayersIdExperimentsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1layersidexperimentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdExperimentsGet(id, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdExperimentsGet']?.[localVarOperationServerIndex]?.url;
@@ -732,7 +732,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersGet(requestParameters: LayersApiConsoleV1LayersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersGet200Response> {
+        consoleV1LayersGet(requestParameters: LayersApiConsoleV1LayersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1layersResponse> {
             return localVarFp.consoleV1LayersGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -752,7 +752,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdExperimentsGet(requestParameters: LayersApiConsoleV1LayersIdExperimentsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdVersionsGet200Response> {
+        consoleV1LayersIdExperimentsGet(requestParameters: LayersApiConsoleV1LayersIdExperimentsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1layersidexperimentsResponse> {
             return localVarFp.consoleV1LayersIdExperimentsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

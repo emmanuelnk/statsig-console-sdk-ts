@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionUpdateContractDtoOneOf1 } from 'statsig-console-sdk-nodejs';
+import { IngestionUpdateContractDtoOneOf1 } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionUpdateContractDtoOneOf1 = {
     dataset,

@@ -17,7 +17,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1HoldoutsPost**](#consolev1holdoutspost) | **POST** /console/v1/holdouts | Create holdout|
 
 # **consoleV1HoldoutsGet**
-> ConsoleV1HoldoutsGet200Response consoleV1HoldoutsGet()
+> Getconsolev1holdoutsResponse consoleV1HoldoutsGet()
 
 
 ### Example
@@ -29,7 +29,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -65,7 +65,7 @@ const { status, data } = await apiInstance.consoleV1HoldoutsGet(
 
 ### Return type
 
-**ConsoleV1HoldoutsGet200Response**
+**Getconsolev1holdoutsResponse**
 
 ### Authorization
 
@@ -95,7 +95,7 @@ const { status, data } = await apiInstance.consoleV1HoldoutsGet(
 import {
     HoldoutsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -150,7 +150,7 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdDelete(
 import {
     HoldoutsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -205,7 +205,7 @@ Remove selected ids from an id list
 import {
     HoldoutsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -260,7 +260,7 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesDelete(
 import {
     HoldoutsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -315,7 +315,7 @@ import {
     HoldoutsApi,
     Configuration,
     UpdateOverridesContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -372,7 +372,7 @@ import {
     HoldoutsApi,
     Configuration,
     UpdateOverridesContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -430,7 +430,7 @@ import {
     HoldoutsApi,
     Configuration,
     HoldoutPartialUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -489,7 +489,7 @@ import {
     HoldoutsApi,
     Configuration,
     HoldoutFullUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -548,7 +548,7 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdPost(
 import {
     HoldoutsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
@@ -608,7 +608,7 @@ import {
     HoldoutsApi,
     Configuration,
     HoldoutCreateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
