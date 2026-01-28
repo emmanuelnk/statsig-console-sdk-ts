@@ -24,8 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { ConsoleV1AutotunesIdGet404Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1TagsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1TagsIdDelete200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1TagsIdGet200Response } from '../models';
@@ -33,6 +31,8 @@ import type { ConsoleV1TagsIdGet200Response } from '../models';
 import type { ConsoleV1TagsIdPatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1TagsPost200Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1tagsResponse } from '../models';
 // @ts-ignore
 import type { TagCreateDto } from '../models';
 // @ts-ignore
@@ -277,7 +277,7 @@ export const TagsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1TagsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsGet200Response>> {
+        async consoleV1TagsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1tagsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TagsApi.consoleV1TagsGet']?.[localVarOperationServerIndex]?.url;
@@ -356,7 +356,7 @@ export const TagsApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TagsGet(requestParameters: TagsApiConsoleV1TagsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TagsGet200Response> {
+        consoleV1TagsGet(requestParameters: TagsApiConsoleV1TagsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1tagsResponse> {
             return localVarFp.consoleV1TagsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

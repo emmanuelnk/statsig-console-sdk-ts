@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionSourceCreateContractDtoOneOf2 } from 'statsig-console-sdk-nodejs';
+import { IngestionSourceCreateContractDtoOneOf2 } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionSourceCreateContractDtoOneOf2 = {
     dataset,

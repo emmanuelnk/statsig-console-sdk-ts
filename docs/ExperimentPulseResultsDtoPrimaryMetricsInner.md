@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentPulseResultsDtoPrimaryMetricsInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentPulseResultsDtoPrimaryMetricsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentPulseResultsDtoPrimaryMetricsInner = {
     metricID,

@@ -28,8 +28,6 @@ import type { AutotuneFullUpdateDto } from '../models';
 // @ts-ignore
 import type { AutotunePartialUpdateDto } from '../models';
 // @ts-ignore
-import type { ConsoleV1AutotunesGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1AutotunesIdDelete200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesIdGet200Response } from '../models';
@@ -53,6 +51,8 @@ import type { ConsoleV1AutotunesPost400Response } from '../models';
 import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
 import type { ExperimentStatusUpdateDto } from '../models';
+// @ts-ignore
+import type { Getconsolev1autotunesResponse } from '../models';
 /**
  * AutotunesApi - axios parameter creator
  */
@@ -467,7 +467,7 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesGet200Response>> {
+        async consoleV1AutotunesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1autotunesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesGet']?.[localVarOperationServerIndex]?.url;
@@ -604,7 +604,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesGet(requestParameters: AutotunesApiConsoleV1AutotunesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesGet200Response> {
+        consoleV1AutotunesGet(requestParameters: AutotunesApiConsoleV1AutotunesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1autotunesResponse> {
             return localVarFp.consoleV1AutotunesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

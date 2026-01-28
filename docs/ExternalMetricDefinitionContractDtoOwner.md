@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalMetricDefinitionContractDtoOwner } from 'statsig-console-sdk-nodejs';
+import { ExternalMetricDefinitionContractDtoOwner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalMetricDefinitionContractDtoOwner = {
     ownerID,

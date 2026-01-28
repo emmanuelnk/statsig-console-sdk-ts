@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SegmentIDListResetContractDto } from 'statsig-console-sdk-nodejs';
+import { SegmentIDListResetContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SegmentIDListResetContractDto = {
     ids,

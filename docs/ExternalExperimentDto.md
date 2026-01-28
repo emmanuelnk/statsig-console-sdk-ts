@@ -89,7 +89,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalExperimentDto } from 'statsig-console-sdk-nodejs';
+import { ExternalExperimentDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalExperimentDto = {
     reviewSettings,

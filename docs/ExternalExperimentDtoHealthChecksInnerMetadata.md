@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalExperimentDtoHealthChecksInnerMetadata } from 'statsig-console-sdk-nodejs';
+import { ExternalExperimentDtoHealthChecksInnerMetadata } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalExperimentDtoHealthChecksInnerMetadata = {
     type,

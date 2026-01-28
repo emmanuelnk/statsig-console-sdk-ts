@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionCreateDatabricksConnectionContractDto } from 'statsig-console-sdk-nodejs';
+import { IngestionCreateDatabricksConnectionContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionCreateDatabricksConnectionContractDto = {
     token,

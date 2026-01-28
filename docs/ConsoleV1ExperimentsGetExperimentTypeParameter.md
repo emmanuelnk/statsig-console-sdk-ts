@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ConsoleV1ExperimentsGetExperimentTypeParameter } from 'statsig-console-sdk-nodejs';
+import { ConsoleV1ExperimentsGetExperimentTypeParameter } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ConsoleV1ExperimentsGetExperimentTypeParameter = {
 };

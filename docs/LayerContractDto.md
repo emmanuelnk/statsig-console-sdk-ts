@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerContractDto } from 'statsig-console-sdk-nodejs';
+import { LayerContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerContractDto = {
     id,

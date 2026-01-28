@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SingleDataResponse } from 'statsig-console-sdk-nodejs';
+import { SingleDataResponse } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SingleDataResponse = {
     message,

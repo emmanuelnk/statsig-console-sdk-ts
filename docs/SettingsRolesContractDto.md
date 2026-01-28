@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SettingsRolesContractDto } from 'statsig-console-sdk-nodejs';
+import { SettingsRolesContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SettingsRolesContractDto = {
     default_project_role,

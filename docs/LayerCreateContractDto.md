@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerCreateContractDto } from 'statsig-console-sdk-nodejs';
+import { LayerCreateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerCreateContractDto = {
     name,

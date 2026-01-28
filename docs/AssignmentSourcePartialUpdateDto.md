@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AssignmentSourcePartialUpdateDto } from 'statsig-console-sdk-nodejs';
+import { AssignmentSourcePartialUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AssignmentSourcePartialUpdateDto = {
     name,

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { TagUpdateDto } from 'statsig-console-sdk-nodejs';
+import { TagUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: TagUpdateDto = {
     name,

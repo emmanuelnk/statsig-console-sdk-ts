@@ -17,7 +17,7 @@ All URIs are relative to *https://statsigapi.net*
 import {
     EnvironmentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new EnvironmentsApi(configuration);
@@ -70,7 +70,7 @@ import {
     EnvironmentsApi,
     Configuration,
     EnvironmentsUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new EnvironmentsApi(configuration);

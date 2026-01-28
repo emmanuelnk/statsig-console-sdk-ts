@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EntityPropertySourceCreationDtoIdTypeMappingInner } from 'statsig-console-sdk-nodejs';
+import { EntityPropertySourceCreationDtoIdTypeMappingInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: EntityPropertySourceCreationDtoIdTypeMappingInner = {
     statsigUnitID,

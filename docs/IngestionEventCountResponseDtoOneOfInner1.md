@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionEventCountResponseDtoOneOfInner1 } from 'statsig-console-sdk-nodejs';
+import { IngestionEventCountResponseDtoOneOfInner1 } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionEventCountResponseDtoOneOfInner1 = {
     date,

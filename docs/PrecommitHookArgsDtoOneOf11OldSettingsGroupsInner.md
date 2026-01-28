@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { PrecommitHookArgsDtoOneOf11OldSettingsGroupsInner } from 'statsig-console-sdk-nodejs';
+import { PrecommitHookArgsDtoOneOf11OldSettingsGroupsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: PrecommitHookArgsDtoOneOf11OldSettingsGroupsInner = {
     name,

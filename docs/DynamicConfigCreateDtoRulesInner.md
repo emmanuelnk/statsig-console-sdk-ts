@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DynamicConfigCreateDtoRulesInner } from 'statsig-console-sdk-nodejs';
+import { DynamicConfigCreateDtoRulesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: DynamicConfigCreateDtoRulesInner = {
     name,

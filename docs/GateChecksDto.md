@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { GateChecksDto } from 'statsig-console-sdk-nodejs';
+import { GateChecksDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: GateChecksDto = {
     has_production_checks_in_last_7_days,

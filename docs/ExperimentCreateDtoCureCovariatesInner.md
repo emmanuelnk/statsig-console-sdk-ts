@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoCureCovariatesInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoCureCovariatesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoCureCovariatesInner = {
     name,

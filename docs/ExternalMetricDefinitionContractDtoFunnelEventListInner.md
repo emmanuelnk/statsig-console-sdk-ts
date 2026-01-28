@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalMetricDefinitionContractDtoFunnelEventListInner } from 'statsig-console-sdk-nodejs';
+import { ExternalMetricDefinitionContractDtoFunnelEventListInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalMetricDefinitionContractDtoFunnelEventListInner = {
     name,

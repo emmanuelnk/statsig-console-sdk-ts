@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReleasePipelineTriggerResponseDto } from 'statsig-console-sdk-nodejs';
+import { ReleasePipelineTriggerResponseDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ReleasePipelineTriggerResponseDto = {
     id,

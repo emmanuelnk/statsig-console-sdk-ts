@@ -44,8 +44,6 @@ import type { ConsoleV1IngestionPatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1IngestionPost200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1IngestionRunsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1IngestionRunsGetPageParameter } from '../models';
 // @ts-ignore
 import type { ConsoleV1IngestionRunsIdGet200Response } from '../models';
@@ -54,7 +52,9 @@ import type { ConsoleV1IngestionScheduleGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1IngestionSchedulePost200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1IngestionStatusGet200Response } from '../models';
+import type { Getconsolev1ingestionrunsResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1ingestionstatusResponse } from '../models';
 // @ts-ignore
 import type { IngestionBackfillContractDto } from '../models';
 // @ts-ignore
@@ -853,7 +853,7 @@ export const IngestionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1IngestionRunsGet(page?: ConsoleV1IngestionRunsGetPageParameter, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1IngestionRunsGet200Response>> {
+        async consoleV1IngestionRunsGet(page?: ConsoleV1IngestionRunsGetPageParameter, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1ingestionrunsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1IngestionRunsGet(page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['IngestionsApi.consoleV1IngestionRunsGet']?.[localVarOperationServerIndex]?.url;
@@ -914,7 +914,7 @@ export const IngestionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1IngestionStatusGet(startDate: string, endDate: string, source?: string, dataset?: ConsoleV1IngestionStatusGetDatasetEnum, status?: ConsoleV1IngestionStatusGetStatusEnum, statuses?: Array<ConsoleV1IngestionStatusGetStatusesEnum>, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1IngestionStatusGet200Response>> {
+        async consoleV1IngestionStatusGet(startDate: string, endDate: string, source?: string, dataset?: ConsoleV1IngestionStatusGetDatasetEnum, status?: ConsoleV1IngestionStatusGetStatusEnum, statuses?: Array<ConsoleV1IngestionStatusGetStatusesEnum>, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1ingestionstatusResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1IngestionStatusGet(startDate, endDate, source, dataset, status, statuses, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['IngestionsApi.consoleV1IngestionStatusGet']?.[localVarOperationServerIndex]?.url;
@@ -1016,7 +1016,7 @@ export const IngestionsApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionRunsGet(requestParameters: IngestionsApiConsoleV1IngestionRunsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionRunsGet200Response> {
+        consoleV1IngestionRunsGet(requestParameters: IngestionsApiConsoleV1IngestionRunsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1ingestionrunsResponse> {
             return localVarFp.consoleV1IngestionRunsGet(requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1056,7 +1056,7 @@ export const IngestionsApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1IngestionStatusGet(requestParameters: IngestionsApiConsoleV1IngestionStatusGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1IngestionStatusGet200Response> {
+        consoleV1IngestionStatusGet(requestParameters: IngestionsApiConsoleV1IngestionStatusGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1ingestionstatusResponse> {
             return localVarFp.consoleV1IngestionStatusGet(requestParameters.startDate, requestParameters.endDate, requestParameters.source, requestParameters.dataset, requestParameters.status, requestParameters.statuses, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
     };

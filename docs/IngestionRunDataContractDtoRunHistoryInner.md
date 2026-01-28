@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionRunDataContractDtoRunHistoryInner } from 'statsig-console-sdk-nodejs';
+import { IngestionRunDataContractDtoRunHistoryInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionRunDataContractDtoRunHistoryInner = {
     statusTimestamp,

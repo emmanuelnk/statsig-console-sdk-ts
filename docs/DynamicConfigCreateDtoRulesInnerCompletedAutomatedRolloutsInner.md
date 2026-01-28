@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner } from 'statsig-console-sdk-nodejs';
+import { DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner = {
     time,

@@ -19,6 +19,8 @@
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
     "sdk:download-spec": "npx projen sdk:download-spec",
+    "sdk:fix-enums": "npx projen sdk:fix-enums",
+    "sdk:fix-spec": "npx projen sdk:fix-spec",
     "sdk:generate": "npx projen sdk:generate",
     "sdk:regenerate": "npx projen sdk:regenerate",
     "test": "npx projen test",

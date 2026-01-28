@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalMetricDefinitionContractDtoWarehouseNative } from 'statsig-console-sdk-nodejs';
+import { ExternalMetricDefinitionContractDtoWarehouseNative } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalMetricDefinitionContractDtoWarehouseNative = {
     aggregation,

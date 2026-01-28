@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SettingsReviewsContractDto } from 'statsig-console-sdk-nodejs';
+import { SettingsReviewsContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SettingsReviewsContractDto = {
     is_config_review_required,

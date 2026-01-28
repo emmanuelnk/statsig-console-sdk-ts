@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { PrecommitHookArgsDtoOneOf6 } from 'statsig-console-sdk-nodejs';
+import { PrecommitHookArgsDtoOneOf6 } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: PrecommitHookArgsDtoOneOf6 = {
     review_id,

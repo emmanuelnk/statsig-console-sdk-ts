@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { TeamPartialUpdateDto } from 'statsig-console-sdk-nodejs';
+import { TeamPartialUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: TeamPartialUpdateDto = {
     name,

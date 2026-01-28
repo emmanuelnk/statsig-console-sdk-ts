@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HoldoutPartialUpdateContractDto } from 'statsig-console-sdk-nodejs';
+import { HoldoutPartialUpdateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: HoldoutPartialUpdateContractDto = {
     isEnabled,

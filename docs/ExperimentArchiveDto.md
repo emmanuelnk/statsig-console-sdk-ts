@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentArchiveDto } from 'statsig-console-sdk-nodejs';
+import { ExperimentArchiveDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentArchiveDto = {
     archiveReason,

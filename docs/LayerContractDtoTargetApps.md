@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerContractDtoTargetApps } from 'statsig-console-sdk-nodejs';
+import { LayerContractDtoTargetApps } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerContractDtoTargetApps = {
 };

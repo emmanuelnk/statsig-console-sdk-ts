@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalMetricDefinitionContractDtoMetricEventsInner } from 'statsig-console-sdk-nodejs';
+import { ExternalMetricDefinitionContractDtoMetricEventsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalMetricDefinitionContractDtoMetricEventsInner = {
     name,

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SegmentCreateContractDtoRulesInnerConditionsInner } from 'statsig-console-sdk-nodejs';
+import { SegmentCreateContractDtoRulesInnerConditionsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SegmentCreateContractDtoRulesInnerConditionsInner = {
     targetValue,

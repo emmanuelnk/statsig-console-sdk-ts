@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ReleasePipelineCreateDto } from 'statsig-console-sdk-nodejs';
+import { ReleasePipelineCreateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ReleasePipelineCreateDto = {
     name,

@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AssignmentSourceQueryUpdateDto } from 'statsig-console-sdk-nodejs';
+import { AssignmentSourceQueryUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AssignmentSourceQueryUpdateDto = {
     name,

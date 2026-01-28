@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionBackfillContractDto } from 'statsig-console-sdk-nodejs';
+import { IngestionBackfillContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionBackfillContractDto = {
     datestamp_start,

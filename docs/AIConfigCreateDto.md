@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AIConfigCreateDto } from 'statsig-console-sdk-nodejs';
+import { AIConfigCreateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AIConfigCreateDto = {
     name,

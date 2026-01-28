@@ -38,7 +38,7 @@ All URIs are relative to *https://statsigapi.net*
 import {
     ExperimentsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -92,7 +92,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     AssignmentSourcePartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -152,7 +152,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     AssignmentSourceQueryUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -202,7 +202,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceN
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsAssignmentSourcesGet**
-> ConsoleV1ExperimentsAssignmentSourcesGet200Response consoleV1ExperimentsAssignmentSourcesGet()
+> Getconsolev1experimentsassignmentsourcesResponse consoleV1ExperimentsAssignmentSourcesGet()
 
 
 ### Example
@@ -213,7 +213,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -240,7 +240,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSources
 
 ### Return type
 
-**ConsoleV1ExperimentsAssignmentSourcesGet200Response**
+**Getconsolev1experimentsassignmentsourcesResponse**
 
 ### Authorization
 
@@ -272,7 +272,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     AssignmentSourceCreationDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -318,7 +318,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSources
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsEntityPropertiesGet**
-> ConsoleV1ExperimentsEntityPropertiesGet200Response consoleV1ExperimentsEntityPropertiesGet()
+> Getconsolev1experimentsentitypropertiesResponse consoleV1ExperimentsEntityPropertiesGet()
 
 
 ### Example
@@ -329,7 +329,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -356,7 +356,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertiesG
 
 ### Return type
 
-**ConsoleV1ExperimentsEntityPropertiesGet200Response**
+**Getconsolev1experimentsentitypropertiesResponse**
 
 ### Authorization
 
@@ -388,7 +388,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     EntityPropertySourceCreationDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -444,7 +444,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertiesP
 import {
     ExperimentsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -500,7 +500,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNam
 import {
     ExperimentsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -556,7 +556,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     EntityPropertySourcePartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -616,7 +616,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     EntityPropertySourceQueryUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -676,7 +676,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     EchidnaLoadPulseQueryDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -737,7 +737,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdLoadPulsePost(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsIdPulseLoadHistoryGet**
-> ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response consoleV1ExperimentsIdPulseLoadHistoryGet()
+> Getconsolev1experimentsidpulseloadhistoryResponse consoleV1ExperimentsIdPulseLoadHistoryGet()
 
 
 ### Example
@@ -748,7 +748,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -778,7 +778,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistor
 
 ### Return type
 
-**ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response**
+**Getconsolev1experimentsidpulseloadhistoryResponse**
 
 ### Authorization
 
@@ -800,7 +800,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistor
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsQualifyingEventsGet**
-> ConsoleV1ExperimentsQualifyingEventsGet200Response consoleV1ExperimentsQualifyingEventsGet()
+> Getconsolev1experimentsqualifyingeventsResponse consoleV1ExperimentsQualifyingEventsGet()
 
 
 ### Example
@@ -811,7 +811,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -838,7 +838,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsQualifyingEventsG
 
 ### Return type
 
-**ConsoleV1ExperimentsQualifyingEventsGet200Response**
+**Getconsolev1experimentsqualifyingeventsResponse**
 
 ### Authorization
 
@@ -860,7 +860,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsQualifyingEventsG
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsQualifyingEventsGet_0**
-> ConsoleV1ExperimentsQualifyingEventsGet200Response consoleV1ExperimentsQualifyingEventsGet_0()
+> Getconsolev1experimentsqualifyingeventsResponse consoleV1ExperimentsQualifyingEventsGet_0()
 
 
 ### Example
@@ -871,7 +871,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -898,7 +898,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsQualifyingEventsG
 
 ### Return type
 
-**ConsoleV1ExperimentsQualifyingEventsGet200Response**
+**Getconsolev1experimentsqualifyingeventsResponse**
 
 ### Authorization
 
@@ -929,7 +929,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsQualifyingEventsG
 import {
     ExperimentsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -984,7 +984,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsQualifyingEventsN
 import {
     ExperimentsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -1039,7 +1039,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsQualifyingEventsN
 import {
     ExperimentsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -1094,7 +1094,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsQualifyingEventsN
 import {
     ExperimentsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -1150,7 +1150,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     MetricSourceUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -1209,7 +1209,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     MetricSourceUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -1268,7 +1268,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     MetricSourceCreationContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);
@@ -1324,7 +1324,7 @@ import {
     ExperimentsWarehouseNativeApi,
     Configuration,
     MetricSourceCreationContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsWarehouseNativeApi(configuration);

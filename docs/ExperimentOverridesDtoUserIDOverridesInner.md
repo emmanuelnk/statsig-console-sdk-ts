@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentOverridesDtoUserIDOverridesInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentOverridesDtoUserIDOverridesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentOverridesDtoUserIDOverridesInner = {
     groupID,

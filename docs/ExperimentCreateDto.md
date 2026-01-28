@@ -68,7 +68,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDto } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDto = {
     name,

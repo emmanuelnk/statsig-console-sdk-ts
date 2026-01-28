@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AssignmentSourceCreationDto } from 'statsig-console-sdk-nodejs';
+import { AssignmentSourceCreationDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AssignmentSourceCreationDto = {
     name,

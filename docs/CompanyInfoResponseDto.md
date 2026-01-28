@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { CompanyInfoResponseDto } from 'statsig-console-sdk-nodejs';
+import { CompanyInfoResponseDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: CompanyInfoResponseDto = {
     companyID,

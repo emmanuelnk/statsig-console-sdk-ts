@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AIConfigCreateDtoTargetApps } from 'statsig-console-sdk-nodejs';
+import { AIConfigCreateDtoTargetApps } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AIConfigCreateDtoTargetApps = {
 };

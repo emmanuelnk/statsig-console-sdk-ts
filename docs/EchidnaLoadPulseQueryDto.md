@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EchidnaLoadPulseQueryDto } from 'statsig-console-sdk-nodejs';
+import { EchidnaLoadPulseQueryDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: EchidnaLoadPulseQueryDto = {
     refresh,

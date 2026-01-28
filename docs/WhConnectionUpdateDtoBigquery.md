@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WhConnectionUpdateDtoBigquery } from 'statsig-console-sdk-nodejs';
+import { WhConnectionUpdateDtoBigquery } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: WhConnectionUpdateDtoBigquery = {
     privateKey,

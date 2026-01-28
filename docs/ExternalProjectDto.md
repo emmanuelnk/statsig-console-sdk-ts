@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalProjectDto } from 'statsig-console-sdk-nodejs';
+import { ExternalProjectDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalProjectDto = {
     id,

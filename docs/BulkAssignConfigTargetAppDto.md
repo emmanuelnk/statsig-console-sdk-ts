@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { BulkAssignConfigTargetAppDto } from 'statsig-console-sdk-nodejs';
+import { BulkAssignConfigTargetAppDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: BulkAssignConfigTargetAppDto = {
     targetApps,

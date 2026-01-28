@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoPrimaryMetricsInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoPrimaryMetricsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoPrimaryMetricsInner = {
     name,

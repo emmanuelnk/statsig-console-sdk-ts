@@ -20,7 +20,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1SegmentsPost**](#consolev1segmentspost) | **POST** /console/v1/segments | Create Segment|
 
 # **consoleV1SegmentsGet**
-> ConsoleV1SegmentsGet200Response consoleV1SegmentsGet()
+> Getconsolev1segmentsResponse consoleV1SegmentsGet()
 
 
 ### Example
@@ -31,7 +31,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -58,7 +58,7 @@ const { status, data } = await apiInstance.consoleV1SegmentsGet(
 
 ### Return type
 
-**ConsoleV1SegmentsGet200Response**
+**Getconsolev1segmentsResponse**
 
 ### Authorization
 
@@ -90,7 +90,7 @@ import {
     SegmentsApi,
     Configuration,
     SegmentIDListUserStoreContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -148,7 +148,7 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdAddIdsPatch(
 import {
     SegmentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -203,7 +203,7 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdArchivePut(
 import {
     SegmentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -262,7 +262,7 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdConditionalPost(
 import {
     SegmentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -317,7 +317,7 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdDelete(
 import {
     SegmentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -373,7 +373,7 @@ This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
 import {
     SegmentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -432,7 +432,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -493,7 +493,7 @@ import {
     SegmentsApi,
     Configuration,
     SegmentIDListContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -554,7 +554,7 @@ import {
     SegmentsApi,
     Configuration,
     SegmentIDListResetContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -611,7 +611,7 @@ This endpoint gets the metadata of the ID List.
 import {
     SegmentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -666,7 +666,7 @@ import {
     SegmentsApi,
     Configuration,
     SegmentIDListUserStoreContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -724,7 +724,7 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdRemoveIdsPatch(
 import {
     SegmentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
@@ -781,7 +781,7 @@ import {
     SegmentsApi,
     Configuration,
     SegmentCreateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);

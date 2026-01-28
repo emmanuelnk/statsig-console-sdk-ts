@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WhConnectionUpdateDtoAthena } from 'statsig-console-sdk-nodejs';
+import { WhConnectionUpdateDtoAthena } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: WhConnectionUpdateDtoAthena = {
     region,

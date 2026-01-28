@@ -10,7 +10,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1ParamStoresPost**](#consolev1paramstorespost) | **POST** /console/v1/param_stores | Create Param Store|
 
 # **consoleV1ParamStoresGet**
-> ConsoleV1ParamStoresGet200Response consoleV1ParamStoresGet()
+> Getconsolev1paramstoresResponse consoleV1ParamStoresGet()
 
 
 ### Example
@@ -21,7 +21,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ParamStoreApi(configuration);
@@ -48,7 +48,7 @@ const { status, data } = await apiInstance.consoleV1ParamStoresGet(
 
 ### Return type
 
-**ConsoleV1ParamStoresGet200Response**
+**Getconsolev1paramstoresResponse**
 
 ### Authorization
 
@@ -77,7 +77,7 @@ const { status, data } = await apiInstance.consoleV1ParamStoresGet(
 import {
     ParamStoreApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ParamStoreApi(configuration);
@@ -131,7 +131,7 @@ import {
     ParamStoreApi,
     Configuration,
     ParamStoreUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ParamStoreApi(configuration);
@@ -188,7 +188,7 @@ import {
     ParamStoreApi,
     Configuration,
     ParamStoreCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ParamStoreApi(configuration);

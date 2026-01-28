@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExposureCountDtoGatesInner } from 'statsig-console-sdk-nodejs';
+import { ExposureCountDtoGatesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExposureCountDtoGatesInner = {
     id,

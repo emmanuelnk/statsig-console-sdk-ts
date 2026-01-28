@@ -38,7 +38,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1MetricsValuesGet**](#consolev1metricsvaluesget) | **GET** /console/v1/metrics/values | List All Metric Values|
 
 # **consoleV1MetricsGet**
-> ConsoleV1MetricsGet200Response consoleV1MetricsGet()
+> Getconsolev1metricsResponse consoleV1MetricsGet()
 
 
 ### Example
@@ -47,7 +47,7 @@ All URIs are relative to *https://statsigapi.net*
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -74,7 +74,7 @@ const { status, data } = await apiInstance.consoleV1MetricsGet(
 
 ### Return type
 
-**ConsoleV1MetricsGet200Response**
+**Getconsolev1metricsResponse**
 
 ### Authorization
 
@@ -95,7 +95,7 @@ const { status, data } = await apiInstance.consoleV1MetricsGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsGet_0**
-> ConsoleV1MetricsGet200Response consoleV1MetricsGet_0()
+> Getconsolev1metricsResponse consoleV1MetricsGet_0()
 
 
 ### Example
@@ -104,7 +104,7 @@ const { status, data } = await apiInstance.consoleV1MetricsGet(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -131,7 +131,7 @@ const { status, data } = await apiInstance.consoleV1MetricsGet_0(
 
 ### Return type
 
-**ConsoleV1MetricsGet200Response**
+**Getconsolev1metricsResponse**
 
 ### Authorization
 
@@ -161,7 +161,7 @@ const { status, data } = await apiInstance.consoleV1MetricsGet_0(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -216,7 +216,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdCancelArchivePut(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -271,7 +271,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdCancelArchivePut_0(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -326,7 +326,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdDelete(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -372,7 +372,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdDelete_0(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsIdExperimentsGet**
-> ConsoleV1MetricsIdExperimentsGet200Response consoleV1MetricsIdExperimentsGet()
+> Getconsolev1metricsidexperimentsResponse consoleV1MetricsIdExperimentsGet()
 
 
 ### Example
@@ -386,7 +386,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -449,7 +449,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet(
 
 ### Return type
 
-**ConsoleV1MetricsIdExperimentsGet200Response**
+**Getconsolev1metricsidexperimentsResponse**
 
 ### Authorization
 
@@ -470,7 +470,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsIdExperimentsGet_0**
-> ConsoleV1MetricsIdExperimentsGet200Response consoleV1MetricsIdExperimentsGet_0()
+> Getconsolev1metricsidexperimentsResponse consoleV1MetricsIdExperimentsGet_0()
 
 
 ### Example
@@ -484,7 +484,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -547,7 +547,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet_0(
 
 ### Return type
 
-**ConsoleV1MetricsIdExperimentsGet200Response**
+**Getconsolev1metricsidexperimentsResponse**
 
 ### Authorization
 
@@ -577,7 +577,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet_0(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -631,7 +631,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdGet(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -686,7 +686,7 @@ import {
     MetricsApi,
     Configuration,
     MetricsUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -745,7 +745,7 @@ import {
     MetricsApi,
     Configuration,
     MetricsUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -803,7 +803,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdPost_0(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -861,7 +861,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdReloadPost(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -916,7 +916,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdScheduleArchivePut(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -971,7 +971,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdScheduleArchivePut_
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1026,7 +1026,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdSqlGet(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1081,7 +1081,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdSqlGet_0(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1136,7 +1136,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdUnarchivePut(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1182,7 +1182,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdUnarchivePut_0(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsListGet**
-> ConsoleV1MetricsListGet200Response consoleV1MetricsListGet()
+> Getconsolev1metricslistResponse consoleV1MetricsListGet()
 
 
 ### Example
@@ -1194,7 +1194,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1230,7 +1230,7 @@ const { status, data } = await apiInstance.consoleV1MetricsListGet(
 
 ### Return type
 
-**ConsoleV1MetricsListGet200Response**
+**Getconsolev1metricslistResponse**
 
 ### Authorization
 
@@ -1251,7 +1251,7 @@ const { status, data } = await apiInstance.consoleV1MetricsListGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsListGet_0**
-> ConsoleV1MetricsListGet200Response consoleV1MetricsListGet_0()
+> Getconsolev1metricslistResponse consoleV1MetricsListGet_0()
 
 
 ### Example
@@ -1263,7 +1263,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1299,7 +1299,7 @@ const { status, data } = await apiInstance.consoleV1MetricsListGet_0(
 
 ### Return type
 
-**ConsoleV1MetricsListGet200Response**
+**Getconsolev1metricslistResponse**
 
 ### Authorization
 
@@ -1320,7 +1320,7 @@ const { status, data } = await apiInstance.consoleV1MetricsListGet_0(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsMetricSourceListGet**
-> ConsoleV1MetricsMetricSourceListGet200Response consoleV1MetricsMetricSourceListGet()
+> Getconsolev1metricsmetricsourcelistResponse consoleV1MetricsMetricSourceListGet()
 
 
 ### Example
@@ -1331,7 +1331,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1358,7 +1358,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceListGet(
 
 ### Return type
 
-**ConsoleV1MetricsMetricSourceListGet200Response**
+**Getconsolev1metricsmetricsourcelistResponse**
 
 ### Authorization
 
@@ -1389,7 +1389,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceListGet(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1444,7 +1444,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameDelet
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1490,7 +1490,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsMetricSourceNameMetricsGet**
-> ConsoleV1MetricsMetricSourceNameMetricsGet200Response consoleV1MetricsMetricSourceNameMetricsGet()
+> Getconsolev1metricsmetricsourcenamemetricsResponse consoleV1MetricsMetricSourceNameMetricsGet()
 
 
 ### Example
@@ -1501,7 +1501,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1531,7 +1531,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameMetri
 
 ### Return type
 
-**ConsoleV1MetricsMetricSourceNameMetricsGet200Response**
+**Getconsolev1metricsmetricsourcenamemetricsResponse**
 
 ### Authorization
 
@@ -1563,7 +1563,7 @@ import {
     MetricsApi,
     Configuration,
     MetricSourceUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1622,7 +1622,7 @@ import {
     MetricsApi,
     Configuration,
     MetricSourceCreationContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1677,7 +1677,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourcePost(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1734,7 +1734,7 @@ const { status, data } = await apiInstance.consoleV1MetricsNameTypeGet(
 import {
     MetricsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1792,7 +1792,7 @@ import {
     MetricsApi,
     Configuration,
     MetricCreationContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1847,7 +1847,7 @@ import {
     MetricsApi,
     Configuration,
     MetricCreationContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1892,7 +1892,7 @@ const { status, data } = await apiInstance.consoleV1MetricsPost_0(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsValuesGet**
-> ConsoleV1MetricsValuesGet200Response consoleV1MetricsValuesGet()
+> Getconsolev1metricsvaluesResponse consoleV1MetricsValuesGet()
 
 List all metric values
 
@@ -1904,7 +1904,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
@@ -1940,7 +1940,7 @@ const { status, data } = await apiInstance.consoleV1MetricsValuesGet(
 
 ### Return type
 
-**ConsoleV1MetricsValuesGet200Response**
+**Getconsolev1metricsvaluesResponse**
 
 ### Authorization
 

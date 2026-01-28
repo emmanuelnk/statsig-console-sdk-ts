@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoManualQualityScoresInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoManualQualityScoresInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoManualQualityScoresInner = {
     criteriaName,

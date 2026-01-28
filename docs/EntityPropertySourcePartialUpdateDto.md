@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EntityPropertySourcePartialUpdateDto } from 'statsig-console-sdk-nodejs';
+import { EntityPropertySourcePartialUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: EntityPropertySourcePartialUpdateDto = {
     name,

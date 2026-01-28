@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SettingsTeamsContractDto } from 'statsig-console-sdk-nodejs';
+import { SettingsTeamsContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SettingsTeamsContractDto = {
     require_teams_on_configs,

@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricSourceContractDto } from 'statsig-console-sdk-nodejs';
+import { MetricSourceContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricSourceContractDto = {
     name,

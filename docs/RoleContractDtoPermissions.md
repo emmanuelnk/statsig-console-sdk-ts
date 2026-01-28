@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { RoleContractDtoPermissions } from 'statsig-console-sdk-nodejs';
+import { RoleContractDtoPermissions } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: RoleContractDtoPermissions = {
     invitation_access,

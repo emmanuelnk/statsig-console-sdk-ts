@@ -28,8 +28,6 @@ import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1SegmentsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1SegmentsIdAddIdsPatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1SegmentsIdArchivePut200Response } from '../models';
@@ -51,6 +49,8 @@ import type { ConsoleV1SegmentsIdIdlistMetadataGet200Response } from '../models'
 import type { ConsoleV1SegmentsIdReviewsReviewIDCommitPut200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1SegmentsPost201Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1segmentsResponse } from '../models';
 // @ts-ignore
 import type { SegmentCreateContractDto } from '../models';
 // @ts-ignore
@@ -704,7 +704,7 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsGet200Response>> {
+        async consoleV1SegmentsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1segmentsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsGet']?.[localVarOperationServerIndex]?.url;
@@ -916,7 +916,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsGet(requestParameters: SegmentsApiConsoleV1SegmentsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsGet200Response> {
+        consoleV1SegmentsGet(requestParameters: SegmentsApiConsoleV1SegmentsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1segmentsResponse> {
             return localVarFp.consoleV1SegmentsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

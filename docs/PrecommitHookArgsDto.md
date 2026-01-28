@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { PrecommitHookArgsDto } from 'statsig-console-sdk-nodejs';
+import { PrecommitHookArgsDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: PrecommitHookArgsDto = {
     review_id,

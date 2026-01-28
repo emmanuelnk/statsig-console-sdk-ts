@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalMetricDefinitionContractDtoWarehouseNativeMetricSourcesInner } from 'statsig-console-sdk-nodejs';
+import { ExternalMetricDefinitionContractDtoWarehouseNativeMetricSourcesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalMetricDefinitionContractDtoWarehouseNativeMetricSourcesInner = {
     metricSourceName,

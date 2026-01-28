@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricSourceContractDtoCustomFieldMappingInner } from 'statsig-console-sdk-nodejs';
+import { MetricSourceContractDtoCustomFieldMappingInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricSourceContractDtoCustomFieldMappingInner = {
     key,

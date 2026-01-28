@@ -26,8 +26,6 @@ import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1UnitIdTypesGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1UnitIdTypesIdDelete200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1UnitIdTypesIdGet200Response } from '../models';
@@ -35,6 +33,8 @@ import type { ConsoleV1UnitIdTypesIdGet200Response } from '../models';
 import type { ConsoleV1UnitIdTypesIdPatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1UnitIdTypesPost201Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1unitidtypesResponse } from '../models';
 // @ts-ignore
 import type { UnitIdTypeContractDto } from '../models';
 // @ts-ignore
@@ -279,7 +279,7 @@ export const UnitIDTypesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1UnitIdTypesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesGet200Response>> {
+        async consoleV1UnitIdTypesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1unitidtypesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UnitIDTypesApi.consoleV1UnitIdTypesGet']?.[localVarOperationServerIndex]?.url;
@@ -358,7 +358,7 @@ export const UnitIDTypesApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesGet200Response> {
+        consoleV1UnitIdTypesGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1unitidtypesResponse> {
             return localVarFp.consoleV1UnitIdTypesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
