@@ -32,8 +32,6 @@ import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1DynamicConfigsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1DynamicConfigsIdArchivePut200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1DynamicConfigsIdDelete200Response } from '../models';
@@ -50,10 +48,6 @@ import type { ConsoleV1DynamicConfigsIdRuleRuleIdGet200Response } from '../model
 // @ts-ignore
 import type { ConsoleV1DynamicConfigsIdRuleRuleIdPatch200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1DynamicConfigsIdRulesGet200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1DynamicConfigsIdVersionsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1DynamicConfigsPost201Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1DynamicConfigsPost403Response } from '../models';
@@ -65,6 +59,12 @@ import type { DynamicConfigFullUpdateDto } from '../models';
 import type { DynamicConfigPartialUpdateDto } from '../models';
 // @ts-ignore
 import type { DynamicConfigRulePartialDto } from '../models';
+// @ts-ignore
+import type { Getconsolev1dynamicconfigsResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1dynamicconfigsidrulesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1dynamicconfigsidversionsResponse } from '../models';
 // @ts-ignore
 import type { UnarchiveSchemaDto } from '../models';
 /**
@@ -845,7 +845,7 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsGet(releasePipelineID?: string | null, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsGet200Response>> {
+        async consoleV1DynamicConfigsGet(releasePipelineID?: string | null, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsGet(releasePipelineID, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsGet']?.[localVarOperationServerIndex]?.url;
@@ -1024,7 +1024,7 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdRulesGet200Response>> {
+        async consoleV1DynamicConfigsIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsidrulesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRulesGet(id, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdRulesGet']?.[localVarOperationServerIndex]?.url;
@@ -1055,7 +1055,7 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdVersionsGet200Response>> {
+        async consoleV1DynamicConfigsIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsidversionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdVersionsGet(id, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdVersionsGet']?.[localVarOperationServerIndex]?.url;
@@ -1091,7 +1091,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsGet200Response> {
+        consoleV1DynamicConfigsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1dynamicconfigsResponse> {
             return localVarFp.consoleV1DynamicConfigsGet(requestParameters.releasePipelineID, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1211,7 +1211,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRulesGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRulesGet200Response> {
+        consoleV1DynamicConfigsIdRulesGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1dynamicconfigsidrulesResponse> {
             return localVarFp.consoleV1DynamicConfigsIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1231,7 +1231,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdVersionsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdVersionsGet200Response> {
+        consoleV1DynamicConfigsIdVersionsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1dynamicconfigsidversionsResponse> {
             return localVarFp.consoleV1DynamicConfigsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

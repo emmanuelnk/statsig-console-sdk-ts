@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SegmentCreateContractDto } from 'statsig-console-sdk-nodejs';
+import { SegmentCreateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: SegmentCreateContractDto = {
     name,

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoStratifiedSamplingMetric } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoStratifiedSamplingMetric } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoStratifiedSamplingMetric = {
     name,

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ParamStoreDtoParametersInnerOneOf4 } from 'statsig-console-sdk-nodejs';
+import { ParamStoreDtoParametersInnerOneOf4 } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ParamStoreDtoParametersInnerOneOf4 = {
     ref_type,

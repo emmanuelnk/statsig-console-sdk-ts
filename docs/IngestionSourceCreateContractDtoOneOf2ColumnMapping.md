@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionSourceCreateContractDtoOneOf2ColumnMapping } from 'statsig-console-sdk-nodejs';
+import { IngestionSourceCreateContractDtoOneOf2ColumnMapping } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionSourceCreateContractDtoOneOf2ColumnMapping = {
     experiment,

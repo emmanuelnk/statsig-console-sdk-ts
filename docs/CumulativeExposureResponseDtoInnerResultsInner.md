@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { CumulativeExposureResponseDtoInnerResultsInner } from 'statsig-console-sdk-nodejs';
+import { CumulativeExposureResponseDtoInnerResultsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: CumulativeExposureResponseDtoInnerResultsInner = {
     date,

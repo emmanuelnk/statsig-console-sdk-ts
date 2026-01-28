@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricEventsCriteriaDto } from 'statsig-console-sdk-nodejs';
+import { MetricEventsCriteriaDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricEventsCriteriaDto = {
     type,

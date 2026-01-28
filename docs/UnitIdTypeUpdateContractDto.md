@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { UnitIdTypeUpdateContractDto } from 'statsig-console-sdk-nodejs';
+import { UnitIdTypeUpdateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: UnitIdTypeUpdateContractDto = {
     description,

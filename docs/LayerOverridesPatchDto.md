@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerOverridesPatchDto } from 'statsig-console-sdk-nodejs';
+import { LayerOverridesPatchDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerOverridesPatchDto = {
     op,

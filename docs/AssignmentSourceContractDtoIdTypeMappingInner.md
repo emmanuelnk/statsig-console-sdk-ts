@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AssignmentSourceContractDtoIdTypeMappingInner } from 'statsig-console-sdk-nodejs';
+import { AssignmentSourceContractDtoIdTypeMappingInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AssignmentSourceContractDtoIdTypeMappingInner = {
     statsigUnitID,

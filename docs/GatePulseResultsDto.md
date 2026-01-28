@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { GatePulseResultsDto } from 'statsig-console-sdk-nodejs';
+import { GatePulseResultsDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: GatePulseResultsDto = {
     ds,

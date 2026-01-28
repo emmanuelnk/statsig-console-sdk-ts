@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { GateRulesDto } from 'statsig-console-sdk-nodejs';
+import { GateRulesDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: GateRulesDto = {
     rules,

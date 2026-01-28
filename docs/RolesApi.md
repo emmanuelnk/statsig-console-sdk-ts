@@ -11,7 +11,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1RolesPost**](#consolev1rolespost) | **POST** /console/v1/roles | Create Role|
 
 # **consoleV1RolesGet**
-> ConsoleV1RolesGet200Response consoleV1RolesGet()
+> Getconsolev1rolesResponse consoleV1RolesGet()
 
 
 ### Example
@@ -22,7 +22,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new RolesApi(configuration);
@@ -49,7 +49,7 @@ const { status, data } = await apiInstance.consoleV1RolesGet(
 
 ### Return type
 
-**ConsoleV1RolesGet200Response**
+**Getconsolev1rolesResponse**
 
 ### Authorization
 
@@ -80,7 +80,7 @@ const { status, data } = await apiInstance.consoleV1RolesGet(
 import {
     RolesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new RolesApi(configuration);
@@ -135,7 +135,7 @@ const { status, data } = await apiInstance.consoleV1RolesIdDelete(
 import {
     RolesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new RolesApi(configuration);
@@ -191,7 +191,7 @@ import {
     RolesApi,
     Configuration,
     RoleUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new RolesApi(configuration);
@@ -250,7 +250,7 @@ import {
     RolesApi,
     Configuration,
     RoleContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new RolesApi(configuration);

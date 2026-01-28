@@ -34,15 +34,7 @@ import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1DynamicConfigsGet200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1ExperimentsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1GatesGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1GatesGetPassRateParameter } from '../models';
 // @ts-ignore
@@ -70,15 +62,11 @@ import type { ConsoleV1GatesIdReviewsReviewIDCommitPut200Response } from '../mod
 // @ts-ignore
 import type { ConsoleV1GatesIdRulePost200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1GatesIdRulesGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1GatesIdRulesRuleIDPatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1GatesIdRulesRuleIDPulseResultsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1GatesIdUnarchivePut200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1GatesIdVersionsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1GatesPost201Response } from '../models';
 // @ts-ignore
@@ -89,6 +77,20 @@ import type { GateCreateDto } from '../models';
 import type { GateFullUpdateDto } from '../models';
 // @ts-ignore
 import type { GatePartialUpdateDto } from '../models';
+// @ts-ignore
+import type { Getconsolev1gatesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1gatesiddynamicconfigreferencesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1gatesidexperimentreferencesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1gatesidgatereferencesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1gatesidrulesResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1gatesidrulesruleIDpulseloadhistoryResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1gatesidversionsResponse } from '../models';
 // @ts-ignore
 import type { ResolveGuardrailAlertRequestDto } from '../models';
 // @ts-ignore
@@ -1570,7 +1572,7 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesGet(idType?: ConsoleV1AuditLogsGetTagsParameter, type?: ConsoleV1GatesGetTypeEnum, typeReason?: ConsoleV1GatesGetTypeReasonEnum, passRate?: ConsoleV1GatesGetPassRateParameter, rolloutRate?: ConsoleV1GatesGetPassRateParameter, releasePipelineID?: string | null, includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesGet200Response>> {
+        async consoleV1GatesGet(idType?: ConsoleV1AuditLogsGetTagsParameter, type?: ConsoleV1GatesGetTypeEnum, typeReason?: ConsoleV1GatesGetTypeReasonEnum, passRate?: ConsoleV1GatesGetPassRateParameter, rolloutRate?: ConsoleV1GatesGetPassRateParameter, releasePipelineID?: string | null, includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesGet(idType, type, typeReason, passRate, rolloutRate, releasePipelineID, includeArchived, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesGet']?.[localVarOperationServerIndex]?.url;
@@ -1675,7 +1677,7 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdDynamicConfigReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsGet200Response>> {
+        async consoleV1GatesIdDynamicConfigReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesiddynamicconfigreferencesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdDynamicConfigReferencesGet(id, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdDynamicConfigReferencesGet']?.[localVarOperationServerIndex]?.url;
@@ -1705,7 +1707,7 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdExperimentReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsGet200Response>> {
+        async consoleV1GatesIdExperimentReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidexperimentreferencesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdExperimentReferencesGet(id, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdExperimentReferencesGet']?.[localVarOperationServerIndex]?.url;
@@ -1721,7 +1723,7 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdGateReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesGet200Response>> {
+        async consoleV1GatesIdGateReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidgatereferencesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdGateReferencesGet(id, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdGateReferencesGet']?.[localVarOperationServerIndex]?.url;
@@ -1896,7 +1898,7 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdRulesGet200Response>> {
+        async consoleV1GatesIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidrulesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesGet(id, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdRulesGet']?.[localVarOperationServerIndex]?.url;
@@ -1944,7 +1946,7 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id: string, ruleID: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response>> {
+        async consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id: string, ruleID: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidrulesruleIDpulseloadhistoryResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id, ruleID, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet']?.[localVarOperationServerIndex]?.url;
@@ -1992,7 +1994,7 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdVersionsGet200Response>> {
+        async consoleV1GatesIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidversionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdVersionsGet(id, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdVersionsGet']?.[localVarOperationServerIndex]?.url;
@@ -2028,7 +2030,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesGet(requestParameters: GatesApiConsoleV1GatesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesGet200Response> {
+        consoleV1GatesGet(requestParameters: GatesApiConsoleV1GatesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesResponse> {
             return localVarFp.consoleV1GatesGet(requestParameters.idType, requestParameters.type, requestParameters.typeReason, requestParameters.passRate, requestParameters.rolloutRate, requestParameters.releasePipelineID, requestParameters.includeArchived, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2098,7 +2100,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdDynamicConfigReferencesGet(requestParameters: GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsGet200Response> {
+        consoleV1GatesIdDynamicConfigReferencesGet(requestParameters: GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesiddynamicconfigreferencesResponse> {
             return localVarFp.consoleV1GatesIdDynamicConfigReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2118,7 +2120,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdExperimentReferencesGet(requestParameters: GatesApiConsoleV1GatesIdExperimentReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsGet200Response> {
+        consoleV1GatesIdExperimentReferencesGet(requestParameters: GatesApiConsoleV1GatesIdExperimentReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidexperimentreferencesResponse> {
             return localVarFp.consoleV1GatesIdExperimentReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2128,7 +2130,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdGateReferencesGet(requestParameters: GatesApiConsoleV1GatesIdGateReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesGet200Response> {
+        consoleV1GatesIdGateReferencesGet(requestParameters: GatesApiConsoleV1GatesIdGateReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidgatereferencesResponse> {
             return localVarFp.consoleV1GatesIdGateReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2248,7 +2250,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesGet(requestParameters: GatesApiConsoleV1GatesIdRulesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesGet200Response> {
+        consoleV1GatesIdRulesGet(requestParameters: GatesApiConsoleV1GatesIdRulesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidrulesResponse> {
             return localVarFp.consoleV1GatesIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2278,7 +2280,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response> {
+        consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidrulesruleIDpulseloadhistoryResponse> {
             return localVarFp.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters.id, requestParameters.ruleID, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2308,7 +2310,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdVersionsGet(requestParameters: GatesApiConsoleV1GatesIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdVersionsGet200Response> {
+        consoleV1GatesIdVersionsGet(requestParameters: GatesApiConsoleV1GatesIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidversionsResponse> {
             return localVarFp.consoleV1GatesIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

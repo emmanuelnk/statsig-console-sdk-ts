@@ -13,7 +13,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1KeysPost**](#consolev1keyspost) | **POST** /console/v1/keys | Create Key|
 
 # **consoleV1KeysGet**
-> ConsoleV1KeysGet200Response consoleV1KeysGet()
+> Getconsolev1keysResponse consoleV1KeysGet()
 
 
 ### Example
@@ -24,7 +24,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
@@ -57,7 +57,7 @@ const { status, data } = await apiInstance.consoleV1KeysGet(
 
 ### Return type
 
-**ConsoleV1KeysGet200Response**
+**Getconsolev1keysResponse**
 
 ### Authorization
 
@@ -87,7 +87,7 @@ const { status, data } = await apiInstance.consoleV1KeysGet(
 import {
     KeysApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
@@ -142,7 +142,7 @@ const { status, data } = await apiInstance.consoleV1KeysIdDeactivatePatch(
 import {
     KeysApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
@@ -197,7 +197,7 @@ const { status, data } = await apiInstance.consoleV1KeysIdDelete(
 import {
     KeysApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
@@ -253,7 +253,7 @@ import {
     KeysApi,
     Configuration,
     KeyUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
@@ -311,7 +311,7 @@ const { status, data } = await apiInstance.consoleV1KeysIdPatch(
 import {
     KeysApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
@@ -367,7 +367,7 @@ import {
     KeysApi,
     Configuration,
     KeyCreateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);

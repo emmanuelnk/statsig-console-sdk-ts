@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { PrecommitHookArgsDtoOneOf4OldConfig } from 'statsig-console-sdk-nodejs';
+import { PrecommitHookArgsDtoOneOf4OldConfig } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: PrecommitHookArgsDtoOneOf4OldConfig = {
     isEnabled,

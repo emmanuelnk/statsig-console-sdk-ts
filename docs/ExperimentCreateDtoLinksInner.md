@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoLinksInner } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoLinksInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoLinksInner = {
     url,

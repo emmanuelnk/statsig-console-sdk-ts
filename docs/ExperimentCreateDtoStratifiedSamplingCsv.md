@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoStratifiedSamplingCsv } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoStratifiedSamplingCsv } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoStratifiedSamplingCsv = {
     original,

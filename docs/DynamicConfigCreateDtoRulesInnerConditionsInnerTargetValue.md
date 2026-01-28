@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DynamicConfigCreateDtoRulesInnerConditionsInnerTargetValue } from 'statsig-console-sdk-nodejs';
+import { DynamicConfigCreateDtoRulesInnerConditionsInnerTargetValue } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: DynamicConfigCreateDtoRulesInnerConditionsInnerTargetValue = {
 };

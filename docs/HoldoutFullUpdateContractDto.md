@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HoldoutFullUpdateContractDto } from 'statsig-console-sdk-nodejs';
+import { HoldoutFullUpdateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: HoldoutFullUpdateContractDto = {
     isEnabled,

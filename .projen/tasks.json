@@ -193,6 +193,24 @@
         }
       ]
     },
+    "sdk:fix-enums": {
+      "name": "sdk:fix-enums",
+      "description": "Fix duplicate enum exports in generated code",
+      "steps": [
+        {
+          "exec": "node scripts/fix-duplicate-enums.js"
+        }
+      ]
+    },
+    "sdk:fix-spec": {
+      "name": "sdk:fix-spec",
+      "description": "Fix OpenAPI spec to generate better TypeScript types",
+      "steps": [
+        {
+          "exec": "node scripts/fix-openapi-spec.js"
+        }
+      ]
+    },
     "sdk:generate": {
       "name": "sdk:generate",
       "description": "Generate SDK from OpenAPI spec (requires Java and openapi-generator-cli)",
@@ -204,13 +222,19 @@
     },
     "sdk:regenerate": {
       "name": "sdk:regenerate",
-      "description": "Full SDK regeneration (download spec + generate)",
+      "description": "Full SDK regeneration (download spec + fix + generate + fix enums)",
       "steps": [
         {
           "spawn": "sdk:download-spec"
         },
         {
+          "spawn": "sdk:fix-spec"
+        },
+        {
           "spawn": "sdk:generate"
+        },
+        {
+          "spawn": "sdk:fix-enums"
         }
       ]
     },

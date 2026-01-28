@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { UnitIdTypeContractDto } from 'statsig-console-sdk-nodejs';
+import { UnitIdTypeContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: UnitIdTypeContractDto = {
     name,

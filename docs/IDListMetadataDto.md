@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IDListMetadataDto } from 'statsig-console-sdk-nodejs';
+import { IDListMetadataDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IDListMetadataDto = {
     currentVersion,

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionScheduleDto } from 'statsig-console-sdk-nodejs';
+import { IngestionScheduleDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionScheduleDto = {
     dataset,

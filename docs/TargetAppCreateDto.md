@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { TargetAppCreateDto } from 'statsig-console-sdk-nodejs';
+import { TargetAppCreateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: TargetAppCreateDto = {
     name,

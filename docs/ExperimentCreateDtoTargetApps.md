@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExperimentCreateDtoTargetApps } from 'statsig-console-sdk-nodejs';
+import { ExperimentCreateDtoTargetApps } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExperimentCreateDtoTargetApps = {
 };

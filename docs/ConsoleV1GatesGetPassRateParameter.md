@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ConsoleV1GatesGetPassRateParameter } from 'statsig-console-sdk-nodejs';
+import { ConsoleV1GatesGetPassRateParameter } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ConsoleV1GatesGetPassRateParameter = {
 };

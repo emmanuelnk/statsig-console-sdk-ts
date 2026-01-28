@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AlertSchemaDto } from 'statsig-console-sdk-nodejs';
+import { AlertSchemaDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AlertSchemaDto = {
     id,

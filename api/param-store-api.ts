@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1ParamStoresGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1ParamStoresPost200Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1paramstoresResponse } from '../models';
 // @ts-ignore
 import type { ParamStoreCreateDto } from '../models';
 // @ts-ignore
@@ -228,7 +228,7 @@ export const ParamStoreApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ParamStoresGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ParamStoresGet200Response>> {
+        async consoleV1ParamStoresGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1paramstoresResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ParamStoresGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ParamStoreApi.consoleV1ParamStoresGet']?.[localVarOperationServerIndex]?.url;
@@ -293,7 +293,7 @@ export const ParamStoreApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ParamStoresGet(requestParameters: ParamStoreApiConsoleV1ParamStoresGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ParamStoresGet200Response> {
+        consoleV1ParamStoresGet(requestParameters: ParamStoreApiConsoleV1ParamStoresGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1paramstoresResponse> {
             return localVarFp.consoleV1ParamStoresGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

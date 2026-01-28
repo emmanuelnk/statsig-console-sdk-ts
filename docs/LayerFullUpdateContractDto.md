@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerFullUpdateContractDto } from 'statsig-console-sdk-nodejs';
+import { LayerFullUpdateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerFullUpdateContractDto = {
     description,

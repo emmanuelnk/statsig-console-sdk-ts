@@ -89,7 +89,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { PrecommitHookArgsDtoOneOf6OldExperiment } from 'statsig-console-sdk-nodejs';
+import { PrecommitHookArgsDtoOneOf6OldExperiment } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: PrecommitHookArgsDtoOneOf6OldExperiment = {
     reviewSettings,

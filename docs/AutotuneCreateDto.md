@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AutotuneCreateDto } from 'statsig-console-sdk-nodejs';
+import { AutotuneCreateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AutotuneCreateDto = {
     description,

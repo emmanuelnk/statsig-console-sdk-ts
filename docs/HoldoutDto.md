@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HoldoutDto } from 'statsig-console-sdk-nodejs';
+import { HoldoutDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: HoldoutDto = {
     id,

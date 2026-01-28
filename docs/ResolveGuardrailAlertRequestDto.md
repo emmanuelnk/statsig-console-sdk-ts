@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ResolveGuardrailAlertRequestDto } from 'statsig-console-sdk-nodejs';
+import { ResolveGuardrailAlertRequestDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ResolveGuardrailAlertRequestDto = {
     reasoning,

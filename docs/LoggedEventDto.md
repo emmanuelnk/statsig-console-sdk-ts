@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LoggedEventDto } from 'statsig-console-sdk-nodejs';
+import { LoggedEventDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LoggedEventDto = {
     timestamp,

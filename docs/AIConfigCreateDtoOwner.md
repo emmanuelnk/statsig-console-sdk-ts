@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AIConfigCreateDtoOwner } from 'statsig-console-sdk-nodejs';
+import { AIConfigCreateDtoOwner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AIConfigCreateDtoOwner = {
     ownerID,

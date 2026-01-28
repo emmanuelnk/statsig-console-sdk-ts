@@ -17,7 +17,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1LayersPost**](#consolev1layerspost) | **POST** /console/v1/layers | Create a Layer|
 
 # **consoleV1LayersGet**
-> ConsoleV1LayersGet200Response consoleV1LayersGet()
+> Getconsolev1layersResponse consoleV1LayersGet()
 
 
 ### Example
@@ -28,7 +28,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -55,7 +55,7 @@ const { status, data } = await apiInstance.consoleV1LayersGet(
 
 ### Return type
 
-**ConsoleV1LayersGet200Response**
+**Getconsolev1layersResponse**
 
 ### Authorization
 
@@ -86,7 +86,7 @@ const { status, data } = await apiInstance.consoleV1LayersGet(
 import {
     LayersApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -133,7 +133,7 @@ const { status, data } = await apiInstance.consoleV1LayersIdDelete(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1LayersIdExperimentsGet**
-> ConsoleV1ExperimentsIdVersionsGet200Response consoleV1LayersIdExperimentsGet()
+> Getconsolev1layersidexperimentsResponse consoleV1LayersIdExperimentsGet()
 
 
 ### Example
@@ -144,7 +144,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -174,7 +174,7 @@ const { status, data } = await apiInstance.consoleV1LayersIdExperimentsGet(
 
 ### Return type
 
-**ConsoleV1ExperimentsIdVersionsGet200Response**
+**Getconsolev1layersidexperimentsResponse**
 
 ### Authorization
 
@@ -203,7 +203,7 @@ const { status, data } = await apiInstance.consoleV1LayersIdExperimentsGet(
 import {
     LayersApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -259,7 +259,7 @@ const { status, data } = await apiInstance.consoleV1LayersIdGet(
 import {
     LayersApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -314,7 +314,7 @@ const { status, data } = await apiInstance.consoleV1LayersIdOverridesDelete(
 import {
     LayersApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -370,7 +370,7 @@ import {
     LayersApi,
     Configuration,
     LayerOverridesPatchDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -429,7 +429,7 @@ import {
     LayersApi,
     Configuration,
     LayerOverridesDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -488,7 +488,7 @@ import {
     LayersApi,
     Configuration,
     LayerPartialUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -547,7 +547,7 @@ import {
     LayersApi,
     Configuration,
     LayerFullUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
@@ -606,7 +606,7 @@ import {
     LayersApi,
     Configuration,
     LayerCreateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);

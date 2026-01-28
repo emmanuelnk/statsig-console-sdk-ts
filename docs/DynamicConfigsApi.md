@@ -22,7 +22,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1DynamicConfigsPost**](#consolev1dynamicconfigspost) | **POST** /console/v1/dynamic_configs | Create Dynamic Config|
 
 # **consoleV1DynamicConfigsGet**
-> ConsoleV1DynamicConfigsGet200Response consoleV1DynamicConfigsGet()
+> Getconsolev1dynamicconfigsResponse consoleV1DynamicConfigsGet()
 
 
 ### Example
@@ -34,7 +34,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -73,7 +73,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsGet(
 
 ### Return type
 
-**ConsoleV1DynamicConfigsGet200Response**
+**Getconsolev1dynamicconfigsResponse**
 
 ### Authorization
 
@@ -104,7 +104,7 @@ import {
     DynamicConfigsApi,
     Configuration,
     ArchiveSchemaDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -160,7 +160,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdArchivePut(
 import {
     DynamicConfigsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -215,7 +215,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdDelete(
 import {
     DynamicConfigsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -268,7 +268,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdDisablePut(
 import {
     DynamicConfigsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -321,7 +321,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdEnablePut(
 import {
     DynamicConfigsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -377,7 +377,7 @@ import {
     DynamicConfigsApi,
     Configuration,
     DynamicConfigPartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -439,7 +439,7 @@ import {
     DynamicConfigsApi,
     Configuration,
     DynamicConfigFullUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -501,7 +501,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdPost(
 import {
     DynamicConfigsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -557,7 +557,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdReviewsRevie
 import {
     DynamicConfigsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -613,7 +613,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdDe
 import {
     DynamicConfigsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -670,7 +670,7 @@ import {
     DynamicConfigsApi,
     Configuration,
     DynamicConfigRulePartialDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -723,7 +723,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdPa
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1DynamicConfigsIdRulesGet**
-> ConsoleV1DynamicConfigsIdRulesGet200Response consoleV1DynamicConfigsIdRulesGet()
+> Getconsolev1dynamicconfigsidrulesResponse consoleV1DynamicConfigsIdRulesGet()
 
 
 ### Example
@@ -732,7 +732,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdPa
 import {
     DynamicConfigsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -756,7 +756,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRulesGet(
 
 ### Return type
 
-**ConsoleV1DynamicConfigsIdRulesGet200Response**
+**Getconsolev1dynamicconfigsidrulesResponse**
 
 ### Authorization
 
@@ -786,7 +786,7 @@ import {
     DynamicConfigsApi,
     Configuration,
     UnarchiveSchemaDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -833,7 +833,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdUnarchivePut
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1DynamicConfigsIdVersionsGet**
-> ConsoleV1DynamicConfigsIdVersionsGet200Response consoleV1DynamicConfigsIdVersionsGet()
+> Getconsolev1dynamicconfigsidversionsResponse consoleV1DynamicConfigsIdVersionsGet()
 
 
 ### Example
@@ -844,7 +844,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
@@ -874,7 +874,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdVersionsGet(
 
 ### Return type
 
-**ConsoleV1DynamicConfigsIdVersionsGet200Response**
+**Getconsolev1dynamicconfigsidversionsResponse**
 
 ### Authorization
 
@@ -905,7 +905,7 @@ import {
     DynamicConfigsApi,
     Configuration,
     DynamicConfigCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);

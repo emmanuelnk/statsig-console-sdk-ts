@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { EnvironmentsUpdateContractDto } from 'statsig-console-sdk-nodejs';
+import { EnvironmentsUpdateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: EnvironmentsUpdateContractDto = {
     environments,

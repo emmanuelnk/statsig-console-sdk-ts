@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AIConfigVersionCreateDto } from 'statsig-console-sdk-nodejs';
+import { AIConfigVersionCreateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AIConfigVersionCreateDto = {
     prompts,

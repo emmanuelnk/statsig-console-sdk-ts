@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ChangeValidationDtoDebugLinksInner } from 'statsig-console-sdk-nodejs';
+import { ChangeValidationDtoDebugLinksInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ChangeValidationDtoDebugLinksInner = {
     title,

@@ -36,13 +36,13 @@ import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1DynamicConfigsPost403Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1PromptsGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1PromptsIdVersionsPost201Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1PromptsIdVersionsVersionIdStartEvalsPost200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1PromptsPost200Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1promptsResponse } from '../models';
 /**
  * PromptsApi - axios parameter creator
  */
@@ -333,7 +333,7 @@ export const PromptsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1PromptsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsGet200Response>> {
+        async consoleV1PromptsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1promptsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['PromptsApi.consoleV1PromptsGet']?.[localVarOperationServerIndex]?.url;
@@ -428,7 +428,7 @@ export const PromptsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsGet(requestParameters: PromptsApiConsoleV1PromptsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsGet200Response> {
+        consoleV1PromptsGet(requestParameters: PromptsApiConsoleV1PromptsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1promptsResponse> {
             return localVarFp.consoleV1PromptsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

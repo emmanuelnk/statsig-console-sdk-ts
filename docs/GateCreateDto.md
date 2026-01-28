@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { GateCreateDto } from 'statsig-console-sdk-nodejs';
+import { GateCreateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: GateCreateDto = {
     name,

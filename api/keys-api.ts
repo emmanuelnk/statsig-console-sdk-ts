@@ -26,8 +26,6 @@ import type { ConsoleV1AutotunesIdGet404Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1DynamicConfigsPost403Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1KeysGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1KeysIdDeactivatePatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1KeysIdDelete200Response } from '../models';
@@ -39,6 +37,8 @@ import type { ConsoleV1KeysIdPatch200Response } from '../models';
 import type { ConsoleV1KeysIdRotatePatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1KeysPost200Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1keysResponse } from '../models';
 // @ts-ignore
 import type { KeyCreateContractDto } from '../models';
 // @ts-ignore
@@ -377,7 +377,7 @@ export const KeysApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1KeysGet(primaryTargetApp?: string, environment?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysGet200Response>> {
+        async consoleV1KeysGet(primaryTargetApp?: string, environment?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1keysResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysGet(primaryTargetApp, environment, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KeysApi.consoleV1KeysGet']?.[localVarOperationServerIndex]?.url;
@@ -484,7 +484,7 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysGet(requestParameters: KeysApiConsoleV1KeysGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysGet200Response> {
+        consoleV1KeysGet(requestParameters: KeysApiConsoleV1KeysGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1keysResponse> {
             return localVarFp.consoleV1KeysGet(requestParameters.primaryTargetApp, requestParameters.environment, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

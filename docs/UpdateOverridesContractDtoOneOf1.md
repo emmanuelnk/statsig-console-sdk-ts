@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { UpdateOverridesContractDtoOneOf1 } from 'statsig-console-sdk-nodejs';
+import { UpdateOverridesContractDtoOneOf1 } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: UpdateOverridesContractDtoOneOf1 = {
     passingUserIDs,

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ScheduleExperimentStartParamDto } from 'statsig-console-sdk-nodejs';
+import { ScheduleExperimentStartParamDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ScheduleExperimentStartParamDto = {
     scheduledTime,

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { HoldoutCreateContractDto } from 'statsig-console-sdk-nodejs';
+import { HoldoutCreateContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: HoldoutCreateContractDto = {
     name,

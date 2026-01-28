@@ -15,7 +15,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1AutotunesPost**](#consolev1autotunespost) | **POST** /console/v1/autotunes | Create Autotune|
 
 # **consoleV1AutotunesGet**
-> ConsoleV1AutotunesGet200Response consoleV1AutotunesGet()
+> Getconsolev1autotunesResponse consoleV1AutotunesGet()
 
 
 ### Example
@@ -26,7 +26,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
@@ -53,7 +53,7 @@ const { status, data } = await apiInstance.consoleV1AutotunesGet(
 
 ### Return type
 
-**ConsoleV1AutotunesGet200Response**
+**Getconsolev1autotunesResponse**
 
 ### Authorization
 
@@ -82,7 +82,7 @@ const { status, data } = await apiInstance.consoleV1AutotunesGet(
 import {
     AutotunesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
@@ -137,7 +137,7 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdDelete(
 import {
     AutotunesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
@@ -193,7 +193,7 @@ import {
     AutotunesApi,
     Configuration,
     ExperimentStatusUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
@@ -254,7 +254,7 @@ import {
     AutotunesApi,
     Configuration,
     AutotunePartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
@@ -315,7 +315,7 @@ import {
     AutotunesApi,
     Configuration,
     AutotuneFullUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
@@ -373,7 +373,7 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdPost(
 import {
     AutotunesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
@@ -429,7 +429,7 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdResetPut(
 import {
     AutotunesApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
@@ -483,7 +483,7 @@ import {
     AutotunesApi,
     Configuration,
     AutotuneCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);

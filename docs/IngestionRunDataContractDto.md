@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionRunDataContractDto } from 'statsig-console-sdk-nodejs';
+import { IngestionRunDataContractDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionRunDataContractDto = {
     runID,

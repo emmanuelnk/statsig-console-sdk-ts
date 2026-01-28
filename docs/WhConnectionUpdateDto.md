@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WhConnectionUpdateDto } from 'statsig-console-sdk-nodejs';
+import { WhConnectionUpdateDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: WhConnectionUpdateDto = {
     databricks,

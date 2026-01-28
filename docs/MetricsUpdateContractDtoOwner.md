@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricsUpdateContractDtoOwner } from 'statsig-console-sdk-nodejs';
+import { MetricsUpdateContractDtoOwner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricsUpdateContractDtoOwner = {
     email,

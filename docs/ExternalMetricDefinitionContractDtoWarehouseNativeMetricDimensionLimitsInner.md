@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ExternalMetricDefinitionContractDtoWarehouseNativeMetricDimensionLimitsInner } from 'statsig-console-sdk-nodejs';
+import { ExternalMetricDefinitionContractDtoWarehouseNativeMetricDimensionLimitsInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ExternalMetricDefinitionContractDtoWarehouseNativeMetricDimensionLimitsInner = {
     name,

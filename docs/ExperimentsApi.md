@@ -74,7 +74,7 @@ All URIs are relative to *https://statsigapi.net*
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -128,7 +128,7 @@ import {
     ExperimentsApi,
     Configuration,
     AssignmentSourcePartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -188,7 +188,7 @@ import {
     ExperimentsApi,
     Configuration,
     AssignmentSourceQueryUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -238,7 +238,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceN
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsAssignmentSourcesGet**
-> ConsoleV1ExperimentsAssignmentSourcesGet200Response consoleV1ExperimentsAssignmentSourcesGet()
+> Getconsolev1experimentsassignmentsourcesResponse consoleV1ExperimentsAssignmentSourcesGet()
 
 
 ### Example
@@ -249,7 +249,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -276,7 +276,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSources
 
 ### Return type
 
-**ConsoleV1ExperimentsAssignmentSourcesGet200Response**
+**Getconsolev1experimentsassignmentsourcesResponse**
 
 ### Authorization
 
@@ -308,7 +308,7 @@ import {
     ExperimentsApi,
     Configuration,
     AssignmentSourceCreationDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -354,7 +354,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSources
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsEntityPropertiesGet**
-> ConsoleV1ExperimentsEntityPropertiesGet200Response consoleV1ExperimentsEntityPropertiesGet()
+> Getconsolev1experimentsentitypropertiesResponse consoleV1ExperimentsEntityPropertiesGet()
 
 
 ### Example
@@ -365,7 +365,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -392,7 +392,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertiesG
 
 ### Return type
 
-**ConsoleV1ExperimentsEntityPropertiesGet200Response**
+**Getconsolev1experimentsentitypropertiesResponse**
 
 ### Authorization
 
@@ -424,7 +424,7 @@ import {
     ExperimentsApi,
     Configuration,
     EntityPropertySourceCreationDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -480,7 +480,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertiesP
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -536,7 +536,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNam
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -592,7 +592,7 @@ import {
     ExperimentsApi,
     Configuration,
     EntityPropertySourcePartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -652,7 +652,7 @@ import {
     ExperimentsApi,
     Configuration,
     EntityPropertySourceQueryUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -702,7 +702,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNam
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsGet**
-> ConsoleV1ExperimentsGet200Response consoleV1ExperimentsGet()
+> Getconsolev1experimentsResponse consoleV1ExperimentsGet()
 
 
 ### Example
@@ -716,7 +716,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -776,7 +776,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet(
 
 ### Return type
 
-**ConsoleV1ExperimentsGet200Response**
+**Getconsolev1experimentsResponse**
 
 ### Authorization
 
@@ -797,7 +797,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsGet_0**
-> ConsoleV1ExperimentsGet200Response consoleV1ExperimentsGet_0()
+> Getconsolev1experimentsResponse consoleV1ExperimentsGet_0()
 
 
 ### Example
@@ -811,7 +811,7 @@ import {
     ConsoleV1AuditLogsGetTagsParameter,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -871,7 +871,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet_0(
 
 ### Return type
 
-**ConsoleV1ExperimentsGet200Response**
+**Getconsolev1experimentsResponse**
 
 ### Authorization
 
@@ -902,7 +902,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentAbandonDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -962,7 +962,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentAbandonDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1022,7 +1022,7 @@ import {
     ExperimentsApi,
     Configuration,
     ResolveGuardrailAlertRequestDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1085,7 +1085,7 @@ import {
     ExperimentsApi,
     Configuration,
     ResolveGuardrailAlertRequestDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1148,7 +1148,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentArchiveDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1207,7 +1207,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentArchiveDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1265,7 +1265,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdArchivePut_0(
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1320,7 +1320,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdContextGet(
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1375,7 +1375,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdContextGet_0(
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1428,7 +1428,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdCumulativeExpos
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1481,7 +1481,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdCumulativeExpos
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1536,7 +1536,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdDelete(
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1592,7 +1592,7 @@ import {
     ExperimentsApi,
     Configuration,
     EnableDisableGroupsDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1652,7 +1652,7 @@ import {
     ExperimentsApi,
     Configuration,
     EnableDisableGroupsDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1712,7 +1712,7 @@ import {
     ExperimentsApi,
     Configuration,
     EnableDisableGroupsDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1772,7 +1772,7 @@ import {
     ExperimentsApi,
     Configuration,
     EnableDisableGroupsDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1831,7 +1831,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdEnableGroupsPos
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1886,7 +1886,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdGet(
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -1942,7 +1942,7 @@ import {
     ExperimentsApi,
     Configuration,
     EchidnaLoadPulseQueryDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2013,7 +2013,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentStatusUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2073,7 +2073,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentStatusUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2132,7 +2132,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdMakeDecisionPut
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2187,7 +2187,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesDelete
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2243,7 +2243,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentOverridesDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2302,7 +2302,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentOverridesDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2361,7 +2361,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentPartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2420,7 +2420,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentPartialUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2479,7 +2479,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentFullUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2538,7 +2538,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentFullUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2587,7 +2587,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPost_0(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsIdPulseLoadHistoryGet**
-> ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response consoleV1ExperimentsIdPulseLoadHistoryGet()
+> Getconsolev1experimentsidpulseloadhistoryResponse consoleV1ExperimentsIdPulseLoadHistoryGet()
 
 
 ### Example
@@ -2598,7 +2598,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2628,7 +2628,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistor
 
 ### Return type
 
-**ConsoleV1ExperimentsIdPulseLoadHistoryGet200Response**
+**Getconsolev1experimentsidpulseloadhistoryResponse**
 
 ### Authorization
 
@@ -2659,7 +2659,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistor
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2742,7 +2742,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseResultsGet
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2825,7 +2825,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseResultsGet
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2881,7 +2881,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdResetPut(
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2938,7 +2938,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentNameContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -2998,7 +2998,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentNameContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3057,7 +3057,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdRestartAsNewPos
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3114,7 +3114,7 @@ import {
     ExperimentsApi,
     Configuration,
     ScheduleExperimentStartParamDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3173,7 +3173,7 @@ import {
     ExperimentsApi,
     Configuration,
     ScheduleExperimentStartParamDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3232,7 +3232,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentStartDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3292,7 +3292,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentStartDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3351,7 +3351,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdStartPut_0(
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3406,7 +3406,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdUnarchivePut(
 import {
     ExperimentsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3452,7 +3452,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdUnarchivePut_0(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1ExperimentsIdVersionsGet**
-> ConsoleV1ExperimentsIdVersionsGet200Response consoleV1ExperimentsIdVersionsGet()
+> Getconsolev1experimentsidversionsResponse consoleV1ExperimentsIdVersionsGet()
 
 
 ### Example
@@ -3463,7 +3463,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3493,7 +3493,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdVersionsGet(
 
 ### Return type
 
-**ConsoleV1ExperimentsIdVersionsGet200Response**
+**Getconsolev1experimentsidversionsResponse**
 
 ### Authorization
 
@@ -3524,7 +3524,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
@@ -3580,7 +3580,7 @@ import {
     ExperimentsApi,
     Configuration,
     ExperimentCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);

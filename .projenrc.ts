@@ -134,6 +134,7 @@ const project = new typescript.TypeScriptProject({
     '.projen/',
     'test/',
     'CLAUDE.md',
+    'scripts/',
   ],
 
   // Artifact config
@@ -369,11 +370,23 @@ project.addTask('sdk:generate', {
   ].join(' '),
 });
 
+project.addTask('sdk:fix-spec', {
+  description: 'Fix OpenAPI spec to generate better TypeScript types',
+  exec: 'node scripts/fix-openapi-spec.js',
+});
+
+project.addTask('sdk:fix-enums', {
+  description: 'Fix duplicate enum exports in generated code',
+  exec: 'node scripts/fix-duplicate-enums.js',
+});
+
 project.addTask('sdk:regenerate', {
-  description: 'Full SDK regeneration (download spec + generate)',
+  description: 'Full SDK regeneration (download spec + fix + generate + fix enums)',
   steps: [
     { spawn: 'sdk:download-spec' },
+    { spawn: 'sdk:fix-spec' },
     { spawn: 'sdk:generate' },
+    { spawn: 'sdk:fix-enums' },
   ],
 });
 

@@ -29,7 +29,7 @@ import {
     IngestionsApi,
     Configuration,
     IngestionBackfillContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -84,7 +84,7 @@ import {
     IngestionsApi,
     Configuration,
     IngestionCreateDatabricksConnectionContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -137,7 +137,7 @@ const { status, data } = await apiInstance.consoleV1IngestionConnectionDatabrick
 import {
     IngestionsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -196,7 +196,7 @@ const { status, data } = await apiInstance.consoleV1IngestionDelete(
 import {
     IngestionsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -258,7 +258,7 @@ const { status, data } = await apiInstance.consoleV1IngestionEventsCountGet(
 import {
     IngestionsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -320,7 +320,7 @@ const { status, data } = await apiInstance.consoleV1IngestionEventsDeltaGet(
 import {
     IngestionsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -380,7 +380,7 @@ import {
     IngestionsApi,
     Configuration,
     IngestionUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -434,7 +434,7 @@ import {
     IngestionsApi,
     Configuration,
     IngestionSourceCreateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -480,7 +480,7 @@ const { status, data } = await apiInstance.consoleV1IngestionPost(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1IngestionRunsGet**
-> ConsoleV1IngestionRunsGet200Response consoleV1IngestionRunsGet()
+> Getconsolev1ingestionrunsResponse consoleV1IngestionRunsGet()
 
 
 ### Example
@@ -490,7 +490,7 @@ import {
     IngestionsApi,
     Configuration,
     ConsoleV1IngestionRunsGetPageParameter
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -514,7 +514,7 @@ const { status, data } = await apiInstance.consoleV1IngestionRunsGet(
 
 ### Return type
 
-**ConsoleV1IngestionRunsGet200Response**
+**Getconsolev1ingestionrunsResponse**
 
 ### Authorization
 
@@ -543,7 +543,7 @@ const { status, data } = await apiInstance.consoleV1IngestionRunsGet(
 import {
     IngestionsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -598,7 +598,7 @@ const { status, data } = await apiInstance.consoleV1IngestionRunsIdGet(
 import {
     IngestionsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -652,7 +652,7 @@ import {
     IngestionsApi,
     Configuration,
     IngestionScheduleUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -696,7 +696,7 @@ const { status, data } = await apiInstance.consoleV1IngestionSchedulePost(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1IngestionStatusGet**
-> ConsoleV1IngestionStatusGet200Response consoleV1IngestionStatusGet()
+> Getconsolev1ingestionstatusResponse consoleV1IngestionStatusGet()
 
 
 ### Example
@@ -705,7 +705,7 @@ const { status, data } = await apiInstance.consoleV1IngestionSchedulePost(
 import {
     IngestionsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
@@ -744,7 +744,7 @@ const { status, data } = await apiInstance.consoleV1IngestionStatusGet(
 
 ### Return type
 
-**ConsoleV1IngestionStatusGet200Response**
+**Getconsolev1ingestionstatusResponse**
 
 ### Authorization
 

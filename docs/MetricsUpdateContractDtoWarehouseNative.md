@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { MetricsUpdateContractDtoWarehouseNative } from 'statsig-console-sdk-nodejs';
+import { MetricsUpdateContractDtoWarehouseNative } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: MetricsUpdateContractDtoWarehouseNative = {
     aggregation,

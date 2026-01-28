@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { WhConnectionUpdateDtoSnowflake } from 'statsig-console-sdk-nodejs';
+import { WhConnectionUpdateDtoSnowflake } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: WhConnectionUpdateDtoSnowflake = {
     accountName,

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerContractDtoParametersInner } from 'statsig-console-sdk-nodejs';
+import { LayerContractDtoParametersInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerContractDtoParametersInner = {
     name,

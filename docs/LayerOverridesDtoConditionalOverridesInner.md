@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerOverridesDtoConditionalOverridesInner } from 'statsig-console-sdk-nodejs';
+import { LayerOverridesDtoConditionalOverridesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerOverridesDtoConditionalOverridesInner = {
     type,

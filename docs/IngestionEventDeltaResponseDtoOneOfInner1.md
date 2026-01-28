@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionEventDeltaResponseDtoOneOfInner1 } from 'statsig-console-sdk-nodejs';
+import { IngestionEventDeltaResponseDtoOneOfInner1 } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionEventDeltaResponseDtoOneOfInner1 = {
     date,

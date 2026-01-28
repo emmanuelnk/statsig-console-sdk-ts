@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AIConfigVersionCreateDtoWorkflowHeadersInner } from 'statsig-console-sdk-nodejs';
+import { AIConfigVersionCreateDtoWorkflowHeadersInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AIConfigVersionCreateDtoWorkflowHeadersInner = {
     name,

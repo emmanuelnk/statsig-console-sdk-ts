@@ -30,21 +30,23 @@ import type { ConsoleV1AutotunesPost401Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1MetricsIdReloadPost200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1MetricsMetricSourceListGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1MetricsMetricSourceNameDelete200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1MetricsMetricSourceNameGet200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1MetricsMetricSourceNameMetricsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1MetricsMetricSourceNamePost200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1MetricsMetricSourcePost201Response } from '../models';
 // @ts-ignore
+import type { Getconsolev1metricsmetricsourcelistResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1metricsmetricsourcenamemetricsResponse } from '../models';
+// @ts-ignore
 import type { MetricSourceCreationContractDto } from '../models';
 // @ts-ignore
 import type { MetricSourceUpdateContractDto } from '../models';
+import { ConsoleV1MetricsIdReloadPostIncrementalEnum } from './metrics-api';
+
 /**
  * MetricsWarehouseNativeApi - axios parameter creator
  */
@@ -397,7 +399,7 @@ export const MetricsWarehouseNativeApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsMetricSourceListGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourceListGet200Response>> {
+        async consoleV1MetricsMetricSourceListGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsmetricsourcelistResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceListGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsWarehouseNativeApi.consoleV1MetricsMetricSourceListGet']?.[localVarOperationServerIndex]?.url;
@@ -441,7 +443,7 @@ export const MetricsWarehouseNativeApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsMetricSourceNameMetricsGet(name: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourceNameMetricsGet200Response>> {
+        async consoleV1MetricsMetricSourceNameMetricsGet(name: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsmetricsourcenamemetricsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNameMetricsGet(name, limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsWarehouseNativeApi.consoleV1MetricsMetricSourceNameMetricsGet']?.[localVarOperationServerIndex]?.url;
@@ -502,7 +504,7 @@ export const MetricsWarehouseNativeApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceListGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceListGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceListGet200Response> {
+        consoleV1MetricsMetricSourceListGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceListGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsmetricsourcelistResponse> {
             return localVarFp.consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -532,7 +534,7 @@ export const MetricsWarehouseNativeApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameMetricsGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameMetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameMetricsGet200Response> {
+        consoleV1MetricsMetricSourceNameMetricsGet(requestParameters: MetricsWarehouseNativeApiConsoleV1MetricsMetricSourceNameMetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsmetricsourcenamemetricsResponse> {
             return localVarFp.consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -764,5 +766,6 @@ export class MetricsWarehouseNativeApi extends BaseAPI {
     }
 }
 
-// Note: ConsoleV1MetricsIdReloadPostIncrementalEnum is exported from metrics-api.ts
-import { ConsoleV1MetricsIdReloadPostIncrementalEnum } from './metrics-api';
+// Note: ConsoleV1MetricsIdReloadPostIncrementalEnum is exported from ./metrics-api
+
+export { ConsoleV1MetricsIdReloadPostIncrementalEnum };

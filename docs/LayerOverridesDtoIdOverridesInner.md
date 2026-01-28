@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { LayerOverridesDtoIdOverridesInner } from 'statsig-console-sdk-nodejs';
+import { LayerOverridesDtoIdOverridesInner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: LayerOverridesDtoIdOverridesInner = {
     groupName,

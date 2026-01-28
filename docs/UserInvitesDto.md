@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { UserInvitesDto } from 'statsig-console-sdk-nodejs';
+import { UserInvitesDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: UserInvitesDto = {
     role,

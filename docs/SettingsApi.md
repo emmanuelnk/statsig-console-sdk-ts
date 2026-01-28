@@ -23,7 +23,7 @@ All URIs are relative to *https://statsigapi.net*
 import {
     SettingsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
@@ -76,7 +76,7 @@ import {
     SettingsApi,
     Configuration,
     SettingsProjectContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
@@ -131,7 +131,7 @@ const { status, data } = await apiInstance.consoleV1SettingsProjectPost(
 import {
     SettingsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
@@ -184,7 +184,7 @@ import {
     SettingsApi,
     Configuration,
     SettingsReviewsContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
@@ -239,7 +239,7 @@ const { status, data } = await apiInstance.consoleV1SettingsReviewsPost(
 import {
     SettingsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
@@ -292,7 +292,7 @@ import {
     SettingsApi,
     Configuration,
     SettingsRolesContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
@@ -347,7 +347,7 @@ const { status, data } = await apiInstance.consoleV1SettingsRolesPost(
 import {
     SettingsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
@@ -400,7 +400,7 @@ import {
     SettingsApi,
     Configuration,
     SettingsTeamsContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);

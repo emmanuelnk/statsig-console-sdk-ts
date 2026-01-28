@@ -34,11 +34,7 @@ import type { ConsoleV1UsersEmailGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1UsersEmailPost200Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1UsersGet200Response } from '../models';
-// @ts-ignore
 import type { ConsoleV1UsersInvitePost200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1UsersTeamsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1UsersTeamsIdDelete200Response } from '../models';
 // @ts-ignore
@@ -47,6 +43,10 @@ import type { ConsoleV1UsersTeamsIdGet200Response } from '../models';
 import type { ConsoleV1UsersTeamsIdPatch200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1UsersTeamsPost200Response } from '../models';
+// @ts-ignore
+import type { Getconsolev1usersResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1usersteamsResponse } from '../models';
 // @ts-ignore
 import type { TeamCreationDto } from '../models';
 // @ts-ignore
@@ -541,7 +541,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1UsersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UsersGet200Response>> {
+        async consoleV1UsersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1usersResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UsersGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UsersApi.consoleV1UsersGet']?.[localVarOperationServerIndex]?.url;
@@ -584,7 +584,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1UsersTeamsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UsersTeamsGet200Response>> {
+        async consoleV1UsersTeamsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1usersteamsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UsersTeamsGet(limit, page, xRespectReviewSettings, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UsersApi.consoleV1UsersTeamsGet']?.[localVarOperationServerIndex]?.url;
@@ -683,7 +683,7 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersGet(requestParameters: UsersApiConsoleV1UsersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersGet200Response> {
+        consoleV1UsersGet(requestParameters: UsersApiConsoleV1UsersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1usersResponse> {
             return localVarFp.consoleV1UsersGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**
@@ -713,7 +713,7 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UsersTeamsGet(requestParameters: UsersApiConsoleV1UsersTeamsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UsersTeamsGet200Response> {
+        consoleV1UsersTeamsGet(requestParameters: UsersApiConsoleV1UsersTeamsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1usersteamsResponse> {
             return localVarFp.consoleV1UsersTeamsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
         },
         /**

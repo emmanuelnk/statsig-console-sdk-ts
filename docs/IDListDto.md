@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IDListDto } from 'statsig-console-sdk-nodejs';
+import { IDListDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IDListDto = {
     name,

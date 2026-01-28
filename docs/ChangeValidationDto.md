@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ChangeValidationDto } from 'statsig-console-sdk-nodejs';
+import { ChangeValidationDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: ChangeValidationDto = {
     reviewID,

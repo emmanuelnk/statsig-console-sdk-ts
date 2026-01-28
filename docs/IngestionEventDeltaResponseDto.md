@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { IngestionEventDeltaResponseDto } from 'statsig-console-sdk-nodejs';
+import { IngestionEventDeltaResponseDto } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: IngestionEventDeltaResponseDto = {
 };

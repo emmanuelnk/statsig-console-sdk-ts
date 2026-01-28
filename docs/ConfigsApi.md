@@ -20,7 +20,7 @@ import {
     ConsoleV1ExposureCountGetExperimentsParameter,
     ConsoleV1ExposureCountGetExperimentsParameter,
     ConsoleV1ExposureCountGetExperimentsParameter
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ConfigsApi(configuration);

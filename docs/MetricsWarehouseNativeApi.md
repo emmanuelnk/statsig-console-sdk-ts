@@ -22,7 +22,7 @@ All URIs are relative to *https://statsigapi.net*
 import {
     MetricsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsWarehouseNativeApi(configuration);
@@ -71,7 +71,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdReloadPost(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsMetricSourceListGet**
-> ConsoleV1MetricsMetricSourceListGet200Response consoleV1MetricsMetricSourceListGet()
+> Getconsolev1metricsmetricsourcelistResponse consoleV1MetricsMetricSourceListGet()
 
 
 ### Example
@@ -82,7 +82,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsWarehouseNativeApi(configuration);
@@ -109,7 +109,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceListGet(
 
 ### Return type
 
-**ConsoleV1MetricsMetricSourceListGet200Response**
+**Getconsolev1metricsmetricsourcelistResponse**
 
 ### Authorization
 
@@ -140,7 +140,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceListGet(
 import {
     MetricsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsWarehouseNativeApi(configuration);
@@ -195,7 +195,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameDelet
 import {
     MetricsWarehouseNativeApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsWarehouseNativeApi(configuration);
@@ -241,7 +241,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1MetricsMetricSourceNameMetricsGet**
-> ConsoleV1MetricsMetricSourceNameMetricsGet200Response consoleV1MetricsMetricSourceNameMetricsGet()
+> Getconsolev1metricsmetricsourcenamemetricsResponse consoleV1MetricsMetricSourceNameMetricsGet()
 
 
 ### Example
@@ -252,7 +252,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsWarehouseNativeApi(configuration);
@@ -282,7 +282,7 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameMetri
 
 ### Return type
 
-**ConsoleV1MetricsMetricSourceNameMetricsGet200Response**
+**Getconsolev1metricsmetricsourcenamemetricsResponse**
 
 ### Authorization
 
@@ -314,7 +314,7 @@ import {
     MetricsWarehouseNativeApi,
     Configuration,
     MetricSourceUpdateContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsWarehouseNativeApi(configuration);
@@ -373,7 +373,7 @@ import {
     MetricsWarehouseNativeApi,
     Configuration,
     MetricSourceCreationContractDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new MetricsWarehouseNativeApi(configuration);

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { AutotuneExperimentDtoWinner } from 'statsig-console-sdk-nodejs';
+import { AutotuneExperimentDtoWinner } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const instance: AutotuneExperimentDtoWinner = {
     id,

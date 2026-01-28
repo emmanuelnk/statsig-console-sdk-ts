@@ -11,7 +11,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1TagsPost**](#consolev1tagspost) | **POST** /console/v1/tags | Create Tag|
 
 # **consoleV1TagsGet**
-> ConsoleV1TagsGet200Response consoleV1TagsGet()
+> Getconsolev1tagsResponse consoleV1TagsGet()
 
 
 ### Example
@@ -22,7 +22,7 @@ import {
     Configuration,
     number,
     number
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TagsApi(configuration);
@@ -49,7 +49,7 @@ const { status, data } = await apiInstance.consoleV1TagsGet(
 
 ### Return type
 
-**ConsoleV1TagsGet200Response**
+**Getconsolev1tagsResponse**
 
 ### Authorization
 
@@ -79,7 +79,7 @@ const { status, data } = await apiInstance.consoleV1TagsGet(
 import {
     TagsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TagsApi(configuration);
@@ -132,7 +132,7 @@ const { status, data } = await apiInstance.consoleV1TagsIdDelete(
 import {
     TagsApi,
     Configuration
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TagsApi(configuration);
@@ -187,7 +187,7 @@ import {
     TagsApi,
     Configuration,
     TagUpdateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TagsApi(configuration);
@@ -244,7 +244,7 @@ import {
     TagsApi,
     Configuration,
     TagCreateDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new TagsApi(configuration);

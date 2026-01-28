@@ -18,7 +18,7 @@ import {
     ChangeValidationApi,
     Configuration,
     ChangeValidationUpdateMessageDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ChangeValidationApi(configuration);
@@ -73,7 +73,7 @@ import {
     ChangeValidationApi,
     Configuration,
     ChangeValidationDto
-} from 'statsig-console-sdk-nodejs';
+} from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new ChangeValidationApi(configuration);
