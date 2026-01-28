@@ -121,6 +121,16 @@ pnpm exec tsx .projenrc.ts
 pnpm run compile
 ```
 
+### After regeneration: Update OpenAPI version badge (if version changed)
+
+If the OpenAPI spec version has changed, update the badge in `README.md`:
+
+```markdown
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-YYYYMMDD-6BA539.svg)](https://api.statsig.com/openapi/YYYYMMDD.json)
+```
+
+Replace `YYYYMMDD` with the new version (e.g., `20240601`). The version can be found in the spec URL or in generated files (look for `The version of the OpenAPI document:` comments).
+
 ## Releasing
 
 This project uses automated releases via GitHub Actions.
@@ -207,6 +217,7 @@ pnpm run sdk:regenerate     # Full regeneration (download + generate)
 Before pushing changes that will trigger a release:
 
 - [ ] Fix duplicate enum exports (if SDK was regenerated)
+- [ ] Update OpenAPI version badge in README.md (if spec version changed)
 - [ ] Run `pnpm run build` successfully
 - [ ] Verify changes are correct
 - [ ] Commit and push to master (triggers automatic beta release)
