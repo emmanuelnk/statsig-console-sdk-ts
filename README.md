@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/@emmanuelnk%2Fstatsig-console-sdk-ts.svg)](https://www.npmjs.com/package/@emmanuelnk/statsig-console-sdk-ts)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-20240601-6BA539.svg)](https://api.statsig.com/openapi/20240601.json)
 
 TypeScript/Node.js SDK for the [Statsig Console API](https://docs.statsig.com/console-api/introduction) - programmatically manage feature gates, experiments, dynamic configs, and more.
 
@@ -82,6 +83,10 @@ const gatesApi = new GatesApi(config);
 ## API Reference
 
 For the complete Statsig Console API documentation, visit: https://docs.statsig.com/console-api/introduction
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## License
 
