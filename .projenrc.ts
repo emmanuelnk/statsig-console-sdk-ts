@@ -85,6 +85,15 @@ const project = new typescript.TypeScriptProject({
     pullRequestLint: false, // Generated code won't pass lint
   },
 
+  // Dependency upgrade workflow configuration
+  depsUpgradeOptions: {
+    workflowOptions: {
+      projenCredentials: github.GithubCredentials.fromPersonalAccessToken({
+        secret: 'GITHUB_TOKEN',
+      }),
+    },
+  },
+
   // Don't generate sample code
   sampleCode: false,
 
