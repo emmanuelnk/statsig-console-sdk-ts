@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner } from './dynamic-config-create-dto-rules-inner-completed-automated-rollouts-inner';
+import type { AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner } from './autotune-experiment-dto-inline-targeting-rules-inner-completed-automated-rollouts-inner';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigCreateDtoRulesInnerConditionsInner } from './dynamic-config-create-dto-rules-inner-conditions-inner';
+import type { AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInner } from './autotune-experiment-dto-inline-targeting-rules-inner-conditions-inner';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { DynamicConfigCreateDtoRulesInnerVariantsInner } from './dynamic-config-create-dto-rules-inner-variants-inner';
@@ -35,7 +35,7 @@ export interface DynamicConfigDtoRulesInner {
     /**
      * An array of Condition objects.
      */
-    'conditions': Array<DynamicConfigCreateDtoRulesInnerConditionsInner>;
+    'conditions': Array<AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInner>;
     'environments'?: Array<string> | null;
     /**
      * The Statsig ID of this rule.
@@ -49,11 +49,11 @@ export interface DynamicConfigDtoRulesInner {
     /**
      * Read-only: Automated rollout phases that have already completed.
      */
-    'completedAutomatedRollouts'?: Array<DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner>;
+    'completedAutomatedRollouts'?: Array<AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner>;
     /**
      * Read-only: Automated rollout phases that are scheduled but not yet complete.
      */
-    'pendingAutomatedRollouts'?: Array<DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner>;
+    'pendingAutomatedRollouts'?: Array<AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner>;
     'returnValueJson5'?: string;
     'variants'?: Array<DynamicConfigCreateDtoRulesInnerVariantsInner>;
 }

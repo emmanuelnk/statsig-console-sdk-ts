@@ -24,7 +24,15 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { ConsoleV1AlertsGet403Response } from '../models';
 // @ts-ignore
+import type { ConsoleV1AlertsIdEventsEventIdGet200Response } from '../models';
+// @ts-ignore
+import type { ConsoleV1AlertsIdGet200Response } from '../models';
+// @ts-ignore
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
+// @ts-ignore
 import type { Getconsolev1alertsResponse } from '../models';
+// @ts-ignore
+import type { Getconsolev1alertsideventsResponse } from '../models';
 /**
  * AlertsApi - axios parameter creator
  */
@@ -35,11 +43,10 @@ export const AlertsApiAxiosParamCreator = function (configuration?: Configuratio
          * @summary List Topline Alerts
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AlertsGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AlertsGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/alerts`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -65,9 +72,131 @@ export const AlertsApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Read Topline Alert Event
+         * @param {string} id id
+         * @param {string} eventId alert event id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1AlertsIdEventsEventIdGet: async (id: string, eventId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1AlertsIdEventsEventIdGet', 'id', id)
+            // verify required parameter 'eventId' is not null or undefined
+            assertParamExists('consoleV1AlertsIdEventsEventIdGet', 'eventId', eventId)
+            const localVarPath = `/console/v1/alerts/{id}/events/{eventId}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)))
+                .replace(`{${"eventId"}}`, encodeURIComponent(String(eventId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
             }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List Topline Alert Events
+         * @param {string} id id
+         * @param {number} [limit] Results per page
+         * @param {number} [page] Page number
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1AlertsIdEventsGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1AlertsIdEventsGet', 'id', id)
+            const localVarPath = `/console/v1/alerts/{id}/events`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Read Topline Alert
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1AlertsIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1AlertsIdGet', 'id', id)
+            const localVarPath = `/console/v1/alerts/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -91,14 +220,55 @@ export const AlertsApiFp = function(configuration?: Configuration) {
          * @summary List Topline Alerts
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AlertsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1alertsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AlertsGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1AlertsGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1alertsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AlertsGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AlertsApi.consoleV1AlertsGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Read Topline Alert Event
+         * @param {string} id id
+         * @param {string} eventId alert event id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1AlertsIdEventsEventIdGet(id: string, eventId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AlertsIdEventsEventIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AlertsIdEventsEventIdGet(id, eventId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AlertsApi.consoleV1AlertsIdEventsEventIdGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Topline Alert Events
+         * @param {string} id id
+         * @param {number} [limit] Results per page
+         * @param {number} [page] Page number
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1AlertsIdEventsGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1alertsideventsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AlertsIdEventsGet(id, limit, page, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AlertsApi.consoleV1AlertsIdEventsGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Read Topline Alert
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1AlertsIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AlertsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AlertsIdGet(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['AlertsApi.consoleV1AlertsIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -118,7 +288,37 @@ export const AlertsApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1AlertsGet(requestParameters: AlertsApiConsoleV1AlertsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1alertsResponse> {
-            return localVarFp.consoleV1AlertsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AlertsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Read Topline Alert Event
+         * @param {AlertsApiConsoleV1AlertsIdEventsEventIdGetRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1AlertsIdEventsEventIdGet(requestParameters: AlertsApiConsoleV1AlertsIdEventsEventIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AlertsIdEventsEventIdGet200Response> {
+            return localVarFp.consoleV1AlertsIdEventsEventIdGet(requestParameters.id, requestParameters.eventId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Topline Alert Events
+         * @param {AlertsApiConsoleV1AlertsIdEventsGetRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1AlertsIdEventsGet(requestParameters: AlertsApiConsoleV1AlertsIdEventsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1alertsideventsResponse> {
+            return localVarFp.consoleV1AlertsIdEventsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Read Topline Alert
+         * @param {AlertsApiConsoleV1AlertsIdGetRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1AlertsIdGet(requestParameters: AlertsApiConsoleV1AlertsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AlertsIdGet200Response> {
+            return localVarFp.consoleV1AlertsIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -136,11 +336,51 @@ export interface AlertsApiConsoleV1AlertsGetRequest {
      * Page number
      */
     readonly page?: number
+}
+
+/**
+ * Request parameters for consoleV1AlertsIdEventsEventIdGet operation in AlertsApi.
+ */
+export interface AlertsApiConsoleV1AlertsIdEventsEventIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
 
     /**
-     * Optional header to respect review settings for mutation endpoints.
+     * alert event id
      */
-    readonly xRespectReviewSettings?: string
+    readonly eventId: string
+}
+
+/**
+ * Request parameters for consoleV1AlertsIdEventsGet operation in AlertsApi.
+ */
+export interface AlertsApiConsoleV1AlertsIdEventsGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Results per page
+     */
+    readonly limit?: number
+
+    /**
+     * Page number
+     */
+    readonly page?: number
+}
+
+/**
+ * Request parameters for consoleV1AlertsIdGet operation in AlertsApi.
+ */
+export interface AlertsApiConsoleV1AlertsIdGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
 }
 
 /**
@@ -155,7 +395,40 @@ export class AlertsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AlertsGet(requestParameters: AlertsApiConsoleV1AlertsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return AlertsApiFp(this.configuration).consoleV1AlertsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AlertsApiFp(this.configuration).consoleV1AlertsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Read Topline Alert Event
+     * @param {AlertsApiConsoleV1AlertsIdEventsEventIdGetRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1AlertsIdEventsEventIdGet(requestParameters: AlertsApiConsoleV1AlertsIdEventsEventIdGetRequest, options?: RawAxiosRequestConfig) {
+        return AlertsApiFp(this.configuration).consoleV1AlertsIdEventsEventIdGet(requestParameters.id, requestParameters.eventId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Topline Alert Events
+     * @param {AlertsApiConsoleV1AlertsIdEventsGetRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1AlertsIdEventsGet(requestParameters: AlertsApiConsoleV1AlertsIdEventsGetRequest, options?: RawAxiosRequestConfig) {
+        return AlertsApiFp(this.configuration).consoleV1AlertsIdEventsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Read Topline Alert
+     * @param {AlertsApiConsoleV1AlertsIdGetRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1AlertsIdGet(requestParameters: AlertsApiConsoleV1AlertsIdGetRequest, options?: RawAxiosRequestConfig) {
+        return AlertsApiFp(this.configuration).consoleV1AlertsIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

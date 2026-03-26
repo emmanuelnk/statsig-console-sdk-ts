@@ -37,11 +37,10 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Get Reports
          * @param {ConsoleV1ReportsGetTypeEnum} type report type
          * @param {string} date date for the report
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReportsGet: async (type: ConsoleV1ReportsGetTypeEnum, date: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReportsGet: async (type: ConsoleV1ReportsGetTypeEnum, date: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'type' is not null or undefined
             assertParamExists('consoleV1ReportsGet', 'type', type)
             // verify required parameter 'date' is not null or undefined
@@ -71,9 +70,6 @@ export const ReportsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -97,12 +93,11 @@ export const ReportsApiFp = function(configuration?: Configuration) {
          * @summary Get Reports
          * @param {ConsoleV1ReportsGetTypeEnum} type report type
          * @param {string} date date for the report
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReportsGet(type: ConsoleV1ReportsGetTypeEnum, date: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReportsGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReportsGet(type, date, xRespectReviewSettings, options);
+        async consoleV1ReportsGet(type: ConsoleV1ReportsGetTypeEnum, date: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReportsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReportsGet(type, date, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReportsApi.consoleV1ReportsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -124,7 +119,7 @@ export const ReportsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1ReportsGet(requestParameters: ReportsApiConsoleV1ReportsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReportsGet200Response> {
-            return localVarFp.consoleV1ReportsGet(requestParameters.type, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReportsGet(requestParameters.type, requestParameters.date, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -142,11 +137,6 @@ export interface ReportsApiConsoleV1ReportsGetRequest {
      * date for the report
      */
     readonly date: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -161,7 +151,7 @@ export class ReportsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReportsGet(requestParameters: ReportsApiConsoleV1ReportsGetRequest, options?: RawAxiosRequestConfig) {
-        return ReportsApiFp(this.configuration).consoleV1ReportsGet(requestParameters.type, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReportsApiFp(this.configuration).consoleV1ReportsGet(requestParameters.type, requestParameters.date, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

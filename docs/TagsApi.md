@@ -29,12 +29,10 @@ const apiInstance = new TagsApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TagsGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -44,7 +42,6 @@ const { status, data } = await apiInstance.consoleV1TagsGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -85,11 +82,9 @@ const configuration = new Configuration();
 const apiInstance = new TagsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TagsIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -98,7 +93,6 @@ const { status, data } = await apiInstance.consoleV1TagsIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -138,11 +132,9 @@ const configuration = new Configuration();
 const apiInstance = new TagsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TagsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -151,7 +143,6 @@ const { status, data } = await apiInstance.consoleV1TagsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -194,12 +185,10 @@ const apiInstance = new TagsApi(configuration);
 
 let id: string; //id (default to undefined)
 let tagUpdateDto: TagUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TagsIdPatch(
     id,
-    tagUpdateDto,
-    xRespectReviewSettings
+    tagUpdateDto
 );
 ```
 
@@ -209,7 +198,6 @@ const { status, data } = await apiInstance.consoleV1TagsIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **tagUpdateDto** | **TagUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -250,11 +238,9 @@ const configuration = new Configuration();
 const apiInstance = new TagsApi(configuration);
 
 let tagCreateDto: TagCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TagsPost(
-    tagCreateDto,
-    xRespectReviewSettings
+    tagCreateDto
 );
 ```
 
@@ -263,7 +249,6 @@ const { status, data } = await apiInstance.consoleV1TagsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **tagCreateDto** | **TagCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

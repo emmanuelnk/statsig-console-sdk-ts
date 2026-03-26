@@ -23,6 +23,7 @@ export interface KeyDto {
     'primaryTargetApp'?: string | null;
     'secondaryTargetApps'?: Array<string> | null;
     'status': KeyDtoStatusEnum;
+    'lastUsed'?: string | null;
 }
 
 export const KeyDtoTypeEnum = {

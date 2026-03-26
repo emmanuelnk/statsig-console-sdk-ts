@@ -22,18 +22,11 @@ import {
 const configuration = new Configuration();
 const apiInstance = new EnvironmentsApi(configuration);
 
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
-
-const { status, data } = await apiInstance.consoleV1EnvironmentsGet(
-    xRespectReviewSettings
-);
+const { status, data } = await apiInstance.consoleV1EnvironmentsGet();
 ```
 
 ### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+This endpoint does not have any parameters.
 
 
 ### Return type
@@ -76,11 +69,9 @@ const configuration = new Configuration();
 const apiInstance = new EnvironmentsApi(configuration);
 
 let environmentsUpdateContractDto: EnvironmentsUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1EnvironmentsPost(
-    environmentsUpdateContractDto,
-    xRespectReviewSettings
+    environmentsUpdateContractDto
 );
 ```
 
@@ -89,7 +80,6 @@ const { status, data } = await apiInstance.consoleV1EnvironmentsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **environmentsUpdateContractDto** | **EnvironmentsUpdateContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

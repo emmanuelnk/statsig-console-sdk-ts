@@ -40,11 +40,10 @@ export const ConfigsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {ConsoleV1ExposureCountGetExperimentsParameter} [experiments] 
          * @param {ConsoleV1ExposureCountGetExperimentsParameter} [gates] 
          * @param {ConsoleV1ExposureCountGetExperimentsParameter} [dynamicConfigs] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExposureCountGet: async (experiments?: ConsoleV1ExposureCountGetExperimentsParameter, gates?: ConsoleV1ExposureCountGetExperimentsParameter, dynamicConfigs?: ConsoleV1ExposureCountGetExperimentsParameter, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExposureCountGet: async (experiments?: ConsoleV1ExposureCountGetExperimentsParameter, gates?: ConsoleV1ExposureCountGetExperimentsParameter, dynamicConfigs?: ConsoleV1ExposureCountGetExperimentsParameter, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/exposure_count`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -80,9 +79,6 @@ export const ConfigsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -107,12 +103,11 @@ export const ConfigsApiFp = function(configuration?: Configuration) {
          * @param {ConsoleV1ExposureCountGetExperimentsParameter} [experiments] 
          * @param {ConsoleV1ExposureCountGetExperimentsParameter} [gates] 
          * @param {ConsoleV1ExposureCountGetExperimentsParameter} [dynamicConfigs] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExposureCountGet(experiments?: ConsoleV1ExposureCountGetExperimentsParameter, gates?: ConsoleV1ExposureCountGetExperimentsParameter, dynamicConfigs?: ConsoleV1ExposureCountGetExperimentsParameter, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExposureCountGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExposureCountGet(experiments, gates, dynamicConfigs, xRespectReviewSettings, options);
+        async consoleV1ExposureCountGet(experiments?: ConsoleV1ExposureCountGetExperimentsParameter, gates?: ConsoleV1ExposureCountGetExperimentsParameter, dynamicConfigs?: ConsoleV1ExposureCountGetExperimentsParameter, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExposureCountGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExposureCountGet(experiments, gates, dynamicConfigs, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ConfigsApi.consoleV1ExposureCountGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -134,7 +129,7 @@ export const ConfigsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1ExposureCountGet(requestParameters: ConfigsApiConsoleV1ExposureCountGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExposureCountGet200Response> {
-            return localVarFp.consoleV1ExposureCountGet(requestParameters.experiments, requestParameters.gates, requestParameters.dynamicConfigs, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExposureCountGet(requestParameters.experiments, requestParameters.gates, requestParameters.dynamicConfigs, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -148,11 +143,6 @@ export interface ConfigsApiConsoleV1ExposureCountGetRequest {
     readonly gates?: ConsoleV1ExposureCountGetExperimentsParameter
 
     readonly dynamicConfigs?: ConsoleV1ExposureCountGetExperimentsParameter
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -167,7 +157,7 @@ export class ConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExposureCountGet(requestParameters: ConfigsApiConsoleV1ExposureCountGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return ConfigsApiFp(this.configuration).consoleV1ExposureCountGet(requestParameters.experiments, requestParameters.gates, requestParameters.dynamicConfigs, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ConfigsApiFp(this.configuration).consoleV1ExposureCountGet(requestParameters.experiments, requestParameters.gates, requestParameters.dynamicConfigs, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

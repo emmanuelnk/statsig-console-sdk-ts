@@ -28,9 +28,9 @@ import type { AssignmentSourcePartialUpdateDto } from '../models';
 // @ts-ignore
 import type { AssignmentSourceQueryUpdateDto } from '../models';
 // @ts-ignore
-import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
@@ -58,13 +58,19 @@ import type { ConsoleV1ExperimentsGetStatusParameter } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdAbandonPut200Response } from '../models';
 // @ts-ignore
+import type { ConsoleV1ExperimentsIdAlertsGet200Response } from '../models';
+// @ts-ignore
 import type { ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdArchivePut200Response } from '../models';
 // @ts-ignore
+import type { ConsoleV1ExperimentsIdCodeCleanupPost200Response } from '../models';
+// @ts-ignore
 import type { ConsoleV1ExperimentsIdContextGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdCumulativeExposuresGet200Response } from '../models';
+// @ts-ignore
+import type { ConsoleV1ExperimentsIdDeferDecisionPut200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdDelete200Response } from '../models';
 // @ts-ignore
@@ -86,6 +92,12 @@ import type { ConsoleV1ExperimentsIdOverridesPost200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdPost200Response } from '../models';
 // @ts-ignore
+import type { ConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost200Response } from '../models';
+// @ts-ignore
+import type { ConsoleV1ExperimentsIdPulseLoadHistoryDagIDGet200Response } from '../models';
+// @ts-ignore
+import type { ConsoleV1ExperimentsIdPulseMetricResultGet200Response } from '../models';
+// @ts-ignore
 import type { ConsoleV1ExperimentsIdPulseResultsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdResetPut200Response } from '../models';
@@ -97,6 +109,8 @@ import type { ConsoleV1ExperimentsIdReviewsReviewIDCommitPut200Response } from '
 import type { ConsoleV1ExperimentsIdScheduleStartPost200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdStartPut200Response } from '../models';
+// @ts-ignore
+import type { ConsoleV1ExperimentsIdSummaryChartsGet200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1ExperimentsIdUnarchivePut200Response } from '../models';
 // @ts-ignore
@@ -117,6 +131,8 @@ import type { ExperimentAbandonDto } from '../models';
 import type { ExperimentArchiveDto } from '../models';
 // @ts-ignore
 import type { ExperimentCreateDto } from '../models';
+// @ts-ignore
+import type { ExperimentDeferDecisionDto } from '../models';
 // @ts-ignore
 import type { ExperimentFullUpdateDto } from '../models';
 // @ts-ignore
@@ -152,11 +168,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Delete Assignment Source
          * @param {string} name Name of the assignment source
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourceNameDelete: async (name: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsAssignmentSourceNameDelete: async (name: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1ExperimentsAssignmentSourceNameDelete', 'name', name)
             const localVarPath = `/console/v1/experiments/assignment_source/{name}`
@@ -177,9 +192,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -194,11 +206,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Patch Assignment Source
          * @param {string} name Name of the assignment source
          * @param {AssignmentSourcePartialUpdateDto} assignmentSourcePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourceNamePatch: async (name: string, assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsAssignmentSourceNamePatch: async (name: string, assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1ExperimentsAssignmentSourceNamePatch', 'name', name)
             // verify required parameter 'assignmentSourcePartialUpdateDto' is not null or undefined
@@ -222,9 +233,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -240,11 +248,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Post Assignment Source
          * @param {string} name Name of the assignment source
          * @param {AssignmentSourceQueryUpdateDto} assignmentSourceQueryUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourceNamePost: async (name: string, assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsAssignmentSourceNamePost: async (name: string, assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1ExperimentsAssignmentSourceNamePost', 'name', name)
             // verify required parameter 'assignmentSourceQueryUpdateDto' is not null or undefined
@@ -268,9 +275,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -286,11 +290,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary List Assignment Sources
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourcesGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsAssignmentSourcesGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/experiments/assignment_sources`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -316,9 +319,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -332,11 +332,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Create Assignment Source
          * @param {AssignmentSourceCreationDto} assignmentSourceCreationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsAssignmentSourcesPost: async (assignmentSourceCreationDto: AssignmentSourceCreationDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsAssignmentSourcesPost: async (assignmentSourceCreationDto: AssignmentSourceCreationDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'assignmentSourceCreationDto' is not null or undefined
             assertParamExists('consoleV1ExperimentsAssignmentSourcesPost', 'assignmentSourceCreationDto', assignmentSourceCreationDto)
             const localVarPath = `/console/v1/experiments/assignment_sources`;
@@ -357,9 +356,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -375,11 +371,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary List Entity Property Sources
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertiesGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsEntityPropertiesGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/experiments/entity_properties`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -405,9 +400,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -421,11 +413,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Create Entity Property Source
          * @param {EntityPropertySourceCreationDto} entityPropertySourceCreationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertiesPost: async (entityPropertySourceCreationDto: EntityPropertySourceCreationDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsEntityPropertiesPost: async (entityPropertySourceCreationDto: EntityPropertySourceCreationDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'entityPropertySourceCreationDto' is not null or undefined
             assertParamExists('consoleV1ExperimentsEntityPropertiesPost', 'entityPropertySourceCreationDto', entityPropertySourceCreationDto)
             const localVarPath = `/console/v1/experiments/entity_properties`;
@@ -446,9 +437,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -463,11 +451,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Delete Entity Property Source
          * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertyNameDelete: async (name: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsEntityPropertyNameDelete: async (name: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1ExperimentsEntityPropertyNameDelete', 'name', name)
             const localVarPath = `/console/v1/experiments/entity_property/{name}`
@@ -488,9 +475,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -504,11 +488,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Get Entity Property Source
          * @param {string} name Name of entity property source
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertyNameGet: async (name: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsEntityPropertyNameGet: async (name: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1ExperimentsEntityPropertyNameGet', 'name', name)
             const localVarPath = `/console/v1/experiments/entity_property/{name}`
@@ -529,9 +512,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -546,11 +526,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Patch Entity Property Source
          * @param {string} name Name of entity property source
          * @param {EntityPropertySourcePartialUpdateDto} entityPropertySourcePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertyNamePatch: async (name: string, entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsEntityPropertyNamePatch: async (name: string, entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1ExperimentsEntityPropertyNamePatch', 'name', name)
             // verify required parameter 'entityPropertySourcePartialUpdateDto' is not null or undefined
@@ -574,9 +553,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -592,11 +568,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Post Entity Property Source
          * @param {string} name name
          * @param {EntityPropertySourceQueryUpdateDto} entityPropertySourceQueryUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsEntityPropertyNamePost: async (name: string, entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsEntityPropertyNamePost: async (name: string, entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1ExperimentsEntityPropertyNamePost', 'name', name)
             // verify required parameter 'entityPropertySourceQueryUpdateDto' is not null or undefined
@@ -620,9 +595,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -641,6 +613,7 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
          * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
          * @param {string} [targetAppID] 
+         * @param {boolean} [stale] When true, only returns stale experiments. If omitted or false, returns all experiments.
          * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
          * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
@@ -649,11 +622,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsGet: async (layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsGet: async (layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, stale?: boolean, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/experiments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -689,6 +661,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             if (targetAppID !== undefined) {
                 localVarQueryParameter['targetAppID'] = targetAppID;
+            }
+
+            if (stale !== undefined) {
+                localVarQueryParameter['stale'] = stale;
             }
 
             if (createdStartDate !== undefined) {
@@ -729,9 +705,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -749,6 +722,7 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
          * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
          * @param {string} [targetAppID] 
+         * @param {boolean} [stale] When true, only returns stale experiments. If omitted or false, returns all experiments.
          * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
          * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
@@ -757,11 +731,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsGet_1: async (layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsGet_1: async (layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, stale?: boolean, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/experiments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -797,6 +770,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             if (targetAppID !== undefined) {
                 localVarQueryParameter['targetAppID'] = targetAppID;
+            }
+
+            if (stale !== undefined) {
+                localVarQueryParameter['stale'] = stale;
             }
 
             if (createdStartDate !== undefined) {
@@ -837,9 +814,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -854,11 +828,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Abandon Experiment
          * @param {string} id id
          * @param {ExperimentAbandonDto} experimentAbandonDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdAbandonPut: async (id: string, experimentAbandonDto: ExperimentAbandonDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdAbandonPut: async (id: string, experimentAbandonDto: ExperimentAbandonDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdAbandonPut', 'id', id)
             // verify required parameter 'experimentAbandonDto' is not null or undefined
@@ -882,9 +855,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -900,11 +870,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Abandon Experiment
          * @param {string} id id
          * @param {ExperimentAbandonDto} experimentAbandonDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdAbandonPut_2: async (id: string, experimentAbandonDto: ExperimentAbandonDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdAbandonPut_2: async (id: string, experimentAbandonDto: ExperimentAbandonDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdAbandonPut_2', 'id', id)
             // verify required parameter 'experimentAbandonDto' is not null or undefined
@@ -928,9 +897,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -943,15 +909,88 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
+         * @summary Get Experiment Guardrail Alert Statuses
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdAlertsGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdAlertsGet', 'id', id)
+            const localVarPath = `/console/v1/experiments/{id}/alerts`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get Experiment Guardrail Alert Statuses
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdAlertsGet_3: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdAlertsGet_3', 'id', id)
+            const localVarPath = `/console/v1/experiments/{id}/alerts`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Resolve Metric Rollout Alert
          * @param {string} id id
          * @param {string} metricId metric id
          * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdAlertsMetricIdResolvePost: async (id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdAlertsMetricIdResolvePost: async (id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdAlertsMetricIdResolvePost', 'id', id)
             // verify required parameter 'metricId' is not null or undefined
@@ -978,9 +1017,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -997,17 +1033,16 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {string} id id
          * @param {string} metricId metric id
          * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdAlertsMetricIdResolvePost_3: async (id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdAlertsMetricIdResolvePost_4: async (id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdAlertsMetricIdResolvePost_3', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdAlertsMetricIdResolvePost_4', 'id', id)
             // verify required parameter 'metricId' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdAlertsMetricIdResolvePost_3', 'metricId', metricId)
+            assertParamExists('consoleV1ExperimentsIdAlertsMetricIdResolvePost_4', 'metricId', metricId)
             // verify required parameter 'resolveGuardrailAlertRequestDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdAlertsMetricIdResolvePost_3', 'resolveGuardrailAlertRequestDto', resolveGuardrailAlertRequestDto)
+            assertParamExists('consoleV1ExperimentsIdAlertsMetricIdResolvePost_4', 'resolveGuardrailAlertRequestDto', resolveGuardrailAlertRequestDto)
             const localVarPath = `/console/v1/experiments/{id}/alerts/{metricId}/resolve`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)))
                 .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
@@ -1028,9 +1063,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1046,11 +1078,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Archive Experiment
          * @param {string} id id
          * @param {ExperimentArchiveDto} experimentArchiveDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdArchivePut: async (id: string, experimentArchiveDto: ExperimentArchiveDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdArchivePut: async (id: string, experimentArchiveDto: ExperimentArchiveDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdArchivePut', 'id', id)
             // verify required parameter 'experimentArchiveDto' is not null or undefined
@@ -1074,9 +1105,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1092,15 +1120,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Archive Experiment
          * @param {string} id id
          * @param {ExperimentArchiveDto} experimentArchiveDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdArchivePut_4: async (id: string, experimentArchiveDto: ExperimentArchiveDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdArchivePut_5: async (id: string, experimentArchiveDto: ExperimentArchiveDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdArchivePut_4', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdArchivePut_5', 'id', id)
             // verify required parameter 'experimentArchiveDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdArchivePut_4', 'experimentArchiveDto', experimentArchiveDto)
+            assertParamExists('consoleV1ExperimentsIdArchivePut_5', 'experimentArchiveDto', experimentArchiveDto)
             const localVarPath = `/console/v1/experiments/{id}/archive`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1120,9 +1147,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1135,13 +1159,86 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
-         * @summary Get Experiment Context
+         * @summary Start Experiment Code Cleanup
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdContextGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdCodeCleanupPost: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdCodeCleanupPost', 'id', id)
+            const localVarPath = `/console/v1/experiments/{id}/code_cleanup`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Start Experiment Code Cleanup
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdCodeCleanupPost_6: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdCodeCleanupPost_6', 'id', id)
+            const localVarPath = `/console/v1/experiments/{id}/code_cleanup`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get Experiment Context
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdContextGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdContextGet', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/context`
@@ -1162,9 +1259,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1178,13 +1272,12 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Get Experiment Context
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdContextGet_5: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdContextGet_7: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdContextGet_5', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdContextGet_7', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/context`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1203,9 +1296,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1219,11 +1309,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Retrieve cumulative exposures
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdCumulativeExposuresGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdCumulativeExposuresGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdCumulativeExposuresGet', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/cumulative_exposures`
@@ -1244,9 +1333,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1260,13 +1346,12 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Retrieve cumulative exposures
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdCumulativeExposuresGet_6: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdCumulativeExposuresGet_8: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdCumulativeExposuresGet_6', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdCumulativeExposuresGet_8', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/cumulative_exposures`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1285,9 +1370,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1299,13 +1381,54 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
-         * @summary Deleted Experiment
+         * @summary Conclude Experiment & Defer Decision
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {ExperimentDeferDecisionDto} experimentDeferDecisionDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdDeferDecisionPut: async (id: string, experimentDeferDecisionDto: ExperimentDeferDecisionDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdDeferDecisionPut', 'id', id)
+            // verify required parameter 'experimentDeferDecisionDto' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdDeferDecisionPut', 'experimentDeferDecisionDto', experimentDeferDecisionDto)
+            const localVarPath = `/console/v1/experiments/{id}/defer_decision`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(experimentDeferDecisionDto, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Deleted Experiment
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdDelete', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}`
@@ -1326,9 +1449,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1342,13 +1462,12 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Deleted Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdDelete_7: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdDelete_9: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdDelete_7', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdDelete_9', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1367,9 +1486,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1384,11 +1500,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Disable Experiment Groups
          * @param {string} id id
          * @param {EnableDisableGroupsDto} enableDisableGroupsDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdDisableGroupsPost: async (id: string, enableDisableGroupsDto: EnableDisableGroupsDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdDisableGroupsPost: async (id: string, enableDisableGroupsDto: EnableDisableGroupsDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdDisableGroupsPost', 'id', id)
             // verify required parameter 'enableDisableGroupsDto' is not null or undefined
@@ -1412,9 +1527,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1430,15 +1542,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Disable Experiment Groups
          * @param {string} id id
          * @param {EnableDisableGroupsDto} enableDisableGroupsDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdDisableGroupsPost_8: async (id: string, enableDisableGroupsDto: EnableDisableGroupsDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdDisableGroupsPost_10: async (id: string, enableDisableGroupsDto: EnableDisableGroupsDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdDisableGroupsPost_8', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdDisableGroupsPost_10', 'id', id)
             // verify required parameter 'enableDisableGroupsDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdDisableGroupsPost_8', 'enableDisableGroupsDto', enableDisableGroupsDto)
+            assertParamExists('consoleV1ExperimentsIdDisableGroupsPost_10', 'enableDisableGroupsDto', enableDisableGroupsDto)
             const localVarPath = `/console/v1/experiments/{id}/disable_groups`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1458,9 +1569,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1476,11 +1584,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Enable Experiment Groups
          * @param {string} id id
          * @param {EnableDisableGroupsDto} enableDisableGroupsDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdEnableGroupsPost: async (id: string, enableDisableGroupsDto: EnableDisableGroupsDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdEnableGroupsPost: async (id: string, enableDisableGroupsDto: EnableDisableGroupsDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdEnableGroupsPost', 'id', id)
             // verify required parameter 'enableDisableGroupsDto' is not null or undefined
@@ -1504,9 +1611,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1522,15 +1626,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Enable Experiment Groups
          * @param {string} id id
          * @param {EnableDisableGroupsDto} enableDisableGroupsDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdEnableGroupsPost_9: async (id: string, enableDisableGroupsDto: EnableDisableGroupsDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdEnableGroupsPost_11: async (id: string, enableDisableGroupsDto: EnableDisableGroupsDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdEnableGroupsPost_9', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdEnableGroupsPost_11', 'id', id)
             // verify required parameter 'enableDisableGroupsDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdEnableGroupsPost_9', 'enableDisableGroupsDto', enableDisableGroupsDto)
+            assertParamExists('consoleV1ExperimentsIdEnableGroupsPost_11', 'enableDisableGroupsDto', enableDisableGroupsDto)
             const localVarPath = `/console/v1/experiments/{id}/enable_groups`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1550,9 +1653,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1567,11 +1667,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Get Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdGet', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}`
@@ -1592,9 +1691,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1608,13 +1704,12 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Get Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdGet_10: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdGet_12: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdGet_10', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdGet_12', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1633,9 +1728,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1652,13 +1744,11 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {EchidnaLoadPulseQueryDto} echidnaLoadPulseQueryDto 
          * @param {ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum} [refresh] 
          * @param {Array<string>} [metricIDs] 
-         * @param {string} [ruleId] 
          * @param {boolean} [turboMode] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdLoadPulsePost: async (id: string, echidnaLoadPulseQueryDto: EchidnaLoadPulseQueryDto, refresh?: ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum, metricIDs?: Array<string>, ruleId?: string, turboMode?: boolean, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdLoadPulsePost: async (id: string, echidnaLoadPulseQueryDto: EchidnaLoadPulseQueryDto, refresh?: ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum, metricIDs?: Array<string>, turboMode?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdLoadPulsePost', 'id', id)
             // verify required parameter 'echidnaLoadPulseQueryDto' is not null or undefined
@@ -1687,10 +1777,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
                 localVarQueryParameter['metricIDs'] = metricIDs;
             }
 
-            if (ruleId !== undefined) {
-                localVarQueryParameter['ruleId'] = ruleId;
-            }
-
             if (turboMode !== undefined) {
                 localVarQueryParameter['turboMode'] = turboMode;
             }
@@ -1698,9 +1784,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1716,11 +1799,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Finish Experiment Early
          * @param {string} id id
          * @param {ExperimentStatusUpdateDto} experimentStatusUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdMakeDecisionPut: async (id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdMakeDecisionPut: async (id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdMakeDecisionPut', 'id', id)
             // verify required parameter 'experimentStatusUpdateDto' is not null or undefined
@@ -1744,9 +1826,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1762,15 +1841,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Finish Experiment Early
          * @param {string} id id
          * @param {ExperimentStatusUpdateDto} experimentStatusUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdMakeDecisionPut_11: async (id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdMakeDecisionPut_13: async (id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdMakeDecisionPut_11', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdMakeDecisionPut_13', 'id', id)
             // verify required parameter 'experimentStatusUpdateDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdMakeDecisionPut_11', 'experimentStatusUpdateDto', experimentStatusUpdateDto)
+            assertParamExists('consoleV1ExperimentsIdMakeDecisionPut_13', 'experimentStatusUpdateDto', experimentStatusUpdateDto)
             const localVarPath = `/console/v1/experiments/{id}/make_decision`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -1790,9 +1868,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1807,11 +1882,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Delete Experiment Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdOverridesDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdOverridesDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdOverridesDelete', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/overrides`
@@ -1832,9 +1906,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1848,11 +1919,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Get Experiment Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdOverridesGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdOverridesGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdOverridesGet', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/overrides`
@@ -1873,9 +1943,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1890,11 +1957,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Partially Update Experiment Overrides
          * @param {string} id id
          * @param {ExperimentOverridesDto} experimentOverridesDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdOverridesPatch: async (id: string, experimentOverridesDto: ExperimentOverridesDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdOverridesPatch: async (id: string, experimentOverridesDto: ExperimentOverridesDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdOverridesPatch', 'id', id)
             // verify required parameter 'experimentOverridesDto' is not null or undefined
@@ -1918,9 +1984,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1936,11 +1999,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Update Experiment Overrides
          * @param {string} id id
          * @param {ExperimentOverridesDto} experimentOverridesDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdOverridesPost: async (id: string, experimentOverridesDto: ExperimentOverridesDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdOverridesPost: async (id: string, experimentOverridesDto: ExperimentOverridesDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdOverridesPost', 'id', id)
             // verify required parameter 'experimentOverridesDto' is not null or undefined
@@ -1964,9 +2026,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1982,11 +2041,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Partially Update Experiment
          * @param {string} id id
          * @param {ExperimentPartialUpdateDto} experimentPartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPatch: async (id: string, experimentPartialUpdateDto: ExperimentPartialUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdPatch: async (id: string, experimentPartialUpdateDto: ExperimentPartialUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdPatch', 'id', id)
             // verify required parameter 'experimentPartialUpdateDto' is not null or undefined
@@ -2010,9 +2068,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2028,15 +2083,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Partially Update Experiment
          * @param {string} id id
          * @param {ExperimentPartialUpdateDto} experimentPartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPatch_12: async (id: string, experimentPartialUpdateDto: ExperimentPartialUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdPatch_14: async (id: string, experimentPartialUpdateDto: ExperimentPartialUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdPatch_12', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdPatch_14', 'id', id)
             // verify required parameter 'experimentPartialUpdateDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdPatch_12', 'experimentPartialUpdateDto', experimentPartialUpdateDto)
+            assertParamExists('consoleV1ExperimentsIdPatch_14', 'experimentPartialUpdateDto', experimentPartialUpdateDto)
             const localVarPath = `/console/v1/experiments/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2056,9 +2110,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2074,11 +2125,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Fully Update Experiment
          * @param {string} id id
          * @param {ExperimentFullUpdateDto} experimentFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPost: async (id: string, experimentFullUpdateDto: ExperimentFullUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdPost: async (id: string, experimentFullUpdateDto: ExperimentFullUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdPost', 'id', id)
             // verify required parameter 'experimentFullUpdateDto' is not null or undefined
@@ -2102,9 +2152,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2120,15 +2167,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Fully Update Experiment
          * @param {string} id id
          * @param {ExperimentFullUpdateDto} experimentFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPost_13: async (id: string, experimentFullUpdateDto: ExperimentFullUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdPost_15: async (id: string, experimentFullUpdateDto: ExperimentFullUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdPost_13', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdPost_15', 'id', id)
             // verify required parameter 'experimentFullUpdateDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdPost_13', 'experimentFullUpdateDto', experimentFullUpdateDto)
+            assertParamExists('consoleV1ExperimentsIdPost_15', 'experimentFullUpdateDto', experimentFullUpdateDto)
             const localVarPath = `/console/v1/experiments/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2148,9 +2194,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2163,15 +2206,96 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
+         * @summary Cancel Pulse Load (Warehouse Native)
+         * @param {string} dagID dagID
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost: async (dagID: string, id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'dagID' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost', 'dagID', dagID)
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost', 'id', id)
+            const localVarPath = `/console/v1/experiments/{id}/pulse_load_history/{dagID}/cancel`
+                .replace(`{${"dagID"}}`, encodeURIComponent(String(dagID)))
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get Pulse Load History Details (Warehouse Native)
+         * @param {string} dagID dagID
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdPulseLoadHistoryDagIDGet: async (dagID: string, id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'dagID' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseLoadHistoryDagIDGet', 'dagID', dagID)
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseLoadHistoryDagIDGet', 'id', id)
+            const localVarPath = `/console/v1/experiments/{id}/pulse_load_history/{dagID}`
+                .replace(`{${"dagID"}}`, encodeURIComponent(String(dagID)))
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Pulse Load History (Warehouse Native)
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPulseLoadHistoryGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdPulseLoadHistoryGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdPulseLoadHistoryGet', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/pulse_load_history`
@@ -2200,9 +2324,202 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Pulse Metric Result
+         * @param {string} id id
+         * @param {string} control Control Group ID
+         * @param {string} test Test Group ID
+         * @param {string} metricID Metric ID in format &lt;metric_name&gt;::&lt;metric_type&gt;
+         * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [confidence] Confidence interval (0-100)
+         * @param {string} [applyBonferroniPerVariant] Whether to apply Bonferroni Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [applyBonferroniPerMetric] Whether to apply Bonferroni Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [bonferroniPrimaryMetricWeight] α allocated to primary metrics
+         * @param {string} [applyBenjaminiHochbergPerMetric] Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [applyBenjaminiHochbergPerVariant] Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [date] Date for pulse results. format must be YYYY-MM-DD
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdPulseMetricResultGet: async (id: string, control: string, test: string, metricID: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseMetricResultGet', 'id', id)
+            // verify required parameter 'control' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseMetricResultGet', 'control', control)
+            // verify required parameter 'test' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseMetricResultGet', 'test', test)
+            // verify required parameter 'metricID' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseMetricResultGet', 'metricID', metricID)
+            const localVarPath = `/console/v1/experiments/{id}/pulse_metric_result`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
             }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            if (control !== undefined) {
+                localVarQueryParameter['control'] = control;
+            }
+
+            if (test !== undefined) {
+                localVarQueryParameter['test'] = test;
+            }
+
+            if (cuped !== undefined) {
+                localVarQueryParameter['cuped'] = cuped;
+            }
+
+            if (confidence !== undefined) {
+                localVarQueryParameter['confidence'] = confidence;
+            }
+
+            if (applyBonferroniPerVariant !== undefined) {
+                localVarQueryParameter['applyBonferroniPerVariant'] = applyBonferroniPerVariant;
+            }
+
+            if (applyBonferroniPerMetric !== undefined) {
+                localVarQueryParameter['applyBonferroniPerMetric'] = applyBonferroniPerMetric;
+            }
+
+            if (bonferroniPrimaryMetricWeight !== undefined) {
+                localVarQueryParameter['bonferroniPrimaryMetricWeight'] = bonferroniPrimaryMetricWeight;
+            }
+
+            if (applyBenjaminiHochbergPerMetric !== undefined) {
+                localVarQueryParameter['applyBenjaminiHochbergPerMetric'] = applyBenjaminiHochbergPerMetric;
+            }
+
+            if (applyBenjaminiHochbergPerVariant !== undefined) {
+                localVarQueryParameter['applyBenjaminiHochbergPerVariant'] = applyBenjaminiHochbergPerVariant;
+            }
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (metricID !== undefined) {
+                localVarQueryParameter['metricID'] = metricID;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Pulse Metric Result
+         * @param {string} id id
+         * @param {string} control Control Group ID
+         * @param {string} test Test Group ID
+         * @param {string} metricID Metric ID in format &lt;metric_name&gt;::&lt;metric_type&gt;
+         * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [confidence] Confidence interval (0-100)
+         * @param {string} [applyBonferroniPerVariant] Whether to apply Bonferroni Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [applyBonferroniPerMetric] Whether to apply Bonferroni Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [bonferroniPrimaryMetricWeight] α allocated to primary metrics
+         * @param {string} [applyBenjaminiHochbergPerMetric] Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [applyBenjaminiHochbergPerVariant] Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [date] Date for pulse results. format must be YYYY-MM-DD
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdPulseMetricResultGet_16: async (id: string, control: string, test: string, metricID: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseMetricResultGet_16', 'id', id)
+            // verify required parameter 'control' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseMetricResultGet_16', 'control', control)
+            // verify required parameter 'test' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseMetricResultGet_16', 'test', test)
+            // verify required parameter 'metricID' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdPulseMetricResultGet_16', 'metricID', metricID)
+            const localVarPath = `/console/v1/experiments/{id}/pulse_metric_result`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            if (control !== undefined) {
+                localVarQueryParameter['control'] = control;
+            }
+
+            if (test !== undefined) {
+                localVarQueryParameter['test'] = test;
+            }
+
+            if (cuped !== undefined) {
+                localVarQueryParameter['cuped'] = cuped;
+            }
+
+            if (confidence !== undefined) {
+                localVarQueryParameter['confidence'] = confidence;
+            }
+
+            if (applyBonferroniPerVariant !== undefined) {
+                localVarQueryParameter['applyBonferroniPerVariant'] = applyBonferroniPerVariant;
+            }
+
+            if (applyBonferroniPerMetric !== undefined) {
+                localVarQueryParameter['applyBonferroniPerMetric'] = applyBonferroniPerMetric;
+            }
+
+            if (bonferroniPrimaryMetricWeight !== undefined) {
+                localVarQueryParameter['bonferroniPrimaryMetricWeight'] = bonferroniPrimaryMetricWeight;
+            }
+
+            if (applyBenjaminiHochbergPerMetric !== undefined) {
+                localVarQueryParameter['applyBenjaminiHochbergPerMetric'] = applyBenjaminiHochbergPerMetric;
+            }
+
+            if (applyBenjaminiHochbergPerVariant !== undefined) {
+                localVarQueryParameter['applyBenjaminiHochbergPerVariant'] = applyBenjaminiHochbergPerVariant;
+            }
+
+            if (date !== undefined) {
+                localVarQueryParameter['date'] = date;
+            }
+
+            if (metricID !== undefined) {
+                localVarQueryParameter['metricID'] = metricID;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2226,11 +2543,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {string} [applyBenjaminiHochbergPerMetric] Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [applyBenjaminiHochbergPerVariant] Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [date] Date for pulse results. format must be YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPulseResultsGet: async (id: string, control: string, test: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdPulseResultsGet: async (id: string, control: string, test: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdPulseResultsGet', 'id', id)
             // verify required parameter 'control' is not null or undefined
@@ -2295,9 +2611,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2321,17 +2634,16 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {string} [applyBenjaminiHochbergPerMetric] Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [applyBenjaminiHochbergPerVariant] Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [date] Date for pulse results. format must be YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPulseResultsGet_14: async (id: string, control: string, test: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdPulseResultsGet_17: async (id: string, control: string, test: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdPulseResultsGet_14', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdPulseResultsGet_17', 'id', id)
             // verify required parameter 'control' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdPulseResultsGet_14', 'control', control)
+            assertParamExists('consoleV1ExperimentsIdPulseResultsGet_17', 'control', control)
             // verify required parameter 'test' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdPulseResultsGet_14', 'test', test)
+            assertParamExists('consoleV1ExperimentsIdPulseResultsGet_17', 'test', test)
             const localVarPath = `/console/v1/experiments/{id}/pulse_results`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2390,9 +2702,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2406,11 +2715,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Reset Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdResetPut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdResetPut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdResetPut', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/reset`
@@ -2431,9 +2739,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2447,13 +2752,12 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Reset Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdResetPut_15: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdResetPut_18: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdResetPut_15', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdResetPut_18', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/reset`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2472,9 +2776,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2489,11 +2790,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Restart As New Experiment
          * @param {string} id id
          * @param {ExperimentNameContractDto} experimentNameContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdRestartAsNewPost: async (id: string, experimentNameContractDto: ExperimentNameContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdRestartAsNewPost: async (id: string, experimentNameContractDto: ExperimentNameContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdRestartAsNewPost', 'id', id)
             // verify required parameter 'experimentNameContractDto' is not null or undefined
@@ -2517,9 +2817,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2535,15 +2832,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Restart As New Experiment
          * @param {string} id id
          * @param {ExperimentNameContractDto} experimentNameContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdRestartAsNewPost_16: async (id: string, experimentNameContractDto: ExperimentNameContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdRestartAsNewPost_19: async (id: string, experimentNameContractDto: ExperimentNameContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdRestartAsNewPost_16', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdRestartAsNewPost_19', 'id', id)
             // verify required parameter 'experimentNameContractDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdRestartAsNewPost_16', 'experimentNameContractDto', experimentNameContractDto)
+            assertParamExists('consoleV1ExperimentsIdRestartAsNewPost_19', 'experimentNameContractDto', experimentNameContractDto)
             const localVarPath = `/console/v1/experiments/{id}/restart_as_new`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2563,9 +2859,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2581,11 +2874,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Commit Experiment Review
          * @param {string} id 
          * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdReviewsReviewIDCommitPut: async (id: string, reviewID: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdReviewsReviewIDCommitPut: async (id: string, reviewID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdReviewsReviewIDCommitPut', 'id', id)
             // verify required parameter 'reviewID' is not null or undefined
@@ -2609,9 +2901,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2626,11 +2915,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Schedule Experiment Start
          * @param {string} id id
          * @param {ScheduleExperimentStartParamDto} scheduleExperimentStartParamDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdScheduleStartPost: async (id: string, scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdScheduleStartPost: async (id: string, scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdScheduleStartPost', 'id', id)
             // verify required parameter 'scheduleExperimentStartParamDto' is not null or undefined
@@ -2654,9 +2942,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2672,15 +2957,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Schedule Experiment Start
          * @param {string} id id
          * @param {ScheduleExperimentStartParamDto} scheduleExperimentStartParamDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdScheduleStartPost_17: async (id: string, scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdScheduleStartPost_20: async (id: string, scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdScheduleStartPost_17', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdScheduleStartPost_20', 'id', id)
             // verify required parameter 'scheduleExperimentStartParamDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdScheduleStartPost_17', 'scheduleExperimentStartParamDto', scheduleExperimentStartParamDto)
+            assertParamExists('consoleV1ExperimentsIdScheduleStartPost_20', 'scheduleExperimentStartParamDto', scheduleExperimentStartParamDto)
             const localVarPath = `/console/v1/experiments/{id}/schedule_start`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2700,9 +2984,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2718,11 +2999,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Start Experiment
          * @param {string} id id
          * @param {ExperimentStartDto} experimentStartDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdStartPut: async (id: string, experimentStartDto: ExperimentStartDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdStartPut: async (id: string, experimentStartDto: ExperimentStartDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdStartPut', 'id', id)
             // verify required parameter 'experimentStartDto' is not null or undefined
@@ -2746,9 +3026,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2764,15 +3041,14 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @summary Start Experiment
          * @param {string} id id
          * @param {ExperimentStartDto} experimentStartDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdStartPut_18: async (id: string, experimentStartDto: ExperimentStartDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdStartPut_21: async (id: string, experimentStartDto: ExperimentStartDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdStartPut_18', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdStartPut_21', 'id', id)
             // verify required parameter 'experimentStartDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdStartPut_18', 'experimentStartDto', experimentStartDto)
+            assertParamExists('consoleV1ExperimentsIdStartPut_21', 'experimentStartDto', experimentStartDto)
             const localVarPath = `/console/v1/experiments/{id}/start`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2792,9 +3068,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2807,13 +3080,106 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
-         * @summary Unarchive Experiment
+         * @summary Retrieve Experiment Summary Charts (Beta)
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {string} [control] Optional override control group ID
+         * @param {string} [test] Optional override test group ID. Use \&quot;*\&quot; to query against all test groups.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdUnarchivePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdSummaryChartsGet: async (id: string, control?: string, test?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdSummaryChartsGet', 'id', id)
+            const localVarPath = `/console/v1/experiments/{id}/summary_charts`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            if (control !== undefined) {
+                localVarQueryParameter['control'] = control;
+            }
+
+            if (test !== undefined) {
+                localVarQueryParameter['test'] = test;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Experiment Summary Charts (Beta)
+         * @param {string} id id
+         * @param {string} [control] Optional override control group ID
+         * @param {string} [test] Optional override test group ID. Use \&quot;*\&quot; to query against all test groups.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdSummaryChartsGet_22: async (id: string, control?: string, test?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1ExperimentsIdSummaryChartsGet_22', 'id', id)
+            const localVarPath = `/console/v1/experiments/{id}/summary_charts`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            if (control !== undefined) {
+                localVarQueryParameter['control'] = control;
+            }
+
+            if (test !== undefined) {
+                localVarQueryParameter['test'] = test;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Unarchive Experiment
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdUnarchivePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdUnarchivePut', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/unarchive`
@@ -2834,9 +3200,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2850,13 +3213,12 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Unarchive Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdUnarchivePut_19: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdUnarchivePut_23: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('consoleV1ExperimentsIdUnarchivePut_19', 'id', id)
+            assertParamExists('consoleV1ExperimentsIdUnarchivePut_23', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/unarchive`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -2875,9 +3237,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2893,11 +3252,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdVersionsGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsIdVersionsGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ExperimentsIdVersionsGet', 'id', id)
             const localVarPath = `/console/v1/experiments/{id}/versions`
@@ -2926,9 +3284,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2942,11 +3297,10 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Create Experiment
          * @param {ExperimentCreateDto} experimentCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsPost: async (experimentCreateDto: ExperimentCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsPost: async (experimentCreateDto: ExperimentCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'experimentCreateDto' is not null or undefined
             assertParamExists('consoleV1ExperimentsPost', 'experimentCreateDto', experimentCreateDto)
             const localVarPath = `/console/v1/experiments`;
@@ -2967,9 +3321,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2984,13 +3335,12 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Create Experiment
          * @param {ExperimentCreateDto} experimentCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsPost_20: async (experimentCreateDto: ExperimentCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ExperimentsPost_24: async (experimentCreateDto: ExperimentCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'experimentCreateDto' is not null or undefined
-            assertParamExists('consoleV1ExperimentsPost_20', 'experimentCreateDto', experimentCreateDto)
+            assertParamExists('consoleV1ExperimentsPost_24', 'experimentCreateDto', experimentCreateDto)
             const localVarPath = `/console/v1/experiments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -3009,9 +3359,6 @@ export const ExperimentsApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -3035,12 +3382,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Assignment Source
          * @param {string} name Name of the assignment source
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsAssignmentSourceNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNameDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourceNameDelete(name, xRespectReviewSettings, options);
+        async consoleV1ExperimentsAssignmentSourceNameDelete(name: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNameDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourceNameDelete(name, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsAssignmentSourceNameDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3050,12 +3396,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Patch Assignment Source
          * @param {string} name Name of the assignment source
          * @param {AssignmentSourcePartialUpdateDto} assignmentSourcePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsAssignmentSourceNamePatch(name: string, assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourceNamePatch(name, assignmentSourcePartialUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsAssignmentSourceNamePatch(name: string, assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourceNamePatch(name, assignmentSourcePartialUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsAssignmentSourceNamePatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3065,12 +3410,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Post Assignment Source
          * @param {string} name Name of the assignment source
          * @param {AssignmentSourceQueryUpdateDto} assignmentSourceQueryUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsAssignmentSourceNamePost(name: string, assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourceNamePost(name, assignmentSourceQueryUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsAssignmentSourceNamePost(name: string, assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourceNamePost(name, assignmentSourceQueryUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsAssignmentSourceNamePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3080,12 +3424,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary List Assignment Sources
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsAssignmentSourcesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsassignmentsourcesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourcesGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1ExperimentsAssignmentSourcesGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsassignmentsourcesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourcesGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsAssignmentSourcesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3094,12 +3437,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Assignment Source
          * @param {AssignmentSourceCreationDto} assignmentSourceCreationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsAssignmentSourcesPost(assignmentSourceCreationDto: AssignmentSourceCreationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourcesPost(assignmentSourceCreationDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsAssignmentSourcesPost(assignmentSourceCreationDto: AssignmentSourceCreationDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsAssignmentSourcesPost(assignmentSourceCreationDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsAssignmentSourcesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3109,12 +3451,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary List Entity Property Sources
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsEntityPropertiesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsentitypropertiesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertiesGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1ExperimentsEntityPropertiesGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsentitypropertiesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertiesGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsEntityPropertiesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3123,12 +3464,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Entity Property Source
          * @param {EntityPropertySourceCreationDto} entityPropertySourceCreationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsEntityPropertiesPost(entityPropertySourceCreationDto: EntityPropertySourceCreationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertiesPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertiesPost(entityPropertySourceCreationDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsEntityPropertiesPost(entityPropertySourceCreationDto: EntityPropertySourceCreationDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertiesPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertiesPost(entityPropertySourceCreationDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsEntityPropertiesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3137,12 +3477,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Entity Property Source
          * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsEntityPropertyNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertyNameDelete(name, xRespectReviewSettings, options);
+        async consoleV1ExperimentsEntityPropertyNameDelete(name: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertyNameDelete(name, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsEntityPropertyNameDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3151,12 +3490,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Entity Property Source
          * @param {string} name Name of entity property source
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsEntityPropertyNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertyNameGet(name, xRespectReviewSettings, options);
+        async consoleV1ExperimentsEntityPropertyNameGet(name: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertyNameGet(name, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsEntityPropertyNameGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3166,12 +3504,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Patch Entity Property Source
          * @param {string} name Name of entity property source
          * @param {EntityPropertySourcePartialUpdateDto} entityPropertySourcePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsEntityPropertyNamePatch(name: string, entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertyNamePatch(name, entityPropertySourcePartialUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsEntityPropertyNamePatch(name: string, entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertyNamePatch(name, entityPropertySourcePartialUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsEntityPropertyNamePatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3181,12 +3518,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Post Entity Property Source
          * @param {string} name name
          * @param {EntityPropertySourceQueryUpdateDto} entityPropertySourceQueryUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsEntityPropertyNamePost(name: string, entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertyNamePost(name, entityPropertySourceQueryUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsEntityPropertyNamePost(name: string, entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsEntityPropertyNamePost(name, entityPropertySourceQueryUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsEntityPropertyNamePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3199,6 +3535,7 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
          * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
          * @param {string} [targetAppID] 
+         * @param {boolean} [stale] When true, only returns stale experiments. If omitted or false, returns all experiments.
          * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
          * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
@@ -3207,12 +3544,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsGet(layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsGet(layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
+        async consoleV1ExperimentsGet(layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, stale?: boolean, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsGet(layerID, idType, teamID, status, targetAppID, stale, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3225,6 +3561,7 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
          * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
          * @param {string} [targetAppID] 
+         * @param {boolean} [stale] When true, only returns stale experiments. If omitted or false, returns all experiments.
          * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
          * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
@@ -3233,12 +3570,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsGet_1(layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsGet_1(layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
+        async consoleV1ExperimentsGet_1(layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, stale?: boolean, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsGet_1(layerID, idType, teamID, status, targetAppID, stale, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsGet_1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3248,12 +3584,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Abandon Experiment
          * @param {string} id id
          * @param {ExperimentAbandonDto} experimentAbandonDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdAbandonPut(id: string, experimentAbandonDto: ExperimentAbandonDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAbandonPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAbandonPut(id, experimentAbandonDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdAbandonPut(id: string, experimentAbandonDto: ExperimentAbandonDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAbandonPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAbandonPut(id, experimentAbandonDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdAbandonPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3263,14 +3598,39 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Abandon Experiment
          * @param {string} id id
          * @param {ExperimentAbandonDto} experimentAbandonDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdAbandonPut_2(id: string, experimentAbandonDto: ExperimentAbandonDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAbandonPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAbandonPut_2(id, experimentAbandonDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdAbandonPut_2(id: string, experimentAbandonDto: ExperimentAbandonDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAbandonPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAbandonPut_2(id, experimentAbandonDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdAbandonPut_2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Get Experiment Guardrail Alert Statuses
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdAlertsGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAlertsGet(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdAlertsGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Get Experiment Guardrail Alert Statuses
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdAlertsGet_3(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAlertsGet_3(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdAlertsGet_3']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3279,12 +3639,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {string} metricId metric id
          * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdAlertsMetricIdResolvePost(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAlertsMetricIdResolvePost(id, metricId, resolveGuardrailAlertRequestDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdAlertsMetricIdResolvePost(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAlertsMetricIdResolvePost(id, metricId, resolveGuardrailAlertRequestDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdAlertsMetricIdResolvePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3295,14 +3654,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {string} metricId metric id
          * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdAlertsMetricIdResolvePost_3(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAlertsMetricIdResolvePost_3(id, metricId, resolveGuardrailAlertRequestDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdAlertsMetricIdResolvePost_4(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdAlertsMetricIdResolvePost_4(id, metricId, resolveGuardrailAlertRequestDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdAlertsMetricIdResolvePost_3']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdAlertsMetricIdResolvePost_4']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3310,12 +3668,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Archive Experiment
          * @param {string} id id
          * @param {ExperimentArchiveDto} experimentArchiveDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdArchivePut(id: string, experimentArchiveDto: ExperimentArchiveDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdArchivePut(id, experimentArchiveDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdArchivePut(id: string, experimentArchiveDto: ExperimentArchiveDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdArchivePut(id, experimentArchiveDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdArchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3325,26 +3682,50 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Archive Experiment
          * @param {string} id id
          * @param {ExperimentArchiveDto} experimentArchiveDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdArchivePut_4(id: string, experimentArchiveDto: ExperimentArchiveDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdArchivePut_4(id, experimentArchiveDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdArchivePut_5(id: string, experimentArchiveDto: ExperimentArchiveDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdArchivePut_5(id, experimentArchiveDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdArchivePut_4']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdArchivePut_5']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Start Experiment Code Cleanup
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdCodeCleanupPost(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdCodeCleanupPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdCodeCleanupPost(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdCodeCleanupPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Start Experiment Code Cleanup
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdCodeCleanupPost_6(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdCodeCleanupPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdCodeCleanupPost_6(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdCodeCleanupPost_6']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary Get Experiment Context
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdContextGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdContextGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdContextGet(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdContextGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdContextGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdContextGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdContextGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3353,26 +3734,24 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Experiment Context
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdContextGet_5(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdContextGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdContextGet_5(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdContextGet_7(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdContextGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdContextGet_7(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdContextGet_5']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdContextGet_7']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary Retrieve cumulative exposures
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdCumulativeExposuresGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdCumulativeExposuresGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdCumulativeExposuresGet(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdCumulativeExposuresGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdCumulativeExposuresGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdCumulativeExposuresGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdCumulativeExposuresGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3381,26 +3760,38 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Retrieve cumulative exposures
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdCumulativeExposuresGet_6(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdCumulativeExposuresGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdCumulativeExposuresGet_6(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdCumulativeExposuresGet_8(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdCumulativeExposuresGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdCumulativeExposuresGet_8(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdCumulativeExposuresGet_6']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdCumulativeExposuresGet_8']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Conclude Experiment & Defer Decision
+         * @param {string} id id
+         * @param {ExperimentDeferDecisionDto} experimentDeferDecisionDto 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdDeferDecisionPut(id: string, experimentDeferDecisionDto: ExperimentDeferDecisionDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDeferDecisionPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDeferDecisionPut(id, experimentDeferDecisionDto, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdDeferDecisionPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary Deleted Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3409,14 +3800,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Deleted Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdDelete_7(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDelete_7(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdDelete_9(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDelete_9(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdDelete_7']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdDelete_9']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3424,12 +3814,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Disable Experiment Groups
          * @param {string} id id
          * @param {EnableDisableGroupsDto} enableDisableGroupsDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdDisableGroupsPost(id: string, enableDisableGroupsDto: EnableDisableGroupsDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDisableGroupsPost(id, enableDisableGroupsDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdDisableGroupsPost(id: string, enableDisableGroupsDto: EnableDisableGroupsDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDisableGroupsPost(id, enableDisableGroupsDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdDisableGroupsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3439,14 +3828,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Disable Experiment Groups
          * @param {string} id id
          * @param {EnableDisableGroupsDto} enableDisableGroupsDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdDisableGroupsPost_8(id: string, enableDisableGroupsDto: EnableDisableGroupsDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDisableGroupsPost_8(id, enableDisableGroupsDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdDisableGroupsPost_10(id: string, enableDisableGroupsDto: EnableDisableGroupsDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdDisableGroupsPost_10(id, enableDisableGroupsDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdDisableGroupsPost_8']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdDisableGroupsPost_10']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3454,12 +3842,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Enable Experiment Groups
          * @param {string} id id
          * @param {EnableDisableGroupsDto} enableDisableGroupsDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdEnableGroupsPost(id: string, enableDisableGroupsDto: EnableDisableGroupsDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdEnableGroupsPost(id, enableDisableGroupsDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdEnableGroupsPost(id: string, enableDisableGroupsDto: EnableDisableGroupsDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdEnableGroupsPost(id, enableDisableGroupsDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdEnableGroupsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3469,26 +3856,24 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Enable Experiment Groups
          * @param {string} id id
          * @param {EnableDisableGroupsDto} enableDisableGroupsDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdEnableGroupsPost_9(id: string, enableDisableGroupsDto: EnableDisableGroupsDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdEnableGroupsPost_9(id, enableDisableGroupsDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdEnableGroupsPost_11(id: string, enableDisableGroupsDto: EnableDisableGroupsDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdEnableGroupsPost_11(id, enableDisableGroupsDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdEnableGroupsPost_9']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdEnableGroupsPost_11']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary Get Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdGet(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3497,14 +3882,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdGet_10(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdGet_10(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdGet_12(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdGet_12(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdGet_10']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdGet_12']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3514,14 +3898,12 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {EchidnaLoadPulseQueryDto} echidnaLoadPulseQueryDto 
          * @param {ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum} [refresh] 
          * @param {Array<string>} [metricIDs] 
-         * @param {string} [ruleId] 
          * @param {boolean} [turboMode] 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdLoadPulsePost(id: string, echidnaLoadPulseQueryDto: EchidnaLoadPulseQueryDto, refresh?: ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum, metricIDs?: Array<string>, ruleId?: string, turboMode?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdLoadPulsePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdLoadPulsePost(id, echidnaLoadPulseQueryDto, refresh, metricIDs, ruleId, turboMode, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdLoadPulsePost(id: string, echidnaLoadPulseQueryDto: EchidnaLoadPulseQueryDto, refresh?: ConsoleV1ExperimentsIdLoadPulsePostRefreshEnum, metricIDs?: Array<string>, turboMode?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdLoadPulsePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdLoadPulsePost(id, echidnaLoadPulseQueryDto, refresh, metricIDs, turboMode, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdLoadPulsePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3531,12 +3913,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Finish Experiment Early
          * @param {string} id id
          * @param {ExperimentStatusUpdateDto} experimentStatusUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdMakeDecisionPut(id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdMakeDecisionPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdMakeDecisionPut(id, experimentStatusUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdMakeDecisionPut(id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdMakeDecisionPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdMakeDecisionPut(id, experimentStatusUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdMakeDecisionPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3546,26 +3927,24 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Finish Experiment Early
          * @param {string} id id
          * @param {ExperimentStatusUpdateDto} experimentStatusUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdMakeDecisionPut_11(id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdMakeDecisionPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdMakeDecisionPut_11(id, experimentStatusUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdMakeDecisionPut_13(id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdMakeDecisionPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdMakeDecisionPut_13(id, experimentStatusUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdMakeDecisionPut_11']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdMakeDecisionPut_13']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary Delete Experiment Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdOverridesDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdOverridesDelete(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdOverridesDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdOverridesDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdOverridesDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdOverridesDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3574,12 +3953,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Experiment Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdOverridesGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdOverridesGet(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdOverridesGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdOverridesGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdOverridesGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdOverridesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3589,12 +3967,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Partially Update Experiment Overrides
          * @param {string} id id
          * @param {ExperimentOverridesDto} experimentOverridesDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdOverridesPatch(id: string, experimentOverridesDto: ExperimentOverridesDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdOverridesPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdOverridesPatch(id, experimentOverridesDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdOverridesPatch(id: string, experimentOverridesDto: ExperimentOverridesDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdOverridesPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdOverridesPatch(id, experimentOverridesDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdOverridesPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3604,12 +3981,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Update Experiment Overrides
          * @param {string} id id
          * @param {ExperimentOverridesDto} experimentOverridesDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdOverridesPost(id: string, experimentOverridesDto: ExperimentOverridesDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdOverridesPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdOverridesPost(id, experimentOverridesDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdOverridesPost(id: string, experimentOverridesDto: ExperimentOverridesDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdOverridesPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdOverridesPost(id, experimentOverridesDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdOverridesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3619,12 +3995,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Partially Update Experiment
          * @param {string} id id
          * @param {ExperimentPartialUpdateDto} experimentPartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdPatch(id: string, experimentPartialUpdateDto: ExperimentPartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPatch(id, experimentPartialUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdPatch(id: string, experimentPartialUpdateDto: ExperimentPartialUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPatch(id, experimentPartialUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3634,14 +4009,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Partially Update Experiment
          * @param {string} id id
          * @param {ExperimentPartialUpdateDto} experimentPartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdPatch_12(id: string, experimentPartialUpdateDto: ExperimentPartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPatch_12(id, experimentPartialUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdPatch_14(id: string, experimentPartialUpdateDto: ExperimentPartialUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPatch_14(id, experimentPartialUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPatch_12']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPatch_14']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3649,12 +4023,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Fully Update Experiment
          * @param {string} id id
          * @param {ExperimentFullUpdateDto} experimentFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdPost(id: string, experimentFullUpdateDto: ExperimentFullUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPost(id, experimentFullUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdPost(id: string, experimentFullUpdateDto: ExperimentFullUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPost(id, experimentFullUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3664,14 +4037,41 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Fully Update Experiment
          * @param {string} id id
          * @param {ExperimentFullUpdateDto} experimentFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdPost_13(id: string, experimentFullUpdateDto: ExperimentFullUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPost_13(id, experimentFullUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdPost_15(id: string, experimentFullUpdateDto: ExperimentFullUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPost_15(id, experimentFullUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPost_13']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPost_15']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Cancel Pulse Load (Warehouse Native)
+         * @param {string} dagID dagID
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost(dagID: string, id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost(dagID, id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Get Pulse Load History Details (Warehouse Native)
+         * @param {string} dagID dagID
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdPulseLoadHistoryDagIDGet(dagID: string, id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryDagIDGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseLoadHistoryDagIDGet(dagID, id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseLoadHistoryDagIDGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3680,14 +4080,61 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdPulseLoadHistoryGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsidpulseloadhistoryResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseLoadHistoryGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdPulseLoadHistoryGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsidpulseloadhistoryResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseLoadHistoryGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseLoadHistoryGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Pulse Metric Result
+         * @param {string} id id
+         * @param {string} control Control Group ID
+         * @param {string} test Test Group ID
+         * @param {string} metricID Metric ID in format &lt;metric_name&gt;::&lt;metric_type&gt;
+         * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [confidence] Confidence interval (0-100)
+         * @param {string} [applyBonferroniPerVariant] Whether to apply Bonferroni Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [applyBonferroniPerMetric] Whether to apply Bonferroni Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [bonferroniPrimaryMetricWeight] α allocated to primary metrics
+         * @param {string} [applyBenjaminiHochbergPerMetric] Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [applyBenjaminiHochbergPerVariant] Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [date] Date for pulse results. format must be YYYY-MM-DD
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdPulseMetricResultGet(id: string, control: string, test: string, metricID: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseMetricResultGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseMetricResultGet(id, control, test, metricID, cuped, confidence, applyBonferroniPerVariant, applyBonferroniPerMetric, bonferroniPrimaryMetricWeight, applyBenjaminiHochbergPerMetric, applyBenjaminiHochbergPerVariant, date, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseMetricResultGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Pulse Metric Result
+         * @param {string} id id
+         * @param {string} control Control Group ID
+         * @param {string} test Test Group ID
+         * @param {string} metricID Metric ID in format &lt;metric_name&gt;::&lt;metric_type&gt;
+         * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [confidence] Confidence interval (0-100)
+         * @param {string} [applyBonferroniPerVariant] Whether to apply Bonferroni Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [applyBonferroniPerMetric] Whether to apply Bonferroni Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [bonferroniPrimaryMetricWeight] α allocated to primary metrics
+         * @param {string} [applyBenjaminiHochbergPerMetric] Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [applyBenjaminiHochbergPerVariant] Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+         * @param {string} [date] Date for pulse results. format must be YYYY-MM-DD
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdPulseMetricResultGet_16(id: string, control: string, test: string, metricID: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseMetricResultGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseMetricResultGet_16(id, control, test, metricID, cuped, confidence, applyBonferroniPerVariant, applyBonferroniPerMetric, bonferroniPrimaryMetricWeight, applyBenjaminiHochbergPerMetric, applyBenjaminiHochbergPerVariant, date, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseMetricResultGet_16']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3704,12 +4151,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {string} [applyBenjaminiHochbergPerMetric] Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [applyBenjaminiHochbergPerVariant] Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [date] Date for pulse results. format must be YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdPulseResultsGet(id: string, control: string, test: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseResultsGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseResultsGet(id, control, test, cuped, confidence, applyBonferroniPerVariant, applyBonferroniPerMetric, bonferroniPrimaryMetricWeight, applyBenjaminiHochbergPerMetric, applyBenjaminiHochbergPerVariant, date, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdPulseResultsGet(id: string, control: string, test: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseResultsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseResultsGet(id, control, test, cuped, confidence, applyBonferroniPerVariant, applyBonferroniPerMetric, bonferroniPrimaryMetricWeight, applyBenjaminiHochbergPerMetric, applyBenjaminiHochbergPerVariant, date, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseResultsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3728,26 +4174,24 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {string} [applyBenjaminiHochbergPerMetric] Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [applyBenjaminiHochbergPerVariant] Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [date] Date for pulse results. format must be YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdPulseResultsGet_14(id: string, control: string, test: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseResultsGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseResultsGet_14(id, control, test, cuped, confidence, applyBonferroniPerVariant, applyBonferroniPerMetric, bonferroniPrimaryMetricWeight, applyBenjaminiHochbergPerMetric, applyBenjaminiHochbergPerVariant, date, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdPulseResultsGet_17(id: string, control: string, test: string, cuped?: string, confidence?: string, applyBonferroniPerVariant?: string, applyBonferroniPerMetric?: string, bonferroniPrimaryMetricWeight?: string, applyBenjaminiHochbergPerMetric?: string, applyBenjaminiHochbergPerVariant?: string, date?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdPulseResultsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdPulseResultsGet_17(id, control, test, cuped, confidence, applyBonferroniPerVariant, applyBonferroniPerMetric, bonferroniPrimaryMetricWeight, applyBenjaminiHochbergPerMetric, applyBenjaminiHochbergPerVariant, date, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseResultsGet_14']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdPulseResultsGet_17']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary Reset Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdResetPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdResetPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdResetPut(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdResetPut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdResetPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdResetPut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdResetPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3756,14 +4200,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Reset Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdResetPut_15(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdResetPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdResetPut_15(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdResetPut_18(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdResetPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdResetPut_18(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdResetPut_15']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdResetPut_18']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3771,12 +4214,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Restart As New Experiment
          * @param {string} id id
          * @param {ExperimentNameContractDto} experimentNameContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdRestartAsNewPost(id: string, experimentNameContractDto: ExperimentNameContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdRestartAsNewPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdRestartAsNewPost(id, experimentNameContractDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdRestartAsNewPost(id: string, experimentNameContractDto: ExperimentNameContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdRestartAsNewPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdRestartAsNewPost(id, experimentNameContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdRestartAsNewPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3786,14 +4228,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Restart As New Experiment
          * @param {string} id id
          * @param {ExperimentNameContractDto} experimentNameContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdRestartAsNewPost_16(id: string, experimentNameContractDto: ExperimentNameContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdRestartAsNewPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdRestartAsNewPost_16(id, experimentNameContractDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdRestartAsNewPost_19(id: string, experimentNameContractDto: ExperimentNameContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdRestartAsNewPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdRestartAsNewPost_19(id, experimentNameContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdRestartAsNewPost_16']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdRestartAsNewPost_19']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3801,12 +4242,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Commit Experiment Review
          * @param {string} id 
          * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdReviewsReviewIDCommitPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdReviewsReviewIDCommitPut(id: string, reviewID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdReviewsReviewIDCommitPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdReviewsReviewIDCommitPut(id, reviewID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdReviewsReviewIDCommitPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3816,12 +4256,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Schedule Experiment Start
          * @param {string} id id
          * @param {ScheduleExperimentStartParamDto} scheduleExperimentStartParamDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdScheduleStartPost(id: string, scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdScheduleStartPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdScheduleStartPost(id, scheduleExperimentStartParamDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdScheduleStartPost(id: string, scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdScheduleStartPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdScheduleStartPost(id, scheduleExperimentStartParamDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdScheduleStartPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3831,14 +4270,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Schedule Experiment Start
          * @param {string} id id
          * @param {ScheduleExperimentStartParamDto} scheduleExperimentStartParamDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdScheduleStartPost_17(id: string, scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdScheduleStartPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdScheduleStartPost_17(id, scheduleExperimentStartParamDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdScheduleStartPost_20(id: string, scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdScheduleStartPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdScheduleStartPost_20(id, scheduleExperimentStartParamDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdScheduleStartPost_17']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdScheduleStartPost_20']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3846,12 +4284,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Start Experiment
          * @param {string} id id
          * @param {ExperimentStartDto} experimentStartDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdStartPut(id: string, experimentStartDto: ExperimentStartDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdStartPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdStartPut(id, experimentStartDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdStartPut(id: string, experimentStartDto: ExperimentStartDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdStartPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdStartPut(id, experimentStartDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdStartPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3861,26 +4298,54 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @summary Start Experiment
          * @param {string} id id
          * @param {ExperimentStartDto} experimentStartDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdStartPut_18(id: string, experimentStartDto: ExperimentStartDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdStartPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdStartPut_18(id, experimentStartDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdStartPut_21(id: string, experimentStartDto: ExperimentStartDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdStartPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdStartPut_21(id, experimentStartDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdStartPut_18']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdStartPut_21']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Experiment Summary Charts (Beta)
+         * @param {string} id id
+         * @param {string} [control] Optional override control group ID
+         * @param {string} [test] Optional override test group ID. Use \&quot;*\&quot; to query against all test groups.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdSummaryChartsGet(id: string, control?: string, test?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdSummaryChartsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdSummaryChartsGet(id, control, test, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdSummaryChartsGet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Experiment Summary Charts (Beta)
+         * @param {string} id id
+         * @param {string} [control] Optional override control group ID
+         * @param {string} [test] Optional override test group ID. Use \&quot;*\&quot; to query against all test groups.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1ExperimentsIdSummaryChartsGet_22(id: string, control?: string, test?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdSummaryChartsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdSummaryChartsGet_22(id, control, test, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdSummaryChartsGet_22']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
          * @summary Unarchive Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdUnarchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdUnarchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdUnarchivePut(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdUnarchivePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdUnarchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdUnarchivePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdUnarchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3889,14 +4354,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Unarchive Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdUnarchivePut_19(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdUnarchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdUnarchivePut_19(id, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdUnarchivePut_23(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdUnarchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdUnarchivePut_23(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdUnarchivePut_19']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdUnarchivePut_23']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3905,12 +4369,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsidversionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdVersionsGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1ExperimentsIdVersionsGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1experimentsidversionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsIdVersionsGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsIdVersionsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3919,12 +4382,11 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Experiment
          * @param {ExperimentCreateDto} experimentCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsPost(experimentCreateDto: ExperimentCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsPost(experimentCreateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsPost(experimentCreateDto: ExperimentCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsPost(experimentCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -3933,14 +4395,13 @@ export const ExperimentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Experiment
          * @param {ExperimentCreateDto} experimentCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ExperimentsPost_20(experimentCreateDto: ExperimentCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsPost_20(experimentCreateDto, xRespectReviewSettings, options);
+        async consoleV1ExperimentsPost_24(experimentCreateDto: ExperimentCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ExperimentsPost_24(experimentCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsPost_20']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExperimentsApi.consoleV1ExperimentsPost_24']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -3960,7 +4421,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourceNameDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNameDelete200Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters.name, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -3970,7 +4431,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourceNamePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters.name, requestParameters.assignmentSourcePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters.name, requestParameters.assignmentSourcePartialUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -3980,7 +4441,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsAssignmentSourceNamePost(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourceNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourceNamePost200Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourceNamePost(requestParameters.name, requestParameters.assignmentSourceQueryUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsAssignmentSourceNamePost(requestParameters.name, requestParameters.assignmentSourceQueryUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -3990,7 +4451,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsAssignmentSourcesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourcesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsassignmentsourcesResponse> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourcesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsAssignmentSourcesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4000,7 +4461,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsAssignmentSourcesPost(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourcesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsAssignmentSourcesPost201Response> {
-            return localVarFp.consoleV1ExperimentsAssignmentSourcesPost(requestParameters.assignmentSourceCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsAssignmentSourcesPost(requestParameters.assignmentSourceCreationDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4010,7 +4471,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsEntityPropertiesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertiesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsentitypropertiesResponse> {
-            return localVarFp.consoleV1ExperimentsEntityPropertiesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsEntityPropertiesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4020,7 +4481,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsEntityPropertiesPost(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertiesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertiesPost201Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertiesPost(requestParameters.entityPropertySourceCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsEntityPropertiesPost(requestParameters.entityPropertySourceCreationDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4030,7 +4491,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsEntityPropertyNameDelete(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertyNameDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameDelete200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertyNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsEntityPropertyNameDelete(requestParameters.name, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4040,7 +4501,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsEntityPropertyNameGet(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertyNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNameGet200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertyNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsEntityPropertyNameGet(requestParameters.name, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4050,7 +4511,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsEntityPropertyNamePatch(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertyNamePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePatch200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertyNamePatch(requestParameters.name, requestParameters.entityPropertySourcePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsEntityPropertyNamePatch(requestParameters.name, requestParameters.entityPropertySourcePartialUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4060,7 +4521,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsEntityPropertyNamePost(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertyNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsEntityPropertyNamePost200Response> {
-            return localVarFp.consoleV1ExperimentsEntityPropertyNamePost(requestParameters.name, requestParameters.entityPropertySourceQueryUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsEntityPropertyNamePost(requestParameters.name, requestParameters.entityPropertySourceQueryUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4070,7 +4531,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsResponse> {
-            return localVarFp.consoleV1ExperimentsGet(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsGet(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.stale, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4080,7 +4541,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsGet_1(requestParameters: ExperimentsApiConsoleV1ExperimentsGet0Request = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsResponse> {
-            return localVarFp.consoleV1ExperimentsGet_1(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsGet_1(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.stale, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4090,7 +4551,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdAbandonPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAbandonPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAbandonPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdAbandonPut(requestParameters.id, requestParameters.experimentAbandonDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdAbandonPut(requestParameters.id, requestParameters.experimentAbandonDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4100,7 +4561,27 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdAbandonPut_2(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAbandonPut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAbandonPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdAbandonPut_2(requestParameters.id, requestParameters.experimentAbandonDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdAbandonPut_2(requestParameters.id, requestParameters.experimentAbandonDto, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get Experiment Guardrail Alert Statuses
+         * @param {ExperimentsApiConsoleV1ExperimentsIdAlertsGetRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdAlertsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdAlertsGet(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get Experiment Guardrail Alert Statuses
+         * @param {ExperimentsApiConsoleV1ExperimentsIdAlertsGet0Request} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdAlertsGet_3(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdAlertsGet_3(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4110,7 +4591,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdAlertsMetricIdResolvePost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
-            return localVarFp.consoleV1ExperimentsIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4119,8 +4600,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdAlertsMetricIdResolvePost_3(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
-            return localVarFp.consoleV1ExperimentsIdAlertsMetricIdResolvePost_3(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdAlertsMetricIdResolvePost_4(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
+            return localVarFp.consoleV1ExperimentsIdAlertsMetricIdResolvePost_4(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4130,7 +4611,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdArchivePut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdArchivePut200Response> {
-            return localVarFp.consoleV1ExperimentsIdArchivePut(requestParameters.id, requestParameters.experimentArchiveDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdArchivePut(requestParameters.id, requestParameters.experimentArchiveDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4139,8 +4620,28 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdArchivePut_4(requestParameters: ExperimentsApiConsoleV1ExperimentsIdArchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdArchivePut200Response> {
-            return localVarFp.consoleV1ExperimentsIdArchivePut_4(requestParameters.id, requestParameters.experimentArchiveDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdArchivePut_5(requestParameters: ExperimentsApiConsoleV1ExperimentsIdArchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdArchivePut200Response> {
+            return localVarFp.consoleV1ExperimentsIdArchivePut_5(requestParameters.id, requestParameters.experimentArchiveDto, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Start Experiment Code Cleanup
+         * @param {ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPostRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdCodeCleanupPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdCodeCleanupPost200Response> {
+            return localVarFp.consoleV1ExperimentsIdCodeCleanupPost(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Start Experiment Code Cleanup
+         * @param {ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPost0Request} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdCodeCleanupPost_6(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdCodeCleanupPost200Response> {
+            return localVarFp.consoleV1ExperimentsIdCodeCleanupPost_6(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4150,7 +4651,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdContextGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdContextGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdContextGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdContextGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdContextGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4159,8 +4660,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdContextGet_5(requestParameters: ExperimentsApiConsoleV1ExperimentsIdContextGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdContextGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdContextGet_5(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdContextGet_7(requestParameters: ExperimentsApiConsoleV1ExperimentsIdContextGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdContextGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdContextGet_7(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4170,7 +4671,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdCumulativeExposuresGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCumulativeExposuresGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdCumulativeExposuresGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdCumulativeExposuresGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdCumulativeExposuresGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4179,8 +4680,18 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdCumulativeExposuresGet_6(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCumulativeExposuresGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdCumulativeExposuresGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdCumulativeExposuresGet_6(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdCumulativeExposuresGet_8(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCumulativeExposuresGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdCumulativeExposuresGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdCumulativeExposuresGet_8(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Conclude Experiment & Defer Decision
+         * @param {ExperimentsApiConsoleV1ExperimentsIdDeferDecisionPutRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdDeferDecisionPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDeferDecisionPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDeferDecisionPut200Response> {
+            return localVarFp.consoleV1ExperimentsIdDeferDecisionPut(requestParameters.id, requestParameters.experimentDeferDecisionDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4190,7 +4701,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdDelete(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDelete200Response> {
-            return localVarFp.consoleV1ExperimentsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4199,8 +4710,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdDelete_7(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDelete0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDelete200Response> {
-            return localVarFp.consoleV1ExperimentsIdDelete_7(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdDelete_9(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDelete0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDelete200Response> {
+            return localVarFp.consoleV1ExperimentsIdDelete_9(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4210,7 +4721,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdDisableGroupsPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response> {
-            return localVarFp.consoleV1ExperimentsIdDisableGroupsPost(requestParameters.id, requestParameters.enableDisableGroupsDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdDisableGroupsPost(requestParameters.id, requestParameters.enableDisableGroupsDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4219,8 +4730,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdDisableGroupsPost_8(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response> {
-            return localVarFp.consoleV1ExperimentsIdDisableGroupsPost_8(requestParameters.id, requestParameters.enableDisableGroupsDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdDisableGroupsPost_10(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response> {
+            return localVarFp.consoleV1ExperimentsIdDisableGroupsPost_10(requestParameters.id, requestParameters.enableDisableGroupsDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4230,7 +4741,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdEnableGroupsPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response> {
-            return localVarFp.consoleV1ExperimentsIdEnableGroupsPost(requestParameters.id, requestParameters.enableDisableGroupsDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdEnableGroupsPost(requestParameters.id, requestParameters.enableDisableGroupsDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4239,8 +4750,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdEnableGroupsPost_9(requestParameters: ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response> {
-            return localVarFp.consoleV1ExperimentsIdEnableGroupsPost_9(requestParameters.id, requestParameters.enableDisableGroupsDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdEnableGroupsPost_11(requestParameters: ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdDisableGroupsPost201Response> {
+            return localVarFp.consoleV1ExperimentsIdEnableGroupsPost_11(requestParameters.id, requestParameters.enableDisableGroupsDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4250,7 +4761,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4259,8 +4770,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdGet_10(requestParameters: ExperimentsApiConsoleV1ExperimentsIdGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdGet_10(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdGet_12(requestParameters: ExperimentsApiConsoleV1ExperimentsIdGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdGet_12(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4270,7 +4781,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdLoadPulsePost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdLoadPulsePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdLoadPulsePost200Response> {
-            return localVarFp.consoleV1ExperimentsIdLoadPulsePost(requestParameters.id, requestParameters.echidnaLoadPulseQueryDto, requestParameters.refresh, requestParameters.metricIDs, requestParameters.ruleId, requestParameters.turboMode, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdLoadPulsePost(requestParameters.id, requestParameters.echidnaLoadPulseQueryDto, requestParameters.refresh, requestParameters.metricIDs, requestParameters.turboMode, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4280,7 +4791,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdMakeDecisionPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdMakeDecisionPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4289,8 +4800,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdMakeDecisionPut_11(requestParameters: ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdMakeDecisionPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdMakeDecisionPut_11(requestParameters.id, requestParameters.experimentStatusUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdMakeDecisionPut_13(requestParameters: ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdMakeDecisionPut200Response> {
+            return localVarFp.consoleV1ExperimentsIdMakeDecisionPut_13(requestParameters.id, requestParameters.experimentStatusUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4300,7 +4811,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdOverridesDelete(requestParameters: ExperimentsApiConsoleV1ExperimentsIdOverridesDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdOverridesDelete200Response> {
-            return localVarFp.consoleV1ExperimentsIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdOverridesDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4310,7 +4821,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdOverridesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdOverridesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdOverridesGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdOverridesGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4320,7 +4831,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdOverridesPatch(requestParameters: ExperimentsApiConsoleV1ExperimentsIdOverridesPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdOverridesPatch200Response> {
-            return localVarFp.consoleV1ExperimentsIdOverridesPatch(requestParameters.id, requestParameters.experimentOverridesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdOverridesPatch(requestParameters.id, requestParameters.experimentOverridesDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4330,7 +4841,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdOverridesPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdOverridesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdOverridesPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdOverridesPost(requestParameters.id, requestParameters.experimentOverridesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdOverridesPost(requestParameters.id, requestParameters.experimentOverridesDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4340,7 +4851,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdPatch(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdPatch(requestParameters.id, requestParameters.experimentPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdPatch(requestParameters.id, requestParameters.experimentPartialUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4349,8 +4860,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPatch_12(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPatch0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdPatch_12(requestParameters.id, requestParameters.experimentPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdPatch_14(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPatch0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPost200Response> {
+            return localVarFp.consoleV1ExperimentsIdPatch_14(requestParameters.id, requestParameters.experimentPartialUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4360,7 +4871,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdPost(requestParameters.id, requestParameters.experimentFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdPost(requestParameters.id, requestParameters.experimentFullUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4369,8 +4880,28 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPost_13(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdPost_13(requestParameters.id, requestParameters.experimentFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdPost_15(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPost200Response> {
+            return localVarFp.consoleV1ExperimentsIdPost_15(requestParameters.id, requestParameters.experimentFullUpdateDto, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Cancel Pulse Load (Warehouse Native)
+         * @param {ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPostRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost200Response> {
+            return localVarFp.consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost(requestParameters.dagID, requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get Pulse Load History Details (Warehouse Native)
+         * @param {ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDGetRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdPulseLoadHistoryDagIDGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseLoadHistoryDagIDGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdPulseLoadHistoryDagIDGet(requestParameters.dagID, requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4380,7 +4911,27 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsidpulseloadhistoryResponse> {
-            return localVarFp.consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Pulse Metric Result
+         * @param {ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGetRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdPulseMetricResultGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseMetricResultGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdPulseMetricResultGet(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.metricID, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Pulse Metric Result
+         * @param {ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGet0Request} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdPulseMetricResultGet_16(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseMetricResultGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdPulseMetricResultGet_16(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.metricID, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4390,7 +4941,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdPulseResultsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseResultsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseResultsGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdPulseResultsGet(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdPulseResultsGet(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4399,8 +4950,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdPulseResultsGet_14(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseResultsGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseResultsGet200Response> {
-            return localVarFp.consoleV1ExperimentsIdPulseResultsGet_14(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdPulseResultsGet_17(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseResultsGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdPulseResultsGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdPulseResultsGet_17(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4410,7 +4961,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdResetPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdResetPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdResetPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdResetPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdResetPut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4419,8 +4970,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdResetPut_15(requestParameters: ExperimentsApiConsoleV1ExperimentsIdResetPut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdResetPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdResetPut_15(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdResetPut_18(requestParameters: ExperimentsApiConsoleV1ExperimentsIdResetPut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdResetPut200Response> {
+            return localVarFp.consoleV1ExperimentsIdResetPut_18(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4430,7 +4981,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdRestartAsNewPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdRestartAsNewPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdRestartAsNewPost(requestParameters.id, requestParameters.experimentNameContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdRestartAsNewPost(requestParameters.id, requestParameters.experimentNameContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4439,8 +4990,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdRestartAsNewPost_16(requestParameters: ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdRestartAsNewPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdRestartAsNewPost_16(requestParameters.id, requestParameters.experimentNameContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdRestartAsNewPost_19(requestParameters: ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdRestartAsNewPost200Response> {
+            return localVarFp.consoleV1ExperimentsIdRestartAsNewPost_19(requestParameters.id, requestParameters.experimentNameContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4450,7 +5001,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdReviewsReviewIDCommitPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdReviewsReviewIDCommitPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4460,7 +5011,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdScheduleStartPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdScheduleStartPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdScheduleStartPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdScheduleStartPost(requestParameters.id, requestParameters.scheduleExperimentStartParamDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdScheduleStartPost(requestParameters.id, requestParameters.scheduleExperimentStartParamDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4469,8 +5020,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdScheduleStartPost_17(requestParameters: ExperimentsApiConsoleV1ExperimentsIdScheduleStartPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdScheduleStartPost200Response> {
-            return localVarFp.consoleV1ExperimentsIdScheduleStartPost_17(requestParameters.id, requestParameters.scheduleExperimentStartParamDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdScheduleStartPost_20(requestParameters: ExperimentsApiConsoleV1ExperimentsIdScheduleStartPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdScheduleStartPost200Response> {
+            return localVarFp.consoleV1ExperimentsIdScheduleStartPost_20(requestParameters.id, requestParameters.scheduleExperimentStartParamDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4480,7 +5031,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdStartPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdStartPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdStartPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdStartPut(requestParameters.id, requestParameters.experimentStartDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdStartPut(requestParameters.id, requestParameters.experimentStartDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4489,8 +5040,28 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdStartPut_18(requestParameters: ExperimentsApiConsoleV1ExperimentsIdStartPut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdStartPut200Response> {
-            return localVarFp.consoleV1ExperimentsIdStartPut_18(requestParameters.id, requestParameters.experimentStartDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdStartPut_21(requestParameters: ExperimentsApiConsoleV1ExperimentsIdStartPut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdStartPut200Response> {
+            return localVarFp.consoleV1ExperimentsIdStartPut_21(requestParameters.id, requestParameters.experimentStartDto, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Experiment Summary Charts (Beta)
+         * @param {ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGetRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdSummaryChartsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdSummaryChartsGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdSummaryChartsGet(requestParameters.id, requestParameters.control, requestParameters.test, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Experiment Summary Charts (Beta)
+         * @param {ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGet0Request} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1ExperimentsIdSummaryChartsGet_22(requestParameters: ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdSummaryChartsGet200Response> {
+            return localVarFp.consoleV1ExperimentsIdSummaryChartsGet_22(requestParameters.id, requestParameters.control, requestParameters.test, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4500,7 +5071,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdUnarchivePut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdUnarchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdUnarchivePut200Response> {
-            return localVarFp.consoleV1ExperimentsIdUnarchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdUnarchivePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4509,8 +5080,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsIdUnarchivePut_19(requestParameters: ExperimentsApiConsoleV1ExperimentsIdUnarchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdUnarchivePut200Response> {
-            return localVarFp.consoleV1ExperimentsIdUnarchivePut_19(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsIdUnarchivePut_23(requestParameters: ExperimentsApiConsoleV1ExperimentsIdUnarchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdUnarchivePut200Response> {
+            return localVarFp.consoleV1ExperimentsIdUnarchivePut_23(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4520,7 +5091,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsIdVersionsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1experimentsidversionsResponse> {
-            return localVarFp.consoleV1ExperimentsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4530,7 +5101,7 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1ExperimentsPost(requestParameters: ExperimentsApiConsoleV1ExperimentsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsPost201Response> {
-            return localVarFp.consoleV1ExperimentsPost(requestParameters.experimentCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ExperimentsPost(requestParameters.experimentCreateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4539,8 +5110,8 @@ export const ExperimentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ExperimentsPost_20(requestParameters: ExperimentsApiConsoleV1ExperimentsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsPost201Response> {
-            return localVarFp.consoleV1ExperimentsPost_20(requestParameters.experimentCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ExperimentsPost_24(requestParameters: ExperimentsApiConsoleV1ExperimentsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsPost201Response> {
+            return localVarFp.consoleV1ExperimentsPost_24(requestParameters.experimentCreateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -4553,11 +5124,6 @@ export interface ExperimentsApiConsoleV1ExperimentsAssignmentSourceNameDeleteReq
      * Name of the assignment source
      */
     readonly name: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4570,11 +5136,6 @@ export interface ExperimentsApiConsoleV1ExperimentsAssignmentSourceNamePatchRequ
     readonly name: string
 
     readonly assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4587,11 +5148,6 @@ export interface ExperimentsApiConsoleV1ExperimentsAssignmentSourceNamePostReque
     readonly name: string
 
     readonly assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4607,11 +5163,6 @@ export interface ExperimentsApiConsoleV1ExperimentsAssignmentSourcesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4619,11 +5170,6 @@ export interface ExperimentsApiConsoleV1ExperimentsAssignmentSourcesGetRequest {
  */
 export interface ExperimentsApiConsoleV1ExperimentsAssignmentSourcesPostRequest {
     readonly assignmentSourceCreationDto: AssignmentSourceCreationDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4639,11 +5185,6 @@ export interface ExperimentsApiConsoleV1ExperimentsEntityPropertiesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4651,11 +5192,6 @@ export interface ExperimentsApiConsoleV1ExperimentsEntityPropertiesGetRequest {
  */
 export interface ExperimentsApiConsoleV1ExperimentsEntityPropertiesPostRequest {
     readonly entityPropertySourceCreationDto: EntityPropertySourceCreationDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4666,11 +5202,6 @@ export interface ExperimentsApiConsoleV1ExperimentsEntityPropertyNameDeleteReque
      * name
      */
     readonly name: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4681,11 +5212,6 @@ export interface ExperimentsApiConsoleV1ExperimentsEntityPropertyNameGetRequest 
      * Name of entity property source
      */
     readonly name: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4698,11 +5224,6 @@ export interface ExperimentsApiConsoleV1ExperimentsEntityPropertyNamePatchReques
     readonly name: string
 
     readonly entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4715,11 +5236,6 @@ export interface ExperimentsApiConsoleV1ExperimentsEntityPropertyNamePostRequest
     readonly name: string
 
     readonly entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4749,6 +5265,11 @@ export interface ExperimentsApiConsoleV1ExperimentsGetRequest {
     readonly targetAppID?: string
 
     /**
+     * When true, only returns stale experiments. If omitted or false, returns all experiments.
+     */
+    readonly stale?: boolean
+
+    /**
      * Expected valid date in the form of YYYY-MM-DD
      */
     readonly createdStartDate?: string
@@ -4787,11 +5308,6 @@ export interface ExperimentsApiConsoleV1ExperimentsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4821,6 +5337,11 @@ export interface ExperimentsApiConsoleV1ExperimentsGet0Request {
     readonly targetAppID?: string
 
     /**
+     * When true, only returns stale experiments. If omitted or false, returns all experiments.
+     */
+    readonly stale?: boolean
+
+    /**
      * Expected valid date in the form of YYYY-MM-DD
      */
     readonly createdStartDate?: string
@@ -4859,11 +5380,6 @@ export interface ExperimentsApiConsoleV1ExperimentsGet0Request {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4876,11 +5392,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdAbandonPutRequest {
     readonly id: string
 
     readonly experimentAbandonDto: ExperimentAbandonDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4893,11 +5404,26 @@ export interface ExperimentsApiConsoleV1ExperimentsIdAbandonPut0Request {
     readonly id: string
 
     readonly experimentAbandonDto: ExperimentAbandonDto
+}
 
+/**
+ * Request parameters for consoleV1ExperimentsIdAlertsGet operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdAlertsGetRequest {
     /**
-     * Optional header to respect review settings for mutation endpoints.
+     * id
      */
-    readonly xRespectReviewSettings?: string
+    readonly id: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdAlertsGet_3 operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdAlertsGet0Request {
+    /**
+     * id
+     */
+    readonly id: string
 }
 
 /**
@@ -4915,15 +5441,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePostRe
     readonly metricId: string
 
     readonly resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdAlertsMetricIdResolvePost_3 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdAlertsMetricIdResolvePost_4 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePost0Request {
     /**
@@ -4937,11 +5458,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePost0R
     readonly metricId: string
 
     readonly resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -4954,15 +5470,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdArchivePutRequest {
     readonly id: string
 
     readonly experimentArchiveDto: ExperimentArchiveDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdArchivePut_4 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdArchivePut_5 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdArchivePut0Request {
     /**
@@ -4971,11 +5482,26 @@ export interface ExperimentsApiConsoleV1ExperimentsIdArchivePut0Request {
     readonly id: string
 
     readonly experimentArchiveDto: ExperimentArchiveDto
+}
 
+/**
+ * Request parameters for consoleV1ExperimentsIdCodeCleanupPost operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPostRequest {
     /**
-     * Optional header to respect review settings for mutation endpoints.
+     * id
      */
-    readonly xRespectReviewSettings?: string
+    readonly id: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdCodeCleanupPost_6 operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPost0Request {
+    /**
+     * id
+     */
+    readonly id: string
 }
 
 /**
@@ -4986,26 +5512,16 @@ export interface ExperimentsApiConsoleV1ExperimentsIdContextGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdContextGet_5 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdContextGet_7 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdContextGet0Request {
     /**
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5016,26 +5532,28 @@ export interface ExperimentsApiConsoleV1ExperimentsIdCumulativeExposuresGetReque
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdCumulativeExposuresGet_6 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdCumulativeExposuresGet_8 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdCumulativeExposuresGet0Request {
     /**
      * id
      */
     readonly id: string
+}
 
+/**
+ * Request parameters for consoleV1ExperimentsIdDeferDecisionPut operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdDeferDecisionPutRequest {
     /**
-     * Optional header to respect review settings for mutation endpoints.
+     * id
      */
-    readonly xRespectReviewSettings?: string
+    readonly id: string
+
+    readonly experimentDeferDecisionDto: ExperimentDeferDecisionDto
 }
 
 /**
@@ -5046,26 +5564,16 @@ export interface ExperimentsApiConsoleV1ExperimentsIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdDelete_7 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdDelete_9 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdDelete0Request {
     /**
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5078,15 +5586,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPostRequest {
     readonly id: string
 
     readonly enableDisableGroupsDto: EnableDisableGroupsDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdDisableGroupsPost_8 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdDisableGroupsPost_10 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPost0Request {
     /**
@@ -5095,11 +5598,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPost0Request {
     readonly id: string
 
     readonly enableDisableGroupsDto: EnableDisableGroupsDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5112,15 +5610,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPostRequest {
     readonly id: string
 
     readonly enableDisableGroupsDto: EnableDisableGroupsDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdEnableGroupsPost_9 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdEnableGroupsPost_11 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPost0Request {
     /**
@@ -5129,11 +5622,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPost0Request {
     readonly id: string
 
     readonly enableDisableGroupsDto: EnableDisableGroupsDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5144,26 +5632,16 @@ export interface ExperimentsApiConsoleV1ExperimentsIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdGet_10 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdGet_12 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdGet0Request {
     /**
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5181,14 +5659,7 @@ export interface ExperimentsApiConsoleV1ExperimentsIdLoadPulsePostRequest {
 
     readonly metricIDs?: Array<string>
 
-    readonly ruleId?: string
-
     readonly turboMode?: boolean
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5201,15 +5672,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPutRequest {
     readonly id: string
 
     readonly experimentStatusUpdateDto: ExperimentStatusUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdMakeDecisionPut_11 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdMakeDecisionPut_13 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPut0Request {
     /**
@@ -5218,11 +5684,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPut0Request {
     readonly id: string
 
     readonly experimentStatusUpdateDto: ExperimentStatusUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5233,11 +5694,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdOverridesDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5248,11 +5704,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdOverridesGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5265,11 +5716,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdOverridesPatchRequest {
     readonly id: string
 
     readonly experimentOverridesDto: ExperimentOverridesDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5282,11 +5728,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdOverridesPostRequest {
     readonly id: string
 
     readonly experimentOverridesDto: ExperimentOverridesDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5299,15 +5740,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdPatchRequest {
     readonly id: string
 
     readonly experimentPartialUpdateDto: ExperimentPartialUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdPatch_12 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdPatch_14 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdPatch0Request {
     /**
@@ -5316,11 +5752,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdPatch0Request {
     readonly id: string
 
     readonly experimentPartialUpdateDto: ExperimentPartialUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5333,15 +5764,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdPostRequest {
     readonly id: string
 
     readonly experimentFullUpdateDto: ExperimentFullUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdPost_13 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdPost_15 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdPost0Request {
     /**
@@ -5350,11 +5776,36 @@ export interface ExperimentsApiConsoleV1ExperimentsIdPost0Request {
     readonly id: string
 
     readonly experimentFullUpdateDto: ExperimentFullUpdateDto
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPostRequest {
+    /**
+     * dagID
+     */
+    readonly dagID: string
 
     /**
-     * Optional header to respect review settings for mutation endpoints.
+     * id
      */
-    readonly xRespectReviewSettings?: string
+    readonly id: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdPulseLoadHistoryDagIDGet operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDGetRequest {
+    /**
+     * dagID
+     */
+    readonly dagID: string
+
+    /**
+     * id
+     */
+    readonly id: string
 }
 
 /**
@@ -5375,11 +5826,136 @@ export interface ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest 
      * Page number
      */
     readonly page?: number
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdPulseMetricResultGet operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
 
     /**
-     * Optional header to respect review settings for mutation endpoints.
+     * Control Group ID
      */
-    readonly xRespectReviewSettings?: string
+    readonly control: string
+
+    /**
+     * Test Group ID
+     */
+    readonly test: string
+
+    /**
+     * Metric ID in format &lt;metric_name&gt;::&lt;metric_type&gt;
+     */
+    readonly metricID: string
+
+    /**
+     * Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly cuped?: string
+
+    /**
+     * Confidence interval (0-100)
+     */
+    readonly confidence?: string
+
+    /**
+     * Whether to apply Bonferroni Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly applyBonferroniPerVariant?: string
+
+    /**
+     * Whether to apply Bonferroni Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly applyBonferroniPerMetric?: string
+
+    /**
+     * α allocated to primary metrics
+     */
+    readonly bonferroniPrimaryMetricWeight?: string
+
+    /**
+     * Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly applyBenjaminiHochbergPerMetric?: string
+
+    /**
+     * Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly applyBenjaminiHochbergPerVariant?: string
+
+    /**
+     * Date for pulse results. format must be YYYY-MM-DD
+     */
+    readonly date?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdPulseMetricResultGet_16 operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGet0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Control Group ID
+     */
+    readonly control: string
+
+    /**
+     * Test Group ID
+     */
+    readonly test: string
+
+    /**
+     * Metric ID in format &lt;metric_name&gt;::&lt;metric_type&gt;
+     */
+    readonly metricID: string
+
+    /**
+     * Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly cuped?: string
+
+    /**
+     * Confidence interval (0-100)
+     */
+    readonly confidence?: string
+
+    /**
+     * Whether to apply Bonferroni Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly applyBonferroniPerVariant?: string
+
+    /**
+     * Whether to apply Bonferroni Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly applyBonferroniPerMetric?: string
+
+    /**
+     * α allocated to primary metrics
+     */
+    readonly bonferroniPrimaryMetricWeight?: string
+
+    /**
+     * Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly applyBenjaminiHochbergPerMetric?: string
+
+    /**
+     * Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
+     */
+    readonly applyBenjaminiHochbergPerVariant?: string
+
+    /**
+     * Date for pulse results. format must be YYYY-MM-DD
+     */
+    readonly date?: string
 }
 
 /**
@@ -5440,15 +6016,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdPulseResultsGetRequest {
      * Date for pulse results. format must be YYYY-MM-DD
      */
     readonly date?: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdPulseResultsGet_14 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdPulseResultsGet_17 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdPulseResultsGet0Request {
     /**
@@ -5505,11 +6076,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdPulseResultsGet0Request {
      * Date for pulse results. format must be YYYY-MM-DD
      */
     readonly date?: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5520,26 +6086,16 @@ export interface ExperimentsApiConsoleV1ExperimentsIdResetPutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdResetPut_15 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdResetPut_18 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdResetPut0Request {
     /**
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5552,15 +6108,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPostRequest {
     readonly id: string
 
     readonly experimentNameContractDto: ExperimentNameContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdRestartAsNewPost_16 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdRestartAsNewPost_19 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPost0Request {
     /**
@@ -5569,11 +6120,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPost0Request {
     readonly id: string
 
     readonly experimentNameContractDto: ExperimentNameContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5583,11 +6129,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdReviewsReviewIDCommitPutReq
     readonly id: string
 
     readonly reviewID: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5600,15 +6141,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdScheduleStartPostRequest {
     readonly id: string
 
     readonly scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdScheduleStartPost_17 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdScheduleStartPost_20 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdScheduleStartPost0Request {
     /**
@@ -5617,11 +6153,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdScheduleStartPost0Request {
     readonly id: string
 
     readonly scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5634,15 +6165,10 @@ export interface ExperimentsApiConsoleV1ExperimentsIdStartPutRequest {
     readonly id: string
 
     readonly experimentStartDto: ExperimentStartDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdStartPut_18 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdStartPut_21 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdStartPut0Request {
     /**
@@ -5651,11 +6177,46 @@ export interface ExperimentsApiConsoleV1ExperimentsIdStartPut0Request {
     readonly id: string
 
     readonly experimentStartDto: ExperimentStartDto
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdSummaryChartsGet operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGetRequest {
+    /**
+     * id
+     */
+    readonly id: string
 
     /**
-     * Optional header to respect review settings for mutation endpoints.
+     * Optional override control group ID
      */
-    readonly xRespectReviewSettings?: string
+    readonly control?: string
+
+    /**
+     * Optional override test group ID. Use \&quot;*\&quot; to query against all test groups.
+     */
+    readonly test?: string
+}
+
+/**
+ * Request parameters for consoleV1ExperimentsIdSummaryChartsGet_22 operation in ExperimentsApi.
+ */
+export interface ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGet0Request {
+    /**
+     * id
+     */
+    readonly id: string
+
+    /**
+     * Optional override control group ID
+     */
+    readonly control?: string
+
+    /**
+     * Optional override test group ID. Use \&quot;*\&quot; to query against all test groups.
+     */
+    readonly test?: string
 }
 
 /**
@@ -5666,26 +6227,16 @@ export interface ExperimentsApiConsoleV1ExperimentsIdUnarchivePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsIdUnarchivePut_19 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsIdUnarchivePut_23 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsIdUnarchivePut0Request {
     /**
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5706,11 +6257,6 @@ export interface ExperimentsApiConsoleV1ExperimentsIdVersionsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5718,23 +6264,13 @@ export interface ExperimentsApiConsoleV1ExperimentsIdVersionsGetRequest {
  */
 export interface ExperimentsApiConsoleV1ExperimentsPostRequest {
     readonly experimentCreateDto: ExperimentCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
- * Request parameters for consoleV1ExperimentsPost_20 operation in ExperimentsApi.
+ * Request parameters for consoleV1ExperimentsPost_24 operation in ExperimentsApi.
  */
 export interface ExperimentsApiConsoleV1ExperimentsPost0Request {
     readonly experimentCreateDto: ExperimentCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -5749,7 +6285,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourceNameDeleteRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNameDelete(requestParameters.name, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5760,7 +6296,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourceNamePatchRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters.name, requestParameters.assignmentSourcePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNamePatch(requestParameters.name, requestParameters.assignmentSourcePartialUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5771,7 +6307,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsAssignmentSourceNamePost(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourceNamePostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNamePost(requestParameters.name, requestParameters.assignmentSourceQueryUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourceNamePost(requestParameters.name, requestParameters.assignmentSourceQueryUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5782,7 +6318,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsAssignmentSourcesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourcesGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourcesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourcesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5793,7 +6329,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsAssignmentSourcesPost(requestParameters: ExperimentsApiConsoleV1ExperimentsAssignmentSourcesPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourcesPost(requestParameters.assignmentSourceCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsAssignmentSourcesPost(requestParameters.assignmentSourceCreationDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5804,7 +6340,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsEntityPropertiesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertiesGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertiesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertiesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5815,7 +6351,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsEntityPropertiesPost(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertiesPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertiesPost(requestParameters.entityPropertySourceCreationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertiesPost(requestParameters.entityPropertySourceCreationDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5826,7 +6362,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsEntityPropertyNameDelete(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertyNameDeleteRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNameDelete(requestParameters.name, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5837,7 +6373,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsEntityPropertyNameGet(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertyNameGetRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNameGet(requestParameters.name, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5848,7 +6384,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsEntityPropertyNamePatch(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertyNamePatchRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNamePatch(requestParameters.name, requestParameters.entityPropertySourcePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNamePatch(requestParameters.name, requestParameters.entityPropertySourcePartialUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5859,7 +6395,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsEntityPropertyNamePost(requestParameters: ExperimentsApiConsoleV1ExperimentsEntityPropertyNamePostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNamePost(requestParameters.name, requestParameters.entityPropertySourceQueryUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsEntityPropertyNamePost(requestParameters.name, requestParameters.entityPropertySourceQueryUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5870,7 +6406,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsGet(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsGet(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.stale, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5881,7 +6417,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsGet_1(requestParameters: ExperimentsApiConsoleV1ExperimentsGet0Request = {}, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsGet_1(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsGet_1(requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.stale, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5892,7 +6428,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdAbandonPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAbandonPutRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAbandonPut(requestParameters.id, requestParameters.experimentAbandonDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAbandonPut(requestParameters.id, requestParameters.experimentAbandonDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5903,7 +6439,29 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdAbandonPut_2(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAbandonPut0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAbandonPut_2(requestParameters.id, requestParameters.experimentAbandonDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAbandonPut_2(requestParameters.id, requestParameters.experimentAbandonDto, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get Experiment Guardrail Alert Statuses
+     * @param {ExperimentsApiConsoleV1ExperimentsIdAlertsGetRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdAlertsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsGetRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAlertsGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get Experiment Guardrail Alert Statuses
+     * @param {ExperimentsApiConsoleV1ExperimentsIdAlertsGet0Request} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdAlertsGet_3(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsGet0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAlertsGet_3(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5914,7 +6472,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdAlertsMetricIdResolvePost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5924,8 +6482,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdAlertsMetricIdResolvePost_3(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePost0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAlertsMetricIdResolvePost_3(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdAlertsMetricIdResolvePost_4(requestParameters: ExperimentsApiConsoleV1ExperimentsIdAlertsMetricIdResolvePost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdAlertsMetricIdResolvePost_4(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5936,7 +6494,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdArchivePut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdArchivePutRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdArchivePut(requestParameters.id, requestParameters.experimentArchiveDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdArchivePut(requestParameters.id, requestParameters.experimentArchiveDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5946,8 +6504,30 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdArchivePut_4(requestParameters: ExperimentsApiConsoleV1ExperimentsIdArchivePut0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdArchivePut_4(requestParameters.id, requestParameters.experimentArchiveDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdArchivePut_5(requestParameters: ExperimentsApiConsoleV1ExperimentsIdArchivePut0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdArchivePut_5(requestParameters.id, requestParameters.experimentArchiveDto, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Start Experiment Code Cleanup
+     * @param {ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPostRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdCodeCleanupPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdCodeCleanupPost(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Start Experiment Code Cleanup
+     * @param {ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPost0Request} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdCodeCleanupPost_6(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCodeCleanupPost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdCodeCleanupPost_6(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5958,7 +6538,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdContextGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdContextGetRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdContextGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdContextGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5968,8 +6548,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdContextGet_5(requestParameters: ExperimentsApiConsoleV1ExperimentsIdContextGet0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdContextGet_5(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdContextGet_7(requestParameters: ExperimentsApiConsoleV1ExperimentsIdContextGet0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdContextGet_7(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5980,7 +6560,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdCumulativeExposuresGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCumulativeExposuresGetRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdCumulativeExposuresGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdCumulativeExposuresGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5990,8 +6570,19 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdCumulativeExposuresGet_6(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCumulativeExposuresGet0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdCumulativeExposuresGet_6(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdCumulativeExposuresGet_8(requestParameters: ExperimentsApiConsoleV1ExperimentsIdCumulativeExposuresGet0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdCumulativeExposuresGet_8(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Conclude Experiment & Defer Decision
+     * @param {ExperimentsApiConsoleV1ExperimentsIdDeferDecisionPutRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdDeferDecisionPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDeferDecisionPutRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDeferDecisionPut(requestParameters.id, requestParameters.experimentDeferDecisionDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6002,7 +6593,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdDelete(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6012,8 +6603,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdDelete_7(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDelete0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDelete_7(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdDelete_9(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDelete0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDelete_9(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6024,7 +6615,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdDisableGroupsPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDisableGroupsPost(requestParameters.id, requestParameters.enableDisableGroupsDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDisableGroupsPost(requestParameters.id, requestParameters.enableDisableGroupsDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6034,8 +6625,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdDisableGroupsPost_8(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPost0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDisableGroupsPost_8(requestParameters.id, requestParameters.enableDisableGroupsDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdDisableGroupsPost_10(requestParameters: ExperimentsApiConsoleV1ExperimentsIdDisableGroupsPost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdDisableGroupsPost_10(requestParameters.id, requestParameters.enableDisableGroupsDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6046,7 +6637,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdEnableGroupsPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdEnableGroupsPost(requestParameters.id, requestParameters.enableDisableGroupsDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdEnableGroupsPost(requestParameters.id, requestParameters.enableDisableGroupsDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6056,8 +6647,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdEnableGroupsPost_9(requestParameters: ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPost0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdEnableGroupsPost_9(requestParameters.id, requestParameters.enableDisableGroupsDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdEnableGroupsPost_11(requestParameters: ExperimentsApiConsoleV1ExperimentsIdEnableGroupsPost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdEnableGroupsPost_11(requestParameters.id, requestParameters.enableDisableGroupsDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6068,7 +6659,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdGetRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6078,8 +6669,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdGet_10(requestParameters: ExperimentsApiConsoleV1ExperimentsIdGet0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdGet_10(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdGet_12(requestParameters: ExperimentsApiConsoleV1ExperimentsIdGet0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdGet_12(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6090,7 +6681,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdLoadPulsePost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdLoadPulsePostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdLoadPulsePost(requestParameters.id, requestParameters.echidnaLoadPulseQueryDto, requestParameters.refresh, requestParameters.metricIDs, requestParameters.ruleId, requestParameters.turboMode, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdLoadPulsePost(requestParameters.id, requestParameters.echidnaLoadPulseQueryDto, requestParameters.refresh, requestParameters.metricIDs, requestParameters.turboMode, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6101,7 +6692,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdMakeDecisionPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPutRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6111,8 +6702,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdMakeDecisionPut_11(requestParameters: ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPut0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdMakeDecisionPut_11(requestParameters.id, requestParameters.experimentStatusUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdMakeDecisionPut_13(requestParameters: ExperimentsApiConsoleV1ExperimentsIdMakeDecisionPut0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdMakeDecisionPut_13(requestParameters.id, requestParameters.experimentStatusUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6123,7 +6714,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdOverridesDelete(requestParameters: ExperimentsApiConsoleV1ExperimentsIdOverridesDeleteRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdOverridesDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6134,7 +6725,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdOverridesGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdOverridesGetRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdOverridesGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6145,7 +6736,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdOverridesPatch(requestParameters: ExperimentsApiConsoleV1ExperimentsIdOverridesPatchRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdOverridesPatch(requestParameters.id, requestParameters.experimentOverridesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdOverridesPatch(requestParameters.id, requestParameters.experimentOverridesDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6156,7 +6747,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdOverridesPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdOverridesPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdOverridesPost(requestParameters.id, requestParameters.experimentOverridesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdOverridesPost(requestParameters.id, requestParameters.experimentOverridesDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6167,7 +6758,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdPatch(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPatch(requestParameters.id, requestParameters.experimentPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPatch(requestParameters.id, requestParameters.experimentPartialUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6177,8 +6768,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdPatch_12(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPatch0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPatch_12(requestParameters.id, requestParameters.experimentPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdPatch_14(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPatch0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPatch_14(requestParameters.id, requestParameters.experimentPartialUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6189,7 +6780,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPost(requestParameters.id, requestParameters.experimentFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPost(requestParameters.id, requestParameters.experimentFullUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6199,8 +6790,30 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdPost_13(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPost0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPost_13(requestParameters.id, requestParameters.experimentFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdPost_15(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPost_15(requestParameters.id, requestParameters.experimentFullUpdateDto, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Cancel Pulse Load (Warehouse Native)
+     * @param {ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPostRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPostRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost(requestParameters.dagID, requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get Pulse Load History Details (Warehouse Native)
+     * @param {ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDGetRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdPulseLoadHistoryDagIDGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryDagIDGetRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseLoadHistoryDagIDGet(requestParameters.dagID, requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6211,7 +6824,29 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseLoadHistoryGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Pulse Metric Result
+     * @param {ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGetRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdPulseMetricResultGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGetRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseMetricResultGet(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.metricID, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Pulse Metric Result
+     * @param {ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGet0Request} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdPulseMetricResultGet_16(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseMetricResultGet0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseMetricResultGet_16(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.metricID, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6222,7 +6857,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdPulseResultsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseResultsGetRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseResultsGet(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseResultsGet(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6232,8 +6867,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdPulseResultsGet_14(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseResultsGet0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseResultsGet_14(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdPulseResultsGet_17(requestParameters: ExperimentsApiConsoleV1ExperimentsIdPulseResultsGet0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdPulseResultsGet_17(requestParameters.id, requestParameters.control, requestParameters.test, requestParameters.cuped, requestParameters.confidence, requestParameters.applyBonferroniPerVariant, requestParameters.applyBonferroniPerMetric, requestParameters.bonferroniPrimaryMetricWeight, requestParameters.applyBenjaminiHochbergPerMetric, requestParameters.applyBenjaminiHochbergPerVariant, requestParameters.date, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6244,7 +6879,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdResetPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdResetPutRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdResetPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdResetPut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6254,8 +6889,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdResetPut_15(requestParameters: ExperimentsApiConsoleV1ExperimentsIdResetPut0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdResetPut_15(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdResetPut_18(requestParameters: ExperimentsApiConsoleV1ExperimentsIdResetPut0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdResetPut_18(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6266,7 +6901,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdRestartAsNewPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdRestartAsNewPost(requestParameters.id, requestParameters.experimentNameContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdRestartAsNewPost(requestParameters.id, requestParameters.experimentNameContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6276,8 +6911,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdRestartAsNewPost_16(requestParameters: ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPost0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdRestartAsNewPost_16(requestParameters.id, requestParameters.experimentNameContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdRestartAsNewPost_19(requestParameters: ExperimentsApiConsoleV1ExperimentsIdRestartAsNewPost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdRestartAsNewPost_19(requestParameters.id, requestParameters.experimentNameContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6288,7 +6923,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdReviewsReviewIDCommitPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6299,7 +6934,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdScheduleStartPost(requestParameters: ExperimentsApiConsoleV1ExperimentsIdScheduleStartPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdScheduleStartPost(requestParameters.id, requestParameters.scheduleExperimentStartParamDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdScheduleStartPost(requestParameters.id, requestParameters.scheduleExperimentStartParamDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6309,8 +6944,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdScheduleStartPost_17(requestParameters: ExperimentsApiConsoleV1ExperimentsIdScheduleStartPost0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdScheduleStartPost_17(requestParameters.id, requestParameters.scheduleExperimentStartParamDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdScheduleStartPost_20(requestParameters: ExperimentsApiConsoleV1ExperimentsIdScheduleStartPost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdScheduleStartPost_20(requestParameters.id, requestParameters.scheduleExperimentStartParamDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6321,7 +6956,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdStartPut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdStartPutRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdStartPut(requestParameters.id, requestParameters.experimentStartDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdStartPut(requestParameters.id, requestParameters.experimentStartDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6331,8 +6966,30 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdStartPut_18(requestParameters: ExperimentsApiConsoleV1ExperimentsIdStartPut0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdStartPut_18(requestParameters.id, requestParameters.experimentStartDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdStartPut_21(requestParameters: ExperimentsApiConsoleV1ExperimentsIdStartPut0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdStartPut_21(requestParameters.id, requestParameters.experimentStartDto, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Experiment Summary Charts (Beta)
+     * @param {ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGetRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdSummaryChartsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGetRequest, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdSummaryChartsGet(requestParameters.id, requestParameters.control, requestParameters.test, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Experiment Summary Charts (Beta)
+     * @param {ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGet0Request} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1ExperimentsIdSummaryChartsGet_22(requestParameters: ExperimentsApiConsoleV1ExperimentsIdSummaryChartsGet0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdSummaryChartsGet_22(requestParameters.id, requestParameters.control, requestParameters.test, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6343,7 +7000,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdUnarchivePut(requestParameters: ExperimentsApiConsoleV1ExperimentsIdUnarchivePutRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdUnarchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdUnarchivePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6353,8 +7010,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsIdUnarchivePut_19(requestParameters: ExperimentsApiConsoleV1ExperimentsIdUnarchivePut0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdUnarchivePut_19(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsIdUnarchivePut_23(requestParameters: ExperimentsApiConsoleV1ExperimentsIdUnarchivePut0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdUnarchivePut_23(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6365,7 +7022,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsIdVersionsGet(requestParameters: ExperimentsApiConsoleV1ExperimentsIdVersionsGetRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6376,7 +7033,7 @@ export class ExperimentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ExperimentsPost(requestParameters: ExperimentsApiConsoleV1ExperimentsPostRequest, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsPost(requestParameters.experimentCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsPost(requestParameters.experimentCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -6386,8 +7043,8 @@ export class ExperimentsApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ExperimentsPost_20(requestParameters: ExperimentsApiConsoleV1ExperimentsPost0Request, options?: RawAxiosRequestConfig) {
-        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsPost_20(requestParameters.experimentCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ExperimentsPost_24(requestParameters: ExperimentsApiConsoleV1ExperimentsPost0Request, options?: RawAxiosRequestConfig) {
+        return ExperimentsApiFp(this.configuration).consoleV1ExperimentsPost_24(requestParameters.experimentCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

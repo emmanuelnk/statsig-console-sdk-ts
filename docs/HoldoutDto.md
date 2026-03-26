@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **layerIDs** | **Array&lt;string&gt;** | an array of layerIDs which this holdout is applied to | [default to undefined]
 **isGlobal** | **boolean** | whether the holdout is being applied to all new gates | [default to undefined]
 **targetingGateID** | **string** | the gateID that the holdout is targeting | [default to undefined]
-**monitoringMetrics** | [**Array&lt;ExperimentCreateDtoCureCovariatesInner&gt;**](ExperimentCreateDtoCureCovariatesInner.md) |  | [optional] [default to undefined]
+**monitoringMetrics** | [**Array&lt;ExperimentCreateDtoBayesianPriorsInnerMetric&gt;**](ExperimentCreateDtoBayesianPriorsInnerMetric.md) |  | [optional] [default to undefined]
 
 ## Example
 

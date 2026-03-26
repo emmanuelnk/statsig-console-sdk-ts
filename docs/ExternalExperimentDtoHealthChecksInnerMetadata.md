@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **missingMetrics** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
 **metrics** | [**Array&lt;ExternalExperimentDtoHealthChecksInnerMetadataMetricsInner&gt;**](ExternalExperimentDtoHealthChecksInnerMetadataMetricsInner.md) |  | [optional] [default to undefined]
 **lastUpdatedDs** | **string** |  | [optional] [default to undefined]
+**groups** | [**Array&lt;ExternalExperimentDtoHealthChecksInnerMetadataGroupsInner&gt;**](ExternalExperimentDtoHealthChecksInnerMetadataGroupsInner.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -38,6 +39,7 @@ const instance: ExternalExperimentDtoHealthChecksInnerMetadata = {
     missingMetrics,
     metrics,
     lastUpdatedDs,
+    groups,
 };
 ```
 

@@ -57,11 +57,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * @param {string} [endDate] Filter by the end date of the date range of the trigger\&#39;s creation date in UTC, inclusive (i.e. until the end of the day); defaults to today\&#39;s date if not provided
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersGet: async (releasePipelineID?: string, gateID?: string, dynamicConfigID?: string, status?: ConsoleV1ReleasePipelineTriggersGetStatusParameter, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelineTriggersGet: async (releasePipelineID?: string, gateID?: string, dynamicConfigID?: string, status?: ConsoleV1ReleasePipelineTriggersGetStatusParameter, startDate?: string, endDate?: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/release_pipeline_triggers`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -113,9 +112,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -129,11 +125,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * 
          * @summary Abort Pipeline Trigger
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersIdAbortPut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelineTriggersIdAbortPut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelineTriggersIdAbortPut', 'id', id)
             const localVarPath = `/console/v1/release_pipeline_triggers/{id}/abort`
@@ -154,9 +149,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -171,11 +163,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * @summary Approve Pipeline Trigger Phase
          * @param {string} id 
          * @param {ReleasePipelineTriggerActionBodyDto} releasePipelineTriggerActionBodyDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersIdApprovePut: async (id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelineTriggersIdApprovePut: async (id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelineTriggersIdApprovePut', 'id', id)
             // verify required parameter 'releasePipelineTriggerActionBodyDto' is not null or undefined
@@ -199,9 +190,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -216,11 +204,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * 
          * @summary Get Pipeline Trigger
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelineTriggersIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelineTriggersIdGet', 'id', id)
             const localVarPath = `/console/v1/release_pipeline_triggers/{id}`
@@ -241,9 +228,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -258,11 +242,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * @summary Pause Pipeline Trigger
          * @param {string} id 
          * @param {ReleasePipelineTriggerActionBodyDto} releasePipelineTriggerActionBodyDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersIdPausePut: async (id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelineTriggersIdPausePut: async (id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelineTriggersIdPausePut', 'id', id)
             // verify required parameter 'releasePipelineTriggerActionBodyDto' is not null or undefined
@@ -286,9 +269,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -303,11 +283,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * 
          * @summary Fully Roll Out Pipeline Trigger
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersIdRolloutPut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelineTriggersIdRolloutPut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelineTriggersIdRolloutPut', 'id', id)
             const localVarPath = `/console/v1/release_pipeline_triggers/{id}/rollout`
@@ -328,9 +307,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -345,11 +321,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * @summary Skip to Pipeline Trigger Phase
          * @param {string} id 
          * @param {ReleasePipelineTriggerActionBodyDto} releasePipelineTriggerActionBodyDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersIdSkipPut: async (id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelineTriggersIdSkipPut: async (id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelineTriggersIdSkipPut', 'id', id)
             // verify required parameter 'releasePipelineTriggerActionBodyDto' is not null or undefined
@@ -373,9 +348,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -391,11 +363,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * @summary Unpause Pipeline Trigger
          * @param {string} id 
          * @param {ReleasePipelineTriggerActionBodyDto} releasePipelineTriggerActionBodyDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelineTriggersIdUnpausePut: async (id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelineTriggersIdUnpausePut: async (id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelineTriggersIdUnpausePut', 'id', id)
             // verify required parameter 'releasePipelineTriggerActionBodyDto' is not null or undefined
@@ -419,9 +390,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -437,11 +405,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * @summary List Pipelines
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelinesGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelinesGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/release_pipelines`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -467,9 +434,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -483,11 +447,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * 
          * @summary Delete Pipeline
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelinesIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelinesIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelinesIdDelete', 'id', id)
             const localVarPath = `/console/v1/release_pipelines/{id}`
@@ -508,9 +471,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -524,11 +484,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * 
          * @summary Get Pipeline
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelinesIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelinesIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelinesIdGet', 'id', id)
             const localVarPath = `/console/v1/release_pipelines/{id}`
@@ -549,9 +508,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -566,11 +522,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * @summary Update Pipeline
          * @param {string} id 
          * @param {ReleasePipelineUpdateDto} releasePipelineUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelinesIdPost: async (id: string, releasePipelineUpdateDto: ReleasePipelineUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelinesIdPost: async (id: string, releasePipelineUpdateDto: ReleasePipelineUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1ReleasePipelinesIdPost', 'id', id)
             // verify required parameter 'releasePipelineUpdateDto' is not null or undefined
@@ -594,9 +549,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -611,11 +563,10 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
          * 
          * @summary Create Pipeline
          * @param {ReleasePipelineCreateDto} releasePipelineCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ReleasePipelinesPost: async (releasePipelineCreateDto: ReleasePipelineCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ReleasePipelinesPost: async (releasePipelineCreateDto: ReleasePipelineCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'releasePipelineCreateDto' is not null or undefined
             assertParamExists('consoleV1ReleasePipelinesPost', 'releasePipelineCreateDto', releasePipelineCreateDto)
             const localVarPath = `/console/v1/release_pipelines`;
@@ -636,9 +587,6 @@ export const ReleasePipelinesApiAxiosParamCreator = function (configuration?: Co
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -669,12 +617,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @param {string} [endDate] Filter by the end date of the date range of the trigger\&#39;s creation date in UTC, inclusive (i.e. until the end of the day); defaults to today\&#39;s date if not provided
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersGet(releasePipelineID?: string, gateID?: string, dynamicConfigID?: string, status?: ConsoleV1ReleasePipelineTriggersGetStatusParameter, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1releasepipelinetriggersResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersGet(releasePipelineID, gateID, dynamicConfigID, status, startDate, endDate, limit, page, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelineTriggersGet(releasePipelineID?: string, gateID?: string, dynamicConfigID?: string, status?: ConsoleV1ReleasePipelineTriggersGetStatusParameter, startDate?: string, endDate?: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1releasepipelinetriggersResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersGet(releasePipelineID, gateID, dynamicConfigID, status, startDate, endDate, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -683,12 +630,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Abort Pipeline Trigger
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersIdAbortPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdAbortPut(id, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelineTriggersIdAbortPut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdAbortPut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersIdAbortPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -698,12 +644,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @summary Approve Pipeline Trigger Phase
          * @param {string} id 
          * @param {ReleasePipelineTriggerActionBodyDto} releasePipelineTriggerActionBodyDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersIdApprovePut(id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdApprovePut(id, releasePipelineTriggerActionBodyDto, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelineTriggersIdApprovePut(id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdApprovePut(id, releasePipelineTriggerActionBodyDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersIdApprovePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -712,12 +657,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Pipeline Trigger
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdGet(id, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelineTriggersIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -727,12 +671,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @summary Pause Pipeline Trigger
          * @param {string} id 
          * @param {ReleasePipelineTriggerActionBodyDto} releasePipelineTriggerActionBodyDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersIdPausePut(id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdPausePut(id, releasePipelineTriggerActionBodyDto, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelineTriggersIdPausePut(id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdPausePut(id, releasePipelineTriggerActionBodyDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersIdPausePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -741,12 +684,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Fully Roll Out Pipeline Trigger
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersIdRolloutPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdRolloutPut(id, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelineTriggersIdRolloutPut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdRolloutPut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersIdRolloutPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -756,12 +698,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @summary Skip to Pipeline Trigger Phase
          * @param {string} id 
          * @param {ReleasePipelineTriggerActionBodyDto} releasePipelineTriggerActionBodyDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersIdSkipPut(id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdSkipPut(id, releasePipelineTriggerActionBodyDto, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelineTriggersIdSkipPut(id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdSkipPut(id, releasePipelineTriggerActionBodyDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersIdSkipPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -771,12 +712,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @summary Unpause Pipeline Trigger
          * @param {string} id 
          * @param {ReleasePipelineTriggerActionBodyDto} releasePipelineTriggerActionBodyDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelineTriggersIdUnpausePut(id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdUnpausePut(id, releasePipelineTriggerActionBodyDto, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelineTriggersIdUnpausePut(id: string, releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelineTriggersIdUnpausePut(id, releasePipelineTriggerActionBodyDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelineTriggersIdUnpausePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -786,12 +726,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @summary List Pipelines
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelinesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1releasepipelinesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelinesGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1releasepipelinesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelinesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -800,12 +739,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Pipeline
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelinesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelinesIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelinesIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -814,12 +752,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Pipeline
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelinesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesIdGet(id, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelinesIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelinesIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -829,12 +766,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * @summary Update Pipeline
          * @param {string} id 
          * @param {ReleasePipelineUpdateDto} releasePipelineUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelinesIdPost(id: string, releasePipelineUpdateDto: ReleasePipelineUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesIdPost(id, releasePipelineUpdateDto, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelinesIdPost(id: string, releasePipelineUpdateDto: ReleasePipelineUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesIdPost(id, releasePipelineUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelinesIdPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -843,12 +779,11 @@ export const ReleasePipelinesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Pipeline
          * @param {ReleasePipelineCreateDto} releasePipelineCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ReleasePipelinesPost(releasePipelineCreateDto: ReleasePipelineCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesPost(releasePipelineCreateDto, xRespectReviewSettings, options);
+        async consoleV1ReleasePipelinesPost(releasePipelineCreateDto: ReleasePipelineCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ReleasePipelinesPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ReleasePipelinesPost(releasePipelineCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ReleasePipelinesApi.consoleV1ReleasePipelinesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -870,7 +805,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelineTriggersGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1releasepipelinetriggersResponse> {
-            return localVarFp.consoleV1ReleasePipelineTriggersGet(requestParameters.releasePipelineID, requestParameters.gateID, requestParameters.dynamicConfigID, requestParameters.status, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelineTriggersGet(requestParameters.releasePipelineID, requestParameters.gateID, requestParameters.dynamicConfigID, requestParameters.status, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -880,7 +815,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelineTriggersIdAbortPut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdAbortPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response> {
-            return localVarFp.consoleV1ReleasePipelineTriggersIdAbortPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelineTriggersIdAbortPut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -890,7 +825,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelineTriggersIdApprovePut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdApprovePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response> {
-            return localVarFp.consoleV1ReleasePipelineTriggersIdApprovePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelineTriggersIdApprovePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -900,7 +835,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelineTriggersIdGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelineTriggersIdGet200Response> {
-            return localVarFp.consoleV1ReleasePipelineTriggersIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelineTriggersIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -910,7 +845,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelineTriggersIdPausePut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdPausePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response> {
-            return localVarFp.consoleV1ReleasePipelineTriggersIdPausePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelineTriggersIdPausePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -920,7 +855,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelineTriggersIdRolloutPut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdRolloutPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response> {
-            return localVarFp.consoleV1ReleasePipelineTriggersIdRolloutPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelineTriggersIdRolloutPut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -930,7 +865,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelineTriggersIdSkipPut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdSkipPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response> {
-            return localVarFp.consoleV1ReleasePipelineTriggersIdSkipPut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelineTriggersIdSkipPut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -940,7 +875,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelineTriggersIdUnpausePut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdUnpausePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelineTriggersIdAbortPut200Response> {
-            return localVarFp.consoleV1ReleasePipelineTriggersIdUnpausePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelineTriggersIdUnpausePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -950,7 +885,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelinesGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1releasepipelinesResponse> {
-            return localVarFp.consoleV1ReleasePipelinesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelinesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -960,7 +895,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelinesIdDelete(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelinesIdDelete200Response> {
-            return localVarFp.consoleV1ReleasePipelinesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelinesIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -970,7 +905,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelinesIdGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelinesPost200Response> {
-            return localVarFp.consoleV1ReleasePipelinesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelinesIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -980,7 +915,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelinesIdPost(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelinesPost200Response> {
-            return localVarFp.consoleV1ReleasePipelinesIdPost(requestParameters.id, requestParameters.releasePipelineUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelinesIdPost(requestParameters.id, requestParameters.releasePipelineUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -990,7 +925,7 @@ export const ReleasePipelinesApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ReleasePipelinesPost(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ReleasePipelinesPost200Response> {
-            return localVarFp.consoleV1ReleasePipelinesPost(requestParameters.releasePipelineCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ReleasePipelinesPost(requestParameters.releasePipelineCreateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1038,11 +973,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1050,11 +980,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersGetRequest {
  */
 export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdAbortPutRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1064,11 +989,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdApprovePut
     readonly id: string
 
     readonly releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1076,11 +996,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdApprovePut
  */
 export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdGetRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1090,11 +1005,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdPausePutRe
     readonly id: string
 
     readonly releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1102,11 +1012,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdPausePutRe
  */
 export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdRolloutPutRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1116,11 +1021,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdSkipPutReq
     readonly id: string
 
     readonly releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1130,11 +1030,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdUnpausePut
     readonly id: string
 
     readonly releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1150,11 +1045,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelinesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1162,11 +1052,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelinesGetRequest {
  */
 export interface ReleasePipelinesApiConsoleV1ReleasePipelinesIdDeleteRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1174,11 +1059,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelinesIdDeleteRequest {
  */
 export interface ReleasePipelinesApiConsoleV1ReleasePipelinesIdGetRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1188,11 +1068,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelinesIdPostRequest {
     readonly id: string
 
     readonly releasePipelineUpdateDto: ReleasePipelineUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1200,11 +1075,6 @@ export interface ReleasePipelinesApiConsoleV1ReleasePipelinesIdPostRequest {
  */
 export interface ReleasePipelinesApiConsoleV1ReleasePipelinesPostRequest {
     readonly releasePipelineCreateDto: ReleasePipelineCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1219,7 +1089,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelineTriggersGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersGet(requestParameters.releasePipelineID, requestParameters.gateID, requestParameters.dynamicConfigID, requestParameters.status, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersGet(requestParameters.releasePipelineID, requestParameters.gateID, requestParameters.dynamicConfigID, requestParameters.status, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1230,7 +1100,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelineTriggersIdAbortPut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdAbortPutRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdAbortPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdAbortPut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1241,7 +1111,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelineTriggersIdApprovePut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdApprovePutRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdApprovePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdApprovePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1252,7 +1122,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelineTriggersIdGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdGetRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1263,7 +1133,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelineTriggersIdPausePut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdPausePutRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdPausePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdPausePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1274,7 +1144,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelineTriggersIdRolloutPut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdRolloutPutRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdRolloutPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdRolloutPut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1285,7 +1155,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelineTriggersIdSkipPut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdSkipPutRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdSkipPut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdSkipPut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1296,7 +1166,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelineTriggersIdUnpausePut(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelineTriggersIdUnpausePutRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdUnpausePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelineTriggersIdUnpausePut(requestParameters.id, requestParameters.releasePipelineTriggerActionBodyDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1307,7 +1177,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelinesGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1318,7 +1188,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelinesIdDelete(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1329,7 +1199,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelinesIdGet(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesIdGetRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1340,7 +1210,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelinesIdPost(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesIdPostRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesIdPost(requestParameters.id, requestParameters.releasePipelineUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesIdPost(requestParameters.id, requestParameters.releasePipelineUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1351,7 +1221,7 @@ export class ReleasePipelinesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ReleasePipelinesPost(requestParameters: ReleasePipelinesApiConsoleV1ReleasePipelinesPostRequest, options?: RawAxiosRequestConfig) {
-        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesPost(requestParameters.releasePipelineCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ReleasePipelinesApiFp(this.configuration).consoleV1ReleasePipelinesPost(requestParameters.releasePipelineCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

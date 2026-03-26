@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**targetValue** | [**DynamicConfigCreateDtoRulesInnerConditionsInnerTargetValue**](DynamicConfigCreateDtoRulesInnerConditionsInnerTargetValue.md) |  | [optional] [default to undefined]
+**targetValue** | [**AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInnerTargetValue**](AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInnerTargetValue.md) |  | [optional] [default to undefined]
 **operator** | **string** |  | [optional] [default to undefined]
 **field** | **string** |  | [optional] [default to undefined]
 **customID** | **string** |  | [optional] [default to undefined]

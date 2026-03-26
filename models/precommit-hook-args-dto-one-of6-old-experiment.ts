@@ -18,13 +18,19 @@
 import type { AIConfigCreateDtoOwner } from './aiconfig-create-dto-owner';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigRulesDtoRulesInner } from './dynamic-config-rules-dto-rules-inner';
+import type { AutotuneExperimentDtoInlineTargetingRulesInner } from './autotune-experiment-dto-inline-targeting-rules-inner';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ExperimentCreateDtoAssignmentSourceFiltersInner } from './experiment-create-dto-assignment-source-filters-inner';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExperimentCreateDtoCureCovariatesInner } from './experiment-create-dto-cure-covariates-inner';
+import type { ExperimentCreateDtoBayesianPriorsInner } from './experiment-create-dto-bayesian-priors-inner';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ExperimentCreateDtoBayesianPriorsInnerMetric } from './experiment-create-dto-bayesian-priors-inner-metric';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ExperimentCreateDtoExternalEventsInner } from './experiment-create-dto-external-events-inner';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ExperimentCreateDtoGroupsInner } from './experiment-create-dto-groups-inner';
@@ -57,7 +63,13 @@ import type { ExternalExperimentDtoHealthChecksInner } from './external-experime
 import type { ExternalExperimentDtoReviewSettings } from './external-experiment-dto-review-settings';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ExternalExperimentDtoSprtMDESettingsInner } from './external-experiment-dto-sprt-mdesettings-inner';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ExternalExperimentDtoSummarySectionsInner } from './external-experiment-dto-summary-sections-inner';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PrecommitHookArgsDtoOneOf6OldExperimentQualityScore } from './precommit-hook-args-dto-one-of6-old-experiment-quality-score';
 
 export interface PrecommitHookArgsDtoOneOf6OldExperiment {
     'reviewSettings'?: ExternalExperimentDtoReviewSettings;
@@ -145,6 +157,7 @@ export interface PrecommitHookArgsDtoOneOf6OldExperiment {
      * Links to relevant documentation or resources
      */
     'links'?: Array<ExperimentCreateDtoLinksInner>;
+    'externalEvents'?: Array<ExperimentCreateDtoExternalEventsInner>;
     /**
      * The test groups for your experiment
      */
@@ -157,6 +170,7 @@ export interface PrecommitHookArgsDtoOneOf6OldExperiment {
      * Percent of layer allocated to this experiment
      */
     'allocation': number;
+    'userBuckets'?: Array<number>;
     /**
      * Primary metric tags for the experiment
      */
@@ -211,6 +225,18 @@ export interface PrecommitHookArgsDtoOneOf6OldExperiment {
      * Default error margin used for results
      */
     'defaultConfidenceInterval': PrecommitHookArgsDtoOneOf6OldExperimentDefaultConfidenceIntervalEnum;
+    /**
+     * Default rollup window in days for experiment results. Use -1 for cumulative. Only -1, 1, and 7 allowed for cloud experiments.
+     */
+    'defaultRollupWindow'?: number;
+    /**
+     * Default chance-to-beat threshold used for Bayesian results.
+     */
+    'defaultChanceToBeatThreshold'?: number;
+    /**
+     * Bayesian prior settings by metric.
+     */
+    'bayesianPriors'?: Array<ExperimentCreateDtoBayesianPriorsInner>;
     /**
      * Up to 10 manually set quality scores for an experiment. The scores and weights will be added to the existing weights and scores, and then weights will be renormalized to 100. This can be set via the Statsig Console API. If targeting a default check, the weight of the check will be updated, but not the status or description. A default score can be removed by setting the weight to 0. The default score identifiers are one of: HYPOTHESIS_LENGTH, BALANCED_EXPOSURE, PRIMARY_METRICS_LENGTH, COMPARISON_CORRECTION, GUARDRAIL_METRIC_TAGS, SUFFICIENT_SAMPLE, POWER_ANALYSIS, SEQUENTIAL_TESTING
      */
@@ -271,6 +297,10 @@ export interface PrecommitHookArgsDtoOneOf6OldExperiment {
      */
     'assignmentSourceFilters'?: Array<ExperimentCreateDtoAssignmentSourceFiltersInner>;
     'analyticsType'?: string | null;
+    'defaultSPRTPowerParam'?: number;
+    'defaultSPRTMDE'?: number;
+    'sprtBaselineMode'?: PrecommitHookArgsDtoOneOf6OldExperimentSprtBaselineModeEnum;
+    'sprtMDESettings'?: Array<ExternalExperimentDtoSprtMDESettingsInner>;
     /**
      * Whether this is a Statsig Sidecar experiment.
      */
@@ -283,7 +313,7 @@ export interface PrecommitHookArgsDtoOneOf6OldExperiment {
     /**
      * CURE Covariates to use in this experiment
      */
-    'cureCovariates'?: Array<ExperimentCreateDtoCureCovariatesInner>;
+    'cureCovariates'?: Array<ExperimentCreateDtoBayesianPriorsInnerMetric>;
     'stratifiedSampling'?: ExperimentCreateDtoStratifiedSampling | null;
     'enabledNonProdEnvironments'?: Array<string>;
     'subtype'?: PrecommitHookArgsDtoOneOf6OldExperimentSubtypeEnum;
@@ -301,6 +331,10 @@ export interface PrecommitHookArgsDtoOneOf6OldExperiment {
      * The type of experiment
      */
     'experimentType': PrecommitHookArgsDtoOneOf6OldExperimentExperimentTypeEnum;
+    /**
+     * Whether the experiment is considered stale (e.g. in progress or decision-made and not modified in 30+ days).
+     */
+    'isStale': boolean;
     'owner'?: AIConfigCreateDtoOwner | null;
     /**
      * A raw JSON string of the inline targeting rules
@@ -309,7 +343,8 @@ export interface PrecommitHookArgsDtoOneOf6OldExperiment {
     /**
      * A formatted array of the inline targeting rules
      */
-    'inlineTargetingRules'?: Array<DynamicConfigRulesDtoRulesInner>;
+    'inlineTargetingRules'?: Array<AutotuneExperimentDtoInlineTargetingRulesInner>;
+    'qualityScore'?: PrecommitHookArgsDtoOneOf6OldExperimentQualityScore | null;
     'summarySections'?: Array<ExternalExperimentDtoSummarySectionsInner> | null;
 }
 
@@ -346,6 +381,12 @@ export const PrecommitHookArgsDtoOneOf6OldExperimentScheduledReloadTypeEnum = {
 } as const;
 
 export type PrecommitHookArgsDtoOneOf6OldExperimentScheduledReloadTypeEnum = typeof PrecommitHookArgsDtoOneOf6OldExperimentScheduledReloadTypeEnum[keyof typeof PrecommitHookArgsDtoOneOf6OldExperimentScheduledReloadTypeEnum];
+export const PrecommitHookArgsDtoOneOf6OldExperimentSprtBaselineModeEnum = {
+    Manual: 'manual',
+    InExperimentControl: 'in_experiment_control'
+} as const;
+
+export type PrecommitHookArgsDtoOneOf6OldExperimentSprtBaselineModeEnum = typeof PrecommitHookArgsDtoOneOf6OldExperimentSprtBaselineModeEnum[keyof typeof PrecommitHookArgsDtoOneOf6OldExperimentSprtBaselineModeEnum];
 export const PrecommitHookArgsDtoOneOf6OldExperimentSubtypeEnum = {
     Conversion: 'conversion',
     Reactivation: 'reactivation',
@@ -357,7 +398,8 @@ export const PrecommitHookArgsDtoOneOf6OldExperimentHealthCheckStatusEnum = {
     Passed: 'PASSED',
     Failed: 'FAILED',
     Waiting: 'WAITING',
-    Warning: 'WARNING'
+    Warning: 'WARNING',
+    NotApplied: 'NOT_APPLIED'
 } as const;
 
 export type PrecommitHookArgsDtoOneOf6OldExperimentHealthCheckStatusEnum = typeof PrecommitHookArgsDtoOneOf6OldExperimentHealthCheckStatusEnum[keyof typeof PrecommitHookArgsDtoOneOf6OldExperimentHealthCheckStatusEnum];

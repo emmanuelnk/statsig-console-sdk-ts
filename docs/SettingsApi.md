@@ -28,18 +28,11 @@ import {
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
 
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
-
-const { status, data } = await apiInstance.consoleV1SettingsProjectGet(
-    xRespectReviewSettings
-);
+const { status, data } = await apiInstance.consoleV1SettingsProjectGet();
 ```
 
 ### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+This endpoint does not have any parameters.
 
 
 ### Return type
@@ -82,11 +75,9 @@ const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
 
 let settingsProjectContractDto: SettingsProjectContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SettingsProjectPost(
-    settingsProjectContractDto,
-    xRespectReviewSettings
+    settingsProjectContractDto
 );
 ```
 
@@ -95,7 +86,6 @@ const { status, data } = await apiInstance.consoleV1SettingsProjectPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **settingsProjectContractDto** | **SettingsProjectContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -136,18 +126,11 @@ import {
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
 
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
-
-const { status, data } = await apiInstance.consoleV1SettingsReviewsGet(
-    xRespectReviewSettings
-);
+const { status, data } = await apiInstance.consoleV1SettingsReviewsGet();
 ```
 
 ### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+This endpoint does not have any parameters.
 
 
 ### Return type
@@ -190,11 +173,9 @@ const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
 
 let settingsReviewsContractDto: SettingsReviewsContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SettingsReviewsPost(
-    settingsReviewsContractDto,
-    xRespectReviewSettings
+    settingsReviewsContractDto
 );
 ```
 
@@ -203,7 +184,6 @@ const { status, data } = await apiInstance.consoleV1SettingsReviewsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **settingsReviewsContractDto** | **SettingsReviewsContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -244,18 +224,11 @@ import {
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
 
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
-
-const { status, data } = await apiInstance.consoleV1SettingsRolesGet(
-    xRespectReviewSettings
-);
+const { status, data } = await apiInstance.consoleV1SettingsRolesGet();
 ```
 
 ### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+This endpoint does not have any parameters.
 
 
 ### Return type
@@ -298,11 +271,9 @@ const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
 
 let settingsRolesContractDto: SettingsRolesContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SettingsRolesPost(
-    settingsRolesContractDto,
-    xRespectReviewSettings
+    settingsRolesContractDto
 );
 ```
 
@@ -311,7 +282,6 @@ const { status, data } = await apiInstance.consoleV1SettingsRolesPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **settingsRolesContractDto** | **SettingsRolesContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -352,18 +322,11 @@ import {
 const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
 
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
-
-const { status, data } = await apiInstance.consoleV1SettingsTeamsGet(
-    xRespectReviewSettings
-);
+const { status, data } = await apiInstance.consoleV1SettingsTeamsGet();
 ```
 
 ### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+This endpoint does not have any parameters.
 
 
 ### Return type
@@ -406,11 +369,9 @@ const configuration = new Configuration();
 const apiInstance = new SettingsApi(configuration);
 
 let settingsTeamsContractDto: SettingsTeamsContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SettingsTeamsPost(
-    settingsTeamsContractDto,
-    xRespectReviewSettings
+    settingsTeamsContractDto
 );
 ```
 
@@ -419,7 +380,6 @@ const { status, data } = await apiInstance.consoleV1SettingsTeamsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **settingsTeamsContractDto** | **SettingsTeamsContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

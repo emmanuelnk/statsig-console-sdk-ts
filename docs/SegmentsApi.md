@@ -38,12 +38,10 @@ const apiInstance = new SegmentsApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -53,7 +51,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -97,12 +94,10 @@ const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdAddIdsPatch(
     id,
-    segmentIDListUserStoreContractDto,
-    xRespectReviewSettings
+    segmentIDListUserStoreContractDto
 );
 ```
 
@@ -112,7 +107,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdAddIdsPatch(
 |------------- | ------------- | ------------- | -------------|
 | **segmentIDListUserStoreContractDto** | **SegmentIDListUserStoreContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -154,11 +148,9 @@ const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdArchivePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -167,7 +159,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdArchivePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -210,12 +201,10 @@ const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdConditionalPost(
     id,
-    segmentCreateContractDtoRulesInner,
-    xRespectReviewSettings
+    segmentCreateContractDtoRulesInner
 );
 ```
 
@@ -225,7 +214,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdConditionalPost(
 |------------- | ------------- | ------------- | -------------|
 | **segmentCreateContractDtoRulesInner** | **Array<SegmentCreateContractDtoRulesInner>**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -268,11 +256,9 @@ const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -281,7 +267,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -323,11 +308,9 @@ const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -336,7 +319,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -363,7 +345,7 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdGet(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **consoleV1SegmentsIdIdListDelete**
-> ConsoleV1SegmentsIdIdListDelete200Response consoleV1SegmentsIdIdListDelete()
+> ConsoleV1SegmentsIdIdListDelete200Response consoleV1SegmentsIdIdListDelete(segmentIDListContractDto)
 
 This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
 
@@ -372,18 +354,19 @@ This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
 ```typescript
 import {
     SegmentsApi,
-    Configuration
+    Configuration,
+    SegmentIDListContractDto
 } from '@emmanuelnk/statsig-console-sdk-ts';
 
 const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
+let segmentIDListContractDto: SegmentIDListContractDto; //
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdIdListDelete(
     id,
-    xRespectReviewSettings
+    segmentIDListContractDto
 );
 ```
 
@@ -391,8 +374,8 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdIdListDelete(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **segmentIDListContractDto** | **SegmentIDListContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -405,7 +388,7 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdIdListDelete(
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -440,13 +423,11 @@ const apiInstance = new SegmentsApi(configuration);
 let id: string; // (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdIdListGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -457,7 +438,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdIdListGet(
 | **id** | [**string**] |  | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -500,12 +480,10 @@ const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let segmentIDListContractDto: SegmentIDListContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdIdListPatch(
     id,
-    segmentIDListContractDto,
-    xRespectReviewSettings
+    segmentIDListContractDto
 );
 ```
 
@@ -515,7 +493,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdIdListPatch(
 |------------- | ------------- | ------------- | -------------|
 | **segmentIDListContractDto** | **SegmentIDListContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -561,12 +538,10 @@ const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let segmentIDListResetContractDto: SegmentIDListResetContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdIdListResetPost(
     id,
-    segmentIDListResetContractDto,
-    xRespectReviewSettings
+    segmentIDListResetContractDto
 );
 ```
 
@@ -576,7 +551,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdIdListResetPost(
 |------------- | ------------- | ------------- | -------------|
 | **segmentIDListResetContractDto** | **SegmentIDListResetContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -617,11 +591,9 @@ const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdIdlistMetadataGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -630,7 +602,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdIdlistMetadataGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -673,12 +644,10 @@ const apiInstance = new SegmentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdRemoveIdsPatch(
     id,
-    segmentIDListUserStoreContractDto,
-    xRespectReviewSettings
+    segmentIDListUserStoreContractDto
 );
 ```
 
@@ -688,7 +657,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdRemoveIdsPatch(
 |------------- | ------------- | ------------- | -------------|
 | **segmentIDListUserStoreContractDto** | **SegmentIDListUserStoreContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -731,12 +699,10 @@ const apiInstance = new SegmentsApi(configuration);
 
 let id: string; // (default to undefined)
 let reviewID: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsIdReviewsReviewIDCommitPut(
     id,
-    reviewID,
-    xRespectReviewSettings
+    reviewID
 );
 ```
 
@@ -746,7 +712,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsIdReviewsReviewIDCom
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
 | **reviewID** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -787,11 +752,9 @@ const configuration = new Configuration();
 const apiInstance = new SegmentsApi(configuration);
 
 let segmentCreateContractDto: SegmentCreateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1SegmentsPost(
-    segmentCreateContractDto,
-    xRespectReviewSettings
+    segmentCreateContractDto
 );
 ```
 
@@ -800,7 +763,6 @@ const { status, data } = await apiInstance.consoleV1SegmentsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **segmentCreateContractDto** | **SegmentCreateContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

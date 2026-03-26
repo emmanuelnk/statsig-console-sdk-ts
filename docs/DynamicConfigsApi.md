@@ -45,7 +45,6 @@ let creatorID: string; //ID of the user who created the entity. (optional) (defa
 let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter by tags (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsGet(
     releasePipelineID,
@@ -53,8 +52,7 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsGet(
     creatorID,
     tags,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -68,7 +66,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsGet(
 | **tags** | **ConsoleV1AuditLogsGetTagsParameter** | Filter by tags | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -111,12 +108,10 @@ const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //id (default to undefined)
 let archiveSchemaDto: ArchiveSchemaDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdArchivePut(
     id,
-    archiveSchemaDto,
-    xRespectReviewSettings
+    archiveSchemaDto
 );
 ```
 
@@ -126,7 +121,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdArchivePut(
 |------------- | ------------- | ------------- | -------------|
 | **archiveSchemaDto** | **ArchiveSchemaDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -166,11 +160,9 @@ const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -179,7 +171,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -221,11 +212,9 @@ const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdDisablePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -234,7 +223,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdDisablePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -274,11 +262,9 @@ const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdEnablePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -287,7 +273,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdEnablePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -327,11 +312,9 @@ const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -340,7 +323,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -385,13 +367,11 @@ const apiInstance = new DynamicConfigsApi(configuration);
 let id: string; //id (default to undefined)
 let dynamicConfigPartialUpdateDto: DynamicConfigPartialUpdateDto; //
 let dryRun: boolean; //Skips persisting updates to the entity (used to validate that inputs are correct) (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdPatch(
     id,
     dynamicConfigPartialUpdateDto,
-    dryRun,
-    xRespectReviewSettings
+    dryRun
 );
 ```
 
@@ -402,7 +382,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdPatch(
 | **dynamicConfigPartialUpdateDto** | **DynamicConfigPartialUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
 | **dryRun** | [**boolean**] | Skips persisting updates to the entity (used to validate that inputs are correct) | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -447,13 +426,11 @@ const apiInstance = new DynamicConfigsApi(configuration);
 let id: string; //id (default to undefined)
 let dynamicConfigFullUpdateDto: DynamicConfigFullUpdateDto; //
 let dryRun: boolean; //Skips persisting updates to the entity (used to validate that inputs are correct) (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdPost(
     id,
     dynamicConfigFullUpdateDto,
-    dryRun,
-    xRespectReviewSettings
+    dryRun
 );
 ```
 
@@ -464,7 +441,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdPost(
 | **dynamicConfigFullUpdateDto** | **DynamicConfigFullUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
 | **dryRun** | [**boolean**] | Skips persisting updates to the entity (used to validate that inputs are correct) | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -508,12 +484,10 @@ const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; // (default to undefined)
 let reviewID: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(
     id,
-    reviewID,
-    xRespectReviewSettings
+    reviewID
 );
 ```
 
@@ -523,7 +497,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdReviewsRevie
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
 | **reviewID** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -564,12 +537,10 @@ const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //Dynamic Config ID (default to undefined)
 let ruleId: string; //Rule ID (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdDelete(
     id,
-    ruleId,
-    xRespectReviewSettings
+    ruleId
 );
 ```
 
@@ -579,7 +550,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdDe
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | Dynamic Config ID | defaults to undefined|
 | **ruleId** | [**string**] | Rule ID | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -620,12 +590,10 @@ const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //Dynamic Config ID (default to undefined)
 let ruleId: string; //Rule ID (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdGet(
     id,
-    ruleId,
-    xRespectReviewSettings
+    ruleId
 );
 ```
 
@@ -635,7 +603,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdGe
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | Dynamic Config ID | defaults to undefined|
 | **ruleId** | [**string**] | Rule ID | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -679,14 +646,12 @@ let id: string; //Dynamic Config ID (default to undefined)
 let ruleId: string; //Rule ID (default to undefined)
 let dynamicConfigRulePartialDto: DynamicConfigRulePartialDto; //
 let dryRun: boolean; //Skips persisting updates to the entity (used to validate that inputs are correct) (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdPatch(
     id,
     ruleId,
     dynamicConfigRulePartialDto,
-    dryRun,
-    xRespectReviewSettings
+    dryRun
 );
 ```
 
@@ -698,7 +663,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRuleRuleIdPa
 | **id** | [**string**] | Dynamic Config ID | defaults to undefined|
 | **ruleId** | [**string**] | Rule ID | defaults to undefined|
 | **dryRun** | [**boolean**] | Skips persisting updates to the entity (used to validate that inputs are correct) | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -738,11 +702,9 @@ const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRulesGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -751,7 +713,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdRulesGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -793,12 +754,10 @@ const apiInstance = new DynamicConfigsApi(configuration);
 
 let id: string; //id (default to undefined)
 let unarchiveSchemaDto: UnarchiveSchemaDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdUnarchivePut(
     id,
-    unarchiveSchemaDto,
-    xRespectReviewSettings
+    unarchiveSchemaDto
 );
 ```
 
@@ -808,7 +767,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdUnarchivePut
 |------------- | ------------- | ------------- | -------------|
 | **unarchiveSchemaDto** | **UnarchiveSchemaDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -852,13 +810,11 @@ const apiInstance = new DynamicConfigsApi(configuration);
 let id: string; //id (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsIdVersionsGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -869,7 +825,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsIdVersionsGet(
 | **id** | [**string**] | id | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -911,11 +866,9 @@ const configuration = new Configuration();
 const apiInstance = new DynamicConfigsApi(configuration);
 
 let dynamicConfigCreateDto: DynamicConfigCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1DynamicConfigsPost(
-    dynamicConfigCreateDto,
-    xRespectReviewSettings
+    dynamicConfigCreateDto
 );
 ```
 
@@ -924,7 +877,6 @@ const { status, data } = await apiInstance.consoleV1DynamicConfigsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dynamicConfigCreateDto** | **DynamicConfigCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

@@ -27,6 +27,10 @@ export interface LayerContractDtoParametersInner {
      */
     'type': LayerContractDtoParametersInnerTypeEnum;
     'defaultValue': LayerContractDtoParametersInnerDefaultValue;
+    /**
+     * An optional helpful description of what this layer parameter does, providing context for its purpose.
+     */
+    'description'?: string;
 }
 
 export const LayerContractDtoParametersInnerTypeEnum = {

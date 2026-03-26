@@ -18,7 +18,13 @@
 import type { ExperimentCreateDtoAssignmentSourceFiltersInner } from './experiment-create-dto-assignment-source-filters-inner';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExperimentCreateDtoCureCovariatesInner } from './experiment-create-dto-cure-covariates-inner';
+import type { ExperimentCreateDtoBayesianPriorsInner } from './experiment-create-dto-bayesian-priors-inner';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ExperimentCreateDtoBayesianPriorsInnerMetric } from './experiment-create-dto-bayesian-priors-inner-metric';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ExperimentCreateDtoExternalEventsInner } from './experiment-create-dto-external-events-inner';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ExperimentCreateDtoGroupsInner } from './experiment-create-dto-groups-inner';
@@ -34,6 +40,9 @@ import type { ExperimentCreateDtoPreComputedUserDimensionsInner } from './experi
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ExperimentCreateDtoPrimaryMetricsInner } from './experiment-create-dto-primary-metrics-inner';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ExperimentCreateDtoSprtMDESettingsInner } from './experiment-create-dto-sprt-mdesettings-inner';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ExperimentCreateDtoStratifiedSampling } from './experiment-create-dto-stratified-sampling';
@@ -74,6 +83,7 @@ export interface ExperimentPartialUpdateDto {
      * Links to relevant documentation or resources
      */
     'links'?: Array<ExperimentCreateDtoLinksInner>;
+    'externalEvents'?: Array<ExperimentCreateDtoExternalEventsInner>;
     /**
      * The test groups for your experiment
      */
@@ -86,6 +96,7 @@ export interface ExperimentPartialUpdateDto {
      * Percent of layer allocated to this experiment
      */
     'allocation'?: number;
+    'userBuckets'?: Array<number>;
     /**
      * Primary metric tags for the experiment
      */
@@ -151,6 +162,18 @@ export interface ExperimentPartialUpdateDto {
      * Default error margin used for results
      */
     'defaultConfidenceInterval'?: ExperimentPartialUpdateDtoDefaultConfidenceIntervalEnum;
+    /**
+     * Default rollup window in days for experiment results. Use -1 for cumulative. Only -1, 1, and 7 allowed for cloud experiments.
+     */
+    'defaultRollupWindow'?: number;
+    /**
+     * Default chance-to-beat threshold used for Bayesian results.
+     */
+    'defaultChanceToBeatThreshold'?: number;
+    /**
+     * Bayesian prior settings by metric.
+     */
+    'bayesianPriors'?: Array<ExperimentCreateDtoBayesianPriorsInner>;
     /**
      * Up to 10 manually set quality scores for an experiment. The scores and weights will be added to the existing weights and scores, and then weights will be renormalized to 100. This can be set via the Statsig Console API. If targeting a default check, the weight of the check will be updated, but not the status or description. A default score can be removed by setting the weight to 0. The default score identifiers are one of: HYPOTHESIS_LENGTH, BALANCED_EXPOSURE, PRIMARY_METRICS_LENGTH, COMPARISON_CORRECTION, GUARDRAIL_METRIC_TAGS, SUFFICIENT_SAMPLE, POWER_ANALYSIS, SEQUENTIAL_TESTING
      */
@@ -240,6 +263,22 @@ export interface ExperimentPartialUpdateDto {
      */
     'analyticsType'?: ExperimentPartialUpdateDtoAnalyticsTypeEnum;
     /**
+     * SPRT power parameter percentage used as the default for experiment analysis.
+     */
+    'defaultSPRTPowerParam'?: number;
+    /**
+     * Default MDE value for every metric if one isn\'t provided. Only used in manual mode.
+     */
+    'defaultSPRTMDE'?: number;
+    /**
+     * In manual mode, mde/mean/stdDev must be provided for every metric in the experiment. In in_experiment_control, only the mde is needed for every metric, or the defaultSPRTMDE field must be passed.
+     */
+    'sprtBaselineMode'?: ExperimentPartialUpdateDtoSprtBaselineModeEnum;
+    /**
+     * The SPRT values for use in the experiment.
+     */
+    'sprtMDESettings'?: Array<ExperimentCreateDtoSprtMDESettingsInner>;
+    /**
      * Whether this is a Statsig Sidecar experiment.
      */
     'isSidecar'?: boolean;
@@ -254,7 +293,7 @@ export interface ExperimentPartialUpdateDto {
     /**
      * CURE Covariates to use in this experiment
      */
-    'cureCovariates'?: Array<ExperimentCreateDtoCureCovariatesInner>;
+    'cureCovariates'?: Array<ExperimentCreateDtoBayesianPriorsInnerMetric>;
     'stratifiedSampling'?: ExperimentCreateDtoStratifiedSampling | null;
     'enabledNonProdEnvironments'?: Array<string>;
 }
@@ -299,5 +338,11 @@ export const ExperimentPartialUpdateDtoAnalyticsTypeEnum = {
 } as const;
 
 export type ExperimentPartialUpdateDtoAnalyticsTypeEnum = typeof ExperimentPartialUpdateDtoAnalyticsTypeEnum[keyof typeof ExperimentPartialUpdateDtoAnalyticsTypeEnum];
+export const ExperimentPartialUpdateDtoSprtBaselineModeEnum = {
+    Manual: 'manual',
+    InExperimentControl: 'in_experiment_control'
+} as const;
+
+export type ExperimentPartialUpdateDtoSprtBaselineModeEnum = typeof ExperimentPartialUpdateDtoSprtBaselineModeEnum[keyof typeof ExperimentPartialUpdateDtoSprtBaselineModeEnum];
 
 

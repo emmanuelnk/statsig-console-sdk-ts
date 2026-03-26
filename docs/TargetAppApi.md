@@ -30,12 +30,10 @@ const apiInstance = new TargetAppApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TargetAppGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -45,7 +43,6 @@ const { status, data } = await apiInstance.consoleV1TargetAppGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -86,11 +83,9 @@ const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
 
 let id: string; //id of target app (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TargetAppIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -99,7 +94,6 @@ const { status, data } = await apiInstance.consoleV1TargetAppIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id of target app | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -139,11 +133,9 @@ const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TargetAppIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -152,7 +144,6 @@ const { status, data } = await apiInstance.consoleV1TargetAppIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -195,12 +186,10 @@ const apiInstance = new TargetAppApi(configuration);
 
 let id: string; //id (default to undefined)
 let updateTargetAppDto: UpdateTargetAppDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TargetAppIdPatch(
     id,
-    updateTargetAppDto,
-    xRespectReviewSettings
+    updateTargetAppDto
 );
 ```
 
@@ -210,7 +199,6 @@ const { status, data } = await apiInstance.consoleV1TargetAppIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **updateTargetAppDto** | **UpdateTargetAppDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -253,11 +241,9 @@ const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
 
 let bulkAssignConfigTargetAppDto: BulkAssignConfigTargetAppDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TargetAppPatch(
-    bulkAssignConfigTargetAppDto,
-    xRespectReviewSettings
+    bulkAssignConfigTargetAppDto
 );
 ```
 
@@ -266,7 +252,6 @@ const { status, data } = await apiInstance.consoleV1TargetAppPatch(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **bulkAssignConfigTargetAppDto** | **BulkAssignConfigTargetAppDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -309,11 +294,9 @@ const configuration = new Configuration();
 const apiInstance = new TargetAppApi(configuration);
 
 let targetAppCreateDto: TargetAppCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1TargetAppPost(
-    targetAppCreateDto,
-    xRespectReviewSettings
+    targetAppCreateDto
 );
 ```
 
@@ -322,7 +305,6 @@ const { status, data } = await apiInstance.consoleV1TargetAppPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **targetAppCreateDto** | **TargetAppCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

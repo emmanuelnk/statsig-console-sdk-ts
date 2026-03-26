@@ -76,6 +76,10 @@ export interface MetricSourceContractDto {
      * Marks the metric source as verified, indicating trustworthiness within the organization.
      */
     'isVerified'?: boolean;
+    /**
+     * Disable CURE for all metrics built from this metric source
+     */
+    'disableCURE'?: boolean;
     'owner'?: AIConfigCreateDtoOwner | null;
     /**
      * Optional field indicating the team name responsible for the metric, aiding in accountability and management.

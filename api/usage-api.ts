@@ -35,11 +35,10 @@ export const UsageApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Get Report in CSV format
          * @param {number} end Unix timestamp in ms
          * @param {number} [start] Unix timestamp in ms
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ProjectUsageBillingReportGet: async (end: number, start?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ProjectUsageBillingReportGet: async (end: number, start?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'end' is not null or undefined
             assertParamExists('consoleV1ProjectUsageBillingReportGet', 'end', end)
             const localVarPath = `/console/v1/project/usage_billing/report`;
@@ -67,9 +66,6 @@ export const UsageApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'text/csv,application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -93,12 +89,11 @@ export const UsageApiFp = function(configuration?: Configuration) {
          * @summary Get Report in CSV format
          * @param {number} end Unix timestamp in ms
          * @param {number} [start] Unix timestamp in ms
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ProjectUsageBillingReportGet(end: number, start?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ProjectUsageBillingReportGet(end, start, xRespectReviewSettings, options);
+        async consoleV1ProjectUsageBillingReportGet(end: number, start?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ProjectUsageBillingReportGet(end, start, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UsageApi.consoleV1ProjectUsageBillingReportGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -120,7 +115,7 @@ export const UsageApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1ProjectUsageBillingReportGet(requestParameters: UsageApiConsoleV1ProjectUsageBillingReportGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<File> {
-            return localVarFp.consoleV1ProjectUsageBillingReportGet(requestParameters.end, requestParameters.start, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ProjectUsageBillingReportGet(requestParameters.end, requestParameters.start, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -138,11 +133,6 @@ export interface UsageApiConsoleV1ProjectUsageBillingReportGetRequest {
      * Unix timestamp in ms
      */
     readonly start?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -157,7 +147,7 @@ export class UsageApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ProjectUsageBillingReportGet(requestParameters: UsageApiConsoleV1ProjectUsageBillingReportGetRequest, options?: RawAxiosRequestConfig) {
-        return UsageApiFp(this.configuration).consoleV1ProjectUsageBillingReportGet(requestParameters.end, requestParameters.start, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return UsageApiFp(this.configuration).consoleV1ProjectUsageBillingReportGet(requestParameters.end, requestParameters.start, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

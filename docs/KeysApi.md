@@ -33,14 +33,12 @@ let primaryTargetApp: string; // (optional) (default to undefined)
 let environment: string; // (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1KeysGet(
     primaryTargetApp,
     environment,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -52,7 +50,6 @@ const { status, data } = await apiInstance.consoleV1KeysGet(
 | **environment** | [**string**] |  | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -93,11 +90,9 @@ const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1KeysIdDeactivatePatch(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -106,7 +101,6 @@ const { status, data } = await apiInstance.consoleV1KeysIdDeactivatePatch(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -148,11 +142,9 @@ const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1KeysIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -161,7 +153,6 @@ const { status, data } = await apiInstance.consoleV1KeysIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -203,11 +194,9 @@ const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1KeysIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -216,7 +205,6 @@ const { status, data } = await apiInstance.consoleV1KeysIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -260,12 +248,10 @@ const apiInstance = new KeysApi(configuration);
 
 let id: string; // (default to undefined)
 let keyUpdateContractDto: KeyUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1KeysIdPatch(
     id,
-    keyUpdateContractDto,
-    xRespectReviewSettings
+    keyUpdateContractDto
 );
 ```
 
@@ -275,7 +261,6 @@ const { status, data } = await apiInstance.consoleV1KeysIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **keyUpdateContractDto** | **KeyUpdateContractDto**|  | |
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -317,11 +302,9 @@ const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1KeysIdRotatePatch(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -330,7 +313,6 @@ const { status, data } = await apiInstance.consoleV1KeysIdRotatePatch(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -373,11 +355,9 @@ const configuration = new Configuration();
 const apiInstance = new KeysApi(configuration);
 
 let keyCreateContractDto: KeyCreateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1KeysPost(
-    keyCreateContractDto,
-    xRespectReviewSettings
+    keyCreateContractDto
 );
 ```
 
@@ -386,7 +366,6 @@ const { status, data } = await apiInstance.consoleV1KeysPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **keyCreateContractDto** | **KeyCreateContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

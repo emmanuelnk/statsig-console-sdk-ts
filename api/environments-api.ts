@@ -39,11 +39,10 @@ export const EnvironmentsApiAxiosParamCreator = function (configuration?: Config
         /**
          * 
          * @summary Get Environments
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EnvironmentsGet: async (xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1EnvironmentsGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/environments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -61,9 +60,6 @@ export const EnvironmentsApiAxiosParamCreator = function (configuration?: Config
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -77,11 +73,10 @@ export const EnvironmentsApiAxiosParamCreator = function (configuration?: Config
          * 
          * @summary Update Environments
          * @param {EnvironmentsUpdateContractDto} environmentsUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EnvironmentsPost: async (environmentsUpdateContractDto: EnvironmentsUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1EnvironmentsPost: async (environmentsUpdateContractDto: EnvironmentsUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'environmentsUpdateContractDto' is not null or undefined
             assertParamExists('consoleV1EnvironmentsPost', 'environmentsUpdateContractDto', environmentsUpdateContractDto)
             const localVarPath = `/console/v1/environments`;
@@ -102,9 +97,6 @@ export const EnvironmentsApiAxiosParamCreator = function (configuration?: Config
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -127,12 +119,11 @@ export const EnvironmentsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get Environments
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1EnvironmentsGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1EnvironmentsGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EnvironmentsGet(xRespectReviewSettings, options);
+        async consoleV1EnvironmentsGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1EnvironmentsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EnvironmentsGet(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['EnvironmentsApi.consoleV1EnvironmentsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -141,12 +132,11 @@ export const EnvironmentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update Environments
          * @param {EnvironmentsUpdateContractDto} environmentsUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1EnvironmentsPost(environmentsUpdateContractDto: EnvironmentsUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1EnvironmentsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EnvironmentsPost(environmentsUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1EnvironmentsPost(environmentsUpdateContractDto: EnvironmentsUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1EnvironmentsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EnvironmentsPost(environmentsUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['EnvironmentsApi.consoleV1EnvironmentsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -163,12 +153,11 @@ export const EnvironmentsApiFactory = function (configuration?: Configuration, b
         /**
          * 
          * @summary Get Environments
-         * @param {EnvironmentsApiConsoleV1EnvironmentsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EnvironmentsGet(requestParameters: EnvironmentsApiConsoleV1EnvironmentsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EnvironmentsGet200Response> {
-            return localVarFp.consoleV1EnvironmentsGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1EnvironmentsGet(options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EnvironmentsGet200Response> {
+            return localVarFp.consoleV1EnvironmentsGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -178,31 +167,16 @@ export const EnvironmentsApiFactory = function (configuration?: Configuration, b
          * @throws {RequiredError}
          */
         consoleV1EnvironmentsPost(requestParameters: EnvironmentsApiConsoleV1EnvironmentsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1EnvironmentsPost200Response> {
-            return localVarFp.consoleV1EnvironmentsPost(requestParameters.environmentsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1EnvironmentsPost(requestParameters.environmentsUpdateContractDto, options).then((request) => request(axios, basePath));
         },
     };
 };
-
-/**
- * Request parameters for consoleV1EnvironmentsGet operation in EnvironmentsApi.
- */
-export interface EnvironmentsApiConsoleV1EnvironmentsGetRequest {
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
-}
 
 /**
  * Request parameters for consoleV1EnvironmentsPost operation in EnvironmentsApi.
  */
 export interface EnvironmentsApiConsoleV1EnvironmentsPostRequest {
     readonly environmentsUpdateContractDto: EnvironmentsUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -212,12 +186,11 @@ export class EnvironmentsApi extends BaseAPI {
     /**
      * 
      * @summary Get Environments
-     * @param {EnvironmentsApiConsoleV1EnvironmentsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1EnvironmentsGet(requestParameters: EnvironmentsApiConsoleV1EnvironmentsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return EnvironmentsApiFp(this.configuration).consoleV1EnvironmentsGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1EnvironmentsGet(options?: RawAxiosRequestConfig) {
+        return EnvironmentsApiFp(this.configuration).consoleV1EnvironmentsGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -228,7 +201,7 @@ export class EnvironmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1EnvironmentsPost(requestParameters: EnvironmentsApiConsoleV1EnvironmentsPostRequest, options?: RawAxiosRequestConfig) {
-        return EnvironmentsApiFp(this.configuration).consoleV1EnvironmentsPost(requestParameters.environmentsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return EnvironmentsApiFp(this.configuration).consoleV1EnvironmentsPost(requestParameters.environmentsUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

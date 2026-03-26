@@ -28,7 +28,7 @@ import type { AIConfigPartialUpdateDto } from '../models';
 // @ts-ignore
 import type { AIConfigVersionCreateDto } from '../models';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
@@ -53,11 +53,10 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary List Prompts
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1PromptsGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/prompts`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -83,9 +82,6 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -99,11 +95,10 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Get Prompt
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1PromptsIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1PromptsIdGet', 'id', id)
             const localVarPath = `/console/v1/prompts/{id}`
@@ -124,9 +119,6 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -141,11 +133,10 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Update Prompt (partial)
          * @param {string} id id
          * @param {AIConfigPartialUpdateDto} aIConfigPartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsIdPatch: async (id: string, aIConfigPartialUpdateDto: AIConfigPartialUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1PromptsIdPatch: async (id: string, aIConfigPartialUpdateDto: AIConfigPartialUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1PromptsIdPatch', 'id', id)
             // verify required parameter 'aIConfigPartialUpdateDto' is not null or undefined
@@ -169,9 +160,6 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -187,11 +175,10 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Create Prompt Version
          * @param {string} id id
          * @param {AIConfigVersionCreateDto} aIConfigVersionCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsIdVersionsPost: async (id: string, aIConfigVersionCreateDto: AIConfigVersionCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1PromptsIdVersionsPost: async (id: string, aIConfigVersionCreateDto: AIConfigVersionCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1PromptsIdVersionsPost', 'id', id)
             // verify required parameter 'aIConfigVersionCreateDto' is not null or undefined
@@ -215,9 +202,6 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -233,11 +217,10 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Start Prompt Version Evaluation Job
          * @param {string} versionId 
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsIdVersionsVersionIdStartEvalsPost: async (versionId: string, id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1PromptsIdVersionsVersionIdStartEvalsPost: async (versionId: string, id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'versionId' is not null or undefined
             assertParamExists('consoleV1PromptsIdVersionsVersionIdStartEvalsPost', 'versionId', versionId)
             // verify required parameter 'id' is not null or undefined
@@ -261,9 +244,6 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -277,11 +257,10 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Create Prompt
          * @param {AIConfigCreateDto} aIConfigCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1PromptsPost: async (aIConfigCreateDto: AIConfigCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1PromptsPost: async (aIConfigCreateDto: AIConfigCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'aIConfigCreateDto' is not null or undefined
             assertParamExists('consoleV1PromptsPost', 'aIConfigCreateDto', aIConfigCreateDto)
             const localVarPath = `/console/v1/prompts`;
@@ -302,9 +281,6 @@ export const PromptsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -329,12 +305,11 @@ export const PromptsApiFp = function(configuration?: Configuration) {
          * @summary List Prompts
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1PromptsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1promptsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1PromptsGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1promptsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['PromptsApi.consoleV1PromptsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -343,12 +318,11 @@ export const PromptsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Prompt
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1PromptsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsIdGet(id, xRespectReviewSettings, options);
+        async consoleV1PromptsIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['PromptsApi.consoleV1PromptsIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -358,12 +332,11 @@ export const PromptsApiFp = function(configuration?: Configuration) {
          * @summary Update Prompt (partial)
          * @param {string} id id
          * @param {AIConfigPartialUpdateDto} aIConfigPartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1PromptsIdPatch(id: string, aIConfigPartialUpdateDto: AIConfigPartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsIdPatch(id, aIConfigPartialUpdateDto, xRespectReviewSettings, options);
+        async consoleV1PromptsIdPatch(id: string, aIConfigPartialUpdateDto: AIConfigPartialUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsIdPatch(id, aIConfigPartialUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['PromptsApi.consoleV1PromptsIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -373,12 +346,11 @@ export const PromptsApiFp = function(configuration?: Configuration) {
          * @summary Create Prompt Version
          * @param {string} id id
          * @param {AIConfigVersionCreateDto} aIConfigVersionCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1PromptsIdVersionsPost(id: string, aIConfigVersionCreateDto: AIConfigVersionCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsIdVersionsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsIdVersionsPost(id, aIConfigVersionCreateDto, xRespectReviewSettings, options);
+        async consoleV1PromptsIdVersionsPost(id: string, aIConfigVersionCreateDto: AIConfigVersionCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsIdVersionsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsIdVersionsPost(id, aIConfigVersionCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['PromptsApi.consoleV1PromptsIdVersionsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -388,12 +360,11 @@ export const PromptsApiFp = function(configuration?: Configuration) {
          * @summary Start Prompt Version Evaluation Job
          * @param {string} versionId 
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1PromptsIdVersionsVersionIdStartEvalsPost(versionId: string, id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsIdVersionsVersionIdStartEvalsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsIdVersionsVersionIdStartEvalsPost(versionId, id, xRespectReviewSettings, options);
+        async consoleV1PromptsIdVersionsVersionIdStartEvalsPost(versionId: string, id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsIdVersionsVersionIdStartEvalsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsIdVersionsVersionIdStartEvalsPost(versionId, id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['PromptsApi.consoleV1PromptsIdVersionsVersionIdStartEvalsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -402,12 +373,11 @@ export const PromptsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Prompt
          * @param {AIConfigCreateDto} aIConfigCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1PromptsPost(aIConfigCreateDto: AIConfigCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsPost(aIConfigCreateDto, xRespectReviewSettings, options);
+        async consoleV1PromptsPost(aIConfigCreateDto: AIConfigCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1PromptsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1PromptsPost(aIConfigCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['PromptsApi.consoleV1PromptsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -429,7 +399,7 @@ export const PromptsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1PromptsGet(requestParameters: PromptsApiConsoleV1PromptsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1promptsResponse> {
-            return localVarFp.consoleV1PromptsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1PromptsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -439,7 +409,7 @@ export const PromptsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1PromptsIdGet(requestParameters: PromptsApiConsoleV1PromptsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
-            return localVarFp.consoleV1PromptsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1PromptsIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -449,7 +419,7 @@ export const PromptsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1PromptsIdPatch(requestParameters: PromptsApiConsoleV1PromptsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
-            return localVarFp.consoleV1PromptsIdPatch(requestParameters.id, requestParameters.aIConfigPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1PromptsIdPatch(requestParameters.id, requestParameters.aIConfigPartialUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -459,7 +429,7 @@ export const PromptsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1PromptsIdVersionsPost(requestParameters: PromptsApiConsoleV1PromptsIdVersionsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsIdVersionsPost201Response> {
-            return localVarFp.consoleV1PromptsIdVersionsPost(requestParameters.id, requestParameters.aIConfigVersionCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1PromptsIdVersionsPost(requestParameters.id, requestParameters.aIConfigVersionCreateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -469,7 +439,7 @@ export const PromptsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters: PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsIdVersionsVersionIdStartEvalsPost200Response> {
-            return localVarFp.consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters.versionId, requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters.versionId, requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -479,7 +449,7 @@ export const PromptsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1PromptsPost(requestParameters: PromptsApiConsoleV1PromptsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1PromptsPost200Response> {
-            return localVarFp.consoleV1PromptsPost(requestParameters.aIConfigCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1PromptsPost(requestParameters.aIConfigCreateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -497,11 +467,6 @@ export interface PromptsApiConsoleV1PromptsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -512,11 +477,6 @@ export interface PromptsApiConsoleV1PromptsIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -529,11 +489,6 @@ export interface PromptsApiConsoleV1PromptsIdPatchRequest {
     readonly id: string
 
     readonly aIConfigPartialUpdateDto: AIConfigPartialUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -546,11 +501,6 @@ export interface PromptsApiConsoleV1PromptsIdVersionsPostRequest {
     readonly id: string
 
     readonly aIConfigVersionCreateDto: AIConfigVersionCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -563,11 +513,6 @@ export interface PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequ
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -575,11 +520,6 @@ export interface PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequ
  */
 export interface PromptsApiConsoleV1PromptsPostRequest {
     readonly aIConfigCreateDto: AIConfigCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -594,7 +534,7 @@ export class PromptsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1PromptsGet(requestParameters: PromptsApiConsoleV1PromptsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return PromptsApiFp(this.configuration).consoleV1PromptsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -605,7 +545,7 @@ export class PromptsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1PromptsIdGet(requestParameters: PromptsApiConsoleV1PromptsIdGetRequest, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return PromptsApiFp(this.configuration).consoleV1PromptsIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -616,7 +556,7 @@ export class PromptsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1PromptsIdPatch(requestParameters: PromptsApiConsoleV1PromptsIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsIdPatch(requestParameters.id, requestParameters.aIConfigPartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return PromptsApiFp(this.configuration).consoleV1PromptsIdPatch(requestParameters.id, requestParameters.aIConfigPartialUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -627,7 +567,7 @@ export class PromptsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1PromptsIdVersionsPost(requestParameters: PromptsApiConsoleV1PromptsIdVersionsPostRequest, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsIdVersionsPost(requestParameters.id, requestParameters.aIConfigVersionCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return PromptsApiFp(this.configuration).consoleV1PromptsIdVersionsPost(requestParameters.id, requestParameters.aIConfigVersionCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -638,7 +578,7 @@ export class PromptsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters: PromptsApiConsoleV1PromptsIdVersionsVersionIdStartEvalsPostRequest, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters.versionId, requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return PromptsApiFp(this.configuration).consoleV1PromptsIdVersionsVersionIdStartEvalsPost(requestParameters.versionId, requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -649,7 +589,7 @@ export class PromptsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1PromptsPost(requestParameters: PromptsApiConsoleV1PromptsPostRequest, options?: RawAxiosRequestConfig) {
-        return PromptsApiFp(this.configuration).consoleV1PromptsPost(requestParameters.aIConfigCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return PromptsApiFp(this.configuration).consoleV1PromptsPost(requestParameters.aIConfigCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

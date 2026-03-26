@@ -57,11 +57,10 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Get Project Settings
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsProjectGet: async (xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SettingsProjectGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/settings/project`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -79,9 +78,6 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -95,11 +91,10 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Update Project Settings
          * @param {SettingsProjectContractDto} settingsProjectContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsProjectPost: async (settingsProjectContractDto: SettingsProjectContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SettingsProjectPost: async (settingsProjectContractDto: SettingsProjectContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'settingsProjectContractDto' is not null or undefined
             assertParamExists('consoleV1SettingsProjectPost', 'settingsProjectContractDto', settingsProjectContractDto)
             const localVarPath = `/console/v1/settings/project`;
@@ -120,9 +115,6 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -136,11 +128,10 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Get Reviews Settings
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsReviewsGet: async (xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SettingsReviewsGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/settings/reviews`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -158,9 +149,6 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -174,11 +162,10 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Update Reviews Settings
          * @param {SettingsReviewsContractDto} settingsReviewsContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsReviewsPost: async (settingsReviewsContractDto: SettingsReviewsContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SettingsReviewsPost: async (settingsReviewsContractDto: SettingsReviewsContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'settingsReviewsContractDto' is not null or undefined
             assertParamExists('consoleV1SettingsReviewsPost', 'settingsReviewsContractDto', settingsReviewsContractDto)
             const localVarPath = `/console/v1/settings/reviews`;
@@ -199,9 +186,6 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -215,11 +199,10 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Get Roles Settings
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsRolesGet: async (xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SettingsRolesGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/settings/roles`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -237,9 +220,6 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -253,11 +233,10 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Update Roles Settings
          * @param {SettingsRolesContractDto} settingsRolesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsRolesPost: async (settingsRolesContractDto: SettingsRolesContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SettingsRolesPost: async (settingsRolesContractDto: SettingsRolesContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'settingsRolesContractDto' is not null or undefined
             assertParamExists('consoleV1SettingsRolesPost', 'settingsRolesContractDto', settingsRolesContractDto)
             const localVarPath = `/console/v1/settings/roles`;
@@ -278,9 +257,6 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -294,11 +270,10 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Get Teams Settings
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsTeamsGet: async (xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SettingsTeamsGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/settings/teams`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -316,9 +291,6 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -332,11 +304,10 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Update Teams Settings
          * @param {SettingsTeamsContractDto} settingsTeamsContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsTeamsPost: async (settingsTeamsContractDto: SettingsTeamsContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SettingsTeamsPost: async (settingsTeamsContractDto: SettingsTeamsContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'settingsTeamsContractDto' is not null or undefined
             assertParamExists('consoleV1SettingsTeamsPost', 'settingsTeamsContractDto', settingsTeamsContractDto)
             const localVarPath = `/console/v1/settings/teams`;
@@ -357,9 +328,6 @@ export const SettingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -382,12 +350,11 @@ export const SettingsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get Project Settings
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SettingsProjectGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsProjectGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsProjectGet(xRespectReviewSettings, options);
+        async consoleV1SettingsProjectGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsProjectGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsProjectGet(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SettingsApi.consoleV1SettingsProjectGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -396,12 +363,11 @@ export const SettingsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update Project Settings
          * @param {SettingsProjectContractDto} settingsProjectContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SettingsProjectPost(settingsProjectContractDto: SettingsProjectContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsProjectPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsProjectPost(settingsProjectContractDto, xRespectReviewSettings, options);
+        async consoleV1SettingsProjectPost(settingsProjectContractDto: SettingsProjectContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsProjectPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsProjectPost(settingsProjectContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SettingsApi.consoleV1SettingsProjectPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -409,12 +375,11 @@ export const SettingsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get Reviews Settings
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SettingsReviewsGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsReviewsGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsReviewsGet(xRespectReviewSettings, options);
+        async consoleV1SettingsReviewsGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsReviewsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsReviewsGet(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SettingsApi.consoleV1SettingsReviewsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -423,12 +388,11 @@ export const SettingsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update Reviews Settings
          * @param {SettingsReviewsContractDto} settingsReviewsContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SettingsReviewsPost(settingsReviewsContractDto: SettingsReviewsContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsReviewsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsReviewsPost(settingsReviewsContractDto, xRespectReviewSettings, options);
+        async consoleV1SettingsReviewsPost(settingsReviewsContractDto: SettingsReviewsContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsReviewsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsReviewsPost(settingsReviewsContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SettingsApi.consoleV1SettingsReviewsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -436,12 +400,11 @@ export const SettingsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get Roles Settings
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SettingsRolesGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsRolesGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsRolesGet(xRespectReviewSettings, options);
+        async consoleV1SettingsRolesGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsRolesGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsRolesGet(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SettingsApi.consoleV1SettingsRolesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -450,12 +413,11 @@ export const SettingsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update Roles Settings
          * @param {SettingsRolesContractDto} settingsRolesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SettingsRolesPost(settingsRolesContractDto: SettingsRolesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsRolesPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsRolesPost(settingsRolesContractDto, xRespectReviewSettings, options);
+        async consoleV1SettingsRolesPost(settingsRolesContractDto: SettingsRolesContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsRolesPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsRolesPost(settingsRolesContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SettingsApi.consoleV1SettingsRolesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -463,12 +425,11 @@ export const SettingsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get Teams Settings
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SettingsTeamsGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsTeamsGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsTeamsGet(xRespectReviewSettings, options);
+        async consoleV1SettingsTeamsGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsTeamsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsTeamsGet(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SettingsApi.consoleV1SettingsTeamsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -477,12 +438,11 @@ export const SettingsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update Teams Settings
          * @param {SettingsTeamsContractDto} settingsTeamsContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SettingsTeamsPost(settingsTeamsContractDto: SettingsTeamsContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsTeamsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsTeamsPost(settingsTeamsContractDto, xRespectReviewSettings, options);
+        async consoleV1SettingsTeamsPost(settingsTeamsContractDto: SettingsTeamsContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SettingsTeamsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SettingsTeamsPost(settingsTeamsContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SettingsApi.consoleV1SettingsTeamsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -499,12 +459,11 @@ export const SettingsApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary Get Project Settings
-         * @param {SettingsApiConsoleV1SettingsProjectGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsProjectGet(requestParameters: SettingsApiConsoleV1SettingsProjectGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsProjectGet200Response> {
-            return localVarFp.consoleV1SettingsProjectGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SettingsProjectGet(options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsProjectGet200Response> {
+            return localVarFp.consoleV1SettingsProjectGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -514,17 +473,16 @@ export const SettingsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SettingsProjectPost(requestParameters: SettingsApiConsoleV1SettingsProjectPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsProjectPost200Response> {
-            return localVarFp.consoleV1SettingsProjectPost(requestParameters.settingsProjectContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SettingsProjectPost(requestParameters.settingsProjectContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Reviews Settings
-         * @param {SettingsApiConsoleV1SettingsReviewsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsReviewsGet(requestParameters: SettingsApiConsoleV1SettingsReviewsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsReviewsGet200Response> {
-            return localVarFp.consoleV1SettingsReviewsGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SettingsReviewsGet(options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsReviewsGet200Response> {
+            return localVarFp.consoleV1SettingsReviewsGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -534,17 +492,16 @@ export const SettingsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SettingsReviewsPost(requestParameters: SettingsApiConsoleV1SettingsReviewsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsReviewsPost200Response> {
-            return localVarFp.consoleV1SettingsReviewsPost(requestParameters.settingsReviewsContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SettingsReviewsPost(requestParameters.settingsReviewsContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Roles Settings
-         * @param {SettingsApiConsoleV1SettingsRolesGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsRolesGet(requestParameters: SettingsApiConsoleV1SettingsRolesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsRolesGet200Response> {
-            return localVarFp.consoleV1SettingsRolesGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SettingsRolesGet(options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsRolesGet200Response> {
+            return localVarFp.consoleV1SettingsRolesGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -554,17 +511,16 @@ export const SettingsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SettingsRolesPost(requestParameters: SettingsApiConsoleV1SettingsRolesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsRolesPost200Response> {
-            return localVarFp.consoleV1SettingsRolesPost(requestParameters.settingsRolesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SettingsRolesPost(requestParameters.settingsRolesContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get Teams Settings
-         * @param {SettingsApiConsoleV1SettingsTeamsGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SettingsTeamsGet(requestParameters: SettingsApiConsoleV1SettingsTeamsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsTeamsGet200Response> {
-            return localVarFp.consoleV1SettingsTeamsGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1SettingsTeamsGet(options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsTeamsGet200Response> {
+            return localVarFp.consoleV1SettingsTeamsGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -574,41 +530,16 @@ export const SettingsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SettingsTeamsPost(requestParameters: SettingsApiConsoleV1SettingsTeamsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SettingsTeamsPost200Response> {
-            return localVarFp.consoleV1SettingsTeamsPost(requestParameters.settingsTeamsContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SettingsTeamsPost(requestParameters.settingsTeamsContractDto, options).then((request) => request(axios, basePath));
         },
     };
 };
-
-/**
- * Request parameters for consoleV1SettingsProjectGet operation in SettingsApi.
- */
-export interface SettingsApiConsoleV1SettingsProjectGetRequest {
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
-}
 
 /**
  * Request parameters for consoleV1SettingsProjectPost operation in SettingsApi.
  */
 export interface SettingsApiConsoleV1SettingsProjectPostRequest {
     readonly settingsProjectContractDto: SettingsProjectContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
-}
-
-/**
- * Request parameters for consoleV1SettingsReviewsGet operation in SettingsApi.
- */
-export interface SettingsApiConsoleV1SettingsReviewsGetRequest {
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -616,21 +547,6 @@ export interface SettingsApiConsoleV1SettingsReviewsGetRequest {
  */
 export interface SettingsApiConsoleV1SettingsReviewsPostRequest {
     readonly settingsReviewsContractDto: SettingsReviewsContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
-}
-
-/**
- * Request parameters for consoleV1SettingsRolesGet operation in SettingsApi.
- */
-export interface SettingsApiConsoleV1SettingsRolesGetRequest {
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -638,21 +554,6 @@ export interface SettingsApiConsoleV1SettingsRolesGetRequest {
  */
 export interface SettingsApiConsoleV1SettingsRolesPostRequest {
     readonly settingsRolesContractDto: SettingsRolesContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
-}
-
-/**
- * Request parameters for consoleV1SettingsTeamsGet operation in SettingsApi.
- */
-export interface SettingsApiConsoleV1SettingsTeamsGetRequest {
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -660,11 +561,6 @@ export interface SettingsApiConsoleV1SettingsTeamsGetRequest {
  */
 export interface SettingsApiConsoleV1SettingsTeamsPostRequest {
     readonly settingsTeamsContractDto: SettingsTeamsContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -674,12 +570,11 @@ export class SettingsApi extends BaseAPI {
     /**
      * 
      * @summary Get Project Settings
-     * @param {SettingsApiConsoleV1SettingsProjectGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SettingsProjectGet(requestParameters: SettingsApiConsoleV1SettingsProjectGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return SettingsApiFp(this.configuration).consoleV1SettingsProjectGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SettingsProjectGet(options?: RawAxiosRequestConfig) {
+        return SettingsApiFp(this.configuration).consoleV1SettingsProjectGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -690,18 +585,17 @@ export class SettingsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SettingsProjectPost(requestParameters: SettingsApiConsoleV1SettingsProjectPostRequest, options?: RawAxiosRequestConfig) {
-        return SettingsApiFp(this.configuration).consoleV1SettingsProjectPost(requestParameters.settingsProjectContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SettingsApiFp(this.configuration).consoleV1SettingsProjectPost(requestParameters.settingsProjectContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Reviews Settings
-     * @param {SettingsApiConsoleV1SettingsReviewsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SettingsReviewsGet(requestParameters: SettingsApiConsoleV1SettingsReviewsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return SettingsApiFp(this.configuration).consoleV1SettingsReviewsGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SettingsReviewsGet(options?: RawAxiosRequestConfig) {
+        return SettingsApiFp(this.configuration).consoleV1SettingsReviewsGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -712,18 +606,17 @@ export class SettingsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SettingsReviewsPost(requestParameters: SettingsApiConsoleV1SettingsReviewsPostRequest, options?: RawAxiosRequestConfig) {
-        return SettingsApiFp(this.configuration).consoleV1SettingsReviewsPost(requestParameters.settingsReviewsContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SettingsApiFp(this.configuration).consoleV1SettingsReviewsPost(requestParameters.settingsReviewsContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Roles Settings
-     * @param {SettingsApiConsoleV1SettingsRolesGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SettingsRolesGet(requestParameters: SettingsApiConsoleV1SettingsRolesGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return SettingsApiFp(this.configuration).consoleV1SettingsRolesGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SettingsRolesGet(options?: RawAxiosRequestConfig) {
+        return SettingsApiFp(this.configuration).consoleV1SettingsRolesGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -734,18 +627,17 @@ export class SettingsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SettingsRolesPost(requestParameters: SettingsApiConsoleV1SettingsRolesPostRequest, options?: RawAxiosRequestConfig) {
-        return SettingsApiFp(this.configuration).consoleV1SettingsRolesPost(requestParameters.settingsRolesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SettingsApiFp(this.configuration).consoleV1SettingsRolesPost(requestParameters.settingsRolesContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get Teams Settings
-     * @param {SettingsApiConsoleV1SettingsTeamsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1SettingsTeamsGet(requestParameters: SettingsApiConsoleV1SettingsTeamsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return SettingsApiFp(this.configuration).consoleV1SettingsTeamsGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1SettingsTeamsGet(options?: RawAxiosRequestConfig) {
+        return SettingsApiFp(this.configuration).consoleV1SettingsTeamsGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -756,7 +648,7 @@ export class SettingsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SettingsTeamsPost(requestParameters: SettingsApiConsoleV1SettingsTeamsPostRequest, options?: RawAxiosRequestConfig) {
-        return SettingsApiFp(this.configuration).consoleV1SettingsTeamsPost(requestParameters.settingsTeamsContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SettingsApiFp(this.configuration).consoleV1SettingsTeamsPost(requestParameters.settingsTeamsContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

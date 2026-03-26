@@ -28,13 +28,11 @@ const apiInstance = new ConfigsApi(configuration);
 let experiments: ConsoleV1ExposureCountGetExperimentsParameter; // (optional) (default to undefined)
 let gates: ConsoleV1ExposureCountGetExperimentsParameter; // (optional) (default to undefined)
 let dynamicConfigs: ConsoleV1ExposureCountGetExperimentsParameter; // (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExposureCountGet(
     experiments,
     gates,
-    dynamicConfigs,
-    xRespectReviewSettings
+    dynamicConfigs
 );
 ```
 
@@ -45,7 +43,6 @@ const { status, data } = await apiInstance.consoleV1ExposureCountGet(
 | **experiments** | **ConsoleV1ExposureCountGetExperimentsParameter** |  | (optional) defaults to undefined|
 | **gates** | **ConsoleV1ExposureCountGetExperimentsParameter** |  | (optional) defaults to undefined|
 | **dynamicConfigs** | **ConsoleV1ExposureCountGetExperimentsParameter** |  | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

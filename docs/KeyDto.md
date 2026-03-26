@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **primaryTargetApp** | **string** |  | [optional] [default to undefined]
 **secondaryTargetApps** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
 **status** | **string** |  | [default to undefined]
+**lastUsed** | **string** |  | [optional] [default to undefined]
 
 ## Example
 
@@ -28,6 +29,7 @@ const instance: KeyDto = {
     primaryTargetApp,
     secondaryTargetApps,
     status,
+    lastUsed,
 };
 ```
 

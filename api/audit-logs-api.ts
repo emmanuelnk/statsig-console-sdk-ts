@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { ConsoleV1AuditLogsGetActionTypesParameter } from '../models';
+// @ts-ignore
 import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
 // @ts-ignore
 import type { Getconsolev1auditlogsResponse } from '../models';
@@ -39,16 +41,15 @@ export const AuditLogsApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} [latestID] 
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] 
          * @param {ConsoleV1AuditLogsGetActionTypeEnum} [actionType] 
-         * @param {Array<ConsoleV1AuditLogsGetActionTypesEnum>} [actionTypes] 
+         * @param {ConsoleV1AuditLogsGetActionTypesParameter} [actionTypes] 
          * @param {string} [startDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [endDate] Expected valid date in the form of YYYY-MM-DD
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AuditLogsGet: async (id?: string, sortKey?: ConsoleV1AuditLogsGetSortKeyEnum, sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum, latestID?: string, tags?: ConsoleV1AuditLogsGetTagsParameter, actionType?: ConsoleV1AuditLogsGetActionTypeEnum, actionTypes?: Array<ConsoleV1AuditLogsGetActionTypesEnum>, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AuditLogsGet: async (id?: string, sortKey?: ConsoleV1AuditLogsGetSortKeyEnum, sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum, latestID?: string, tags?: ConsoleV1AuditLogsGetTagsParameter, actionType?: ConsoleV1AuditLogsGetActionTypeEnum, actionTypes?: ConsoleV1AuditLogsGetActionTypesParameter, startDate?: string, endDate?: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/audit_logs`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -90,8 +91,10 @@ export const AuditLogsApiAxiosParamCreator = function (configuration?: Configura
                 localVarQueryParameter['actionType'] = actionType;
             }
 
-            if (actionTypes) {
-                localVarQueryParameter['actionTypes'] = actionTypes;
+            if (actionTypes !== undefined) {
+                for (const [key, value] of Object.entries(actionTypes)) {
+                    localVarQueryParameter[key] = value;
+                }
             }
 
             if (startDate !== undefined) {
@@ -112,9 +115,6 @@ export const AuditLogsApiAxiosParamCreator = function (configuration?: Configura
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -142,17 +142,16 @@ export const AuditLogsApiFp = function(configuration?: Configuration) {
          * @param {string} [latestID] 
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] 
          * @param {ConsoleV1AuditLogsGetActionTypeEnum} [actionType] 
-         * @param {Array<ConsoleV1AuditLogsGetActionTypesEnum>} [actionTypes] 
+         * @param {ConsoleV1AuditLogsGetActionTypesParameter} [actionTypes] 
          * @param {string} [startDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [endDate] Expected valid date in the form of YYYY-MM-DD
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AuditLogsGet(id?: string, sortKey?: ConsoleV1AuditLogsGetSortKeyEnum, sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum, latestID?: string, tags?: ConsoleV1AuditLogsGetTagsParameter, actionType?: ConsoleV1AuditLogsGetActionTypeEnum, actionTypes?: Array<ConsoleV1AuditLogsGetActionTypesEnum>, startDate?: string, endDate?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1auditlogsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AuditLogsGet(id, sortKey, sortOrder, latestID, tags, actionType, actionTypes, startDate, endDate, limit, page, xRespectReviewSettings, options);
+        async consoleV1AuditLogsGet(id?: string, sortKey?: ConsoleV1AuditLogsGetSortKeyEnum, sortOrder?: ConsoleV1AuditLogsGetSortOrderEnum, latestID?: string, tags?: ConsoleV1AuditLogsGetTagsParameter, actionType?: ConsoleV1AuditLogsGetActionTypeEnum, actionTypes?: ConsoleV1AuditLogsGetActionTypesParameter, startDate?: string, endDate?: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1auditlogsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AuditLogsGet(id, sortKey, sortOrder, latestID, tags, actionType, actionTypes, startDate, endDate, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AuditLogsApi.consoleV1AuditLogsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -174,7 +173,7 @@ export const AuditLogsApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AuditLogsGet(requestParameters: AuditLogsApiConsoleV1AuditLogsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1auditlogsResponse> {
-            return localVarFp.consoleV1AuditLogsGet(requestParameters.id, requestParameters.sortKey, requestParameters.sortOrder, requestParameters.latestID, requestParameters.tags, requestParameters.actionType, requestParameters.actionTypes, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AuditLogsGet(requestParameters.id, requestParameters.sortKey, requestParameters.sortOrder, requestParameters.latestID, requestParameters.tags, requestParameters.actionType, requestParameters.actionTypes, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -195,7 +194,7 @@ export interface AuditLogsApiConsoleV1AuditLogsGetRequest {
 
     readonly actionType?: ConsoleV1AuditLogsGetActionTypeEnum
 
-    readonly actionTypes?: Array<ConsoleV1AuditLogsGetActionTypesEnum>
+    readonly actionTypes?: ConsoleV1AuditLogsGetActionTypesParameter
 
     /**
      * Expected valid date in the form of YYYY-MM-DD
@@ -216,11 +215,6 @@ export interface AuditLogsApiConsoleV1AuditLogsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -235,7 +229,7 @@ export class AuditLogsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AuditLogsGet(requestParameters: AuditLogsApiConsoleV1AuditLogsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return AuditLogsApiFp(this.configuration).consoleV1AuditLogsGet(requestParameters.id, requestParameters.sortKey, requestParameters.sortOrder, requestParameters.latestID, requestParameters.tags, requestParameters.actionType, requestParameters.actionTypes, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AuditLogsApiFp(this.configuration).consoleV1AuditLogsGet(requestParameters.id, requestParameters.sortKey, requestParameters.sortOrder, requestParameters.latestID, requestParameters.tags, requestParameters.actionType, requestParameters.actionTypes, requestParameters.startDate, requestParameters.endDate, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -256,6 +250,12 @@ export const ConsoleV1AuditLogsGetSortOrderEnum = {
 } as const;
 export type ConsoleV1AuditLogsGetSortOrderEnum = typeof ConsoleV1AuditLogsGetSortOrderEnum[keyof typeof ConsoleV1AuditLogsGetSortOrderEnum];
 export const ConsoleV1AuditLogsGetActionTypeEnum = {
+    SetupDatabricksJobIntegration: 'setup_databricks_job_integration',
+    StopPartialPauseExperiment: 'stop_partial_pause_experiment',
+    PartialPauseExperiment: 'partial_pause_experiment',
+    ChangeCloudPairedExperimentHiddenState: 'change_cloud_paired_experiment_hidden_state',
+    CancelMexQuery: 'cancel_mex_query',
+    BulkAddRemoveConfigsFromTag: 'bulk_add_remove_configs_from_tag',
     CreatePairedExperiment: 'create_paired_experiment',
     DeleteDashboardSubscription: 'delete_dashboard_subscription',
     UpdateDashboardSubscriptions: 'update_dashboard_subscriptions',
@@ -499,6 +499,7 @@ export const ConsoleV1AuditLogsGetActionTypeEnum = {
     MetricReviewCreate: 'metric_review_create',
     MetricReviewInfoUpdate: 'metric_review_info_update',
     SetMetricDirectionality: 'set_metric_directionality',
+    SetMetricDefaultImpactMultiplier: 'set_metric_default_impact_multiplier',
     CustomMetricEdit: 'custom_metric_edit',
     CustomMetricNameEdit: 'custom_metric_name_edit',
     CustomMetricReviewAccept: 'custom_metric_review_accept',
@@ -665,12 +666,12 @@ export const ConsoleV1AuditLogsGetActionTypeEnum = {
     SetCompanySessionReplaySettings: 'set_company_session_replay_settings',
     CancelEchidnaDag: 'cancel_echidna_dag',
     SetRequireTargetAppForNewEntity: 'set_require_target_app_for_new_entity',
+    SetDefaultTargetAppsForNewEntity: 'set_default_target_apps_for_new_entity',
     AddSegmentsOfInterestProperty: 'add_segments_of_interest_property',
     DeleteSegmentsOfInterestProperty: 'delete_segments_of_interest_property',
     AddSrmDebuggerCustomDimension: 'add_srm_debugger_custom_dimension',
     DeleteSrmDebuggerCustomDimension: 'delete_srm_debugger_custom_dimension',
     ParamStoreDelete: 'param_store_delete',
-    SetupExternalOptIn: 'setup_external_opt_in',
     ParamStoreUpdateOwners: 'param_store_update_owners',
     CreateStatsigProxy: 'create_statsig_proxy',
     UpdateEchidnaAssignmentSourceIsVerified: 'update_echidna_assignment_source_is_verified',
@@ -686,6 +687,7 @@ export const ConsoleV1AuditLogsGetActionTypeEnum = {
     UpdateCompanyRemoveDefaultGatesSetting: 'update_company_remove_default_gates_setting',
     SetWhnResultsExportSetting: 'set_whn_results_export_setting',
     UpdateExperimentQualityScoreSettings: 'update_experiment_quality_score_settings',
+    UpdateDefaultBayesianPriorSettings: 'update_default_bayesian_prior_settings',
     UpdateExperimentSalt: 'update_experiment_salt',
     UpdatePrecommitWebhookKey: 'update_precommit_webhook_key',
     SetWhnTableTtls: 'set_whn_table_ttls',
@@ -718,472 +720,10 @@ export const ConsoleV1AuditLogsGetActionTypeEnum = {
     RolloutPlanCreate: 'rollout_plan_create',
     RolloutPlanUpdate: 'rollout_plan_update',
     RolloutPlanDelete: 'rollout_plan_delete',
-    UpdateExperimentQualityScoreCriteria: 'update_experiment_quality_score_criteria'
+    ExperimentPartialPauseAssignment: 'experiment_partial_pause_assignment',
+    ExperimentStopPartialPauseAssignment: 'experiment_stop_partial_pause_assignment',
+    ExperimentUpdatePartialPauseAssignment: 'experiment_update_partial_pause_assignment',
+    UpdateExperimentQualityScoreCriteria: 'update_experiment_quality_score_criteria',
+    SetupExternalOptIn: 'setup_external_opt_in'
 } as const;
 export type ConsoleV1AuditLogsGetActionTypeEnum = typeof ConsoleV1AuditLogsGetActionTypeEnum[keyof typeof ConsoleV1AuditLogsGetActionTypeEnum];
-export const ConsoleV1AuditLogsGetActionTypesEnum = {
-    CreatePairedExperiment: 'create_paired_experiment',
-    DeleteDashboardSubscription: 'delete_dashboard_subscription',
-    UpdateDashboardSubscriptions: 'update_dashboard_subscriptions',
-    AddDashboardPage: 'add_dashboard_page',
-    GenerateDashboardScreenshotUrl: 'generate_dashboard_screenshot_url',
-    DeleteEchidnaTableConfig: 'delete_echidna_table_config',
-    UpdateDefaultCompanyMetrics: 'update_default_company_metrics',
-    RateSidekickMessage: 'rate_sidekick_message',
-    RenameOfflineAaReport: 'rename_offline_aa_report',
-    RateInvestigationResponse: 'rate_investigation_response',
-    SetAiDatasetGlobal: 'set_ai_dataset_global',
-    SetAiScheduledRuns: 'set_ai_scheduled_runs',
-    LoadPowerAnalysisResultsWhn: 'load_power_analysis_results_whn',
-    CreateOfflineAaReport: 'create_offline_aa_report',
-    SetWarehouseMetadataIndexingEnabled: 'set_warehouse_metadata_indexing_enabled',
-    UpdatePrimaryAttachedReport: 'update_primary_attached_report',
-    DeleteAiEval: 'delete_ai_eval',
-    DeleteAiDataset: 'delete_ai_dataset',
-    UpsertTracesTag: 'upsert_traces_tag',
-    CreateTracesTag: 'create_traces_tag',
-    UpsertTracesMetadata: 'upsert_traces_metadata',
-    DeleteAiEvalRun: 'delete_ai_eval_run',
-    CreateAiEvalRun: 'create_ai_eval_run',
-    CreateAiEval: 'create_ai_eval',
-    RefreshWarehouseExplorerTableInfo: 'refresh_warehouse_explorer_table_info',
-    EditExperimentScheduledStart: 'edit_experiment_scheduled_start',
-    EditAiConfigAgentVersion: 'edit_ai_config_agent_version',
-    UpdateAiDataset: 'update_ai_dataset',
-    UploadAiConfigDatasetCsv: 'upload_ai_config_dataset_csv',
-    ResaltExperiment: 'resalt_experiment',
-    RunEvalFromTraces: 'run_eval_from_traces',
-    EditAiConfigAutoEvalState: 'edit_ai_config_auto_eval_state',
-    EditAiConfigEvalSettings: 'edit_ai_config_eval_settings',
-    UpdateGraderAdvisorCache: 'update_grader_advisor_cache',
-    EditAiPlayground: 'edit_ai_playground',
-    SaveAiPlaygroundResults: 'save_ai_playground_results',
-    DeleteAiConfig: 'delete_ai_config',
-    SetSuggestCureCovariates: 'set_suggest_cure_covariates',
-    EditAiPlaygroundSetup: 'edit_ai_playground_setup',
-    StartAiConfigVersionEvaluationJob: 'start_ai_config_version_evaluation_job',
-    StartAiPlaygroundCompletionJob: 'start_ai_playground_completion_job',
-    StopAiConfigVersionEvaluationJob: 'stop_ai_config_version_evaluation_job',
-    CloneAiConfig: 'clone_ai_config',
-    EditAiConfigVersion: 'edit_ai_config_version',
-    DeleteAiConfigVersion: 'delete_ai_config_version',
-    DeleteAiConfigVersions: 'delete_ai_config_versions',
-    CloneAiConfigVersion: 'clone_ai_config_version',
-    AiConfigCreate: 'ai_config_create',
-    CreateAiConfigExperiment: 'create_ai_config_experiment',
-    AiPlaygroundCreate: 'ai_playground_create',
-    CreateAiDataset: 'create_ai_dataset',
-    CreateAiConfigVersion: 'create_ai_config_version',
-    UpsertAiConfigVersion: 'upsert_ai_config_version',
-    CreateAiConfigEvalGrader: 'create_ai_config_eval_grader',
-    EditAiConfigEvalGrader: 'edit_ai_config_eval_grader',
-    DeleteAiConfigEvalGrader: 'delete_ai_config_eval_grader',
-    SetEnableIdResolutionToggle: 'set_enable_id_resolution_toggle',
-    DynamicConfigCreate: 'dynamic_config_create',
-    DynamicConfigTemplateCreate: 'dynamic_config_template_create',
-    DynamicConfigUpdateOwners: 'dynamic_config_update_owners',
-    GateOverridesUpdate: 'gate_overrides_update',
-    GateTemplateCreate: 'gate_template_create',
-    GateCreate: 'gate_create',
-    GateUpdate: 'gate_update',
-    SetUserSamplingRateForGate: 'set_user_sampling_rate_for_gate',
-    GateUpdateOwners: 'gate_update_owners',
-    UpdateStore0100Exposures: 'update_store_0_100_exposures',
-    UpdateGateAnalyticsEnabled: 'update_gate_analytics_enabled',
-    UpdateGateDisplayName: 'update_gate_display_name',
-    ReleasePipelineCreate: 'release_pipeline_create',
-    ReleasePipelineUpdate: 'release_pipeline_update',
-    ReleasePipelineDelete: 'release_pipeline_delete',
-    UpdateConfigReleasePipeline: 'update_config_release_pipeline',
-    ReleasePipelineTriggerCreate: 'release_pipeline_trigger_create',
-    ReleasePipelineTriggerPaused: 'release_pipeline_trigger_paused',
-    ReleasePipelineTriggerUnpaused: 'release_pipeline_trigger_unpaused',
-    ReleasePipelineTriggerApproved: 'release_pipeline_trigger_approved',
-    ReleasePipelineTriggerAborted: 'release_pipeline_trigger_aborted',
-    ReleasePipelineTriggerPhaseSkipped: 'release_pipeline_trigger_phase_skipped',
-    ApplyExperimentReview: 'apply_experiment_review',
-    ExtendExperimentPulseEndDate: 'extend_experiment_pulse_end_date',
-    RestartExperimentPulse: 'restart_experiment_pulse',
-    AutotuneExperimentCreate: 'autotune_experiment_create',
-    AutotuneExperimentDelete: 'autotune_experiment_delete',
-    AutotuneExperimentSnapshotDelete: 'autotune_experiment_snapshot_delete',
-    AutotuneExperimentEdit: 'autotune_experiment_edit',
-    AutotuneExperimentUpdateTargetApps: 'autotune_experiment_update_target_apps',
-    AutotuneExperimentUpdatePulsePaused: 'autotune_experiment_update_pulse_paused',
-    AutotuneOverridesEdit: 'autotune_overrides_edit',
-    AutotuneReviewsOn: 'autotune_reviews_on',
-    ExperimentDataReportDelete: 'experiment_data_report_delete',
-    OfflineAaReportDelete: 'offline_aa_report_delete',
-    ExperimentDiscussionPostCreate: 'experiment_discussion_post_create',
-    ExperimentDiscussionPostDelete: 'experiment_discussion_post_delete',
-    ExperimentAbandon: 'experiment_abandon',
-    ExperimentPauseAssignment: 'experiment_pause_assignment',
-    ExperimentStopped: 'experiment_stopped',
-    ExperimentReviewAccept: 'experiment_review_accept',
-    ExperimentReviewReject: 'experiment_review_reject',
-    ExperimentTemplateCreate: 'experiment_template_create',
-    UpdateTemplateDecisionFramework: 'update_template_decision_framework',
-    RemoveTemplateDecisionFramework: 'remove_template_decision_framework',
-    ExperimentCreate: 'experiment_create',
-    ExperimentReviewCreate: 'experiment_review_create',
-    ExperimentDelete: 'experiment_delete',
-    ExperimentReviewDelete: 'experiment_review_delete',
-    ExperimentReviewUpdateTeam: 'experiment_review_update_team',
-    ExperimentSnapshotDelete: 'experiment_snapshot_delete',
-    ExperimentGroupDisable: 'experiment_group_disable',
-    ExperimentDescriptionEdit: 'experiment_description_edit',
-    ExperimentDisplayNameEdit: 'experiment_display_name_edit',
-    ExperimentEdit: 'experiment_edit',
-    ExperimentOverridesEdit: 'experiment_overrides_edit',
-    HypothesisEdit: 'hypothesis_edit',
-    KeyExperimentMetricsEdit: 'key_experiment_metrics_edit',
-    ExperimentAdvancedSettingsEdit: 'experiment_advanced_settings_edit',
-    ExperimentDecisionMake: 'experiment_decision_make',
-    ExperimentRestart: 'experiment_restart',
-    ExperimentRestartAsNew: 'experiment_restart_as_new',
-    ExperimentRollout: 'experiment_rollout',
-    ExperimentScheduleRollout: 'experiment_schedule_rollout',
-    ExperimentReviewsOn: 'experiment_reviews_on',
-    ExperimentStart: 'experiment_start',
-    ScheduleExperimentStart: 'schedule_experiment_start',
-    ExperimentFollowToggle: 'experiment_follow_toggle',
-    ExperimentAllowedReviewersUpdate: 'experiment_allowed_reviewers_update',
-    ExperimentReviewInfoUpdate: 'experiment_review_info_update',
-    UpdateExperimentEnabledNonProdEnvironments: 'update_experiment_enabled_non_prod_environments',
-    ArchiveExperiment: 'archive_experiment',
-    UnarchiveExperiment: 'unarchive_experiment',
-    ExperimentUpdateOwners: 'experiment_update_owners',
-    UpdateEchidnaSubtype: 'update_echidna_subtype',
-    SetupStratifiedSampling: 'setup_stratified_sampling',
-    ExperimentUpdateTargetApps: 'experiment_update_target_apps',
-    ExperimentUpdateSubdimensionFilter: 'experiment_update_subdimension_filter',
-    ExperimentReviewUpdateOverrides: 'experiment_review_update_overrides',
-    ExperimentReviewUpdateOwners: 'experiment_review_update_owners',
-    ExperimentUpdateDecisionNote: 'experiment_update_decision_note',
-    ExperimentUpdateSummarySections: 'experiment_update_summary_sections',
-    UnattachExperimentToPowerAnalysisReport: 'unattach_experiment_to_power_analysis_report',
-    AttachExperimentToPowerAnalysisReport: 'attach_experiment_to_power_analysis_report',
-    PinChartToSummary: 'pin_chart_to_summary',
-    SetGeotestDesign: 'set_geotest_design',
-    DeleteGeotestDesign: 'delete_geotest_design',
-    CreateGeotestDesign: 'create_geotest_design',
-    ExperimentAssignedToLayer: 'experiment_assigned_to_layer',
-    HoldoutCreate: 'holdout_create',
-    HoldoutDelete: 'holdout_delete',
-    HoldoutLayerParameterValuesUpdate: 'holdout_layer_parameter_values_update',
-    HoldoutUpdate: 'holdout_update',
-    HoldoutUpdateOwners: 'holdout_update_owners',
-    MetricEditDefinition: 'metric_edit_definition',
-    MetricEditDescription: 'metric_edit_description',
-    MetricAddTag: 'metric_add_tag',
-    MetricRemoveTag: 'metric_remove_tag',
-    ScheduleDeleteMetric: 'schedule_delete_metric',
-    ScheduleArchiveMetric: 'schedule_archive_metric',
-    UpdateMetricIsPermanent: 'update_metric_is_permanent',
-    UpdateMetricIsVerified: 'update_metric_is_verified',
-    MetricReviewsOn: 'metric_reviews_on',
-    MetricDisableReviewsLocally: 'metric_disable_reviews_locally',
-    CustomMetricDefinitionEdit: 'custom_metric_definition_edit',
-    CustomMetricDefinitionCreate: 'custom_metric_definition_create',
-    CustomMetricDefinitionDelete: 'custom_metric_definition_delete',
-    CustomMetricUpdateOwners: 'custom_metric_update_owners',
-    TagMetricsBulk: 'tag_metrics_bulk',
-    TagCreate: 'tag_create',
-    TagDelete: 'tag_delete',
-    TagEdit: 'tag_edit',
-    SegmentCreate: 'segment_create',
-    SegmentUpdateOwners: 'segment_update_owners',
-    LayerUpdateOwners: 'layer_update_owners',
-    LayerReviewCommit: 'layer_review_commit',
-    LayerReviewAccept: 'layer_review_accept',
-    LayerParameterAdd: 'layer_parameter_add',
-    LayerCreate: 'layer_create',
-    LayerReviewCreate: 'layer_review_create',
-    LayerReviewDelete: 'layer_review_delete',
-    LayerDelete: 'layer_delete',
-    LayerSnapshotDelete: 'layer_snapshot_delete',
-    LayerDescriptionEdit: 'layer_description_edit',
-    LayerEdit: 'layer_edit',
-    LayerOverridesEdit: 'layer_overrides_edit',
-    LayerParametersEdit: 'layer_parameters_edit',
-    LayerReviewReject: 'layer_review_reject',
-    LayerAllowedReviewersUpdate: 'layer_allowed_reviewers_update',
-    LayerReviewInfoUpdate: 'layer_review_info_update',
-    LayerUpdateTargetApps: 'layer_update_target_apps',
-    DeleteLayerParameter: 'delete_layer_parameter',
-    UpdateLayerParameter: 'update_layer_parameter',
-    ConfigReviewAccept: 'config_review_accept',
-    ConfigReviewCommit: 'config_review_commit',
-    ConfigReviewCreate: 'config_review_create',
-    ConfigDelete: 'config_delete',
-    ConfigReviewDelete: 'config_review_delete',
-    ConfigReviewsDisable: 'config_reviews_disable',
-    ConfigReviewReject: 'config_review_reject',
-    ConfigResalt: 'config_resalt',
-    ConfigRevert: 'config_revert',
-    ConfigRequireReviews: 'config_require_reviews',
-    ConfigStateToggle: 'config_state_toggle',
-    ConfigAllowedReviewersUpdate: 'config_allowed_reviewers_update',
-    ConfigConditionsUpdate: 'config_conditions_update',
-    ConfigDefaultValueUpdate: 'config_default_value_update',
-    ConfigDescriptionUpdate: 'config_description_update',
-    ConfigDisplayNameUpdate: 'config_display_name_update',
-    ConfigEnvironmentsUpdate: 'config_environments_update',
-    ConfigReviewInfoUpdate: 'config_review_info_update',
-    ConfigReviewUpdate: 'config_review_update',
-    ConfigReviewRequiredUpdate: 'config_review_required_update',
-    ConfigAddTag: 'config_add_tag',
-    ConfigEditTags: 'config_edit_tags',
-    ConfigRemoveTag: 'config_remove_tag',
-    ConfigMonitoringMetricsUpdate: 'config_monitoring_metrics_update',
-    ConfigEditTargetApps: 'config_edit_target_apps',
-    UpdateConfigAnalyticsEnabled: 'update_config_analytics_enabled',
-    SetSelfApprovalsBlocked: 'set_self_approvals_blocked',
-    ReleasePipelineCompleted: 'release_pipeline_completed',
-    ReleasePipelineWaitingForReview: 'release_pipeline_waiting_for_review',
-    PinDashboardForCompany: 'pin_dashboard_for_company',
-    AddDashboardWidget: 'add_dashboard_widget',
-    CreateDashboard: 'create_dashboard',
-    DeleteDashboardWidget: 'delete_dashboard_widget',
-    EditDashboardWidget: 'edit_dashboard_widget',
-    DeleteDashboard: 'delete_dashboard',
-    EditDashboardDescription: 'edit_dashboard_description',
-    EditDashboardName: 'edit_dashboard_name',
-    RestoreDashboard: 'restore_dashboard',
-    UpdateDashboardWidgetsFromGeneratedTags: 'update_dashboard_widgets_from_generated_tags',
-    DashboardUpdateOwners: 'dashboard_update_owners',
-    UpdateDashboardSettings: 'update_dashboard_settings',
-    CreateToplineAlert: 'create_topline_alert',
-    UpdateToplineAlert: 'update_topline_alert',
-    DeleteToplineAlert: 'delete_topline_alert',
-    ToplineAlertUpdateOwners: 'topline_alert_update_owners',
-    ActiveUserDefinitionUpdate: 'active_user_definition_update',
-    CompanyCreate: 'company_create',
-    CompanyMetricManagementUpdate: 'company_metric_management_update',
-    MetricAllowedReviewersUpdate: 'metric_allowed_reviewers_update',
-    MetricReviewCommit: 'metric_review_commit',
-    MetricReviewCreate: 'metric_review_create',
-    MetricReviewInfoUpdate: 'metric_review_info_update',
-    SetMetricDirectionality: 'set_metric_directionality',
-    CustomMetricEdit: 'custom_metric_edit',
-    CustomMetricNameEdit: 'custom_metric_name_edit',
-    CustomMetricReviewAccept: 'custom_metric_review_accept',
-    CustomMetricReviewDelete: 'custom_metric_review_delete',
-    CustomMetricReviewReject: 'custom_metric_review_reject',
-    DeleteMetric: 'delete_metric',
-    ArchiveMetric: 'archive_metric',
-    UnarchiveMetric: 'unarchive_metric',
-    CancelDeleteMetric: 'cancel_delete_metric',
-    CancelArchiveMetric: 'cancel_archive_metric',
-    EditGuardrailMetricAlert: 'edit_guardrail_metric_alert',
-    CreateGuardrailMetricAlert: 'create_guardrail_metric_alert',
-    DeleteGuardrailMetricAlert: 'delete_guardrail_metric_alert',
-    ResolveGuardrailMetricAlert: 'resolve_guardrail_metric_alert',
-    UnsnoozeGuardrailMetricAlert: 'unsnooze_guardrail_metric_alert',
-    UpdateEchidnaMetricLoadingWindow: 'update_echidna_metric_loading_window',
-    UpdateMetricReviewRequired: 'update_metric_review_required',
-    LayerReviewsOn: 'layer_reviews_on',
-    DeleteTag: 'delete_tag',
-    IdListUpdate: 'ID_list_update',
-    UpdateGateIsPermanent: 'update_gate_is_permanent',
-    SetConfigAutoArchiveState: 'set_config_auto_archive_state',
-    LoadEchidnaMetric: 'load_echidna_metric',
-    BatchLoadEchidnaToplineImpact: 'batch_load_echidna_topline_impact',
-    LoadEchidnaMetricAsyncBatch: 'load_echidna_metric_async_batch',
-    UpdateServerSdkConfigurationRollback: 'update_server_sdk_configuration_rollback',
-    CompanyIdTypeAdd: 'company_ID_type_add',
-    UpdateEchidnaSourceReviewRequired: 'update_echidna_source_review_required',
-    AwsMarketplaceAccountDelete: 'AWS_marketplace_account_delete',
-    BatchCancelCompanyInvites: 'batch_cancel_company_invites',
-    BatchUserRoleUpdate: 'batch_user_role_update',
-    CompanyBasicInfoEdit: 'company_basic_info_edit',
-    CompanyDelete: 'company_delete',
-    CompanyEmailDomainConfigDelete: 'company_email_domain_config_delete',
-    CompanyEnvironmentsEdit: 'company_environments_edit',
-    AddGeoType: 'add_geo_type',
-    DeleteGeoType: 'delete_geo_type',
-    CompanyIdTypeDelete: 'company_ID_type_delete',
-    CompanyIdTypeEdit: 'company_ID_type_edit',
-    CompanyInviteAccessUpdate: 'company_invite_access_update',
-    UpdateEntitiesRequireTeams: 'update_entities_require_teams',
-    UpdateCompanyUserStoreEnabled: 'update_company_user_store_enabled',
-    CompanyMemberRemove: 'company_member_remove',
-    CompanyMetricDelete: 'company_metric_delete',
-    CompanySnapshotDelete: 'company_snapshot_delete',
-    ConfigIdTypeUpdate: 'config_id_type_update',
-    ConfigUpdateOwners: 'config_update_owners',
-    CreateCustomerApp: 'create_customer_app',
-    EditTargetApp: 'edit_target_app',
-    DeleteTargetApp: 'delete_target_app',
-    SourceAllowedReviewersUpdate: 'source_allowed_reviewers_update',
-    CreateEchidnaAssignmentSource: 'create_echidna_assignment_source',
-    CreateEchidnaEntityPropertySource: 'create_echidna_entity_property_source',
-    CreateEchidnaMetricSource: 'create_echidna_metric_source',
-    CreateEchidnaDataQualityChecks: 'create_echidna_data_quality_checks',
-    CreateEchidnaSourceReview: 'create_echidna_source_review',
-    AcceptEchidnaSourceReview: 'accept_echidna_source_review',
-    CommitEchidnaSourceReview: 'commit_echidna_source_review',
-    RejectEchidnaSourceReview: 'reject_echidna_source_review',
-    UpdateEchidnaSourceReview: 'update_echidna_source_review',
-    DeleteEchidnaSourceReview: 'delete_echidna_source_review',
-    CreatePowerAnalysisGateQuery: 'create_power_analysis_gate_query',
-    CreatePowerAnalysisCustomQuery: 'create_power_analysis_custom_query',
-    CustomPulseQueryCreate: 'custom_pulse_query_create',
-    CustomPulseQueryDelete: 'custom_pulse_query_delete',
-    CustomPulseQueryNameEdit: 'custom_pulse_query_name_edit',
-    CustomQueryToggleFavorite: 'custom_query_toggle_favorite',
-    CustomSankeyDelete: 'custom_sankey_delete',
-    DeleteEchidnaAssignmentSource: 'delete_echidna_assignment_source',
-    DeleteEchidnaEntityPropertySource: 'delete_echidna_entity_property_source',
-    DeleteEchidnaMetricSource: 'delete_echidna_metric_source',
-    DeletePaymentMethod: 'delete_payment_method',
-    TagUpdateOwners: 'tag_update_owners',
-    ModifyOverrideConfig: 'modify_override_config',
-    ModifyOverrides: 'modify_overrides',
-    RemoveOverrideConfig: 'remove_override_config',
-    ScheduledCustomPulseQueryCreate: 'scheduled_custom_pulse_query_create',
-    IntegrationDelete: 'integration_delete',
-    IntegrationCreate: 'integration_create',
-    IntegrationRequested: 'integration_requested',
-    IntegrationUpdate: 'integration_update',
-    ScheduledPulseCustomQueryDelete: 'scheduled_pulse_custom_query_delete',
-    ScheduledPulseQueryNameEdit: 'scheduled_pulse_query_name_edit',
-    UserDataLoad: 'user_data_load',
-    OrganizationMemberRemove: 'organization_member_remove',
-    SharedReportLinkUpsert: 'shared_report_link_upsert',
-    ScheduledPulseRollupsUpdate: 'scheduled_pulse_rollups_update',
-    OidcConfigurationDelete: 'OIDC_configuration_delete',
-    ProjectReviewGroupDelete: 'project_review_group_delete',
-    SsoDisable: 'SSO_disable',
-    ProjectDescriptionEdit: 'project_description_edit',
-    ProjectOwnerSet: 'project_owner_set',
-    UserRoleUpdate: 'user_role_update',
-    OidcConfigurationUpsert: 'OIDC_configuration_upsert',
-    PaymentEntitlementsUpsert: 'payment_entitlements_upsert',
-    ProjectReviewGroupUpsert: 'project_review_group_upsert',
-    ProjectReviewGroupRemove: 'project_review_group_remove',
-    UpdateTeamSettings: 'update_team_settings',
-    UpdateTeamAdmins: 'update_team_admins',
-    UpdateTeamName: 'update_team_name',
-    UpdateTeamDescription: 'update_team_description',
-    UpdateTeam: 'update_team',
-    SharedReportLinkDelete: 'shared_report_link_delete',
-    ExperimentDataReportRename: 'experiment_data_report_rename',
-    ExperimentDataReportUpdateParameters: 'experiment_data_report_update_parameters',
-    EventDimensionUpdate: 'event_dimension_update',
-    IntegrationSetEnabled: 'integration_set_enabled',
-    IntegrationUpdateDisabledEvents: 'integration_update_disabled_events',
-    IntegrationUpdateOutgoingConfig: 'integration_update_outgoing_config',
-    IntegrationUpdateRateLimits: 'integration_update_rate_limits',
-    IntegrationUpsert: 'integration_upsert',
-    IngestionSourceDelete: 'ingestion_source_delete',
-    TagConfigsBulk: 'tag_configs_bulk',
-    OrgApiKeyCreate: 'org_api_key_create',
-    SetPersonalApiKeyAccess: 'set_personal_api_key_access',
-    SdkKeyCreate: 'sdk_key_create',
-    SdkKeyRotate: 'sdk_key_rotate',
-    SdkKeyDeactivate: 'sdk_key_deactivate',
-    SdkKeyDelete: 'sdk_key_delete',
-    SecretKeyRegenerate: 'secret_key_regenerate',
-    SdkKeyUpdateDescription: 'sdk_key_update_description',
-    SetApiShareKeyAccess: 'set_api_share_key_access',
-    SetPlanType: 'set_plan_type',
-    GenerateIntegrationWebhookSecret: 'generate_integration_webhook_secret',
-    SetDefaultPaymentMethod: 'set_default_payment_method',
-    SetUserSamplingRate: 'set_user_sampling_rate',
-    SdkKeyUpdateEnvironments: 'sdk_key_update_environments',
-    UpsertTriggerIntegration: 'upsert_trigger_integration',
-    DeleteTriggerIntegration: 'delete_trigger_integration',
-    DismissRunawayEntity: 'dismiss_runaway_entity',
-    UpdateEchidnaMetricSource: 'update_echidna_metric_source',
-    UpdateEchidnaMetricSourceName: 'update_echidna_metric_source_name',
-    UpdateEchidnaMetricTagOrDescription: 'update_echidna_metric_tag_or_description',
-    UpdateEchidnaAssignmentSource: 'update_echidna_assignment_source',
-    UpdateEchidnaAssignmentSourceName: 'update_echidna_assignment_source_name',
-    UpdateEchidnaAssignmentSourceLoadingWindow: 'update_echidna_assignment_source_loading_window',
-    UpdateEchidnaEntityPropertySource: 'update_echidna_entity_property_source',
-    UpdateEchidnaEntityPropertySourceName: 'update_echidna_entity_property_source_name',
-    UpdateEchidnaSourceOwner: 'update_echidna_source_owner',
-    UpdatePrecommitHook: 'update_precommit_hook',
-    LoadEchidnaPulse: 'load_echidna_pulse',
-    LoadEchidnaAutotunePulse: 'load_echidna_autotune_pulse',
-    LoadEchidnaAssignmentSource: 'load_echidna_assignment_source',
-    SetEchidnaScheduleHour: 'set_echidna_schedule_hour',
-    EchidnaDropTables: 'echidna_drop_tables',
-    UpsertUserRole: 'upsert_user_role',
-    DeleteUserRole: 'delete_user_role',
-    SdkKeyUpdateTargetApp: 'sdk_key_update_target_app',
-    SetGateAnalyticsEnabledByDefault: 'set_gate_analytics_enabled_by_default',
-    SetDynamicConfigAnalyticsEnabledByDefault: 'set_dynamic_config_analytics_enabled_by_default',
-    SetGateAnalytics0100ExposuresEnabled: 'set_gate_analytics_0_100_exposures_enabled',
-    UpdateBv3Subscription: 'update_bv3_subscription',
-    UpsertExperimentSettings: 'upsert_experiment_settings',
-    UpsertGateSettings: 'upsert_gate_settings',
-    SdkKeyUpdateScopes: 'sdk_key_update_scopes',
-    UserLogin: 'user_login',
-    ParamStoreCreate: 'param_store_create',
-    ParamStoreUpdate: 'param_store_update',
-    SetBv3PlanType: 'set_bv3_plan_type',
-    SetEchidnaProjectPulseSchedule: 'set_echidna_project_pulse_schedule',
-    SetEchidnaProjectMetricSchedule: 'set_echidna_project_metric_schedule',
-    SetCompanyDefaultUserRole: 'set_company_default_user_role',
-    SetCompanySessionReplaySamplingRate: 'set_company_session_replay_sampling_rate',
-    SetCompanySessionReplaySettings: 'set_company_session_replay_settings',
-    CancelEchidnaDag: 'cancel_echidna_dag',
-    SetRequireTargetAppForNewEntity: 'set_require_target_app_for_new_entity',
-    AddSegmentsOfInterestProperty: 'add_segments_of_interest_property',
-    DeleteSegmentsOfInterestProperty: 'delete_segments_of_interest_property',
-    AddSrmDebuggerCustomDimension: 'add_srm_debugger_custom_dimension',
-    DeleteSrmDebuggerCustomDimension: 'delete_srm_debugger_custom_dimension',
-    ParamStoreDelete: 'param_store_delete',
-    SetupExternalOptIn: 'setup_external_opt_in',
-    ParamStoreUpdateOwners: 'param_store_update_owners',
-    CreateStatsigProxy: 'create_statsig_proxy',
-    UpdateEchidnaAssignmentSourceIsVerified: 'update_echidna_assignment_source_is_verified',
-    UpdateEchidnaMetricSourceIsVerified: 'update_echidna_metric_source_is_verified',
-    UpdateEchidnaEntityPropertySourceIsVerified: 'update_echidna_entity_property_source_is_verified',
-    UpdateEchidnaSourceIsVerified: 'update_echidna_source_is_verified',
-    SetAutomatedBotRemovals: 'set_automated_bot_removals',
-    PulseResultsExport: 'pulse_results_export',
-    UpdateCompanyAutoCaptureSettings: 'update_company_auto_capture_settings',
-    UpdateCompanyExperimentExclusionSegment: 'update_company_experiment_exclusion_segment',
-    SetStopNewAssignmentToggle: 'set_stop_new_assignment_toggle',
-    SetStopExperimentEnabled: 'set_stop_experiment_enabled',
-    UpdateCompanyRemoveDefaultGatesSetting: 'update_company_remove_default_gates_setting',
-    SetWhnResultsExportSetting: 'set_whn_results_export_setting',
-    UpdateExperimentQualityScoreSettings: 'update_experiment_quality_score_settings',
-    UpdateExperimentSalt: 'update_experiment_salt',
-    UpdatePrecommitWebhookKey: 'update_precommit_webhook_key',
-    SetWhnTableTtls: 'set_whn_table_ttls',
-    SetIdResolutionInferredId: 'set_id_resolution_inferred_id',
-    SetIdResolutionLabeledId: 'set_id_resolution_labeled_id',
-    AddSessionRecordingsToPlaylist: 'add_session_recordings_to_playlist',
-    DeleteSessionRecordingsFromPlaylist: 'delete_session_recordings_from_playlist',
-    DeleteSessionReplayPlaylist: 'delete_session_replay_playlist',
-    BackfillMetricResults: 'backfill_metric_results',
-    CancelMetricBackfills: 'cancel_metric_backfills',
-    ArchiveOrgProject: 'archive_org_project',
-    UpdateAiAssistanceEnabled: 'update_ai_assistance_enabled',
-    UpdateAiBusinessContext: 'update_ai_business_context',
-    UpdateExperimentAiSettings: 'update_experiment_ai_settings',
-    UpdateExperimentAiAdvisorSettings: 'update_experiment_ai_advisor_settings',
-    UpdateAiConfigAiAdvisorSettings: 'update_ai_config_ai_advisor_settings',
-    UpsertAiConfigEvalGroups: 'upsert_ai_config_eval_groups',
-    EditAiConfigTargetingRules: 'edit_ai_config_targeting_rules',
-    UpsertUserStoreClientTargetingProperties: 'upsert_user_store_client_targeting_properties',
-    SetAiConfigBaselineVersion: 'set_ai_config_baseline_version',
-    VerifyDashboard: 'verify_dashboard',
-    SetFirstExposureUserStoreDefault: 'set_first_exposure_user_store_default',
-    ScheduledRolloutTemplateCreate: 'scheduled_rollout_template_create',
-    ScheduledRolloutTemplateUpdate: 'scheduled_rollout_template_update',
-    ScheduledRolloutTemplateDelete: 'scheduled_rollout_template_delete',
-    SetAiProviderApiKeys: 'set_ai_provider_api_keys',
-    ExperimentScheduleAllocationChange: 'experiment_schedule_allocation_change',
-    ExperimentRolloutAllocationChange: 'experiment_rollout_allocation_change',
-    GateStaleStatusUpdate: 'gate_stale_status_update',
-    RolloutPlanCreate: 'rollout_plan_create',
-    RolloutPlanUpdate: 'rollout_plan_update',
-    RolloutPlanDelete: 'rollout_plan_delete',
-    UpdateExperimentQualityScoreCriteria: 'update_experiment_quality_score_criteria'
-} as const;
-export type ConsoleV1AuditLogsGetActionTypesEnum = typeof ConsoleV1AuditLogsGetActionTypesEnum[keyof typeof ConsoleV1AuditLogsGetActionTypesEnum];

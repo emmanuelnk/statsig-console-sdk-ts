@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **string** | The gate display name | [optional] [default to undefined]
 **isEnabled** | **boolean** |  | [default to undefined]
 **description** | **string** |  | [default to undefined]
-**rules** | [**Array&lt;DynamicConfigRulesDtoRulesInner&gt;**](DynamicConfigRulesDtoRulesInner.md) |  | [default to undefined]
+**rules** | [**Array&lt;AutotuneExperimentDtoInlineTargetingRulesInner&gt;**](AutotuneExperimentDtoInlineTargetingRulesInner.md) |  | [default to undefined]
 **tags** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
 **type** | **string** |  | [optional] [default to undefined]
 **idType** | **string** |  | [optional] [default to undefined]
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **team** | **string** |  | [optional] [default to undefined]
 **teamID** | **string** |  | [optional] [default to undefined]
 **measureMetricLifts** | **boolean** |  | [optional] [default to undefined]
-**monitoringMetrics** | [**Array&lt;ExperimentCreateDtoCureCovariatesInner&gt;**](ExperimentCreateDtoCureCovariatesInner.md) |  | [optional] [default to undefined]
+**monitoringMetrics** | [**Array&lt;ExperimentCreateDtoBayesianPriorsInnerMetric&gt;**](ExperimentCreateDtoBayesianPriorsInnerMetric.md) |  | [optional] [default to undefined]
 **reviewSettings** | [**GateCreateDtoReviewSettings**](GateCreateDtoReviewSettings.md) |  | [optional] [default to undefined]
 **releasePipelineID** | **string** |  | [optional] [default to undefined]
 

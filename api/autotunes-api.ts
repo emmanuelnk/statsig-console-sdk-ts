@@ -28,11 +28,11 @@ import type { AutotuneFullUpdateDto } from '../models';
 // @ts-ignore
 import type { AutotunePartialUpdateDto } from '../models';
 // @ts-ignore
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
+// @ts-ignore
 import type { ConsoleV1AutotunesIdDelete200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesIdGet200Response } from '../models';
-// @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesIdMakeDecisionPut200Response } from '../models';
 // @ts-ignore
@@ -63,11 +63,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * @summary List Autotune
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/autotunes`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -93,9 +92,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -109,11 +105,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * 
          * @summary Delete Autotune
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1AutotunesIdDelete', 'id', id)
             const localVarPath = `/console/v1/autotunes/{id}`
@@ -134,9 +129,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -150,11 +142,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * 
          * @summary Read Autotune
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1AutotunesIdGet', 'id', id)
             const localVarPath = `/console/v1/autotunes/{id}`
@@ -175,9 +166,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -192,11 +180,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * @summary Finish Experiment Early
          * @param {string} id id
          * @param {ExperimentStatusUpdateDto} experimentStatusUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdMakeDecisionPut: async (id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesIdMakeDecisionPut: async (id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1AutotunesIdMakeDecisionPut', 'id', id)
             // verify required parameter 'experimentStatusUpdateDto' is not null or undefined
@@ -220,9 +207,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -238,11 +222,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * @summary Partially Update Autotune
          * @param {string} id id
          * @param {AutotunePartialUpdateDto} autotunePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdPatch: async (id: string, autotunePartialUpdateDto: AutotunePartialUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesIdPatch: async (id: string, autotunePartialUpdateDto: AutotunePartialUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1AutotunesIdPatch', 'id', id)
             // verify required parameter 'autotunePartialUpdateDto' is not null or undefined
@@ -266,9 +249,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -284,11 +264,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * @summary Fully Update Autotune
          * @param {string} id id
          * @param {AutotuneFullUpdateDto} autotuneFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdPost: async (id: string, autotuneFullUpdateDto: AutotuneFullUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesIdPost: async (id: string, autotuneFullUpdateDto: AutotuneFullUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1AutotunesIdPost', 'id', id)
             // verify required parameter 'autotuneFullUpdateDto' is not null or undefined
@@ -312,9 +291,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -329,11 +305,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * 
          * @summary Reset Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdResetPut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesIdResetPut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1AutotunesIdResetPut', 'id', id)
             const localVarPath = `/console/v1/autotunes/{id}/reset`
@@ -354,9 +329,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -370,11 +342,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * 
          * @summary Start Autotune Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesIdStartPut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesIdStartPut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1AutotunesIdStartPut', 'id', id)
             const localVarPath = `/console/v1/autotunes/{id}/start`
@@ -395,9 +366,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -411,11 +379,10 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
          * 
          * @summary Create Autotune
          * @param {AutotuneCreateDto} autotuneCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1AutotunesPost: async (autotuneCreateDto: AutotuneCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1AutotunesPost: async (autotuneCreateDto: AutotuneCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'autotuneCreateDto' is not null or undefined
             assertParamExists('consoleV1AutotunesPost', 'autotuneCreateDto', autotuneCreateDto)
             const localVarPath = `/console/v1/autotunes`;
@@ -436,9 +403,6 @@ export const AutotunesApiAxiosParamCreator = function (configuration?: Configura
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -463,12 +427,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * @summary List Autotune
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1autotunesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1AutotunesGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1autotunesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -477,12 +440,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Autotune
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1AutotunesIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -491,12 +453,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Autotune
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdGet(id, xRespectReviewSettings, options);
+        async consoleV1AutotunesIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -506,12 +467,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * @summary Finish Experiment Early
          * @param {string} id id
          * @param {ExperimentStatusUpdateDto} experimentStatusUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesIdMakeDecisionPut(id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdMakeDecisionPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdMakeDecisionPut(id, experimentStatusUpdateDto, xRespectReviewSettings, options);
+        async consoleV1AutotunesIdMakeDecisionPut(id: string, experimentStatusUpdateDto: ExperimentStatusUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdMakeDecisionPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdMakeDecisionPut(id, experimentStatusUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesIdMakeDecisionPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -521,12 +481,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * @summary Partially Update Autotune
          * @param {string} id id
          * @param {AutotunePartialUpdateDto} autotunePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesIdPatch(id: string, autotunePartialUpdateDto: AutotunePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdPatch(id, autotunePartialUpdateDto, xRespectReviewSettings, options);
+        async consoleV1AutotunesIdPatch(id: string, autotunePartialUpdateDto: AutotunePartialUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdPatch(id, autotunePartialUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -536,12 +495,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * @summary Fully Update Autotune
          * @param {string} id id
          * @param {AutotuneFullUpdateDto} autotuneFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesIdPost(id: string, autotuneFullUpdateDto: AutotuneFullUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdPost(id, autotuneFullUpdateDto, xRespectReviewSettings, options);
+        async consoleV1AutotunesIdPost(id: string, autotuneFullUpdateDto: AutotuneFullUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdPost(id, autotuneFullUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesIdPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -550,12 +508,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Reset Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesIdResetPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdResetPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdResetPut(id, xRespectReviewSettings, options);
+        async consoleV1AutotunesIdResetPut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdResetPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdResetPut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesIdResetPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -564,12 +521,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Start Autotune Experiment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesIdStartPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdStartPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdStartPut(id, xRespectReviewSettings, options);
+        async consoleV1AutotunesIdStartPut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesIdStartPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesIdStartPut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesIdStartPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -578,12 +534,11 @@ export const AutotunesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Autotune
          * @param {AutotuneCreateDto} autotuneCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1AutotunesPost(autotuneCreateDto: AutotuneCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesPost(autotuneCreateDto, xRespectReviewSettings, options);
+        async consoleV1AutotunesPost(autotuneCreateDto: AutotuneCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1AutotunesPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1AutotunesPost(autotuneCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AutotunesApi.consoleV1AutotunesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -605,7 +560,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesGet(requestParameters: AutotunesApiConsoleV1AutotunesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1autotunesResponse> {
-            return localVarFp.consoleV1AutotunesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -615,7 +570,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesIdDelete(requestParameters: AutotunesApiConsoleV1AutotunesIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdDelete200Response> {
-            return localVarFp.consoleV1AutotunesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -625,7 +580,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesIdGet(requestParameters: AutotunesApiConsoleV1AutotunesIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdGet200Response> {
-            return localVarFp.consoleV1AutotunesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -635,7 +590,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesIdMakeDecisionPut(requestParameters: AutotunesApiConsoleV1AutotunesIdMakeDecisionPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdMakeDecisionPut200Response> {
-            return localVarFp.consoleV1AutotunesIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * Update selected properties of the experiment
@@ -645,7 +600,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesIdPatch(requestParameters: AutotunesApiConsoleV1AutotunesIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdPatch200Response> {
-            return localVarFp.consoleV1AutotunesIdPatch(requestParameters.id, requestParameters.autotunePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesIdPatch(requestParameters.id, requestParameters.autotunePartialUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * Update all properties of the experiment
@@ -655,7 +610,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesIdPost(requestParameters: AutotunesApiConsoleV1AutotunesIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdPost200Response> {
-            return localVarFp.consoleV1AutotunesIdPost(requestParameters.id, requestParameters.autotuneFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesIdPost(requestParameters.id, requestParameters.autotuneFullUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -665,7 +620,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesIdResetPut(requestParameters: AutotunesApiConsoleV1AutotunesIdResetPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdResetPut200Response> {
-            return localVarFp.consoleV1AutotunesIdResetPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesIdResetPut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -675,7 +630,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesIdStartPut(requestParameters: AutotunesApiConsoleV1AutotunesIdStartPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesIdStartPut200Response> {
-            return localVarFp.consoleV1AutotunesIdStartPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesIdStartPut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -685,7 +640,7 @@ export const AutotunesApiFactory = function (configuration?: Configuration, base
          * @throws {RequiredError}
          */
         consoleV1AutotunesPost(requestParameters: AutotunesApiConsoleV1AutotunesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1AutotunesPost201Response> {
-            return localVarFp.consoleV1AutotunesPost(requestParameters.autotuneCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1AutotunesPost(requestParameters.autotuneCreateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -703,11 +658,6 @@ export interface AutotunesApiConsoleV1AutotunesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -718,11 +668,6 @@ export interface AutotunesApiConsoleV1AutotunesIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -733,11 +678,6 @@ export interface AutotunesApiConsoleV1AutotunesIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -750,11 +690,6 @@ export interface AutotunesApiConsoleV1AutotunesIdMakeDecisionPutRequest {
     readonly id: string
 
     readonly experimentStatusUpdateDto: ExperimentStatusUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -767,11 +702,6 @@ export interface AutotunesApiConsoleV1AutotunesIdPatchRequest {
     readonly id: string
 
     readonly autotunePartialUpdateDto: AutotunePartialUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -784,11 +714,6 @@ export interface AutotunesApiConsoleV1AutotunesIdPostRequest {
     readonly id: string
 
     readonly autotuneFullUpdateDto: AutotuneFullUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -799,11 +724,6 @@ export interface AutotunesApiConsoleV1AutotunesIdResetPutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -814,11 +734,6 @@ export interface AutotunesApiConsoleV1AutotunesIdStartPutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -826,11 +741,6 @@ export interface AutotunesApiConsoleV1AutotunesIdStartPutRequest {
  */
 export interface AutotunesApiConsoleV1AutotunesPostRequest {
     readonly autotuneCreateDto: AutotuneCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -845,7 +755,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesGet(requestParameters: AutotunesApiConsoleV1AutotunesGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -856,7 +766,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesIdDelete(requestParameters: AutotunesApiConsoleV1AutotunesIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -867,7 +777,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesIdGet(requestParameters: AutotunesApiConsoleV1AutotunesIdGetRequest, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -878,7 +788,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesIdMakeDecisionPut(requestParameters: AutotunesApiConsoleV1AutotunesIdMakeDecisionPutRequest, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdMakeDecisionPut(requestParameters.id, requestParameters.experimentStatusUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -889,7 +799,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesIdPatch(requestParameters: AutotunesApiConsoleV1AutotunesIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdPatch(requestParameters.id, requestParameters.autotunePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdPatch(requestParameters.id, requestParameters.autotunePartialUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -900,7 +810,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesIdPost(requestParameters: AutotunesApiConsoleV1AutotunesIdPostRequest, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdPost(requestParameters.id, requestParameters.autotuneFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdPost(requestParameters.id, requestParameters.autotuneFullUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -911,7 +821,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesIdResetPut(requestParameters: AutotunesApiConsoleV1AutotunesIdResetPutRequest, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdResetPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdResetPut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -922,7 +832,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesIdStartPut(requestParameters: AutotunesApiConsoleV1AutotunesIdStartPutRequest, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdStartPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesIdStartPut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -933,7 +843,7 @@ export class AutotunesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1AutotunesPost(requestParameters: AutotunesApiConsoleV1AutotunesPostRequest, options?: RawAxiosRequestConfig) {
-        return AutotunesApiFp(this.configuration).consoleV1AutotunesPost(requestParameters.autotuneCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return AutotunesApiFp(this.configuration).consoleV1AutotunesPost(requestParameters.autotuneCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -76,6 +76,10 @@ export interface MetricSourceCreationContractDto {
      * Marks the metric source as verified, indicating trustworthiness within the organization.
      */
     'isVerified'?: boolean;
+    /**
+     * Disable CURE for all metrics built from this metric source
+     */
+    'disableCURE'?: boolean;
     'owner'?: AIConfigCreateDtoOwner | null;
     /**
      * Optional field indicating the team name responsible for the metric, aiding in accountability and management.
@@ -89,6 +93,18 @@ export interface MetricSourceCreationContractDto {
      * Skips persisting the source (used to validate that inputs are correct)
      */
     'dryRun'?: boolean;
+    /**
+     * Skips running SQL validation for the source. Requires all_columns and column_types when true. Availability is gated.
+     */
+    'skip_validation'?: boolean;
+    /**
+     * Column names to persist when skip_validation is true. Optional otherwise.
+     */
+    'all_columns'?: Array<string>;
+    /**
+     * Column types aligned with all_columns when skip_validation is true. Optional otherwise.
+     */
+    'column_types'?: Array<string>;
 }
 
 export const MetricSourceCreationContractDtoSourceTypeEnum = {

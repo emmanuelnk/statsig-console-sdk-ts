@@ -26,9 +26,9 @@ import type { ArchiveSchemaDto } from '../models';
 // @ts-ignore
 import type { ConsoleV1AlertsGet403Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
@@ -41,6 +41,8 @@ import type { ConsoleV1GatesGetPassRateParameter } from '../models';
 import type { ConsoleV1GatesIdArchivePut200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1GatesIdChecksGet200Response } from '../models';
+// @ts-ignore
+import type { ConsoleV1GatesIdCodeCleanupPost200Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1GatesIdDelete200Response } from '../models';
 // @ts-ignore
@@ -115,17 +117,18 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {ConsoleV1GatesGetPassRateParameter} [passRate] Filter by pass rate of the gates, as determined by a sampling of overall true/false values returned: 0, 100, or INBETWEEN (pass rate greater than zero but less than 100)
          * @param {ConsoleV1GatesGetPassRateParameter} [rolloutRate] Filter by rollout rate of the gates: 0 (all rules are set to pass 0%), 100 (all rules pass 100% including an \&quot;everyone\&quot; catch all rule), or INBETWEEN (at least one rule has a pass rate greater than 0 but less than 100)
          * @param {string | null} [releasePipelineID] Filter by release pipeline ID
+         * @param {string} [targetAppID] Filter by target app ID
          * @param {ConsoleV1GatesGetIncludeArchivedEnum} [includeArchived] Include archived gates in the response
+         * @param {ConsoleV1GatesGetStore0100ExposuresEnum} [store0100Exposures] Filter gates by whether \&quot;Store 0/100 Exposures\&quot; is enabled.
          * @param {string | null} [creatorName] Name of the creator.
          * @param {string | null} [creatorID] ID of the user who created the entity.
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesGet: async (idType?: ConsoleV1AuditLogsGetTagsParameter, type?: ConsoleV1GatesGetTypeEnum, typeReason?: ConsoleV1GatesGetTypeReasonEnum, passRate?: ConsoleV1GatesGetPassRateParameter, rolloutRate?: ConsoleV1GatesGetPassRateParameter, releasePipelineID?: string | null, includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesGet: async (idType?: ConsoleV1AuditLogsGetTagsParameter, type?: ConsoleV1GatesGetTypeEnum, typeReason?: ConsoleV1GatesGetTypeReasonEnum, passRate?: ConsoleV1GatesGetPassRateParameter, rolloutRate?: ConsoleV1GatesGetPassRateParameter, releasePipelineID?: string | null, targetAppID?: string, includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum, store0100Exposures?: ConsoleV1GatesGetStore0100ExposuresEnum, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/gates`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -171,8 +174,16 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
                 localVarQueryParameter['releasePipelineID'] = releasePipelineID;
             }
 
+            if (targetAppID !== undefined) {
+                localVarQueryParameter['targetAppID'] = targetAppID;
+            }
+
             if (includeArchived !== undefined) {
                 localVarQueryParameter['includeArchived'] = includeArchived;
+            }
+
+            if (store0100Exposures !== undefined) {
+                localVarQueryParameter['store0100Exposures'] = store0100Exposures;
             }
 
             if (creatorName !== undefined) {
@@ -199,9 +210,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -217,11 +225,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} id id
          * @param {string} metricId metric id
          * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdAlertsMetricIdResolvePost: async (id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdAlertsMetricIdResolvePost: async (id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdAlertsMetricIdResolvePost', 'id', id)
             // verify required parameter 'metricId' is not null or undefined
@@ -248,9 +255,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -267,11 +271,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} id id
          * @param {string} metricId metric id
          * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdAlertsMetricIdResolvePost_1: async (id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdAlertsMetricIdResolvePost_1: async (id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdAlertsMetricIdResolvePost_1', 'id', id)
             // verify required parameter 'metricId' is not null or undefined
@@ -298,9 +301,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -316,11 +316,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Archive Gate
          * @param {string} id id
          * @param {ArchiveSchemaDto} archiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdArchivePut: async (id: string, archiveSchemaDto: ArchiveSchemaDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdArchivePut: async (id: string, archiveSchemaDto: ArchiveSchemaDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdArchivePut', 'id', id)
             // verify required parameter 'archiveSchemaDto' is not null or undefined
@@ -344,9 +343,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -361,11 +357,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Read Gate Checks
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdChecksGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdChecksGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdChecksGet', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/checks`
@@ -386,9 +381,43 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Start Gate Code Cleanup
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1GatesIdCodeCleanupPost: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('consoleV1GatesIdCodeCleanupPost', 'id', id)
+            const localVarPath = `/console/v1/gates/{id}/code_cleanup`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
             }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication STATSIG-API-KEY required
+            await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -402,11 +431,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Delete Gates
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdDelete', 'id', id)
             const localVarPath = `/console/v1/gates/{id}`
@@ -427,9 +455,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -443,11 +468,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Disable Gate
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdDisablePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdDisablePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdDisablePut', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/disable`
@@ -468,9 +492,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -486,11 +507,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} id id
          * @param {number} [limit] 
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdDynamicConfigReferencesGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdDynamicConfigReferencesGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdDynamicConfigReferencesGet', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/dynamic_config_references`
@@ -519,9 +539,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -535,11 +552,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Enable Gate
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdEnablePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdEnablePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdEnablePut', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/enable`
@@ -560,9 +576,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -578,11 +591,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} id id
          * @param {number} [limit] 
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdExperimentReferencesGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdExperimentReferencesGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdExperimentReferencesGet', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/experiment_references`
@@ -611,9 +623,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -629,11 +638,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} id id
          * @param {number} [limit] 
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdGateReferencesGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdGateReferencesGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdGateReferencesGet', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/gate_references`
@@ -662,9 +670,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -678,11 +683,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Read Gate
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdGet', 'id', id)
             const localVarPath = `/console/v1/gates/{id}`
@@ -703,9 +707,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -719,11 +720,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Launch Gate
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdLaunchPut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdLaunchPut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdLaunchPut', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/launch`
@@ -744,9 +744,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -761,11 +758,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Load Pulse Gate
          * @param {string} id id
          * @param {EchidnaGateLoadPulseQueryDto} echidnaGateLoadPulseQueryDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdLoadPulsePost: async (id: string, echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdLoadPulsePost: async (id: string, echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdLoadPulsePost', 'id', id)
             // verify required parameter 'echidnaGateLoadPulseQueryDto' is not null or undefined
@@ -789,9 +785,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -806,11 +799,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Delete Gate Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdOverridesDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdOverridesDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdOverridesDelete', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/overrides`
@@ -831,9 +823,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -847,11 +836,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Get Gate Override
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdOverridesGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdOverridesGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdOverridesGet', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/overrides`
@@ -872,9 +860,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -889,11 +874,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Add Gate Overrides
          * @param {string} id id
          * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdOverridesPatch: async (id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdOverridesPatch: async (id: string, updateOverridesContractDto: UpdateOverridesContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdOverridesPatch', 'id', id)
             // verify required parameter 'updateOverridesContractDto' is not null or undefined
@@ -917,9 +901,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -935,11 +916,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Update Gate Overrides
          * @param {string} id id
          * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdOverridesPost: async (id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdOverridesPost: async (id: string, updateOverridesContractDto: UpdateOverridesContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdOverridesPost', 'id', id)
             // verify required parameter 'updateOverridesContractDto' is not null or undefined
@@ -963,9 +943,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -981,11 +958,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Partially Update Gates
          * @param {string} id id
          * @param {GatePartialUpdateDto} gatePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdPatch: async (id: string, gatePartialUpdateDto: GatePartialUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdPatch: async (id: string, gatePartialUpdateDto: GatePartialUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdPatch', 'id', id)
             // verify required parameter 'gatePartialUpdateDto' is not null or undefined
@@ -1009,9 +985,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1027,11 +1000,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Fully Update Gates
          * @param {string} id id
          * @param {GateFullUpdateDto} gateFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdPost: async (id: string, gateFullUpdateDto: GateFullUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdPost: async (id: string, gateFullUpdateDto: GateFullUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdPost', 'id', id)
             // verify required parameter 'gateFullUpdateDto' is not null or undefined
@@ -1055,9 +1027,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1073,11 +1042,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Commit Gate Review
          * @param {string} id 
          * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdReviewsReviewIDCommitPut: async (id: string, reviewID: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdReviewsReviewIDCommitPut: async (id: string, reviewID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdReviewsReviewIDCommitPut', 'id', id)
             // verify required parameter 'reviewID' is not null or undefined
@@ -1101,9 +1069,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1118,11 +1083,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Add Gate Rule
          * @param {string} id id
          * @param {RuleDto} ruleDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulePost: async (id: string, ruleDto: RuleDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdRulePost: async (id: string, ruleDto: RuleDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdRulePost', 'id', id)
             // verify required parameter 'ruleDto' is not null or undefined
@@ -1146,9 +1110,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1163,11 +1124,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Read Gate Rules
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdRulesGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdRulesGet', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/rules`
@@ -1188,9 +1148,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1205,11 +1162,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Delete Gate Rule
          * @param {string} id Gate ID
          * @param {string} ruleID Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDDelete: async (id: string, ruleID: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdRulesRuleIDDelete: async (id: string, ruleID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdRulesRuleIDDelete', 'id', id)
             // verify required parameter 'ruleID' is not null or undefined
@@ -1233,9 +1189,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1251,11 +1204,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} id Gate ID
          * @param {string} ruleID Rule ID
          * @param {RuleUpdateDto} ruleUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDPatch: async (id: string, ruleID: string, ruleUpdateDto: RuleUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdRulesRuleIDPatch: async (id: string, ruleID: string, ruleUpdateDto: RuleUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdRulesRuleIDPatch', 'id', id)
             // verify required parameter 'ruleID' is not null or undefined
@@ -1282,9 +1234,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1302,11 +1251,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} ruleID Rule ID
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet: async (id: string, ruleID: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet: async (id: string, ruleID: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet', 'id', id)
             // verify required parameter 'ruleID' is not null or undefined
@@ -1338,9 +1286,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1357,11 +1302,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} ruleID Rule ID
          * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [confidence] Confidence interval (0-100)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdRulesRuleIDPulseResultsGet: async (id: string, ruleID: string, cuped?: string, confidence?: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdRulesRuleIDPulseResultsGet: async (id: string, ruleID: string, cuped?: string, confidence?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdRulesRuleIDPulseResultsGet', 'id', id)
             // verify required parameter 'ruleID' is not null or undefined
@@ -1393,9 +1337,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1410,11 +1351,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Unarchive Gate
          * @param {string} id id
          * @param {UnarchiveSchemaDto} unarchiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdUnarchivePut: async (id: string, unarchiveSchemaDto: UnarchiveSchemaDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdUnarchivePut: async (id: string, unarchiveSchemaDto: UnarchiveSchemaDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdUnarchivePut', 'id', id)
             // verify required parameter 'unarchiveSchemaDto' is not null or undefined
@@ -1438,9 +1378,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1457,11 +1394,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesIdVersionsGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesIdVersionsGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1GatesIdVersionsGet', 'id', id)
             const localVarPath = `/console/v1/gates/{id}/versions`
@@ -1490,9 +1426,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1506,11 +1439,10 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
          * 
          * @summary Create Gate
          * @param {GateCreateDto} gateCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1GatesPost: async (gateCreateDto: GateCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1GatesPost: async (gateCreateDto: GateCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'gateCreateDto' is not null or undefined
             assertParamExists('consoleV1GatesPost', 'gateCreateDto', gateCreateDto)
             const localVarPath = `/console/v1/gates`;
@@ -1531,9 +1463,6 @@ export const GatesApiAxiosParamCreator = function (configuration?: Configuration
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1562,18 +1491,19 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {ConsoleV1GatesGetPassRateParameter} [passRate] Filter by pass rate of the gates, as determined by a sampling of overall true/false values returned: 0, 100, or INBETWEEN (pass rate greater than zero but less than 100)
          * @param {ConsoleV1GatesGetPassRateParameter} [rolloutRate] Filter by rollout rate of the gates: 0 (all rules are set to pass 0%), 100 (all rules pass 100% including an \&quot;everyone\&quot; catch all rule), or INBETWEEN (at least one rule has a pass rate greater than 0 but less than 100)
          * @param {string | null} [releasePipelineID] Filter by release pipeline ID
+         * @param {string} [targetAppID] Filter by target app ID
          * @param {ConsoleV1GatesGetIncludeArchivedEnum} [includeArchived] Include archived gates in the response
+         * @param {ConsoleV1GatesGetStore0100ExposuresEnum} [store0100Exposures] Filter gates by whether \&quot;Store 0/100 Exposures\&quot; is enabled.
          * @param {string | null} [creatorName] Name of the creator.
          * @param {string | null} [creatorID] ID of the user who created the entity.
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesGet(idType?: ConsoleV1AuditLogsGetTagsParameter, type?: ConsoleV1GatesGetTypeEnum, typeReason?: ConsoleV1GatesGetTypeReasonEnum, passRate?: ConsoleV1GatesGetPassRateParameter, rolloutRate?: ConsoleV1GatesGetPassRateParameter, releasePipelineID?: string | null, includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesGet(idType, type, typeReason, passRate, rolloutRate, releasePipelineID, includeArchived, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
+        async consoleV1GatesGet(idType?: ConsoleV1AuditLogsGetTagsParameter, type?: ConsoleV1GatesGetTypeEnum, typeReason?: ConsoleV1GatesGetTypeReasonEnum, passRate?: ConsoleV1GatesGetPassRateParameter, rolloutRate?: ConsoleV1GatesGetPassRateParameter, releasePipelineID?: string | null, targetAppID?: string, includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum, store0100Exposures?: ConsoleV1GatesGetStore0100ExposuresEnum, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesGet(idType, type, typeReason, passRate, rolloutRate, releasePipelineID, targetAppID, includeArchived, store0100Exposures, creatorName, creatorID, tags, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1584,12 +1514,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {string} metricId metric id
          * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdAlertsMetricIdResolvePost(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdAlertsMetricIdResolvePost(id, metricId, resolveGuardrailAlertRequestDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdAlertsMetricIdResolvePost(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdAlertsMetricIdResolvePost(id, metricId, resolveGuardrailAlertRequestDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdAlertsMetricIdResolvePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1600,12 +1529,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {string} metricId metric id
          * @param {ResolveGuardrailAlertRequestDto} resolveGuardrailAlertRequestDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdAlertsMetricIdResolvePost_1(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdAlertsMetricIdResolvePost_1(id, metricId, resolveGuardrailAlertRequestDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdAlertsMetricIdResolvePost_1(id: string, metricId: string, resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdAlertsMetricIdResolvePost_1(id, metricId, resolveGuardrailAlertRequestDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdAlertsMetricIdResolvePost_1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1615,12 +1543,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Archive Gate
          * @param {string} id id
          * @param {ArchiveSchemaDto} archiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdArchivePut(id: string, archiveSchemaDto: ArchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdArchivePut(id, archiveSchemaDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdArchivePut(id: string, archiveSchemaDto: ArchiveSchemaDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdArchivePut(id, archiveSchemaDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdArchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1629,26 +1556,37 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Gate Checks
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdChecksGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdChecksGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdChecksGet(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdChecksGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdChecksGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdChecksGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdChecksGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
-         * @summary Delete Gates
+         * @summary Start Gate Code Cleanup
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdCodeCleanupPost(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdCodeCleanupPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdCodeCleanupPost(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdCodeCleanupPost']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Delete Gates
+         * @param {string} id id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async consoleV1GatesIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1657,12 +1595,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Disable Gate
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdDisablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdDisablePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdDisablePut(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdDisablePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdDisablePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdDisablePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdDisablePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1673,12 +1610,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {number} [limit] 
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdDynamicConfigReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesiddynamicconfigreferencesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdDynamicConfigReferencesGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1GatesIdDynamicConfigReferencesGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesiddynamicconfigreferencesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdDynamicConfigReferencesGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdDynamicConfigReferencesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1687,12 +1623,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Enable Gate
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdEnablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdDisablePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdEnablePut(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdEnablePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdDisablePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdEnablePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdEnablePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1703,12 +1638,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {number} [limit] 
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdExperimentReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidexperimentreferencesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdExperimentReferencesGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1GatesIdExperimentReferencesGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidexperimentreferencesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdExperimentReferencesGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdExperimentReferencesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1719,12 +1653,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {number} [limit] 
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdGateReferencesGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidgatereferencesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdGateReferencesGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1GatesIdGateReferencesGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidgatereferencesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdGateReferencesGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdGateReferencesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1733,12 +1666,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Gate
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdGet(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1747,12 +1679,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Launch Gate
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdLaunchPut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdDisablePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdLaunchPut(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdLaunchPut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdDisablePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdLaunchPut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdLaunchPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1762,12 +1693,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Load Pulse Gate
          * @param {string} id id
          * @param {EchidnaGateLoadPulseQueryDto} echidnaGateLoadPulseQueryDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdLoadPulsePost(id: string, echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdLoadPulsePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdLoadPulsePost(id, echidnaGateLoadPulseQueryDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdLoadPulsePost(id: string, echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdLoadPulsePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdLoadPulsePost(id, echidnaGateLoadPulseQueryDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdLoadPulsePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1776,12 +1706,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Gate Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdOverridesPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdOverridesDelete(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdOverridesDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdOverridesPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdOverridesDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdOverridesDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1790,12 +1719,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Gate Override
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdOverridesGet201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdOverridesGet(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdOverridesGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdOverridesGet201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdOverridesGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdOverridesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1805,12 +1733,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Add Gate Overrides
          * @param {string} id id
          * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdOverridesPatch(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdOverridesPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdOverridesPatch(id, updateOverridesContractDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdOverridesPatch(id: string, updateOverridesContractDto: UpdateOverridesContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdOverridesPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdOverridesPatch(id, updateOverridesContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdOverridesPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1820,12 +1747,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Update Gate Overrides
          * @param {string} id id
          * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdOverridesPost(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdOverridesPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdOverridesPost(id, updateOverridesContractDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdOverridesPost(id: string, updateOverridesContractDto: UpdateOverridesContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdOverridesPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdOverridesPost(id, updateOverridesContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdOverridesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1835,12 +1761,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Partially Update Gates
          * @param {string} id id
          * @param {GatePartialUpdateDto} gatePartialUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdPatch(id: string, gatePartialUpdateDto: GatePartialUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdPatch(id, gatePartialUpdateDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdPatch(id: string, gatePartialUpdateDto: GatePartialUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdPatch(id, gatePartialUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1850,12 +1775,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Fully Update Gates
          * @param {string} id id
          * @param {GateFullUpdateDto} gateFullUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdPost(id: string, gateFullUpdateDto: GateFullUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdPost(id, gateFullUpdateDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdPost(id: string, gateFullUpdateDto: GateFullUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdPost(id, gateFullUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1865,12 +1789,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Commit Gate Review
          * @param {string} id 
          * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdReviewsReviewIDCommitPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options);
+        async consoleV1GatesIdReviewsReviewIDCommitPut(id: string, reviewID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdReviewsReviewIDCommitPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdReviewsReviewIDCommitPut(id, reviewID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdReviewsReviewIDCommitPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1880,12 +1803,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Add Gate Rule
          * @param {string} id id
          * @param {RuleDto} ruleDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdRulePost(id: string, ruleDto: RuleDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdRulePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulePost(id, ruleDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdRulePost(id: string, ruleDto: RuleDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdRulePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulePost(id, ruleDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdRulePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1894,12 +1816,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Gate Rules
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidrulesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesGet(id, xRespectReviewSettings, options);
+        async consoleV1GatesIdRulesGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidrulesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdRulesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1909,12 +1830,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Delete Gate Rule
          * @param {string} id Gate ID
          * @param {string} ruleID Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdRulesRuleIDDelete(id: string, ruleID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDDelete(id, ruleID, xRespectReviewSettings, options);
+        async consoleV1GatesIdRulesRuleIDDelete(id: string, ruleID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDDelete(id, ruleID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdRulesRuleIDDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1925,12 +1845,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} id Gate ID
          * @param {string} ruleID Rule ID
          * @param {RuleUpdateDto} ruleUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdRulesRuleIDPatch(id: string, ruleID: string, ruleUpdateDto: RuleUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdRulesRuleIDPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDPatch(id, ruleID, ruleUpdateDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdRulesRuleIDPatch(id: string, ruleID: string, ruleUpdateDto: RuleUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdRulesRuleIDPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDPatch(id, ruleID, ruleUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdRulesRuleIDPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1942,12 +1861,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} ruleID Rule ID
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id: string, ruleID: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidrulesruleIDpulseloadhistoryResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id, ruleID, limit, page, xRespectReviewSettings, options);
+        async consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id: string, ruleID: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidrulesruleIDpulseloadhistoryResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(id, ruleID, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1959,12 +1877,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} ruleID Rule ID
          * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [confidence] Confidence interval (0-100)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdRulesRuleIDPulseResultsGet(id: string, ruleID: string, cuped?: string, confidence?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdRulesRuleIDPulseResultsGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDPulseResultsGet(id, ruleID, cuped, confidence, xRespectReviewSettings, options);
+        async consoleV1GatesIdRulesRuleIDPulseResultsGet(id: string, ruleID: string, cuped?: string, confidence?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdRulesRuleIDPulseResultsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdRulesRuleIDPulseResultsGet(id, ruleID, cuped, confidence, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdRulesRuleIDPulseResultsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1974,12 +1891,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @summary Unarchive Gate
          * @param {string} id id
          * @param {UnarchiveSchemaDto} unarchiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdUnarchivePut(id: string, unarchiveSchemaDto: UnarchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdUnarchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdUnarchivePut(id, unarchiveSchemaDto, xRespectReviewSettings, options);
+        async consoleV1GatesIdUnarchivePut(id: string, unarchiveSchemaDto: UnarchiveSchemaDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesIdUnarchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdUnarchivePut(id, unarchiveSchemaDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdUnarchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1990,12 +1906,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidversionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdVersionsGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1GatesIdVersionsGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1gatesidversionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesIdVersionsGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesIdVersionsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2004,12 +1919,11 @@ export const GatesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Gate
          * @param {GateCreateDto} gateCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1GatesPost(gateCreateDto: GateCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesPost(gateCreateDto, xRespectReviewSettings, options);
+        async consoleV1GatesPost(gateCreateDto: GateCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1GatesPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1GatesPost(gateCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['GatesApi.consoleV1GatesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2031,7 +1945,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesGet(requestParameters: GatesApiConsoleV1GatesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesResponse> {
-            return localVarFp.consoleV1GatesGet(requestParameters.idType, requestParameters.type, requestParameters.typeReason, requestParameters.passRate, requestParameters.rolloutRate, requestParameters.releasePipelineID, requestParameters.includeArchived, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesGet(requestParameters.idType, requestParameters.type, requestParameters.typeReason, requestParameters.passRate, requestParameters.rolloutRate, requestParameters.releasePipelineID, requestParameters.targetAppID, requestParameters.includeArchived, requestParameters.store0100Exposures, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2041,7 +1955,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters: GatesApiConsoleV1GatesIdAlertsMetricIdResolvePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
-            return localVarFp.consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2051,7 +1965,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters: GatesApiConsoleV1GatesIdAlertsMetricIdResolvePost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response> {
-            return localVarFp.consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2061,7 +1975,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdArchivePut(requestParameters: GatesApiConsoleV1GatesIdArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdArchivePut200Response> {
-            return localVarFp.consoleV1GatesIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2071,7 +1985,17 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdChecksGet(requestParameters: GatesApiConsoleV1GatesIdChecksGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdChecksGet200Response> {
-            return localVarFp.consoleV1GatesIdChecksGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdChecksGet(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Start Gate Code Cleanup
+         * @param {GatesApiConsoleV1GatesIdCodeCleanupPostRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        consoleV1GatesIdCodeCleanupPost(requestParameters: GatesApiConsoleV1GatesIdCodeCleanupPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdCodeCleanupPost200Response> {
+            return localVarFp.consoleV1GatesIdCodeCleanupPost(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2081,7 +2005,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdDelete(requestParameters: GatesApiConsoleV1GatesIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDelete200Response> {
-            return localVarFp.consoleV1GatesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2091,7 +2015,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdDisablePut(requestParameters: GatesApiConsoleV1GatesIdDisablePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
-            return localVarFp.consoleV1GatesIdDisablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdDisablePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2101,7 +2025,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdDynamicConfigReferencesGet(requestParameters: GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesiddynamicconfigreferencesResponse> {
-            return localVarFp.consoleV1GatesIdDynamicConfigReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdDynamicConfigReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2111,7 +2035,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdEnablePut(requestParameters: GatesApiConsoleV1GatesIdEnablePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
-            return localVarFp.consoleV1GatesIdEnablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdEnablePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2121,7 +2045,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdExperimentReferencesGet(requestParameters: GatesApiConsoleV1GatesIdExperimentReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidexperimentreferencesResponse> {
-            return localVarFp.consoleV1GatesIdExperimentReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdExperimentReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2131,7 +2055,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdGateReferencesGet(requestParameters: GatesApiConsoleV1GatesIdGateReferencesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidgatereferencesResponse> {
-            return localVarFp.consoleV1GatesIdGateReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdGateReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2141,7 +2065,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdGet(requestParameters: GatesApiConsoleV1GatesIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdGet200Response> {
-            return localVarFp.consoleV1GatesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2151,7 +2075,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdLaunchPut(requestParameters: GatesApiConsoleV1GatesIdLaunchPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdDisablePut200Response> {
-            return localVarFp.consoleV1GatesIdLaunchPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdLaunchPut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2161,7 +2085,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdLoadPulsePost(requestParameters: GatesApiConsoleV1GatesIdLoadPulsePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdLoadPulsePost200Response> {
-            return localVarFp.consoleV1GatesIdLoadPulsePost(requestParameters.id, requestParameters.echidnaGateLoadPulseQueryDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdLoadPulsePost(requestParameters.id, requestParameters.echidnaGateLoadPulseQueryDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2171,7 +2095,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdOverridesDelete(requestParameters: GatesApiConsoleV1GatesIdOverridesDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
-            return localVarFp.consoleV1GatesIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdOverridesDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2181,7 +2105,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdOverridesGet(requestParameters: GatesApiConsoleV1GatesIdOverridesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesGet201Response> {
-            return localVarFp.consoleV1GatesIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdOverridesGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2191,7 +2115,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdOverridesPatch(requestParameters: GatesApiConsoleV1GatesIdOverridesPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
-            return localVarFp.consoleV1GatesIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2201,7 +2125,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdOverridesPost(requestParameters: GatesApiConsoleV1GatesIdOverridesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdOverridesPost201Response> {
-            return localVarFp.consoleV1GatesIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2211,7 +2135,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdPatch(requestParameters: GatesApiConsoleV1GatesIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPatch200Response> {
-            return localVarFp.consoleV1GatesIdPatch(requestParameters.id, requestParameters.gatePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdPatch(requestParameters.id, requestParameters.gatePartialUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2221,7 +2145,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdPost(requestParameters: GatesApiConsoleV1GatesIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPost200Response> {
-            return localVarFp.consoleV1GatesIdPost(requestParameters.id, requestParameters.gateFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdPost(requestParameters.id, requestParameters.gateFullUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2231,7 +2155,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters: GatesApiConsoleV1GatesIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdReviewsReviewIDCommitPut200Response> {
-            return localVarFp.consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2241,7 +2165,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdRulePost(requestParameters: GatesApiConsoleV1GatesIdRulePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulePost200Response> {
-            return localVarFp.consoleV1GatesIdRulePost(requestParameters.id, requestParameters.ruleDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdRulePost(requestParameters.id, requestParameters.ruleDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2251,7 +2175,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdRulesGet(requestParameters: GatesApiConsoleV1GatesIdRulesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidrulesResponse> {
-            return localVarFp.consoleV1GatesIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdRulesGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2261,7 +2185,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdRulesRuleIDDelete(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdPatch200Response> {
-            return localVarFp.consoleV1GatesIdRulesRuleIDDelete(requestParameters.id, requestParameters.ruleID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdRulesRuleIDDelete(requestParameters.id, requestParameters.ruleID, options).then((request) => request(axios, basePath));
         },
         /**
          * Update all given rules. It does NOT create or delete if you add more rules and remove rules in the rules object.
@@ -2271,7 +2195,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdRulesRuleIDPatch(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesRuleIDPatch200Response> {
-            return localVarFp.consoleV1GatesIdRulesRuleIDPatch(requestParameters.id, requestParameters.ruleID, requestParameters.ruleUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdRulesRuleIDPatch(requestParameters.id, requestParameters.ruleID, requestParameters.ruleUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2281,7 +2205,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidrulesruleIDpulseloadhistoryResponse> {
-            return localVarFp.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters.id, requestParameters.ruleID, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters.id, requestParameters.ruleID, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2291,7 +2215,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseResultsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdRulesRuleIDPulseResultsGet200Response> {
-            return localVarFp.consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters.id, requestParameters.ruleID, requestParameters.cuped, requestParameters.confidence, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters.id, requestParameters.ruleID, requestParameters.cuped, requestParameters.confidence, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2301,7 +2225,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdUnarchivePut(requestParameters: GatesApiConsoleV1GatesIdUnarchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesIdUnarchivePut200Response> {
-            return localVarFp.consoleV1GatesIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2311,7 +2235,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesIdVersionsGet(requestParameters: GatesApiConsoleV1GatesIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1gatesidversionsResponse> {
-            return localVarFp.consoleV1GatesIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2321,7 +2245,7 @@ export const GatesApiFactory = function (configuration?: Configuration, basePath
          * @throws {RequiredError}
          */
         consoleV1GatesPost(requestParameters: GatesApiConsoleV1GatesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1GatesPost201Response> {
-            return localVarFp.consoleV1GatesPost(requestParameters.gateCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1GatesPost(requestParameters.gateCreateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -2361,9 +2285,19 @@ export interface GatesApiConsoleV1GatesGetRequest {
     readonly releasePipelineID?: string | null
 
     /**
+     * Filter by target app ID
+     */
+    readonly targetAppID?: string
+
+    /**
      * Include archived gates in the response
      */
     readonly includeArchived?: ConsoleV1GatesGetIncludeArchivedEnum
+
+    /**
+     * Filter gates by whether \&quot;Store 0/100 Exposures\&quot; is enabled.
+     */
+    readonly store0100Exposures?: ConsoleV1GatesGetStore0100ExposuresEnum
 
     /**
      * Name of the creator.
@@ -2389,11 +2323,6 @@ export interface GatesApiConsoleV1GatesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2411,11 +2340,6 @@ export interface GatesApiConsoleV1GatesIdAlertsMetricIdResolvePostRequest {
     readonly metricId: string
 
     readonly resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2433,11 +2357,6 @@ export interface GatesApiConsoleV1GatesIdAlertsMetricIdResolvePost0Request {
     readonly metricId: string
 
     readonly resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2450,11 +2369,6 @@ export interface GatesApiConsoleV1GatesIdArchivePutRequest {
     readonly id: string
 
     readonly archiveSchemaDto: ArchiveSchemaDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2465,11 +2379,16 @@ export interface GatesApiConsoleV1GatesIdChecksGetRequest {
      * id
      */
     readonly id: string
+}
 
+/**
+ * Request parameters for consoleV1GatesIdCodeCleanupPost operation in GatesApi.
+ */
+export interface GatesApiConsoleV1GatesIdCodeCleanupPostRequest {
     /**
-     * Optional header to respect review settings for mutation endpoints.
+     * id
      */
-    readonly xRespectReviewSettings?: string
+    readonly id: string
 }
 
 /**
@@ -2480,11 +2399,6 @@ export interface GatesApiConsoleV1GatesIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2495,11 +2409,6 @@ export interface GatesApiConsoleV1GatesIdDisablePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2517,11 +2426,6 @@ export interface GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2532,11 +2436,6 @@ export interface GatesApiConsoleV1GatesIdEnablePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2554,11 +2453,6 @@ export interface GatesApiConsoleV1GatesIdExperimentReferencesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2576,11 +2470,6 @@ export interface GatesApiConsoleV1GatesIdGateReferencesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2591,11 +2480,6 @@ export interface GatesApiConsoleV1GatesIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2606,11 +2490,6 @@ export interface GatesApiConsoleV1GatesIdLaunchPutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2623,11 +2502,6 @@ export interface GatesApiConsoleV1GatesIdLoadPulsePostRequest {
     readonly id: string
 
     readonly echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2638,11 +2512,6 @@ export interface GatesApiConsoleV1GatesIdOverridesDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2653,11 +2522,6 @@ export interface GatesApiConsoleV1GatesIdOverridesGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2670,11 +2534,6 @@ export interface GatesApiConsoleV1GatesIdOverridesPatchRequest {
     readonly id: string
 
     readonly updateOverridesContractDto: UpdateOverridesContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2687,11 +2546,6 @@ export interface GatesApiConsoleV1GatesIdOverridesPostRequest {
     readonly id: string
 
     readonly updateOverridesContractDto: UpdateOverridesContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2704,11 +2558,6 @@ export interface GatesApiConsoleV1GatesIdPatchRequest {
     readonly id: string
 
     readonly gatePartialUpdateDto: GatePartialUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2721,11 +2570,6 @@ export interface GatesApiConsoleV1GatesIdPostRequest {
     readonly id: string
 
     readonly gateFullUpdateDto: GateFullUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2735,11 +2579,6 @@ export interface GatesApiConsoleV1GatesIdReviewsReviewIDCommitPutRequest {
     readonly id: string
 
     readonly reviewID: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2752,11 +2591,6 @@ export interface GatesApiConsoleV1GatesIdRulePostRequest {
     readonly id: string
 
     readonly ruleDto: RuleDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2767,11 +2601,6 @@ export interface GatesApiConsoleV1GatesIdRulesGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2787,11 +2616,6 @@ export interface GatesApiConsoleV1GatesIdRulesRuleIDDeleteRequest {
      * Rule ID
      */
     readonly ruleID: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2809,11 +2633,6 @@ export interface GatesApiConsoleV1GatesIdRulesRuleIDPatchRequest {
     readonly ruleID: string
 
     readonly ruleUpdateDto: RuleUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2839,11 +2658,6 @@ export interface GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2869,11 +2683,6 @@ export interface GatesApiConsoleV1GatesIdRulesRuleIDPulseResultsGetRequest {
      * Confidence interval (0-100)
      */
     readonly confidence?: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2886,11 +2695,6 @@ export interface GatesApiConsoleV1GatesIdUnarchivePutRequest {
     readonly id: string
 
     readonly unarchiveSchemaDto: UnarchiveSchemaDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2911,11 +2715,6 @@ export interface GatesApiConsoleV1GatesIdVersionsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2923,11 +2722,6 @@ export interface GatesApiConsoleV1GatesIdVersionsGetRequest {
  */
 export interface GatesApiConsoleV1GatesPostRequest {
     readonly gateCreateDto: GateCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2942,7 +2736,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesGet(requestParameters: GatesApiConsoleV1GatesGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesGet(requestParameters.idType, requestParameters.type, requestParameters.typeReason, requestParameters.passRate, requestParameters.rolloutRate, requestParameters.releasePipelineID, requestParameters.includeArchived, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesGet(requestParameters.idType, requestParameters.type, requestParameters.typeReason, requestParameters.passRate, requestParameters.rolloutRate, requestParameters.releasePipelineID, requestParameters.targetAppID, requestParameters.includeArchived, requestParameters.store0100Exposures, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2953,7 +2747,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters: GatesApiConsoleV1GatesIdAlertsMetricIdResolvePostRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdAlertsMetricIdResolvePost(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2964,7 +2758,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters: GatesApiConsoleV1GatesIdAlertsMetricIdResolvePost0Request, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdAlertsMetricIdResolvePost_1(requestParameters.id, requestParameters.metricId, requestParameters.resolveGuardrailAlertRequestDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2975,7 +2769,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdArchivePut(requestParameters: GatesApiConsoleV1GatesIdArchivePutRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2986,7 +2780,18 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdChecksGet(requestParameters: GatesApiConsoleV1GatesIdChecksGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdChecksGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdChecksGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Start Gate Code Cleanup
+     * @param {GatesApiConsoleV1GatesIdCodeCleanupPostRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public consoleV1GatesIdCodeCleanupPost(requestParameters: GatesApiConsoleV1GatesIdCodeCleanupPostRequest, options?: RawAxiosRequestConfig) {
+        return GatesApiFp(this.configuration).consoleV1GatesIdCodeCleanupPost(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2997,7 +2802,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdDelete(requestParameters: GatesApiConsoleV1GatesIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3008,7 +2813,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdDisablePut(requestParameters: GatesApiConsoleV1GatesIdDisablePutRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdDisablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdDisablePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3019,7 +2824,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdDynamicConfigReferencesGet(requestParameters: GatesApiConsoleV1GatesIdDynamicConfigReferencesGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdDynamicConfigReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdDynamicConfigReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3030,7 +2835,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdEnablePut(requestParameters: GatesApiConsoleV1GatesIdEnablePutRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdEnablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdEnablePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3041,7 +2846,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdExperimentReferencesGet(requestParameters: GatesApiConsoleV1GatesIdExperimentReferencesGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdExperimentReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdExperimentReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3052,7 +2857,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdGateReferencesGet(requestParameters: GatesApiConsoleV1GatesIdGateReferencesGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdGateReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdGateReferencesGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3063,7 +2868,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdGet(requestParameters: GatesApiConsoleV1GatesIdGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3074,7 +2879,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdLaunchPut(requestParameters: GatesApiConsoleV1GatesIdLaunchPutRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdLaunchPut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdLaunchPut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3085,7 +2890,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdLoadPulsePost(requestParameters: GatesApiConsoleV1GatesIdLoadPulsePostRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdLoadPulsePost(requestParameters.id, requestParameters.echidnaGateLoadPulseQueryDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdLoadPulsePost(requestParameters.id, requestParameters.echidnaGateLoadPulseQueryDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3096,7 +2901,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdOverridesDelete(requestParameters: GatesApiConsoleV1GatesIdOverridesDeleteRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3107,7 +2912,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdOverridesGet(requestParameters: GatesApiConsoleV1GatesIdOverridesGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3118,7 +2923,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdOverridesPatch(requestParameters: GatesApiConsoleV1GatesIdOverridesPatchRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3129,7 +2934,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdOverridesPost(requestParameters: GatesApiConsoleV1GatesIdOverridesPostRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3140,7 +2945,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdPatch(requestParameters: GatesApiConsoleV1GatesIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdPatch(requestParameters.id, requestParameters.gatePartialUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdPatch(requestParameters.id, requestParameters.gatePartialUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3151,7 +2956,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdPost(requestParameters: GatesApiConsoleV1GatesIdPostRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdPost(requestParameters.id, requestParameters.gateFullUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdPost(requestParameters.id, requestParameters.gateFullUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3162,7 +2967,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters: GatesApiConsoleV1GatesIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3173,7 +2978,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdRulePost(requestParameters: GatesApiConsoleV1GatesIdRulePostRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulePost(requestParameters.id, requestParameters.ruleDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulePost(requestParameters.id, requestParameters.ruleDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3184,7 +2989,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdRulesGet(requestParameters: GatesApiConsoleV1GatesIdRulesGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3195,7 +3000,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdRulesRuleIDDelete(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDDeleteRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDDelete(requestParameters.id, requestParameters.ruleID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDDelete(requestParameters.id, requestParameters.ruleID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3206,7 +3011,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdRulesRuleIDPatch(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPatchRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPatch(requestParameters.id, requestParameters.ruleID, requestParameters.ruleUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPatch(requestParameters.id, requestParameters.ruleID, requestParameters.ruleUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3217,7 +3022,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseLoadHistoryGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters.id, requestParameters.ruleID, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(requestParameters.id, requestParameters.ruleID, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3228,7 +3033,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters: GatesApiConsoleV1GatesIdRulesRuleIDPulseResultsGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters.id, requestParameters.ruleID, requestParameters.cuped, requestParameters.confidence, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdRulesRuleIDPulseResultsGet(requestParameters.id, requestParameters.ruleID, requestParameters.cuped, requestParameters.confidence, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3239,7 +3044,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdUnarchivePut(requestParameters: GatesApiConsoleV1GatesIdUnarchivePutRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3250,7 +3055,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesIdVersionsGet(requestParameters: GatesApiConsoleV1GatesIdVersionsGetRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3261,7 +3066,7 @@ export class GatesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1GatesPost(requestParameters: GatesApiConsoleV1GatesPostRequest, options?: RawAxiosRequestConfig) {
-        return GatesApiFp(this.configuration).consoleV1GatesPost(requestParameters.gateCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return GatesApiFp(this.configuration).consoleV1GatesPost(requestParameters.gateCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -3289,3 +3094,8 @@ export const ConsoleV1GatesGetIncludeArchivedEnum = {
     False: 'false'
 } as const;
 export type ConsoleV1GatesGetIncludeArchivedEnum = typeof ConsoleV1GatesGetIncludeArchivedEnum[keyof typeof ConsoleV1GatesGetIncludeArchivedEnum];
+export const ConsoleV1GatesGetStore0100ExposuresEnum = {
+    True: 'true',
+    False: 'false'
+} as const;
+export type ConsoleV1GatesGetStore0100ExposuresEnum = typeof ConsoleV1GatesGetStore0100ExposuresEnum[keyof typeof ConsoleV1GatesGetStore0100ExposuresEnum];

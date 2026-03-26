@@ -23,12 +23,10 @@ const apiInstance = new UsageApi(configuration);
 
 let end: number; //Unix timestamp in ms (default to undefined)
 let start: number; //Unix timestamp in ms (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ProjectUsageBillingReportGet(
     end,
-    start,
-    xRespectReviewSettings
+    start
 );
 ```
 
@@ -38,7 +36,6 @@ const { status, data } = await apiInstance.consoleV1ProjectUsageBillingReportGet
 |------------- | ------------- | ------------- | -------------|
 | **end** | [**number**] | Unix timestamp in ms | defaults to undefined|
 | **start** | [**number**] | Unix timestamp in ms | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

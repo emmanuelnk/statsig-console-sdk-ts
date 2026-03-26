@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExperimentCreateDtoCureCovariatesInner } from './experiment-create-dto-cure-covariates-inner';
+import type { ExperimentCreateDtoBayesianPriorsInnerMetric } from './experiment-create-dto-bayesian-priors-inner-metric';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ExternalMetricDefinitionContractDtoFunnelEventListInner } from './external-metric-definition-contract-dto-funnel-event-list-inner';
@@ -54,7 +54,7 @@ export interface MetricCreationContractDto {
     /**
      * List of input metrics used to calculate the new metric for composite types.
      */
-    'metricComponentMetrics'?: Array<ExperimentCreateDtoCureCovariatesInner>;
+    'metricComponentMetrics'?: Array<ExperimentCreateDtoBayesianPriorsInnerMetric>;
     /**
      * A description of the new metric, providing context and purpose.
      */
@@ -113,7 +113,8 @@ export const MetricCreationContractDtoTypeEnum = {
     CompositeSum: 'composite_sum',
     Sum: 'sum',
     Undefined: 'undefined',
-    UserWarehouse: 'user_warehouse'
+    UserWarehouse: 'user_warehouse',
+    Percentile: 'percentile'
 } as const;
 
 export type MetricCreationContractDtoTypeEnum = typeof MetricCreationContractDtoTypeEnum[keyof typeof MetricCreationContractDtoTypeEnum];

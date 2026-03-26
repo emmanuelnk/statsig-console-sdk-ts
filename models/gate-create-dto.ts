@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { AutotuneExperimentDtoInlineTargetingRulesInner } from './autotune-experiment-dto-inline-targeting-rules-inner';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ConsoleV1AuditLogsGetTagsParameter } from './console-v1-audit-logs-get-tags-parameter';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigRulesDtoRulesInner } from './dynamic-config-rules-dto-rules-inner';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { ExperimentCreateDtoCureCovariatesInner } from './experiment-create-dto-cure-covariates-inner';
+import type { ExperimentCreateDtoBayesianPriorsInnerMetric } from './experiment-create-dto-bayesian-priors-inner-metric';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { GateCreateDtoReviewSettings } from './gate-create-dto-review-settings';
@@ -36,7 +36,7 @@ export interface GateCreateDto {
     'name'?: string;
     'isEnabled'?: boolean;
     'description'?: string;
-    'rules'?: Array<DynamicConfigRulesDtoRulesInner>;
+    'rules'?: Array<AutotuneExperimentDtoInlineTargetingRulesInner>;
     'tags'?: Array<string>;
     'type'?: GateCreateDtoTypeEnum;
     'idType'?: string;
@@ -46,7 +46,7 @@ export interface GateCreateDto {
     'team'?: string | null;
     'teamID'?: string | null;
     'measureMetricLifts'?: boolean;
-    'monitoringMetrics'?: Array<ExperimentCreateDtoCureCovariatesInner>;
+    'monitoringMetrics'?: Array<ExperimentCreateDtoBayesianPriorsInnerMetric>;
     'reviewSettings'?: GateCreateDtoReviewSettings;
     'releasePipelineID'?: string | null;
     /**

@@ -10,80 +10,139 @@
  * reference the specific DTOs.
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const specPath = path.join(__dirname, '..', 'openapi.json');
+const specPath = path.join(__dirname, "..", "openapi.json");
 
 if (!fs.existsSync(specPath)) {
-  console.error('openapi.json not found. Run sdk:download-spec first.');
+  console.error("openapi.json not found. Run sdk:download-spec first.");
   process.exit(1);
 }
 
-const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));
+const spec = JSON.parse(fs.readFileSync(specPath, "utf8"));
 
 let fixedCount = 0;
 
 // Find all responses that use allOf with PaginationResponseWithMessage
 for (const [pathKey, pathValue] of Object.entries(spec.paths)) {
   for (const [method, operation] of Object.entries(pathValue)) {
-    if (typeof operation !== 'object' || !operation.responses) continue;
+    if (typeof operation !== "object" || !operation.responses) continue;
 
-    const response200 = operation.responses['200'];
-    if (!response200?.content?.['application/json']?.schema?.allOf) continue;
+    const response200 = operation.responses["200"];
+    if (!response200?.content?.["application/json"]?.schema?.allOf) continue;
 
-    const schema = response200.content['application/json'].schema;
+    const schema = response200.content["application/json"].schema;
     const allOf = schema.allOf;
 
     // Check if this is extending PaginationResponseWithMessage with a data override
-    const baseRef = allOf.find(item => item.$ref === '#/components/schemas/PaginationResponseWithMessage');
-    const dataOverride = allOf.find(item => item.properties?.data?.items?.$ref);
+    const baseRef = allOf.find(
+      (item) =>
+        item.$ref === "#/components/schemas/PaginationResponseWithMessage"
+    );
+    const dataOverride = allOf.find(
+      (item) => item.properties?.data?.items?.$ref
+    );
 
     if (!baseRef || !dataOverride) continue;
 
     // Extract the DTO reference
     const dtoRef = dataOverride.properties.data.items.$ref;
-    const dtoName = dtoRef.split('/').pop();
+    const dtoName = dtoRef.split("/").pop();
 
     // Create a new schema name for this specific response
-    const operationId = operation.operationId || `${method}${pathKey.replace(/[^a-zA-Z0-9]/g, '')}`;
+    const operationId =
+      operation.operationId ||
+      `${method}${pathKey.replace(/[^a-zA-Z0-9]/g, "")}`;
     const responseName = `${capitalizeFirst(operationId)}Response`;
 
     // Create the new response schema
     spec.components.schemas[responseName] = {
-      type: 'object',
+      type: "object",
       description: `Response for ${operationId}`,
       properties: {
         message: {
-          type: 'string',
-          description: 'A simple string explaining the result of the operation.'
+          type: "string",
+          description:
+            "A simple string explaining the result of the operation.",
         },
         data: {
-          type: 'array',
+          type: "array",
           items: {
-            $ref: dtoRef
+            $ref: dtoRef,
           },
-          description: `Array of ${dtoName} items.`
+          description: `Array of ${dtoName} items.`,
         },
         pagination: {
-          $ref: '#/components/schemas/PaginationResponseMetadataDto'
-        }
+          $ref: "#/components/schemas/PaginationResponseMetadataDto",
+        },
       },
-      required: ['message', 'data', 'pagination']
+      required: ["message", "data", "pagination"],
     };
 
     // Update the response to use the new schema
-    response200.content['application/json'].schema = {
-      $ref: `#/components/schemas/${responseName}`
+    response200.content["application/json"].schema = {
+      $ref: `#/components/schemas/${responseName}`,
     };
 
-    console.log(`Fixed: ${method.toUpperCase()} ${pathKey} -> ${responseName} (data: ${dtoName}[])`);
+    console.log(
+      `Fixed: ${method.toUpperCase()} ${pathKey} -> ${responseName} (data: ${dtoName}[])`
+    );
     fixedCount++;
   }
 }
 
+// Fix: Some endpoints reference {id} in the path but don't declare it as a
+// parameter, causing the OpenAPI validator to reject the spec.
+const pathParamId = {
+  name: "id",
+  in: "path",
+  required: true,
+  schema: { type: "string" },
+  description: "id",
+};
+for (const [pathKey, pathValue] of Object.entries(spec.paths)) {
+  if (!pathKey.includes("{id}")) continue;
+  for (const [method, operation] of Object.entries(pathValue)) {
+    if (typeof operation !== "object" || !operation.parameters) continue;
+    const hasIdParam = operation.parameters.some(
+      (p) => p.name === "id" && p.in === "path"
+    );
+    if (!hasIdParam) {
+      operation.parameters.push(pathParamId);
+      console.log(
+        `Fixed: ${method.toUpperCase()} ${pathKey} -> added missing {id} path parameter`
+      );
+      fixedCount++;
+    }
+  }
+}
+
+// Fix: DELETE /console/v1/segments/{id}/id_list is missing requestBody.
+// The Statsig API accepts { ids: string[] } on this DELETE endpoint to remove
+// specific IDs, but the spec doesn't document it. Without this patch, the
+// generated SDK has no body parameter and callers must use raw HTTP.
+const deleteIdListPath = "/console/v1/segments/{id}/id_list";
+const deleteOp = spec.paths?.[deleteIdListPath]?.delete;
+if (deleteOp && !deleteOp.requestBody) {
+  deleteOp.requestBody = {
+    required: true,
+    content: {
+      "application/json": {
+        schema: {
+          $ref: "#/components/schemas/SegmentIDListContractDto",
+        },
+      },
+    },
+  };
+  console.log(
+    `Fixed: DELETE ${deleteIdListPath} -> added requestBody (SegmentIDListContractDto)`
+  );
+  fixedCount++;
+}
+
 // Write the fixed spec
-fs.writeFileSync(specPath, JSON.stringify(spec, null, 2), 'utf8');
+fs.writeFileSync(specPath, JSON.stringify(spec, null, 2), "utf8");
 
 console.log(`\nFixed ${fixedCount} response types.`);
 

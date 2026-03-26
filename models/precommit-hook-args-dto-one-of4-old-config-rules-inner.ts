@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigCreateDtoRulesInnerConditionsInner } from './dynamic-config-create-dto-rules-inner-conditions-inner';
+import type { AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInner } from './autotune-experiment-dto-inline-targeting-rules-inner-conditions-inner';
 
 export interface PrecommitHookArgsDtoOneOf4OldConfigRulesInner {
     /**
@@ -29,7 +29,7 @@ export interface PrecommitHookArgsDtoOneOf4OldConfigRulesInner {
     /**
      * An array of Condition objects.
      */
-    'conditions': Array<DynamicConfigCreateDtoRulesInnerConditionsInner>;
+    'conditions': Array<AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInner>;
     /**
      * The environments this rule is enabled for.
      */

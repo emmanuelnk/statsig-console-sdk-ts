@@ -42,11 +42,10 @@ export const EventsApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {string} eventName 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EventsEventNameGet: async (eventName: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1EventsEventNameGet: async (eventName: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'eventName' is not null or undefined
             assertParamExists('consoleV1EventsEventNameGet', 'eventName', eventName)
             const localVarPath = `/console/v1/events/{eventName}`
@@ -75,9 +74,6 @@ export const EventsApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -93,11 +89,10 @@ export const EventsApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {string} eventName 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EventsEventNameMetricsGet: async (eventName: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1EventsEventNameMetricsGet: async (eventName: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'eventName' is not null or undefined
             assertParamExists('consoleV1EventsEventNameMetricsGet', 'eventName', eventName)
             const localVarPath = `/console/v1/events/{eventName}/metrics`
@@ -126,9 +121,6 @@ export const EventsApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -143,11 +135,10 @@ export const EventsApiAxiosParamCreator = function (configuration?: Configuratio
          * @summary List Events
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1EventsGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1EventsGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/events`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -173,9 +164,6 @@ export const EventsApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -200,12 +188,11 @@ export const EventsApiFp = function(configuration?: Configuration) {
          * @param {string} eventName 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1EventsEventNameGet(eventName: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1eventseventNameResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EventsEventNameGet(eventName, limit, page, xRespectReviewSettings, options);
+        async consoleV1EventsEventNameGet(eventName: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1eventseventNameResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EventsEventNameGet(eventName, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['EventsApi.consoleV1EventsEventNameGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -216,12 +203,11 @@ export const EventsApiFp = function(configuration?: Configuration) {
          * @param {string} eventName 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1EventsEventNameMetricsGet(eventName: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1eventseventNamemetricsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EventsEventNameMetricsGet(eventName, limit, page, xRespectReviewSettings, options);
+        async consoleV1EventsEventNameMetricsGet(eventName: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1eventseventNamemetricsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EventsEventNameMetricsGet(eventName, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['EventsApi.consoleV1EventsEventNameMetricsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -231,12 +217,11 @@ export const EventsApiFp = function(configuration?: Configuration) {
          * @summary List Events
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1EventsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1eventsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EventsGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1EventsGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1eventsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1EventsGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['EventsApi.consoleV1EventsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -258,7 +243,7 @@ export const EventsApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1EventsEventNameGet(requestParameters: EventsApiConsoleV1EventsEventNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1eventseventNameResponse> {
-            return localVarFp.consoleV1EventsEventNameGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1EventsEventNameGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -268,7 +253,7 @@ export const EventsApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1EventsEventNameMetricsGet(requestParameters: EventsApiConsoleV1EventsEventNameMetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1eventseventNamemetricsResponse> {
-            return localVarFp.consoleV1EventsEventNameMetricsGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1EventsEventNameMetricsGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -278,7 +263,7 @@ export const EventsApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1EventsGet(requestParameters: EventsApiConsoleV1EventsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1eventsResponse> {
-            return localVarFp.consoleV1EventsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1EventsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -298,11 +283,6 @@ export interface EventsApiConsoleV1EventsEventNameGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -320,11 +300,6 @@ export interface EventsApiConsoleV1EventsEventNameMetricsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -340,11 +315,6 @@ export interface EventsApiConsoleV1EventsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -359,7 +329,7 @@ export class EventsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1EventsEventNameGet(requestParameters: EventsApiConsoleV1EventsEventNameGetRequest, options?: RawAxiosRequestConfig) {
-        return EventsApiFp(this.configuration).consoleV1EventsEventNameGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return EventsApiFp(this.configuration).consoleV1EventsEventNameGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -370,7 +340,7 @@ export class EventsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1EventsEventNameMetricsGet(requestParameters: EventsApiConsoleV1EventsEventNameMetricsGetRequest, options?: RawAxiosRequestConfig) {
-        return EventsApiFp(this.configuration).consoleV1EventsEventNameMetricsGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return EventsApiFp(this.configuration).consoleV1EventsEventNameMetricsGet(requestParameters.eventName, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -381,7 +351,7 @@ export class EventsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1EventsGet(requestParameters: EventsApiConsoleV1EventsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return EventsApiFp(this.configuration).consoleV1EventsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return EventsApiFp(this.configuration).consoleV1EventsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -15,9 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigRulesDtoRulesInner } from './dynamic-config-rules-dto-rules-inner';
+import type { AutotuneExperimentDtoInlineTargetingRulesInner } from './autotune-experiment-dto-inline-targeting-rules-inner';
 
 export interface DynamicConfigRulesDto {
-    'rules': Array<DynamicConfigRulesDtoRulesInner>;
+    'rules': Array<AutotuneExperimentDtoInlineTargetingRulesInner>;
 }
 

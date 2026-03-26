@@ -49,11 +49,10 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
          * @summary List Unit ID Types
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1UnitIdTypesGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/unit_id_types`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -79,9 +78,6 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -95,11 +91,10 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Delete Unit ID Type
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1UnitIdTypesIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1UnitIdTypesIdDelete', 'id', id)
             const localVarPath = `/console/v1/unit_id_types/{id}`
@@ -120,9 +115,6 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -136,11 +128,10 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Get Unit ID Type
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1UnitIdTypesIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1UnitIdTypesIdGet', 'id', id)
             const localVarPath = `/console/v1/unit_id_types/{id}`
@@ -161,9 +152,6 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -178,11 +166,10 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
          * @summary Update Unit ID Type
          * @param {string} id id
          * @param {UnitIdTypeUpdateContractDto} unitIdTypeUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesIdPatch: async (id: string, unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1UnitIdTypesIdPatch: async (id: string, unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1UnitIdTypesIdPatch', 'id', id)
             // verify required parameter 'unitIdTypeUpdateContractDto' is not null or undefined
@@ -206,9 +193,6 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -223,11 +207,10 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
          * 
          * @summary Create Unit ID Type
          * @param {UnitIdTypeContractDto} unitIdTypeContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1UnitIdTypesPost: async (unitIdTypeContractDto: UnitIdTypeContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1UnitIdTypesPost: async (unitIdTypeContractDto: UnitIdTypeContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'unitIdTypeContractDto' is not null or undefined
             assertParamExists('consoleV1UnitIdTypesPost', 'unitIdTypeContractDto', unitIdTypeContractDto)
             const localVarPath = `/console/v1/unit_id_types`;
@@ -248,9 +231,6 @@ export const UnitIDTypesApiAxiosParamCreator = function (configuration?: Configu
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -275,12 +255,11 @@ export const UnitIDTypesApiFp = function(configuration?: Configuration) {
          * @summary List Unit ID Types
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1UnitIdTypesGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1unitidtypesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1UnitIdTypesGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1unitidtypesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UnitIDTypesApi.consoleV1UnitIdTypesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -289,12 +268,11 @@ export const UnitIDTypesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Unit ID Type
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1UnitIdTypesIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1UnitIdTypesIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UnitIDTypesApi.consoleV1UnitIdTypesIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -303,12 +281,11 @@ export const UnitIDTypesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Unit ID Type
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1UnitIdTypesIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesIdGet(id, xRespectReviewSettings, options);
+        async consoleV1UnitIdTypesIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UnitIDTypesApi.consoleV1UnitIdTypesIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -318,12 +295,11 @@ export const UnitIDTypesApiFp = function(configuration?: Configuration) {
          * @summary Update Unit ID Type
          * @param {string} id id
          * @param {UnitIdTypeUpdateContractDto} unitIdTypeUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1UnitIdTypesIdPatch(id: string, unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesIdPatch(id, unitIdTypeUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1UnitIdTypesIdPatch(id: string, unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesIdPatch(id, unitIdTypeUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UnitIDTypesApi.consoleV1UnitIdTypesIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -332,12 +308,11 @@ export const UnitIDTypesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Unit ID Type
          * @param {UnitIdTypeContractDto} unitIdTypeContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1UnitIdTypesPost(unitIdTypeContractDto: UnitIdTypeContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesPost(unitIdTypeContractDto, xRespectReviewSettings, options);
+        async consoleV1UnitIdTypesPost(unitIdTypeContractDto: UnitIdTypeContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1UnitIdTypesPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1UnitIdTypesPost(unitIdTypeContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UnitIDTypesApi.consoleV1UnitIdTypesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -359,7 +334,7 @@ export const UnitIDTypesApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1UnitIdTypesGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1unitidtypesResponse> {
-            return localVarFp.consoleV1UnitIdTypesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1UnitIdTypesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -369,7 +344,7 @@ export const UnitIDTypesApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1UnitIdTypesIdDelete(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdDelete200Response> {
-            return localVarFp.consoleV1UnitIdTypesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1UnitIdTypesIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -379,7 +354,7 @@ export const UnitIDTypesApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1UnitIdTypesIdGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdGet200Response> {
-            return localVarFp.consoleV1UnitIdTypesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1UnitIdTypesIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -389,7 +364,7 @@ export const UnitIDTypesApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1UnitIdTypesIdPatch(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesIdPatch200Response> {
-            return localVarFp.consoleV1UnitIdTypesIdPatch(requestParameters.id, requestParameters.unitIdTypeUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1UnitIdTypesIdPatch(requestParameters.id, requestParameters.unitIdTypeUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -399,7 +374,7 @@ export const UnitIDTypesApiFactory = function (configuration?: Configuration, ba
          * @throws {RequiredError}
          */
         consoleV1UnitIdTypesPost(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1UnitIdTypesPost201Response> {
-            return localVarFp.consoleV1UnitIdTypesPost(requestParameters.unitIdTypeContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1UnitIdTypesPost(requestParameters.unitIdTypeContractDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -417,11 +392,6 @@ export interface UnitIDTypesApiConsoleV1UnitIdTypesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -432,11 +402,6 @@ export interface UnitIDTypesApiConsoleV1UnitIdTypesIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -447,11 +412,6 @@ export interface UnitIDTypesApiConsoleV1UnitIdTypesIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -464,11 +424,6 @@ export interface UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest {
     readonly id: string
 
     readonly unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -476,11 +431,6 @@ export interface UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest {
  */
 export interface UnitIDTypesApiConsoleV1UnitIdTypesPostRequest {
     readonly unitIdTypeContractDto: UnitIdTypeContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -495,7 +445,7 @@ export class UnitIDTypesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1UnitIdTypesGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -506,7 +456,7 @@ export class UnitIDTypesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1UnitIdTypesIdDelete(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -517,7 +467,7 @@ export class UnitIDTypesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1UnitIdTypesIdGet(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdGetRequest, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -528,7 +478,7 @@ export class UnitIDTypesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1UnitIdTypesIdPatch(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdPatch(requestParameters.id, requestParameters.unitIdTypeUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesIdPatch(requestParameters.id, requestParameters.unitIdTypeUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -539,7 +489,7 @@ export class UnitIDTypesApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1UnitIdTypesPost(requestParameters: UnitIDTypesApiConsoleV1UnitIdTypesPostRequest, options?: RawAxiosRequestConfig) {
-        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesPost(requestParameters.unitIdTypeContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return UnitIDTypesApiFp(this.configuration).consoleV1UnitIdTypesPost(requestParameters.unitIdTypeContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

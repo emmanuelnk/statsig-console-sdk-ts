@@ -29,7 +29,8 @@ export const ExternalExperimentDtoHealthChecksInnerStatusEnum = {
     Passed: 'PASSED',
     Failed: 'FAILED',
     Waiting: 'WAITING',
-    Warning: 'WARNING'
+    Warning: 'WARNING',
+    NotApplied: 'NOT_APPLIED'
 } as const;
 
 export type ExternalExperimentDtoHealthChecksInnerStatusEnum = typeof ExternalExperimentDtoHealthChecksInnerStatusEnum[keyof typeof ExternalExperimentDtoHealthChecksInnerStatusEnum];
@@ -57,7 +58,8 @@ export const ExternalExperimentDtoHealthChecksInnerTypeEnum = {
     HasCorrectTargetApp: 'has_correct_target_app',
     HasDagFailures: 'has_dag_failures',
     HasExplorationCompleted: 'has_exploration_completed',
-    AutotuneHasOutcomes: 'autotune_has_outcomes'
+    AutotuneHasOutcomes: 'autotune_has_outcomes',
+    MetricStability: 'metric_stability'
 } as const;
 
 export type ExternalExperimentDtoHealthChecksInnerTypeEnum = typeof ExternalExperimentDtoHealthChecksInnerTypeEnum[keyof typeof ExternalExperimentDtoHealthChecksInnerTypeEnum];

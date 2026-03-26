@@ -31,11 +31,10 @@ export const ProjectApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 
          * @summary Get Project Info
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ProjectGet: async (xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ProjectGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/project`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -53,9 +52,6 @@ export const ProjectApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -77,12 +73,11 @@ export const ProjectApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get Project Info
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ProjectGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ProjectGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ProjectGet(xRespectReviewSettings, options);
+        async consoleV1ProjectGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ProjectGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ProjectGet(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ProjectApi.consoleV1ProjectGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -99,25 +94,14 @@ export const ProjectApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Get Project Info
-         * @param {ProjectApiConsoleV1ProjectGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ProjectGet(requestParameters: ProjectApiConsoleV1ProjectGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ProjectGet200Response> {
-            return localVarFp.consoleV1ProjectGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1ProjectGet(options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ProjectGet200Response> {
+            return localVarFp.consoleV1ProjectGet(options).then((request) => request(axios, basePath));
         },
     };
 };
-
-/**
- * Request parameters for consoleV1ProjectGet operation in ProjectApi.
- */
-export interface ProjectApiConsoleV1ProjectGetRequest {
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
-}
 
 /**
  * ProjectApi - object-oriented interface
@@ -126,12 +110,11 @@ export class ProjectApi extends BaseAPI {
     /**
      * 
      * @summary Get Project Info
-     * @param {ProjectApiConsoleV1ProjectGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1ProjectGet(requestParameters: ProjectApiConsoleV1ProjectGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return ProjectApiFp(this.configuration).consoleV1ProjectGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1ProjectGet(options?: RawAxiosRequestConfig) {
+        return ProjectApiFp(this.configuration).consoleV1ProjectGet(options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -7,9 +7,9 @@ Defines warehouse native metrics for advanced configurations.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregation** | **string** | Allowed: count┃sum┃mean┃daily_participation┃ratio┃funnel┃count_distinct┃percentile | [optional] [default to undefined]
-**metricSourceName** | **string** | For Count, Sum, Mean, User Count aggregation types: the name of metric source | [optional] [default to undefined]
-**criteria** | [**Array&lt;MetricEventsCriteriaDto&gt;**](MetricEventsCriteriaDto.md) | Filtering criteria for the metric source | [optional] [default to undefined]
-**metricSources** | [**Array&lt;ExternalMetricDefinitionContractDtoWarehouseNativeMetricSourcesInner&gt;**](ExternalMetricDefinitionContractDtoWarehouseNativeMetricSourcesInner.md) | List of metric sources for this metric. This field is readonly. | [optional] [default to undefined]
+**metricSourceName** | **string** | Deprecated: use &#x60;metricSources&#x60; instead. If provided, this will overwrite all metric sources. For Count, Sum, Mean, User Count aggregation types: the name of metric source | [optional] [default to undefined]
+**criteria** | [**Array&lt;MetricEventsCriteriaDto&gt;**](MetricEventsCriteriaDto.md) | Deprecated: use &#x60;metricSources&#x60; instead. If provided with &#x60;metricSourceName&#x60;, this will overwrite all metric sources. Filtering criteria for the metric source | [optional] [default to undefined]
+**metricSources** | [**Array&lt;ExternalMetricDefinitionContractDtoWarehouseNativeMetricSourcesInner&gt;**](ExternalMetricDefinitionContractDtoWarehouseNativeMetricSourcesInner.md) | List of metric sources for this metric. | [optional] [default to undefined]
 **waitForCohortWindow** | **boolean** |  | [optional] [default to undefined]
 **denominatorCriteria** | [**Array&lt;MetricEventsCriteriaDto&gt;**](MetricEventsCriteriaDto.md) | Filtering criteria for the denominator metric source for a ratio, or the start event for a retention metric if useSecondaryRetentionEvent is set | [optional] [default to undefined]
 **denominatorAggregation** | **string** | Allowed: count┃sum┃mean┃daily_participation┃ratio┃funnel┃count_distinct┃percentile | [optional] [default to undefined]
@@ -25,8 +25,9 @@ Name | Type | Description | Notes
 **metricDimensionColumns** | **Array&lt;string&gt;** | Specify metadata columns for breaking down metric analysis. | [optional] [default to undefined]
 **metricDimensionLimits** | [**Array&lt;ExternalMetricDefinitionContractDtoWarehouseNativeMetricDimensionLimitsInner&gt;**](ExternalMetricDefinitionContractDtoWarehouseNativeMetricDimensionLimitsInner.md) | Per-dimension breakdown limits; values beyond the limit are grouped into OTHER. | [optional] [default to undefined]
 **metricBakeDays** | **number** | Number of days for metric baking; specify duration for analysis. | [optional] [default to undefined]
+**loadingWindow** | **number** | Lookback window in days for loading metric data. Defaults to 90 days. | [optional] [default to undefined]
 **numeratorAggregation** | **string** | Aggregation type for numerator; Allowed: count┃sum┃mean┃daily_participation┃ratio┃funnel┃count_distinct┃percentile. | [optional] [default to undefined]
-**valueColumn** | **string** | Column name representing the metric’s value. | [optional] [default to undefined]
+**valueColumn** | **string** | Deprecated: use &#x60;metricSources&#x60; instead. If provided with &#x60;metricSourceName&#x60;, this will overwrite all metric sources. Column name representing the metric’s value. | [optional] [default to undefined]
 **valueThreshold** | **number** | Threshold value for filtering metrics. | [optional] [default to undefined]
 **allowNullRatioDenominator** | **boolean** | Include units which do not have a denominator. Only applicable to ratios. | [optional] [default to undefined]
 **funnelStrictOrdering** | **boolean** |  | [optional] [default to undefined]
@@ -79,6 +80,7 @@ const instance: ExternalMetricDefinitionContractDtoWarehouseNative = {
     metricDimensionColumns,
     metricDimensionLimits,
     metricBakeDays,
+    loadingWindow,
     numeratorAggregation,
     valueColumn,
     valueThreshold,

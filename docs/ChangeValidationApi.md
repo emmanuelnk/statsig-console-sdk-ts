@@ -24,11 +24,9 @@ const configuration = new Configuration();
 const apiInstance = new ChangeValidationApi(configuration);
 
 let changeValidationUpdateMessageDto: ChangeValidationUpdateMessageDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ChangeValidationMessagePatch(
-    changeValidationUpdateMessageDto,
-    xRespectReviewSettings
+    changeValidationUpdateMessageDto
 );
 ```
 
@@ -37,7 +35,6 @@ const { status, data } = await apiInstance.consoleV1ChangeValidationMessagePatch
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **changeValidationUpdateMessageDto** | **ChangeValidationUpdateMessageDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -79,11 +76,9 @@ const configuration = new Configuration();
 const apiInstance = new ChangeValidationApi(configuration);
 
 let changeValidationDto: ChangeValidationDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ChangeValidationPost(
-    changeValidationDto,
-    xRespectReviewSettings
+    changeValidationDto
 );
 ```
 
@@ -92,7 +87,6 @@ const { status, data } = await apiInstance.consoleV1ChangeValidationPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **changeValidationDto** | **ChangeValidationDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

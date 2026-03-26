@@ -30,9 +30,11 @@ Name | Type | Description | Notes
 **identityResolutionSource** | **string** | The identity resolution entity property source for the experiment used in WHN for ID resolution | [optional] [default to undefined]
 **hypothesis** | **string** | A statement that will be tested by this experiment | [default to undefined]
 **links** | [**Array&lt;ExperimentCreateDtoLinksInner&gt;**](ExperimentCreateDtoLinksInner.md) | Links to relevant documentation or resources | [optional] [default to undefined]
+**externalEvents** | [**Array&lt;ExperimentCreateDtoExternalEventsInner&gt;**](ExperimentCreateDtoExternalEventsInner.md) |  | [optional] [default to undefined]
 **groups** | [**Array&lt;ExperimentCreateDtoGroupsInner&gt;**](ExperimentCreateDtoGroupsInner.md) | The test groups for your experiment | [default to undefined]
 **controlGroupID** | **string** | Optional control group ID | [optional] [default to undefined]
 **allocation** | **number** | Percent of layer allocated to this experiment | [default to undefined]
+**userBuckets** | **Array&lt;number&gt;** |  | [optional] [default to undefined]
 **primaryMetricTags** | **Array&lt;string&gt;** | Primary metric tags for the experiment | [optional] [default to undefined]
 **secondaryMetricTags** | **Array&lt;string&gt;** | Secondary metric tags for the experiment | [optional] [default to undefined]
 **primaryMetrics** | [**Array&lt;ExperimentCreateDtoPrimaryMetricsInner&gt;**](ExperimentCreateDtoPrimaryMetricsInner.md) |  | [default to undefined]
@@ -48,6 +50,9 @@ Name | Type | Description | Notes
 **benjaminiHochbergPerMetric** | **boolean** | Is Benjamini-Hochberg procedure applied per metric? | [optional] [default to undefined]
 **benjaminiPrimaryMetricsOnly** | **boolean** | Is Benjamini-Hochberg procedure applied for primary metrics only? | [optional] [default to undefined]
 **defaultConfidenceInterval** | **string** | Default error margin used for results | [default to undefined]
+**defaultRollupWindow** | **number** | Default rollup window in days for experiment results. Use -1 for cumulative. Only -1, 1, and 7 allowed for cloud experiments. | [optional] [default to undefined]
+**defaultChanceToBeatThreshold** | **number** | Default chance-to-beat threshold used for Bayesian results. | [optional] [default to undefined]
+**bayesianPriors** | [**Array&lt;ExperimentCreateDtoBayesianPriorsInner&gt;**](ExperimentCreateDtoBayesianPriorsInner.md) | Bayesian prior settings by metric. | [optional] [default to undefined]
 **manualQualityScores** | [**Array&lt;ExperimentCreateDtoManualQualityScoresInner&gt;**](ExperimentCreateDtoManualQualityScoresInner.md) | Up to 10 manually set quality scores for an experiment. The scores and weights will be added to the existing weights and scores, and then weights will be renormalized to 100. This can be set via the Statsig Console API. If targeting a default check, the weight of the check will be updated, but not the status or description. A default score can be removed by setting the weight to 0. The default score identifiers are one of: HYPOTHESIS_LENGTH, BALANCED_EXPOSURE, PRIMARY_METRICS_LENGTH, COMPARISON_CORRECTION, GUARDRAIL_METRIC_TAGS, SUFFICIENT_SAMPLE, POWER_ANALYSIS, SEQUENTIAL_TESTING | [optional] [default to undefined]
 **status** | **string** | The current status of the experiment | [default to undefined]
 **launchedGroupID** | **string** | ID of the launched group, null otherwise | [optional] [default to undefined]
@@ -66,10 +71,14 @@ Name | Type | Description | Notes
 **analysisEndTime** | **string** |  | [optional] [default to undefined]
 **assignmentSourceFilters** | [**Array&lt;ExperimentCreateDtoAssignmentSourceFiltersInner&gt;**](ExperimentCreateDtoAssignmentSourceFiltersInner.md) | Array of criteria for filtering assignment sources. | [optional] [default to undefined]
 **analyticsType** | **string** |  | [optional] [default to undefined]
+**defaultSPRTPowerParam** | **number** |  | [optional] [default to undefined]
+**defaultSPRTMDE** | **number** |  | [optional] [default to undefined]
+**sprtBaselineMode** | **string** |  | [optional] [default to undefined]
+**sprtMDESettings** | [**Array&lt;ExternalExperimentDtoSprtMDESettingsInner&gt;**](ExternalExperimentDtoSprtMDESettingsInner.md) |  | [optional] [default to undefined]
 **isSidecar** | **boolean** | Whether this is a Statsig Sidecar experiment. | [optional] [default to undefined]
 **decisionReason** | **string** |  | [default to undefined]
 **preComputedUserDimensions** | [**Array&lt;ExperimentCreateDtoPreComputedUserDimensionsInner&gt;**](ExperimentCreateDtoPreComputedUserDimensionsInner.md) | User dimensions that will be computed for every metric in WHN | [optional] [default to undefined]
-**cureCovariates** | [**Array&lt;ExperimentCreateDtoCureCovariatesInner&gt;**](ExperimentCreateDtoCureCovariatesInner.md) | CURE Covariates to use in this experiment | [optional] [default to undefined]
+**cureCovariates** | [**Array&lt;ExperimentCreateDtoBayesianPriorsInnerMetric&gt;**](ExperimentCreateDtoBayesianPriorsInnerMetric.md) | CURE Covariates to use in this experiment | [optional] [default to undefined]
 **stratifiedSampling** | [**ExperimentCreateDtoStratifiedSampling**](ExperimentCreateDtoStratifiedSampling.md) |  | [optional] [default to undefined]
 **enabledNonProdEnvironments** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
 **subtype** | **string** |  | [optional] [default to undefined]
@@ -81,9 +90,11 @@ Name | Type | Description | Notes
 **healthChecks** | [**Array&lt;ExternalExperimentDtoHealthChecksInner&gt;**](ExternalExperimentDtoHealthChecksInner.md) |  | [optional] [default to undefined]
 **healthCheckStatus** | **string** | Overall health check status | [default to undefined]
 **experimentType** | **string** | The type of experiment | [default to undefined]
+**isStale** | **boolean** | Whether the experiment is considered stale (e.g. in progress or decision-made and not modified in 30+ days). | [default to undefined]
 **owner** | [**AIConfigCreateDtoOwner**](AIConfigCreateDtoOwner.md) |  | [optional] [default to undefined]
 **inlineTargetingRulesJSON** | **string** | A raw JSON string of the inline targeting rules | [optional] [default to undefined]
-**inlineTargetingRules** | [**Array&lt;DynamicConfigRulesDtoRulesInner&gt;**](DynamicConfigRulesDtoRulesInner.md) | A formatted array of the inline targeting rules | [optional] [default to undefined]
+**inlineTargetingRules** | [**Array&lt;AutotuneExperimentDtoInlineTargetingRulesInner&gt;**](AutotuneExperimentDtoInlineTargetingRulesInner.md) | A formatted array of the inline targeting rules | [optional] [default to undefined]
+**qualityScore** | [**ExternalExperimentDtoQualityScore**](ExternalExperimentDtoQualityScore.md) |  | [optional] [default to undefined]
 **summarySections** | [**Array&lt;ExternalExperimentDtoSummarySectionsInner&gt;**](ExternalExperimentDtoSummarySectionsInner.md) |  | [optional] [default to undefined]
 
 ## Example
@@ -117,9 +128,11 @@ const instance: ExternalExperimentDto = {
     identityResolutionSource,
     hypothesis,
     links,
+    externalEvents,
     groups,
     controlGroupID,
     allocation,
+    userBuckets,
     primaryMetricTags,
     secondaryMetricTags,
     primaryMetrics,
@@ -135,6 +148,9 @@ const instance: ExternalExperimentDto = {
     benjaminiHochbergPerMetric,
     benjaminiPrimaryMetricsOnly,
     defaultConfidenceInterval,
+    defaultRollupWindow,
+    defaultChanceToBeatThreshold,
+    bayesianPriors,
     manualQualityScores,
     status,
     launchedGroupID,
@@ -153,6 +169,10 @@ const instance: ExternalExperimentDto = {
     analysisEndTime,
     assignmentSourceFilters,
     analyticsType,
+    defaultSPRTPowerParam,
+    defaultSPRTMDE,
+    sprtBaselineMode,
+    sprtMDESettings,
     isSidecar,
     decisionReason,
     preComputedUserDimensions,
@@ -168,9 +188,11 @@ const instance: ExternalExperimentDto = {
     healthChecks,
     healthCheckStatus,
     experimentType,
+    isStale,
     owner,
     inlineTargetingRulesJSON,
     inlineTargetingRules,
+    qualityScore,
     summarySections,
 };
 ```

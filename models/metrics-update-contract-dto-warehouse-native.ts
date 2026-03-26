@@ -38,15 +38,15 @@ export interface MetricsUpdateContractDtoWarehouseNative {
      */
     'aggregation'?: MetricsUpdateContractDtoWarehouseNativeAggregationEnum;
     /**
-     * For Count, Sum, Mean, User Count aggregation types: the name of metric source
+     * Deprecated: use `metricSources` instead. If provided, this will overwrite all metric sources. For Count, Sum, Mean, User Count aggregation types: the name of metric source
      */
     'metricSourceName'?: string;
     /**
-     * Filtering criteria for the metric source
+     * Deprecated: use `metricSources` instead. If provided with `metricSourceName`, this will overwrite all metric sources. Filtering criteria for the metric source
      */
     'criteria'?: Array<MetricEventsCriteriaDto>;
     /**
-     * List of metric sources for this metric. This field is readonly.
+     * List of metric sources for this metric.
      */
     'metricSources'?: Array<ExternalMetricDefinitionContractDtoWarehouseNativeMetricSourcesInner>;
     'waitForCohortWindow'?: boolean;
@@ -107,11 +107,15 @@ export interface MetricsUpdateContractDtoWarehouseNative {
      */
     'metricBakeDays'?: number;
     /**
+     * Lookback window in days for loading metric data. Defaults to 90 days.
+     */
+    'loadingWindow'?: number;
+    /**
      * Aggregation type for numerator; Allowed: count┃sum┃mean┃daily_participation┃ratio┃funnel┃count_distinct┃percentile.
      */
     'numeratorAggregation'?: MetricsUpdateContractDtoWarehouseNativeNumeratorAggregationEnum;
     /**
-     * Column name representing the metric’s value.
+     * Deprecated: use `metricSources` instead. If provided with `metricSourceName`, this will overwrite all metric sources. Column name representing the metric’s value.
      */
     'valueColumn'?: string;
     /**

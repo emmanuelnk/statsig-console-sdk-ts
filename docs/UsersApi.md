@@ -8,11 +8,11 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1UsersEmailPost**](#consolev1usersemailpost) | **POST** /console/v1/users/{email} | Update user|
 |[**consoleV1UsersGet**](#consolev1usersget) | **GET** /console/v1/users | List Users|
 |[**consoleV1UsersIdIdGet**](#consolev1usersididget) | **GET** /console/v1/users/id/{id} | Get user by ID|
-|[**consoleV1UsersInvitePost**](#consolev1usersinvitepost) | **POST** /console/v1/users/invite | Invite user. To avoid spamming, invitation emails are not sent. Invitee will see invitation notification in-app after logging in.|
+|[**consoleV1UsersInvitePost**](#consolev1usersinvitepost) | **POST** /console/v1/users/invite | Invite users|
 |[**consoleV1UsersTeamsGet**](#consolev1usersteamsget) | **GET** /console/v1/users/teams | List Teams|
 |[**consoleV1UsersTeamsIdDelete**](#consolev1usersteamsiddelete) | **DELETE** /console/v1/users/teams/{id} | Delete Team|
 |[**consoleV1UsersTeamsIdGet**](#consolev1usersteamsidget) | **GET** /console/v1/users/teams/{id} | Get Team|
-|[**consoleV1UsersTeamsIdPatch**](#consolev1usersteamsidpatch) | **PATCH** /console/v1/users/teams/{id} | Update Team. Ops: Replace. Use GET for current data if you intent to Add.|
+|[**consoleV1UsersTeamsIdPatch**](#consolev1usersteamsidpatch) | **PATCH** /console/v1/users/teams/{id} | Update team|
 |[**consoleV1UsersTeamsPost**](#consolev1usersteamspost) | **POST** /console/v1/users/teams | Create Team|
 
 # **consoleV1UsersEmailGet**
@@ -31,11 +31,9 @@ const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
 
 let email: string; //email (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersEmailGet(
-    email,
-    xRespectReviewSettings
+    email
 );
 ```
 
@@ -44,7 +42,6 @@ const { status, data } = await apiInstance.consoleV1UsersEmailGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **email** | [**string**] | email | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -89,12 +86,10 @@ const apiInstance = new UsersApi(configuration);
 
 let email: string; //email (default to undefined)
 let userUpdateDto: UserUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersEmailPost(
     email,
-    userUpdateDto,
-    xRespectReviewSettings
+    userUpdateDto
 );
 ```
 
@@ -104,7 +99,6 @@ const { status, data } = await apiInstance.consoleV1UsersEmailPost(
 |------------- | ------------- | ------------- | -------------|
 | **userUpdateDto** | **UserUpdateDto**|  | |
 | **email** | [**string**] | email | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -151,12 +145,12 @@ const apiInstance = new UsersApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
+let includeStaleMembers: boolean; //Whether to include stale company-user membership edges. Defaults to false, which returns only effective current members (matching the Settings UI). (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersGet(
     limit,
     page,
-    xRespectReviewSettings
+    includeStaleMembers
 );
 ```
 
@@ -166,7 +160,7 @@ const { status, data } = await apiInstance.consoleV1UsersGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+| **includeStaleMembers** | [**boolean**] | Whether to include stale company-user membership edges. Defaults to false, which returns only effective current members (matching the Settings UI). | (optional) defaults to undefined|
 
 
 ### Return type
@@ -208,11 +202,9 @@ const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersIdIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -221,7 +213,6 @@ const { status, data } = await apiInstance.consoleV1UsersIdIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -251,6 +242,7 @@ const { status, data } = await apiInstance.consoleV1UsersIdIdGet(
 # **consoleV1UsersInvitePost**
 > ConsoleV1UsersInvitePost200Response consoleV1UsersInvitePost(userInvitesDto)
 
+Invite a list of users with assigned roles and teams. To avoid spamming, invitation emails are not sent. Invitee will see invitation notification in-app after logging in.
 
 ### Example
 
@@ -265,11 +257,9 @@ const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
 
 let userInvitesDto: UserInvitesDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersInvitePost(
-    userInvitesDto,
-    xRespectReviewSettings
+    userInvitesDto
 );
 ```
 
@@ -278,7 +268,6 @@ const { status, data } = await apiInstance.consoleV1UsersInvitePost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **userInvitesDto** | **UserInvitesDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -323,12 +312,10 @@ const apiInstance = new UsersApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersTeamsGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -338,7 +325,6 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -380,11 +366,9 @@ const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersTeamsIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -393,7 +377,6 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -433,11 +416,9 @@ const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersTeamsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -446,7 +427,6 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -475,6 +455,7 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsIdGet(
 # **consoleV1UsersTeamsIdPatch**
 > ConsoleV1UsersTeamsIdPatch200Response consoleV1UsersTeamsIdPatch(teamPartialUpdateDto)
 
+Replace the team definition. Use GET to fetch current data if you intend to add fields without overwriting existing values.
 
 ### Example
 
@@ -490,12 +471,10 @@ const apiInstance = new UsersApi(configuration);
 
 let id: string; //id (default to undefined)
 let teamPartialUpdateDto: TeamPartialUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersTeamsIdPatch(
     id,
-    teamPartialUpdateDto,
-    xRespectReviewSettings
+    teamPartialUpdateDto
 );
 ```
 
@@ -505,7 +484,6 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **teamPartialUpdateDto** | **TeamPartialUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -548,11 +526,9 @@ const configuration = new Configuration();
 const apiInstance = new UsersApi(configuration);
 
 let teamCreationDto: TeamCreationDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UsersTeamsPost(
-    teamCreationDto,
-    xRespectReviewSettings
+    teamCreationDto
 );
 ```
 
@@ -561,7 +537,6 @@ const { status, data } = await apiInstance.consoleV1UsersTeamsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **teamCreationDto** | **TeamCreationDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
