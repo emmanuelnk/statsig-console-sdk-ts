@@ -19,14 +19,19 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1ExperimentsGet_0**](#consolev1experimentsget_0) | **GET** /console/v1/experiments | List Experiments|
 |[**consoleV1ExperimentsIdAbandonPut**](#consolev1experimentsidabandonput) | **PUT** /console/v1/experiments/{id}/abandon | Abandon Experiment|
 |[**consoleV1ExperimentsIdAbandonPut_0**](#consolev1experimentsidabandonput_0) | **PUT** /console/v1/experiments/{id}/abandon | Abandon Experiment|
+|[**consoleV1ExperimentsIdAlertsGet**](#consolev1experimentsidalertsget) | **GET** /console/v1/experiments/{id}/alerts | Get Experiment Guardrail Alert Statuses|
+|[**consoleV1ExperimentsIdAlertsGet_0**](#consolev1experimentsidalertsget_0) | **GET** /console/v1/experiments/{id}/alerts | Get Experiment Guardrail Alert Statuses|
 |[**consoleV1ExperimentsIdAlertsMetricIdResolvePost**](#consolev1experimentsidalertsmetricidresolvepost) | **POST** /console/v1/experiments/{id}/alerts/{metricId}/resolve | Resolve Metric Rollout Alert|
 |[**consoleV1ExperimentsIdAlertsMetricIdResolvePost_0**](#consolev1experimentsidalertsmetricidresolvepost_0) | **POST** /console/v1/experiments/{id}/alerts/{metricId}/resolve | Resolve Metric Rollout Alert|
 |[**consoleV1ExperimentsIdArchivePut**](#consolev1experimentsidarchiveput) | **PUT** /console/v1/experiments/{id}/archive | Archive Experiment|
 |[**consoleV1ExperimentsIdArchivePut_0**](#consolev1experimentsidarchiveput_0) | **PUT** /console/v1/experiments/{id}/archive | Archive Experiment|
+|[**consoleV1ExperimentsIdCodeCleanupPost**](#consolev1experimentsidcodecleanuppost) | **POST** /console/v1/experiments/{id}/code_cleanup | Start Experiment Code Cleanup|
+|[**consoleV1ExperimentsIdCodeCleanupPost_0**](#consolev1experimentsidcodecleanuppost_0) | **POST** /console/v1/experiments/{id}/code_cleanup | Start Experiment Code Cleanup|
 |[**consoleV1ExperimentsIdContextGet**](#consolev1experimentsidcontextget) | **GET** /console/v1/experiments/{id}/context | Get Experiment Context|
 |[**consoleV1ExperimentsIdContextGet_0**](#consolev1experimentsidcontextget_0) | **GET** /console/v1/experiments/{id}/context | Get Experiment Context|
 |[**consoleV1ExperimentsIdCumulativeExposuresGet**](#consolev1experimentsidcumulativeexposuresget) | **GET** /console/v1/experiments/{id}/cumulative_exposures | Retrieve cumulative exposures|
 |[**consoleV1ExperimentsIdCumulativeExposuresGet_0**](#consolev1experimentsidcumulativeexposuresget_0) | **GET** /console/v1/experiments/{id}/cumulative_exposures | Retrieve cumulative exposures|
+|[**consoleV1ExperimentsIdDeferDecisionPut**](#consolev1experimentsiddeferdecisionput) | **PUT** /console/v1/experiments/{id}/defer_decision | Conclude Experiment &amp; Defer Decision|
 |[**consoleV1ExperimentsIdDelete**](#consolev1experimentsiddelete) | **DELETE** /console/v1/experiments/{id} | Deleted Experiment|
 |[**consoleV1ExperimentsIdDelete_0**](#consolev1experimentsiddelete_0) | **DELETE** /console/v1/experiments/{id} | Deleted Experiment|
 |[**consoleV1ExperimentsIdDisableGroupsPost**](#consolev1experimentsiddisablegroupspost) | **POST** /console/v1/experiments/{id}/disable_groups | Disable Experiment Groups|
@@ -46,7 +51,11 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1ExperimentsIdPatch_0**](#consolev1experimentsidpatch_0) | **PATCH** /console/v1/experiments/{id} | Partially Update Experiment|
 |[**consoleV1ExperimentsIdPost**](#consolev1experimentsidpost) | **POST** /console/v1/experiments/{id} | Fully Update Experiment|
 |[**consoleV1ExperimentsIdPost_0**](#consolev1experimentsidpost_0) | **POST** /console/v1/experiments/{id} | Fully Update Experiment|
+|[**consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost**](#consolev1experimentsidpulseloadhistorydagidcancelpost) | **POST** /console/v1/experiments/{id}/pulse_load_history/{dagID}/cancel | Cancel Pulse Load (Warehouse Native)|
+|[**consoleV1ExperimentsIdPulseLoadHistoryDagIDGet**](#consolev1experimentsidpulseloadhistorydagidget) | **GET** /console/v1/experiments/{id}/pulse_load_history/{dagID} | Get Pulse Load History Details (Warehouse Native)|
 |[**consoleV1ExperimentsIdPulseLoadHistoryGet**](#consolev1experimentsidpulseloadhistoryget) | **GET** /console/v1/experiments/{id}/pulse_load_history | Pulse Load History (Warehouse Native)|
+|[**consoleV1ExperimentsIdPulseMetricResultGet**](#consolev1experimentsidpulsemetricresultget) | **GET** /console/v1/experiments/{id}/pulse_metric_result | Retrieve Pulse Metric Result|
+|[**consoleV1ExperimentsIdPulseMetricResultGet_0**](#consolev1experimentsidpulsemetricresultget_0) | **GET** /console/v1/experiments/{id}/pulse_metric_result | Retrieve Pulse Metric Result|
 |[**consoleV1ExperimentsIdPulseResultsGet**](#consolev1experimentsidpulseresultsget) | **GET** /console/v1/experiments/{id}/pulse_results | Retrieve Pulse Results (Beta)|
 |[**consoleV1ExperimentsIdPulseResultsGet_0**](#consolev1experimentsidpulseresultsget_0) | **GET** /console/v1/experiments/{id}/pulse_results | Retrieve Pulse Results (Beta)|
 |[**consoleV1ExperimentsIdResetPut**](#consolev1experimentsidresetput) | **PUT** /console/v1/experiments/{id}/reset | Reset Experiment|
@@ -58,6 +67,8 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1ExperimentsIdScheduleStartPost_0**](#consolev1experimentsidschedulestartpost_0) | **POST** /console/v1/experiments/{id}/schedule_start | Schedule Experiment Start|
 |[**consoleV1ExperimentsIdStartPut**](#consolev1experimentsidstartput) | **PUT** /console/v1/experiments/{id}/start | Start Experiment|
 |[**consoleV1ExperimentsIdStartPut_0**](#consolev1experimentsidstartput_0) | **PUT** /console/v1/experiments/{id}/start | Start Experiment|
+|[**consoleV1ExperimentsIdSummaryChartsGet**](#consolev1experimentsidsummarychartsget) | **GET** /console/v1/experiments/{id}/summary_charts | Retrieve Experiment Summary Charts (Beta)|
+|[**consoleV1ExperimentsIdSummaryChartsGet_0**](#consolev1experimentsidsummarychartsget_0) | **GET** /console/v1/experiments/{id}/summary_charts | Retrieve Experiment Summary Charts (Beta)|
 |[**consoleV1ExperimentsIdUnarchivePut**](#consolev1experimentsidunarchiveput) | **PUT** /console/v1/experiments/{id}/unarchive | Unarchive Experiment|
 |[**consoleV1ExperimentsIdUnarchivePut_0**](#consolev1experimentsidunarchiveput_0) | **PUT** /console/v1/experiments/{id}/unarchive | Unarchive Experiment|
 |[**consoleV1ExperimentsIdVersionsGet**](#consolev1experimentsidversionsget) | **GET** /console/v1/experiments/{id}/versions | List Experiment Versions|
@@ -80,11 +91,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let name: string; //Name of the assignment source (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceNameDelete(
-    name,
-    xRespectReviewSettings
+    name
 );
 ```
 
@@ -93,7 +102,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceN
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **name** | [**string**] | Name of the assignment source | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -114,6 +122,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceN
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Delete Assignment Source response |  -  |
+|**400** | Assignment source is referenced by active experiments. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -135,12 +144,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let name: string; //Name of the assignment source (default to undefined)
 let assignmentSourcePartialUpdateDto: AssignmentSourcePartialUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceNamePatch(
     name,
-    assignmentSourcePartialUpdateDto,
-    xRespectReviewSettings
+    assignmentSourcePartialUpdateDto
 );
 ```
 
@@ -150,7 +157,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceN
 |------------- | ------------- | ------------- | -------------|
 | **assignmentSourcePartialUpdateDto** | **AssignmentSourcePartialUpdateDto**|  | |
 | **name** | [**string**] | Name of the assignment source | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -195,12 +201,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let name: string; //Name of the assignment source (default to undefined)
 let assignmentSourceQueryUpdateDto: AssignmentSourceQueryUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceNamePost(
     name,
-    assignmentSourceQueryUpdateDto,
-    xRespectReviewSettings
+    assignmentSourceQueryUpdateDto
 );
 ```
 
@@ -210,7 +214,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourceN
 |------------- | ------------- | ------------- | -------------|
 | **assignmentSourceQueryUpdateDto** | **AssignmentSourceQueryUpdateDto**|  | |
 | **name** | [**string**] | Name of the assignment source | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -256,12 +259,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourcesGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -271,7 +272,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSources
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -314,11 +314,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let assignmentSourceCreationDto: AssignmentSourceCreationDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSourcesPost(
-    assignmentSourceCreationDto,
-    xRespectReviewSettings
+    assignmentSourceCreationDto
 );
 ```
 
@@ -327,7 +325,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsAssignmentSources
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assignmentSourceCreationDto** | **AssignmentSourceCreationDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -372,12 +369,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertiesGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -387,7 +382,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertiesG
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -430,11 +424,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let entityPropertySourceCreationDto: EntityPropertySourceCreationDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertiesPost(
-    entityPropertySourceCreationDto,
-    xRespectReviewSettings
+    entityPropertySourceCreationDto
 );
 ```
 
@@ -443,7 +435,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertiesP
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **entityPropertySourceCreationDto** | **EntityPropertySourceCreationDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -486,11 +477,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let name: string; //name (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNameDelete(
-    name,
-    xRespectReviewSettings
+    name
 );
 ```
 
@@ -499,7 +488,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNam
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **name** | [**string**] | name | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -542,11 +530,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let name: string; //Name of entity property source (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNameGet(
-    name,
-    xRespectReviewSettings
+    name
 );
 ```
 
@@ -555,7 +541,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNam
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **name** | [**string**] | Name of entity property source | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -599,12 +584,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let name: string; //Name of entity property source (default to undefined)
 let entityPropertySourcePartialUpdateDto: EntityPropertySourcePartialUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNamePatch(
     name,
-    entityPropertySourcePartialUpdateDto,
-    xRespectReviewSettings
+    entityPropertySourcePartialUpdateDto
 );
 ```
 
@@ -614,7 +597,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNam
 |------------- | ------------- | ------------- | -------------|
 | **entityPropertySourcePartialUpdateDto** | **EntityPropertySourcePartialUpdateDto**|  | |
 | **name** | [**string**] | Name of entity property source | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -659,12 +641,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let name: string; //name (default to undefined)
 let entityPropertySourceQueryUpdateDto: EntityPropertySourceQueryUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNamePost(
     name,
-    entityPropertySourceQueryUpdateDto,
-    xRespectReviewSettings
+    entityPropertySourceQueryUpdateDto
 );
 ```
 
@@ -674,7 +654,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsEntityPropertyNam
 |------------- | ------------- | ------------- | -------------|
 | **entityPropertySourceQueryUpdateDto** | **EntityPropertySourceQueryUpdateDto**|  | |
 | **name** | [**string**] | name | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -726,6 +705,7 @@ let idType: string; //The idType the experiment will be performed on (optional) 
 let teamID: string; //The team ID associated with the experiment, Enterprise only. (optional) (default to undefined)
 let status: ConsoleV1ExperimentsGetStatusParameter; //The current status of the experiment (optional) (default to undefined)
 let targetAppID: string; // (optional) (default to undefined)
+let stale: boolean; //When true, only returns stale experiments. If omitted or false, returns all experiments. (optional) (default to undefined)
 let createdStartDate: string; //Expected valid date in the form of YYYY-MM-DD (optional) (default to undefined)
 let createdEndDate: string; //Expected valid date in the form of YYYY-MM-DD (optional) (default to undefined)
 let experimentType: ConsoleV1ExperimentsGetExperimentTypeParameter; //Filter by experiment type (optional) (default to undefined)
@@ -734,7 +714,6 @@ let creatorID: string; //ID of the user who created the entity. (optional) (defa
 let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter by tags (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsGet(
     layerID,
@@ -742,6 +721,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet(
     teamID,
     status,
     targetAppID,
+    stale,
     createdStartDate,
     createdEndDate,
     experimentType,
@@ -749,8 +729,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet(
     creatorID,
     tags,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -763,6 +742,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet(
 | **teamID** | [**string**] | The team ID associated with the experiment, Enterprise only. | (optional) defaults to undefined|
 | **status** | **ConsoleV1ExperimentsGetStatusParameter** | The current status of the experiment | (optional) defaults to undefined|
 | **targetAppID** | [**string**] |  | (optional) defaults to undefined|
+| **stale** | [**boolean**] | When true, only returns stale experiments. If omitted or false, returns all experiments. | (optional) defaults to undefined|
 | **createdStartDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | (optional) defaults to undefined|
 | **createdEndDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | (optional) defaults to undefined|
 | **experimentType** | **ConsoleV1ExperimentsGetExperimentTypeParameter** | Filter by experiment type | (optional) defaults to undefined|
@@ -771,7 +751,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet(
 | **tags** | **ConsoleV1AuditLogsGetTagsParameter** | Filter by tags | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -821,6 +800,7 @@ let idType: string; //The idType the experiment will be performed on (optional) 
 let teamID: string; //The team ID associated with the experiment, Enterprise only. (optional) (default to undefined)
 let status: ConsoleV1ExperimentsGetStatusParameter; //The current status of the experiment (optional) (default to undefined)
 let targetAppID: string; // (optional) (default to undefined)
+let stale: boolean; //When true, only returns stale experiments. If omitted or false, returns all experiments. (optional) (default to undefined)
 let createdStartDate: string; //Expected valid date in the form of YYYY-MM-DD (optional) (default to undefined)
 let createdEndDate: string; //Expected valid date in the form of YYYY-MM-DD (optional) (default to undefined)
 let experimentType: ConsoleV1ExperimentsGetExperimentTypeParameter; //Filter by experiment type (optional) (default to undefined)
@@ -829,7 +809,6 @@ let creatorID: string; //ID of the user who created the entity. (optional) (defa
 let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter by tags (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsGet_0(
     layerID,
@@ -837,6 +816,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet_0(
     teamID,
     status,
     targetAppID,
+    stale,
     createdStartDate,
     createdEndDate,
     experimentType,
@@ -844,8 +824,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet_0(
     creatorID,
     tags,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -858,6 +837,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet_0(
 | **teamID** | [**string**] | The team ID associated with the experiment, Enterprise only. | (optional) defaults to undefined|
 | **status** | **ConsoleV1ExperimentsGetStatusParameter** | The current status of the experiment | (optional) defaults to undefined|
 | **targetAppID** | [**string**] |  | (optional) defaults to undefined|
+| **stale** | [**boolean**] | When true, only returns stale experiments. If omitted or false, returns all experiments. | (optional) defaults to undefined|
 | **createdStartDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | (optional) defaults to undefined|
 | **createdEndDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | (optional) defaults to undefined|
 | **experimentType** | **ConsoleV1ExperimentsGetExperimentTypeParameter** | Filter by experiment type | (optional) defaults to undefined|
@@ -866,7 +846,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsGet_0(
 | **tags** | **ConsoleV1AuditLogsGetTagsParameter** | Filter by tags | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -909,12 +888,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentAbandonDto: ExperimentAbandonDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdAbandonPut(
     id,
-    experimentAbandonDto,
-    xRespectReviewSettings
+    experimentAbandonDto
 );
 ```
 
@@ -924,7 +901,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdAbandonPut(
 |------------- | ------------- | ------------- | -------------|
 | **experimentAbandonDto** | **ExperimentAbandonDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -969,12 +945,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentAbandonDto: ExperimentAbandonDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdAbandonPut_0(
     id,
-    experimentAbandonDto,
-    xRespectReviewSettings
+    experimentAbandonDto
 );
 ```
 
@@ -984,7 +958,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdAbandonPut_0(
 |------------- | ------------- | ------------- | -------------|
 | **experimentAbandonDto** | **ExperimentAbandonDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1011,6 +984,112 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdAbandonPut_0(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **consoleV1ExperimentsIdAlertsGet**
+> ConsoleV1ExperimentsIdAlertsGet200Response consoleV1ExperimentsIdAlertsGet()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdAlertsGet(
+    id
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdAlertsGet200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Experiment guardrail alert statuses fetched successfully |  -  |
+|**400** | Invalid request. Please check the request input and try again. |  -  |
+|**401** | This endpoint only accepts an active CONSOLE key, but an invalid key was sent. Key: console-xxxXXXxxxXXXxxx |  -  |
+|**404** | Not Found. The requested resource could not be found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consoleV1ExperimentsIdAlertsGet_0**
+> ConsoleV1ExperimentsIdAlertsGet200Response consoleV1ExperimentsIdAlertsGet_0()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdAlertsGet_0(
+    id
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdAlertsGet200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Experiment guardrail alert statuses fetched successfully |  -  |
+|**400** | Invalid request. Please check the request input and try again. |  -  |
+|**401** | This endpoint only accepts an active CONSOLE key, but an invalid key was sent. Key: console-xxxXXXxxxXXXxxx |  -  |
+|**404** | Not Found. The requested resource could not be found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **consoleV1ExperimentsIdAlertsMetricIdResolvePost**
 > ConsoleV1ExperimentsIdAlertsMetricIdResolvePost200Response consoleV1ExperimentsIdAlertsMetricIdResolvePost(resolveGuardrailAlertRequestDto)
 
@@ -1030,13 +1109,11 @@ const apiInstance = new ExperimentsApi(configuration);
 let id: string; //id (default to undefined)
 let metricId: string; //metric id (default to undefined)
 let resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdAlertsMetricIdResolvePost(
     id,
     metricId,
-    resolveGuardrailAlertRequestDto,
-    xRespectReviewSettings
+    resolveGuardrailAlertRequestDto
 );
 ```
 
@@ -1047,7 +1124,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdAlertsMetricIdR
 | **resolveGuardrailAlertRequestDto** | **ResolveGuardrailAlertRequestDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
 | **metricId** | [**string**] | metric id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1093,13 +1169,11 @@ const apiInstance = new ExperimentsApi(configuration);
 let id: string; //id (default to undefined)
 let metricId: string; //metric id (default to undefined)
 let resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdAlertsMetricIdResolvePost_0(
     id,
     metricId,
-    resolveGuardrailAlertRequestDto,
-    xRespectReviewSettings
+    resolveGuardrailAlertRequestDto
 );
 ```
 
@@ -1110,7 +1184,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdAlertsMetricIdR
 | **resolveGuardrailAlertRequestDto** | **ResolveGuardrailAlertRequestDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
 | **metricId** | [**string**] | metric id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1155,12 +1228,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentArchiveDto: ExperimentArchiveDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdArchivePut(
     id,
-    experimentArchiveDto,
-    xRespectReviewSettings
+    experimentArchiveDto
 );
 ```
 
@@ -1170,7 +1241,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdArchivePut(
 |------------- | ------------- | ------------- | -------------|
 | **experimentArchiveDto** | **ExperimentArchiveDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1214,12 +1284,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentArchiveDto: ExperimentArchiveDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdArchivePut_0(
     id,
-    experimentArchiveDto,
-    xRespectReviewSettings
+    experimentArchiveDto
 );
 ```
 
@@ -1229,7 +1297,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdArchivePut_0(
 |------------- | ------------- | ------------- | -------------|
 | **experimentArchiveDto** | **ExperimentArchiveDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1255,6 +1322,110 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdArchivePut_0(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **consoleV1ExperimentsIdCodeCleanupPost**
+> ConsoleV1ExperimentsIdCodeCleanupPost200Response consoleV1ExperimentsIdCodeCleanupPost()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdCodeCleanupPost(
+    id
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdCodeCleanupPost200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Start experiment code cleanup |  -  |
+|**400** | Experiment is not stale. |  -  |
+|**404** | Experiment not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consoleV1ExperimentsIdCodeCleanupPost_0**
+> ConsoleV1ExperimentsIdCodeCleanupPost200Response consoleV1ExperimentsIdCodeCleanupPost_0()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdCodeCleanupPost_0(
+    id
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdCodeCleanupPost200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Start experiment code cleanup |  -  |
+|**400** | Experiment is not stale. |  -  |
+|**404** | Experiment not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **consoleV1ExperimentsIdContextGet**
 > ConsoleV1ExperimentsIdContextGet200Response consoleV1ExperimentsIdContextGet()
 
@@ -1271,11 +1442,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdContextGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1284,7 +1453,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdContextGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1326,11 +1494,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdContextGet_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1339,7 +1505,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdContextGet_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1381,11 +1546,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdCumulativeExposuresGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1394,7 +1557,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdCumulativeExpos
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1434,11 +1596,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdCumulativeExposuresGet_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1447,7 +1607,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdCumulativeExpos
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1471,6 +1630,63 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdCumulativeExpos
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **consoleV1ExperimentsIdDeferDecisionPut**
+> ConsoleV1ExperimentsIdDeferDecisionPut200Response consoleV1ExperimentsIdDeferDecisionPut(experimentDeferDecisionDto)
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration,
+    ExperimentDeferDecisionDto
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+let experimentDeferDecisionDto: ExperimentDeferDecisionDto; //
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdDeferDecisionPut(
+    id,
+    experimentDeferDecisionDto
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **experimentDeferDecisionDto** | **ExperimentDeferDecisionDto**|  | |
+| **id** | [**string**] | id | defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdDeferDecisionPut200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Conclude Experiment &amp; Defer Decision Success |  -  |
+|**400** | Experiment cannot defer decision. |  -  |
+|**401** | This endpoint only accepts an active CONSOLE key, but an invalid key was sent. Key: console-xxxXXXxxxXXXxxx |  -  |
+|**404** | Experiment not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **consoleV1ExperimentsIdDelete**
 > ConsoleV1ExperimentsIdDelete200Response consoleV1ExperimentsIdDelete()
 
@@ -1487,11 +1703,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1500,7 +1714,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1542,11 +1755,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdDelete_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1555,7 +1766,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdDelete_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1599,12 +1809,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let enableDisableGroupsDto: EnableDisableGroupsDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdDisableGroupsPost(
     id,
-    enableDisableGroupsDto,
-    xRespectReviewSettings
+    enableDisableGroupsDto
 );
 ```
 
@@ -1614,7 +1822,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdDisableGroupsPo
 |------------- | ------------- | ------------- | -------------|
 | **enableDisableGroupsDto** | **EnableDisableGroupsDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1659,12 +1866,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let enableDisableGroupsDto: EnableDisableGroupsDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdDisableGroupsPost_0(
     id,
-    enableDisableGroupsDto,
-    xRespectReviewSettings
+    enableDisableGroupsDto
 );
 ```
 
@@ -1674,7 +1879,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdDisableGroupsPo
 |------------- | ------------- | ------------- | -------------|
 | **enableDisableGroupsDto** | **EnableDisableGroupsDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1719,12 +1923,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let enableDisableGroupsDto: EnableDisableGroupsDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdEnableGroupsPost(
     id,
-    enableDisableGroupsDto,
-    xRespectReviewSettings
+    enableDisableGroupsDto
 );
 ```
 
@@ -1734,7 +1936,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdEnableGroupsPos
 |------------- | ------------- | ------------- | -------------|
 | **enableDisableGroupsDto** | **EnableDisableGroupsDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1779,12 +1980,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let enableDisableGroupsDto: EnableDisableGroupsDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdEnableGroupsPost_0(
     id,
-    enableDisableGroupsDto,
-    xRespectReviewSettings
+    enableDisableGroupsDto
 );
 ```
 
@@ -1794,7 +1993,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdEnableGroupsPos
 |------------- | ------------- | ------------- | -------------|
 | **enableDisableGroupsDto** | **EnableDisableGroupsDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1837,11 +2035,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1850,7 +2046,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1892,11 +2087,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdGet_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1905,7 +2098,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdGet_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1951,18 +2143,14 @@ let id: string; //id (default to undefined)
 let echidnaLoadPulseQueryDto: EchidnaLoadPulseQueryDto; //
 let refresh: 'full' | 'incremental' | 'metric'; // (optional) (default to 'full')
 let metricIDs: Array<string>; // (optional) (default to undefined)
-let ruleId: string; // (optional) (default to undefined)
 let turboMode: boolean; // (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdLoadPulsePost(
     id,
     echidnaLoadPulseQueryDto,
     refresh,
     metricIDs,
-    ruleId,
-    turboMode,
-    xRespectReviewSettings
+    turboMode
 );
 ```
 
@@ -1974,9 +2162,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdLoadPulsePost(
 | **id** | [**string**] | id | defaults to undefined|
 | **refresh** | [**&#39;full&#39; | &#39;incremental&#39; | &#39;metric&#39;**]**Array<&#39;full&#39; &#124; &#39;incremental&#39; &#124; &#39;metric&#39;>** |  | (optional) defaults to 'full'|
 | **metricIDs** | **Array&lt;string&gt;** |  | (optional) defaults to undefined|
-| **ruleId** | [**string**] |  | (optional) defaults to undefined|
 | **turboMode** | [**boolean**] |  | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2020,12 +2206,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentStatusUpdateDto: ExperimentStatusUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdMakeDecisionPut(
     id,
-    experimentStatusUpdateDto,
-    xRespectReviewSettings
+    experimentStatusUpdateDto
 );
 ```
 
@@ -2035,7 +2219,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdMakeDecisionPut
 |------------- | ------------- | ------------- | -------------|
 | **experimentStatusUpdateDto** | **ExperimentStatusUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2080,12 +2263,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentStatusUpdateDto: ExperimentStatusUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdMakeDecisionPut_0(
     id,
-    experimentStatusUpdateDto,
-    xRespectReviewSettings
+    experimentStatusUpdateDto
 );
 ```
 
@@ -2095,7 +2276,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdMakeDecisionPut
 |------------- | ------------- | ------------- | -------------|
 | **experimentStatusUpdateDto** | **ExperimentStatusUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2138,11 +2318,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -2151,7 +2329,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesDelete
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2193,11 +2370,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -2206,7 +2381,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2250,12 +2424,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentOverridesDto: ExperimentOverridesDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesPatch(
     id,
-    experimentOverridesDto,
-    xRespectReviewSettings
+    experimentOverridesDto
 );
 ```
 
@@ -2265,7 +2437,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesPatch(
 |------------- | ------------- | ------------- | -------------|
 | **experimentOverridesDto** | **ExperimentOverridesDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2309,12 +2480,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentOverridesDto: ExperimentOverridesDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesPost(
     id,
-    experimentOverridesDto,
-    xRespectReviewSettings
+    experimentOverridesDto
 );
 ```
 
@@ -2324,7 +2493,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdOverridesPost(
 |------------- | ------------- | ------------- | -------------|
 | **experimentOverridesDto** | **ExperimentOverridesDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2368,12 +2536,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentPartialUpdateDto: ExperimentPartialUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdPatch(
     id,
-    experimentPartialUpdateDto,
-    xRespectReviewSettings
+    experimentPartialUpdateDto
 );
 ```
 
@@ -2383,7 +2549,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **experimentPartialUpdateDto** | **ExperimentPartialUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2427,12 +2592,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentPartialUpdateDto: ExperimentPartialUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdPatch_0(
     id,
-    experimentPartialUpdateDto,
-    xRespectReviewSettings
+    experimentPartialUpdateDto
 );
 ```
 
@@ -2442,7 +2605,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPatch_0(
 |------------- | ------------- | ------------- | -------------|
 | **experimentPartialUpdateDto** | **ExperimentPartialUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2486,12 +2648,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentFullUpdateDto: ExperimentFullUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdPost(
     id,
-    experimentFullUpdateDto,
-    xRespectReviewSettings
+    experimentFullUpdateDto
 );
 ```
 
@@ -2501,7 +2661,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPost(
 |------------- | ------------- | ------------- | -------------|
 | **experimentFullUpdateDto** | **ExperimentFullUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2545,12 +2704,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentFullUpdateDto: ExperimentFullUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdPost_0(
     id,
-    experimentFullUpdateDto,
-    xRespectReviewSettings
+    experimentFullUpdateDto
 );
 ```
 
@@ -2560,7 +2717,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPost_0(
 |------------- | ------------- | ------------- | -------------|
 | **experimentFullUpdateDto** | **ExperimentFullUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2586,6 +2742,117 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPost_0(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost**
+> ConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost200Response consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let dagID: string; //dagID (default to undefined)
+let id: string; //id (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost(
+    dagID,
+    id
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dagID** | [**string**] | dagID | defaults to undefined|
+| **id** | [**string**] | id | defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdPulseLoadHistoryDagIDCancelPost200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Cancel Pulse Load Success |  -  |
+|**400** | Invalid request. Please check the request input and try again. |  -  |
+|**401** | This endpoint only accepts an active CONSOLE key, but an invalid key was sent. Key: console-xxxXXXxxxXXXxxx |  -  |
+|**404** | Pulse load history not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consoleV1ExperimentsIdPulseLoadHistoryDagIDGet**
+> ConsoleV1ExperimentsIdPulseLoadHistoryDagIDGet200Response consoleV1ExperimentsIdPulseLoadHistoryDagIDGet()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let dagID: string; //dagID (default to undefined)
+let id: string; //id (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistoryDagIDGet(
+    dagID,
+    id
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dagID** | [**string**] | dagID | defaults to undefined|
+| **id** | [**string**] | id | defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdPulseLoadHistoryDagIDGet200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Get Pulse Load History Details |  -  |
+|**401** | This endpoint only accepts an active CONSOLE key, but an invalid key was sent. Key: console-xxxXXXxxxXXXxxx |  -  |
+|**404** | Pulse load history not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **consoleV1ExperimentsIdPulseLoadHistoryGet**
 > Getconsolev1experimentsidpulseloadhistoryResponse consoleV1ExperimentsIdPulseLoadHistoryGet()
 
@@ -2606,13 +2873,11 @@ const apiInstance = new ExperimentsApi(configuration);
 let id: string; //id (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistoryGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -2623,7 +2888,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistor
 | **id** | [**string**] | id | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2646,6 +2910,172 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseLoadHistor
 |**200** | List Pulse Load History |  -  |
 |**400** | Invalid request. Please check the request input and try again. |  -  |
 |**401** | This endpoint only accepts an active CONSOLE key, but an invalid key was sent. Key: console-xxxXXXxxxXXXxxx |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consoleV1ExperimentsIdPulseMetricResultGet**
+> ConsoleV1ExperimentsIdPulseMetricResultGet200Response consoleV1ExperimentsIdPulseMetricResultGet()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+let control: string; //Control Group ID (default to undefined)
+let test: string; //Test Group ID (default to undefined)
+let metricID: string; //Metric ID in format <metric_name>::<metric_type> (default to undefined)
+let cuped: string; //Whether to apply CUPED. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let confidence: string; //Confidence interval (0-100) (optional) (default to undefined)
+let applyBonferroniPerVariant: string; //Whether to apply Bonferroni Per Variant. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let applyBonferroniPerMetric: string; //Whether to apply Bonferroni Per Metric. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let bonferroniPrimaryMetricWeight: string; //α allocated to primary metrics (optional) (default to undefined)
+let applyBenjaminiHochbergPerMetric: string; //Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let applyBenjaminiHochbergPerVariant: string; //Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let date: string; //Date for pulse results. format must be YYYY-MM-DD (optional) (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseMetricResultGet(
+    id,
+    control,
+    test,
+    metricID,
+    cuped,
+    confidence,
+    applyBonferroniPerVariant,
+    applyBonferroniPerMetric,
+    bonferroniPrimaryMetricWeight,
+    applyBenjaminiHochbergPerMetric,
+    applyBenjaminiHochbergPerVariant,
+    date
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+| **control** | [**string**] | Control Group ID | defaults to undefined|
+| **test** | [**string**] | Test Group ID | defaults to undefined|
+| **metricID** | [**string**] | Metric ID in format &lt;metric_name&gt;::&lt;metric_type&gt; | defaults to undefined|
+| **cuped** | [**string**] | Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **confidence** | [**string**] | Confidence interval (0-100) | (optional) defaults to undefined|
+| **applyBonferroniPerVariant** | [**string**] | Whether to apply Bonferroni Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **applyBonferroniPerMetric** | [**string**] | Whether to apply Bonferroni Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **bonferroniPrimaryMetricWeight** | [**string**] | α allocated to primary metrics | (optional) defaults to undefined|
+| **applyBenjaminiHochbergPerMetric** | [**string**] | Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **applyBenjaminiHochbergPerVariant** | [**string**] | Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **date** | [**string**] | Date for pulse results. format must be YYYY-MM-DD | (optional) defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdPulseMetricResultGet200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Get Pulse Metric Result Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consoleV1ExperimentsIdPulseMetricResultGet_0**
+> ConsoleV1ExperimentsIdPulseMetricResultGet200Response consoleV1ExperimentsIdPulseMetricResultGet_0()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+let control: string; //Control Group ID (default to undefined)
+let test: string; //Test Group ID (default to undefined)
+let metricID: string; //Metric ID in format <metric_name>::<metric_type> (default to undefined)
+let cuped: string; //Whether to apply CUPED. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let confidence: string; //Confidence interval (0-100) (optional) (default to undefined)
+let applyBonferroniPerVariant: string; //Whether to apply Bonferroni Per Variant. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let applyBonferroniPerMetric: string; //Whether to apply Bonferroni Per Metric. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let bonferroniPrimaryMetricWeight: string; //α allocated to primary metrics (optional) (default to undefined)
+let applyBenjaminiHochbergPerMetric: string; //Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let applyBenjaminiHochbergPerVariant: string; //Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
+let date: string; //Date for pulse results. format must be YYYY-MM-DD (optional) (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseMetricResultGet_0(
+    id,
+    control,
+    test,
+    metricID,
+    cuped,
+    confidence,
+    applyBonferroniPerVariant,
+    applyBonferroniPerMetric,
+    bonferroniPrimaryMetricWeight,
+    applyBenjaminiHochbergPerMetric,
+    applyBenjaminiHochbergPerVariant,
+    date
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+| **control** | [**string**] | Control Group ID | defaults to undefined|
+| **test** | [**string**] | Test Group ID | defaults to undefined|
+| **metricID** | [**string**] | Metric ID in format &lt;metric_name&gt;::&lt;metric_type&gt; | defaults to undefined|
+| **cuped** | [**string**] | Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **confidence** | [**string**] | Confidence interval (0-100) | (optional) defaults to undefined|
+| **applyBonferroniPerVariant** | [**string**] | Whether to apply Bonferroni Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **applyBonferroniPerMetric** | [**string**] | Whether to apply Bonferroni Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **bonferroniPrimaryMetricWeight** | [**string**] | α allocated to primary metrics | (optional) defaults to undefined|
+| **applyBenjaminiHochbergPerMetric** | [**string**] | Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **applyBenjaminiHochbergPerVariant** | [**string**] | Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
+| **date** | [**string**] | Date for pulse results. format must be YYYY-MM-DD | (optional) defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdPulseMetricResultGet200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Get Pulse Metric Result Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2675,7 +3105,6 @@ let bonferroniPrimaryMetricWeight: string; //α allocated to primary metrics (op
 let applyBenjaminiHochbergPerMetric: string; //Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
 let applyBenjaminiHochbergPerVariant: string; //Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
 let date: string; //Date for pulse results. format must be YYYY-MM-DD (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseResultsGet(
     id,
@@ -2688,8 +3117,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseResultsGet
     bonferroniPrimaryMetricWeight,
     applyBenjaminiHochbergPerMetric,
     applyBenjaminiHochbergPerVariant,
-    date,
-    xRespectReviewSettings
+    date
 );
 ```
 
@@ -2708,7 +3136,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseResultsGet
 | **applyBenjaminiHochbergPerMetric** | [**string**] | Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
 | **applyBenjaminiHochbergPerVariant** | [**string**] | Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
 | **date** | [**string**] | Date for pulse results. format must be YYYY-MM-DD | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2758,7 +3185,6 @@ let bonferroniPrimaryMetricWeight: string; //α allocated to primary metrics (op
 let applyBenjaminiHochbergPerMetric: string; //Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
 let applyBenjaminiHochbergPerVariant: string; //Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
 let date: string; //Date for pulse results. format must be YYYY-MM-DD (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseResultsGet_0(
     id,
@@ -2771,8 +3197,7 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseResultsGet
     bonferroniPrimaryMetricWeight,
     applyBenjaminiHochbergPerMetric,
     applyBenjaminiHochbergPerVariant,
-    date,
-    xRespectReviewSettings
+    date
 );
 ```
 
@@ -2791,7 +3216,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdPulseResultsGet
 | **applyBenjaminiHochbergPerMetric** | [**string**] | Whether to apply Benjamini-Hochberg Correction Per Metric. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
 | **applyBenjaminiHochbergPerVariant** | [**string**] | Whether to apply Benjamini-Hochberg Correction Per Variant. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
 | **date** | [**string**] | Date for pulse results. format must be YYYY-MM-DD | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2831,11 +3255,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdResetPut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -2844,7 +3266,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdResetPut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2887,11 +3308,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdResetPut_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -2900,7 +3319,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdResetPut_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -2945,12 +3363,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentNameContractDto: ExperimentNameContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdRestartAsNewPost(
     id,
-    experimentNameContractDto,
-    xRespectReviewSettings
+    experimentNameContractDto
 );
 ```
 
@@ -2960,7 +3376,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdRestartAsNewPos
 |------------- | ------------- | ------------- | -------------|
 | **experimentNameContractDto** | **ExperimentNameContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3005,12 +3420,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentNameContractDto: ExperimentNameContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdRestartAsNewPost_0(
     id,
-    experimentNameContractDto,
-    xRespectReviewSettings
+    experimentNameContractDto
 );
 ```
 
@@ -3020,7 +3433,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdRestartAsNewPos
 |------------- | ------------- | ------------- | -------------|
 | **experimentNameContractDto** | **ExperimentNameContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3064,12 +3476,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; // (default to undefined)
 let reviewID: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdReviewsReviewIDCommitPut(
     id,
-    reviewID,
-    xRespectReviewSettings
+    reviewID
 );
 ```
 
@@ -3079,7 +3489,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdReviewsReviewID
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
 | **reviewID** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3121,12 +3530,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdScheduleStartPost(
     id,
-    scheduleExperimentStartParamDto,
-    xRespectReviewSettings
+    scheduleExperimentStartParamDto
 );
 ```
 
@@ -3136,7 +3543,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdScheduleStartPo
 |------------- | ------------- | ------------- | -------------|
 | **scheduleExperimentStartParamDto** | **ScheduleExperimentStartParamDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3180,12 +3586,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let scheduleExperimentStartParamDto: ScheduleExperimentStartParamDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdScheduleStartPost_0(
     id,
-    scheduleExperimentStartParamDto,
-    xRespectReviewSettings
+    scheduleExperimentStartParamDto
 );
 ```
 
@@ -3195,7 +3599,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdScheduleStartPo
 |------------- | ------------- | ------------- | -------------|
 | **scheduleExperimentStartParamDto** | **ScheduleExperimentStartParamDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3239,12 +3642,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentStartDto: ExperimentStartDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdStartPut(
     id,
-    experimentStartDto,
-    xRespectReviewSettings
+    experimentStartDto
 );
 ```
 
@@ -3254,7 +3655,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdStartPut(
 |------------- | ------------- | ------------- | -------------|
 | **experimentStartDto** | **ExperimentStartDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3299,12 +3699,10 @@ const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentStartDto: ExperimentStartDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdStartPut_0(
     id,
-    experimentStartDto,
-    xRespectReviewSettings
+    experimentStartDto
 );
 ```
 
@@ -3314,7 +3712,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdStartPut_0(
 |------------- | ------------- | ------------- | -------------|
 | **experimentStartDto** | **ExperimentStartDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3341,6 +3738,118 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdStartPut_0(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **consoleV1ExperimentsIdSummaryChartsGet**
+> ConsoleV1ExperimentsIdSummaryChartsGet200Response consoleV1ExperimentsIdSummaryChartsGet()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+let control: string; //Optional override control group ID (optional) (default to undefined)
+let test: string; //Optional override test group ID. Use \"*\" to query against all test groups. (optional) (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdSummaryChartsGet(
+    id,
+    control,
+    test
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+| **control** | [**string**] | Optional override control group ID | (optional) defaults to undefined|
+| **test** | [**string**] | Optional override test group ID. Use \&quot;*\&quot; to query against all test groups. | (optional) defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdSummaryChartsGet200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Get Experiment Summary Charts Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consoleV1ExperimentsIdSummaryChartsGet_0**
+> ConsoleV1ExperimentsIdSummaryChartsGet200Response consoleV1ExperimentsIdSummaryChartsGet_0()
+
+
+### Example
+
+```typescript
+import {
+    ExperimentsApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new ExperimentsApi(configuration);
+
+let id: string; //id (default to undefined)
+let control: string; //Optional override control group ID (optional) (default to undefined)
+let test: string; //Optional override test group ID. Use \"*\" to query against all test groups. (optional) (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1ExperimentsIdSummaryChartsGet_0(
+    id,
+    control,
+    test
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+| **control** | [**string**] | Optional override control group ID | (optional) defaults to undefined|
+| **test** | [**string**] | Optional override test group ID. Use \&quot;*\&quot; to query against all test groups. | (optional) defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1ExperimentsIdSummaryChartsGet200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Get Experiment Summary Charts Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **consoleV1ExperimentsIdUnarchivePut**
 > ConsoleV1ExperimentsIdUnarchivePut200Response consoleV1ExperimentsIdUnarchivePut()
 
@@ -3357,11 +3866,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdUnarchivePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -3370,7 +3877,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdUnarchivePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3412,11 +3918,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdUnarchivePut_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -3425,7 +3929,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdUnarchivePut_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3471,13 +3974,11 @@ const apiInstance = new ExperimentsApi(configuration);
 let id: string; //id (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsIdVersionsGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -3488,7 +3989,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsIdVersionsGet(
 | **id** | [**string**] | id | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3530,11 +4030,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let experimentCreateDto: ExperimentCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsPost(
-    experimentCreateDto,
-    xRespectReviewSettings
+    experimentCreateDto
 );
 ```
 
@@ -3543,7 +4041,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **experimentCreateDto** | **ExperimentCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -3586,11 +4083,9 @@ const configuration = new Configuration();
 const apiInstance = new ExperimentsApi(configuration);
 
 let experimentCreateDto: ExperimentCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ExperimentsPost_0(
-    experimentCreateDto,
-    xRespectReviewSettings
+    experimentCreateDto
 );
 ```
 
@@ -3599,7 +4094,6 @@ const { status, data } = await apiInstance.consoleV1ExperimentsPost_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **experimentCreateDto** | **ExperimentCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

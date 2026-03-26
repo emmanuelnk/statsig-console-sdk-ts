@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { ExperimentPulseMetricResultDtoDimensionResultsInnerMetricConfidenceInterval } from './experiment-pulse-metric-result-dto-dimension-results-inner-metric-confidence-interval';
 
 export interface ExperimentPulseResultsDtoPrimaryMetricsInner {
     'metricID': string;
@@ -26,10 +29,14 @@ export interface ExperimentPulseResultsDtoPrimaryMetricsInner {
      * Absolute confidence interval delta
      */
     'confidenceIntervalDelta'?: number;
+    'confidenceInterval'?: ExperimentPulseMetricResultDtoDimensionResultsInnerMetricConfidenceInterval;
     'percentChange'?: number;
     'sequentialTestingConfidenceIntervalDelta'?: number;
+    'sequentialTestingConfidenceInterval'?: ExperimentPulseMetricResultDtoDimensionResultsInnerMetricConfidenceInterval;
     'percentConfidenceIntervalDelta'?: number;
+    'percentConfidenceInterval'?: ExperimentPulseMetricResultDtoDimensionResultsInnerMetricConfidenceInterval;
     'percentSequentialTestingConfidenceIntervalDelta'?: number;
+    'percentSequentialTestingConfidenceInterval'?: ExperimentPulseMetricResultDtoDimensionResultsInnerMetricConfidenceInterval;
     'testMean'?: number;
     'controlMean'?: number;
     'testStd'?: number;
@@ -37,6 +44,8 @@ export interface ExperimentPulseResultsDtoPrimaryMetricsInner {
     'testUnits'?: number;
     'controlUnits'?: number;
     'pValue'?: number;
+    'sequentialTestingPValue'?: number | null;
+    'adjustedAlpha'?: number;
     'reversePower'?: number;
     'absoluteToplineImpact'?: number;
     'absoluteToplineImpactDelta'?: number;

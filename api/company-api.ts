@@ -33,11 +33,10 @@ export const CompanyApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 
          * @summary Get Company Info
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1CompanyGet: async (xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1CompanyGet: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/company`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -55,9 +54,6 @@ export const CompanyApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -79,12 +75,11 @@ export const CompanyApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get Company Info
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1CompanyGet(xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1CompanyGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1CompanyGet(xRespectReviewSettings, options);
+        async consoleV1CompanyGet(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1CompanyGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1CompanyGet(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['CompanyApi.consoleV1CompanyGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -101,25 +96,14 @@ export const CompanyApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Get Company Info
-         * @param {CompanyApiConsoleV1CompanyGetRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1CompanyGet(requestParameters: CompanyApiConsoleV1CompanyGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1CompanyGet200Response> {
-            return localVarFp.consoleV1CompanyGet(requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+        consoleV1CompanyGet(options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1CompanyGet200Response> {
+            return localVarFp.consoleV1CompanyGet(options).then((request) => request(axios, basePath));
         },
     };
 };
-
-/**
- * Request parameters for consoleV1CompanyGet operation in CompanyApi.
- */
-export interface CompanyApiConsoleV1CompanyGetRequest {
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
-}
 
 /**
  * CompanyApi - object-oriented interface
@@ -128,12 +112,11 @@ export class CompanyApi extends BaseAPI {
     /**
      * 
      * @summary Get Company Info
-     * @param {CompanyApiConsoleV1CompanyGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public consoleV1CompanyGet(requestParameters: CompanyApiConsoleV1CompanyGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return CompanyApiFp(this.configuration).consoleV1CompanyGet(requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+    public consoleV1CompanyGet(options?: RawAxiosRequestConfig) {
+        return CompanyApiFp(this.configuration).consoleV1CompanyGet(options).then((request) => request(this.axios, this.basePath));
     }
 }
 

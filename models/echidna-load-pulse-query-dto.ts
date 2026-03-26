@@ -17,7 +17,6 @@
 export interface EchidnaLoadPulseQueryDto {
     'refresh'?: EchidnaLoadPulseQueryDtoRefreshEnum;
     'metricIDs'?: Array<string>;
-    'ruleId'?: string;
     'turboMode'?: boolean;
 }
 

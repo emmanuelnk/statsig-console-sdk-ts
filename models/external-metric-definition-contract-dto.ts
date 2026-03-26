@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExperimentCreateDtoCureCovariatesInner } from './experiment-create-dto-cure-covariates-inner';
+import type { ExperimentCreateDtoBayesianPriorsInnerMetric } from './experiment-create-dto-bayesian-priors-inner-metric';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ExternalMetricDefinitionContractDtoFunnelEventListInner } from './external-metric-definition-contract-dto-funnel-event-list-inner';
@@ -60,7 +60,7 @@ export interface ExternalMetricDefinitionContractDto {
     /**
      * List of input metrics used to calculate the new metric for composite types.
      */
-    'metricComponentMetrics'?: Array<ExperimentCreateDtoCureCovariatesInner>;
+    'metricComponentMetrics'?: Array<ExperimentCreateDtoBayesianPriorsInnerMetric>;
     /**
      * An optional description providing additional context about the metric.
      */
@@ -157,14 +157,18 @@ export const ExternalMetricDefinitionContractDtoTypeEnum = {
     Mean: 'mean',
     EventCountCustom: 'event_count_custom',
     EventUser: 'event_user',
+    EventUserWindow: 'event_user_window',
     Funnel: 'funnel',
     Undefined: 'undefined',
     SetupIncomplete: 'setup_incomplete',
     CompositeSum: 'composite_sum',
     ImportWindow: 'import_window',
     UserWarehouse: 'user_warehouse',
+    HybridWarehouse: 'hybrid_warehouse',
     CountDistinct: 'count_distinct',
-    SegmentUserExposureDays: 'segment_user_exposure_days'
+    AdsSegmentActiveUsers: 'ads_segment_active_users',
+    AdsSegmentExposedUserDays: 'ads_segment_exposed_user_days',
+    Percentile: 'percentile'
 } as const;
 
 export type ExternalMetricDefinitionContractDtoTypeEnum = typeof ExternalMetricDefinitionContractDtoTypeEnum[keyof typeof ExternalMetricDefinitionContractDtoTypeEnum];

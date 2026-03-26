@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
@@ -63,11 +63,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * @summary Get Layers
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/layers`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -93,9 +92,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -109,11 +105,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Delete a layer
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdDelete', 'id', id)
             const localVarPath = `/console/v1/layers/{id}`
@@ -134,9 +129,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -152,11 +144,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdExperimentsGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdExperimentsGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdExperimentsGet', 'id', id)
             const localVarPath = `/console/v1/layers/{id}/experiments`
@@ -185,9 +176,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -201,11 +189,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Get one layer
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdGet', 'id', id)
             const localVarPath = `/console/v1/layers/{id}`
@@ -226,9 +213,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -242,11 +226,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Delete Layer Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdOverridesDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdOverridesDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdOverridesDelete', 'id', id)
             const localVarPath = `/console/v1/layers/{id}/overrides`
@@ -267,9 +250,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -283,11 +263,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Get Layer Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdOverridesGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdOverridesGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdOverridesGet', 'id', id)
             const localVarPath = `/console/v1/layers/{id}/overrides`
@@ -308,9 +287,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -325,11 +301,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * @summary Add Layer Overrides
          * @param {string} id id
          * @param {LayerOverridesPatchDto} layerOverridesPatchDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdOverridesPatch: async (id: string, layerOverridesPatchDto: LayerOverridesPatchDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdOverridesPatch: async (id: string, layerOverridesPatchDto: LayerOverridesPatchDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdOverridesPatch', 'id', id)
             // verify required parameter 'layerOverridesPatchDto' is not null or undefined
@@ -353,9 +328,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -371,11 +343,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * @summary Update Layer Overrides
          * @param {string} id id
          * @param {LayerOverridesDto} layerOverridesDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdOverridesPost: async (id: string, layerOverridesDto: LayerOverridesDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdOverridesPost: async (id: string, layerOverridesDto: LayerOverridesDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdOverridesPost', 'id', id)
             // verify required parameter 'layerOverridesDto' is not null or undefined
@@ -399,9 +370,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -417,11 +385,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * @summary Partially update a layer
          * @param {string} id id
          * @param {LayerPartialUpdateContractDto} layerPartialUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdPatch: async (id: string, layerPartialUpdateContractDto: LayerPartialUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdPatch: async (id: string, layerPartialUpdateContractDto: LayerPartialUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdPatch', 'id', id)
             // verify required parameter 'layerPartialUpdateContractDto' is not null or undefined
@@ -445,9 +412,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -463,11 +427,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * @summary Update a layer
          * @param {string} id id
          * @param {LayerFullUpdateContractDto} layerFullUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersIdPost: async (id: string, layerFullUpdateContractDto: LayerFullUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersIdPost: async (id: string, layerFullUpdateContractDto: LayerFullUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1LayersIdPost', 'id', id)
             // verify required parameter 'layerFullUpdateContractDto' is not null or undefined
@@ -491,9 +454,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -508,11 +468,10 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Create a Layer
          * @param {LayerCreateContractDto} layerCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1LayersPost: async (layerCreateContractDto: LayerCreateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1LayersPost: async (layerCreateContractDto: LayerCreateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'layerCreateContractDto' is not null or undefined
             assertParamExists('consoleV1LayersPost', 'layerCreateContractDto', layerCreateContractDto)
             const localVarPath = `/console/v1/layers`;
@@ -533,9 +492,6 @@ export const LayersApiAxiosParamCreator = function (configuration?: Configuratio
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -560,12 +516,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * @summary Get Layers
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1layersResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1LayersGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1layersResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -574,12 +529,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete a layer
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1LayersIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -590,12 +544,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdExperimentsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1layersidexperimentsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdExperimentsGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1LayersIdExperimentsGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1layersidexperimentsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdExperimentsGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdExperimentsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -604,12 +557,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get one layer
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdGet(id, xRespectReviewSettings, options);
+        async consoleV1LayersIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -618,12 +570,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Layer Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdOverridesGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdOverridesDelete(id, xRespectReviewSettings, options);
+        async consoleV1LayersIdOverridesDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdOverridesGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdOverridesDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdOverridesDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -632,12 +583,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Layer Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdOverridesGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdOverridesGet(id, xRespectReviewSettings, options);
+        async consoleV1LayersIdOverridesGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdOverridesGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdOverridesGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdOverridesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -647,12 +597,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * @summary Add Layer Overrides
          * @param {string} id id
          * @param {LayerOverridesPatchDto} layerOverridesPatchDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdOverridesPatch(id: string, layerOverridesPatchDto: LayerOverridesPatchDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdOverridesGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdOverridesPatch(id, layerOverridesPatchDto, xRespectReviewSettings, options);
+        async consoleV1LayersIdOverridesPatch(id: string, layerOverridesPatchDto: LayerOverridesPatchDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdOverridesGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdOverridesPatch(id, layerOverridesPatchDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdOverridesPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -662,12 +611,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * @summary Update Layer Overrides
          * @param {string} id id
          * @param {LayerOverridesDto} layerOverridesDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdOverridesPost(id: string, layerOverridesDto: LayerOverridesDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdOverridesGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdOverridesPost(id, layerOverridesDto, xRespectReviewSettings, options);
+        async consoleV1LayersIdOverridesPost(id: string, layerOverridesDto: LayerOverridesDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdOverridesGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdOverridesPost(id, layerOverridesDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdOverridesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -677,12 +625,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * @summary Partially update a layer
          * @param {string} id id
          * @param {LayerPartialUpdateContractDto} layerPartialUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdPatch(id: string, layerPartialUpdateContractDto: LayerPartialUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdPatch(id, layerPartialUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1LayersIdPatch(id: string, layerPartialUpdateContractDto: LayerPartialUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdPatch(id, layerPartialUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -692,12 +639,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * @summary Update a layer
          * @param {string} id id
          * @param {LayerFullUpdateContractDto} layerFullUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersIdPost(id: string, layerFullUpdateContractDto: LayerFullUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdPost(id, layerFullUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1LayersIdPost(id: string, layerFullUpdateContractDto: LayerFullUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersIdPost(id, layerFullUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersIdPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -706,12 +652,11 @@ export const LayersApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create a Layer
          * @param {LayerCreateContractDto} layerCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1LayersPost(layerCreateContractDto: LayerCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersPost(layerCreateContractDto, xRespectReviewSettings, options);
+        async consoleV1LayersPost(layerCreateContractDto: LayerCreateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1LayersPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1LayersPost(layerCreateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['LayersApi.consoleV1LayersPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -733,7 +678,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersGet(requestParameters: LayersApiConsoleV1LayersGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1layersResponse> {
-            return localVarFp.consoleV1LayersGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -743,7 +688,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdDelete(requestParameters: LayersApiConsoleV1LayersIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdDelete200Response> {
-            return localVarFp.consoleV1LayersIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -753,7 +698,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdExperimentsGet(requestParameters: LayersApiConsoleV1LayersIdExperimentsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1layersidexperimentsResponse> {
-            return localVarFp.consoleV1LayersIdExperimentsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdExperimentsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -763,7 +708,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdGet(requestParameters: LayersApiConsoleV1LayersIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdGet200Response> {
-            return localVarFp.consoleV1LayersIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -773,7 +718,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdOverridesDelete(requestParameters: LayersApiConsoleV1LayersIdOverridesDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
-            return localVarFp.consoleV1LayersIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdOverridesDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -783,7 +728,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdOverridesGet(requestParameters: LayersApiConsoleV1LayersIdOverridesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
-            return localVarFp.consoleV1LayersIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdOverridesGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -793,7 +738,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdOverridesPatch(requestParameters: LayersApiConsoleV1LayersIdOverridesPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
-            return localVarFp.consoleV1LayersIdOverridesPatch(requestParameters.id, requestParameters.layerOverridesPatchDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdOverridesPatch(requestParameters.id, requestParameters.layerOverridesPatchDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -803,7 +748,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdOverridesPost(requestParameters: LayersApiConsoleV1LayersIdOverridesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdOverridesGet200Response> {
-            return localVarFp.consoleV1LayersIdOverridesPost(requestParameters.id, requestParameters.layerOverridesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdOverridesPost(requestParameters.id, requestParameters.layerOverridesDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -813,7 +758,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdPatch(requestParameters: LayersApiConsoleV1LayersIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdPatch200Response> {
-            return localVarFp.consoleV1LayersIdPatch(requestParameters.id, requestParameters.layerPartialUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdPatch(requestParameters.id, requestParameters.layerPartialUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -823,7 +768,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersIdPost(requestParameters: LayersApiConsoleV1LayersIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersIdPost200Response> {
-            return localVarFp.consoleV1LayersIdPost(requestParameters.id, requestParameters.layerFullUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersIdPost(requestParameters.id, requestParameters.layerFullUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -833,7 +778,7 @@ export const LayersApiFactory = function (configuration?: Configuration, basePat
          * @throws {RequiredError}
          */
         consoleV1LayersPost(requestParameters: LayersApiConsoleV1LayersPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1LayersPost201Response> {
-            return localVarFp.consoleV1LayersPost(requestParameters.layerCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1LayersPost(requestParameters.layerCreateContractDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -851,11 +796,6 @@ export interface LayersApiConsoleV1LayersGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -866,11 +806,6 @@ export interface LayersApiConsoleV1LayersIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -891,11 +826,6 @@ export interface LayersApiConsoleV1LayersIdExperimentsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -906,11 +836,6 @@ export interface LayersApiConsoleV1LayersIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -921,11 +846,6 @@ export interface LayersApiConsoleV1LayersIdOverridesDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -936,11 +856,6 @@ export interface LayersApiConsoleV1LayersIdOverridesGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -953,11 +868,6 @@ export interface LayersApiConsoleV1LayersIdOverridesPatchRequest {
     readonly id: string
 
     readonly layerOverridesPatchDto: LayerOverridesPatchDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -970,11 +880,6 @@ export interface LayersApiConsoleV1LayersIdOverridesPostRequest {
     readonly id: string
 
     readonly layerOverridesDto: LayerOverridesDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -987,11 +892,6 @@ export interface LayersApiConsoleV1LayersIdPatchRequest {
     readonly id: string
 
     readonly layerPartialUpdateContractDto: LayerPartialUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1004,11 +904,6 @@ export interface LayersApiConsoleV1LayersIdPostRequest {
     readonly id: string
 
     readonly layerFullUpdateContractDto: LayerFullUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1016,11 +911,6 @@ export interface LayersApiConsoleV1LayersIdPostRequest {
  */
 export interface LayersApiConsoleV1LayersPostRequest {
     readonly layerCreateContractDto: LayerCreateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1035,7 +925,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersGet(requestParameters: LayersApiConsoleV1LayersGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1046,7 +936,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdDelete(requestParameters: LayersApiConsoleV1LayersIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1057,7 +947,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdExperimentsGet(requestParameters: LayersApiConsoleV1LayersIdExperimentsGetRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdExperimentsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdExperimentsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1068,7 +958,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdGet(requestParameters: LayersApiConsoleV1LayersIdGetRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1079,7 +969,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdOverridesDelete(requestParameters: LayersApiConsoleV1LayersIdOverridesDeleteRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1090,7 +980,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdOverridesGet(requestParameters: LayersApiConsoleV1LayersIdOverridesGetRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1101,7 +991,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdOverridesPatch(requestParameters: LayersApiConsoleV1LayersIdOverridesPatchRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesPatch(requestParameters.id, requestParameters.layerOverridesPatchDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesPatch(requestParameters.id, requestParameters.layerOverridesPatchDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1112,7 +1002,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdOverridesPost(requestParameters: LayersApiConsoleV1LayersIdOverridesPostRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesPost(requestParameters.id, requestParameters.layerOverridesDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdOverridesPost(requestParameters.id, requestParameters.layerOverridesDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1123,7 +1013,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdPatch(requestParameters: LayersApiConsoleV1LayersIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdPatch(requestParameters.id, requestParameters.layerPartialUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdPatch(requestParameters.id, requestParameters.layerPartialUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1134,7 +1024,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersIdPost(requestParameters: LayersApiConsoleV1LayersIdPostRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersIdPost(requestParameters.id, requestParameters.layerFullUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersIdPost(requestParameters.id, requestParameters.layerFullUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1145,7 +1035,7 @@ export class LayersApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1LayersPost(requestParameters: LayersApiConsoleV1LayersPostRequest, options?: RawAxiosRequestConfig) {
-        return LayersApiFp(this.configuration).consoleV1LayersPost(requestParameters.layerCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return LayersApiFp(this.configuration).consoleV1LayersPost(requestParameters.layerCreateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -18,6 +18,9 @@
 import type { ExternalExperimentDtoHealthChecksInnerMetadataDeduplicationRatesInner } from './external-experiment-dto-health-checks-inner-metadata-deduplication-rates-inner';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ExternalExperimentDtoHealthChecksInnerMetadataGroupsInner } from './external-experiment-dto-health-checks-inner-metadata-groups-inner';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { ExternalExperimentDtoHealthChecksInnerMetadataMetricsInner } from './external-experiment-dto-health-checks-inner-metadata-metrics-inner';
 
 export interface ExternalExperimentDtoHealthChecksInnerMetadata {
@@ -34,5 +37,6 @@ export interface ExternalExperimentDtoHealthChecksInnerMetadata {
     'missingMetrics'?: Array<string>;
     'metrics'?: Array<ExternalExperimentDtoHealthChecksInnerMetadataMetricsInner>;
     'lastUpdatedDs'?: string;
+    'groups'?: Array<ExternalExperimentDtoHealthChecksInnerMetadataGroupsInner>;
 }
 

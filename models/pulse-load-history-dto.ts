@@ -23,6 +23,7 @@ export interface PulseLoadHistoryDto {
     'endDs': string;
     'reloadType': PulseLoadHistoryDtoReloadTypeEnum;
     'turboMode': boolean;
+    'dagID': string;
 }
 
 export const PulseLoadHistoryDtoFinishedStateEnum = {

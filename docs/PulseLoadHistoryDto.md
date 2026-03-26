@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **endDs** | **string** |  | [default to undefined]
 **reloadType** | **string** |  | [default to undefined]
 **turboMode** | **boolean** |  | [default to undefined]
+**dagID** | **string** |  | [default to undefined]
 
 ## Example
 
@@ -28,6 +29,7 @@ const instance: PulseLoadHistoryDto = {
     endDs,
     reloadType,
     turboMode,
+    dagID,
 };
 ```
 

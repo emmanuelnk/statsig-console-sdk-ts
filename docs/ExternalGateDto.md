@@ -29,10 +29,11 @@ Name | Type | Description | Notes
 **typeReason** | **string** |  | [default to undefined]
 **owner** | [**AIConfigCreateDtoOwner**](AIConfigCreateDtoOwner.md) |  | [optional] [default to undefined]
 **isTemplate** | **boolean** |  | [optional] [default to undefined]
+**store0100Exposures** | **boolean** | Whether this gate stores 0/100 exposures for monitoring/analysis. | [optional] [default to undefined]
 **isEnabled** | **boolean** |  | [default to undefined]
-**rules** | [**Array&lt;DynamicConfigRulesDtoRulesInner&gt;**](DynamicConfigRulesDtoRulesInner.md) |  | [default to undefined]
+**rules** | [**Array&lt;AutotuneExperimentDtoInlineTargetingRulesInner&gt;**](AutotuneExperimentDtoInlineTargetingRulesInner.md) |  | [default to undefined]
 **measureMetricLifts** | **boolean** |  | [optional] [default to undefined]
-**monitoringMetrics** | [**Array&lt;ExperimentCreateDtoCureCovariatesInner&gt;**](ExperimentCreateDtoCureCovariatesInner.md) |  | [optional] [default to undefined]
+**monitoringMetrics** | [**Array&lt;ExperimentCreateDtoBayesianPriorsInnerMetric&gt;**](ExperimentCreateDtoBayesianPriorsInnerMetric.md) |  | [optional] [default to undefined]
 **reviewSettings** | [**ExternalExperimentDtoReviewSettings**](ExternalExperimentDtoReviewSettings.md) |  | [optional] [default to undefined]
 **releasePipelineID** | **string** |  | [optional] [default to undefined]
 **activeReview** | [**ExternalExperimentDtoActiveReview**](ExternalExperimentDtoActiveReview.md) |  | [optional] [default to undefined]
@@ -67,6 +68,7 @@ const instance: ExternalGateDto = {
     typeReason,
     owner,
     isTemplate,
+    store0100Exposures,
     isEnabled,
     rules,
     measureMetricLifts,

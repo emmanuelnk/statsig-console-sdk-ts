@@ -21,18 +21,11 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ProjectApi(configuration);
 
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
-
-const { status, data } = await apiInstance.consoleV1ProjectGet(
-    xRespectReviewSettings
-);
+const { status, data } = await apiInstance.consoleV1ProjectGet();
 ```
 
 ### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+This endpoint does not have any parameters.
 
 
 ### Return type

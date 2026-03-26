@@ -23,11 +23,9 @@ const configuration = new Configuration();
 const apiInstance = new WarehouseConnectionsApi(configuration);
 
 let whConnectionUpdateDto: WhConnectionUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1WhConnectionsPatch(
-    whConnectionUpdateDto,
-    xRespectReviewSettings
+    whConnectionUpdateDto
 );
 ```
 
@@ -36,7 +34,6 @@ const { status, data } = await apiInstance.consoleV1WhConnectionsPatch(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **whConnectionUpdateDto** | **WhConnectionUpdateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

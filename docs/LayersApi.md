@@ -35,12 +35,10 @@ const apiInstance = new LayersApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -50,7 +48,6 @@ const { status, data } = await apiInstance.consoleV1LayersGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -92,11 +89,9 @@ const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -105,7 +100,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -152,13 +146,11 @@ const apiInstance = new LayersApi(configuration);
 let id: string; //id (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdExperimentsGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -169,7 +161,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdExperimentsGet(
 | **id** | [**string**] | id | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -209,11 +200,9 @@ const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -222,7 +211,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -265,11 +253,9 @@ const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdOverridesDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -278,7 +264,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdOverridesDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -320,11 +305,9 @@ const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdOverridesGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -333,7 +316,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdOverridesGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -377,12 +359,10 @@ const apiInstance = new LayersApi(configuration);
 
 let id: string; //id (default to undefined)
 let layerOverridesPatchDto: LayerOverridesPatchDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdOverridesPatch(
     id,
-    layerOverridesPatchDto,
-    xRespectReviewSettings
+    layerOverridesPatchDto
 );
 ```
 
@@ -392,7 +372,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdOverridesPatch(
 |------------- | ------------- | ------------- | -------------|
 | **layerOverridesPatchDto** | **LayerOverridesPatchDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -436,12 +415,10 @@ const apiInstance = new LayersApi(configuration);
 
 let id: string; //id (default to undefined)
 let layerOverridesDto: LayerOverridesDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdOverridesPost(
     id,
-    layerOverridesDto,
-    xRespectReviewSettings
+    layerOverridesDto
 );
 ```
 
@@ -451,7 +428,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdOverridesPost(
 |------------- | ------------- | ------------- | -------------|
 | **layerOverridesDto** | **LayerOverridesDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -495,12 +471,10 @@ const apiInstance = new LayersApi(configuration);
 
 let id: string; //id (default to undefined)
 let layerPartialUpdateContractDto: LayerPartialUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdPatch(
     id,
-    layerPartialUpdateContractDto,
-    xRespectReviewSettings
+    layerPartialUpdateContractDto
 );
 ```
 
@@ -510,7 +484,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **layerPartialUpdateContractDto** | **LayerPartialUpdateContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -554,12 +527,10 @@ const apiInstance = new LayersApi(configuration);
 
 let id: string; //id (default to undefined)
 let layerFullUpdateContractDto: LayerFullUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersIdPost(
     id,
-    layerFullUpdateContractDto,
-    xRespectReviewSettings
+    layerFullUpdateContractDto
 );
 ```
 
@@ -569,7 +540,6 @@ const { status, data } = await apiInstance.consoleV1LayersIdPost(
 |------------- | ------------- | ------------- | -------------|
 | **layerFullUpdateContractDto** | **LayerFullUpdateContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -612,11 +582,9 @@ const configuration = new Configuration();
 const apiInstance = new LayersApi(configuration);
 
 let layerCreateContractDto: LayerCreateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1LayersPost(
-    layerCreateContractDto,
-    xRespectReviewSettings
+    layerCreateContractDto
 );
 ```
 
@@ -625,7 +593,6 @@ const { status, data } = await apiInstance.consoleV1LayersPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **layerCreateContractDto** | **LayerCreateContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
@@ -70,11 +70,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsGet: async (creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsGet: async (creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/holdouts`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -114,9 +113,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -130,11 +126,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Delete holdout by id
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdDelete', 'id', id)
             const localVarPath = `/console/v1/holdouts/{id}`
@@ -155,9 +150,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -171,11 +163,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Get holdout by id
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdGet', 'id', id)
             const localVarPath = `/console/v1/holdouts/{id}`
@@ -196,9 +187,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -212,11 +200,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * Remove selected ids from an id list
          * @summary Remove Holdout Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdOverridesDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdOverridesDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdOverridesDelete', 'id', id)
             const localVarPath = `/console/v1/holdouts/{id}/overrides`
@@ -237,9 +224,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -253,11 +237,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Read Holdout Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdOverridesGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdOverridesGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdOverridesGet', 'id', id)
             const localVarPath = `/console/v1/holdouts/{id}/overrides`
@@ -278,9 +261,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -295,11 +275,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Add Holdout Overrides
          * @param {string} id id
          * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdOverridesPatch: async (id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdOverridesPatch: async (id: string, updateOverridesContractDto: UpdateOverridesContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdOverridesPatch', 'id', id)
             // verify required parameter 'updateOverridesContractDto' is not null or undefined
@@ -323,9 +302,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -341,11 +317,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Update Holdout Overrides
          * @param {string} id id
          * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdOverridesPost: async (id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdOverridesPost: async (id: string, updateOverridesContractDto: UpdateOverridesContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdOverridesPost', 'id', id)
             // verify required parameter 'updateOverridesContractDto' is not null or undefined
@@ -369,9 +344,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -383,15 +355,14 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * 
-         * @summary Patch holdout by id. You can pass in only the data you want to update.
+         * You can pass in only the data you want to update.
+         * @summary Partially update holdout by id
          * @param {string} id id
          * @param {HoldoutPartialUpdateContractDto} holdoutPartialUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdPatch: async (id: string, holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdPatch: async (id: string, holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdPatch', 'id', id)
             // verify required parameter 'holdoutPartialUpdateContractDto' is not null or undefined
@@ -415,9 +386,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -433,11 +401,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Update holdout by id
          * @param {string} id id
          * @param {HoldoutFullUpdateContractDto} holdoutFullUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdPost: async (id: string, holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdPost: async (id: string, holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdPost', 'id', id)
             // verify required parameter 'holdoutFullUpdateContractDto' is not null or undefined
@@ -461,9 +428,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -480,11 +444,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} id id
          * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [confidence] Confidence interval (0-100)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsIdPulseResultsGet: async (id: string, cuped?: string, confidence?: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsIdPulseResultsGet: async (id: string, cuped?: string, confidence?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1HoldoutsIdPulseResultsGet', 'id', id)
             const localVarPath = `/console/v1/holdouts/{id}/pulse_results`
@@ -513,9 +476,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -529,11 +489,10 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Create holdout
          * @param {HoldoutCreateContractDto} holdoutCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1HoldoutsPost: async (holdoutCreateContractDto: HoldoutCreateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1HoldoutsPost: async (holdoutCreateContractDto: HoldoutCreateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'holdoutCreateContractDto' is not null or undefined
             assertParamExists('consoleV1HoldoutsPost', 'holdoutCreateContractDto', holdoutCreateContractDto)
             const localVarPath = `/console/v1/holdouts`;
@@ -554,9 +513,6 @@ export const HoldoutsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -584,12 +540,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsGet(creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1holdoutsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsGet(creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
+        async consoleV1HoldoutsGet(creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1holdoutsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsGet(creatorName, creatorID, tags, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -598,12 +553,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete holdout by id
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -612,12 +566,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get holdout by id
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdGet(id, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -626,12 +579,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * Remove selected ids from an id list
          * @summary Remove Holdout Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdOverridesDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdOverridesDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdOverridesDelete(id, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdOverridesDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdOverridesDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdOverridesDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdOverridesDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -640,12 +592,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Holdout Overrides
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdOverridesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdOverridesGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdOverridesGet(id, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdOverridesGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdOverridesGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdOverridesGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdOverridesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -655,12 +606,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * @summary Add Holdout Overrides
          * @param {string} id id
          * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdOverridesPatch(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdOverridesPatch(id, updateOverridesContractDto, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdOverridesPatch(id: string, updateOverridesContractDto: UpdateOverridesContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdOverridesPatch(id, updateOverridesContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdOverridesPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -670,27 +620,25 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * @summary Update Holdout Overrides
          * @param {string} id id
          * @param {UpdateOverridesContractDto} updateOverridesContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdOverridesPost(id: string, updateOverridesContractDto: UpdateOverridesContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdOverridesPost(id, updateOverridesContractDto, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdOverridesPost(id: string, updateOverridesContractDto: UpdateOverridesContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdOverridesPost(id, updateOverridesContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdOverridesPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
-         * @summary Patch holdout by id. You can pass in only the data you want to update.
+         * You can pass in only the data you want to update.
+         * @summary Partially update holdout by id
          * @param {string} id id
          * @param {HoldoutPartialUpdateContractDto} holdoutPartialUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdPatch(id: string, holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdPatch(id, holdoutPartialUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdPatch(id: string, holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdPatch(id, holdoutPartialUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -700,12 +648,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * @summary Update holdout by id
          * @param {string} id id
          * @param {HoldoutFullUpdateContractDto} holdoutFullUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdPost(id: string, holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdPost(id, holdoutFullUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdPost(id: string, holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdPost(id, holdoutFullUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -716,12 +663,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {string} [cuped] Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;.
          * @param {string} [confidence] Confidence interval (0-100)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsIdPulseResultsGet(id: string, cuped?: string, confidence?: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdPulseResultsGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdPulseResultsGet(id, cuped, confidence, xRespectReviewSettings, options);
+        async consoleV1HoldoutsIdPulseResultsGet(id: string, cuped?: string, confidence?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsIdPulseResultsGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsIdPulseResultsGet(id, cuped, confidence, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsIdPulseResultsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -730,12 +676,11 @@ export const HoldoutsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create holdout
          * @param {HoldoutCreateContractDto} holdoutCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1HoldoutsPost(holdoutCreateContractDto: HoldoutCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsPost(holdoutCreateContractDto, xRespectReviewSettings, options);
+        async consoleV1HoldoutsPost(holdoutCreateContractDto: HoldoutCreateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1HoldoutsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1HoldoutsPost(holdoutCreateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['HoldoutsApi.consoleV1HoldoutsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -757,7 +702,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsGet(requestParameters: HoldoutsApiConsoleV1HoldoutsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1holdoutsResponse> {
-            return localVarFp.consoleV1HoldoutsGet(requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsGet(requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -767,7 +712,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdDelete(requestParameters: HoldoutsApiConsoleV1HoldoutsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdDelete200Response> {
-            return localVarFp.consoleV1HoldoutsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -777,7 +722,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdGet200Response> {
-            return localVarFp.consoleV1HoldoutsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * Remove selected ids from an id list
@@ -787,7 +732,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdOverridesDelete(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesDelete200Response> {
-            return localVarFp.consoleV1HoldoutsIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdOverridesDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -797,7 +742,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdOverridesGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesGet200Response> {
-            return localVarFp.consoleV1HoldoutsIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdOverridesGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -807,7 +752,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdOverridesPatch(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response> {
-            return localVarFp.consoleV1HoldoutsIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -817,17 +762,17 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdOverridesPost(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdOverridesPost200Response> {
-            return localVarFp.consoleV1HoldoutsIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @summary Patch holdout by id. You can pass in only the data you want to update.
+         * You can pass in only the data you want to update.
+         * @summary Partially update holdout by id
          * @param {HoldoutsApiConsoleV1HoldoutsIdPatchRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdPatch(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPatch200Response> {
-            return localVarFp.consoleV1HoldoutsIdPatch(requestParameters.id, requestParameters.holdoutPartialUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdPatch(requestParameters.id, requestParameters.holdoutPartialUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -837,7 +782,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdPost(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPost200Response> {
-            return localVarFp.consoleV1HoldoutsIdPost(requestParameters.id, requestParameters.holdoutFullUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdPost(requestParameters.id, requestParameters.holdoutFullUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -847,7 +792,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsIdPulseResultsGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsIdPulseResultsGet200Response> {
-            return localVarFp.consoleV1HoldoutsIdPulseResultsGet(requestParameters.id, requestParameters.cuped, requestParameters.confidence, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsIdPulseResultsGet(requestParameters.id, requestParameters.cuped, requestParameters.confidence, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -857,7 +802,7 @@ export const HoldoutsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1HoldoutsPost(requestParameters: HoldoutsApiConsoleV1HoldoutsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1HoldoutsPost200Response> {
-            return localVarFp.consoleV1HoldoutsPost(requestParameters.holdoutCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1HoldoutsPost(requestParameters.holdoutCreateContractDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -890,11 +835,6 @@ export interface HoldoutsApiConsoleV1HoldoutsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -905,11 +845,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -920,11 +855,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -935,11 +865,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdOverridesDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -950,11 +875,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdOverridesGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -967,11 +887,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdOverridesPatchRequest {
     readonly id: string
 
     readonly updateOverridesContractDto: UpdateOverridesContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -984,11 +899,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdOverridesPostRequest {
     readonly id: string
 
     readonly updateOverridesContractDto: UpdateOverridesContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1001,11 +911,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdPatchRequest {
     readonly id: string
 
     readonly holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1018,11 +923,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdPostRequest {
     readonly id: string
 
     readonly holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1043,11 +943,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest {
      * Confidence interval (0-100)
      */
     readonly confidence?: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1055,11 +950,6 @@ export interface HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest {
  */
 export interface HoldoutsApiConsoleV1HoldoutsPostRequest {
     readonly holdoutCreateContractDto: HoldoutCreateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1074,7 +964,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsGet(requestParameters: HoldoutsApiConsoleV1HoldoutsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsGet(requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsGet(requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1085,7 +975,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdDelete(requestParameters: HoldoutsApiConsoleV1HoldoutsIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1096,7 +986,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdGetRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1107,7 +997,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdOverridesDelete(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesDeleteRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1118,7 +1008,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdOverridesGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesGetRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1129,7 +1019,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdOverridesPatch(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesPatchRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesPatch(requestParameters.id, requestParameters.updateOverridesContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1140,18 +1030,18 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdOverridesPost(requestParameters: HoldoutsApiConsoleV1HoldoutsIdOverridesPostRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdOverridesPost(requestParameters.id, requestParameters.updateOverridesContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * 
-     * @summary Patch holdout by id. You can pass in only the data you want to update.
+     * You can pass in only the data you want to update.
+     * @summary Partially update holdout by id
      * @param {HoldoutsApiConsoleV1HoldoutsIdPatchRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdPatch(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPatch(requestParameters.id, requestParameters.holdoutPartialUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPatch(requestParameters.id, requestParameters.holdoutPartialUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1162,7 +1052,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdPost(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPostRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPost(requestParameters.id, requestParameters.holdoutFullUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPost(requestParameters.id, requestParameters.holdoutFullUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1173,7 +1063,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsIdPulseResultsGet(requestParameters: HoldoutsApiConsoleV1HoldoutsIdPulseResultsGetRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPulseResultsGet(requestParameters.id, requestParameters.cuped, requestParameters.confidence, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsIdPulseResultsGet(requestParameters.id, requestParameters.cuped, requestParameters.confidence, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1184,7 +1074,7 @@ export class HoldoutsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1HoldoutsPost(requestParameters: HoldoutsApiConsoleV1HoldoutsPostRequest, options?: RawAxiosRequestConfig) {
-        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsPost(requestParameters.holdoutCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return HoldoutsApiFp(this.configuration).consoleV1HoldoutsPost(requestParameters.holdoutCreateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** |  | [default to undefined]
-**type** | **string** |  | [default to undefined]
-**direction** | **string** |  | [optional] [default to undefined]
-**hypothesizedValue** | **number** |  | [optional] [default to undefined]
+**name** | **string** | The metric name. | [default to undefined]
+**type** | **string** | The metric type. | [default to undefined]
+**direction** | **string** | The expected direction for one-sided testing (a feature to only measure metric movements in a single direction) | [optional] [default to undefined]
+**hypothesizedValue** | **number** | The comparison value for the one-sample testing (a feature to use a fixed baseline as the control value) | [optional] [default to undefined]
 
 ## Example
 

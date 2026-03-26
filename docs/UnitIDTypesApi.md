@@ -29,12 +29,10 @@ const apiInstance = new UnitIDTypesApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UnitIdTypesGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -44,7 +42,6 @@ const { status, data } = await apiInstance.consoleV1UnitIdTypesGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -86,11 +83,9 @@ const configuration = new Configuration();
 const apiInstance = new UnitIDTypesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UnitIdTypesIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -99,7 +94,6 @@ const { status, data } = await apiInstance.consoleV1UnitIdTypesIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -140,11 +134,9 @@ const configuration = new Configuration();
 const apiInstance = new UnitIDTypesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UnitIdTypesIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -153,7 +145,6 @@ const { status, data } = await apiInstance.consoleV1UnitIdTypesIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -197,12 +188,10 @@ const apiInstance = new UnitIDTypesApi(configuration);
 
 let id: string; //id (default to undefined)
 let unitIdTypeUpdateContractDto: UnitIdTypeUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UnitIdTypesIdPatch(
     id,
-    unitIdTypeUpdateContractDto,
-    xRespectReviewSettings
+    unitIdTypeUpdateContractDto
 );
 ```
 
@@ -212,7 +201,6 @@ const { status, data } = await apiInstance.consoleV1UnitIdTypesIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **unitIdTypeUpdateContractDto** | **UnitIdTypeUpdateContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -254,11 +242,9 @@ const configuration = new Configuration();
 const apiInstance = new UnitIDTypesApi(configuration);
 
 let unitIdTypeContractDto: UnitIdTypeContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1UnitIdTypesPost(
-    unitIdTypeContractDto,
-    xRespectReviewSettings
+    unitIdTypeContractDto
 );
 ```
 
@@ -267,7 +253,6 @@ const { status, data } = await apiInstance.consoleV1UnitIdTypesPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **unitIdTypeContractDto** | **UnitIdTypeContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

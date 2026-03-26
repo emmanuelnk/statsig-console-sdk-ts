@@ -9,6 +9,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1GatesIdAlertsMetricIdResolvePost_0**](#consolev1gatesidalertsmetricidresolvepost_0) | **POST** /console/v1/gates/{id}/alerts/{metricId}/resolve | Resolve Metric Rollout Alert|
 |[**consoleV1GatesIdArchivePut**](#consolev1gatesidarchiveput) | **PUT** /console/v1/gates/{id}/archive | Archive Gate|
 |[**consoleV1GatesIdChecksGet**](#consolev1gatesidchecksget) | **GET** /console/v1/gates/{id}/checks | Read Gate Checks|
+|[**consoleV1GatesIdCodeCleanupPost**](#consolev1gatesidcodecleanuppost) | **POST** /console/v1/gates/{id}/code_cleanup | Start Gate Code Cleanup|
 |[**consoleV1GatesIdDelete**](#consolev1gatesiddelete) | **DELETE** /console/v1/gates/{id} | Delete Gates|
 |[**consoleV1GatesIdDisablePut**](#consolev1gatesiddisableput) | **PUT** /console/v1/gates/{id}/disable | Disable Gate|
 |[**consoleV1GatesIdDynamicConfigReferencesGet**](#consolev1gatesiddynamicconfigreferencesget) | **GET** /console/v1/gates/{id}/dynamic_config_references | List Dynamic Config References|
@@ -62,13 +63,14 @@ let typeReason: 'NONE' | 'STALE_PROBABLY_LAUNCHED' | 'STALE_PROBABLY_UNLAUNCHED'
 let passRate: ConsoleV1GatesGetPassRateParameter; //Filter by pass rate of the gates, as determined by a sampling of overall true/false values returned: 0, 100, or INBETWEEN (pass rate greater than zero but less than 100) (optional) (default to undefined)
 let rolloutRate: ConsoleV1GatesGetPassRateParameter; //Filter by rollout rate of the gates: 0 (all rules are set to pass 0%), 100 (all rules pass 100% including an \"everyone\" catch all rule), or INBETWEEN (at least one rule has a pass rate greater than 0 but less than 100) (optional) (default to undefined)
 let releasePipelineID: string; //Filter by release pipeline ID (optional) (default to undefined)
+let targetAppID: string; //Filter by target app ID (optional) (default to undefined)
 let includeArchived: 'true' | 'false'; //Include archived gates in the response (optional) (default to undefined)
+let store0100Exposures: 'true' | 'false'; //Filter gates by whether \"Store 0/100 Exposures\" is enabled. (optional) (default to undefined)
 let creatorName: string; //Name of the creator. (optional) (default to undefined)
 let creatorID: string; //ID of the user who created the entity. (optional) (default to undefined)
 let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter by tags (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesGet(
     idType,
@@ -77,13 +79,14 @@ const { status, data } = await apiInstance.consoleV1GatesGet(
     passRate,
     rolloutRate,
     releasePipelineID,
+    targetAppID,
     includeArchived,
+    store0100Exposures,
     creatorName,
     creatorID,
     tags,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -97,13 +100,14 @@ const { status, data } = await apiInstance.consoleV1GatesGet(
 | **passRate** | **ConsoleV1GatesGetPassRateParameter** | Filter by pass rate of the gates, as determined by a sampling of overall true/false values returned: 0, 100, or INBETWEEN (pass rate greater than zero but less than 100) | (optional) defaults to undefined|
 | **rolloutRate** | **ConsoleV1GatesGetPassRateParameter** | Filter by rollout rate of the gates: 0 (all rules are set to pass 0%), 100 (all rules pass 100% including an \&quot;everyone\&quot; catch all rule), or INBETWEEN (at least one rule has a pass rate greater than 0 but less than 100) | (optional) defaults to undefined|
 | **releasePipelineID** | [**string**] | Filter by release pipeline ID | (optional) defaults to undefined|
+| **targetAppID** | [**string**] | Filter by target app ID | (optional) defaults to undefined|
 | **includeArchived** | [**&#39;true&#39; | &#39;false&#39;**]**Array<&#39;true&#39; &#124; &#39;false&#39;>** | Include archived gates in the response | (optional) defaults to undefined|
+| **store0100Exposures** | [**&#39;true&#39; | &#39;false&#39;**]**Array<&#39;true&#39; &#124; &#39;false&#39;>** | Filter gates by whether \&quot;Store 0/100 Exposures\&quot; is enabled. | (optional) defaults to undefined|
 | **creatorName** | [**string**] | Name of the creator. | (optional) defaults to undefined|
 | **creatorID** | [**string**] | ID of the user who created the entity. | (optional) defaults to undefined|
 | **tags** | **ConsoleV1AuditLogsGetTagsParameter** | Filter by tags | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -147,13 +151,11 @@ const apiInstance = new GatesApi(configuration);
 let id: string; //id (default to undefined)
 let metricId: string; //metric id (default to undefined)
 let resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdAlertsMetricIdResolvePost(
     id,
     metricId,
-    resolveGuardrailAlertRequestDto,
-    xRespectReviewSettings
+    resolveGuardrailAlertRequestDto
 );
 ```
 
@@ -164,7 +166,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdAlertsMetricIdResolve
 | **resolveGuardrailAlertRequestDto** | **ResolveGuardrailAlertRequestDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
 | **metricId** | [**string**] | metric id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -210,13 +211,11 @@ const apiInstance = new GatesApi(configuration);
 let id: string; //id (default to undefined)
 let metricId: string; //metric id (default to undefined)
 let resolveGuardrailAlertRequestDto: ResolveGuardrailAlertRequestDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdAlertsMetricIdResolvePost_0(
     id,
     metricId,
-    resolveGuardrailAlertRequestDto,
-    xRespectReviewSettings
+    resolveGuardrailAlertRequestDto
 );
 ```
 
@@ -227,7 +226,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdAlertsMetricIdResolve
 | **resolveGuardrailAlertRequestDto** | **ResolveGuardrailAlertRequestDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
 | **metricId** | [**string**] | metric id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -272,12 +270,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
 let archiveSchemaDto: ArchiveSchemaDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdArchivePut(
     id,
-    archiveSchemaDto,
-    xRespectReviewSettings
+    archiveSchemaDto
 );
 ```
 
@@ -287,7 +283,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdArchivePut(
 |------------- | ------------- | ------------- | -------------|
 | **archiveSchemaDto** | **ArchiveSchemaDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -327,11 +322,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdChecksGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -340,7 +333,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdChecksGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -364,6 +356,57 @@ const { status, data } = await apiInstance.consoleV1GatesIdChecksGet(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **consoleV1GatesIdCodeCleanupPost**
+> ConsoleV1GatesIdCodeCleanupPost200Response consoleV1GatesIdCodeCleanupPost()
+
+
+### Example
+
+```typescript
+import {
+    GatesApi,
+    Configuration
+} from '@emmanuelnk/statsig-console-sdk-ts';
+
+const configuration = new Configuration();
+const apiInstance = new GatesApi(configuration);
+
+let id: string; //id (default to undefined)
+
+const { status, data } = await apiInstance.consoleV1GatesIdCodeCleanupPost(
+    id
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**string**] | id | defaults to undefined|
+
+
+### Return type
+
+**ConsoleV1GatesIdCodeCleanupPost200Response**
+
+### Authorization
+
+[STATSIG-API-KEY](../README.md#STATSIG-API-KEY)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Start gate code cleanup |  -  |
+|**404** | Not Found. The requested resource could not be found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **consoleV1GatesIdDelete**
 > ConsoleV1GatesIdDelete200Response consoleV1GatesIdDelete()
 
@@ -380,11 +423,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -393,7 +434,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -433,11 +473,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdDisablePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -446,7 +484,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdDisablePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -489,13 +526,11 @@ const apiInstance = new GatesApi(configuration);
 let id: string; //id (default to undefined)
 let limit: number; // (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdDynamicConfigReferencesGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -506,7 +541,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdDynamicConfigReferenc
 | **id** | [**string**] | id | defaults to undefined|
 | **limit** | [**number**] |  | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -547,11 +581,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdEnablePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -560,7 +592,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdEnablePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -603,13 +634,11 @@ const apiInstance = new GatesApi(configuration);
 let id: string; //id (default to undefined)
 let limit: number; // (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdExperimentReferencesGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -620,7 +649,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdExperimentReferencesG
 | **id** | [**string**] | id | defaults to undefined|
 | **limit** | [**number**] |  | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -664,13 +692,11 @@ const apiInstance = new GatesApi(configuration);
 let id: string; //id (default to undefined)
 let limit: number; // (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdGateReferencesGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -681,7 +707,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdGateReferencesGet(
 | **id** | [**string**] | id | defaults to undefined|
 | **limit** | [**number**] |  | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -722,11 +747,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -735,7 +758,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -775,11 +797,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdLaunchPut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -788,7 +808,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdLaunchPut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -830,12 +849,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
 let echidnaGateLoadPulseQueryDto: EchidnaGateLoadPulseQueryDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdLoadPulsePost(
     id,
-    echidnaGateLoadPulseQueryDto,
-    xRespectReviewSettings
+    echidnaGateLoadPulseQueryDto
 );
 ```
 
@@ -845,7 +862,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdLoadPulsePost(
 |------------- | ------------- | ------------- | -------------|
 | **echidnaGateLoadPulseQueryDto** | **EchidnaGateLoadPulseQueryDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -885,11 +901,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdOverridesDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -898,7 +912,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdOverridesDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -938,11 +951,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdOverridesGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -951,7 +962,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdOverridesGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -993,12 +1003,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
 let updateOverridesContractDto: UpdateOverridesContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdOverridesPatch(
     id,
-    updateOverridesContractDto,
-    xRespectReviewSettings
+    updateOverridesContractDto
 );
 ```
 
@@ -1008,7 +1016,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdOverridesPatch(
 |------------- | ------------- | ------------- | -------------|
 | **updateOverridesContractDto** | **UpdateOverridesContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1050,12 +1057,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
 let updateOverridesContractDto: UpdateOverridesContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdOverridesPost(
     id,
-    updateOverridesContractDto,
-    xRespectReviewSettings
+    updateOverridesContractDto
 );
 ```
 
@@ -1065,7 +1070,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdOverridesPost(
 |------------- | ------------- | ------------- | -------------|
 | **updateOverridesContractDto** | **UpdateOverridesContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1107,12 +1111,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
 let gatePartialUpdateDto: GatePartialUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdPatch(
     id,
-    gatePartialUpdateDto,
-    xRespectReviewSettings
+    gatePartialUpdateDto
 );
 ```
 
@@ -1122,7 +1124,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **gatePartialUpdateDto** | **GatePartialUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1164,12 +1165,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
 let gateFullUpdateDto: GateFullUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdPost(
     id,
-    gateFullUpdateDto,
-    xRespectReviewSettings
+    gateFullUpdateDto
 );
 ```
 
@@ -1179,7 +1178,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdPost(
 |------------- | ------------- | ------------- | -------------|
 | **gateFullUpdateDto** | **GateFullUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1220,12 +1218,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; // (default to undefined)
 let reviewID: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdReviewsReviewIDCommitPut(
     id,
-    reviewID,
-    xRespectReviewSettings
+    reviewID
 );
 ```
 
@@ -1235,7 +1231,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdReviewsReviewIDCommit
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
 | **reviewID** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1277,12 +1272,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
 let ruleDto: RuleDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdRulePost(
     id,
-    ruleDto,
-    xRespectReviewSettings
+    ruleDto
 );
 ```
 
@@ -1292,7 +1285,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulePost(
 |------------- | ------------- | ------------- | -------------|
 | **ruleDto** | **RuleDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1332,11 +1324,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdRulesGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1345,7 +1335,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1386,12 +1375,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //Gate ID (default to undefined)
 let ruleID: string; //Rule ID (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDDelete(
     id,
-    ruleID,
-    xRespectReviewSettings
+    ruleID
 );
 ```
 
@@ -1401,7 +1388,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDDelete(
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | Gate ID | defaults to undefined|
 | **ruleID** | [**string**] | Rule ID | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1445,13 +1431,11 @@ const apiInstance = new GatesApi(configuration);
 let id: string; //Gate ID (default to undefined)
 let ruleID: string; //Rule ID (default to undefined)
 let ruleUpdateDto: RuleUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPatch(
     id,
     ruleID,
-    ruleUpdateDto,
-    xRespectReviewSettings
+    ruleUpdateDto
 );
 ```
 
@@ -1462,7 +1446,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPatch(
 | **ruleUpdateDto** | **RuleUpdateDto**|  | |
 | **id** | [**string**] | Gate ID | defaults to undefined|
 | **ruleID** | [**string**] | Rule ID | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1507,14 +1490,12 @@ let id: string; //Gate ID (default to undefined)
 let ruleID: string; //Rule ID (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPulseLoadHistoryGet(
     id,
     ruleID,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -1526,7 +1507,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPulseLoadH
 | **ruleID** | [**string**] | Rule ID | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1569,14 +1549,12 @@ let id: string; //Gate ID (default to undefined)
 let ruleID: string; //Rule ID (default to undefined)
 let cuped: string; //Whether to apply CUPED. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
 let confidence: string; //Confidence interval (0-100) (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPulseResultsGet(
     id,
     ruleID,
     cuped,
-    confidence,
-    xRespectReviewSettings
+    confidence
 );
 ```
 
@@ -1588,7 +1566,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdRulesRuleIDPulseResul
 | **ruleID** | [**string**] | Rule ID | defaults to undefined|
 | **cuped** | [**string**] | Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
 | **confidence** | [**string**] | Confidence interval (0-100) | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1630,12 +1607,10 @@ const apiInstance = new GatesApi(configuration);
 
 let id: string; //id (default to undefined)
 let unarchiveSchemaDto: UnarchiveSchemaDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdUnarchivePut(
     id,
-    unarchiveSchemaDto,
-    xRespectReviewSettings
+    unarchiveSchemaDto
 );
 ```
 
@@ -1645,7 +1620,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdUnarchivePut(
 |------------- | ------------- | ------------- | -------------|
 | **unarchiveSchemaDto** | **UnarchiveSchemaDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1689,13 +1663,11 @@ const apiInstance = new GatesApi(configuration);
 let id: string; //id (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesIdVersionsGet(
     id,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -1706,7 +1678,6 @@ const { status, data } = await apiInstance.consoleV1GatesIdVersionsGet(
 | **id** | [**string**] | id | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1748,11 +1719,9 @@ const configuration = new Configuration();
 const apiInstance = new GatesApi(configuration);
 
 let gateCreateDto: GateCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1GatesPost(
-    gateCreateDto,
-    xRespectReviewSettings
+    gateCreateDto
 );
 ```
 
@@ -1761,7 +1730,6 @@ const { status, data } = await apiInstance.consoleV1GatesPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **gateCreateDto** | **GateCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

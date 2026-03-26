@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **id** | **string** | The Statsig ID of this rule. | [optional] [default to undefined]
 **baseID** | **string** | The base ID of this rule, i.e. without any added metadata. Will remain the exact same throughout | [optional] [default to undefined]
 **returnValue** | **{ [key: string]: any; }** | The return value of the rule. | [optional] [default to undefined]
-**completedAutomatedRollouts** | [**Array&lt;DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner&gt;**](DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner.md) | Read-only: Automated rollout phases that have already completed. | [optional] [readonly] [default to undefined]
-**pendingAutomatedRollouts** | [**Array&lt;DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner&gt;**](DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner.md) | Read-only: Automated rollout phases that are scheduled but not yet complete. | [optional] [readonly] [default to undefined]
+**completedAutomatedRollouts** | [**Array&lt;AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner&gt;**](AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner.md) | Read-only: Automated rollout phases that have already completed. | [optional] [readonly] [default to undefined]
+**pendingAutomatedRollouts** | [**Array&lt;AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner&gt;**](AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner.md) | Read-only: Automated rollout phases that are scheduled but not yet complete. | [optional] [readonly] [default to undefined]
 
 ## Example
 

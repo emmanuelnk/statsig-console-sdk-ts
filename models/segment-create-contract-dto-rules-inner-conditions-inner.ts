@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigCreateDtoRulesInnerConditionsInnerTargetValue } from './dynamic-config-create-dto-rules-inner-conditions-inner-target-value';
+import type { AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInnerTargetValue } from './autotune-experiment-dto-inline-targeting-rules-inner-conditions-inner-target-value';
 
 export interface SegmentCreateContractDtoRulesInnerConditionsInner {
-    'targetValue'?: DynamicConfigCreateDtoRulesInnerConditionsInnerTargetValue | null;
+    'targetValue'?: AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInnerTargetValue | null;
     'operator'?: string;
     'field'?: string | null;
     'customID'?: string | null;

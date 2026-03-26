@@ -38,11 +38,10 @@ export const ChangeValidationApiAxiosParamCreator = function (configuration?: Co
          * 
          * @summary Update change validation message
          * @param {ChangeValidationUpdateMessageDto} changeValidationUpdateMessageDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ChangeValidationMessagePatch: async (changeValidationUpdateMessageDto: ChangeValidationUpdateMessageDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ChangeValidationMessagePatch: async (changeValidationUpdateMessageDto: ChangeValidationUpdateMessageDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'changeValidationUpdateMessageDto' is not null or undefined
             assertParamExists('consoleV1ChangeValidationMessagePatch', 'changeValidationUpdateMessageDto', changeValidationUpdateMessageDto)
             const localVarPath = `/console/v1/change_validation/message`;
@@ -63,9 +62,6 @@ export const ChangeValidationApiAxiosParamCreator = function (configuration?: Co
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -80,11 +76,10 @@ export const ChangeValidationApiAxiosParamCreator = function (configuration?: Co
          * See how change validation works [here](https://docs.statsig.com/guides/setting-up-reviews#configuring-custom-approval-workflows-pre-commit-webhooks)
          * @summary Change Validation
          * @param {ChangeValidationDto} changeValidationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1ChangeValidationPost: async (changeValidationDto: ChangeValidationDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1ChangeValidationPost: async (changeValidationDto: ChangeValidationDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'changeValidationDto' is not null or undefined
             assertParamExists('consoleV1ChangeValidationPost', 'changeValidationDto', changeValidationDto)
             const localVarPath = `/console/v1/change_validation`;
@@ -105,9 +100,6 @@ export const ChangeValidationApiAxiosParamCreator = function (configuration?: Co
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -131,12 +123,11 @@ export const ChangeValidationApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update change validation message
          * @param {ChangeValidationUpdateMessageDto} changeValidationUpdateMessageDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ChangeValidationMessagePatch(changeValidationUpdateMessageDto: ChangeValidationUpdateMessageDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ChangeValidationMessagePatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ChangeValidationMessagePatch(changeValidationUpdateMessageDto, xRespectReviewSettings, options);
+        async consoleV1ChangeValidationMessagePatch(changeValidationUpdateMessageDto: ChangeValidationUpdateMessageDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ChangeValidationMessagePatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ChangeValidationMessagePatch(changeValidationUpdateMessageDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ChangeValidationApi.consoleV1ChangeValidationMessagePatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -145,12 +136,11 @@ export const ChangeValidationApiFp = function(configuration?: Configuration) {
          * See how change validation works [here](https://docs.statsig.com/guides/setting-up-reviews#configuring-custom-approval-workflows-pre-commit-webhooks)
          * @summary Change Validation
          * @param {ChangeValidationDto} changeValidationDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1ChangeValidationPost(changeValidationDto: ChangeValidationDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ChangeValidationPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ChangeValidationPost(changeValidationDto, xRespectReviewSettings, options);
+        async consoleV1ChangeValidationPost(changeValidationDto: ChangeValidationDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1ChangeValidationPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1ChangeValidationPost(changeValidationDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ChangeValidationApi.consoleV1ChangeValidationPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -172,7 +162,7 @@ export const ChangeValidationApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ChangeValidationMessagePatch(requestParameters: ChangeValidationApiConsoleV1ChangeValidationMessagePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ChangeValidationMessagePatch200Response> {
-            return localVarFp.consoleV1ChangeValidationMessagePatch(requestParameters.changeValidationUpdateMessageDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ChangeValidationMessagePatch(requestParameters.changeValidationUpdateMessageDto, options).then((request) => request(axios, basePath));
         },
         /**
          * See how change validation works [here](https://docs.statsig.com/guides/setting-up-reviews#configuring-custom-approval-workflows-pre-commit-webhooks)
@@ -182,7 +172,7 @@ export const ChangeValidationApiFactory = function (configuration?: Configuratio
          * @throws {RequiredError}
          */
         consoleV1ChangeValidationPost(requestParameters: ChangeValidationApiConsoleV1ChangeValidationPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1ChangeValidationPost200Response> {
-            return localVarFp.consoleV1ChangeValidationPost(requestParameters.changeValidationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1ChangeValidationPost(requestParameters.changeValidationDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -192,11 +182,6 @@ export const ChangeValidationApiFactory = function (configuration?: Configuratio
  */
 export interface ChangeValidationApiConsoleV1ChangeValidationMessagePatchRequest {
     readonly changeValidationUpdateMessageDto: ChangeValidationUpdateMessageDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -204,11 +189,6 @@ export interface ChangeValidationApiConsoleV1ChangeValidationMessagePatchRequest
  */
 export interface ChangeValidationApiConsoleV1ChangeValidationPostRequest {
     readonly changeValidationDto: ChangeValidationDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -223,7 +203,7 @@ export class ChangeValidationApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ChangeValidationMessagePatch(requestParameters: ChangeValidationApiConsoleV1ChangeValidationMessagePatchRequest, options?: RawAxiosRequestConfig) {
-        return ChangeValidationApiFp(this.configuration).consoleV1ChangeValidationMessagePatch(requestParameters.changeValidationUpdateMessageDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ChangeValidationApiFp(this.configuration).consoleV1ChangeValidationMessagePatch(requestParameters.changeValidationUpdateMessageDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -234,7 +214,7 @@ export class ChangeValidationApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1ChangeValidationPost(requestParameters: ChangeValidationApiConsoleV1ChangeValidationPostRequest, options?: RawAxiosRequestConfig) {
-        return ChangeValidationApiFp(this.configuration).consoleV1ChangeValidationPost(requestParameters.changeValidationDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return ChangeValidationApiFp(this.configuration).consoleV1ChangeValidationPost(requestParameters.changeValidationDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

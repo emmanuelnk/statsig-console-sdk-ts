@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { AutotuneExperimentDtoInlineTargetingRulesInner } from './autotune-experiment-dto-inline-targeting-rules-inner';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { AutotuneExperimentDtoVariantsInner } from './autotune-experiment-dto-variants-inner';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -94,6 +97,14 @@ export interface AutotuneExperimentDto {
      * List of features that should be included in the analysis
      */
     'featureList'?: Array<string>;
+    /**
+     * A raw JSON string of the inline targeting rules
+     */
+    'inlineTargetingRulesJSON'?: string | null;
+    /**
+     * A formatted array of the inline targeting rules
+     */
+    'inlineTargetingRules'?: Array<AutotuneExperimentDtoInlineTargetingRulesInner>;
     /**
      * ID
      */

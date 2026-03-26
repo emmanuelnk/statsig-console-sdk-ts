@@ -24,9 +24,9 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { ArchiveSchemaDto } from '../models';
 // @ts-ignore
-import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
@@ -81,11 +81,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsGet: async (releasePipelineID?: string | null, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsGet: async (releasePipelineID?: string | null, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/dynamic_configs`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -129,9 +128,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -146,11 +142,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @summary Archive Dynamic Config
          * @param {string} id id
          * @param {ArchiveSchemaDto} archiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdArchivePut: async (id: string, archiveSchemaDto: ArchiveSchemaDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdArchivePut: async (id: string, archiveSchemaDto: ArchiveSchemaDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdArchivePut', 'id', id)
             // verify required parameter 'archiveSchemaDto' is not null or undefined
@@ -174,9 +169,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -191,11 +183,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * 
          * @summary Delete Dynamic Config
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdDelete', 'id', id)
             const localVarPath = `/console/v1/dynamic_configs/{id}`
@@ -216,9 +207,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -232,11 +220,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * 
          * @summary Disable Dynamic Config
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdDisablePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdDisablePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdDisablePut', 'id', id)
             const localVarPath = `/console/v1/dynamic_configs/{id}/disable`
@@ -257,9 +244,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -273,11 +257,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * 
          * @summary Enable Dynamic Config
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdEnablePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdEnablePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdEnablePut', 'id', id)
             const localVarPath = `/console/v1/dynamic_configs/{id}/enable`
@@ -298,9 +281,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -314,11 +294,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * 
          * @summary Get Dynamic Config
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdGet', 'id', id)
             const localVarPath = `/console/v1/dynamic_configs/{id}`
@@ -339,9 +318,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -357,11 +333,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} id id
          * @param {DynamicConfigPartialUpdateDto} dynamicConfigPartialUpdateDto 
          * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdPatch: async (id: string, dynamicConfigPartialUpdateDto: DynamicConfigPartialUpdateDto, dryRun?: boolean, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdPatch: async (id: string, dynamicConfigPartialUpdateDto: DynamicConfigPartialUpdateDto, dryRun?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdPatch', 'id', id)
             // verify required parameter 'dynamicConfigPartialUpdateDto' is not null or undefined
@@ -389,9 +364,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -408,11 +380,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} id id
          * @param {DynamicConfigFullUpdateDto} dynamicConfigFullUpdateDto 
          * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdPost: async (id: string, dynamicConfigFullUpdateDto: DynamicConfigFullUpdateDto, dryRun?: boolean, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdPost: async (id: string, dynamicConfigFullUpdateDto: DynamicConfigFullUpdateDto, dryRun?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdPost', 'id', id)
             // verify required parameter 'dynamicConfigFullUpdateDto' is not null or undefined
@@ -440,9 +411,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -458,11 +426,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @summary Commit Dynamic Config Review
          * @param {string} id 
          * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdReviewsReviewIDCommitPut: async (id: string, reviewID: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdReviewsReviewIDCommitPut: async (id: string, reviewID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdReviewsReviewIDCommitPut', 'id', id)
             // verify required parameter 'reviewID' is not null or undefined
@@ -486,9 +453,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -503,11 +467,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @summary Delete Dynamic Config Rule
          * @param {string} id Dynamic Config ID
          * @param {string} ruleId Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRuleRuleIdDelete: async (id: string, ruleId: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdRuleRuleIdDelete: async (id: string, ruleId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdRuleRuleIdDelete', 'id', id)
             // verify required parameter 'ruleId' is not null or undefined
@@ -531,9 +494,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -548,11 +508,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @summary Get Specific Dynamic Config Rule
          * @param {string} id Dynamic Config ID
          * @param {string} ruleId Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRuleRuleIdGet: async (id: string, ruleId: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdRuleRuleIdGet: async (id: string, ruleId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdRuleRuleIdGet', 'id', id)
             // verify required parameter 'ruleId' is not null or undefined
@@ -576,9 +535,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -595,11 +551,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} ruleId Rule ID
          * @param {DynamicConfigRulePartialDto} dynamicConfigRulePartialDto 
          * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRuleRuleIdPatch: async (id: string, ruleId: string, dynamicConfigRulePartialDto: DynamicConfigRulePartialDto, dryRun?: boolean, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdRuleRuleIdPatch: async (id: string, ruleId: string, dynamicConfigRulePartialDto: DynamicConfigRulePartialDto, dryRun?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdRuleRuleIdPatch', 'id', id)
             // verify required parameter 'ruleId' is not null or undefined
@@ -630,9 +585,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -647,11 +599,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * 
          * @summary Get Dynamic Config Rules
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdRulesGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdRulesGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdRulesGet', 'id', id)
             const localVarPath = `/console/v1/dynamic_configs/{id}/rules`
@@ -672,9 +623,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -689,11 +637,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @summary Unarchive Dynamic Config
          * @param {string} id id
          * @param {UnarchiveSchemaDto} unarchiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdUnarchivePut: async (id: string, unarchiveSchemaDto: UnarchiveSchemaDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdUnarchivePut: async (id: string, unarchiveSchemaDto: UnarchiveSchemaDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdUnarchivePut', 'id', id)
             // verify required parameter 'unarchiveSchemaDto' is not null or undefined
@@ -717,9 +664,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -736,11 +680,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsIdVersionsGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsIdVersionsGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsIdVersionsGet', 'id', id)
             const localVarPath = `/console/v1/dynamic_configs/{id}/versions`
@@ -769,9 +712,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -785,11 +725,10 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
          * 
          * @summary Create Dynamic Config
          * @param {DynamicConfigCreateDto} dynamicConfigCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1DynamicConfigsPost: async (dynamicConfigCreateDto: DynamicConfigCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1DynamicConfigsPost: async (dynamicConfigCreateDto: DynamicConfigCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'dynamicConfigCreateDto' is not null or undefined
             assertParamExists('consoleV1DynamicConfigsPost', 'dynamicConfigCreateDto', dynamicConfigCreateDto)
             const localVarPath = `/console/v1/dynamic_configs`;
@@ -810,9 +749,6 @@ export const DynamicConfigsApiAxiosParamCreator = function (configuration?: Conf
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -841,12 +777,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsGet(releasePipelineID?: string | null, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsGet(releasePipelineID, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsGet(releasePipelineID?: string | null, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsGet(releasePipelineID, creatorName, creatorID, tags, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -856,12 +791,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @summary Archive Dynamic Config
          * @param {string} id id
          * @param {ArchiveSchemaDto} archiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdArchivePut(id: string, archiveSchemaDto: ArchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdArchivePut(id, archiveSchemaDto, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdArchivePut(id: string, archiveSchemaDto: ArchiveSchemaDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdArchivePut(id, archiveSchemaDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdArchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -870,12 +804,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Dynamic Config
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -884,12 +817,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Disable Dynamic Config
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdDisablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdDisablePut(id, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdDisablePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdDisablePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdDisablePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -898,12 +830,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Enable Dynamic Config
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdEnablePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdEnablePut(id, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdEnablePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdEnablePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdEnablePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -912,12 +843,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Dynamic Config
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdGet(id, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -928,12 +858,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {DynamicConfigPartialUpdateDto} dynamicConfigPartialUpdateDto 
          * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdPatch(id: string, dynamicConfigPartialUpdateDto: DynamicConfigPartialUpdateDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdPatch(id, dynamicConfigPartialUpdateDto, dryRun, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdPatch(id: string, dynamicConfigPartialUpdateDto: DynamicConfigPartialUpdateDto, dryRun?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdPatch(id, dynamicConfigPartialUpdateDto, dryRun, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -944,12 +873,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {DynamicConfigFullUpdateDto} dynamicConfigFullUpdateDto 
          * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdPost(id: string, dynamicConfigFullUpdateDto: DynamicConfigFullUpdateDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdPost(id, dynamicConfigFullUpdateDto, dryRun, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdPost(id: string, dynamicConfigFullUpdateDto: DynamicConfigFullUpdateDto, dryRun?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdPost(id, dynamicConfigFullUpdateDto, dryRun, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -959,12 +887,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @summary Commit Dynamic Config Review
          * @param {string} id 
          * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdReviewsReviewIDCommitPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(id: string, reviewID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdReviewsReviewIDCommitPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(id, reviewID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdReviewsReviewIDCommitPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -974,12 +901,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @summary Delete Dynamic Config Rule
          * @param {string} id Dynamic Config ID
          * @param {string} ruleId Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdRuleRuleIdDelete(id: string, ruleId: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRuleRuleIdDelete(id, ruleId, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdRuleRuleIdDelete(id: string, ruleId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRuleRuleIdDelete(id, ruleId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdRuleRuleIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -989,12 +915,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @summary Get Specific Dynamic Config Rule
          * @param {string} id Dynamic Config ID
          * @param {string} ruleId Rule ID
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdRuleRuleIdGet(id: string, ruleId: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRuleRuleIdGet(id, ruleId, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdRuleRuleIdGet(id: string, ruleId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRuleRuleIdGet(id, ruleId, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdRuleRuleIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1006,12 +931,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @param {string} ruleId Rule ID
          * @param {DynamicConfigRulePartialDto} dynamicConfigRulePartialDto 
          * @param {boolean} [dryRun] Skips persisting updates to the entity (used to validate that inputs are correct)
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdRuleRuleIdPatch(id: string, ruleId: string, dynamicConfigRulePartialDto: DynamicConfigRulePartialDto, dryRun?: boolean, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRuleRuleIdPatch(id, ruleId, dynamicConfigRulePartialDto, dryRun, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdRuleRuleIdPatch(id: string, ruleId: string, dynamicConfigRulePartialDto: DynamicConfigRulePartialDto, dryRun?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRuleRuleIdPatch(id, ruleId, dynamicConfigRulePartialDto, dryRun, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdRuleRuleIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1020,12 +944,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Dynamic Config Rules
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdRulesGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsidrulesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRulesGet(id, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdRulesGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsidrulesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdRulesGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdRulesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1035,12 +958,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @summary Unarchive Dynamic Config
          * @param {string} id id
          * @param {UnarchiveSchemaDto} unarchiveSchemaDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdUnarchivePut(id: string, unarchiveSchemaDto: UnarchiveSchemaDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdUnarchivePut(id, unarchiveSchemaDto, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdUnarchivePut(id: string, unarchiveSchemaDto: UnarchiveSchemaDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdUnarchivePut(id, unarchiveSchemaDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdUnarchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1051,12 +973,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * @param {string} id id
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsIdVersionsGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsidversionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdVersionsGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsIdVersionsGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1dynamicconfigsidversionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsIdVersionsGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsIdVersionsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1065,12 +986,11 @@ export const DynamicConfigsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Dynamic Config
          * @param {DynamicConfigCreateDto} dynamicConfigCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1DynamicConfigsPost(dynamicConfigCreateDto: DynamicConfigCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsPost(dynamicConfigCreateDto, xRespectReviewSettings, options);
+        async consoleV1DynamicConfigsPost(dynamicConfigCreateDto: DynamicConfigCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1DynamicConfigsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1DynamicConfigsPost(dynamicConfigCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['DynamicConfigsApi.consoleV1DynamicConfigsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1092,7 +1012,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1dynamicconfigsResponse> {
-            return localVarFp.consoleV1DynamicConfigsGet(requestParameters.releasePipelineID, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsGet(requestParameters.releasePipelineID, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1102,7 +1022,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdArchivePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1112,7 +1032,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdDelete(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdDelete200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1122,7 +1042,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdDisablePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdDisablePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdDisablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdDisablePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1132,7 +1052,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdEnablePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdEnablePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdEnablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdEnablePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1142,7 +1062,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdGet200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1152,7 +1072,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdPatch(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdPatch(requestParameters.id, requestParameters.dynamicConfigPartialUpdateDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdPatch(requestParameters.id, requestParameters.dynamicConfigPartialUpdateDto, requestParameters.dryRun, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1162,7 +1082,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdPost(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdPost200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdPost(requestParameters.id, requestParameters.dynamicConfigFullUpdateDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdPost(requestParameters.id, requestParameters.dynamicConfigFullUpdateDto, requestParameters.dryRun, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1172,7 +1092,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdReviewsReviewIDCommitPut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1182,7 +1102,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdDelete200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters.id, requestParameters.ruleId, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters.id, requestParameters.ruleId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1192,7 +1112,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdGet200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters.id, requestParameters.ruleId, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters.id, requestParameters.ruleId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1202,7 +1122,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdRuleRuleIdPatch200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters.id, requestParameters.ruleId, requestParameters.dynamicConfigRulePartialDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters.id, requestParameters.ruleId, requestParameters.dynamicConfigRulePartialDto, requestParameters.dryRun, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1212,7 +1132,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdRulesGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1dynamicconfigsidrulesResponse> {
-            return localVarFp.consoleV1DynamicConfigsIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdRulesGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1222,7 +1142,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdUnarchivePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdUnarchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsIdArchivePut200Response> {
-            return localVarFp.consoleV1DynamicConfigsIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1232,7 +1152,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsIdVersionsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1dynamicconfigsidversionsResponse> {
-            return localVarFp.consoleV1DynamicConfigsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1242,7 +1162,7 @@ export const DynamicConfigsApiFactory = function (configuration?: Configuration,
          * @throws {RequiredError}
          */
         consoleV1DynamicConfigsPost(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1DynamicConfigsPost201Response> {
-            return localVarFp.consoleV1DynamicConfigsPost(requestParameters.dynamicConfigCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1DynamicConfigsPost(requestParameters.dynamicConfigCreateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1280,11 +1200,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1297,11 +1212,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdArchivePutRequest {
     readonly id: string
 
     readonly archiveSchemaDto: ArchiveSchemaDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1312,11 +1222,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1327,11 +1232,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdDisablePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1342,11 +1242,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdEnablePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1357,11 +1252,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1379,11 +1269,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdPatchRequest {
      * Skips persisting updates to the entity (used to validate that inputs are correct)
      */
     readonly dryRun?: boolean
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1401,11 +1286,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdPostRequest {
      * Skips persisting updates to the entity (used to validate that inputs are correct)
      */
     readonly dryRun?: boolean
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1415,11 +1295,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdReviewsReviewIDCommit
     readonly id: string
 
     readonly reviewID: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1435,11 +1310,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdDeleteReque
      * Rule ID
      */
     readonly ruleId: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1455,11 +1325,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdGetRequest 
      * Rule ID
      */
     readonly ruleId: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1482,11 +1347,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdPatchReques
      * Skips persisting updates to the entity (used to validate that inputs are correct)
      */
     readonly dryRun?: boolean
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1497,11 +1357,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1514,11 +1369,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdUnarchivePutRequest {
     readonly id: string
 
     readonly unarchiveSchemaDto: UnarchiveSchemaDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1539,11 +1389,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1551,11 +1396,6 @@ export interface DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest {
  */
 export interface DynamicConfigsApiConsoleV1DynamicConfigsPostRequest {
     readonly dynamicConfigCreateDto: DynamicConfigCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1570,7 +1410,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsGet(requestParameters.releasePipelineID, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsGet(requestParameters.releasePipelineID, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1581,7 +1421,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdArchivePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdArchivePutRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdArchivePut(requestParameters.id, requestParameters.archiveSchemaDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1592,7 +1432,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdDelete(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1603,7 +1443,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdDisablePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdDisablePutRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdDisablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdDisablePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1614,7 +1454,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdEnablePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdEnablePutRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdEnablePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdEnablePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1625,7 +1465,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdGetRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1636,7 +1476,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdPatch(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdPatch(requestParameters.id, requestParameters.dynamicConfigPartialUpdateDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdPatch(requestParameters.id, requestParameters.dynamicConfigPartialUpdateDto, requestParameters.dryRun, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1647,7 +1487,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdPost(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdPostRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdPost(requestParameters.id, requestParameters.dynamicConfigFullUpdateDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdPost(requestParameters.id, requestParameters.dynamicConfigFullUpdateDto, requestParameters.dryRun, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1658,7 +1498,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1669,7 +1509,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters.id, requestParameters.ruleId, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdDelete(requestParameters.id, requestParameters.ruleId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1680,7 +1520,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdGetRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters.id, requestParameters.ruleId, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdGet(requestParameters.id, requestParameters.ruleId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1691,7 +1531,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRuleRuleIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters.id, requestParameters.ruleId, requestParameters.dynamicConfigRulePartialDto, requestParameters.dryRun, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRuleRuleIdPatch(requestParameters.id, requestParameters.ruleId, requestParameters.dynamicConfigRulePartialDto, requestParameters.dryRun, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1702,7 +1542,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdRulesGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdRulesGetRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRulesGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdRulesGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1713,7 +1553,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdUnarchivePut(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdUnarchivePutRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdUnarchivePut(requestParameters.id, requestParameters.unarchiveSchemaDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1724,7 +1564,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsIdVersionsGet(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsIdVersionsGetRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsIdVersionsGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1735,7 +1575,7 @@ export class DynamicConfigsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1DynamicConfigsPost(requestParameters: DynamicConfigsApiConsoleV1DynamicConfigsPostRequest, options?: RawAxiosRequestConfig) {
-        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsPost(requestParameters.dynamicConfigCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return DynamicConfigsApiFp(this.configuration).consoleV1DynamicConfigsPost(requestParameters.dynamicConfigCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

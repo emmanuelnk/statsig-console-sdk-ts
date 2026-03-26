@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1TagsIdDelete200Response } from '../models';
 // @ts-ignore
@@ -47,11 +47,10 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
          * @summary List Tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TagsGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1TagsGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/tags`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -77,9 +76,6 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -93,11 +89,10 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @summary Delete Tag
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TagsIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1TagsIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1TagsIdDelete', 'id', id)
             const localVarPath = `/console/v1/tags/{id}`
@@ -118,9 +113,6 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -134,11 +126,10 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @summary Read Tag
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TagsIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1TagsIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1TagsIdGet', 'id', id)
             const localVarPath = `/console/v1/tags/{id}`
@@ -159,9 +150,6 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -176,11 +164,10 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
          * @summary Update Tag
          * @param {string} id id
          * @param {TagUpdateDto} tagUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TagsIdPatch: async (id: string, tagUpdateDto: TagUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1TagsIdPatch: async (id: string, tagUpdateDto: TagUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1TagsIdPatch', 'id', id)
             // verify required parameter 'tagUpdateDto' is not null or undefined
@@ -204,9 +191,6 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -221,11 +205,10 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @summary Create Tag
          * @param {TagCreateDto} tagCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1TagsPost: async (tagCreateDto: TagCreateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1TagsPost: async (tagCreateDto: TagCreateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'tagCreateDto' is not null or undefined
             assertParamExists('consoleV1TagsPost', 'tagCreateDto', tagCreateDto)
             const localVarPath = `/console/v1/tags`;
@@ -246,9 +229,6 @@ export const TagsApiAxiosParamCreator = function (configuration?: Configuration)
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -273,12 +253,11 @@ export const TagsApiFp = function(configuration?: Configuration) {
          * @summary List Tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1TagsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1tagsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1TagsGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1tagsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TagsApi.consoleV1TagsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -287,12 +266,11 @@ export const TagsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Tag
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1TagsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1TagsIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TagsApi.consoleV1TagsIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -301,12 +279,11 @@ export const TagsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Tag
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1TagsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsIdGet(id, xRespectReviewSettings, options);
+        async consoleV1TagsIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TagsApi.consoleV1TagsIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -316,12 +293,11 @@ export const TagsApiFp = function(configuration?: Configuration) {
          * @summary Update Tag
          * @param {string} id id
          * @param {TagUpdateDto} tagUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1TagsIdPatch(id: string, tagUpdateDto: TagUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsIdPatch(id, tagUpdateDto, xRespectReviewSettings, options);
+        async consoleV1TagsIdPatch(id: string, tagUpdateDto: TagUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsIdPatch(id, tagUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TagsApi.consoleV1TagsIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -330,12 +306,11 @@ export const TagsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Tag
          * @param {TagCreateDto} tagCreateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1TagsPost(tagCreateDto: TagCreateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsPost(tagCreateDto, xRespectReviewSettings, options);
+        async consoleV1TagsPost(tagCreateDto: TagCreateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1TagsPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1TagsPost(tagCreateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TagsApi.consoleV1TagsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -357,7 +332,7 @@ export const TagsApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1TagsGet(requestParameters: TagsApiConsoleV1TagsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1tagsResponse> {
-            return localVarFp.consoleV1TagsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1TagsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -367,7 +342,7 @@ export const TagsApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1TagsIdDelete(requestParameters: TagsApiConsoleV1TagsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TagsIdDelete200Response> {
-            return localVarFp.consoleV1TagsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1TagsIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -377,7 +352,7 @@ export const TagsApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1TagsIdGet(requestParameters: TagsApiConsoleV1TagsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TagsIdGet200Response> {
-            return localVarFp.consoleV1TagsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1TagsIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -387,7 +362,7 @@ export const TagsApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1TagsIdPatch(requestParameters: TagsApiConsoleV1TagsIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TagsIdPatch200Response> {
-            return localVarFp.consoleV1TagsIdPatch(requestParameters.id, requestParameters.tagUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1TagsIdPatch(requestParameters.id, requestParameters.tagUpdateDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -397,7 +372,7 @@ export const TagsApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1TagsPost(requestParameters: TagsApiConsoleV1TagsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1TagsPost200Response> {
-            return localVarFp.consoleV1TagsPost(requestParameters.tagCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1TagsPost(requestParameters.tagCreateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -415,11 +390,6 @@ export interface TagsApiConsoleV1TagsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -430,11 +400,6 @@ export interface TagsApiConsoleV1TagsIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -445,11 +410,6 @@ export interface TagsApiConsoleV1TagsIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -462,11 +422,6 @@ export interface TagsApiConsoleV1TagsIdPatchRequest {
     readonly id: string
 
     readonly tagUpdateDto: TagUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -474,11 +429,6 @@ export interface TagsApiConsoleV1TagsIdPatchRequest {
  */
 export interface TagsApiConsoleV1TagsPostRequest {
     readonly tagCreateDto: TagCreateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -493,7 +443,7 @@ export class TagsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1TagsGet(requestParameters: TagsApiConsoleV1TagsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return TagsApiFp(this.configuration).consoleV1TagsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return TagsApiFp(this.configuration).consoleV1TagsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -504,7 +454,7 @@ export class TagsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1TagsIdDelete(requestParameters: TagsApiConsoleV1TagsIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return TagsApiFp(this.configuration).consoleV1TagsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return TagsApiFp(this.configuration).consoleV1TagsIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -515,7 +465,7 @@ export class TagsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1TagsIdGet(requestParameters: TagsApiConsoleV1TagsIdGetRequest, options?: RawAxiosRequestConfig) {
-        return TagsApiFp(this.configuration).consoleV1TagsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return TagsApiFp(this.configuration).consoleV1TagsIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -526,7 +476,7 @@ export class TagsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1TagsIdPatch(requestParameters: TagsApiConsoleV1TagsIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return TagsApiFp(this.configuration).consoleV1TagsIdPatch(requestParameters.id, requestParameters.tagUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return TagsApiFp(this.configuration).consoleV1TagsIdPatch(requestParameters.id, requestParameters.tagUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -537,7 +487,7 @@ export class TagsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1TagsPost(requestParameters: TagsApiConsoleV1TagsPostRequest, options?: RawAxiosRequestConfig) {
-        return TagsApiFp(this.configuration).consoleV1TagsPost(requestParameters.tagCreateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return TagsApiFp(this.configuration).consoleV1TagsPost(requestParameters.tagCreateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

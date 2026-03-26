@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | The Statsig ID of this rule. | [optional] [default to undefined]
 **name** | **string** | The name of this rule. | [default to undefined]
-**conditions** | [**Array&lt;DynamicConfigCreateDtoRulesInnerConditionsInner&gt;**](DynamicConfigCreateDtoRulesInnerConditionsInner.md) | An array of Condition objects. | [default to undefined]
+**conditions** | [**Array&lt;AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInner&gt;**](AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInner.md) | An array of Condition objects. | [default to undefined]
 **environments** | **Array&lt;string&gt;** | The environments this rule is enabled for. | [optional] [default to undefined]
 
 ## Example

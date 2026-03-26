@@ -20,6 +20,7 @@ export * from './api/autotunes-api';
 export * from './api/change-validation-api';
 export * from './api/company-api';
 export * from './api/configs-api';
+export * from './api/dashboards-api';
 export * from './api/dynamic-configs-api';
 export * from './api/environments-api';
 export * from './api/events-api';

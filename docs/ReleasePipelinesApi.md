@@ -44,7 +44,6 @@ let startDate: string; //Filter by the start date of the date range of the trigg
 let endDate: string; //Filter by the end date of the date range of the trigger\'s creation date in UTC, inclusive (i.e. until the end of the day); defaults to today\'s date if not provided (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersGet(
     releasePipelineID,
@@ -54,8 +53,7 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersGet(
     startDate,
     endDate,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -71,7 +69,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersGet(
 | **endDate** | [**string**] | Filter by the end date of the date range of the trigger\&#39;s creation date in UTC, inclusive (i.e. until the end of the day); defaults to today\&#39;s date if not provided | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -111,11 +108,9 @@ const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdAbortPut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -124,7 +119,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdAbo
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -166,12 +160,10 @@ const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
 let releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdApprovePut(
     id,
-    releasePipelineTriggerActionBodyDto,
-    xRespectReviewSettings
+    releasePipelineTriggerActionBodyDto
 );
 ```
 
@@ -181,7 +173,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdApp
 |------------- | ------------- | ------------- | -------------|
 | **releasePipelineTriggerActionBodyDto** | **ReleasePipelineTriggerActionBodyDto**|  | |
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -221,11 +212,9 @@ const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -234,7 +223,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdGet
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -276,12 +264,10 @@ const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
 let releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdPausePut(
     id,
-    releasePipelineTriggerActionBodyDto,
-    xRespectReviewSettings
+    releasePipelineTriggerActionBodyDto
 );
 ```
 
@@ -291,7 +277,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdPau
 |------------- | ------------- | ------------- | -------------|
 | **releasePipelineTriggerActionBodyDto** | **ReleasePipelineTriggerActionBodyDto**|  | |
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -331,11 +316,9 @@ const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdRolloutPut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -344,7 +327,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdRol
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -386,12 +368,10 @@ const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
 let releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdSkipPut(
     id,
-    releasePipelineTriggerActionBodyDto,
-    xRespectReviewSettings
+    releasePipelineTriggerActionBodyDto
 );
 ```
 
@@ -401,7 +381,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdSki
 |------------- | ------------- | ------------- | -------------|
 | **releasePipelineTriggerActionBodyDto** | **ReleasePipelineTriggerActionBodyDto**|  | |
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -443,12 +422,10 @@ const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
 let releasePipelineTriggerActionBodyDto: ReleasePipelineTriggerActionBodyDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdUnpausePut(
     id,
-    releasePipelineTriggerActionBodyDto,
-    xRespectReviewSettings
+    releasePipelineTriggerActionBodyDto
 );
 ```
 
@@ -458,7 +435,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelineTriggersIdUnp
 |------------- | ------------- | ------------- | -------------|
 | **releasePipelineTriggerActionBodyDto** | **ReleasePipelineTriggerActionBodyDto**|  | |
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -501,12 +477,10 @@ const apiInstance = new ReleasePipelinesApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelinesGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -516,7 +490,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelinesGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -556,11 +529,9 @@ const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelinesIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -569,7 +540,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelinesIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -609,11 +579,9 @@ const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelinesIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -622,7 +590,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelinesIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -664,12 +631,10 @@ const apiInstance = new ReleasePipelinesApi(configuration);
 
 let id: string; // (default to undefined)
 let releasePipelineUpdateDto: ReleasePipelineUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelinesIdPost(
     id,
-    releasePipelineUpdateDto,
-    xRespectReviewSettings
+    releasePipelineUpdateDto
 );
 ```
 
@@ -679,7 +644,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelinesIdPost(
 |------------- | ------------- | ------------- | -------------|
 | **releasePipelineUpdateDto** | **ReleasePipelineUpdateDto**|  | |
 | **id** | [**string**] |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -720,11 +684,9 @@ const configuration = new Configuration();
 const apiInstance = new ReleasePipelinesApi(configuration);
 
 let releasePipelineCreateDto: ReleasePipelineCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReleasePipelinesPost(
-    releasePipelineCreateDto,
-    xRespectReviewSettings
+    releasePipelineCreateDto
 );
 ```
 
@@ -733,7 +695,6 @@ const { status, data } = await apiInstance.consoleV1ReleasePipelinesPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **releasePipelineCreateDto** | **ReleasePipelineCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

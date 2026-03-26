@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ExperimentCreateDtoCureCovariatesInner } from './experiment-create-dto-cure-covariates-inner';
+import type { ExperimentCreateDtoBayesianPriorsInnerMetric } from './experiment-create-dto-bayesian-priors-inner-metric';
 
 export interface HoldoutPartialUpdateContractDto {
     /**
@@ -50,6 +50,6 @@ export interface HoldoutPartialUpdateContractDto {
      * the gateID that the holdout is targeting
      */
     'targetingGateID'?: string | null;
-    'monitoringMetrics'?: Array<ExperimentCreateDtoCureCovariatesInner>;
+    'monitoringMetrics'?: Array<ExperimentCreateDtoBayesianPriorsInnerMetric>;
 }
 

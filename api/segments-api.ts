@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
@@ -71,11 +71,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary List Segments
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/segments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -101,9 +100,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -118,11 +114,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Add IDs to User Store ID List
          * @param {string} id id
          * @param {SegmentIDListUserStoreContractDto} segmentIDListUserStoreContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdAddIdsPatch: async (id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdAddIdsPatch: async (id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdAddIdsPatch', 'id', id)
             // verify required parameter 'segmentIDListUserStoreContractDto' is not null or undefined
@@ -146,9 +141,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -163,11 +155,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Archive Segment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdArchivePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdArchivePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdArchivePut', 'id', id)
             const localVarPath = `/console/v1/segments/{id}/archive`
@@ -188,9 +179,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -205,11 +193,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Update Segment Rules
          * @param {string} id id
          * @param {Array<SegmentCreateContractDtoRulesInner>} segmentCreateContractDtoRulesInner 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdConditionalPost: async (id: string, segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdConditionalPost: async (id: string, segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdConditionalPost', 'id', id)
             // verify required parameter 'segmentCreateContractDtoRulesInner' is not null or undefined
@@ -233,9 +220,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -250,11 +234,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Delete Segment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdDelete', 'id', id)
             const localVarPath = `/console/v1/segments/{id}`
@@ -275,9 +258,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -291,11 +271,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Get Segment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdGet', 'id', id)
             const localVarPath = `/console/v1/segments/{id}`
@@ -316,9 +295,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -332,13 +308,15 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
          * @summary Remove IDs from Segment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentIDListContractDto} segmentIDListContractDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdListDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdIdListDelete: async (id: string, segmentIDListContractDto: SegmentIDListContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdIdListDelete', 'id', id)
+            // verify required parameter 'segmentIDListContractDto' is not null or undefined
+            assertParamExists('consoleV1SegmentsIdIdListDelete', 'segmentIDListContractDto', segmentIDListContractDto)
             const localVarPath = `/console/v1/segments/{id}/id_list`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -355,14 +333,13 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
             // authentication STATSIG-API-KEY required
             await setApiKeyToObject(localVarHeaderParameter, "STATSIG-API-KEY", configuration)
 
+            localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(segmentIDListContractDto, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -375,11 +352,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} id 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdListGet: async (id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdIdListGet: async (id: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdIdListGet', 'id', id)
             const localVarPath = `/console/v1/segments/{id}/id_list`
@@ -408,9 +384,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -425,11 +398,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Add IDs to Segment
          * @param {string} id id
          * @param {SegmentIDListContractDto} segmentIDListContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdListPatch: async (id: string, segmentIDListContractDto: SegmentIDListContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdIdListPatch: async (id: string, segmentIDListContractDto: SegmentIDListContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdIdListPatch', 'id', id)
             // verify required parameter 'segmentIDListContractDto' is not null or undefined
@@ -453,9 +425,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -471,11 +440,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Reset ID List Segment
          * @param {string} id id
          * @param {SegmentIDListResetContractDto} segmentIDListResetContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdListResetPost: async (id: string, segmentIDListResetContractDto: SegmentIDListResetContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdIdListResetPost: async (id: string, segmentIDListResetContractDto: SegmentIDListResetContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdIdListResetPost', 'id', id)
             // verify required parameter 'segmentIDListResetContractDto' is not null or undefined
@@ -499,9 +467,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -516,11 +481,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * This endpoint gets the metadata of the ID List.
          * @summary Get ID List Metadata
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdIdlistMetadataGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdIdlistMetadataGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdIdlistMetadataGet', 'id', id)
             const localVarPath = `/console/v1/segments/{id}/idlist_metadata`
@@ -541,9 +505,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -558,11 +519,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Remove IDs from User Store ID List
          * @param {string} id id
          * @param {SegmentIDListUserStoreContractDto} segmentIDListUserStoreContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdRemoveIdsPatch: async (id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdRemoveIdsPatch: async (id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdRemoveIdsPatch', 'id', id)
             // verify required parameter 'segmentIDListUserStoreContractDto' is not null or undefined
@@ -586,9 +546,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -604,11 +561,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Commit Segment Review
          * @param {string} id 
          * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsIdReviewsReviewIDCommitPut: async (id: string, reviewID: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsIdReviewsReviewIDCommitPut: async (id: string, reviewID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1SegmentsIdReviewsReviewIDCommitPut', 'id', id)
             // verify required parameter 'reviewID' is not null or undefined
@@ -632,9 +588,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -648,11 +601,10 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Create Segment
          * @param {SegmentCreateContractDto} segmentCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1SegmentsPost: async (segmentCreateContractDto: SegmentCreateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1SegmentsPost: async (segmentCreateContractDto: SegmentCreateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'segmentCreateContractDto' is not null or undefined
             assertParamExists('consoleV1SegmentsPost', 'segmentCreateContractDto', segmentCreateContractDto)
             const localVarPath = `/console/v1/segments`;
@@ -673,9 +625,6 @@ export const SegmentsApiAxiosParamCreator = function (configuration?: Configurat
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -700,12 +649,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @summary List Segments
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1segmentsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1SegmentsGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1segmentsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -715,12 +663,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @summary Add IDs to User Store ID List
          * @param {string} id id
          * @param {SegmentIDListUserStoreContractDto} segmentIDListUserStoreContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdAddIdsPatch(id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdAddIdsPatch(id, segmentIDListUserStoreContractDto, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdAddIdsPatch(id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdAddIdsPatch(id, segmentIDListUserStoreContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdAddIdsPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -729,12 +676,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Archive Segment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdArchivePut(id, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdArchivePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdArchivePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdArchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -744,12 +690,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @summary Update Segment Rules
          * @param {string} id id
          * @param {Array<SegmentCreateContractDtoRulesInner>} segmentCreateContractDtoRulesInner 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdConditionalPost(id: string, segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdConditionalPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdConditionalPost(id, segmentCreateContractDtoRulesInner, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdConditionalPost(id: string, segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdConditionalPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdConditionalPost(id, segmentCreateContractDtoRulesInner, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdConditionalPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -758,12 +703,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Segment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -772,12 +716,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get Segment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdGet(id, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -786,12 +729,12 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
          * @summary Remove IDs from Segment
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
+         * @param {SegmentIDListContractDto} segmentIDListContractDto 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdIdListDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdListDelete(id, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdIdListDelete(id: string, segmentIDListContractDto: SegmentIDListContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdListDelete(id, segmentIDListContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdIdListDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -802,12 +745,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @param {string} id 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdIdListGet(id: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdListGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdListGet(id, limit, page, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdIdListGet(id: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdListGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdListGet(id, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdIdListGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -817,12 +759,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @summary Add IDs to Segment
          * @param {string} id id
          * @param {SegmentIDListContractDto} segmentIDListContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdIdListPatch(id: string, segmentIDListContractDto: SegmentIDListContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdListPatch(id, segmentIDListContractDto, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdIdListPatch(id: string, segmentIDListContractDto: SegmentIDListContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdListPatch(id, segmentIDListContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdIdListPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -832,12 +773,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @summary Reset ID List Segment
          * @param {string} id id
          * @param {SegmentIDListResetContractDto} segmentIDListResetContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdIdListResetPost(id: string, segmentIDListResetContractDto: SegmentIDListResetContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdListResetPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdListResetPost(id, segmentIDListResetContractDto, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdIdListResetPost(id: string, segmentIDListResetContractDto: SegmentIDListResetContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdListResetPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdListResetPost(id, segmentIDListResetContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdIdListResetPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -846,12 +786,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * This endpoint gets the metadata of the ID List.
          * @summary Get ID List Metadata
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdIdlistMetadataGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdlistMetadataGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdlistMetadataGet(id, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdIdlistMetadataGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdlistMetadataGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdIdlistMetadataGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdIdlistMetadataGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -861,12 +800,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @summary Remove IDs from User Store ID List
          * @param {string} id id
          * @param {SegmentIDListUserStoreContractDto} segmentIDListUserStoreContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdRemoveIdsPatch(id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdRemoveIdsPatch(id, segmentIDListUserStoreContractDto, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdRemoveIdsPatch(id: string, segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdRemoveIdsPatch(id, segmentIDListUserStoreContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdRemoveIdsPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -876,12 +814,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * @summary Commit Segment Review
          * @param {string} id 
          * @param {string} reviewID 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsIdReviewsReviewIDCommitPut(id: string, reviewID: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdReviewsReviewIDCommitPut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdReviewsReviewIDCommitPut(id, reviewID, xRespectReviewSettings, options);
+        async consoleV1SegmentsIdReviewsReviewIDCommitPut(id: string, reviewID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsIdReviewsReviewIDCommitPut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsIdReviewsReviewIDCommitPut(id, reviewID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsIdReviewsReviewIDCommitPut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -890,12 +827,11 @@ export const SegmentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Segment
          * @param {SegmentCreateContractDto} segmentCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1SegmentsPost(segmentCreateContractDto: SegmentCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsPost(segmentCreateContractDto, xRespectReviewSettings, options);
+        async consoleV1SegmentsPost(segmentCreateContractDto: SegmentCreateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1SegmentsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1SegmentsPost(segmentCreateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['SegmentsApi.consoleV1SegmentsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -917,7 +853,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsGet(requestParameters: SegmentsApiConsoleV1SegmentsGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1segmentsResponse> {
-            return localVarFp.consoleV1SegmentsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint has a limit of 1000 ids per request
@@ -927,7 +863,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdAddIdsPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdAddIdsPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response> {
-            return localVarFp.consoleV1SegmentsIdAddIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdAddIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -937,7 +873,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdArchivePut(requestParameters: SegmentsApiConsoleV1SegmentsIdArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdArchivePut200Response> {
-            return localVarFp.consoleV1SegmentsIdArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdArchivePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -947,7 +883,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdConditionalPost(requestParameters: SegmentsApiConsoleV1SegmentsIdConditionalPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdConditionalPost200Response> {
-            return localVarFp.consoleV1SegmentsIdConditionalPost(requestParameters.id, requestParameters.segmentCreateContractDtoRulesInner, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdConditionalPost(requestParameters.id, requestParameters.segmentCreateContractDtoRulesInner, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -957,7 +893,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdDelete(requestParameters: SegmentsApiConsoleV1SegmentsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdDelete200Response> {
-            return localVarFp.consoleV1SegmentsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -967,7 +903,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdGet(requestParameters: SegmentsApiConsoleV1SegmentsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdGet200Response> {
-            return localVarFp.consoleV1SegmentsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
@@ -977,7 +913,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdIdListDelete(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response> {
-            return localVarFp.consoleV1SegmentsIdIdListDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdIdListDelete(requestParameters.id, requestParameters.segmentIDListContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint is rate limited to 100
@@ -987,7 +923,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdIdListGet(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListGet200Response> {
-            return localVarFp.consoleV1SegmentsIdIdListGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdIdListGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint is rate limited to 900 requests /15m or 12 requests /10s.
@@ -997,7 +933,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdIdListPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdAddIdsPatch200Response> {
-            return localVarFp.consoleV1SegmentsIdIdListPatch(requestParameters.id, requestParameters.segmentIDListContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdIdListPatch(requestParameters.id, requestParameters.segmentIDListContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * Warning: Not atomic for big ID lists (> 1000)
@@ -1007,7 +943,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdIdListResetPost(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListResetPost200Response> {
-            return localVarFp.consoleV1SegmentsIdIdListResetPost(requestParameters.id, requestParameters.segmentIDListResetContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdIdListResetPost(requestParameters.id, requestParameters.segmentIDListResetContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint gets the metadata of the ID List.
@@ -1017,7 +953,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdIdlistMetadataGet(requestParameters: SegmentsApiConsoleV1SegmentsIdIdlistMetadataGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdlistMetadataGet200Response> {
-            return localVarFp.consoleV1SegmentsIdIdlistMetadataGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdIdlistMetadataGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint has a limit of 1000 ids per request
@@ -1027,7 +963,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdRemoveIdsPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdRemoveIdsPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdIdListDelete200Response> {
-            return localVarFp.consoleV1SegmentsIdRemoveIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdRemoveIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1037,7 +973,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters: SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsIdReviewsReviewIDCommitPut200Response> {
-            return localVarFp.consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1047,7 +983,7 @@ export const SegmentsApiFactory = function (configuration?: Configuration, baseP
          * @throws {RequiredError}
          */
         consoleV1SegmentsPost(requestParameters: SegmentsApiConsoleV1SegmentsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1SegmentsPost201Response> {
-            return localVarFp.consoleV1SegmentsPost(requestParameters.segmentCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1SegmentsPost(requestParameters.segmentCreateContractDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1065,11 +1001,6 @@ export interface SegmentsApiConsoleV1SegmentsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1082,11 +1013,6 @@ export interface SegmentsApiConsoleV1SegmentsIdAddIdsPatchRequest {
     readonly id: string
 
     readonly segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1097,11 +1023,6 @@ export interface SegmentsApiConsoleV1SegmentsIdArchivePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1114,11 +1035,6 @@ export interface SegmentsApiConsoleV1SegmentsIdConditionalPostRequest {
     readonly id: string
 
     readonly segmentCreateContractDtoRulesInner: Array<SegmentCreateContractDtoRulesInner>
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1129,11 +1045,6 @@ export interface SegmentsApiConsoleV1SegmentsIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1144,11 +1055,6 @@ export interface SegmentsApiConsoleV1SegmentsIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1160,10 +1066,7 @@ export interface SegmentsApiConsoleV1SegmentsIdIdListDeleteRequest {
      */
     readonly id: string
 
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
+    readonly segmentIDListContractDto: SegmentIDListContractDto
 }
 
 /**
@@ -1181,11 +1084,6 @@ export interface SegmentsApiConsoleV1SegmentsIdIdListGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1198,11 +1096,6 @@ export interface SegmentsApiConsoleV1SegmentsIdIdListPatchRequest {
     readonly id: string
 
     readonly segmentIDListContractDto: SegmentIDListContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1215,11 +1108,6 @@ export interface SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest {
     readonly id: string
 
     readonly segmentIDListResetContractDto: SegmentIDListResetContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1227,11 +1115,6 @@ export interface SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest {
  */
 export interface SegmentsApiConsoleV1SegmentsIdIdlistMetadataGetRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1244,11 +1127,6 @@ export interface SegmentsApiConsoleV1SegmentsIdRemoveIdsPatchRequest {
     readonly id: string
 
     readonly segmentIDListUserStoreContractDto: SegmentIDListUserStoreContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1258,11 +1136,6 @@ export interface SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest {
     readonly id: string
 
     readonly reviewID: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1270,11 +1143,6 @@ export interface SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest {
  */
 export interface SegmentsApiConsoleV1SegmentsPostRequest {
     readonly segmentCreateContractDto: SegmentCreateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -1289,7 +1157,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsGet(requestParameters: SegmentsApiConsoleV1SegmentsGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1300,7 +1168,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdAddIdsPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdAddIdsPatchRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdAddIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdAddIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1311,7 +1179,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdArchivePut(requestParameters: SegmentsApiConsoleV1SegmentsIdArchivePutRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdArchivePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1322,7 +1190,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdConditionalPost(requestParameters: SegmentsApiConsoleV1SegmentsIdConditionalPostRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdConditionalPost(requestParameters.id, requestParameters.segmentCreateContractDtoRulesInner, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdConditionalPost(requestParameters.id, requestParameters.segmentCreateContractDtoRulesInner, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1333,7 +1201,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdDelete(requestParameters: SegmentsApiConsoleV1SegmentsIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1344,7 +1212,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdGet(requestParameters: SegmentsApiConsoleV1SegmentsIdGetRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1355,7 +1223,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdIdListDelete(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListDeleteRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListDelete(requestParameters.id, requestParameters.segmentIDListContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1366,7 +1234,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdIdListGet(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListGetRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListGet(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListGet(requestParameters.id, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1377,7 +1245,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdIdListPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListPatchRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListPatch(requestParameters.id, requestParameters.segmentIDListContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListPatch(requestParameters.id, requestParameters.segmentIDListContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1388,7 +1256,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdIdListResetPost(requestParameters: SegmentsApiConsoleV1SegmentsIdIdListResetPostRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListResetPost(requestParameters.id, requestParameters.segmentIDListResetContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdListResetPost(requestParameters.id, requestParameters.segmentIDListResetContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1399,7 +1267,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdIdlistMetadataGet(requestParameters: SegmentsApiConsoleV1SegmentsIdIdlistMetadataGetRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdlistMetadataGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdIdlistMetadataGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1410,7 +1278,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdRemoveIdsPatch(requestParameters: SegmentsApiConsoleV1SegmentsIdRemoveIdsPatchRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdRemoveIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdRemoveIdsPatch(requestParameters.id, requestParameters.segmentIDListUserStoreContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1421,7 +1289,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters: SegmentsApiConsoleV1SegmentsIdReviewsReviewIDCommitPutRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsIdReviewsReviewIDCommitPut(requestParameters.id, requestParameters.reviewID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1432,7 +1300,7 @@ export class SegmentsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1SegmentsPost(requestParameters: SegmentsApiConsoleV1SegmentsPostRequest, options?: RawAxiosRequestConfig) {
-        return SegmentsApiFp(this.configuration).consoleV1SegmentsPost(requestParameters.segmentCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return SegmentsApiFp(this.configuration).consoleV1SegmentsPost(requestParameters.segmentCreateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

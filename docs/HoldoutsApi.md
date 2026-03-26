@@ -11,7 +11,7 @@ All URIs are relative to *https://statsigapi.net*
 |[**consoleV1HoldoutsIdOverridesGet**](#consolev1holdoutsidoverridesget) | **GET** /console/v1/holdouts/{id}/overrides | Read Holdout Overrides|
 |[**consoleV1HoldoutsIdOverridesPatch**](#consolev1holdoutsidoverridespatch) | **PATCH** /console/v1/holdouts/{id}/overrides | Add Holdout Overrides|
 |[**consoleV1HoldoutsIdOverridesPost**](#consolev1holdoutsidoverridespost) | **POST** /console/v1/holdouts/{id}/overrides | Update Holdout Overrides|
-|[**consoleV1HoldoutsIdPatch**](#consolev1holdoutsidpatch) | **PATCH** /console/v1/holdouts/{id} | Patch holdout by id. You can pass in only the data you want to update.|
+|[**consoleV1HoldoutsIdPatch**](#consolev1holdoutsidpatch) | **PATCH** /console/v1/holdouts/{id} | Partially update holdout by id|
 |[**consoleV1HoldoutsIdPost**](#consolev1holdoutsidpost) | **POST** /console/v1/holdouts/{id} | Update holdout by id|
 |[**consoleV1HoldoutsIdPulseResultsGet**](#consolev1holdoutsidpulseresultsget) | **GET** /console/v1/holdouts/{id}/pulse_results | Retrieve Pulse Results|
 |[**consoleV1HoldoutsPost**](#consolev1holdoutspost) | **POST** /console/v1/holdouts | Create holdout|
@@ -39,15 +39,13 @@ let creatorID: string; //ID of the user who created the entity. (optional) (defa
 let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter by tags (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsGet(
     creatorName,
     creatorID,
     tags,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -60,7 +58,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsGet(
 | **tags** | **ConsoleV1AuditLogsGetTagsParameter** | Filter by tags | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -101,11 +98,9 @@ const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -114,7 +109,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -156,11 +150,9 @@ const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -169,7 +161,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -211,11 +202,9 @@ const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -224,7 +213,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -266,11 +254,9 @@ const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -279,7 +265,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -322,12 +307,10 @@ const apiInstance = new HoldoutsApi(configuration);
 
 let id: string; //id (default to undefined)
 let updateOverridesContractDto: UpdateOverridesContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesPatch(
     id,
-    updateOverridesContractDto,
-    xRespectReviewSettings
+    updateOverridesContractDto
 );
 ```
 
@@ -337,7 +320,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesPatch(
 |------------- | ------------- | ------------- | -------------|
 | **updateOverridesContractDto** | **UpdateOverridesContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -379,12 +361,10 @@ const apiInstance = new HoldoutsApi(configuration);
 
 let id: string; //id (default to undefined)
 let updateOverridesContractDto: UpdateOverridesContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesPost(
     id,
-    updateOverridesContractDto,
-    xRespectReviewSettings
+    updateOverridesContractDto
 );
 ```
 
@@ -394,7 +374,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesPost(
 |------------- | ------------- | ------------- | -------------|
 | **updateOverridesContractDto** | **UpdateOverridesContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -422,6 +401,7 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdOverridesPost(
 # **consoleV1HoldoutsIdPatch**
 > ConsoleV1HoldoutsIdPatch200Response consoleV1HoldoutsIdPatch(holdoutPartialUpdateContractDto)
 
+You can pass in only the data you want to update.
 
 ### Example
 
@@ -437,12 +417,10 @@ const apiInstance = new HoldoutsApi(configuration);
 
 let id: string; //id (default to undefined)
 let holdoutPartialUpdateContractDto: HoldoutPartialUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdPatch(
     id,
-    holdoutPartialUpdateContractDto,
-    xRespectReviewSettings
+    holdoutPartialUpdateContractDto
 );
 ```
 
@@ -452,7 +430,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **holdoutPartialUpdateContractDto** | **HoldoutPartialUpdateContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -496,12 +473,10 @@ const apiInstance = new HoldoutsApi(configuration);
 
 let id: string; //id (default to undefined)
 let holdoutFullUpdateContractDto: HoldoutFullUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdPost(
     id,
-    holdoutFullUpdateContractDto,
-    xRespectReviewSettings
+    holdoutFullUpdateContractDto
 );
 ```
 
@@ -511,7 +486,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdPost(
 |------------- | ------------- | ------------- | -------------|
 | **holdoutFullUpdateContractDto** | **HoldoutFullUpdateContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -556,13 +530,11 @@ const apiInstance = new HoldoutsApi(configuration);
 let id: string; //id (default to undefined)
 let cuped: string; //Whether to apply CUPED. Allowed values are \"true\" or \"false\". (optional) (default to undefined)
 let confidence: string; //Confidence interval (0-100) (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsIdPulseResultsGet(
     id,
     cuped,
-    confidence,
-    xRespectReviewSettings
+    confidence
 );
 ```
 
@@ -573,7 +545,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsIdPulseResultsGet(
 | **id** | [**string**] | id | defaults to undefined|
 | **cuped** | [**string**] | Whether to apply CUPED. Allowed values are \&quot;true\&quot; or \&quot;false\&quot;. | (optional) defaults to undefined|
 | **confidence** | [**string**] | Confidence interval (0-100) | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -614,11 +585,9 @@ const configuration = new Configuration();
 const apiInstance = new HoldoutsApi(configuration);
 
 let holdoutCreateContractDto: HoldoutCreateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1HoldoutsPost(
-    holdoutCreateContractDto,
-    xRespectReviewSettings
+    holdoutCreateContractDto
 );
 ```
 
@@ -627,7 +596,6 @@ const { status, data } = await apiInstance.consoleV1HoldoutsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **holdoutCreateContractDto** | **HoldoutCreateContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

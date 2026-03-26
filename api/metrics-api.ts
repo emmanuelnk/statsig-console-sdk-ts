@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AuditLogsGetTagsParameter } from '../models';
 // @ts-ignore
 import type { ConsoleV1AutotunesPost400Response } from '../models';
 // @ts-ignore
@@ -89,11 +89,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Read Single Metric Value
          * @param {string} id The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
          * @param {string} date Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsGet: async (id: string, date: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsGet: async (id: string, date: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsGet', 'id', id)
             // verify required parameter 'date' is not null or undefined
@@ -123,9 +122,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -140,11 +136,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Read Single Metric Value
          * @param {string} id The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
          * @param {string} date Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsGet_1: async (id: string, date: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsGet_1: async (id: string, date: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsGet_1', 'id', id)
             // verify required parameter 'date' is not null or undefined
@@ -174,9 +169,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -190,11 +182,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Cancel archive a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdCancelArchivePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdCancelArchivePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdCancelArchivePut', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/cancel_archive`
@@ -215,9 +206,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -231,11 +219,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Cancel archive a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdCancelArchivePut_2: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdCancelArchivePut_2: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdCancelArchivePut_2', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/cancel_archive`
@@ -256,9 +243,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -272,11 +256,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Delete a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdDelete', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}`
@@ -297,9 +280,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -313,11 +293,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Delete a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdDelete_3: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdDelete_3: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdDelete_3', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}`
@@ -338,9 +317,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -359,6 +335,7 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
          * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
          * @param {string} [targetAppID] 
+         * @param {boolean} [stale] When true, only returns stale experiments. If omitted or false, returns all experiments.
          * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
          * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
@@ -367,11 +344,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdExperimentsGet: async (id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdExperimentsGet: async (id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, stale?: boolean, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdExperimentsGet', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/experiments`
@@ -412,6 +388,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
                 localVarQueryParameter['targetAppID'] = targetAppID;
             }
 
+            if (stale !== undefined) {
+                localVarQueryParameter['stale'] = stale;
+            }
+
             if (createdStartDate !== undefined) {
                 localVarQueryParameter['createdStartDate'] = createdStartDate;
             }
@@ -450,9 +430,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -471,6 +448,7 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
          * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
          * @param {string} [targetAppID] 
+         * @param {boolean} [stale] When true, only returns stale experiments. If omitted or false, returns all experiments.
          * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
          * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
@@ -479,11 +457,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdExperimentsGet_4: async (id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdExperimentsGet_4: async (id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, stale?: boolean, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdExperimentsGet_4', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/experiments`
@@ -524,6 +501,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
                 localVarQueryParameter['targetAppID'] = targetAppID;
             }
 
+            if (stale !== undefined) {
+                localVarQueryParameter['stale'] = stale;
+            }
+
             if (createdStartDate !== undefined) {
                 localVarQueryParameter['createdStartDate'] = createdStartDate;
             }
@@ -562,9 +543,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -578,11 +556,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Read Metric Definition
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdGet', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}`
@@ -603,9 +580,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -619,11 +593,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Read Metric Definition
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdGet_5: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdGet_5: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdGet_5', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}`
@@ -644,9 +617,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -661,11 +631,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Update a metric
          * @param {string} id id
          * @param {MetricsUpdateContractDto} metricsUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdPost: async (id: string, metricsUpdateContractDto: MetricsUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdPost: async (id: string, metricsUpdateContractDto: MetricsUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdPost', 'id', id)
             // verify required parameter 'metricsUpdateContractDto' is not null or undefined
@@ -689,9 +658,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -707,11 +673,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Update a metric
          * @param {string} id id
          * @param {MetricsUpdateContractDto} metricsUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdPost_6: async (id: string, metricsUpdateContractDto: MetricsUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdPost_6: async (id: string, metricsUpdateContractDto: MetricsUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdPost_6', 'id', id)
             // verify required parameter 'metricsUpdateContractDto' is not null or undefined
@@ -735,9 +700,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -753,11 +715,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Reload metric data
          * @param {string} id id
          * @param {ConsoleV1MetricsIdReloadPostIncrementalEnum} [incremental] Incremental reload of the metric
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdReloadPost: async (id: string, incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdReloadPost: async (id: string, incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdReloadPost', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/reload`
@@ -782,9 +743,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -798,11 +756,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Schedule a metric archive
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdScheduleArchivePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdScheduleArchivePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdScheduleArchivePut', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/schedule_archive`
@@ -823,9 +780,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -839,11 +793,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Schedule a metric archive
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdScheduleArchivePut_7: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdScheduleArchivePut_7: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdScheduleArchivePut_7', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/schedule_archive`
@@ -864,9 +817,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -880,11 +830,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Get SQL for a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdSqlGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdSqlGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdSqlGet', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/sql`
@@ -905,9 +854,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -921,11 +867,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Get SQL for a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdSqlGet_8: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdSqlGet_8: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdSqlGet_8', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/sql`
@@ -946,9 +891,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -962,11 +904,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Unarchive a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdUnarchivePut: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdUnarchivePut: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdUnarchivePut', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/unarchive`
@@ -987,9 +928,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1003,11 +941,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Unarchive a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsIdUnarchivePut_9: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsIdUnarchivePut_9: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1MetricsIdUnarchivePut_9', 'id', id)
             const localVarPath = `/console/v1/metrics/{id}/unarchive`
@@ -1028,9 +965,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1048,11 +982,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [filters] Additional filters for metrics. Can be a string or an object with tags filter.
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsListGet: async (showHiddenMetrics?: ConsoleV1MetricsListGetShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsListGet: async (showHiddenMetrics?: ConsoleV1MetricsListGetShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/metrics/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1092,9 +1025,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1112,11 +1042,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [filters] Additional filters for metrics. Can be a string or an object with tags filter.
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsListGet_10: async (showHiddenMetrics?: ConsoleV1MetricsListGet0ShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsListGet_10: async (showHiddenMetrics?: ConsoleV1MetricsListGet0ShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/metrics/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1156,9 +1085,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1173,11 +1099,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary List metric source
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceListGet: async (limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsMetricSourceListGet: async (limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/metrics/metric_source/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1203,9 +1128,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1219,11 +1141,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Delete Metric Source
          * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameDelete: async (name: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsMetricSourceNameDelete: async (name: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1MetricsMetricSourceNameDelete', 'name', name)
             const localVarPath = `/console/v1/metrics/metric_source/{name}`
@@ -1244,9 +1165,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1260,11 +1178,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Read Metric Source
          * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameGet: async (name: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsMetricSourceNameGet: async (name: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1MetricsMetricSourceNameGet', 'name', name)
             const localVarPath = `/console/v1/metrics/metric_source/{name}`
@@ -1285,9 +1202,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1303,11 +1217,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} name name
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNameMetricsGet: async (name: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsMetricSourceNameMetricsGet: async (name: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1MetricsMetricSourceNameMetricsGet', 'name', name)
             const localVarPath = `/console/v1/metrics/metric_source/{name}/metrics`
@@ -1336,9 +1249,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1353,11 +1263,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Update Metric Source
          * @param {string} name name
          * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourceNamePost: async (name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsMetricSourceNamePost: async (name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1MetricsMetricSourceNamePost', 'name', name)
             // verify required parameter 'metricSourceUpdateContractDto' is not null or undefined
@@ -1381,9 +1290,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1398,11 +1304,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Create Metric Source
          * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsMetricSourcePost: async (metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsMetricSourcePost: async (metricSourceCreationContractDto: MetricSourceCreationContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'metricSourceCreationContractDto' is not null or undefined
             assertParamExists('consoleV1MetricsMetricSourcePost', 'metricSourceCreationContractDto', metricSourceCreationContractDto)
             const localVarPath = `/console/v1/metrics/metric_source`;
@@ -1423,9 +1328,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1441,11 +1343,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Read Metric Definition by Name
          * @param {string} name name
          * @param {string} type type
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsNameTypeGet: async (name: string, type: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsNameTypeGet: async (name: string, type: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1MetricsNameTypeGet', 'name', name)
             // verify required parameter 'type' is not null or undefined
@@ -1469,9 +1370,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1486,11 +1384,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Read Metric Definition by Name
          * @param {string} name name
          * @param {string} type type
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsNameTypeGet_11: async (name: string, type: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsNameTypeGet_11: async (name: string, type: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('consoleV1MetricsNameTypeGet_11', 'name', name)
             // verify required parameter 'type' is not null or undefined
@@ -1514,9 +1411,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1530,11 +1424,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Create Metric
          * @param {MetricCreationContractDto} metricCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsPost: async (metricCreationContractDto: MetricCreationContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsPost: async (metricCreationContractDto: MetricCreationContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'metricCreationContractDto' is not null or undefined
             assertParamExists('consoleV1MetricsPost', 'metricCreationContractDto', metricCreationContractDto)
             const localVarPath = `/console/v1/metrics`;
@@ -1555,9 +1448,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1572,11 +1462,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * 
          * @summary Create Metric
          * @param {MetricCreationContractDto} metricCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsPost_12: async (metricCreationContractDto: MetricCreationContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsPost_12: async (metricCreationContractDto: MetricCreationContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'metricCreationContractDto' is not null or undefined
             assertParamExists('consoleV1MetricsPost_12', 'metricCreationContractDto', metricCreationContractDto)
             const localVarPath = `/console/v1/metrics`;
@@ -1597,9 +1486,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1618,11 +1504,10 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [metricType] 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1MetricsValuesGet: async (date: string, metricName?: string, metricType?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1MetricsValuesGet: async (date: string, metricName?: string, metricType?: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'date' is not null or undefined
             assertParamExists('consoleV1MetricsValuesGet', 'date', date)
             const localVarPath = `/console/v1/metrics/values`;
@@ -1662,9 +1547,6 @@ export const MetricsApiAxiosParamCreator = function (configuration?: Configurati
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1688,12 +1570,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary Read Single Metric Value
          * @param {string} id The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
          * @param {string} date Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsGet(id: string, date: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsGet(id, date, xRespectReviewSettings, options);
+        async consoleV1MetricsGet(id: string, date: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsGet(id, date, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1703,12 +1584,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary Read Single Metric Value
          * @param {string} id The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt;
          * @param {string} date Expected valid date in the form of YYYY-MM-DD
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsGet_1(id: string, date: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsGet_1(id, date, xRespectReviewSettings, options);
+        async consoleV1MetricsGet_1(id: string, date: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsGet_1(id, date, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsGet_1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1717,12 +1597,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Cancel archive a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdCancelArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdCancelArchivePut(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdCancelArchivePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdCancelArchivePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdCancelArchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1731,12 +1610,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Cancel archive a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdCancelArchivePut_2(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdCancelArchivePut_2(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdCancelArchivePut_2(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdCancelArchivePut_2(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdCancelArchivePut_2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1745,12 +1623,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1759,12 +1636,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdDelete_3(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdDelete_3(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdDelete_3(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdDelete_3(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdDelete_3']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1778,6 +1654,7 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
          * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
          * @param {string} [targetAppID] 
+         * @param {boolean} [stale] When true, only returns stale experiments. If omitted or false, returns all experiments.
          * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
          * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
@@ -1786,12 +1663,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdExperimentsGet(id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsidexperimentsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdExperimentsGet(id, layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
+        async consoleV1MetricsIdExperimentsGet(id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, stale?: boolean, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsidexperimentsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdExperimentsGet(id, layerID, idType, teamID, status, targetAppID, stale, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdExperimentsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1805,6 +1681,7 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @param {string | null} [teamID] The team ID associated with the experiment, Enterprise only.
          * @param {ConsoleV1ExperimentsGetStatusParameter} [status] The current status of the experiment
          * @param {string} [targetAppID] 
+         * @param {boolean} [stale] When true, only returns stale experiments. If omitted or false, returns all experiments.
          * @param {string} [createdStartDate] Expected valid date in the form of YYYY-MM-DD
          * @param {string} [createdEndDate] Expected valid date in the form of YYYY-MM-DD
          * @param {ConsoleV1ExperimentsGetExperimentTypeParameter} [experimentType] Filter by experiment type
@@ -1813,12 +1690,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @param {ConsoleV1AuditLogsGetTagsParameter} [tags] Filter by tags
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdExperimentsGet_4(id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsidexperimentsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdExperimentsGet_4(id, layerID, idType, teamID, status, targetAppID, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, xRespectReviewSettings, options);
+        async consoleV1MetricsIdExperimentsGet_4(id: string, layerID?: string, idType?: string, teamID?: string | null, status?: ConsoleV1ExperimentsGetStatusParameter, targetAppID?: string, stale?: boolean, createdStartDate?: string, createdEndDate?: string, experimentType?: ConsoleV1ExperimentsGetExperimentTypeParameter, creatorName?: string | null, creatorID?: string | null, tags?: ConsoleV1AuditLogsGetTagsParameter, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsidexperimentsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdExperimentsGet_4(id, layerID, idType, teamID, status, targetAppID, stale, createdStartDate, createdEndDate, experimentType, creatorName, creatorID, tags, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdExperimentsGet_4']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1827,12 +1703,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Metric Definition
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdGet(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1841,12 +1716,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Metric Definition
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdGet_5(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdGet_5(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdGet_5(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdGet_5(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdGet_5']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1856,12 +1730,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary Update a metric
          * @param {string} id id
          * @param {MetricsUpdateContractDto} metricsUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdPost(id: string, metricsUpdateContractDto: MetricsUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdPost(id, metricsUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1MetricsIdPost(id: string, metricsUpdateContractDto: MetricsUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdPost(id, metricsUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1871,12 +1744,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary Update a metric
          * @param {string} id id
          * @param {MetricsUpdateContractDto} metricsUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdPost_6(id: string, metricsUpdateContractDto: MetricsUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdPost_6(id, metricsUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1MetricsIdPost_6(id: string, metricsUpdateContractDto: MetricsUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdPost_6(id, metricsUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdPost_6']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1886,12 +1758,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary Reload metric data
          * @param {string} id id
          * @param {ConsoleV1MetricsIdReloadPostIncrementalEnum} [incremental] Incremental reload of the metric
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdReloadPost(id: string, incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdReloadPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdReloadPost(id, incremental, xRespectReviewSettings, options);
+        async consoleV1MetricsIdReloadPost(id: string, incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdReloadPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdReloadPost(id, incremental, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdReloadPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1900,12 +1771,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Schedule a metric archive
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdScheduleArchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdScheduleArchivePut(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdScheduleArchivePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdScheduleArchivePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdScheduleArchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1914,12 +1784,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Schedule a metric archive
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdScheduleArchivePut_7(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdScheduleArchivePut_7(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdScheduleArchivePut_7(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdScheduleArchivePut_7(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdScheduleArchivePut_7']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1928,12 +1797,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get SQL for a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdSqlGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdSqlGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdSqlGet(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdSqlGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdSqlGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdSqlGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdSqlGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1942,12 +1810,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get SQL for a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdSqlGet_8(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdSqlGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdSqlGet_8(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdSqlGet_8(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdSqlGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdSqlGet_8(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdSqlGet_8']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1956,12 +1823,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Unarchive a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdUnarchivePut(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdUnarchivePut(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdUnarchivePut(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdUnarchivePut(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdUnarchivePut']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1970,12 +1836,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Unarchive a metric
          * @param {string} id id
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsIdUnarchivePut_9(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdUnarchivePut_9(id, xRespectReviewSettings, options);
+        async consoleV1MetricsIdUnarchivePut_9(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsIdUnarchivePut_9(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsIdUnarchivePut_9']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -1988,12 +1853,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @param {string} [filters] Additional filters for metrics. Can be a string or an object with tags filter.
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsListGet(showHiddenMetrics?: ConsoleV1MetricsListGetShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricslistResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsListGet(showHiddenMetrics, tags, filters, limit, page, xRespectReviewSettings, options);
+        async consoleV1MetricsListGet(showHiddenMetrics?: ConsoleV1MetricsListGetShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricslistResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsListGet(showHiddenMetrics, tags, filters, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsListGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2006,12 +1870,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @param {string} [filters] Additional filters for metrics. Can be a string or an object with tags filter.
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsListGet_10(showHiddenMetrics?: ConsoleV1MetricsListGet0ShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricslistResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsListGet_10(showHiddenMetrics, tags, filters, limit, page, xRespectReviewSettings, options);
+        async consoleV1MetricsListGet_10(showHiddenMetrics?: ConsoleV1MetricsListGet0ShowHiddenMetricsEnum, tags?: ConsoleV1AuditLogsGetTagsParameter, filters?: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricslistResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsListGet_10(showHiddenMetrics, tags, filters, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsListGet_10']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2021,12 +1884,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary List metric source
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsMetricSourceListGet(limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsmetricsourcelistResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceListGet(limit, page, xRespectReviewSettings, options);
+        async consoleV1MetricsMetricSourceListGet(limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsmetricsourcelistResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceListGet(limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsMetricSourceListGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2035,12 +1897,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Metric Source
          * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsMetricSourceNameDelete(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourceNameDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNameDelete(name, xRespectReviewSettings, options);
+        async consoleV1MetricsMetricSourceNameDelete(name: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourceNameDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNameDelete(name, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsMetricSourceNameDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2049,12 +1910,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Metric Source
          * @param {string} name name
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsMetricSourceNameGet(name: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourceNameGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNameGet(name, xRespectReviewSettings, options);
+        async consoleV1MetricsMetricSourceNameGet(name: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourceNameGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNameGet(name, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsMetricSourceNameGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2065,12 +1925,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @param {string} name name
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsMetricSourceNameMetricsGet(name: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsmetricsourcenamemetricsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNameMetricsGet(name, limit, page, xRespectReviewSettings, options);
+        async consoleV1MetricsMetricSourceNameMetricsGet(name: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsmetricsourcenamemetricsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNameMetricsGet(name, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsMetricSourceNameMetricsGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2080,12 +1939,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary Update Metric Source
          * @param {string} name name
          * @param {MetricSourceUpdateContractDto} metricSourceUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsMetricSourceNamePost(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourceNamePost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNamePost(name, metricSourceUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1MetricsMetricSourceNamePost(name: string, metricSourceUpdateContractDto: MetricSourceUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourceNamePost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourceNamePost(name, metricSourceUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsMetricSourceNamePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2094,12 +1952,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Metric Source
          * @param {MetricSourceCreationContractDto} metricSourceCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto: MetricSourceCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourcePost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto, xRespectReviewSettings, options);
+        async consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto: MetricSourceCreationContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsMetricSourcePost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsMetricSourcePost(metricSourceCreationContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsMetricSourcePost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2109,12 +1966,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary Read Metric Definition by Name
          * @param {string} name name
          * @param {string} type type
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsNameTypeGet(name: string, type: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsNameTypeGet(name, type, xRespectReviewSettings, options);
+        async consoleV1MetricsNameTypeGet(name: string, type: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsNameTypeGet(name, type, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsNameTypeGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2124,12 +1980,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @summary Read Metric Definition by Name
          * @param {string} name name
          * @param {string} type type
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsNameTypeGet_11(name: string, type: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsNameTypeGet_11(name, type, xRespectReviewSettings, options);
+        async consoleV1MetricsNameTypeGet_11(name: string, type: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsNameTypeGet_11(name, type, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsNameTypeGet_11']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2138,12 +1993,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Metric
          * @param {MetricCreationContractDto} metricCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsPost(metricCreationContractDto: MetricCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsPost(metricCreationContractDto, xRespectReviewSettings, options);
+        async consoleV1MetricsPost(metricCreationContractDto: MetricCreationContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsPost(metricCreationContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2152,12 +2006,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Metric
          * @param {MetricCreationContractDto} metricCreationContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsPost_12(metricCreationContractDto: MetricCreationContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsPost201Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsPost_12(metricCreationContractDto, xRespectReviewSettings, options);
+        async consoleV1MetricsPost_12(metricCreationContractDto: MetricCreationContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1MetricsPost201Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsPost_12(metricCreationContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsPost_12']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2170,12 +2023,11 @@ export const MetricsApiFp = function(configuration?: Configuration) {
          * @param {string} [metricType] 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1MetricsValuesGet(date: string, metricName?: string, metricType?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsvaluesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsValuesGet(date, metricName, metricType, limit, page, xRespectReviewSettings, options);
+        async consoleV1MetricsValuesGet(date: string, metricName?: string, metricType?: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1metricsvaluesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1MetricsValuesGet(date, metricName, metricType, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MetricsApi.consoleV1MetricsValuesGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2197,7 +2049,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsGet(requestParameters: MetricsApiConsoleV1MetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsResponse> {
-            return localVarFp.consoleV1MetricsGet(requestParameters.id, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsGet(requestParameters.id, requestParameters.date, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2207,7 +2059,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsGet_1(requestParameters: MetricsApiConsoleV1MetricsGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsResponse> {
-            return localVarFp.consoleV1MetricsGet_1(requestParameters.id, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsGet_1(requestParameters.id, requestParameters.date, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2217,7 +2069,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdCancelArchivePut(requestParameters: MetricsApiConsoleV1MetricsIdCancelArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdCancelArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdCancelArchivePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2227,7 +2079,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdCancelArchivePut_2(requestParameters: MetricsApiConsoleV1MetricsIdCancelArchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdCancelArchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdCancelArchivePut_2(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdCancelArchivePut_2(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2237,7 +2089,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdDelete(requestParameters: MetricsApiConsoleV1MetricsIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdDelete200Response> {
-            return localVarFp.consoleV1MetricsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2247,7 +2099,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdDelete_3(requestParameters: MetricsApiConsoleV1MetricsIdDelete0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdDelete200Response> {
-            return localVarFp.consoleV1MetricsIdDelete_3(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdDelete_3(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2257,7 +2109,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdExperimentsGet(requestParameters: MetricsApiConsoleV1MetricsIdExperimentsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsidexperimentsResponse> {
-            return localVarFp.consoleV1MetricsIdExperimentsGet(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdExperimentsGet(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.stale, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2267,7 +2119,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdExperimentsGet_4(requestParameters: MetricsApiConsoleV1MetricsIdExperimentsGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsidexperimentsResponse> {
-            return localVarFp.consoleV1MetricsIdExperimentsGet_4(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdExperimentsGet_4(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.stale, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2277,7 +2129,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdGet(requestParameters: MetricsApiConsoleV1MetricsIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
-            return localVarFp.consoleV1MetricsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2287,7 +2139,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdGet_5(requestParameters: MetricsApiConsoleV1MetricsIdGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
-            return localVarFp.consoleV1MetricsIdGet_5(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdGet_5(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2297,7 +2149,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdPost(requestParameters: MetricsApiConsoleV1MetricsIdPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdPost200Response> {
-            return localVarFp.consoleV1MetricsIdPost(requestParameters.id, requestParameters.metricsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdPost(requestParameters.id, requestParameters.metricsUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2307,7 +2159,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdPost_6(requestParameters: MetricsApiConsoleV1MetricsIdPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdPost200Response> {
-            return localVarFp.consoleV1MetricsIdPost_6(requestParameters.id, requestParameters.metricsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdPost_6(requestParameters.id, requestParameters.metricsUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2317,7 +2169,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdReloadPost(requestParameters: MetricsApiConsoleV1MetricsIdReloadPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdReloadPost200Response> {
-            return localVarFp.consoleV1MetricsIdReloadPost(requestParameters.id, requestParameters.incremental, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdReloadPost(requestParameters.id, requestParameters.incremental, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2327,7 +2179,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdScheduleArchivePut(requestParameters: MetricsApiConsoleV1MetricsIdScheduleArchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdScheduleArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdScheduleArchivePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2337,7 +2189,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdScheduleArchivePut_7(requestParameters: MetricsApiConsoleV1MetricsIdScheduleArchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdScheduleArchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdScheduleArchivePut_7(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdScheduleArchivePut_7(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2347,7 +2199,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdSqlGet(requestParameters: MetricsApiConsoleV1MetricsIdSqlGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdSqlGet200Response> {
-            return localVarFp.consoleV1MetricsIdSqlGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdSqlGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2357,7 +2209,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdSqlGet_8(requestParameters: MetricsApiConsoleV1MetricsIdSqlGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdSqlGet200Response> {
-            return localVarFp.consoleV1MetricsIdSqlGet_8(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdSqlGet_8(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2367,7 +2219,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdUnarchivePut(requestParameters: MetricsApiConsoleV1MetricsIdUnarchivePutRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdUnarchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdUnarchivePut(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2377,7 +2229,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsIdUnarchivePut_9(requestParameters: MetricsApiConsoleV1MetricsIdUnarchivePut0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdUnarchivePut200Response> {
-            return localVarFp.consoleV1MetricsIdUnarchivePut_9(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsIdUnarchivePut_9(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2387,7 +2239,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsListGet(requestParameters: MetricsApiConsoleV1MetricsListGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricslistResponse> {
-            return localVarFp.consoleV1MetricsListGet(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsListGet(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2397,7 +2249,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsListGet_10(requestParameters: MetricsApiConsoleV1MetricsListGet0Request = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricslistResponse> {
-            return localVarFp.consoleV1MetricsListGet_10(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsListGet_10(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2407,7 +2259,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsMetricSourceListGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceListGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsmetricsourcelistResponse> {
-            return localVarFp.consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2417,7 +2269,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsMetricSourceNameDelete(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameDelete200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsMetricSourceNameDelete(requestParameters.name, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2427,7 +2279,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsMetricSourceNameGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNameGet200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsMetricSourceNameGet(requestParameters.name, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2437,7 +2289,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsMetricSourceNameMetricsGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameMetricsGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsmetricsourcenamemetricsResponse> {
-            return localVarFp.consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2447,7 +2299,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsMetricSourceNamePost(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNamePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourceNamePost200Response> {
-            return localVarFp.consoleV1MetricsMetricSourceNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsMetricSourceNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2457,7 +2309,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsMetricSourcePost(requestParameters: MetricsApiConsoleV1MetricsMetricSourcePostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsMetricSourcePost201Response> {
-            return localVarFp.consoleV1MetricsMetricSourcePost(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsMetricSourcePost(requestParameters.metricSourceCreationContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2467,7 +2319,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsNameTypeGet(requestParameters: MetricsApiConsoleV1MetricsNameTypeGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
-            return localVarFp.consoleV1MetricsNameTypeGet(requestParameters.name, requestParameters.type, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsNameTypeGet(requestParameters.name, requestParameters.type, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2477,7 +2329,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsNameTypeGet_11(requestParameters: MetricsApiConsoleV1MetricsNameTypeGet0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsIdGet200Response> {
-            return localVarFp.consoleV1MetricsNameTypeGet_11(requestParameters.name, requestParameters.type, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsNameTypeGet_11(requestParameters.name, requestParameters.type, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2487,7 +2339,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsPost(requestParameters: MetricsApiConsoleV1MetricsPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsPost201Response> {
-            return localVarFp.consoleV1MetricsPost(requestParameters.metricCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsPost(requestParameters.metricCreationContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2497,7 +2349,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsPost_12(requestParameters: MetricsApiConsoleV1MetricsPost0Request, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1MetricsPost201Response> {
-            return localVarFp.consoleV1MetricsPost_12(requestParameters.metricCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsPost_12(requestParameters.metricCreationContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * List all metric values
@@ -2507,7 +2359,7 @@ export const MetricsApiFactory = function (configuration?: Configuration, basePa
          * @throws {RequiredError}
          */
         consoleV1MetricsValuesGet(requestParameters: MetricsApiConsoleV1MetricsValuesGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1metricsvaluesResponse> {
-            return localVarFp.consoleV1MetricsValuesGet(requestParameters.date, requestParameters.metricName, requestParameters.metricType, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1MetricsValuesGet(requestParameters.date, requestParameters.metricName, requestParameters.metricType, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -2525,11 +2377,6 @@ export interface MetricsApiConsoleV1MetricsGetRequest {
      * Expected valid date in the form of YYYY-MM-DD
      */
     readonly date: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2545,11 +2392,6 @@ export interface MetricsApiConsoleV1MetricsGet0Request {
      * Expected valid date in the form of YYYY-MM-DD
      */
     readonly date: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2560,11 +2402,6 @@ export interface MetricsApiConsoleV1MetricsIdCancelArchivePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2575,11 +2412,6 @@ export interface MetricsApiConsoleV1MetricsIdCancelArchivePut0Request {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2590,11 +2422,6 @@ export interface MetricsApiConsoleV1MetricsIdDeleteRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2605,11 +2432,6 @@ export interface MetricsApiConsoleV1MetricsIdDelete0Request {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2644,6 +2466,11 @@ export interface MetricsApiConsoleV1MetricsIdExperimentsGetRequest {
     readonly targetAppID?: string
 
     /**
+     * When true, only returns stale experiments. If omitted or false, returns all experiments.
+     */
+    readonly stale?: boolean
+
+    /**
      * Expected valid date in the form of YYYY-MM-DD
      */
     readonly createdStartDate?: string
@@ -2682,11 +2509,6 @@ export interface MetricsApiConsoleV1MetricsIdExperimentsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2721,6 +2543,11 @@ export interface MetricsApiConsoleV1MetricsIdExperimentsGet0Request {
     readonly targetAppID?: string
 
     /**
+     * When true, only returns stale experiments. If omitted or false, returns all experiments.
+     */
+    readonly stale?: boolean
+
+    /**
      * Expected valid date in the form of YYYY-MM-DD
      */
     readonly createdStartDate?: string
@@ -2759,11 +2586,6 @@ export interface MetricsApiConsoleV1MetricsIdExperimentsGet0Request {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2774,11 +2596,6 @@ export interface MetricsApiConsoleV1MetricsIdGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2789,11 +2606,6 @@ export interface MetricsApiConsoleV1MetricsIdGet0Request {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2806,11 +2618,6 @@ export interface MetricsApiConsoleV1MetricsIdPostRequest {
     readonly id: string
 
     readonly metricsUpdateContractDto: MetricsUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2823,11 +2630,6 @@ export interface MetricsApiConsoleV1MetricsIdPost0Request {
     readonly id: string
 
     readonly metricsUpdateContractDto: MetricsUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2843,11 +2645,6 @@ export interface MetricsApiConsoleV1MetricsIdReloadPostRequest {
      * Incremental reload of the metric
      */
     readonly incremental?: ConsoleV1MetricsIdReloadPostIncrementalEnum
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2858,11 +2655,6 @@ export interface MetricsApiConsoleV1MetricsIdScheduleArchivePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2873,11 +2665,6 @@ export interface MetricsApiConsoleV1MetricsIdScheduleArchivePut0Request {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2888,11 +2675,6 @@ export interface MetricsApiConsoleV1MetricsIdSqlGetRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2903,11 +2685,6 @@ export interface MetricsApiConsoleV1MetricsIdSqlGet0Request {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2918,11 +2695,6 @@ export interface MetricsApiConsoleV1MetricsIdUnarchivePutRequest {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2933,11 +2705,6 @@ export interface MetricsApiConsoleV1MetricsIdUnarchivePut0Request {
      * id
      */
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -2968,11 +2735,6 @@ export interface MetricsApiConsoleV1MetricsListGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3003,11 +2765,6 @@ export interface MetricsApiConsoleV1MetricsListGet0Request {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3023,11 +2780,6 @@ export interface MetricsApiConsoleV1MetricsMetricSourceListGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3038,11 +2790,6 @@ export interface MetricsApiConsoleV1MetricsMetricSourceNameDeleteRequest {
      * name
      */
     readonly name: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3053,11 +2800,6 @@ export interface MetricsApiConsoleV1MetricsMetricSourceNameGetRequest {
      * name
      */
     readonly name: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3078,11 +2820,6 @@ export interface MetricsApiConsoleV1MetricsMetricSourceNameMetricsGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3095,11 +2832,6 @@ export interface MetricsApiConsoleV1MetricsMetricSourceNamePostRequest {
     readonly name: string
 
     readonly metricSourceUpdateContractDto: MetricSourceUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3107,11 +2839,6 @@ export interface MetricsApiConsoleV1MetricsMetricSourceNamePostRequest {
  */
 export interface MetricsApiConsoleV1MetricsMetricSourcePostRequest {
     readonly metricSourceCreationContractDto: MetricSourceCreationContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3127,11 +2854,6 @@ export interface MetricsApiConsoleV1MetricsNameTypeGetRequest {
      * type
      */
     readonly type: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3147,11 +2869,6 @@ export interface MetricsApiConsoleV1MetricsNameTypeGet0Request {
      * type
      */
     readonly type: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3159,11 +2876,6 @@ export interface MetricsApiConsoleV1MetricsNameTypeGet0Request {
  */
 export interface MetricsApiConsoleV1MetricsPostRequest {
     readonly metricCreationContractDto: MetricCreationContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3171,11 +2883,6 @@ export interface MetricsApiConsoleV1MetricsPostRequest {
  */
 export interface MetricsApiConsoleV1MetricsPost0Request {
     readonly metricCreationContractDto: MetricCreationContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3200,11 +2907,6 @@ export interface MetricsApiConsoleV1MetricsValuesGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -3219,7 +2921,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsGet(requestParameters: MetricsApiConsoleV1MetricsGetRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsGet(requestParameters.id, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsGet(requestParameters.id, requestParameters.date, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3230,7 +2932,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsGet_1(requestParameters: MetricsApiConsoleV1MetricsGet0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsGet_1(requestParameters.id, requestParameters.date, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsGet_1(requestParameters.id, requestParameters.date, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3241,7 +2943,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdCancelArchivePut(requestParameters: MetricsApiConsoleV1MetricsIdCancelArchivePutRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdCancelArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdCancelArchivePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3252,7 +2954,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdCancelArchivePut_2(requestParameters: MetricsApiConsoleV1MetricsIdCancelArchivePut0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdCancelArchivePut_2(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdCancelArchivePut_2(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3263,7 +2965,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdDelete(requestParameters: MetricsApiConsoleV1MetricsIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3274,7 +2976,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdDelete_3(requestParameters: MetricsApiConsoleV1MetricsIdDelete0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdDelete_3(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdDelete_3(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3285,7 +2987,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdExperimentsGet(requestParameters: MetricsApiConsoleV1MetricsIdExperimentsGetRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdExperimentsGet(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdExperimentsGet(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.stale, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3296,7 +2998,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdExperimentsGet_4(requestParameters: MetricsApiConsoleV1MetricsIdExperimentsGet0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdExperimentsGet_4(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdExperimentsGet_4(requestParameters.id, requestParameters.layerID, requestParameters.idType, requestParameters.teamID, requestParameters.status, requestParameters.targetAppID, requestParameters.stale, requestParameters.createdStartDate, requestParameters.createdEndDate, requestParameters.experimentType, requestParameters.creatorName, requestParameters.creatorID, requestParameters.tags, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3307,7 +3009,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdGet(requestParameters: MetricsApiConsoleV1MetricsIdGetRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3318,7 +3020,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdGet_5(requestParameters: MetricsApiConsoleV1MetricsIdGet0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdGet_5(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdGet_5(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3329,7 +3031,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdPost(requestParameters: MetricsApiConsoleV1MetricsIdPostRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdPost(requestParameters.id, requestParameters.metricsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdPost(requestParameters.id, requestParameters.metricsUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3340,7 +3042,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdPost_6(requestParameters: MetricsApiConsoleV1MetricsIdPost0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdPost_6(requestParameters.id, requestParameters.metricsUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdPost_6(requestParameters.id, requestParameters.metricsUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3351,7 +3053,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdReloadPost(requestParameters: MetricsApiConsoleV1MetricsIdReloadPostRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdReloadPost(requestParameters.id, requestParameters.incremental, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdReloadPost(requestParameters.id, requestParameters.incremental, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3362,7 +3064,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdScheduleArchivePut(requestParameters: MetricsApiConsoleV1MetricsIdScheduleArchivePutRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdScheduleArchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdScheduleArchivePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3373,7 +3075,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdScheduleArchivePut_7(requestParameters: MetricsApiConsoleV1MetricsIdScheduleArchivePut0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdScheduleArchivePut_7(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdScheduleArchivePut_7(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3384,7 +3086,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdSqlGet(requestParameters: MetricsApiConsoleV1MetricsIdSqlGetRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdSqlGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdSqlGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3395,7 +3097,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdSqlGet_8(requestParameters: MetricsApiConsoleV1MetricsIdSqlGet0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdSqlGet_8(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdSqlGet_8(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3406,7 +3108,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdUnarchivePut(requestParameters: MetricsApiConsoleV1MetricsIdUnarchivePutRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdUnarchivePut(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdUnarchivePut(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3417,7 +3119,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsIdUnarchivePut_9(requestParameters: MetricsApiConsoleV1MetricsIdUnarchivePut0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsIdUnarchivePut_9(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsIdUnarchivePut_9(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3428,7 +3130,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsListGet(requestParameters: MetricsApiConsoleV1MetricsListGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsListGet(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsListGet(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3439,7 +3141,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsListGet_10(requestParameters: MetricsApiConsoleV1MetricsListGet0Request = {}, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsListGet_10(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsListGet_10(requestParameters.showHiddenMetrics, requestParameters.tags, requestParameters.filters, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3450,7 +3152,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsMetricSourceListGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceListGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceListGet(requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3461,7 +3163,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsMetricSourceNameDelete(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameDeleteRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameDelete(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameDelete(requestParameters.name, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3472,7 +3174,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsMetricSourceNameGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameGetRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameGet(requestParameters.name, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameGet(requestParameters.name, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3483,7 +3185,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsMetricSourceNameMetricsGet(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNameMetricsGetRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNameMetricsGet(requestParameters.name, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3494,7 +3196,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsMetricSourceNamePost(requestParameters: MetricsApiConsoleV1MetricsMetricSourceNamePostRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourceNamePost(requestParameters.name, requestParameters.metricSourceUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3505,7 +3207,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsMetricSourcePost(requestParameters: MetricsApiConsoleV1MetricsMetricSourcePostRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourcePost(requestParameters.metricSourceCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsMetricSourcePost(requestParameters.metricSourceCreationContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3516,7 +3218,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsNameTypeGet(requestParameters: MetricsApiConsoleV1MetricsNameTypeGetRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsNameTypeGet(requestParameters.name, requestParameters.type, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsNameTypeGet(requestParameters.name, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3527,7 +3229,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsNameTypeGet_11(requestParameters: MetricsApiConsoleV1MetricsNameTypeGet0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsNameTypeGet_11(requestParameters.name, requestParameters.type, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsNameTypeGet_11(requestParameters.name, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3538,7 +3240,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsPost(requestParameters: MetricsApiConsoleV1MetricsPostRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsPost(requestParameters.metricCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsPost(requestParameters.metricCreationContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3549,7 +3251,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsPost_12(requestParameters: MetricsApiConsoleV1MetricsPost0Request, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsPost_12(requestParameters.metricCreationContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsPost_12(requestParameters.metricCreationContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3560,7 +3262,7 @@ export class MetricsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1MetricsValuesGet(requestParameters: MetricsApiConsoleV1MetricsValuesGetRequest, options?: RawAxiosRequestConfig) {
-        return MetricsApiFp(this.configuration).consoleV1MetricsValuesGet(requestParameters.date, requestParameters.metricName, requestParameters.metricType, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return MetricsApiFp(this.configuration).consoleV1MetricsValuesGet(requestParameters.date, requestParameters.metricName, requestParameters.metricType, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

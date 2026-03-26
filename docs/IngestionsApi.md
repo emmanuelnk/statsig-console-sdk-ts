@@ -35,11 +35,9 @@ const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
 
 let ingestionBackfillContractDto: IngestionBackfillContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionBackfillPost(
-    ingestionBackfillContractDto,
-    xRespectReviewSettings
+    ingestionBackfillContractDto
 );
 ```
 
@@ -48,7 +46,6 @@ const { status, data } = await apiInstance.consoleV1IngestionBackfillPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ingestionBackfillContractDto** | **IngestionBackfillContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -90,11 +87,9 @@ const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
 
 let ingestionCreateDatabricksConnectionContractDto: IngestionCreateDatabricksConnectionContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionConnectionDatabricksPost(
-    ingestionCreateDatabricksConnectionContractDto,
-    xRespectReviewSettings
+    ingestionCreateDatabricksConnectionContractDto
 );
 ```
 
@@ -103,7 +98,6 @@ const { status, data } = await apiInstance.consoleV1IngestionConnectionDatabrick
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ingestionCreateDatabricksConnectionContractDto** | **IngestionCreateDatabricksConnectionContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -145,13 +139,11 @@ const apiInstance = new IngestionsApi(configuration);
 let type: 'redshift' | 'bigquery-v2' | 'snowflake-v2' | 'databricks' | 'azure-synapse' | 's3' | 'athena' | 'adls'; // (default to undefined)
 let dataset: 'Events' | 'Metrics' | 'entity_properties' | 'export_exposures' | 'export_events'; // (default to undefined)
 let sourceName: string; // (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionDelete(
     type,
     dataset,
-    sourceName,
-    xRespectReviewSettings
+    sourceName
 );
 ```
 
@@ -162,7 +154,6 @@ const { status, data } = await apiInstance.consoleV1IngestionDelete(
 | **type** | [**&#39;redshift&#39; | &#39;bigquery-v2&#39; | &#39;snowflake-v2&#39; | &#39;databricks&#39; | &#39;azure-synapse&#39; | &#39;s3&#39; | &#39;athena&#39; | &#39;adls&#39;**]**Array<&#39;redshift&#39; &#124; &#39;bigquery-v2&#39; &#124; &#39;snowflake-v2&#39; &#124; &#39;databricks&#39; &#124; &#39;azure-synapse&#39; &#124; &#39;s3&#39; &#124; &#39;athena&#39; &#124; &#39;adls&#39;>** |  | defaults to undefined|
 | **dataset** | [**&#39;Events&#39; | &#39;Metrics&#39; | &#39;entity_properties&#39; | &#39;export_exposures&#39; | &#39;export_events&#39;**]**Array<&#39;Events&#39; &#124; &#39;Metrics&#39; &#124; &#39;entity_properties&#39; &#124; &#39;export_exposures&#39; &#124; &#39;export_events&#39;>** |  | defaults to undefined|
 | **sourceName** | [**string**] |  | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -205,14 +196,12 @@ let startDate: string; //Expected valid date in the form of YYYY-MM-DD (default 
 let endDate: string; //Expected valid date in the form of YYYY-MM-DD (default to undefined)
 let sourceName: string; // (optional) (default to undefined)
 let eventName: string; // (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionEventsCountGet(
     startDate,
     endDate,
     sourceName,
-    eventName,
-    xRespectReviewSettings
+    eventName
 );
 ```
 
@@ -224,7 +213,6 @@ const { status, data } = await apiInstance.consoleV1IngestionEventsCountGet(
 | **endDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | defaults to undefined|
 | **sourceName** | [**string**] |  | (optional) defaults to undefined|
 | **eventName** | [**string**] |  | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -267,14 +255,12 @@ let startDate: string; //Expected valid date in the form of YYYY-MM-DD (default 
 let endDate: string; //Expected valid date in the form of YYYY-MM-DD (default to undefined)
 let sourceName: string; // (optional) (default to undefined)
 let eventName: string; // (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionEventsDeltaGet(
     startDate,
     endDate,
     sourceName,
-    eventName,
-    xRespectReviewSettings
+    eventName
 );
 ```
 
@@ -286,7 +272,6 @@ const { status, data } = await apiInstance.consoleV1IngestionEventsDeltaGet(
 | **endDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | defaults to undefined|
 | **sourceName** | [**string**] |  | (optional) defaults to undefined|
 | **eventName** | [**string**] |  | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -328,13 +313,11 @@ const apiInstance = new IngestionsApi(configuration);
 let type: 'redshift' | 'bigquery-v2' | 'snowflake-v2' | 'databricks' | 'azure-synapse' | 's3' | 'athena' | 'adls'; // (default to undefined)
 let dataset: 'Events' | 'Metrics' | 'entity_properties' | 'export_exposures' | 'export_events'; // (default to undefined)
 let sourceName: string; // (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionGet(
     type,
     dataset,
-    sourceName,
-    xRespectReviewSettings
+    sourceName
 );
 ```
 
@@ -345,7 +328,6 @@ const { status, data } = await apiInstance.consoleV1IngestionGet(
 | **type** | [**&#39;redshift&#39; | &#39;bigquery-v2&#39; | &#39;snowflake-v2&#39; | &#39;databricks&#39; | &#39;azure-synapse&#39; | &#39;s3&#39; | &#39;athena&#39; | &#39;adls&#39;**]**Array<&#39;redshift&#39; &#124; &#39;bigquery-v2&#39; &#124; &#39;snowflake-v2&#39; &#124; &#39;databricks&#39; &#124; &#39;azure-synapse&#39; &#124; &#39;s3&#39; &#124; &#39;athena&#39; &#124; &#39;adls&#39;>** |  | defaults to undefined|
 | **dataset** | [**&#39;Events&#39; | &#39;Metrics&#39; | &#39;entity_properties&#39; | &#39;export_exposures&#39; | &#39;export_events&#39;**]**Array<&#39;Events&#39; &#124; &#39;Metrics&#39; &#124; &#39;entity_properties&#39; &#124; &#39;export_exposures&#39; &#124; &#39;export_events&#39;>** |  | defaults to undefined|
 | **sourceName** | [**string**] |  | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -386,11 +368,9 @@ const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
 
 let ingestionUpdateContractDto: IngestionUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionPatch(
-    ingestionUpdateContractDto,
-    xRespectReviewSettings
+    ingestionUpdateContractDto
 );
 ```
 
@@ -399,7 +379,6 @@ const { status, data } = await apiInstance.consoleV1IngestionPatch(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ingestionUpdateContractDto** | **IngestionUpdateContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -440,11 +419,9 @@ const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
 
 let ingestionSourceCreateContractDto: IngestionSourceCreateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionPost(
-    ingestionSourceCreateContractDto,
-    xRespectReviewSettings
+    ingestionSourceCreateContractDto
 );
 ```
 
@@ -453,7 +430,6 @@ const { status, data } = await apiInstance.consoleV1IngestionPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ingestionSourceCreateContractDto** | **IngestionSourceCreateContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -496,11 +472,9 @@ const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
 
 let page: ConsoleV1IngestionRunsGetPageParameter; // (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionRunsGet(
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -509,7 +483,6 @@ const { status, data } = await apiInstance.consoleV1IngestionRunsGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **page** | **ConsoleV1IngestionRunsGetPageParameter** |  | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -549,11 +522,9 @@ const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionRunsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -562,7 +533,6 @@ const { status, data } = await apiInstance.consoleV1IngestionRunsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -604,11 +574,9 @@ const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
 
 let dataset: 'Events' | 'Metrics' | 'entity_properties' | 'export_exposures' | 'export_events'; // (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionScheduleGet(
-    dataset,
-    xRespectReviewSettings
+    dataset
 );
 ```
 
@@ -617,7 +585,6 @@ const { status, data } = await apiInstance.consoleV1IngestionScheduleGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dataset** | [**&#39;Events&#39; | &#39;Metrics&#39; | &#39;entity_properties&#39; | &#39;export_exposures&#39; | &#39;export_events&#39;**]**Array<&#39;Events&#39; &#124; &#39;Metrics&#39; &#124; &#39;entity_properties&#39; &#124; &#39;export_exposures&#39; &#124; &#39;export_events&#39;>** |  | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -658,11 +625,9 @@ const configuration = new Configuration();
 const apiInstance = new IngestionsApi(configuration);
 
 let ingestionScheduleUpdateContractDto: IngestionScheduleUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionSchedulePost(
-    ingestionScheduleUpdateContractDto,
-    xRespectReviewSettings
+    ingestionScheduleUpdateContractDto
 );
 ```
 
@@ -671,7 +636,6 @@ const { status, data } = await apiInstance.consoleV1IngestionSchedulePost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ingestionScheduleUpdateContractDto** | **IngestionScheduleUpdateContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -714,9 +678,8 @@ let startDate: string; //Expected valid date in the form of YYYY-MM-DD (default 
 let endDate: string; //Expected valid date in the form of YYYY-MM-DD (default to undefined)
 let source: string; // (optional) (default to undefined)
 let dataset: 'Events' | 'Metrics' | 'entity_properties' | 'export_exposures' | 'export_events'; // (optional) (default to undefined)
-let status: 'IMPORT_SUCCESSFUL' | 'ROWS_INSERTED' | 'LOADED_EMPTY_DATA' | 'IMPORT_SCHEDULED' | 'IMPORT_RESCHEDULED' | 'IMPORT_STARTED' | 'FILE_CREATED' | 'DOWNLOAD_COMPLETED' | 'BACKFILL_REQUESTED' | 'ERROR' | 'CONNECTION_CONFIG_ERROR' | 'SSH_ERROR' | 'QUERY_CONSTRUCTION_ERROR' | 'INTERNAL_WRITE_ERROR_METRICS' | 'INTERNAL_WRITE_ERROR_EVENTS' | 'INTERNAL_WRITE_ERROR_EXPOSURES' | 'QUERY_ERROR' | 'SETUP_ERROR' | 'AUTHENTICATION_ERROR' | 'CONNECTION_ERROR' | 'BULK_LOAD_ERROR' | 'BULK_LOAD_SUCCESSFUL' | '%Other'; // (optional) (default to undefined)
-let statuses: Array<'IMPORT_SUCCESSFUL' | 'ROWS_INSERTED' | 'LOADED_EMPTY_DATA' | 'IMPORT_SCHEDULED' | 'IMPORT_RESCHEDULED' | 'IMPORT_STARTED' | 'FILE_CREATED' | 'DOWNLOAD_COMPLETED' | 'BACKFILL_REQUESTED' | 'ERROR' | 'CONNECTION_CONFIG_ERROR' | 'SSH_ERROR' | 'QUERY_CONSTRUCTION_ERROR' | 'INTERNAL_WRITE_ERROR_METRICS' | 'INTERNAL_WRITE_ERROR_EVENTS' | 'INTERNAL_WRITE_ERROR_EXPOSURES' | 'QUERY_ERROR' | 'SETUP_ERROR' | 'AUTHENTICATION_ERROR' | 'CONNECTION_ERROR' | 'BULK_LOAD_ERROR' | 'BULK_LOAD_SUCCESSFUL' | '%Other'>; // (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
+let status: 'IMPORT_SUCCESSFUL' | 'ROWS_INSERTED' | 'LOADED_EMPTY_DATA' | 'IMPORT_SCHEDULED' | 'IMPORT_RESCHEDULED' | 'IMPORT_STARTED' | 'FILE_CREATED' | 'DOWNLOAD_COMPLETED' | 'BACKFILL_REQUESTED' | 'ERROR' | 'CONNECTION_CONFIG_ERROR' | 'SSH_ERROR' | 'QUERY_CONSTRUCTION_ERROR' | 'INTERNAL_WRITE_ERROR_METRICS' | 'INTERNAL_WRITE_ERROR_EVENTS' | 'INTERNAL_WRITE_ERROR_EXPOSURES' | 'QUERY_ERROR' | 'SETUP_ERROR' | 'AUTHENTICATION_ERROR' | 'CONNECTION_ERROR' | 'INTERNAL_SERVER_ERROR' | 'BULK_LOAD_ERROR' | 'BULK_LOAD_SUCCESSFUL' | '%Other'; // (optional) (default to undefined)
+let statuses: Array<'IMPORT_SUCCESSFUL' | 'ROWS_INSERTED' | 'LOADED_EMPTY_DATA' | 'IMPORT_SCHEDULED' | 'IMPORT_RESCHEDULED' | 'IMPORT_STARTED' | 'FILE_CREATED' | 'DOWNLOAD_COMPLETED' | 'BACKFILL_REQUESTED' | 'ERROR' | 'CONNECTION_CONFIG_ERROR' | 'SSH_ERROR' | 'QUERY_CONSTRUCTION_ERROR' | 'INTERNAL_WRITE_ERROR_METRICS' | 'INTERNAL_WRITE_ERROR_EVENTS' | 'INTERNAL_WRITE_ERROR_EXPOSURES' | 'QUERY_ERROR' | 'SETUP_ERROR' | 'AUTHENTICATION_ERROR' | 'CONNECTION_ERROR' | 'INTERNAL_SERVER_ERROR' | 'BULK_LOAD_ERROR' | 'BULK_LOAD_SUCCESSFUL' | '%Other'>; // (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1IngestionStatusGet(
     startDate,
@@ -724,8 +687,7 @@ const { status, data } = await apiInstance.consoleV1IngestionStatusGet(
     source,
     dataset,
     status,
-    statuses,
-    xRespectReviewSettings
+    statuses
 );
 ```
 
@@ -737,9 +699,8 @@ const { status, data } = await apiInstance.consoleV1IngestionStatusGet(
 | **endDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | defaults to undefined|
 | **source** | [**string**] |  | (optional) defaults to undefined|
 | **dataset** | [**&#39;Events&#39; | &#39;Metrics&#39; | &#39;entity_properties&#39; | &#39;export_exposures&#39; | &#39;export_events&#39;**]**Array<&#39;Events&#39; &#124; &#39;Metrics&#39; &#124; &#39;entity_properties&#39; &#124; &#39;export_exposures&#39; &#124; &#39;export_events&#39;>** |  | (optional) defaults to undefined|
-| **status** | [**&#39;IMPORT_SUCCESSFUL&#39; | &#39;ROWS_INSERTED&#39; | &#39;LOADED_EMPTY_DATA&#39; | &#39;IMPORT_SCHEDULED&#39; | &#39;IMPORT_RESCHEDULED&#39; | &#39;IMPORT_STARTED&#39; | &#39;FILE_CREATED&#39; | &#39;DOWNLOAD_COMPLETED&#39; | &#39;BACKFILL_REQUESTED&#39; | &#39;ERROR&#39; | &#39;CONNECTION_CONFIG_ERROR&#39; | &#39;SSH_ERROR&#39; | &#39;QUERY_CONSTRUCTION_ERROR&#39; | &#39;INTERNAL_WRITE_ERROR_METRICS&#39; | &#39;INTERNAL_WRITE_ERROR_EVENTS&#39; | &#39;INTERNAL_WRITE_ERROR_EXPOSURES&#39; | &#39;QUERY_ERROR&#39; | &#39;SETUP_ERROR&#39; | &#39;AUTHENTICATION_ERROR&#39; | &#39;CONNECTION_ERROR&#39; | &#39;BULK_LOAD_ERROR&#39; | &#39;BULK_LOAD_SUCCESSFUL&#39; | &#39;%Other&#39;**]**Array<&#39;IMPORT_SUCCESSFUL&#39; &#124; &#39;ROWS_INSERTED&#39; &#124; &#39;LOADED_EMPTY_DATA&#39; &#124; &#39;IMPORT_SCHEDULED&#39; &#124; &#39;IMPORT_RESCHEDULED&#39; &#124; &#39;IMPORT_STARTED&#39; &#124; &#39;FILE_CREATED&#39; &#124; &#39;DOWNLOAD_COMPLETED&#39; &#124; &#39;BACKFILL_REQUESTED&#39; &#124; &#39;ERROR&#39; &#124; &#39;CONNECTION_CONFIG_ERROR&#39; &#124; &#39;SSH_ERROR&#39; &#124; &#39;QUERY_CONSTRUCTION_ERROR&#39; &#124; &#39;INTERNAL_WRITE_ERROR_METRICS&#39; &#124; &#39;INTERNAL_WRITE_ERROR_EVENTS&#39; &#124; &#39;INTERNAL_WRITE_ERROR_EXPOSURES&#39; &#124; &#39;QUERY_ERROR&#39; &#124; &#39;SETUP_ERROR&#39; &#124; &#39;AUTHENTICATION_ERROR&#39; &#124; &#39;CONNECTION_ERROR&#39; &#124; &#39;BULK_LOAD_ERROR&#39; &#124; &#39;BULK_LOAD_SUCCESSFUL&#39; &#124; &#39;%Other&#39;>** |  | (optional) defaults to undefined|
-| **statuses** | **Array<&#39;IMPORT_SUCCESSFUL&#39; &#124; &#39;ROWS_INSERTED&#39; &#124; &#39;LOADED_EMPTY_DATA&#39; &#124; &#39;IMPORT_SCHEDULED&#39; &#124; &#39;IMPORT_RESCHEDULED&#39; &#124; &#39;IMPORT_STARTED&#39; &#124; &#39;FILE_CREATED&#39; &#124; &#39;DOWNLOAD_COMPLETED&#39; &#124; &#39;BACKFILL_REQUESTED&#39; &#124; &#39;ERROR&#39; &#124; &#39;CONNECTION_CONFIG_ERROR&#39; &#124; &#39;SSH_ERROR&#39; &#124; &#39;QUERY_CONSTRUCTION_ERROR&#39; &#124; &#39;INTERNAL_WRITE_ERROR_METRICS&#39; &#124; &#39;INTERNAL_WRITE_ERROR_EVENTS&#39; &#124; &#39;INTERNAL_WRITE_ERROR_EXPOSURES&#39; &#124; &#39;QUERY_ERROR&#39; &#124; &#39;SETUP_ERROR&#39; &#124; &#39;AUTHENTICATION_ERROR&#39; &#124; &#39;CONNECTION_ERROR&#39; &#124; &#39;BULK_LOAD_ERROR&#39; &#124; &#39;BULK_LOAD_SUCCESSFUL&#39; &#124; &#39;%Other&#39;>** |  | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+| **status** | [**&#39;IMPORT_SUCCESSFUL&#39; | &#39;ROWS_INSERTED&#39; | &#39;LOADED_EMPTY_DATA&#39; | &#39;IMPORT_SCHEDULED&#39; | &#39;IMPORT_RESCHEDULED&#39; | &#39;IMPORT_STARTED&#39; | &#39;FILE_CREATED&#39; | &#39;DOWNLOAD_COMPLETED&#39; | &#39;BACKFILL_REQUESTED&#39; | &#39;ERROR&#39; | &#39;CONNECTION_CONFIG_ERROR&#39; | &#39;SSH_ERROR&#39; | &#39;QUERY_CONSTRUCTION_ERROR&#39; | &#39;INTERNAL_WRITE_ERROR_METRICS&#39; | &#39;INTERNAL_WRITE_ERROR_EVENTS&#39; | &#39;INTERNAL_WRITE_ERROR_EXPOSURES&#39; | &#39;QUERY_ERROR&#39; | &#39;SETUP_ERROR&#39; | &#39;AUTHENTICATION_ERROR&#39; | &#39;CONNECTION_ERROR&#39; | &#39;INTERNAL_SERVER_ERROR&#39; | &#39;BULK_LOAD_ERROR&#39; | &#39;BULK_LOAD_SUCCESSFUL&#39; | &#39;%Other&#39;**]**Array<&#39;IMPORT_SUCCESSFUL&#39; &#124; &#39;ROWS_INSERTED&#39; &#124; &#39;LOADED_EMPTY_DATA&#39; &#124; &#39;IMPORT_SCHEDULED&#39; &#124; &#39;IMPORT_RESCHEDULED&#39; &#124; &#39;IMPORT_STARTED&#39; &#124; &#39;FILE_CREATED&#39; &#124; &#39;DOWNLOAD_COMPLETED&#39; &#124; &#39;BACKFILL_REQUESTED&#39; &#124; &#39;ERROR&#39; &#124; &#39;CONNECTION_CONFIG_ERROR&#39; &#124; &#39;SSH_ERROR&#39; &#124; &#39;QUERY_CONSTRUCTION_ERROR&#39; &#124; &#39;INTERNAL_WRITE_ERROR_METRICS&#39; &#124; &#39;INTERNAL_WRITE_ERROR_EVENTS&#39; &#124; &#39;INTERNAL_WRITE_ERROR_EXPOSURES&#39; &#124; &#39;QUERY_ERROR&#39; &#124; &#39;SETUP_ERROR&#39; &#124; &#39;AUTHENTICATION_ERROR&#39; &#124; &#39;CONNECTION_ERROR&#39; &#124; &#39;INTERNAL_SERVER_ERROR&#39; &#124; &#39;BULK_LOAD_ERROR&#39; &#124; &#39;BULK_LOAD_SUCCESSFUL&#39; &#124; &#39;%Other&#39;>** |  | (optional) defaults to undefined|
+| **statuses** | **Array<&#39;IMPORT_SUCCESSFUL&#39; &#124; &#39;ROWS_INSERTED&#39; &#124; &#39;LOADED_EMPTY_DATA&#39; &#124; &#39;IMPORT_SCHEDULED&#39; &#124; &#39;IMPORT_RESCHEDULED&#39; &#124; &#39;IMPORT_STARTED&#39; &#124; &#39;FILE_CREATED&#39; &#124; &#39;DOWNLOAD_COMPLETED&#39; &#124; &#39;BACKFILL_REQUESTED&#39; &#124; &#39;ERROR&#39; &#124; &#39;CONNECTION_CONFIG_ERROR&#39; &#124; &#39;SSH_ERROR&#39; &#124; &#39;QUERY_CONSTRUCTION_ERROR&#39; &#124; &#39;INTERNAL_WRITE_ERROR_METRICS&#39; &#124; &#39;INTERNAL_WRITE_ERROR_EVENTS&#39; &#124; &#39;INTERNAL_WRITE_ERROR_EXPOSURES&#39; &#124; &#39;QUERY_ERROR&#39; &#124; &#39;SETUP_ERROR&#39; &#124; &#39;AUTHENTICATION_ERROR&#39; &#124; &#39;CONNECTION_ERROR&#39; &#124; &#39;INTERNAL_SERVER_ERROR&#39; &#124; &#39;BULK_LOAD_ERROR&#39; &#124; &#39;BULK_LOAD_SUCCESSFUL&#39; &#124; &#39;%Other&#39;>** |  | (optional) defaults to undefined|
 
 
 ### Return type

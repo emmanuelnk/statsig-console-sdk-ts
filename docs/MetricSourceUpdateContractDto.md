@@ -18,10 +18,14 @@ Name | Type | Description | Notes
 **customFieldMapping** | [**Array&lt;MetricSourceContractDtoCustomFieldMappingInner&gt;**](MetricSourceContractDtoCustomFieldMappingInner.md) | Optional array defining mappings for custom fields using specific formulas. | [optional] [default to undefined]
 **isReadOnly** | **boolean** | Specifies if the source can only be edited via the Console API. | [optional] [default to undefined]
 **isVerified** | **boolean** | Marks the metric source as verified, indicating trustworthiness within the organization. | [optional] [default to undefined]
+**disableCURE** | **boolean** | Disable CURE for all metrics built from this metric source | [optional] [default to undefined]
 **owner** | [**AIConfigCreateDtoOwner**](AIConfigCreateDtoOwner.md) |  | [optional] [default to undefined]
 **team** | **string** | Optional field indicating the team name responsible for the metric, aiding in accountability and management. | [optional] [default to undefined]
 **teamID** | **string** | Optional field indicating the team ID responsible for the metric, aiding in accountability and management. | [optional] [default to undefined]
 **dryRun** | **boolean** | Skips persisting updates to the source (used to validate that inputs are correct) | [optional] [default to undefined]
+**skip_validation** | **boolean** | Skips running SQL validation for the source. Requires all_columns and column_types when true. Availability is gated. | [optional] [default to undefined]
+**all_columns** | **Array&lt;string&gt;** | Column names to persist when skip_validation is true. Optional otherwise. | [optional] [default to undefined]
+**column_types** | **Array&lt;string&gt;** | Column types aligned with all_columns when skip_validation is true. Optional otherwise. | [optional] [default to undefined]
 
 ## Example
 
@@ -42,10 +46,14 @@ const instance: MetricSourceUpdateContractDto = {
     customFieldMapping,
     isReadOnly,
     isVerified,
+    disableCURE,
     owner,
     team,
     teamID,
     dryRun,
+    skip_validation,
+    all_columns,
+    column_types,
 };
 ```
 

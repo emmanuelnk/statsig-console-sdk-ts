@@ -30,12 +30,10 @@ const apiInstance = new PromptsApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1PromptsGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -45,7 +43,6 @@ const { status, data } = await apiInstance.consoleV1PromptsGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -86,11 +83,9 @@ const configuration = new Configuration();
 const apiInstance = new PromptsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1PromptsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -99,7 +94,6 @@ const { status, data } = await apiInstance.consoleV1PromptsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -142,12 +136,10 @@ const apiInstance = new PromptsApi(configuration);
 
 let id: string; //id (default to undefined)
 let aIConfigPartialUpdateDto: AIConfigPartialUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1PromptsIdPatch(
     id,
-    aIConfigPartialUpdateDto,
-    xRespectReviewSettings
+    aIConfigPartialUpdateDto
 );
 ```
 
@@ -157,7 +149,6 @@ const { status, data } = await apiInstance.consoleV1PromptsIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **aIConfigPartialUpdateDto** | **AIConfigPartialUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -199,12 +190,10 @@ const apiInstance = new PromptsApi(configuration);
 
 let id: string; //id (default to undefined)
 let aIConfigVersionCreateDto: AIConfigVersionCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1PromptsIdVersionsPost(
     id,
-    aIConfigVersionCreateDto,
-    xRespectReviewSettings
+    aIConfigVersionCreateDto
 );
 ```
 
@@ -214,7 +203,6 @@ const { status, data } = await apiInstance.consoleV1PromptsIdVersionsPost(
 |------------- | ------------- | ------------- | -------------|
 | **aIConfigVersionCreateDto** | **AIConfigVersionCreateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -255,12 +243,10 @@ const apiInstance = new PromptsApi(configuration);
 
 let versionId: string; // (default to undefined)
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1PromptsIdVersionsVersionIdStartEvalsPost(
     versionId,
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -270,7 +256,6 @@ const { status, data } = await apiInstance.consoleV1PromptsIdVersionsVersionIdSt
 |------------- | ------------- | ------------- | -------------|
 | **versionId** | [**string**] |  | defaults to undefined|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -312,11 +297,9 @@ const configuration = new Configuration();
 const apiInstance = new PromptsApi(configuration);
 
 let aIConfigCreateDto: AIConfigCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1PromptsPost(
-    aIConfigCreateDto,
-    xRespectReviewSettings
+    aIConfigCreateDto
 );
 ```
 
@@ -325,7 +308,6 @@ const { status, data } = await apiInstance.consoleV1PromptsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **aIConfigCreateDto** | **AIConfigCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

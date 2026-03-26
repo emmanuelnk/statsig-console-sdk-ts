@@ -29,12 +29,10 @@ const apiInstance = new RolesApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1RolesGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -44,7 +42,6 @@ const { status, data } = await apiInstance.consoleV1RolesGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -86,11 +83,9 @@ const configuration = new Configuration();
 const apiInstance = new RolesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1RolesIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -99,7 +94,6 @@ const { status, data } = await apiInstance.consoleV1RolesIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -141,11 +135,9 @@ const configuration = new Configuration();
 const apiInstance = new RolesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1RolesIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -154,7 +146,6 @@ const { status, data } = await apiInstance.consoleV1RolesIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -198,12 +189,10 @@ const apiInstance = new RolesApi(configuration);
 
 let id: string; //id (default to undefined)
 let roleUpdateContractDto: RoleUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1RolesIdPatch(
     id,
-    roleUpdateContractDto,
-    xRespectReviewSettings
+    roleUpdateContractDto
 );
 ```
 
@@ -213,7 +202,6 @@ const { status, data } = await apiInstance.consoleV1RolesIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **roleUpdateContractDto** | **RoleUpdateContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -256,11 +244,9 @@ const configuration = new Configuration();
 const apiInstance = new RolesApi(configuration);
 
 let roleContractDto: RoleContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1RolesPost(
-    roleContractDto,
-    xRespectReviewSettings
+    roleContractDto
 );
 ```
 
@@ -269,7 +255,6 @@ const { status, data } = await apiInstance.consoleV1RolesPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **roleContractDto** | **RoleContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

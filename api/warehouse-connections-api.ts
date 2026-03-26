@@ -36,11 +36,10 @@ export const WarehouseConnectionsApiAxiosParamCreator = function (configuration?
          * 
          * @summary Update Warehouse Connection Parameters
          * @param {WhConnectionUpdateDto} whConnectionUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1WhConnectionsPatch: async (whConnectionUpdateDto: WhConnectionUpdateDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1WhConnectionsPatch: async (whConnectionUpdateDto: WhConnectionUpdateDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'whConnectionUpdateDto' is not null or undefined
             assertParamExists('consoleV1WhConnectionsPatch', 'whConnectionUpdateDto', whConnectionUpdateDto)
             const localVarPath = `/console/v1/wh_connections`;
@@ -61,9 +60,6 @@ export const WarehouseConnectionsApiAxiosParamCreator = function (configuration?
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -87,12 +83,11 @@ export const WarehouseConnectionsApiFp = function(configuration?: Configuration)
          * 
          * @summary Update Warehouse Connection Parameters
          * @param {WhConnectionUpdateDto} whConnectionUpdateDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1WhConnectionsPatch(whConnectionUpdateDto: WhConnectionUpdateDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1WhConnectionsPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1WhConnectionsPatch(whConnectionUpdateDto, xRespectReviewSettings, options);
+        async consoleV1WhConnectionsPatch(whConnectionUpdateDto: WhConnectionUpdateDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1WhConnectionsPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1WhConnectionsPatch(whConnectionUpdateDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['WarehouseConnectionsApi.consoleV1WhConnectionsPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -114,7 +109,7 @@ export const WarehouseConnectionsApiFactory = function (configuration?: Configur
          * @throws {RequiredError}
          */
         consoleV1WhConnectionsPatch(requestParameters: WarehouseConnectionsApiConsoleV1WhConnectionsPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1WhConnectionsPatch200Response> {
-            return localVarFp.consoleV1WhConnectionsPatch(requestParameters.whConnectionUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1WhConnectionsPatch(requestParameters.whConnectionUpdateDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -124,11 +119,6 @@ export const WarehouseConnectionsApiFactory = function (configuration?: Configur
  */
 export interface WarehouseConnectionsApiConsoleV1WhConnectionsPatchRequest {
     readonly whConnectionUpdateDto: WhConnectionUpdateDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -143,7 +133,7 @@ export class WarehouseConnectionsApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1WhConnectionsPatch(requestParameters: WarehouseConnectionsApiConsoleV1WhConnectionsPatchRequest, options?: RawAxiosRequestConfig) {
-        return WarehouseConnectionsApiFp(this.configuration).consoleV1WhConnectionsPatch(requestParameters.whConnectionUpdateDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return WarehouseConnectionsApiFp(this.configuration).consoleV1WhConnectionsPatch(requestParameters.whConnectionUpdateDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

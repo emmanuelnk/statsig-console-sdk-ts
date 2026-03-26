@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **customFieldMapping** | [**Array&lt;MetricSourceContractDtoCustomFieldMappingInner&gt;**](MetricSourceContractDtoCustomFieldMappingInner.md) | Optional array defining mappings for custom fields using specific formulas. | [optional] [default to undefined]
 **isReadOnly** | **boolean** | Specifies if the source can only be edited via the Console API. | [optional] [default to undefined]
 **isVerified** | **boolean** | Marks the metric source as verified, indicating trustworthiness within the organization. | [optional] [default to undefined]
+**disableCURE** | **boolean** | Disable CURE for all metrics built from this metric source | [optional] [default to undefined]
 **owner** | [**AIConfigCreateDtoOwner**](AIConfigCreateDtoOwner.md) |  | [optional] [default to undefined]
 **team** | **string** | Optional field indicating the team name responsible for the metric, aiding in accountability and management. | [optional] [default to undefined]
 **teamID** | **string** | Optional field indicating the team ID responsible for the metric, aiding in accountability and management. | [optional] [default to undefined]
@@ -41,6 +42,7 @@ const instance: MetricSourceContractDto = {
     customFieldMapping,
     isReadOnly,
     isVerified,
+    disableCURE,
     owner,
     team,
     teamID,

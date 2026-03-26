@@ -15,9 +15,21 @@
 
 
 export interface ExperimentCreateDtoPrimaryMetricsInner {
+    /**
+     * The metric name.
+     */
     'name': string;
+    /**
+     * The metric type.
+     */
     'type': string;
+    /**
+     * The expected direction for one-sided testing (a feature to only measure metric movements in a single direction)
+     */
     'direction'?: ExperimentCreateDtoPrimaryMetricsInnerDirectionEnum;
+    /**
+     * The comparison value for the one-sample testing (a feature to use a fixed baseline as the control value)
+     */
     'hypothesizedValue'?: number;
 }
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **isReadOnly** | **boolean** | Set to true to make the metric definition editable only through the Console API. | [optional] [default to undefined]
 **unitTypes** | **Array&lt;string&gt;** | Array of unit types associated with the metric, such as stableID or userID. | [optional] [default to undefined]
 **metricEvents** | [**Array&lt;ExternalMetricDefinitionContractDtoMetricEventsInner&gt;**](ExternalMetricDefinitionContractDtoMetricEventsInner.md) | An array of event definitions used to compute the metric. | [optional] [default to undefined]
-**metricComponentMetrics** | [**Array&lt;ExperimentCreateDtoCureCovariatesInner&gt;**](ExperimentCreateDtoCureCovariatesInner.md) | List of input metrics used to calculate the new metric for composite types. | [optional] [default to undefined]
+**metricComponentMetrics** | [**Array&lt;ExperimentCreateDtoBayesianPriorsInnerMetric&gt;**](ExperimentCreateDtoBayesianPriorsInnerMetric.md) | List of input metrics used to calculate the new metric for composite types. | [optional] [default to undefined]
 **description** | **string** | An optional description providing additional context about the metric. | [optional] [default to undefined]
 **directionality** | **string** | Specifies the desired directionality for the metric, indicating whether an increase or decrease is favorable. | [default to undefined]
 **tags** | **Array&lt;string&gt;** | Optional tags for categorizing the metric and improving searchability. | [optional] [default to undefined]

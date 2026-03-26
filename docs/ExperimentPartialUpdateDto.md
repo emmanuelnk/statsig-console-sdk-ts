@@ -13,9 +13,11 @@ Name | Type | Description | Notes
 **identityResolutionSource** | **string** | The identity resolution entity property source for the experiment used in WHN for ID resolution | [optional] [default to undefined]
 **hypothesis** | **string** | A statement that will be tested by this experiment | [optional] [default to undefined]
 **links** | [**Array&lt;ExperimentCreateDtoLinksInner&gt;**](ExperimentCreateDtoLinksInner.md) | Links to relevant documentation or resources | [optional] [default to undefined]
+**externalEvents** | [**Array&lt;ExperimentCreateDtoExternalEventsInner&gt;**](ExperimentCreateDtoExternalEventsInner.md) |  | [optional] [default to undefined]
 **groups** | [**Array&lt;ExperimentCreateDtoGroupsInner&gt;**](ExperimentCreateDtoGroupsInner.md) | The test groups for your experiment | [optional] [default to undefined]
 **controlGroupID** | **string** | Optional control group ID | [optional] [default to undefined]
 **allocation** | **number** | Percent of layer allocated to this experiment | [optional] [default to undefined]
+**userBuckets** | **Array&lt;number&gt;** |  | [optional] [default to undefined]
 **primaryMetricTags** | **Array&lt;string&gt;** | Primary metric tags for the experiment | [optional] [default to undefined]
 **secondaryMetricTags** | **Array&lt;string&gt;** | Secondary metric tags for the experiment | [optional] [default to undefined]
 **primaryMetrics** | [**Array&lt;ExperimentCreateDtoPrimaryMetricsInner&gt;**](ExperimentCreateDtoPrimaryMetricsInner.md) | Main metrics needed to evaluate your hypothesis | [optional] [default to undefined]
@@ -33,6 +35,9 @@ Name | Type | Description | Notes
 **benjaminiHochbergPerMetric** | **boolean** | Is Benjamini-Hochberg procedure applied per metric? | [optional] [default to undefined]
 **benjaminiPrimaryMetricsOnly** | **boolean** | Is Benjamini-Hochberg procedure applied for primary metrics only? | [optional] [default to undefined]
 **defaultConfidenceInterval** | **string** | Default error margin used for results | [optional] [default to undefined]
+**defaultRollupWindow** | **number** | Default rollup window in days for experiment results. Use -1 for cumulative. Only -1, 1, and 7 allowed for cloud experiments. | [optional] [default to undefined]
+**defaultChanceToBeatThreshold** | **number** | Default chance-to-beat threshold used for Bayesian results. | [optional] [default to undefined]
+**bayesianPriors** | [**Array&lt;ExperimentCreateDtoBayesianPriorsInner&gt;**](ExperimentCreateDtoBayesianPriorsInner.md) | Bayesian prior settings by metric. | [optional] [default to undefined]
 **manualQualityScores** | [**Array&lt;ExperimentCreateDtoManualQualityScoresInner&gt;**](ExperimentCreateDtoManualQualityScoresInner.md) | Up to 10 manually set quality scores for an experiment. The scores and weights will be added to the existing weights and scores, and then weights will be renormalized to 100. This can be set via the Statsig Console API. If targeting a default check, the weight of the check will be updated, but not the status or description. A default score can be removed by setting the weight to 0. The default score identifiers are one of: HYPOTHESIS_LENGTH, BALANCED_EXPOSURE, PRIMARY_METRICS_LENGTH, COMPARISON_CORRECTION, GUARDRAIL_METRIC_TAGS, SUFFICIENT_SAMPLE, POWER_ANALYSIS, SEQUENTIAL_TESTING | [optional] [default to undefined]
 **status** | **string** | The current status of the experiment | [optional] [default to undefined]
 **launchedGroupID** | **string** | ID of the launched group, null otherwise | [optional] [default to undefined]
@@ -55,10 +60,14 @@ Name | Type | Description | Notes
 **analysisEndTime** | **string** | Warehouse Native only - end time for analysis only experiments | [optional] [default to undefined]
 **assignmentSourceFilters** | [**Array&lt;ExperimentCreateDtoAssignmentSourceFiltersInner&gt;**](ExperimentCreateDtoAssignmentSourceFiltersInner.md) | Array of criteria for filtering assignment sources. | [optional] [default to undefined]
 **analyticsType** | **string** | The mode of analysis for the experiment, e.g frequentist, bayesian, sprt | [optional] [default to undefined]
+**defaultSPRTPowerParam** | **number** | SPRT power parameter percentage used as the default for experiment analysis. | [optional] [default to undefined]
+**defaultSPRTMDE** | **number** | Default MDE value for every metric if one isn\&#39;t provided. Only used in manual mode. | [optional] [default to undefined]
+**sprtBaselineMode** | **string** | In manual mode, mde/mean/stdDev must be provided for every metric in the experiment. In in_experiment_control, only the mde is needed for every metric, or the defaultSPRTMDE field must be passed. | [optional] [default to undefined]
+**sprtMDESettings** | [**Array&lt;ExperimentCreateDtoSprtMDESettingsInner&gt;**](ExperimentCreateDtoSprtMDESettingsInner.md) | The SPRT values for use in the experiment. | [optional] [default to undefined]
 **isSidecar** | **boolean** | Whether this is a Statsig Sidecar experiment. | [optional] [default to undefined]
 **decisionReason** | **string** | Experiment notes reported after experiment completes | [optional] [default to undefined]
 **preComputedUserDimensions** | [**Array&lt;ExperimentCreateDtoPreComputedUserDimensionsInner&gt;**](ExperimentCreateDtoPreComputedUserDimensionsInner.md) | User dimensions that will be computed for every metric in WHN | [optional] [default to undefined]
-**cureCovariates** | [**Array&lt;ExperimentCreateDtoCureCovariatesInner&gt;**](ExperimentCreateDtoCureCovariatesInner.md) | CURE Covariates to use in this experiment | [optional] [default to undefined]
+**cureCovariates** | [**Array&lt;ExperimentCreateDtoBayesianPriorsInnerMetric&gt;**](ExperimentCreateDtoBayesianPriorsInnerMetric.md) | CURE Covariates to use in this experiment | [optional] [default to undefined]
 **stratifiedSampling** | [**ExperimentCreateDtoStratifiedSampling**](ExperimentCreateDtoStratifiedSampling.md) |  | [optional] [default to undefined]
 **enabledNonProdEnvironments** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
 
@@ -76,9 +85,11 @@ const instance: ExperimentPartialUpdateDto = {
     identityResolutionSource,
     hypothesis,
     links,
+    externalEvents,
     groups,
     controlGroupID,
     allocation,
+    userBuckets,
     primaryMetricTags,
     secondaryMetricTags,
     primaryMetrics,
@@ -96,6 +107,9 @@ const instance: ExperimentPartialUpdateDto = {
     benjaminiHochbergPerMetric,
     benjaminiPrimaryMetricsOnly,
     defaultConfidenceInterval,
+    defaultRollupWindow,
+    defaultChanceToBeatThreshold,
+    bayesianPriors,
     manualQualityScores,
     status,
     launchedGroupID,
@@ -118,6 +132,10 @@ const instance: ExperimentPartialUpdateDto = {
     analysisEndTime,
     assignmentSourceFilters,
     analyticsType,
+    defaultSPRTPowerParam,
+    defaultSPRTMDE,
+    sprtBaselineMode,
+    sprtMDESettings,
     isSidecar,
     decisionReason,
     preComputedUserDimensions,

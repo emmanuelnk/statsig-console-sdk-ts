@@ -54,12 +54,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let id: string; //The unique identifier of the metric with format <metric_id>::<type> (default to undefined)
 let date: string; //Expected valid date in the form of YYYY-MM-DD (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsGet(
     id,
-    date,
-    xRespectReviewSettings
+    date
 );
 ```
 
@@ -69,7 +67,6 @@ const { status, data } = await apiInstance.consoleV1MetricsGet(
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt; | defaults to undefined|
 | **date** | [**string**] | Expected valid date in the form of YYYY-MM-DD | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -111,12 +108,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let id: string; //The unique identifier of the metric with format <metric_id>::<type> (default to undefined)
 let date: string; //Expected valid date in the form of YYYY-MM-DD (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsGet_0(
     id,
-    date,
-    xRespectReviewSettings
+    date
 );
 ```
 
@@ -126,7 +121,6 @@ const { status, data } = await apiInstance.consoleV1MetricsGet_0(
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | The unique identifier of the metric with format &lt;metric_id&gt;::&lt;type&gt; | defaults to undefined|
 | **date** | [**string**] | Expected valid date in the form of YYYY-MM-DD | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -167,11 +161,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdCancelArchivePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -180,7 +172,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdCancelArchivePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -222,11 +213,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdCancelArchivePut_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -235,7 +224,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdCancelArchivePut_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -277,11 +265,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -290,7 +276,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -332,11 +317,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdDelete_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -345,7 +328,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdDelete_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -397,6 +379,7 @@ let idType: string; //The idType the experiment will be performed on (optional) 
 let teamID: string; //The team ID associated with the experiment, Enterprise only. (optional) (default to undefined)
 let status: ConsoleV1ExperimentsGetStatusParameter; //The current status of the experiment (optional) (default to undefined)
 let targetAppID: string; // (optional) (default to undefined)
+let stale: boolean; //When true, only returns stale experiments. If omitted or false, returns all experiments. (optional) (default to undefined)
 let createdStartDate: string; //Expected valid date in the form of YYYY-MM-DD (optional) (default to undefined)
 let createdEndDate: string; //Expected valid date in the form of YYYY-MM-DD (optional) (default to undefined)
 let experimentType: ConsoleV1ExperimentsGetExperimentTypeParameter; //Filter by experiment type (optional) (default to undefined)
@@ -405,7 +388,6 @@ let creatorID: string; //ID of the user who created the entity. (optional) (defa
 let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter by tags (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet(
     id,
@@ -414,6 +396,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet(
     teamID,
     status,
     targetAppID,
+    stale,
     createdStartDate,
     createdEndDate,
     experimentType,
@@ -421,8 +404,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet(
     creatorID,
     tags,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -436,6 +418,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet(
 | **teamID** | [**string**] | The team ID associated with the experiment, Enterprise only. | (optional) defaults to undefined|
 | **status** | **ConsoleV1ExperimentsGetStatusParameter** | The current status of the experiment | (optional) defaults to undefined|
 | **targetAppID** | [**string**] |  | (optional) defaults to undefined|
+| **stale** | [**boolean**] | When true, only returns stale experiments. If omitted or false, returns all experiments. | (optional) defaults to undefined|
 | **createdStartDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | (optional) defaults to undefined|
 | **createdEndDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | (optional) defaults to undefined|
 | **experimentType** | **ConsoleV1ExperimentsGetExperimentTypeParameter** | Filter by experiment type | (optional) defaults to undefined|
@@ -444,7 +427,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet(
 | **tags** | **ConsoleV1AuditLogsGetTagsParameter** | Filter by tags | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -495,6 +477,7 @@ let idType: string; //The idType the experiment will be performed on (optional) 
 let teamID: string; //The team ID associated with the experiment, Enterprise only. (optional) (default to undefined)
 let status: ConsoleV1ExperimentsGetStatusParameter; //The current status of the experiment (optional) (default to undefined)
 let targetAppID: string; // (optional) (default to undefined)
+let stale: boolean; //When true, only returns stale experiments. If omitted or false, returns all experiments. (optional) (default to undefined)
 let createdStartDate: string; //Expected valid date in the form of YYYY-MM-DD (optional) (default to undefined)
 let createdEndDate: string; //Expected valid date in the form of YYYY-MM-DD (optional) (default to undefined)
 let experimentType: ConsoleV1ExperimentsGetExperimentTypeParameter; //Filter by experiment type (optional) (default to undefined)
@@ -503,7 +486,6 @@ let creatorID: string; //ID of the user who created the entity. (optional) (defa
 let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter by tags (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet_0(
     id,
@@ -512,6 +494,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet_0(
     teamID,
     status,
     targetAppID,
+    stale,
     createdStartDate,
     createdEndDate,
     experimentType,
@@ -519,8 +502,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet_0(
     creatorID,
     tags,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -534,6 +516,7 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet_0(
 | **teamID** | [**string**] | The team ID associated with the experiment, Enterprise only. | (optional) defaults to undefined|
 | **status** | **ConsoleV1ExperimentsGetStatusParameter** | The current status of the experiment | (optional) defaults to undefined|
 | **targetAppID** | [**string**] |  | (optional) defaults to undefined|
+| **stale** | [**boolean**] | When true, only returns stale experiments. If omitted or false, returns all experiments. | (optional) defaults to undefined|
 | **createdStartDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | (optional) defaults to undefined|
 | **createdEndDate** | [**string**] | Expected valid date in the form of YYYY-MM-DD | (optional) defaults to undefined|
 | **experimentType** | **ConsoleV1ExperimentsGetExperimentTypeParameter** | Filter by experiment type | (optional) defaults to undefined|
@@ -542,7 +525,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdExperimentsGet_0(
 | **tags** | **ConsoleV1AuditLogsGetTagsParameter** | Filter by tags | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -583,11 +565,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -596,7 +576,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -637,11 +616,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdGet_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -650,7 +627,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdGet_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -693,12 +669,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
 let metricsUpdateContractDto: MetricsUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdPost(
     id,
-    metricsUpdateContractDto,
-    xRespectReviewSettings
+    metricsUpdateContractDto
 );
 ```
 
@@ -708,7 +682,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdPost(
 |------------- | ------------- | ------------- | -------------|
 | **metricsUpdateContractDto** | **MetricsUpdateContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -752,12 +725,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
 let metricsUpdateContractDto: MetricsUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdPost_0(
     id,
-    metricsUpdateContractDto,
-    xRespectReviewSettings
+    metricsUpdateContractDto
 );
 ```
 
@@ -767,7 +738,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdPost_0(
 |------------- | ------------- | ------------- | -------------|
 | **metricsUpdateContractDto** | **MetricsUpdateContractDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -810,12 +780,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
 let incremental: 'true' | 'false'; //Incremental reload of the metric (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdReloadPost(
     id,
-    incremental,
-    xRespectReviewSettings
+    incremental
 );
 ```
 
@@ -825,7 +793,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdReloadPost(
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
 | **incremental** | [**&#39;true&#39; | &#39;false&#39;**]**Array<&#39;true&#39; &#124; &#39;false&#39;>** | Incremental reload of the metric | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -867,11 +834,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdScheduleArchivePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -880,7 +845,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdScheduleArchivePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -922,11 +886,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdScheduleArchivePut_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -935,7 +897,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdScheduleArchivePut_
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -977,11 +938,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdSqlGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -990,7 +949,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdSqlGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1032,11 +990,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdSqlGet_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1045,7 +1001,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdSqlGet_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1087,11 +1042,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdUnarchivePut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1100,7 +1053,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdUnarchivePut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1142,11 +1094,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsIdUnarchivePut_0(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -1155,7 +1105,6 @@ const { status, data } = await apiInstance.consoleV1MetricsIdUnarchivePut_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1204,15 +1153,13 @@ let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter metrics based on a given 
 let filters: string; //Additional filters for metrics. Can be a string or an object with tags filter. (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsListGet(
     showHiddenMetrics,
     tags,
     filters,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -1225,7 +1172,6 @@ const { status, data } = await apiInstance.consoleV1MetricsListGet(
 | **filters** | [**string**] | Additional filters for metrics. Can be a string or an object with tags filter. | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1273,15 +1219,13 @@ let tags: ConsoleV1AuditLogsGetTagsParameter; //Filter metrics based on a given 
 let filters: string; //Additional filters for metrics. Can be a string or an object with tags filter. (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsListGet_0(
     showHiddenMetrics,
     tags,
     filters,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -1294,7 +1238,6 @@ const { status, data } = await apiInstance.consoleV1MetricsListGet_0(
 | **filters** | [**string**] | Additional filters for metrics. Can be a string or an object with tags filter. | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1338,12 +1281,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsMetricSourceListGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -1353,7 +1294,6 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceListGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1395,11 +1335,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let name: string; //name (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameDelete(
-    name,
-    xRespectReviewSettings
+    name
 );
 ```
 
@@ -1408,7 +1346,6 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameDelet
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **name** | [**string**] | name | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1450,11 +1387,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let name: string; //name (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameGet(
-    name,
-    xRespectReviewSettings
+    name
 );
 ```
 
@@ -1463,7 +1398,6 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **name** | [**string**] | name | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1509,13 +1443,11 @@ const apiInstance = new MetricsApi(configuration);
 let name: string; //name (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameMetricsGet(
     name,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -1526,7 +1458,6 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNameMetri
 | **name** | [**string**] | name | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1570,12 +1501,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let name: string; //name (default to undefined)
 let metricSourceUpdateContractDto: MetricSourceUpdateContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNamePost(
     name,
-    metricSourceUpdateContractDto,
-    xRespectReviewSettings
+    metricSourceUpdateContractDto
 );
 ```
 
@@ -1585,7 +1514,6 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourceNamePost(
 |------------- | ------------- | ------------- | -------------|
 | **metricSourceUpdateContractDto** | **MetricSourceUpdateContractDto**|  | |
 | **name** | [**string**] | name | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1628,11 +1556,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let metricSourceCreationContractDto: MetricSourceCreationContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsMetricSourcePost(
-    metricSourceCreationContractDto,
-    xRespectReviewSettings
+    metricSourceCreationContractDto
 );
 ```
 
@@ -1641,7 +1567,6 @@ const { status, data } = await apiInstance.consoleV1MetricsMetricSourcePost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **metricSourceCreationContractDto** | **MetricSourceCreationContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1684,12 +1609,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let name: string; //name (default to undefined)
 let type: string; //type (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsNameTypeGet(
     name,
-    type,
-    xRespectReviewSettings
+    type
 );
 ```
 
@@ -1699,7 +1622,6 @@ const { status, data } = await apiInstance.consoleV1MetricsNameTypeGet(
 |------------- | ------------- | ------------- | -------------|
 | **name** | [**string**] | name | defaults to undefined|
 | **type** | [**string**] | type | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1741,12 +1663,10 @@ const apiInstance = new MetricsApi(configuration);
 
 let name: string; //name (default to undefined)
 let type: string; //type (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsNameTypeGet_0(
     name,
-    type,
-    xRespectReviewSettings
+    type
 );
 ```
 
@@ -1756,7 +1676,6 @@ const { status, data } = await apiInstance.consoleV1MetricsNameTypeGet_0(
 |------------- | ------------- | ------------- | -------------|
 | **name** | [**string**] | name | defaults to undefined|
 | **type** | [**string**] | type | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1798,11 +1717,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let metricCreationContractDto: MetricCreationContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsPost(
-    metricCreationContractDto,
-    xRespectReviewSettings
+    metricCreationContractDto
 );
 ```
 
@@ -1811,7 +1728,6 @@ const { status, data } = await apiInstance.consoleV1MetricsPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **metricCreationContractDto** | **MetricCreationContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1853,11 +1769,9 @@ const configuration = new Configuration();
 const apiInstance = new MetricsApi(configuration);
 
 let metricCreationContractDto: MetricCreationContractDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsPost_0(
-    metricCreationContractDto,
-    xRespectReviewSettings
+    metricCreationContractDto
 );
 ```
 
@@ -1866,7 +1780,6 @@ const { status, data } = await apiInstance.consoleV1MetricsPost_0(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **metricCreationContractDto** | **MetricCreationContractDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -1914,15 +1827,13 @@ let metricName: string; // (optional) (default to undefined)
 let metricType: string; // (optional) (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1MetricsValuesGet(
     date,
     metricName,
     metricType,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -1935,7 +1846,6 @@ const { status, data } = await apiInstance.consoleV1MetricsValuesGet(
 | **metricType** | [**string**] |  | (optional) defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

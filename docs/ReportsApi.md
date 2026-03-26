@@ -23,12 +23,10 @@ const apiInstance = new ReportsApi(configuration);
 
 let type: 'first_exposures' | 'pulse_daily' | 'topline_impact_daily'; //report type (default to undefined)
 let date: string; //date for the report (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1ReportsGet(
     type,
-    date,
-    xRespectReviewSettings
+    date
 );
 ```
 
@@ -38,7 +36,6 @@ const { status, data } = await apiInstance.consoleV1ReportsGet(
 |------------- | ------------- | ------------- | -------------|
 | **type** | [**&#39;first_exposures&#39; | &#39;pulse_daily&#39; | &#39;topline_impact_daily&#39;**]**Array<&#39;first_exposures&#39; &#124; &#39;pulse_daily&#39; &#124; &#39;topline_impact_daily&#39;>** | report type | defaults to undefined|
 | **date** | [**string**] | date for the report | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConsoleV1AutotunesIdGet404Response } from '../models';
+import type { ConsoleV1AlertsIdGet404Response } from '../models';
 // @ts-ignore
 import type { ConsoleV1DynamicConfigsPost403Response } from '../models';
 // @ts-ignore
@@ -55,11 +55,10 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {string} [environment] 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysGet: async (primaryTargetApp?: string, environment?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1KeysGet: async (primaryTargetApp?: string, environment?: string, limit?: number, page?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/console/v1/keys`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -93,9 +92,6 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -109,11 +105,10 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @summary Deactivate Key
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdDeactivatePatch: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1KeysIdDeactivatePatch: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1KeysIdDeactivatePatch', 'id', id)
             const localVarPath = `/console/v1/keys/{id}/deactivate`
@@ -134,9 +129,6 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -150,11 +142,10 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @summary Delete Key
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdDelete: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1KeysIdDelete: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1KeysIdDelete', 'id', id)
             const localVarPath = `/console/v1/keys/{id}`
@@ -175,9 +166,6 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -191,11 +179,10 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @summary Read Key
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdGet: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1KeysIdGet: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1KeysIdGet', 'id', id)
             const localVarPath = `/console/v1/keys/{id}`
@@ -216,9 +203,6 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -233,11 +217,10 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
          * @summary Update Key
          * @param {string} id 
          * @param {KeyUpdateContractDto} keyUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdPatch: async (id: string, keyUpdateContractDto: KeyUpdateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1KeysIdPatch: async (id: string, keyUpdateContractDto: KeyUpdateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1KeysIdPatch', 'id', id)
             // verify required parameter 'keyUpdateContractDto' is not null or undefined
@@ -261,9 +244,6 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -278,11 +258,10 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @summary Rotate Key
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysIdRotatePatch: async (id: string, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1KeysIdRotatePatch: async (id: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('consoleV1KeysIdRotatePatch', 'id', id)
             const localVarPath = `/console/v1/keys/{id}/rotate`
@@ -303,9 +282,6 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
 
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -319,11 +295,10 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
          * 
          * @summary Create Key
          * @param {KeyCreateContractDto} keyCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consoleV1KeysPost: async (keyCreateContractDto: KeyCreateContractDto, xRespectReviewSettings?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        consoleV1KeysPost: async (keyCreateContractDto: KeyCreateContractDto, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'keyCreateContractDto' is not null or undefined
             assertParamExists('consoleV1KeysPost', 'keyCreateContractDto', keyCreateContractDto)
             const localVarPath = `/console/v1/keys`;
@@ -344,9 +319,6 @@ export const KeysApiAxiosParamCreator = function (configuration?: Configuration)
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/json';
 
-            if (xRespectReviewSettings != null) {
-                localVarHeaderParameter['x-respect-review-settings'] = String(xRespectReviewSettings);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -373,12 +345,11 @@ export const KeysApiFp = function(configuration?: Configuration) {
          * @param {string} [environment] 
          * @param {number} [limit] Results per page
          * @param {number} [page] Page number
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1KeysGet(primaryTargetApp?: string, environment?: string, limit?: number, page?: number, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1keysResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysGet(primaryTargetApp, environment, limit, page, xRespectReviewSettings, options);
+        async consoleV1KeysGet(primaryTargetApp?: string, environment?: string, limit?: number, page?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Getconsolev1keysResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysGet(primaryTargetApp, environment, limit, page, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KeysApi.consoleV1KeysGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -387,12 +358,11 @@ export const KeysApiFp = function(configuration?: Configuration) {
          * 
          * @summary Deactivate Key
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1KeysIdDeactivatePatch(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdDeactivatePatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdDeactivatePatch(id, xRespectReviewSettings, options);
+        async consoleV1KeysIdDeactivatePatch(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdDeactivatePatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdDeactivatePatch(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KeysApi.consoleV1KeysIdDeactivatePatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -401,12 +371,11 @@ export const KeysApiFp = function(configuration?: Configuration) {
          * 
          * @summary Delete Key
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1KeysIdDelete(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdDelete200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdDelete(id, xRespectReviewSettings, options);
+        async consoleV1KeysIdDelete(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdDelete200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdDelete(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KeysApi.consoleV1KeysIdDelete']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -415,12 +384,11 @@ export const KeysApiFp = function(configuration?: Configuration) {
          * 
          * @summary Read Key
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1KeysIdGet(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdGet200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdGet(id, xRespectReviewSettings, options);
+        async consoleV1KeysIdGet(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdGet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdGet(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KeysApi.consoleV1KeysIdGet']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -430,12 +398,11 @@ export const KeysApiFp = function(configuration?: Configuration) {
          * @summary Update Key
          * @param {string} id 
          * @param {KeyUpdateContractDto} keyUpdateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1KeysIdPatch(id: string, keyUpdateContractDto: KeyUpdateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdPatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdPatch(id, keyUpdateContractDto, xRespectReviewSettings, options);
+        async consoleV1KeysIdPatch(id: string, keyUpdateContractDto: KeyUpdateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdPatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdPatch(id, keyUpdateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KeysApi.consoleV1KeysIdPatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -444,12 +411,11 @@ export const KeysApiFp = function(configuration?: Configuration) {
          * 
          * @summary Rotate Key
          * @param {string} id 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1KeysIdRotatePatch(id: string, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdRotatePatch200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdRotatePatch(id, xRespectReviewSettings, options);
+        async consoleV1KeysIdRotatePatch(id: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysIdRotatePatch200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysIdRotatePatch(id, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KeysApi.consoleV1KeysIdRotatePatch']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -458,12 +424,11 @@ export const KeysApiFp = function(configuration?: Configuration) {
          * 
          * @summary Create Key
          * @param {KeyCreateContractDto} keyCreateContractDto 
-         * @param {string} [xRespectReviewSettings] Optional header to respect review settings for mutation endpoints.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async consoleV1KeysPost(keyCreateContractDto: KeyCreateContractDto, xRespectReviewSettings?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysPost200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysPost(keyCreateContractDto, xRespectReviewSettings, options);
+        async consoleV1KeysPost(keyCreateContractDto: KeyCreateContractDto, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsoleV1KeysPost200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.consoleV1KeysPost(keyCreateContractDto, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['KeysApi.consoleV1KeysPost']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -485,7 +450,7 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1KeysGet(requestParameters: KeysApiConsoleV1KeysGetRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<Getconsolev1keysResponse> {
-            return localVarFp.consoleV1KeysGet(requestParameters.primaryTargetApp, requestParameters.environment, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1KeysGet(requestParameters.primaryTargetApp, requestParameters.environment, requestParameters.limit, requestParameters.page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -495,7 +460,7 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1KeysIdDeactivatePatch(requestParameters: KeysApiConsoleV1KeysIdDeactivatePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdDeactivatePatch200Response> {
-            return localVarFp.consoleV1KeysIdDeactivatePatch(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1KeysIdDeactivatePatch(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -505,7 +470,7 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1KeysIdDelete(requestParameters: KeysApiConsoleV1KeysIdDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdDelete200Response> {
-            return localVarFp.consoleV1KeysIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1KeysIdDelete(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -515,7 +480,7 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1KeysIdGet(requestParameters: KeysApiConsoleV1KeysIdGetRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdGet200Response> {
-            return localVarFp.consoleV1KeysIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1KeysIdGet(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -525,7 +490,7 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1KeysIdPatch(requestParameters: KeysApiConsoleV1KeysIdPatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdPatch200Response> {
-            return localVarFp.consoleV1KeysIdPatch(requestParameters.id, requestParameters.keyUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1KeysIdPatch(requestParameters.id, requestParameters.keyUpdateContractDto, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -535,7 +500,7 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1KeysIdRotatePatch(requestParameters: KeysApiConsoleV1KeysIdRotatePatchRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysIdRotatePatch200Response> {
-            return localVarFp.consoleV1KeysIdRotatePatch(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1KeysIdRotatePatch(requestParameters.id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -545,7 +510,7 @@ export const KeysApiFactory = function (configuration?: Configuration, basePath?
          * @throws {RequiredError}
          */
         consoleV1KeysPost(requestParameters: KeysApiConsoleV1KeysPostRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConsoleV1KeysPost200Response> {
-            return localVarFp.consoleV1KeysPost(requestParameters.keyCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(axios, basePath));
+            return localVarFp.consoleV1KeysPost(requestParameters.keyCreateContractDto, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -567,11 +532,6 @@ export interface KeysApiConsoleV1KeysGetRequest {
      * Page number
      */
     readonly page?: number
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -579,11 +539,6 @@ export interface KeysApiConsoleV1KeysGetRequest {
  */
 export interface KeysApiConsoleV1KeysIdDeactivatePatchRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -591,11 +546,6 @@ export interface KeysApiConsoleV1KeysIdDeactivatePatchRequest {
  */
 export interface KeysApiConsoleV1KeysIdDeleteRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -603,11 +553,6 @@ export interface KeysApiConsoleV1KeysIdDeleteRequest {
  */
 export interface KeysApiConsoleV1KeysIdGetRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -617,11 +562,6 @@ export interface KeysApiConsoleV1KeysIdPatchRequest {
     readonly id: string
 
     readonly keyUpdateContractDto: KeyUpdateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -629,11 +569,6 @@ export interface KeysApiConsoleV1KeysIdPatchRequest {
  */
 export interface KeysApiConsoleV1KeysIdRotatePatchRequest {
     readonly id: string
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -641,11 +576,6 @@ export interface KeysApiConsoleV1KeysIdRotatePatchRequest {
  */
 export interface KeysApiConsoleV1KeysPostRequest {
     readonly keyCreateContractDto: KeyCreateContractDto
-
-    /**
-     * Optional header to respect review settings for mutation endpoints.
-     */
-    readonly xRespectReviewSettings?: string
 }
 
 /**
@@ -660,7 +590,7 @@ export class KeysApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1KeysGet(requestParameters: KeysApiConsoleV1KeysGetRequest = {}, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysGet(requestParameters.primaryTargetApp, requestParameters.environment, requestParameters.limit, requestParameters.page, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return KeysApiFp(this.configuration).consoleV1KeysGet(requestParameters.primaryTargetApp, requestParameters.environment, requestParameters.limit, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -671,7 +601,7 @@ export class KeysApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1KeysIdDeactivatePatch(requestParameters: KeysApiConsoleV1KeysIdDeactivatePatchRequest, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdDeactivatePatch(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return KeysApiFp(this.configuration).consoleV1KeysIdDeactivatePatch(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -682,7 +612,7 @@ export class KeysApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1KeysIdDelete(requestParameters: KeysApiConsoleV1KeysIdDeleteRequest, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdDelete(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return KeysApiFp(this.configuration).consoleV1KeysIdDelete(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -693,7 +623,7 @@ export class KeysApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1KeysIdGet(requestParameters: KeysApiConsoleV1KeysIdGetRequest, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdGet(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return KeysApiFp(this.configuration).consoleV1KeysIdGet(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -704,7 +634,7 @@ export class KeysApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1KeysIdPatch(requestParameters: KeysApiConsoleV1KeysIdPatchRequest, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdPatch(requestParameters.id, requestParameters.keyUpdateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return KeysApiFp(this.configuration).consoleV1KeysIdPatch(requestParameters.id, requestParameters.keyUpdateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -715,7 +645,7 @@ export class KeysApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1KeysIdRotatePatch(requestParameters: KeysApiConsoleV1KeysIdRotatePatchRequest, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysIdRotatePatch(requestParameters.id, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return KeysApiFp(this.configuration).consoleV1KeysIdRotatePatch(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -726,7 +656,7 @@ export class KeysApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public consoleV1KeysPost(requestParameters: KeysApiConsoleV1KeysPostRequest, options?: RawAxiosRequestConfig) {
-        return KeysApiFp(this.configuration).consoleV1KeysPost(requestParameters.keyCreateContractDto, requestParameters.xRespectReviewSettings, options).then((request) => request(this.axios, this.basePath));
+        return KeysApiFp(this.configuration).consoleV1KeysPost(requestParameters.keyCreateContractDto, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **string** | The name of this parameter, used for identification within the layer. | [default to undefined]
 **type** | **string** | The data type that this parameter returns. Allowed types include: string, boolean, number, object, and array. | [default to undefined]
 **defaultValue** | [**LayerContractDtoParametersInnerDefaultValue**](LayerContractDtoParametersInnerDefaultValue.md) |  | [default to undefined]
+**description** | **string** | An optional helpful description of what this layer parameter does, providing context for its purpose. | [optional] [default to undefined]
 
 ## Example
 
@@ -18,6 +19,7 @@ const instance: LayerContractDtoParametersInner = {
     name,
     type,
     defaultValue,
+    description,
 };
 ```
 

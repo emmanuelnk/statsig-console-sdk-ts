@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rules** | [**Array&lt;DynamicConfigRulesDtoRulesInner&gt;**](DynamicConfigRulesDtoRulesInner.md) |  | [default to undefined]
+**rules** | [**Array&lt;AutotuneExperimentDtoInlineTargetingRulesInner&gt;**](AutotuneExperimentDtoInlineTargetingRulesInner.md) |  | [default to undefined]
 
 ## Example
 

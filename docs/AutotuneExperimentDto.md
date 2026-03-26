@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 **optimizationParameter** | **string** | Optimize for event occurrence vs value | [optional] [default to undefined]
 **valueColumn** | **string** | Metric source column to optimize for | [optional] [default to undefined]
 **featureList** | **Array&lt;string&gt;** | List of features that should be included in the analysis | [optional] [default to undefined]
+**inlineTargetingRulesJSON** | **string** | A raw JSON string of the inline targeting rules | [optional] [default to undefined]
+**inlineTargetingRules** | [**Array&lt;AutotuneExperimentDtoInlineTargetingRulesInner&gt;**](AutotuneExperimentDtoInlineTargetingRulesInner.md) | A formatted array of the inline targeting rules | [optional] [default to undefined]
 **id** | **string** | ID | [default to undefined]
 **name** | **string** | Optional name for the configuration. | [optional] [default to undefined]
 **idType** | **string** | Type of ID | [default to undefined]
@@ -69,6 +71,8 @@ const instance: AutotuneExperimentDto = {
     optimizationParameter,
     valueColumn,
     featureList,
+    inlineTargetingRulesJSON,
+    inlineTargetingRules,
     id,
     name,
     idType,

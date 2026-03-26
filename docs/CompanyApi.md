@@ -21,18 +21,11 @@ import {
 const configuration = new Configuration();
 const apiInstance = new CompanyApi(configuration);
 
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
-
-const { status, data } = await apiInstance.consoleV1CompanyGet(
-    xRespectReviewSettings
-);
+const { status, data } = await apiInstance.consoleV1CompanyGet();
 ```
 
 ### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
+This endpoint does not have any parameters.
 
 
 ### Return type

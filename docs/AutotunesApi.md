@@ -33,12 +33,10 @@ const apiInstance = new AutotunesApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -48,7 +46,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -88,11 +85,9 @@ const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesIdDelete(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -101,7 +96,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdDelete(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -143,11 +137,9 @@ const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesIdGet(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -156,7 +148,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdGet(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -200,12 +191,10 @@ const apiInstance = new AutotunesApi(configuration);
 
 let id: string; //id (default to undefined)
 let experimentStatusUpdateDto: ExperimentStatusUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesIdMakeDecisionPut(
     id,
-    experimentStatusUpdateDto,
-    xRespectReviewSettings
+    experimentStatusUpdateDto
 );
 ```
 
@@ -215,7 +204,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdMakeDecisionPut(
 |------------- | ------------- | ------------- | -------------|
 | **experimentStatusUpdateDto** | **ExperimentStatusUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -261,12 +249,10 @@ const apiInstance = new AutotunesApi(configuration);
 
 let id: string; //id (default to undefined)
 let autotunePartialUpdateDto: AutotunePartialUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesIdPatch(
     id,
-    autotunePartialUpdateDto,
-    xRespectReviewSettings
+    autotunePartialUpdateDto
 );
 ```
 
@@ -276,7 +262,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdPatch(
 |------------- | ------------- | ------------- | -------------|
 | **autotunePartialUpdateDto** | **AutotunePartialUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -322,12 +307,10 @@ const apiInstance = new AutotunesApi(configuration);
 
 let id: string; //id (default to undefined)
 let autotuneFullUpdateDto: AutotuneFullUpdateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesIdPost(
     id,
-    autotuneFullUpdateDto,
-    xRespectReviewSettings
+    autotuneFullUpdateDto
 );
 ```
 
@@ -337,7 +320,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdPost(
 |------------- | ------------- | ------------- | -------------|
 | **autotuneFullUpdateDto** | **AutotuneFullUpdateDto**|  | |
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -379,11 +361,9 @@ const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesIdResetPut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -392,7 +372,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdResetPut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -435,11 +414,9 @@ const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
 
 let id: string; //id (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesIdStartPut(
-    id,
-    xRespectReviewSettings
+    id
 );
 ```
 
@@ -448,7 +425,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesIdStartPut(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **id** | [**string**] | id | defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -489,11 +465,9 @@ const configuration = new Configuration();
 const apiInstance = new AutotunesApi(configuration);
 
 let autotuneCreateDto: AutotuneCreateDto; //
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1AutotunesPost(
-    autotuneCreateDto,
-    xRespectReviewSettings
+    autotuneCreateDto
 );
 ```
 
@@ -502,7 +476,6 @@ const { status, data } = await apiInstance.consoleV1AutotunesPost(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **autotuneCreateDto** | **AutotuneCreateDto**|  | |
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type

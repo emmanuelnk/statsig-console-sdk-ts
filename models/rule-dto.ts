@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner } from './dynamic-config-create-dto-rules-inner-completed-automated-rollouts-inner';
+import type { AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner } from './autotune-experiment-dto-inline-targeting-rules-inner-completed-automated-rollouts-inner';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { DynamicConfigCreateDtoRulesInnerConditionsInner } from './dynamic-config-create-dto-rules-inner-conditions-inner';
+import type { AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInner } from './autotune-experiment-dto-inline-targeting-rules-inner-conditions-inner';
 
 export interface RuleDto {
     /**
@@ -32,7 +32,7 @@ export interface RuleDto {
     /**
      * An array of Condition objects.
      */
-    'conditions': Array<DynamicConfigCreateDtoRulesInnerConditionsInner>;
+    'conditions': Array<AutotuneExperimentDtoInlineTargetingRulesInnerConditionsInner>;
     /**
      * The environments this rule is enabled for.
      */
@@ -52,10 +52,10 @@ export interface RuleDto {
     /**
      * Read-only: Automated rollout phases that have already completed.
      */
-    'completedAutomatedRollouts'?: Array<DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner>;
+    'completedAutomatedRollouts'?: Array<AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner>;
     /**
      * Read-only: Automated rollout phases that are scheduled but not yet complete.
      */
-    'pendingAutomatedRollouts'?: Array<DynamicConfigCreateDtoRulesInnerCompletedAutomatedRolloutsInner>;
+    'pendingAutomatedRollouts'?: Array<AutotuneExperimentDtoInlineTargetingRulesInnerCompletedAutomatedRolloutsInner>;
 }
 

@@ -28,13 +28,11 @@ const apiInstance = new EventsApi(configuration);
 let eventName: string; // (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1EventsEventNameGet(
     eventName,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -45,7 +43,6 @@ const { status, data } = await apiInstance.consoleV1EventsEventNameGet(
 | **eventName** | [**string**] |  | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -91,13 +88,11 @@ const apiInstance = new EventsApi(configuration);
 let eventName: string; // (default to undefined)
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1EventsEventNameMetricsGet(
     eventName,
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -108,7 +103,6 @@ const { status, data } = await apiInstance.consoleV1EventsEventNameMetricsGet(
 | **eventName** | [**string**] |  | defaults to undefined|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
@@ -153,12 +147,10 @@ const apiInstance = new EventsApi(configuration);
 
 let limit: number; //Results per page (optional) (default to undefined)
 let page: number; //Page number (optional) (default to undefined)
-let xRespectReviewSettings: string; //Optional header to respect review settings for mutation endpoints. (optional) (default to undefined)
 
 const { status, data } = await apiInstance.consoleV1EventsGet(
     limit,
-    page,
-    xRespectReviewSettings
+    page
 );
 ```
 
@@ -168,7 +160,6 @@ const { status, data } = await apiInstance.consoleV1EventsGet(
 |------------- | ------------- | ------------- | -------------|
 | **limit** | [**number**] | Results per page | (optional) defaults to undefined|
 | **page** | [**number**] | Page number | (optional) defaults to undefined|
-| **xRespectReviewSettings** | [**string**] | Optional header to respect review settings for mutation endpoints. | (optional) defaults to undefined|
 
 
 ### Return type
